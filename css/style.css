@@ -1,0 +1,450 @@
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+a[href],
+button {
+  -ms-touch-action: none;
+  /* IE10 */
+  touch-action: none;
+  /* IE11 */
+}
+body {
+  background: #FFFFFF;
+  font-family: sans-serif, 'Open Sans';
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: rgba(0, 0, 0, 0.8);
+}
+.animated {
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+  transition: height 0.2s;
+}
+.header {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 60%;
+  padding: 0% 20%;
+  height: 50px;
+  float: left;
+  display: inline-block;
+  background: #34495e;
+}
+.header .logo {
+  float: left;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1em;
+  height: 20px;
+  padding: 15px 0px;
+  color: #AAAAAA;
+}
+.header .profile {
+  float: right;
+  display: inline-block;
+  height: 26px;
+  padding: 12px 0px;
+}
+.header .profile img {
+  width: 26px;
+  height: 26px;
+  float: left;
+  display: inline-block;
+  background: #DDDDDD;
+  border-radius: 50%;
+}
+.header .profile .name {
+  float: left;
+  display: inline-block;
+  line-height: 2em;
+  margin-right: 10px;
+  font-size: 0.9em;
+  color: #FFFFFF;
+}
+.container {
+  width: 100%;
+  margin-top: 50px;
+  min-height: 300px;
+  float: left;
+  display: inline-block;
+}
+.container .head {
+  width: 60%;
+  padding: 0% 20%;
+  float: left;
+  display: inline-block;
+  background: #34495e;
+}
+.container .head .head-title {
+  width: 100%;
+  padding: 3% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 2.5em;
+  color: #FFFFFF;
+}
+.container .head .tab {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .head .tab .tab-items {
+  padding: 15px;
+  color: #EEEEEE;
+  float: left;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  margin-right: 1%;
+}
+.container .head .tab .tab-items:hover {
+  cursor: pointer;
+  color: #FFFFFF;
+  border-bottom: 2px solid #E91E63;
+}
+.container .head .tab .tab-items i {
+  margin-left: 10px;
+}
+.container .head .tab .tab-items-active {
+  color: #FFFFFF;
+  border-bottom: 2px solid #E91E63;
+}
+.container .head .tab .items-right {
+  float: right;
+  margin-right: 0%;
+  margin-left: 1%;
+}
+.container .topic-fix {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .topic-fix .user-topic-fix {
+  width: 60%;
+  padding: 2% 20%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fix .user-topic-fix .info {
+  width: 35%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fix .user-topic-fix .online {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .topic-fix .user-topic-fix .time {
+  width: 25%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fix .user-topic-fix .status {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .list .user-items {
+  width: 60%;
+  padding: 1% 0%;
+  margin: 0% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .list .user-items .avatar {
+  width: 4%;
+  float: left;
+  display: inline-block;
+  margin-right: 2%;
+}
+.container .list .user-items .avatar img {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-radius: 50%;
+}
+.container .list .user-items .info {
+  width: 29%;
+  float: left;
+  display: inline-block;
+  line-height: 1.2em;
+  padding-top: 0.3%;
+}
+.container .list .user-items .info .name {
+  color: #E91E63;
+}
+.container .list .user-items .info .position {
+  font-size: 0.8em;
+}
+.container .list .user-items .online {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.9em;
+  padding-top: 1%;
+  line-height: 1.7em;
+}
+.container .list .user-items .online i {
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+.container .list .user-items .time {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  padding-top: 1%;
+  line-height: 1.7em;
+}
+.container .list .user-items .status {
+  width: 15%;
+  float: right;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.9em;
+  padding-top: 1%;
+  line-height: 1.7em;
+}
+.container .list .user-items .status i {
+  margin-left: 10px;
+}
+.container .content {
+  width: 70%;
+  padding: 0% 15%;
+  float: left;
+  display: inline-block;
+}
+.container .main-menu {
+  width: 70%;
+  padding: 0% 15%;
+  float: left;
+  display: inline-block;
+}
+.container .main-menu .menu-items {
+  width: 31.33%;
+  padding: 4% 0%;
+  margin-top: 3%;
+  margin-right: 3%;
+  float: left;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 3px;
+}
+.container .main-menu .menu-items:nth-child(3n) {
+  margin-right: 0%;
+  float: right;
+}
+.container .main-menu .menu-items .icon {
+  font-size: 3em;
+  line-height: 1.5em;
+}
+.container .main-menu .menu-items .title {
+  font-size: 1em;
+  line-height: 2em;
+}
+.container .main-menu .menu-items .tag {
+  font-size: 0.7em;
+  line-height: 1.5em;
+  background: #DDDDDD;
+  display: inline-block;
+  padding: 0px 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.footer {
+  width: 70%;
+  padding: 3% 15%;
+  margin-top: 3%;
+  float: left;
+  display: inline-block;
+  background: #F7F7F7;
+  text-align: center;
+}
+.footer p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.footer p.mini {
+  font-size: 0.8em;
+}
+/* Other Device and Screen */
+@media only screen and (min-width: 520px) and (max-width: 759px) {
+  .header {
+    width: 100%;
+    padding: 0%;
+    height: 50px;
+  }
+  .header .logo {
+    font-size: 1em;
+    height: 20px;
+    padding: 15px 2%;
+  }
+  .header .profile {
+    height: 26px;
+    padding: 12px 2%;
+  }
+  .header .profile img {
+    width: 26px;
+    height: 26px;
+  }
+  .header .profile .name {
+    line-height: 2em;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  .container {
+    width: 100%;
+    margin-top: 50px;
+    min-height: 300px;
+  }
+  .container .head {
+    width: 96%;
+    padding: 0% 2%;
+  }
+  .container .head .head-title {
+    padding: 3% 0%;
+    font-size: 2.5em;
+  }
+  .container .head .tab .tab-items {
+    padding: 15px;
+    color: #EEEEEE;
+    margin-right: 1%;
+  }
+  .container .head .tab .tab-items i {
+    margin-left: 10px;
+  }
+  .container .head .tab .items-right {
+    margin-right: 0%;
+    margin-left: 1%;
+  }
+  .container .topic-fix .user-topic-fix {
+    width: 96%;
+    padding: 3% 2%;
+    font-size: 0.8em;
+  }
+  .container .topic-fix .user-topic-fix .info {
+    width: 45%;
+  }
+  .container .topic-fix .user-topic-fix .online {
+    width: 25%;
+  }
+  .container .topic-fix .user-topic-fix .time {
+    width: 15%;
+  }
+  .container .topic-fix .user-topic-fix .status {
+    width: 15%;
+  }
+  .container .list .user-items {
+    width: 96%;
+    padding: 2% 0%;
+    margin: 0% 2%;
+  }
+  .container .list .user-items .avatar {
+    width: 8%;
+    margin-right: 2%;
+  }
+  .container .list .user-items .info {
+    width: 35%;
+    line-height: 1.2em;
+    padding-top: 0.5%;
+  }
+  .container .list .user-items .info .position {
+    font-size: 0.8em;
+  }
+  .container .list .user-items .online {
+    width: 25%;
+    font-size: 0.9em;
+    padding-top: 2%;
+    line-height: 1.7em;
+  }
+  .container .list .user-items .online i {
+    margin-left: 5px;
+    font-size: 0.8em;
+  }
+  .container .list .user-items .time {
+    width: 15%;
+    font-size: 0.9em;
+    padding-top: 2%;
+    line-height: 1.7em;
+  }
+  .container .list .user-items .status {
+    width: 15%;
+    font-size: 0.9em;
+    padding-top: 2%;
+    line-height: 1.7em;
+  }
+  .container .list .user-items .status i {
+    margin-left: 10px;
+  }
+  .container .content {
+    width: 70%;
+    padding: 0% 15%;
+  }
+  .container .main-menu {
+    width: 70%;
+    padding: 0% 15%;
+  }
+  .container .main-menu .menu-items {
+    width: 31.33%;
+    padding: 4% 0%;
+    margin-top: 3%;
+    margin-right: 3%;
+    float: left;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 3px;
+  }
+  .container .main-menu .menu-items:nth-child(3n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .container .main-menu .menu-items .icon {
+    font-size: 3em;
+    line-height: 1.5em;
+  }
+  .container .main-menu .menu-items .title {
+    font-size: 1em;
+    line-height: 2em;
+  }
+  .container .main-menu .menu-items .tag {
+    font-size: 0.7em;
+    line-height: 1.5em;
+    background: #DDDDDD;
+    display: inline-block;
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .footer {
+    width: 70%;
+    padding: 3% 15%;
+    margin-top: 3%;
+    float: left;
+    display: inline-block;
+    background: #F7F7F7;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+  }
+  .footer p.mini {
+    font-size: 0.8em;
+  }
+  /* Other Device and Screen */
+}

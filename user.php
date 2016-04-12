@@ -15,7 +15,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
-<title>DATA LINK</title>
+<title>USER</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -29,21 +29,45 @@
 <header class="header">
 	<div class="logo">RONDA THAILAND</div>
 	<div class="profile">
-		<img src="image/avatar.png" alt="">
+		<div class="name">Puwadon</div><img src="image/avatar.png" alt="">
 	</div>
 </header>
 <div class="container">
 	<div class="head">
-		<h1>Web Design Inspiration</h1>
-		<p>Ideas & Inspirations for Web Designers | We find the best web designs all over the world Responsive design for largest screens</p>
-
+		<div class="head-title">User management</div>
 		<div class="tab">
-			<div class="tab-items">Tab 1</div>
+			<div class="tab-items tab-items-active">Tab 1</div>
 			<div class="tab-items">Tab 2</div>
 			<div class="tab-items">Tab 3</div>
 			<div class="tab-items">Tab 4</div>
-			<div class="tab-items tab-items-active">Tab 5</div>
+			<div class="tab-items items-right">Register<i class="fa fa-angle-right"></i></div>
 		</div>
+	</div>
+
+	<!-- Table -->
+	<div class="topic-fix">
+		<div class="user-topic-fix">
+			<div class="info">NAME/POSITION</div>
+			<div class="online">ONLINE</div>
+			<div class="time">LAST LOGIN</div>
+			<div class="status">STATUS</div>
+		</div>
+	</div>
+	
+	<div class="list">
+		
+		<?php for($i=0;$i<20;$i++){?>
+		<div class="user-items">
+			<div class="avatar"><img src="image/avatar.png" alt=""></div>
+			<div class="info">
+				<div class="name">Puwadon Sricharoen</div>
+				<div class="position">Programmer</div>
+			</div>
+			<div class="online">Online<i class="fa fa-circle" aria-hidden="true"></i></div>
+			<div class="time">54 นาทีที่แล้ว</div>
+			<div class="status">Active<i class="fa fa-angle-right"></i></div>
+		</div>
+		<?php }?>
 	</div>
 </div>
 <footer class="footer">

@@ -5,7 +5,28 @@ RTH_DailyOutputHeader
 RTH_DailyOutputDetail
 
 (Admin)
+RTH_User
+- id
+- fname
+- lname
+- password
+- register_time
+- update_time
+- visit_time
+- ip
+- type
+- status
+
 RTH_OperationRecipe
 RTH_CaliberCode
+- id
+- code
+- name
+- description
+- family
+- create_time
+- update_time
+- type
+- status
 RTH_GeneralRemark
 RTH_StandardTime

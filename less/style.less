@@ -1,0 +1,298 @@
+@import "default";
+
+.header{
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 60%;
+	padding: 0% 20%;
+	height: 50px;
+	float: left;
+	display: inline-block;
+	background: #34495e;
+
+	.logo{
+		float: left;
+		display: inline-block;
+		font-weight: bold;
+		font-size: 1em;
+		height: 20px;
+		padding: 15px 0px;
+		color: #AAAAAA;
+	}
+	.profile{
+		float: right;
+		display: inline-block;
+		height: 26px;
+		padding: 12px 0px;
+
+		img{
+			width: 26px;
+			height: 26px;
+			float: left;
+			display: inline-block;
+			background: #DDDDDD;
+			border-radius: 50%;
+		}
+
+		.name{
+			float: left;
+			display: inline-block;
+			line-height: 2em;
+			margin-right: 10px;
+			font-size: 0.9em;
+			color: #FFFFFF;
+		}
+	}
+}
+.container{
+	width: 100%;
+	margin-top: 50px;
+	min-height: 300px;
+	float: left;
+	display: inline-block;
+
+	.head{
+		width: 60%;
+		padding: 0% 20%;
+		float: left;
+		display: inline-block;
+		background: #34495e;
+
+		.head-title{
+			width: 100%;
+			padding: 3% 0%;
+			float: left;
+			display: inline-block;
+			font-size: 2.5em;
+			color: #FFFFFF;
+		}
+
+		.tab{
+			width: 100%;
+			float: left;
+			display: inline-block;
+
+			.tab-items{
+				padding: 15px;
+				color: #EEEEEE;
+				float: left;
+				display: inline-block;
+				border-bottom: 2px solid transparent;
+				margin-right: 1%;
+
+				&:hover{
+					cursor: pointer;
+					color: #FFFFFF;
+					border-bottom: 2px solid #E91E63;
+				}
+
+				i{
+					margin-left: 10px;
+				}
+			}
+
+			.tab-items-active{
+				color: #FFFFFF;
+				border-bottom: 2px solid #E91E63;
+			}
+
+			.items-right{
+				float: right;
+				margin-right: 0%;
+				margin-left: 1%;
+			}
+		}
+	}
+
+	// Listall user style page.
+	.topic-fix{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		border-bottom: 1px solid #EEEEEE;
+
+		.user-topic-fix{
+			width: 60%;
+			padding: 2% 20%;
+			float: left;
+			display: inline-block;
+			background: #FFFFFF;
+			color: #AAAAAA;
+			font-size: 0.8em;
+			.info{
+				width: 35%;
+				float: left;
+				display: inline-block;
+			}
+			.online{
+				width: 25%;
+				float: left;
+				display: inline-block;
+				text-align: center;
+			}
+			.time{
+				width: 25%;
+				float: left;
+				display: inline-block;
+			}
+			.status{
+				width: 15%;
+				float: left;
+				display: inline-block;
+				text-align: center;
+			}
+		}
+	}
+		
+
+	.list{
+		width: 100%;
+		float: left;
+		display: inline-block;
+
+		.user-items{
+			width: 60%;
+			padding: 1% 0%;
+			margin: 0% 20%;
+			float: left;
+			display: inline-block;
+			border-bottom: 1px solid #EEEEEE;
+
+			.avatar{
+				width: 4%;
+				float: left;
+				display: inline-block;
+				margin-right: 2%;
+
+				img{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					border-radius: 50%;
+				}
+			}
+			.info{
+				width: 29%;
+				float: left;
+				display: inline-block;
+				line-height: 1.2em;
+				padding-top: 0.3%;
+
+				.name{
+					color: #E91E63;
+				}
+				.position{
+					font-size: 0.8em;
+				}
+			}
+			.online{
+				width: 25%;
+				float: left;
+				display: inline-block;
+				text-align: center;
+				font-size: 0.9em;
+				padding-top: 1%;
+				line-height: 1.7em;
+
+				i{
+					margin-left: 5px;
+					font-size: 0.8em;
+				}
+			}
+			.time{
+				width: 25%;
+				float: left;
+				display: inline-block;
+				font-size: 0.9em;
+				padding-top: 1%;
+				line-height: 1.7em;
+			}
+			.status{
+				width: 15%;
+				float: right;
+				display: inline-block;
+				text-align: center;
+				font-size: 0.9em;
+				padding-top: 1%;
+				line-height: 1.7em;
+
+				i{
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+
+	.content{
+		width: 70%;
+		padding: 0% 15%;
+		float: left;
+		display: inline-block;
+	}
+
+	.main-menu{
+		width: 70%;
+		padding: 0% 15%;
+		float: left;
+		display: inline-block;
+
+		.menu-items{
+			width: 31.33%;
+			padding: 4% 0%;
+            margin-top: 3%;
+            margin-right: 3%;
+            float: left;
+            text-align: center;
+            background: #FFFFFF;
+            border-radius: 3px;
+
+            &:nth-child(3n){
+                margin-right: 0%;
+                float: right;
+            }
+
+
+			.icon{
+				font-size: 3em;
+				line-height: 1.5em;
+			}
+			.title{
+				font-size: 1em;
+				line-height: 2em;
+			}
+			.tag{
+				font-size: 0.7em;
+				line-height: 1.5em;
+				background: #DDDDDD;
+				display: inline-block;
+				padding: 0px 5px;
+				border-radius: 5px;
+				font-weight: bold;
+			}
+		}
+	}
+}
+.footer{
+	width: 70%;
+	padding: 3% 15%;
+	margin-top: 3%;
+	float: left;
+	display: inline-block;
+	background: #F7F7F7;
+	text-align: center;
+
+	p{
+		font-size: 0.9em;
+		line-height: 1.5em;
+	}
+	p.mini{
+		font-size: 0.8em;
+	}
+}
+
+/* Other Device and Screen */
+@media only screen and (min-width:1024px) and (max-width:1365px){@import "style-1024-1366";}
+@media only screen and (min-width:760px) and (max-width:1023px){@import "style-760-1023";}
+@media only screen and (min-width:520px) and (max-width:759px){@import "style-520-759";}
+@media only screen and (min-width:0px) and (max-width :519px){@import "style-0-519";}
