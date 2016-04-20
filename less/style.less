@@ -4,8 +4,8 @@
 	position: fixed;
 	top: 0%;
 	left: 0%;
-	width: 60%;
-	padding: 0% 20%;
+	width: 50%;
+	padding: 0% 25%;
 	height: 50px;
 	float: left;
 	display: inline-block;
@@ -53,8 +53,8 @@
 	display: inline-block;
 
 	.head{
-		width: 60%;
-		padding: 0% 20%;
+		width: 50%;
+		padding: 0% 25%;
 		float: left;
 		display: inline-block;
 		background: #34495e;
@@ -101,6 +101,70 @@
 				float: right;
 				margin-right: 0%;
 				margin-left: 1%;
+			}
+		}
+	}
+
+	.form-container{
+		width: 50%;
+		padding: 0% 25%;
+		float: left;
+		display: inline-block;
+		background: #FFFFFF;
+		margin-top: 3%;
+
+		h3{
+			color: #CCCCCC;
+			font-size: 2em;
+			font-weight: normal;
+		}
+
+		.form-items{
+			width: 100%;
+			float: left;
+			display: inline-block;
+			margin-top: 3%;
+
+			.caption{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				font-size: 0.9em;
+				line-height: 1.5em;
+				color: #CCCCCC;
+			}
+
+			.input{
+				width: 100%;
+				float: left;
+				display: inline-block;
+
+				.input-text{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					font-family: @FontStylePrimary;
+					font-size: 1em;
+					line-height: 1.5em;
+					border: 0px;
+					border-bottom: 1px solid #CCCCCC;
+					color: #555555;
+				}
+			}
+		}
+
+		.submit-btn{
+			float: right;
+			margin-top: 3%;
+			padding: 5px;
+			font-size: 0.9em;
+			line-height: 1.5em;
+			background: #000000;
+			color: #FFFFFF;
+
+			&:hover{
+				cursor: pointer;
+				opacity: 0.8;
 			}
 		}
 	}

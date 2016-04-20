@@ -1,4 +1,10 @@
-<?php include'config/autoload.php';?>
+<?php
+include'config/autoload.php';
+
+if(!empty($_GET['id'])){
+	$user->getUser($_GET['id']);
+}
+?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>
@@ -16,7 +22,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
-<title>USER</title>
+<title>USER EDITOR</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -24,6 +30,7 @@
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/user.service.js"></script>
 
 </head>
 <body>
@@ -45,18 +52,38 @@
 		</div>
 	</div>
 
-	<!-- Table -->
-	<div class="topic-fix">
-		<div class="user-topic-fix">
-			<div class="info">NAME/POSITION</div>
-			<div class="online">ONLINE</div>
-			<div class="time">LAST LOGIN</div>
-			<div class="status">STATUS</div>
+	<div class="form-container">
+		<h3>USER</h3>
+		<div class="form-items">
+			<div class="caption">รหัสพนักงาน</div>
+			<div class="input">
+				<input class="input-text" type="text" id="code" value="<?php echo $user->code;?>">
+			</div>
 		</div>
-	</div>
-	
-	<div class="list">
-		<?php echo $user->listAllUser(array('type' => 'user-items'));?>
+		<div class="form-items">
+			<div class="caption">ชื่อจริง</div>
+			<div class="input">
+				<input class="input-text" type="text" id="fname" value="<?php echo $user->fname;?>">
+			</div>
+		</div>
+		<div class="form-items">
+			<div class="caption">นามสกุล</div>
+			<div class="input">
+				<input class="input-text" type="text" id="lname" value="<?php echo $user->lname;?>">
+			</div>
+		</div>
+		<div class="form-items">
+			<div class="caption">รหัสผ่าน</div>
+			<div class="input">
+				<input class="input-text" type="text" id="password" value="<?php echo $user->password;?>">
+			</div>
+		</div>
+
+		<?php if(empty($user->id)){?>
+		<div class="submit-btn" onclick="javascript:register();">Register</div>
+		<?php }else{?>
+		<div class="submit-btn" onclick="javascript:edit(<?php echo $user->id;?>);">SAVE</div>
+		<?php }?>
 	</div>
 </div>
 <footer class="footer">

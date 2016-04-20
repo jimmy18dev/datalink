@@ -1,4 +1,10 @@
-<?php include'config/autoload.php';?>
+<?php
+include'config/autoload.php';
+
+if(!empty($_GET['id'])){
+	$remark->getRemark($_GET['id']);
+}
+?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>
@@ -16,7 +22,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
-<title>DATA LINK</title>
+<title>Editor : General Remark</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -24,27 +30,44 @@
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/remark.service.js"></script>
 
 </head>
 <body>
 <header class="header">
 	<div class="logo">RONDA THAILAND</div>
 	<div class="profile">
-		<img src="image/avatar.png" alt="">
+		<div class="name">Puwadon</div><img src="image/avatar.png" alt="">
 	</div>
 </header>
 <div class="container">
 	<div class="head">
-		<h1>Web Design Inspiration</h1>
-		<p>Ideas & Inspirations for Web Designers | We find the best web designs all over the world Responsive design for largest screens</p>
-
+		<div class="head-title">General Remark</div>
 		<div class="tab">
-			<div class="tab-items">Tab 1</div>
+			<div class="tab-items tab-items-active">Tab 1</div>
 			<div class="tab-items">Tab 2</div>
 			<div class="tab-items">Tab 3</div>
 			<div class="tab-items">Tab 4</div>
-			<div class="tab-items tab-items-active">Tab 5</div>
+			<div class="tab-items items-right">Register<i class="fa fa-angle-right"></i></div>
 		</div>
+	</div>
+
+	<div class="form-container">
+		<h3>General Remark</h3>
+		<div class="form-items">
+			<div class="caption">Description</div>
+			<div class="input">
+				<input class="input-text" type="text" id="description" value="<?php echo $remark->description;?>">
+			</div>
+		</div>
+
+		<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
+
+		<?php if(empty($remark->id)){?>
+		<div class="submit-btn" onclick="javascript:create();">Register</div>
+		<?php }else{?>
+		<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE</div>
+		<?php }?>
 	</div>
 </div>
 <footer class="footer">

@@ -16,7 +16,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
-<title>DATA LINK</title>
+<title>LOGIN</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -24,6 +24,7 @@
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/user.service.js"></script>
 
 </head>
 <body>
@@ -45,6 +46,14 @@
 			<div class="tab-items">Tab 4</div>
 			<div class="tab-items tab-items-active">Tab 5</div>
 		</div>
+	</div>
+
+	<div class="login-container">
+		<p>UserOnline : <?php echo $user_online;?></p>
+		<p>Cookie: <?php echo $_COOKIE['user_id'];?>, Session: <?php echo $_SESSION['user_id'];?></p>
+		<p>LOGIN TO SYSTEM</p>
+		<input type="text" placeholder="Password" id="password">
+		<div class="login-btn" onclick="login();">LOGIN</div>
 	</div>
 </div>
 <footer class="footer">

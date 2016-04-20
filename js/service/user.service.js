@@ -1,80 +1,23 @@
-function login(){
-    var href        = 'api.people.php';
-    var email       = $('#email').val();
-    var password    = $('#password').val();
-    var signature   = $('#signature').val();
-    var redirect    = $('#redirect').val();
-
-    if(email == ""){
-        showAlert('คุณยังไม่ได้กรอกอีเมล');
-        return false;
-    }
-    else if(password == ""){
-        showAlert('กรุณากรอกรหัสผ่านให้ถูกต้อง');
-        return false;
-    }
-
-    $('#login-status').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังเข้าสู่ระบบ...');
-
-    $.ajax({
-        url         :href,
-        cache       :false,
-        dataType    :"json",
-        type        :"POST",
-        data:{
-            calling             :'people',
-            action              :'login',
-            email: email,
-            password: password,
-            signature: signature,
-        },
-        error: function (request, status, error) {
-            console.log("Request Error");
-        }
-    }).done(function(data){
-        console.log('callback: '+data.return+','+data.message);
-
-        if(data.return){
-            $('#dialog-message').html('กำลังเข้าสู่ระบบ...');
-            $('#dialog-box').fadeIn(300);
-
-            if(redirect == 'editor'){
-                window.location = 'editor.php?';
-            }else if(redirect){
-                window.location = 'case-'+redirect+'.html';
-            }else{
-                window.location = 'index.php';
-            }
-        }
-        else{
-            showAlert('อีเมลหรือรหัสผ่านของคุณไม่ถูกต้อง!');
-            $('#login-status').html('เข้าสู่ระบบ');
-            return false;
-        }
-    }).error();
-}
-
 function register(){
-    var href        = 'api.people.php';
+    var href        = 'api.user.php';
 
-    var email       = $('#email').val();
-    var name        = $('#name').val();
+    var code        = $('#code').val();
+    var fname       = $('#fname').val();
+    var lname       = $('#lname').val();
     var password    = $('#password').val();
-    var signature   = $('#signature').val();
-    var redirect    = $('#redirect').val();
 
-    if(email == ""){
-        showAlert('กรุณากรอกอีเมลของคุณด้วยค่ะ');
-        return false;
-    }
-    else if(name == ""){
-        showAlert('กรุณากรอกชื่อและนามสุกลของคุณด้วยค่ะ');
-        return false;
-    }
-    else if(password == ""){
-        showAlert('กรุณากรอกรหัสผ่านด้วยค่ะ');
-        return false;
-    }
+    // if(email == ""){
+    //     showAlert('กรุณากรอกอีเมลของคุณด้วยค่ะ');
+    //     return false;
+    // }
+    // else if(name == ""){
+    //     showAlert('กรุณากรอกชื่อและนามสุกลของคุณด้วยค่ะ');
+    //     return false;
+    // }
+    // else if(password == ""){
+    //     showAlert('กรุณากรอกรหัสผ่านด้วยค่ะ');
+    //     return false;
+    // }
 
     $('#login-status').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังสมัครสมาชิก...');
 
@@ -84,12 +27,12 @@ function register(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'people',
+            calling             :'user',
             action              :'register',
-            name: name,
-            email: email,
-            password: password,
-            signature: signature,
+            code:code,
+            fname:fname,
+            lname:lname,
+            password:password,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -97,22 +40,131 @@ function register(){
     }).done(function(data){
         console.log('Return: '+data.message);
 
-        if(data.return){
-            $('#dialog-message').html('กำลังสมัครสมาชิกใหม่...');
-            $('#dialog-box').fadeIn(300);
+        // if(data.return){
+        //     $('#dialog-message').html('กำลังสมัครสมาชิกใหม่...');
+        //     $('#dialog-box').fadeIn(300);
 
-            if(redirect == 'editor'){
-                window.location = 'editor.php?';
-            }else if(redirect){
-                window.location = 'case-'+redirect+'.html';
-            }else{
-                window.location = 'profile.php';
-            }
+        //     if(redirect == 'editor'){
+        //         window.location = 'editor.php?';
+        //     }else if(redirect){
+        //         window.location = 'case-'+redirect+'.html';
+        //     }else{
+        //         window.location = 'profile.php';
+        //     }
+        // }
+        // else{
+        //     $('#status-message').html('อีเมลนี้ถูกใช้แล้ว!').slideDown(500).delay(3000).slideUp(300);
+        //     $('#login-status').html('สมัครสมาชิก');
+        // }
+    }).error();
+}
+
+// Update user information
+function edit(id){
+    var href        = 'api.user.php';
+
+    var code        = $('#code').val();
+    var fname       = $('#fname').val();
+    var lname       = $('#lname').val();
+    var password    = $('#password').val();
+
+    // if(email == ""){
+    //     showAlert('กรุณากรอกอีเมลของคุณด้วยค่ะ');
+    //     return false;
+    // }
+    // else if(name == ""){
+    //     showAlert('กรุณากรอกชื่อและนามสุกลของคุณด้วยค่ะ');
+    //     return false;
+    // }
+    // else if(password == ""){
+    //     showAlert('กรุณากรอกรหัสผ่านด้วยค่ะ');
+    //     return false;
+    // }
+
+    $('#login-status').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังสมัครสมาชิก...');
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'user',
+            action              :'edit',
+            id:id,
+            code:code,
+            fname:fname,
+            lname:lname,
+            password:password,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
         }
-        else{
-            $('#status-message').html('อีเมลนี้ถูกใช้แล้ว!').slideDown(500).delay(3000).slideUp(300);
-            $('#login-status').html('สมัครสมาชิก');
+    }).done(function(data){
+        console.log('Return: '+data.message);
+
+        // if(data.return){
+        //     $('#dialog-message').html('กำลังสมัครสมาชิกใหม่...');
+        //     $('#dialog-box').fadeIn(300);
+
+        //     if(redirect == 'editor'){
+        //         window.location = 'editor.php?';
+        //     }else if(redirect){
+        //         window.location = 'case-'+redirect+'.html';
+        //     }else{
+        //         window.location = 'profile.php';
+        //     }
+        // }
+        // else{
+        //     $('#status-message').html('อีเมลนี้ถูกใช้แล้ว!').slideDown(500).delay(3000).slideUp(300);
+        //     $('#login-status').html('สมัครสมาชิก');
+        // }
+    }).error();
+}
+
+
+
+
+
+function login(){
+    var href        = 'api.user.php';
+    var password       = $('#password').val();
+
+    $('#login-status').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังเข้าสู่ระบบ...');
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'user',
+            action              :'login',
+            password: password,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
         }
+    }).done(function(data){
+        console.log('callback: '+data.return+','+data.message);
+
+        // if(data.return){
+        //     $('#dialog-message').html('กำลังเข้าสู่ระบบ...');
+        //     $('#dialog-box').fadeIn(300);
+
+        //     if(redirect == 'editor'){
+        //         window.location = 'editor.php?';
+        //     }else if(redirect){
+        //         window.location = 'case-'+redirect+'.html';
+        //     }else{
+        //         window.location = 'index.php';
+        //     }
+        // }
+        // else{
+        //     showAlert('อีเมลหรือรหัสผ่านของคุณไม่ถูกต้อง!');
+        //     $('#login-status').html('เข้าสู่ระบบ');
+        //     return false;
+        // }
     }).error();
 }
 

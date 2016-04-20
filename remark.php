@@ -16,7 +16,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
-<title>DATA LINK</title>
+<title>General Remark</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -45,6 +45,10 @@
 			<div class="tab-items">Tab 4</div>
 			<div class="tab-items tab-items-active">Tab 5</div>
 		</div>
+	</div>
+
+	<div class="list">
+		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
 	</div>
 </div>
 <footer class="footer">

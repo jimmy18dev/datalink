@@ -25,8 +25,8 @@ body {
   position: fixed;
   top: 0%;
   left: 0%;
-  width: 60%;
-  padding: 0% 20%;
+  width: 50%;
+  padding: 0% 25%;
   height: 50px;
   float: left;
   display: inline-block;
@@ -71,8 +71,8 @@ body {
   display: inline-block;
 }
 .container .head {
-  width: 60%;
-  padding: 0% 20%;
+  width: 50%;
+  padding: 0% 25%;
   float: left;
   display: inline-block;
   background: #34495e;
@@ -114,6 +114,62 @@ body {
   float: right;
   margin-right: 0%;
   margin-left: 1%;
+}
+.container .form-container {
+  width: 50%;
+  padding: 0% 25%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  margin-top: 3%;
+}
+.container .form-container h3 {
+  color: #CCCCCC;
+  font-size: 2em;
+  font-weight: normal;
+}
+.container .form-container .form-items {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 3%;
+}
+.container .form-container .form-items .caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  color: #CCCCCC;
+}
+.container .form-container .form-items .input {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .form-items .input .input-text {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif, 'Open Sans';
+  font-size: 1em;
+  line-height: 1.5em;
+  border: 0px;
+  border-bottom: 1px solid #CCCCCC;
+  color: #555555;
+}
+.container .form-container .submit-btn {
+  float: right;
+  margin-top: 3%;
+  padding: 5px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  background: #000000;
+  color: #FFFFFF;
+}
+.container .form-container .submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 .container .topic-fix {
   width: 100%;

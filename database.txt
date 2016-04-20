@@ -1,5 +1,12 @@
 RTH_Device
 RTH_SectionName
+- id
+- cc
+- name
+- create_time
+- update_time
+- type
+- status
 RTH_SectionFunction
 RTH_DailyOutputHeader
 RTH_DailyOutputDetail
@@ -29,4 +36,19 @@ RTH_CaliberCode
 - type
 - status
 RTH_GeneralRemark
+- id
+- category_id
+- description
+- create_time
+- update_time
+- type
+- status
 RTH_StandardTime
+- id
+- caliber_id
+- hrs
+- remark
+- create_time
+- update_time
+- type
+- status
