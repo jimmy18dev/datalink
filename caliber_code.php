@@ -16,7 +16,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
-<title>Caliber Code</title>
+<title>Operation Recipe</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -47,7 +47,7 @@
 		</div>
 	</div>
 	<div class="list">
-		<?php $caliber->listAllCaliber(array('type' => 'caliber-items'));?>
+		<?php $caliber->listAllOperationRecipe($_GET['id'],array('type' => 'operation-items'));?>
 	</div>
 </div>
 <footer class="footer">

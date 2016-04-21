@@ -46,6 +46,26 @@
 			<div class="tab-items tab-items-active">Tab 5</div>
 		</div>
 	</div>
+
+	<div class="menu-function">
+		<div class="section">
+			<h3>ADMINISTRATOR</h3>
+			<div class="menu-container">
+				<div class="menu-items">
+					<div class="caption">User</div>
+					<div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+				</div>
+				<div class="menu-items">
+					<div class="caption">Caliber Code</div>
+					<div class="icon"><i class="fa fa-barcode" aria-hidden="true"></i></div>
+				</div>
+				<div class="menu-items">
+					<div class="caption">General Remark</div>
+					<div class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <footer class="footer">
 	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>

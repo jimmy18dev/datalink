@@ -1,0 +1,1 @@
+<div class="operation-items"><?php echo $var['name'];?> <a href="operation_editor.php?operation_id=<?php echo $var['id'];?>">[แก้ไข]</a></div>

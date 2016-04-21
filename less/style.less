@@ -9,7 +9,7 @@
 	height: 50px;
 	float: left;
 	display: inline-block;
-	background: #34495e;
+	background: #003399;
 
 	.logo{
 		float: left;
@@ -18,7 +18,7 @@
 		font-size: 1em;
 		height: 20px;
 		padding: 15px 0px;
-		color: #AAAAAA;
+		color: #CCCCFF;
 	}
 	.profile{
 		float: right;
@@ -45,6 +45,86 @@
 		}
 	}
 }
+
+.login-container{
+	width: 30%;
+	margin: 0% 35%;
+	float: left;
+	display: inline-block;
+	margin-top: 15%;
+	text-align: center;
+
+	.logo{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+		font-size: 3em;
+		color: #000000;
+	}
+
+	p{
+		font-size: 1em;
+		line-height: 1.5em;
+		color: #999999;
+	}
+
+	.input{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		margin-top: 20%;
+
+		.input-text{
+			width: 85%;
+			padding: 1% 0%;
+			float: left;
+			display: inline-block;
+			font-family: @FontStylePrimary;
+			font-size: 2em;
+			line-height: 1.5em;
+			border: 0px;
+			border-bottom: 1px solid #EEEEEE;
+			text-align: center;
+			color: #003399;
+
+			&:focus{
+				border-bottom: 1px solid #999999;
+			}
+		}
+
+		.login-btn{
+			width: 15%;
+			padding: 1% 0%;
+			float: left;
+			display: inline-block;
+			font-family: @FontStylePrimary;
+			font-size: 2em;
+			line-height: 1.5em;
+			border: 0px;
+			border-bottom: 1px solid #EEEEEE;
+			text-align: center;
+			color: #003399;
+
+			&:hover{
+				cursor: pointer;
+				background: #FAFAFA;
+			}
+		}
+	}
+}
+.version-bar{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 1% 0%;
+	float: left;
+	display: inline-block;
+	text-align: center;
+	color: #EEEEEE;
+	font-size: 0.8em;
+}
 .container{
 	width: 100%;
 	margin-top: 50px;
@@ -57,7 +137,7 @@
 		padding: 0% 25%;
 		float: left;
 		display: inline-block;
-		background: #34495e;
+		background: #003399;
 
 		.head-title{
 			width: 100%;
@@ -101,6 +181,55 @@
 				float: right;
 				margin-right: 0%;
 				margin-left: 1%;
+			}
+		}
+	}
+
+	.menu-function{
+		width: 50%;
+		padding: 0% 25%;
+		float: left;
+		display: inline-block;
+		background: #FFFFFF;
+		margin-top: 3%;
+
+		.section{
+			width: 100%;
+			float: left;
+			display: inline-block;
+
+			h3{
+				font-size: 1.5em;
+				color: #CCCCCC;
+				font-weight: normal;
+			}
+
+			.menu-container{
+				width: 100%;
+				float: left;
+				display: inline-block;
+
+				.menu-items{
+					width: 31.33%;
+		            margin-bottom: 3%;
+		            margin-right: 3%;
+		            float: left;
+		            display: inline-block;
+		            text-align: center;
+
+		            &:nth-child(3n){
+		                margin-right: 0%;
+		                float: right;
+		            }
+
+					.caption{
+						font-size: 1em;
+						line-height: 1.5em;
+					}
+					.icon{
+						font-size: 2em;
+					}
+				}
 			}
 		}
 	}

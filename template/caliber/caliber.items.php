@@ -1,0 +1,1 @@
+<div class="caliber-items"><a href="caliber_code.php?id=<?php echo $var['id'];?>"><?php echo $var['code'].' '.$var['name'];?></a> <a href="caliber_editor.php?id=<?php echo $var['id'];?>">[edit]</a></div>

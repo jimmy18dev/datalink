@@ -28,37 +28,18 @@
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<img src="image/avatar.png" alt="">
-	</div>
-</header>
-<div class="container">
-	<div class="head">
-		<h1>Web Design Inspiration</h1>
-		<p>Ideas & Inspirations for Web Designers | We find the best web designs all over the world Responsive design for largest screens</p>
-
-		<div class="tab">
-			<div class="tab-items">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items tab-items-active">Tab 5</div>
-		</div>
+<div class="login-container">
+	<div class="logo">DATALINK</div>
+	<p>Version 1.0</p>
+	<div class="input">
+		<input type="password" class="input-text" placeholder="Enter your password..." id="password">
+		<div class="login-btn" onclick="login();"><i class="fa fa-arrow-right"></i></div>
 	</div>
 
-	<div class="login-container">
-		<p>UserOnline : <?php echo $user_online;?></p>
-		<p>Cookie: <?php echo $_COOKIE['user_id'];?>, Session: <?php echo $_SESSION['user_id'];?></p>
-		<p>LOGIN TO SYSTEM</p>
-		<input type="text" placeholder="Password" id="password">
-		<div class="login-btn" onclick="login();">LOGIN</div>
-	</div>
+	<p>UserOnline : <?php echo $user_online;?></p>
+	<p>Cookie: <?php echo $_COOKIE['user_id'];?>, Session: <?php echo $_SESSION['user_id'];?></p>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
+
+<div class="version-bar">Development by Puwadon Sricharoen | Ronda Thailand</div>
 </body>
 </html>

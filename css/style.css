@@ -30,7 +30,7 @@ body {
   height: 50px;
   float: left;
   display: inline-block;
-  background: #34495e;
+  background: #003399;
 }
 .header .logo {
   float: left;
@@ -39,7 +39,7 @@ body {
   font-size: 1em;
   height: 20px;
   padding: 15px 0px;
-  color: #AAAAAA;
+  color: #CCCCFF;
 }
 .header .profile {
   float: right;
@@ -63,6 +63,78 @@ body {
   font-size: 0.9em;
   color: #FFFFFF;
 }
+.login-container {
+  width: 30%;
+  margin: 0% 35%;
+  float: left;
+  display: inline-block;
+  margin-top: 15%;
+  text-align: center;
+}
+.login-container .logo {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 3em;
+  color: #000000;
+}
+.login-container p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #999999;
+}
+.login-container .input {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 20%;
+}
+.login-container .input .input-text {
+  width: 85%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif, 'Open Sans';
+  font-size: 2em;
+  line-height: 1.5em;
+  border: 0px;
+  border-bottom: 1px solid #EEEEEE;
+  text-align: center;
+  color: #003399;
+}
+.login-container .input .input-text:focus {
+  border-bottom: 1px solid #999999;
+}
+.login-container .input .login-btn {
+  width: 15%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif, 'Open Sans';
+  font-size: 2em;
+  line-height: 1.5em;
+  border: 0px;
+  border-bottom: 1px solid #EEEEEE;
+  text-align: center;
+  color: #003399;
+}
+.login-container .input .login-btn:hover {
+  cursor: pointer;
+  background: #FAFAFA;
+}
+.version-bar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  color: #EEEEEE;
+  font-size: 0.8em;
+}
 .container {
   width: 100%;
   margin-top: 50px;
@@ -75,7 +147,7 @@ body {
   padding: 0% 25%;
   float: left;
   display: inline-block;
-  background: #34495e;
+  background: #003399;
 }
 .container .head .head-title {
   width: 100%;
@@ -114,6 +186,47 @@ body {
   float: right;
   margin-right: 0%;
   margin-left: 1%;
+}
+.container .menu-function {
+  width: 50%;
+  padding: 0% 25%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  margin-top: 3%;
+}
+.container .menu-function .section {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .menu-function .section h3 {
+  font-size: 1.5em;
+  color: #CCCCCC;
+  font-weight: normal;
+}
+.container .menu-function .section .menu-container {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .menu-function .section .menu-container .menu-items {
+  width: 31.33%;
+  margin-bottom: 3%;
+  margin-right: 3%;
+  float: left;
+  display: inline-block;
+}
+.container .menu-function .section .menu-container .menu-items:nth-child(3n) {
+  margin-right: 0%;
+  float: right;
+}
+.container .menu-function .section .menu-container .menu-items .caption {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.container .menu-function .section .menu-container .menu-items .icon {
+  font-size: 2em;
 }
 .container .form-container {
   width: 50%;

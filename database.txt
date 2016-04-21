@@ -25,6 +25,14 @@ RTH_User
 - status
 
 RTH_OperationRecipe
+- id
+- route_id
+- route_name
+- name
+- create_time
+- update_time
+- type
+- status
 RTH_CaliberCode
 - id
 - code
