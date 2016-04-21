@@ -33,7 +33,7 @@ class CaliberModel extends Database{
 		return $dataset = parent::single();
 	}
 	public function listall(){
-		parent::query('SELECT * FROM RTH_CaliberCode');
+		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,(SELECT COUNT(id) FROM RTH_OperationRecipe WHERE caliber_id = caliber.id) total_operation FROM RTH_CaliberCode AS caliber LEFT JOIN RTH_StandardTime AS standard ON caliber.id = standard.caliber_id');
 		parent::execute();
 		return $dataset = parent::resultset();
 	}

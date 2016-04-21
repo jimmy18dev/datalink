@@ -100,7 +100,7 @@ class CaliberController extends CaliberModel{
             }
 
             if($total_items == 0){
-            	// include'template/article/article.empty.items.php';
+            	include'template/empty.items.php';
             }
         }
 

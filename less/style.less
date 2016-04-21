@@ -9,7 +9,7 @@
 	height: 50px;
 	float: left;
 	display: inline-block;
-	background: #003399;
+	background: #FFFFFF;
 
 	.logo{
 		float: left;
@@ -18,7 +18,20 @@
 		font-size: 1em;
 		height: 20px;
 		padding: 15px 0px;
-		color: #CCCCFF;
+		color: #003399;
+	}
+	.navibar{
+		float: left;
+		display: inline-block;
+		font-size: 0.8em;
+		height: 18px;
+		padding: 16px 0px;
+		color: #003399;
+		margin-left: 10px;
+
+		i{
+			margin-right: 5px;
+		}
 	}
 	.profile{
 		float: right;
@@ -125,10 +138,12 @@
 	color: #EEEEEE;
 	font-size: 0.8em;
 }
+
+
 .container{
 	width: 100%;
 	margin-top: 50px;
-	min-height: 300px;
+	min-height: 500px;
 	float: left;
 	display: inline-block;
 
@@ -137,16 +152,18 @@
 		padding: 0% 25%;
 		float: left;
 		display: inline-block;
-		background: #003399;
+		background: #FFFFFF;
+		border-bottom: 1px solid #EEEEEE;
 
 		.head-title{
 			width: 100%;
 			padding: 3% 0%;
 			float: left;
 			display: inline-block;
-			font-size: 2.5em;
-			color: #FFFFFF;
+			font-size: 3em;
+			color: #000000;
 		}
+
 
 		.tab{
 			width: 100%;
@@ -154,33 +171,35 @@
 			display: inline-block;
 
 			.tab-items{
-				padding: 15px;
-				color: #EEEEEE;
+				padding: 2% 0%;
+				color: #999999;
 				float: left;
 				display: inline-block;
-				border-bottom: 2px solid transparent;
-				margin-right: 1%;
+				margin-right: 3%;
+				margin-bottom: -1px;
+				border-bottom: 1px solid transparent;
+				font-size: 0.9em;
 
 				&:hover{
 					cursor: pointer;
-					color: #FFFFFF;
-					border-bottom: 2px solid #E91E63;
+					color: #003399;
+					border-bottom: 1px solid #003399;
 				}
 
 				i{
-					margin-left: 10px;
+					margin-left: 5px;
 				}
 			}
 
 			.tab-items-active{
-				color: #FFFFFF;
-				border-bottom: 2px solid #E91E63;
+				color: #003399;
+				border-bottom: 1px solid #003399;
 			}
 
 			.items-right{
 				float: right;
 				margin-right: 0%;
-				margin-left: 1%;
+				margin-left: 3%;
 			}
 		}
 	}
@@ -199,9 +218,16 @@
 			display: inline-block;
 
 			h3{
+				width: 100%;
+				float: left;
+				display: inline-block;
 				font-size: 1.5em;
 				color: #CCCCCC;
 				font-weight: normal;
+				line-height: 1.5em;
+				border-bottom: 1px solid #EEEEEE;
+				padding-bottom: 2%;
+				margin-bottom: 3%;
 			}
 
 			.menu-container{
@@ -213,9 +239,12 @@
 					width: 31.33%;
 		            margin-bottom: 3%;
 		            margin-right: 3%;
+		            padding: 5% 0%;
 		            float: left;
 		            display: inline-block;
 		            text-align: center;
+		            background: #FAFAFA;
+		            border-radius: 3px;
 
 		            &:nth-child(3n){
 		                margin-right: 0%;
@@ -225,9 +254,10 @@
 					.caption{
 						font-size: 1em;
 						line-height: 1.5em;
+						margin-bottom: 3%;
 					}
 					.icon{
-						font-size: 2em;
+						font-size: 3em;
 					}
 				}
 			}
@@ -252,19 +282,21 @@
 			width: 100%;
 			float: left;
 			display: inline-block;
-			margin-top: 3%;
+			margin-top: 5%;
 
 			.caption{
-				width: 100%;
+				width: 20%;
+				padding: 0% 5%;
 				float: left;
 				display: inline-block;
-				font-size: 0.9em;
+				font-size: 1em;
 				line-height: 1.5em;
 				color: #CCCCCC;
+				text-align: right;
 			}
 
 			.input{
-				width: 100%;
+				width: 70%;
 				float: left;
 				display: inline-block;
 
@@ -285,11 +317,12 @@
 		.submit-btn{
 			float: right;
 			margin-top: 3%;
-			padding: 5px;
+			padding: 10px 15px;
 			font-size: 0.9em;
 			line-height: 1.5em;
-			background: #000000;
+			background: #003399;
 			color: #FFFFFF;
+			border-radius: 3px;
 
 			&:hover{
 				cursor: pointer;
@@ -304,6 +337,67 @@
 		float: left;
 		display: inline-block;
 		border-bottom: 1px solid #EEEEEE;
+
+		.operation-topic-fix{
+			width: 50%;
+			padding: 1% 25%;
+			float: left;
+			display: inline-block;
+			background: #FAFAFA;
+			color: #AAAAAA;
+			font-size: 0.8em;
+
+			.col1{
+				width: 25%;
+				float: left;
+				display: inline-block;
+			}
+			.col2{
+				width: 25%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+			.col3{
+				width: 25%;
+				float: left;
+				display: inline-block;
+			}
+			.col4{
+				width: 25%;
+				float: left;
+				display: inline-block;
+				padding: 0% 5%;
+			}
+		}
+
+		.caliber-topic-fix{
+			width: 50%;
+			padding: 1% 25%;
+			float: left;
+			display: inline-block;
+			background: #FAFAFA;
+			color: #AAAAAA;
+			font-size: 0.8em;
+
+			.col1{
+				width: 25%;
+				float: left;
+				display: inline-block;
+			}
+			.col2{
+				width: 15%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+			.col3{
+				width: 50%;
+				float: left;
+				display: inline-block;
+				padding: 0% 5%;
+			}
+		}
 
 		.user-topic-fix{
 			width: 60%;
@@ -340,9 +434,55 @@
 		
 
 	.list{
-		width: 100%;
+		width: 50%;
+		margin: 0% 25%;
 		float: left;
 		display: inline-block;
+
+		.empty-items{
+			width: 100%;
+			padding: 20% 0%;
+			float: left;
+			display: inline-block;
+			font-size: 1em;
+			color: #CCCCCC;
+			text-align: center;
+		}
+
+		.caliber-items{
+			width: 100%;
+			padding: 0.5% 0%;
+			float: left;
+			display: inline-block;
+			border-bottom: 1px solid #EEEEEE;
+			font-size: 0.9em;
+			line-height: 1.5em;
+
+			.col1{
+				width: 25%;
+				float: left;
+				display: inline-block;
+
+				a{
+					color: #000000;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+			.col2{
+				width: 15%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+			.col3{
+				width: 50%;
+				float: left;
+				display: inline-block;
+				padding: 0% 5%;
+			}
+		}
 
 		.user-items{
 			width: 60%;

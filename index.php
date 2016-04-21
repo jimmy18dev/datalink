@@ -27,49 +27,22 @@
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<h1>Web Design Inspiration</h1>
-		<p>Ideas & Inspirations for Web Designers | We find the best web designs all over the world Responsive design for largest screens</p>
-
-		<div class="tab">
-			<div class="tab-items">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items tab-items-active">Tab 5</div>
-		</div>
+		<h1>All Function</h1>
 	</div>
 
 	<div class="menu-function">
 		<div class="section">
 			<h3>ADMINISTRATOR</h3>
 			<div class="menu-container">
-				<div class="menu-items">
-					<div class="caption">User</div>
-					<div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-				</div>
-				<div class="menu-items">
-					<div class="caption">Caliber Code</div>
-					<div class="icon"><i class="fa fa-barcode" aria-hidden="true"></i></div>
-				</div>
-				<div class="menu-items">
-					<div class="caption">General Remark</div>
-					<div class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></div>
-				</div>
+				<a href="user.php" class="menu-items"><i class="fa fa-user" aria-hidden="true"></i> User</a>
+				<a href="caliber.php" class="menu-items"><i class="fa fa-barcode" aria-hidden="true"></i> Caliber Code</a>
+				<a href="remark.php" class="menu-items"><i class="fa fa-commenting" aria-hidden="true"></i> General Remark</a>
 			</div>
 		</div>
 	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
 </body>
 </html>

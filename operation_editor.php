@@ -1,13 +1,17 @@
 <?php
 include'config/autoload.php';
 
-// if(!empty($_GET['id'])){
-// 	$caliber->getcaliber($_GET['id']);
-// }
+if(!empty($_GET['caliber'])){
+	$caliber->getcaliber($_GET['caliber']);
+}
 
 if(!empty($_GET['operation_id'])){
 	$caliber->getOperationRecipe($_GET['operation_id']);
 }
+
+// current page
+$current_page['1'] = 'caliber';
+$current_page['2'] = 'new_operation';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -38,21 +42,12 @@ if(!empty($_GET['operation_id'])){
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<div class="name">Puwadon</div><img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include 'header.php';?>
 <div class="container">
 	<div class="head">
 		<div class="head-title">Operation Recipe</div>
 		<div class="tab">
-			<div class="tab-items tab-items-active">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items items-right">Register<i class="fa fa-angle-right"></i></div>
+			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right">Cancel<i class="fa fa-times"></i></a>
 		</div>
 	</div>
 
@@ -79,7 +74,7 @@ if(!empty($_GET['operation_id'])){
 		<div class="form-items">
 			<div class="caption">Caliber Code</div>
 			<div class="input">
-				<input class="input-text" type="text" id="caliber_id" value="<?php echo $caliber->opt_caliber_id;?>">
+				<input class="input-text" type="text" id="caliber_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
 			</div>
 		</div>
 
@@ -90,9 +85,5 @@ if(!empty($_GET['operation_id'])){
 		<?php }?>
 	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
 </body>
 </html>

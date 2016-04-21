@@ -1,4 +1,8 @@
 <?php include'config/autoload.php';?>
+<?php
+// current page
+$current_page['1'] = 'caliber';
+?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>
@@ -27,32 +31,27 @@
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<h1>Web Design Inspiration</h1>
-		<p>Ideas & Inspirations for Web Designers | We find the best web designs all over the world Responsive design for largest screens</p>
+		<div class="head-title">Caliber Code</div>
 
 		<div class="tab">
-			<div class="tab-items">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items tab-items-active">Tab 5</div>
+			<div class="tab-items tab-items-active">All</div>
+			<a href="caliber_editor.php" class="tab-items items-right">New <i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+	<!-- Table -->
+	<div class="topic-fix">
+		<div class="caliber-topic-fix">
+			<div class="col1">Caliber</div>
+			<div class="col2">Std.time (Hrs/K)</div>
+			<div class="col3">Description</div>
 		</div>
 	</div>
 	<div class="list">
 		<?php $caliber->listAllCaliber(array('type' => 'caliber-items'));?>
 	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
 </body>
 </html>

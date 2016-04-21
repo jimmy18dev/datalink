@@ -1,4 +1,13 @@
 <?php include'config/autoload.php';?>
+<?php
+if(!empty($_GET['caliber'])){
+	$caliber->getcaliber($_GET['caliber']);
+}
+
+// current page
+$current_page['1'] = 'caliber';
+$current_page['2'] = 'caliber_code';
+?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>
@@ -27,32 +36,29 @@
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include 'header.php';?>
 <div class="container">
 	<div class="head">
-		<h1>Web Design Inspiration</h1>
-		<p>Ideas & Inspirations for Web Designers | We find the best web designs all over the world Responsive design for largest screens</p>
+		<div class="head-title"><?php echo $caliber->code.' '.$caliber->family;?></div>
 
 		<div class="tab">
-			<div class="tab-items">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items tab-items-active">Tab 5</div>
+			<div class="tab-items tab-items-active">All Operation Recipe</div>
+			<a href="operation_editor.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right">New operation<i class="fa fa-angle-right"></i></a>
+			<a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right">Edit caliber<i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+	<!-- Table -->
+	<div class="topic-fix">
+		<div class="operation-topic-fix">
+			<div class="col1">Caliber</div>
+			<div class="col2">Route ID</div>
+			<div class="col3">Route Name</div>
+			<div class="col4">Name</div>
 		</div>
 	</div>
 	<div class="list">
-		<?php $caliber->listAllOperationRecipe($_GET['id'],array('type' => 'operation-items'));?>
+		<?php $caliber->listAllOperationRecipe($caliber->id,array('type' => 'operation-items'));?>
 	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
 </body>
 </html>

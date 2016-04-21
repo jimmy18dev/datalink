@@ -1,8 +1,17 @@
 <?php
 include'config/autoload.php';
 
-if(!empty($_GET['id'])){
-	$caliber->getcaliber($_GET['id']);
+if(!empty($_GET['caliber'])){
+	$caliber->getcaliber($_GET['caliber']);
+}
+
+// current page
+$current_page['1'] = 'caliber';
+
+if(empty($caliber->id)){
+	$current_page['2'] = 'new_caliber';
+}else{
+	$current_page['2'] = 'edit_caliber';
 }
 ?>
 <!doctype html>
@@ -34,26 +43,17 @@ if(!empty($_GET['id'])){
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<div class="name">Puwadon</div><img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include'header.php';?>
 <div class="container">
 	<div class="head">
 		<div class="head-title">Caliber Code</div>
 		<div class="tab">
-			<div class="tab-items tab-items-active">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items items-right">Register<i class="fa fa-angle-right"></i></div>
+			<a href="caliber.php" class="tab-items items-right">Cancel<i class="fa fa-times"></i></a>
 		</div>
 	</div>
 
 	<div class="form-container">
-		<h3>Caliber Code</h3>
+		<h3>Create caliber code</h3>
 		<div class="form-items">
 			<div class="caption">Code</div>
 			<div class="input">
@@ -99,9 +99,5 @@ if(!empty($_GET['id'])){
 		<?php }?>
 	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
 </body>
 </html>

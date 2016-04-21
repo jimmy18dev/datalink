@@ -30,7 +30,7 @@ body {
   height: 50px;
   float: left;
   display: inline-block;
-  background: #003399;
+  background: #FFFFFF;
 }
 .header .logo {
   float: left;
@@ -39,7 +39,19 @@ body {
   font-size: 1em;
   height: 20px;
   padding: 15px 0px;
-  color: #CCCCFF;
+  color: #003399;
+}
+.header .navibar {
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+  height: 18px;
+  padding: 16px 0px;
+  color: #003399;
+  margin-left: 10px;
+}
+.header .navibar i {
+  margin-right: 5px;
 }
 .header .profile {
   float: right;
@@ -138,7 +150,7 @@ body {
 .container {
   width: 100%;
   margin-top: 50px;
-  min-height: 300px;
+  min-height: 500px;
   float: left;
   display: inline-block;
 }
@@ -147,15 +159,16 @@ body {
   padding: 0% 25%;
   float: left;
   display: inline-block;
-  background: #003399;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EEEEEE;
 }
 .container .head .head-title {
   width: 100%;
   padding: 3% 0%;
   float: left;
   display: inline-block;
-  font-size: 2.5em;
-  color: #FFFFFF;
+  font-size: 3em;
+  color: #000000;
 }
 .container .head .tab {
   width: 100%;
@@ -163,29 +176,31 @@ body {
   display: inline-block;
 }
 .container .head .tab .tab-items {
-  padding: 15px;
-  color: #EEEEEE;
+  padding: 2% 0%;
+  color: #999999;
   float: left;
   display: inline-block;
-  border-bottom: 2px solid transparent;
-  margin-right: 1%;
+  margin-right: 3%;
+  margin-bottom: -1px;
+  border-bottom: 1px solid transparent;
+  font-size: 0.9em;
 }
 .container .head .tab .tab-items:hover {
   cursor: pointer;
-  color: #FFFFFF;
-  border-bottom: 2px solid #E91E63;
+  color: #003399;
+  border-bottom: 1px solid #003399;
 }
 .container .head .tab .tab-items i {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .container .head .tab .tab-items-active {
-  color: #FFFFFF;
-  border-bottom: 2px solid #E91E63;
+  color: #003399;
+  border-bottom: 1px solid #003399;
 }
 .container .head .tab .items-right {
   float: right;
   margin-right: 0%;
-  margin-left: 1%;
+  margin-left: 3%;
 }
 .container .menu-function {
   width: 50%;
@@ -201,9 +216,16 @@ body {
   display: inline-block;
 }
 .container .menu-function .section h3 {
+  width: 100%;
+  float: left;
+  display: inline-block;
   font-size: 1.5em;
   color: #CCCCCC;
   font-weight: normal;
+  line-height: 1.5em;
+  border-bottom: 1px solid #EEEEEE;
+  padding-bottom: 2%;
+  margin-bottom: 3%;
 }
 .container .menu-function .section .menu-container {
   width: 100%;
@@ -214,8 +236,12 @@ body {
   width: 31.33%;
   margin-bottom: 3%;
   margin-right: 3%;
+  padding: 5% 0%;
   float: left;
   display: inline-block;
+  text-align: center;
+  background: #FAFAFA;
+  border-radius: 3px;
 }
 .container .menu-function .section .menu-container .menu-items:nth-child(3n) {
   margin-right: 0%;
@@ -224,9 +250,10 @@ body {
 .container .menu-function .section .menu-container .menu-items .caption {
   font-size: 1em;
   line-height: 1.5em;
+  margin-bottom: 3%;
 }
 .container .menu-function .section .menu-container .menu-items .icon {
-  font-size: 2em;
+  font-size: 3em;
 }
 .container .form-container {
   width: 50%;
@@ -245,18 +272,20 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  margin-top: 3%;
+  margin-top: 5%;
 }
 .container .form-container .form-items .caption {
-  width: 100%;
+  width: 20%;
+  padding: 0% 5%;
   float: left;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.5em;
   color: #CCCCCC;
+  text-align: right;
 }
 .container .form-container .form-items .input {
-  width: 100%;
+  width: 70%;
   float: left;
   display: inline-block;
 }
@@ -274,11 +303,12 @@ body {
 .container .form-container .submit-btn {
   float: right;
   margin-top: 3%;
-  padding: 5px;
+  padding: 10px 15px;
   font-size: 0.9em;
   line-height: 1.5em;
-  background: #000000;
+  background: #003399;
   color: #FFFFFF;
+  border-radius: 3px;
 }
 .container .form-container .submit-btn:hover {
   cursor: pointer;
@@ -289,6 +319,58 @@ body {
   float: left;
   display: inline-block;
   border-bottom: 1px solid #EEEEEE;
+}
+.container .topic-fix .caliber-topic-fix {
+  width: 50%;
+  padding: 1% 25%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fix .caliber-topic-fix .col1 {
+  width: 25%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fix .caliber-topic-fix .col2 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .topic-fix .caliber-topic-fix .col3 {
+  width: 50%;
+  float: left;
+  display: inline-block;
+  padding: 0% 5%;
+}
+.container .topic-fix .caliber-topic-fix {
+  width: 50%;
+  padding: 1% 25%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fix .caliber-topic-fix .col1 {
+  width: 25%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fix .caliber-topic-fix .col2 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .topic-fix .caliber-topic-fix .col3 {
+  width: 50%;
+  float: left;
+  display: inline-block;
+  padding: 0% 5%;
 }
 .container .topic-fix .user-topic-fix {
   width: 60%;
@@ -322,9 +404,51 @@ body {
   text-align: center;
 }
 .container .list {
-  width: 100%;
+  width: 50%;
+  margin: 0% 25%;
   float: left;
   display: inline-block;
+}
+.container .list .empty-items {
+  width: 100%;
+  padding: 20% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 1em;
+  color: #CCCCCC;
+  text-align: center;
+}
+.container .list .caliber-items {
+  width: 100%;
+  padding: 0.5% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.container .list .caliber-items .col1 {
+  width: 25%;
+  float: left;
+  display: inline-block;
+}
+.container .list .caliber-items .col1 a {
+  color: #000000;
+}
+.container .list .caliber-items .col1 a:hover {
+  text-decoration: underline;
+}
+.container .list .caliber-items .col2 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list .caliber-items .col3 {
+  width: 50%;
+  float: left;
+  display: inline-block;
+  padding: 0% 5%;
 }
 .container .list .user-items {
   width: 60%;
