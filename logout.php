@@ -36,11 +36,9 @@ session_destroy();
 </head>
 
 <body>
-<div class="dialog-box dialog-box-show">
-	<div class="dialog">
-		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="dialog-message">กำลังออกจากระบบ...</p>
-	</div>
+<div class="dialog-box">
+	<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+	<p id="dialog-message">กำลังออกจากระบบ...</p>
 </div>
 
 <script type="text/javascript">

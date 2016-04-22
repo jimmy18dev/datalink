@@ -1,8 +1,23 @@
 <?php
 include'config/autoload.php';
 
-if(!empty($_GET['id'])){
-	$user->getUser($_GET['id']);
+// Permission
+if(!$user_online){
+	header("Location: index.php");
+	die();
+}
+
+
+if(!empty($_GET['user'])){
+	$userData = $user->getData($_GET['user']);
+}
+
+// current page
+$current_page['1'] = 'user';
+if(empty($userData['id'])){
+	$current_page['2'] = 'new_user';
+}else{
+	$current_page['2'] = 'edit_user';
 }
 ?>
 <!doctype html>
@@ -34,21 +49,14 @@ if(!empty($_GET['id'])){
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<div class="name">Puwadon</div><img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">User management</div>
+		<div class="head-title">
+			<h1>User management</h1>
+		</div>
 		<div class="tab">
-			<div class="tab-items tab-items-active">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items items-right">Register<i class="fa fa-angle-right"></i></div>
+			<a href="user.php" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
 		</div>
 	</div>
 
@@ -57,38 +65,41 @@ if(!empty($_GET['id'])){
 		<div class="form-items">
 			<div class="caption">รหัสพนักงาน</div>
 			<div class="input">
-				<input class="input-text" type="text" id="code" value="<?php echo $user->code;?>">
+				<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" autofocus>
 			</div>
 		</div>
 		<div class="form-items">
 			<div class="caption">ชื่อจริง</div>
 			<div class="input">
-				<input class="input-text" type="text" id="fname" value="<?php echo $user->fname;?>">
+				<input class="input-text" type="text" id="fname" value="<?php echo $userData['fname'];?>">
 			</div>
 		</div>
 		<div class="form-items">
 			<div class="caption">นามสกุล</div>
 			<div class="input">
-				<input class="input-text" type="text" id="lname" value="<?php echo $user->lname;?>">
+				<input class="input-text" type="text" id="lname" value="<?php echo $userData['lname'];?>">
 			</div>
 		</div>
 		<div class="form-items">
 			<div class="caption">รหัสผ่าน</div>
 			<div class="input">
-				<input class="input-text" type="text" id="password" value="<?php echo $user->password;?>">
+				<input class="input-text" type="text" id="password" value="<?php echo $userData['password'];?>">
 			</div>
 		</div>
 
-		<?php if(empty($user->id)){?>
+		<?php if(empty($userData['id'])){?>
 		<div class="submit-btn" onclick="javascript:register();">Register</div>
 		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:edit(<?php echo $user->id;?>);">SAVE</div>
+		<div class="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);">SAVE</div>
 		<?php }?>
 	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
+
+<div class="loading-box" id="loading-box">
+	<div class="dialog">
+		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+		<p id="loading-message"></p>
+	</div>
+</div>
 </body>
 </html>

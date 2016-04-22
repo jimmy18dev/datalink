@@ -1,13 +1,18 @@
 <?php
 include'config/autoload.php';
 
+// Permission
+if(!$user_online){
+	header("Location: index.php");
+	die();
+}
+
 if(!empty($_GET['caliber'])){
 	$caliber->getcaliber($_GET['caliber']);
 }
 
 // current page
 $current_page['1'] = 'caliber';
-
 if(empty($caliber->id)){
 	$current_page['2'] = 'new_caliber';
 }else{
@@ -46,9 +51,12 @@ if(empty($caliber->id)){
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">Caliber Code</div>
+		<div class="head-title">
+			<h1>Caliber Code</h1>
+			<p>a system of words, letters, figures, or other symbols substituted for other words, letters, etc., especially for the purposes of secrecy.</p>
+		</div>
 		<div class="tab">
-			<a href="caliber.php" class="tab-items items-right">Cancel<i class="fa fa-times"></i></a>
+			<a href="caliber.php" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
 		</div>
 	</div>
 
@@ -57,13 +65,13 @@ if(empty($caliber->id)){
 		<div class="form-items">
 			<div class="caption">Code</div>
 			<div class="input">
-				<input class="input-text" type="text" id="code" value="<?php echo $caliber->code;?>">
+				<input class="input-text" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus>
 			</div>
 		</div>
 		<div class="form-items">
-			<div class="caption">Name</div>
+			<div class="caption">Family</div>
 			<div class="input">
-				<input class="input-text" type="text" id="name" value="<?php echo $caliber->name;?>">
+				<input class="input-text" type="text" id="family" value="<?php echo $caliber->family;?>">
 			</div>
 		</div>
 		<div class="form-items">
@@ -73,14 +81,13 @@ if(empty($caliber->id)){
 			</div>
 		</div>
 		<div class="form-items">
-			<div class="caption">Family</div>
+			<div class="caption">Name</div>
 			<div class="input">
-				<input class="input-text" type="text" id="family" value="<?php echo $caliber->family;?>">
+				<input class="input-text" type="text" id="name" value="<?php echo $caliber->name;?>">
 			</div>
 		</div>
-
 		<div class="form-items">
-			<div class="caption">Standard Time</div>
+			<div class="caption">Std.time (Hrs/K)</div>
 			<div class="input">
 				<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>">
 			</div>
@@ -97,6 +104,13 @@ if(empty($caliber->id)){
 		<?php }else{?>
 		<div class="submit-btn" onclick="javascript:edit(<?php echo $caliber->id;?>);">SAVE</div>
 		<?php }?>
+	</div>
+</div>
+
+<div class="loading-box" id="loading-box">
+	<div class="dialog">
+		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+		<p id="loading-message"></p>
 	</div>
 </div>
 </body>

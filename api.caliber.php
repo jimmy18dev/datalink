@@ -14,9 +14,6 @@ if($_POST['calling'] != ''){
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'register successful';
 							$state = true;
-
-							// Autologin after register successful
-							// $login_state = $people->login($_POST['email'],$_POST['password'],'');
 						}else{
 							$message = 'register fail!';
 							$state = false;
@@ -28,7 +25,7 @@ if($_POST['calling'] != ''){
 					break;
 				case 'edit':
 					if(true){
-						$return_id = $caliber->editCaliber($_POST['id'],$_POST['code'],$_POST['name'],$_POST['description'],$_POST['family']);
+						$return_id = $caliber->editCaliber($_POST['id'],$_POST['code'],$_POST['name'],$_POST['description'],$_POST['family'],$_POST['hrs'],$_POST['remark']);
 						
 						// if(!empty($user_id) && $user_id != 0){
 						// 	$return_message = 'register successful';

@@ -21,7 +21,8 @@ function create(){
     //     return false;
     // }
 
-    $('#login-status').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังสมัครสมาชิก...');
+    $('#loading-message').html('กำลังเข้าระบบ...');
+    $('#loading-box').fadeIn(300);
 
     $.ajax({
         url         :href,
@@ -72,20 +73,8 @@ function edit(id){
     var description = $('#description').val();
     var family      = $('#family').val();
 
-    // if(email == ""){
-    //     showAlert('กรุณากรอกอีเมลของคุณด้วยค่ะ');
-    //     return false;
-    // }
-    // else if(name == ""){
-    //     showAlert('กรุณากรอกชื่อและนามสุกลของคุณด้วยค่ะ');
-    //     return false;
-    // }
-    // else if(password == ""){
-    //     showAlert('กรุณากรอกรหัสผ่านด้วยค่ะ');
-    //     return false;
-    // }
-
-    $('#login-status').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังสมัครสมาชิก...');
+    $('#loading-message').html('กำลังเข้าระบบ...');
+    $('#loading-box').fadeIn(300);
 
     $.ajax({
         url         :href,

@@ -14,9 +14,6 @@ if($_POST['calling'] != ''){
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'register successful';
 							$state = true;
-
-							// Autologin after register successful
-							// $login_state = $people->login($_POST['email'],$_POST['password'],'');
 						}else{
 							$message = 'register fail!';
 							$state = false;

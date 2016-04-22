@@ -1,5 +1,12 @@
 <?php include'config/autoload.php';?>
 <?php
+
+// Permission
+if(!$user_online){
+	header("Location: index.php");
+	die();
+}
+
 if(!empty($_GET['caliber'])){
 	$caliber->getcaliber($_GET['caliber']);
 }
@@ -39,21 +46,22 @@ $current_page['2'] = 'caliber_code';
 <?php include 'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title"><?php echo $caliber->code.' '.$caliber->family;?></div>
+		<div class="head-title">
+			<h1><?php echo $caliber->code.' '.$caliber->family;?></h1>
+			<p>Std.time <?php echo $caliber->hrs;?> Hrs/K | <?php echo $caliber->description;?> | <a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right">Edit</a></p>
+		</div>
 
 		<div class="tab">
-			<div class="tab-items tab-items-active">All Operation Recipe</div>
+			<div class="tab-items tab-items-active">All Operation</div>
 			<a href="operation_editor.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right">New operation<i class="fa fa-angle-right"></i></a>
-			<a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right">Edit caliber<i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
 	<!-- Table -->
 	<div class="topic-fix">
 		<div class="operation-topic-fix">
-			<div class="col1">Caliber</div>
-			<div class="col2">Route ID</div>
-			<div class="col3">Route Name</div>
-			<div class="col4">Name</div>
+			<div class="col1">Route ID</div>
+			<div class="col2">Route Name</div>
+			<div class="col3">Name</div>
 		</div>
 	</div>
 	<div class="list">

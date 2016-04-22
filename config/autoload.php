@@ -49,6 +49,6 @@ $user_online = $user->sessionOnline();
 
 // Get member info
 if($user_online){
-	$user->GetUser(array('member_id' => $_SESSION['member_id']));
+	$user->getUser($_SESSION['user_id']);
 }
 ?>

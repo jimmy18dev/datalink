@@ -1,8 +1,22 @@
 <?php
 include'config/autoload.php';
 
+// Permission
+if(!$user_online){
+	header("Location: index.php");
+	die();
+}
+
 if(!empty($_GET['id'])){
 	$remark->getRemark($_GET['id']);
+}
+
+// current page
+$current_page['1'] = 'remark';
+if(empty($remark->id)){
+	$current_page['2'] = 'new_remark';
+}else{
+	$current_page['2'] = 'edit_remark';
 }
 ?>
 <!doctype html>
@@ -34,21 +48,15 @@ if(!empty($_GET['id'])){
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<div class="name">Puwadon</div><img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">General Remark</div>
+		<div class="head-title">
+			<h1>General Remark</h1>
+			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
+		</div>
 		<div class="tab">
-			<div class="tab-items tab-items-active">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items items-right">Register<i class="fa fa-angle-right"></i></div>
+			<a href="remark.php?" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
 		</div>
 	</div>
 
@@ -57,22 +65,25 @@ if(!empty($_GET['id'])){
 		<div class="form-items">
 			<div class="caption">Description</div>
 			<div class="input">
-				<input class="input-text" type="text" id="description" value="<?php echo $remark->description;?>">
+				<input class="input-text" type="text" id="description" value="<?php echo $remark->description;?>" autofocus>
 			</div>
 		</div>
 
 		<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
 
 		<?php if(empty($remark->id)){?>
-		<div class="submit-btn" onclick="javascript:create();">Register</div>
+		<div class="submit-btn" onclick="javascript:create();">CREATE</div>
 		<?php }else{?>
 		<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE</div>
 		<?php }?>
 	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
+
+<div class="loading-box" id="loading-box">
+	<div class="dialog">
+		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+		<p id="loading-message"></p>
+	</div>
+</div>
 </body>
 </html>

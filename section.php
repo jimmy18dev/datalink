@@ -1,4 +1,11 @@
 <?php include'config/autoload.php';?>
+<?php
+// Permission
+if(!$user_online){
+	header("Location: index.php");
+	die();
+}
+?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>

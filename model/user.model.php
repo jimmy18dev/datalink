@@ -58,6 +58,13 @@ class UserModel extends Database{
 		return $dataset = parent::single();
 	}
 
+	public function updateVisitTime($id){
+		parent::query('UPDATE RTH_User SET visit_time = :visit_time WHERE id = :id');
+		parent::bind(':id', 			$id);
+		parent::bind(':visit_time',	date('Y-m-d H:i:s'));
+		parent::execute();
+	}
+
 	public function userLogin($password){
 		parent::query('SELECT id FROM RTH_User WHERE password = :password');
 		parent::bind(':password', $password);

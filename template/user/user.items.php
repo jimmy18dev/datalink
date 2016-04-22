@@ -1,10 +1,7 @@
 <div class="user-items">
-			<div class="avatar"><img src="image/avatar.png" alt=""></div>
-			<div class="info">
-				<div class="name">Puwadon Sricharoen</div>
-				<div class="position">Programmer <a href="user_editor.php?id=<?php echo $var['id'];?>">แก้ไข</a></div>
-			</div>
-			<div class="online">Online<i class="fa fa-circle" aria-hidden="true"></i></div>
-			<div class="time">54 นาทีที่แล้ว</div>
-			<div class="status">Active<i class="fa fa-angle-right"></i></div>
-		</div>
+	<div class="col1"><?php echo $var['code'];?></div>
+	<div class="col2"><?php echo $var['fname'].' '.$var['lname'];?> <a href="user_editor.php?user=<?php echo $var['id'];?>">แก้ไข<i class="fa fa-angle-right"></i></a></div>
+	<div class="col3"><?php echo $var['password'];?></div>
+	<div class="col4"><?php echo $var['visit_time'];?></div>
+	<div class="col5"><?php echo $var['status'];?></div>
+</div>

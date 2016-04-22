@@ -1,6 +1,12 @@
 <?php
 include'config/autoload.php';
 
+// Permission
+if(!$user_online){
+	header("Location: index.php");
+	die();
+}
+
 if(!empty($_GET['caliber'])){
 	$caliber->getcaliber($_GET['caliber']);
 }
@@ -45,9 +51,11 @@ $current_page['2'] = 'new_operation';
 <?php include 'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">Operation Recipe</div>
+		<div class="head-title">
+			<h1>Operation Recipe</h1>
+		</div>
 		<div class="tab">
-			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right">Cancel<i class="fa fa-times"></i></a>
+			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
 		</div>
 	</div>
 
@@ -56,7 +64,7 @@ $current_page['2'] = 'new_operation';
 		<div class="form-items">
 			<div class="caption">Route ID</div>
 			<div class="input">
-				<input class="input-text" type="text" id="route_id" value="<?php echo $caliber->opt_route_id;?>">
+				<input class="input-text" type="text" id="route_id" value="<?php echo $caliber->opt_route_id;?>" autofocus>
 			</div>
 		</div>
 		<div class="form-items">
@@ -83,6 +91,13 @@ $current_page['2'] = 'new_operation';
 		<?php }else{?>
 		<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->opt_id;?>);">SAVE</div>
 		<?php }?>
+	</div>
+</div>
+
+<div class="loading-box" id="loading-box">
+	<div class="dialog">
+		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+		<p id="loading-message"></p>
 	</div>
 </div>
 </body>

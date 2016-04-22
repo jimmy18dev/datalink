@@ -33,10 +33,15 @@ class CaliberController extends CaliberModel{
 
 		// Create standrad time
 		parent::createStandardTime($caliber_id,$hrs,$remark);
+		return $caliber_id;
 	}
 
-	public function editCaliber($id,$code,$name,$description,$family){
+	public function editCaliber($id,$code,$name,$description,$family,$hrs,$remark){
 		parent::edit($id,$code,$name,$description,$family);
+
+		parent::setStdTimeToSecondary($id);
+		// Create standrad time
+		parent::createStandardTime($id,$hrs,$remark);
 	}
 
 	public function getOperationRecipe($id){

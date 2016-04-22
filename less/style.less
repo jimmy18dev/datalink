@@ -10,22 +10,27 @@
 	float: left;
 	display: inline-block;
 	background: #FFFFFF;
+	border-bottom: 1px solid #EEEEEE;
 
 	.logo{
 		float: left;
 		display: inline-block;
 		font-weight: bold;
-		font-size: 1em;
-		height: 20px;
+		font-size: 1.2em;
 		padding: 15px 0px;
+		height: 20px;
 		color: #003399;
+
+		i{
+			margin-right: 5px;
+		}
 	}
 	.navibar{
 		float: left;
 		display: inline-block;
 		font-size: 0.8em;
-		height: 18px;
-		padding: 16px 0px;
+		padding: 19px 0px;
+		height: 12px;
 		color: #003399;
 		margin-left: 10px;
 
@@ -36,17 +41,9 @@
 	.profile{
 		float: right;
 		display: inline-block;
-		height: 26px;
-		padding: 12px 0px;
-
-		img{
-			width: 26px;
-			height: 26px;
-			float: left;
-			display: inline-block;
-			background: #DDDDDD;
-			border-radius: 50%;
-		}
+		padding: 13px 0px;
+		height: 24px;
+		color: #003399;
 
 		.name{
 			float: left;
@@ -54,7 +51,64 @@
 			line-height: 2em;
 			margin-right: 10px;
 			font-size: 0.9em;
-			color: #FFFFFF;
+			color: #003399;
+		}
+
+		a.logout{
+			color: #ea6153;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.dialog-box{
+	width: 100%;
+	margin-top: 20%;
+	float: left;
+	display: inline-block;
+	text-align: center;
+
+	.icon{
+		color: #003399;
+		font-size: 3em;
+		margin-bottom: 2%;
+	}
+	p{
+		font-size: 1em;
+		line-height: 1.5em;
+		color: #999999;
+	}
+}
+
+.loading-box{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	float: left;
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.95);
+	display: none;
+
+	.dialog{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+		margin-top: 20%;
+
+		.icon{
+			font-size: 3em;
+			margin-bottom: 3%;
+			color: #003399;
+		}
+		p{
+			font-size: 1em;
+			line-height: 1.5em;
+			color: #999999;
 		}
 	}
 }
@@ -73,7 +127,7 @@
 		display: inline-block;
 		text-align: center;
 		font-size: 3em;
-		color: #000000;
+		color: #003399;
 	}
 
 	p{
@@ -90,34 +144,35 @@
 
 		.input-text{
 			width: 85%;
-			padding: 1% 0%;
+			padding: 1.5% 0%;
 			float: left;
 			display: inline-block;
 			font-family: @FontStylePrimary;
-			font-size: 2em;
+			font-size: 1.5em;
 			line-height: 1.5em;
 			border: 0px;
-			border-bottom: 1px solid #EEEEEE;
+			border-bottom: 1px solid #FAFAFA;
 			text-align: center;
 			color: #003399;
 
 			&:focus{
-				border-bottom: 1px solid #999999;
+				border-bottom: 1px solid #EEEEEE;
 			}
 		}
 
 		.login-btn{
 			width: 15%;
-			padding: 1% 0%;
+			padding: 1.5% 0%;
 			float: left;
 			display: inline-block;
 			font-family: @FontStylePrimary;
-			font-size: 2em;
+			font-size: 1.5em;
 			line-height: 1.5em;
 			border: 0px;
 			border-bottom: 1px solid #EEEEEE;
 			text-align: center;
 			color: #003399;
+			background: #FFFFFF;
 
 			&:hover{
 				cursor: pointer;
@@ -160,8 +215,19 @@
 			padding: 3% 0%;
 			float: left;
 			display: inline-block;
-			font-size: 3em;
 			color: #000000;
+
+			h1{
+				font-size: 2em;
+				color: #000000;
+				line-height: 1.3em;
+			}
+
+			p{
+				font-size: 0.9em;
+				line-height: 1.3em;
+				color: #555555;
+			}
 		}
 
 
@@ -201,6 +267,14 @@
 				margin-right: 0%;
 				margin-left: 3%;
 			}
+
+			.cancel{
+				color: #e74c3c;
+				&:hover{
+					color: #e74c3c;
+					border-bottom: 1px solid #e74c3c;
+				}
+			}
 		}
 	}
 
@@ -224,40 +298,42 @@
 				font-size: 1.5em;
 				color: #CCCCCC;
 				font-weight: normal;
-				line-height: 1.5em;
-				border-bottom: 1px solid #EEEEEE;
-				padding-bottom: 2%;
-				margin-bottom: 3%;
+				line-height: 2em;
 			}
 
 			.menu-container{
 				width: 100%;
 				float: left;
 				display: inline-block;
+				border: 1px solid #FAFAFA;
 
 				.menu-items{
-					width: 31.33%;
-		            margin-bottom: 3%;
-		            margin-right: 3%;
-		            padding: 5% 0%;
-		            float: left;
-		            display: inline-block;
-		            text-align: center;
-		            background: #FAFAFA;
-		            border-radius: 3px;
+					width: 94%;
+					float: left;
+					display: inline-block;
+					padding: 3%;
+					border-bottom: 1px solid #FAFAFA;
+					color: #000000;
 
-		            &:nth-child(3n){
-		                margin-right: 0%;
-		                float: right;
-		            }
-
-					.caption{
-						font-size: 1em;
-						line-height: 1.5em;
-						margin-bottom: 3%;
+					&:hover{
+						cursor: pointer;
+						background: #FAFAFA;
+						color: #003399;
 					}
+
 					.icon{
-						font-size: 3em;
+						width: 5%;
+						float: left;
+						display: inline-block;
+					}
+					.caption{
+						width: 95%;
+						float: left;
+						display: inline-block;
+
+						.fa-angle-right{
+							float: right;
+						}
 					}
 				}
 			}
@@ -338,6 +414,71 @@
 		display: inline-block;
 		border-bottom: 1px solid #EEEEEE;
 
+		.user-topic-fix{
+			width: 50%;
+			padding: 1% 25%;
+			float: left;
+			display: inline-block;
+			background: #FAFAFA;
+			color: #AAAAAA;
+			font-size: 0.8em;
+
+			.col1{
+				width: 20%;
+				float: left;
+				display: inline-block;
+			}
+			.col2{
+				width: 30%;
+				float: left;
+				display: inline-block;
+			}
+			.col3{
+				width: 20%;
+				float: left;
+				display: inline-block;
+				text-align: center;
+			}
+			.col4{
+				width: 20%;
+				float: left;
+				display: inline-block;
+			}
+			.col5{
+				width: 10%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+		}
+
+		.remark-topic-fix{
+			width: 50%;
+			padding: 1% 25%;
+			float: left;
+			display: inline-block;
+			background: #FAFAFA;
+			color: #AAAAAA;
+			font-size: 0.8em;
+
+			.col1{
+				width: 10%;
+				float: left;
+				display: inline-block;
+			}
+			.col2{
+				width: 75%;
+				float: left;
+				display: inline-block;
+			}
+			.col3{
+				width: 15%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+		}
+
 		.operation-topic-fix{
 			width: 50%;
 			padding: 1% 25%;
@@ -348,26 +489,19 @@
 			font-size: 0.8em;
 
 			.col1{
-				width: 25%;
+				width: 30%;
 				float: left;
 				display: inline-block;
 			}
 			.col2{
-				width: 25%;
+				width: 30%;
 				float: left;
 				display: inline-block;
-				text-align: right;
 			}
 			.col3{
-				width: 25%;
+				width: 40%;
 				float: left;
 				display: inline-block;
-			}
-			.col4{
-				width: 25%;
-				float: left;
-				display: inline-block;
-				padding: 0% 5%;
 			}
 		}
 
@@ -381,7 +515,7 @@
 			font-size: 0.8em;
 
 			.col1{
-				width: 25%;
+				width: 15%;
 				float: left;
 				display: inline-block;
 			}
@@ -392,42 +526,10 @@
 				text-align: right;
 			}
 			.col3{
-				width: 50%;
+				width: 60%;
 				float: left;
 				display: inline-block;
 				padding: 0% 5%;
-			}
-		}
-
-		.user-topic-fix{
-			width: 60%;
-			padding: 2% 20%;
-			float: left;
-			display: inline-block;
-			background: #FFFFFF;
-			color: #AAAAAA;
-			font-size: 0.8em;
-			.info{
-				width: 35%;
-				float: left;
-				display: inline-block;
-			}
-			.online{
-				width: 25%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-			}
-			.time{
-				width: 25%;
-				float: left;
-				display: inline-block;
-			}
-			.status{
-				width: 15%;
-				float: left;
-				display: inline-block;
-				text-align: center;
 			}
 		}
 	}
@@ -449,7 +551,7 @@
 			text-align: center;
 		}
 
-		.caliber-items{
+		.remark-items{
 			width: 100%;
 			padding: 0.5% 0%;
 			float: left;
@@ -459,7 +561,89 @@
 			line-height: 1.5em;
 
 			.col1{
-				width: 25%;
+				width: 10%;
+				float: left;
+				display: inline-block;
+			}
+			.col2{
+				width: 75%;
+				float: left;
+				display: inline-block;
+
+				a{
+					color: #003399;
+					&:hover{
+						text-decoration: underline;
+					}
+					i{
+						margin-left: 5px;
+					}
+				}
+			}
+			.col3{
+				width: 15%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+		}
+
+		.operation-items{
+			width: 100%;
+			padding: 0.5% 0%;
+			float: left;
+			display: inline-block;
+			border-bottom: 1px solid #EEEEEE;
+			font-size: 0.9em;
+			line-height: 1.5em;
+
+			.col1{
+				width: 30%;
+				float: left;
+				display: inline-block;
+			}
+			.col2{
+				width: 30%;
+				float: left;
+				display: inline-block;
+			}
+			.col3{
+				width: 40%;
+				float: left;
+				display: inline-block;
+
+				a{
+					color: #003399;
+					&:hover{
+						text-decoration: underline;
+					}
+					i{
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+
+		.caliber-items{
+			width: 100%;
+			padding: 1% 0%;
+			float: left;
+			display: inline-block;
+			border-bottom: 1px solid #EEEEEE;
+			font-size: 0.9em;
+			line-height: 1.5em;
+			color: #000000;
+
+			a{
+				color: #000000;
+			}
+
+			&:hover{
+				background: #FAFAFA;
+			}
+
+			.col1{
+				width: 15%;
 				float: left;
 				display: inline-block;
 
@@ -477,82 +661,75 @@
 				text-align: right;
 			}
 			.col3{
-				width: 50%;
+				width: 65%;
 				float: left;
 				display: inline-block;
-				padding: 0% 5%;
+				margin-left: 5%;
+				font-size: 0.8em;
+
+				.operation{
+					color: #999999;
+					font-style: italic;
+				}
+
+				a{
+					color: #003399;
+					font-style: italic;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
 			}
 		}
 
 		.user-items{
-			width: 60%;
+			width: 100%;
 			padding: 1% 0%;
-			margin: 0% 20%;
 			float: left;
 			display: inline-block;
 			border-bottom: 1px solid #EEEEEE;
+			font-size: 0.9em;
+			line-height: 1.5em;
+			color: #000000;
 
-			.avatar{
-				width: 4%;
+			.col1{
+				width: 20%;
 				float: left;
 				display: inline-block;
-				margin-right: 2%;
-
-				img{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					border-radius: 50%;
-				}
 			}
-			.info{
-				width: 29%;
+			.col2{
+				width: 30%;
 				float: left;
 				display: inline-block;
-				line-height: 1.2em;
-				padding-top: 0.3%;
 
-				.name{
-					color: #E91E63;
-				}
-				.position{
-					font-size: 0.8em;
+				a{
+					color: #003399;
+
+					i{
+						margin-left: 5px;
+					}
+
+					&:hover{
+						text-decoration: underline;
+					}
 				}
 			}
-			.online{
-				width: 25%;
+			.col3{
+				width: 20%;
 				float: left;
 				display: inline-block;
 				text-align: center;
-				font-size: 0.9em;
-				padding-top: 1%;
-				line-height: 1.7em;
-
-				i{
-					margin-left: 5px;
-					font-size: 0.8em;
-				}
 			}
-			.time{
-				width: 25%;
+			.col4{
+				width: 20%;
 				float: left;
 				display: inline-block;
-				font-size: 0.9em;
-				padding-top: 1%;
-				line-height: 1.7em;
 			}
-			.status{
-				width: 15%;
-				float: right;
+			.col5{
+				width: 10%;
+				float: left;
 				display: inline-block;
-				text-align: center;
-				font-size: 0.9em;
-				padding-top: 1%;
-				line-height: 1.7em;
-
-				i{
-					margin-left: 10px;
-				}
+				text-align: right;
 			}
 		}
 	}

@@ -1,4 +1,14 @@
 <?php include'config/autoload.php';?>
+<?php
+// Permission
+if(!$user_online){
+	header("Location: index.php");
+	die();
+}
+
+// current page
+$current_page['1'] = 'remark';
+?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>
@@ -27,33 +37,32 @@
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<h1>Web Design Inspiration</h1>
-		<p>Ideas & Inspirations for Web Designers | We find the best web designs all over the world Responsive design for largest screens</p>
+		<div class="head-title">
+			<h1>General Remark</h1>
+			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
+		</div>
 
 		<div class="tab">
-			<div class="tab-items">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items tab-items-active">Tab 5</div>
+			<div class="tab-items tab-items-active">All Remark</div>
+
+			<a href="remark_editor.php?" class="tab-items items-right">New Remark<i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
 
+	<!-- Table -->
+	<div class="topic-fix">
+		<div class="remark-topic-fix">
+			<div class="col1">No.</div>
+			<div class="col2">Message</div>
+			<div class="col3">Category</div>
+		</div>
+	</div>
 	<div class="list">
 		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
 	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
 </body>
 </html>

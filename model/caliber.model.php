@@ -27,13 +27,13 @@ class CaliberModel extends Database{
 	}
 
 	public function getData($id){
-		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark FROM RTH_CaliberCode AS caliber LEFT JOIN RTH_StandardTime AS standard ON caliber.id = standard.caliber_id WHERE caliber.id = :id');
+		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark FROM RTH_CaliberCode AS caliber LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id WHERE caliber.id = :id');
 		parent::bind(':id', $id);
 		parent::execute();
 		return $dataset = parent::single();
 	}
 	public function listall(){
-		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,(SELECT COUNT(id) FROM RTH_OperationRecipe WHERE caliber_id = caliber.id) total_operation FROM RTH_CaliberCode AS caliber LEFT JOIN RTH_StandardTime AS standard ON caliber.id = standard.caliber_id');
+		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,(SELECT COUNT(id) FROM RTH_OperationRecipe WHERE caliber_id = caliber.id) total_operation FROM RTH_CaliberCode AS caliber LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id');
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
@@ -51,6 +51,13 @@ class CaliberModel extends Database{
 		parent::bind(':type', 			'primary');
 		parent::execute();
 		return parent::lastInsertId();
+	}
+
+	public function setStdTimeToSecondary($caliber_id){
+		parent::query('UPDATE RTH_StandardTime SET type = :type WHERE caliber_id = :caliber_id');
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::bind(':type', 			'secondary');
+		parent::execute();
 	}
 
 	/////////////////////////////////////////////////////////

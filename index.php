@@ -1,4 +1,10 @@
 <?php include'config/autoload.php';?>
+<?php
+if(!$user_online){
+	header("Location: login.php");
+	die();
+}
+?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>
@@ -30,16 +36,28 @@
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<h1>All Function</h1>
+		<div class="head-title">
+			<h1>Hi, <?php echo $user->fname;?></h1>
+			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
+		</div>
 	</div>
 
 	<div class="menu-function">
 		<div class="section">
-			<h3>ADMINISTRATOR</h3>
+			<h3>Administrator</h3>
 			<div class="menu-container">
-				<a href="user.php" class="menu-items"><i class="fa fa-user" aria-hidden="true"></i> User</a>
-				<a href="caliber.php" class="menu-items"><i class="fa fa-barcode" aria-hidden="true"></i> Caliber Code</a>
-				<a href="remark.php" class="menu-items"><i class="fa fa-commenting" aria-hidden="true"></i> General Remark</a>
+				<a href="user.php" class="menu-items">
+					<span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+					<span class="caption">User<i class="fa fa-angle-right"></i></span>
+				</a>
+				<a href="caliber.php" class="menu-items">
+					<span class="icon"><i class="fa fa-barcode" aria-hidden="true"></i></span>
+					<span class="caption">Caliber Code<i class="fa fa-angle-right"></i></span>
+				</a>
+				<a href="remark.php" class="menu-items">
+					<span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+					<span class="caption">General Remark<i class="fa fa-angle-right"></i></span>
+				</a>
 			</div>
 		</div>
 	</div>

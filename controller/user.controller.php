@@ -60,6 +60,7 @@ class UserController extends UserModel{
 
 	public function getUser($id){
 		$dataset = parent::getData($id);
+		parent::updateVisitTime($id);
 
 		$this->id = $dataset['id'];
 		$this->code = $dataset['code'];

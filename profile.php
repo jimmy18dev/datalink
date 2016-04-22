@@ -7,7 +7,7 @@ if(!$user_online){
 }
 
 // current page
-$current_page['1'] = 'user';
+$current_page['1'] = 'proflie';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -41,28 +41,13 @@ $current_page['1'] = 'user';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>User management</h1>
-			<p>User Management is an authentication feature that provides administrators with the ability to identify and control the state of users logged into the network.</p>
+			<h1><?php echo $user->fname.' '.$user->lname?></h1>
+			<p>No. <?php echo $user->code?> | Last Visit: <?php echo $user->visit_time;?> | <a href="logout.php">Logout</a></p>
 		</div>
 		<div class="tab">
-			<div class="tab-items tab-items-active">All User</div>
-			<a href="user_editor.php" class="tab-items items-right">New user <i class="fa fa-angle-right"></i></a>
+			<!-- <div class="tab-items tab-items-active">All User</div>
+			<a href="user_editor.php" class="tab-items items-right">New user <i class="fa fa-angle-right"></i></a> -->
 		</div>
-	</div>
-
-	<!-- Table -->
-	<div class="topic-fix">
-		<div class="user-topic-fix">
-			<div class="col1">NO.</div>
-			<div class="col2">NAME</div>
-			<div class="col3">PASSWORD</div>
-			<div class="col4">LAST VISIT</div>
-			<div class="col5">ACTIVE</div>
-		</div>
-	</div>
-	
-	<div class="list">
-		<?php echo $user->listAllUser(array('type' => 'user-items'));?>
 	</div>
 </div>
 </body>

@@ -1,4 +1,11 @@
 <?php include'config/autoload.php';?>
+<?php
+// Permission
+if($user_online){
+	header("Location: index.php");
+	die();
+}
+?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>
@@ -29,15 +36,21 @@
 </head>
 <body>
 <div class="login-container">
-	<div class="logo">DATALINK</div>
+	<div class="logo"><i class="fa fa-code-fork" aria-hidden="true"></i> DATALINK</div>
 	<p>Version 1.0</p>
 	<div class="input">
-		<input type="password" class="input-text" placeholder="Enter your password..." id="password">
-		<div class="login-btn" onclick="login();"><i class="fa fa-arrow-right"></i></div>
+		<form action="javascript:login();">
+			<input type="password" class="input-text" placeholder="Enter your password..." id="password" autofocus>
+			<button type="submit" class="login-btn"><i class="fa fa-arrow-right"></i></button>
+		</form>
 	</div>
+</div>
 
-	<p>UserOnline : <?php echo $user_online;?></p>
-	<p>Cookie: <?php echo $_COOKIE['user_id'];?>, Session: <?php echo $_SESSION['user_id'];?></p>
+<div class="loading-box" id="loading-box">
+	<div class="dialog">
+		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+		<p id="loading-message"></p>
+	</div>
 </div>
 
 <div class="version-bar">Development by Puwadon Sricharoen | Ronda Thailand</div>
