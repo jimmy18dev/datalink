@@ -26,13 +26,15 @@ include_once'model/caliber.model.php';
 include_once'model/section.model.php';
 include_once'model/remark.model.php';
 include_once'model/user.model.php';
-	
+include_once'model/report.model.php';
+
 // Controller ///////////////////////
 include_once'controller/api.controller.php';
 include_once'controller/caliber.controller.php';
 include_once'controller/section.controller.php';
 include_once'controller/remark.controller.php';
 include_once'controller/user.controller.php';
+include_once'controller/report.controller.php';
 
 // Object of Controller
 $api = new ApiController;
@@ -40,6 +42,7 @@ $caliber = new CaliberController;
 $section = new SectionController;
 $remark = new RemarkController;
 $user = new UserController;
+$report = new ReportController;
 
 // Cookie Checking
 if($user->cookieChecking()){ $_SESSION['user_id'] = $_COOKIE['user_id']; }	

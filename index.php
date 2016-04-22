@@ -20,7 +20,6 @@ if(!$user_online){
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
 <title>DATA LINK</title>
 
@@ -40,6 +39,14 @@ if(!$user_online){
 			<h1>Hi, <?php echo $user->fname;?></h1>
 			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
 		</div>
+	</div>
+
+	<div>
+		<?php
+		$header_id = $report->createHeader('5366262169','14','LINE TYPE','A','23 DEC 2016',30,7,1,2,10,15,20,111,222,333,444,555,666,777,888,999,100,200,300,400);
+
+		$report->createDetail(34,23,234,10,10,2333,'remark message',34,344,34.54,221,23.54);
+		?>
 	</div>
 
 	<div class="menu-function">

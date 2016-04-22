@@ -79,12 +79,8 @@ $current_page['2'] = 'new_operation';
 				<input class="input-text" type="text" id="name" value="<?php echo $caliber->opt_name;?>">
 			</div>
 		</div>
-		<div class="form-items">
-			<div class="caption">Caliber Code</div>
-			<div class="input">
-				<input class="input-text" type="text" id="caliber_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
-			</div>
-		</div>
+
+		<input class="input-text" type="hidden" id="caliber_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
 
 		<?php if(empty($caliber->opt_id)){?>
 		<div class="submit-btn" onclick="javascript:createOperation();">Create</div>
