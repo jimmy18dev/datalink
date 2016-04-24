@@ -86,6 +86,16 @@ class CaliberController extends CaliberModel{
 		$this->render($data,$option);
 	}
 
+	public function listOperationInRoute($caliber_id,$option){
+		$data = parent::listOperationInRouteData($caliber_id);
+
+		// echo'<pre>';
+		// print_r($data);
+		// echo'</pre>';
+
+		$this->render($data,$option);
+	}
+
 	// render dataset to view.
     private function render($data,$option){
     	$total_items = 0;
@@ -101,6 +111,15 @@ class CaliberController extends CaliberModel{
         }else if($option['type'] == 'operation-items'){
             foreach ($data as $var){
                 include'template/caliber/operation.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }else if($option['type'] == 'operation-form-items'){
+            foreach ($data as $var){
+                include'template/caliber/operation.form.items.php';
                 $total_items++;
             }
 

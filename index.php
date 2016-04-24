@@ -43,10 +43,22 @@ if(!$user_online){
 
 	<div>
 		<?php
-		$header_id = $report->createHeader('5366262169','14','LINE TYPE','A','23 DEC 2016',30,7,1,2,10,15,20,111,222,333,444,555,666,777,888,999,100,200,300,400);
+		// $header_id = $report->createHeader('5366262169','14','LINE TYPE','A','23 DEC 2016',30,7,1,2,10,15,20,111,222,333,444,555,666,777,888,999,100,200,300,400);
 
-		$report->createDetail(34,23,234,10,10,2333,'remark message',34,344,34.54,221,23.54);
+		// $report->createDetail(34,23,234,10,10,2333,'remark message',34,344,34.54,221,23.54);
 		?>
+	</div>
+
+	<div class="menu-function">
+		<div class="section">
+			<h3>Report</h3>
+			<div class="menu-container">
+				<a href="report_header.php" class="menu-items">
+					<span class="icon"><i class="fa fa-child" aria-hidden="true"></i></span>
+					<span class="caption">Report<i class="fa fa-angle-right"></i></span>
+				</a>
+			</div>
+		</div>
 	</div>
 
 	<div class="menu-function">

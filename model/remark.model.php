@@ -38,6 +38,5 @@ class RemarkModel extends Database{
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
-
 }
 ?>

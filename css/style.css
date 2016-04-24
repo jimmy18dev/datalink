@@ -26,8 +26,8 @@ body {
   top: 0%;
   left: 0%;
   width: 50%;
-  padding: 0% 25%;
-  height: 50px;
+  padding: 0% 20%;
+  height: 60px;
   float: left;
   display: inline-block;
   background: #FFFFFF;
@@ -204,8 +204,8 @@ body {
   display: inline-block;
 }
 .container .head {
-  width: 50%;
-  padding: 0% 25%;
+  width: 60%;
+  padding: 0% 20%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
@@ -380,13 +380,88 @@ body {
   cursor: pointer;
   opacity: 0.8;
 }
-.container .topic-fix {
+.container .list-container {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .report-caliber-detail-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+}
+.container .list-container .report-caliber-detail-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .report-caliber-detail-items .col1 {
+  width: 25%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .report-caliber-detail-items .col2 {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .report-caliber-detail-items .col3 {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .report-caliber-detail-items .col4 {
+  width: 9%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .report-caliber-detail-items .col5 {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .report-caliber-detail-items .col6 {
+  width: 5%;
+  padding-right: 1%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .report-caliber-detail-items .col7 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .report-caliber-detail-items .col8 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .report-caliber-detail-items .col9 {
+  width: 24%;
+  padding-left: 3%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .topic-fix {
+  background: #FAFAFA;
+  font-size: 0.7em;
+}
+.container .topic-fixs {
   width: 100%;
   float: left;
   display: inline-block;
   border-bottom: 1px solid #EEEEEE;
 }
-.container .topic-fix .user-topic-fix {
+.container .topic-fixs .report-header-topic-fix {
   width: 50%;
   padding: 1% 25%;
   float: left;
@@ -395,34 +470,82 @@ body {
   color: #AAAAAA;
   font-size: 0.8em;
 }
-.container .topic-fix .user-topic-fix .col1 {
+.container .topic-fixs .report-header-topic-fix .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .report-header-topic-fix .col2 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .report-header-topic-fix .col3 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .topic-fixs .report-header-topic-fix .col4 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .report-header-topic-fix .col5 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .topic-fixs .report-header-topic-fix .col6 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .topic-fixs .report-header-topic-fix .col7 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .topic-fixs .user-topic-fix {
+  width: 50%;
+  padding: 1% 25%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fixs .user-topic-fix .col1 {
   width: 20%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .user-topic-fix .col2 {
+.container .topic-fixs .user-topic-fix .col2 {
   width: 30%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .user-topic-fix .col3 {
+.container .topic-fixs .user-topic-fix .col3 {
   width: 20%;
   float: left;
   display: inline-block;
   text-align: center;
 }
-.container .topic-fix .user-topic-fix .col4 {
+.container .topic-fixs .user-topic-fix .col4 {
   width: 20%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .user-topic-fix .col5 {
+.container .topic-fixs .user-topic-fix .col5 {
   width: 10%;
   float: left;
   display: inline-block;
   text-align: right;
 }
-.container .topic-fix .remark-topic-fix {
+.container .topic-fixs .remark-topic-fix {
   width: 50%;
   padding: 1% 25%;
   float: left;
@@ -431,23 +554,23 @@ body {
   color: #AAAAAA;
   font-size: 0.8em;
 }
-.container .topic-fix .remark-topic-fix .col1 {
+.container .topic-fixs .remark-topic-fix .col1 {
   width: 10%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .remark-topic-fix .col2 {
+.container .topic-fixs .remark-topic-fix .col2 {
   width: 75%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .remark-topic-fix .col3 {
+.container .topic-fixs .remark-topic-fix .col3 {
   width: 15%;
   float: left;
   display: inline-block;
   text-align: right;
 }
-.container .topic-fix .operation-topic-fix {
+.container .topic-fixs .operation-topic-fix {
   width: 50%;
   padding: 1% 25%;
   float: left;
@@ -456,22 +579,22 @@ body {
   color: #AAAAAA;
   font-size: 0.8em;
 }
-.container .topic-fix .operation-topic-fix .col1 {
+.container .topic-fixs .operation-topic-fix .col1 {
   width: 30%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .operation-topic-fix .col2 {
+.container .topic-fixs .operation-topic-fix .col2 {
   width: 30%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .operation-topic-fix .col3 {
+.container .topic-fixs .operation-topic-fix .col3 {
   width: 40%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .caliber-topic-fix {
+.container .topic-fixs .caliber-topic-fix {
   width: 50%;
   padding: 1% 25%;
   float: left;
@@ -480,18 +603,18 @@ body {
   color: #AAAAAA;
   font-size: 0.8em;
 }
-.container .topic-fix .caliber-topic-fix .col1 {
+.container .topic-fixs .caliber-topic-fix .col1 {
   width: 15%;
   float: left;
   display: inline-block;
 }
-.container .topic-fix .caliber-topic-fix .col2 {
+.container .topic-fixs .caliber-topic-fix .col2 {
   width: 15%;
   float: left;
   display: inline-block;
   text-align: right;
 }
-.container .topic-fix .caliber-topic-fix .col3 {
+.container .topic-fixs .caliber-topic-fix .col3 {
   width: 60%;
   float: left;
   display: inline-block;
@@ -511,6 +634,54 @@ body {
   font-size: 1em;
   color: #CCCCCC;
   text-align: center;
+}
+.container .list .report-header-items {
+  width: 100%;
+  padding: 0.5% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.container .list .report-header-items .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list .report-header-items .col2 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .list .report-header-items .col3 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list .report-header-items .col4 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list .report-header-items .col5 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list .report-header-items .col6 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list .report-header-items .col7 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
 }
 .container .list .remark-items {
   width: 100%;

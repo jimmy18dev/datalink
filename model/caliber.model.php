@@ -33,7 +33,7 @@ class CaliberModel extends Database{
 		return $dataset = parent::single();
 	}
 	public function listall(){
-		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,(SELECT COUNT(id) FROM RTH_OperationRecipe WHERE caliber_id = caliber.id) total_operation FROM RTH_CaliberCode AS caliber LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id');
+		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,(SELECT COUNT(id) FROM RTH_Route WHERE caliber_id = caliber.id) total_route FROM RTH_CaliberCode AS caliber LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id');
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
@@ -61,7 +61,7 @@ class CaliberModel extends Database{
 	}
 
 	/////////////////////////////////////////////////////////
-	// Operation Recipe /////////////////////////////////////
+	// ROUTE ////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////
 	public function createOperation($caliber_id,$route_id,$route_name,$name){
 		parent::query('INSERT INTO RTH_OperationRecipe(caliber_id,route_id,route_name,name,create_time,update_time) VALUE(:caliber_id,:route_id,:route_name,:name,:create_time,:update_time)');
@@ -96,6 +96,15 @@ class CaliberModel extends Database{
 		parent::bind(':id', $id);
 		parent::execute();
 		return $dataset = parent::single();
+	}
+
+
+	// ROUTE
+	public function listOperationInRouteData($caliber_id){
+		parent::query('SELECT * FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS matchs ON matchs.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = matchs.operation_id WHERE caliber_id = :caliber_id');
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::execute();
+		return $dataset = parent::resultset();
 	}
 }
 ?>
