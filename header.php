@@ -30,6 +30,17 @@
 		<?php }else if($current_page['2'] == 'edit_user'){?>
 		<a href="#" class="navibar"><i class="fa fa-angle-right"></i>Edit User</a>
 		<?php }?>
+	<?php }else if($current_page['1'] == 'report'){?>
+		<a href="report_header.php" class="navibar"><i class="fa fa-angle-right"></i>Report</a>
+
+		<?php if($current_page['2'] == 'report_detail'){?>
+		<a href="#" class="navibar"><i class="fa fa-angle-right"></i>2016-04-23</a>
+			<?php if($current_page['3'] == 'report_caliber_detail'){?>
+			<a href="#" class="navibar"><i class="fa fa-angle-right"></i>740 SD</a>
+			<?php }?>
+		<?php }else if($current_page['2'] == 'edit_user'){?>
+		<a href="#" class="navibar"><i class="fa fa-angle-right"></i>Edit User</a>
+		<?php }?>
 	<?php }?>
 	<div class="profile">
 		<div class="name"><a href="profile.php"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $user->fname?></a></div>

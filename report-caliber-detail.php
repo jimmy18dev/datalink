@@ -8,6 +8,11 @@ if(!$user_online){
 if(!empty($_GET['header'])){
 	$report->getHeader($_GET['header']);
 }
+
+// current page
+$current_page['1'] = 'report';
+$current_page['2'] = 'report_detail';
+$current_page['3'] = 'report_caliber_detail';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -48,8 +53,7 @@ if(!empty($_GET['header'])){
 			<a href="report_header_editor.php?" class="tab-items items-right">New Report<i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
-
-	<!-- Table -->
+	
 	<div class="list-container">
 		<div class="report-caliber-detail-items topic-fix">
 			<div class="col1">Name</div>

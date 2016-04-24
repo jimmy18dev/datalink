@@ -1,13 +1,23 @@
-<?php include'config/autoload.php';?>
 <?php
+include'config/autoload.php';
+
 // Permission
 if(!$user_online){
 	header("Location: index.php");
 	die();
 }
 
+// if(!empty($_GET['caliber'])){
+// 	$caliber->getcaliber($_GET['caliber']);
+// }
+
+// if(!empty($_GET['operation_id'])){
+// 	$caliber->getOperationRecipe($_GET['operation_id']);
+// }
+
 // current page
-$current_page['1'] = 'caliber';
+$current_page['1'] = 'report';
+$current_page['2'] = 'new_operation';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -25,7 +35,7 @@ $current_page['1'] = 'caliber';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Caliber Code</title>
+<title>Editor : Operation Recipe</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -33,22 +43,22 @@ $current_page['1'] = 'caliber';
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.form.min.js"></script>
+<script type="text/javascript" src="js/service/report.service.js"></script>
 
 </head>
 <body>
-<?php include'header.php';?>
+<?php include 'header.php';?>
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>Caliber Code</h1>
-			<p>a system of words, letters, figures, or other symbols substituted for other words, letters, etc., especially for the purposes of secrecy.</p>
+			<h1>REPORT DETAIL</h1>
 		</div>
-
 		<div class="tab">
-			<div class="tab-items tab-items-active">All</div>
-			<a href="caliber_editor.php" class="tab-items items-right">New <i class="fa fa-angle-right"></i></a>
+			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
 		</div>
 	</div>
+
 	<!-- Table -->
 	<div class="list-container">
 		<div class="caliber-items topic-fix">
@@ -58,8 +68,10 @@ $current_page['1'] = 'caliber';
 			<div class="col4">Description</div>
 		</div>
 
-		<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
+		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items'));?>
 	</div>
 </div>
+
+<script type="text/javascript" src="js/report_detail.js"></script>
 </body>
 </html>

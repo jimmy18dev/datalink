@@ -76,8 +76,8 @@ class CaliberController extends CaliberModel{
 		$this->remark = $dataset['standard_remark'];
 	}
 
-	public function listAllCaliber($option){
-		$data = parent::listall($option);
+	public function listAllCalibers($option){
+		$data = parent::listAllCaliber($option);
 		$this->render($data,$option);
 	}
 
@@ -120,6 +120,15 @@ class CaliberController extends CaliberModel{
         }else if($option['type'] == 'operation-form-items'){
             foreach ($data as $var){
                 include'template/caliber/operation.form.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }else if($option['type'] == 'caliber-choose-items'){
+            foreach ($data as $var){
+                include'template/caliber/caliber.choose.items.php';
                 $total_items++;
             }
 

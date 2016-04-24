@@ -8,6 +8,10 @@ if(!$user_online){
 if(!empty($_GET['header'])){
 	$report->getHeader($_GET['header']);
 }
+
+// current page
+$current_page['1'] = 'report';
+$current_page['2'] = 'report_detail';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -45,30 +49,19 @@ if(!empty($_GET['header'])){
 		</div>
 
 		<div class="tab">
-			<a href="report_header_editor.php?" class="tab-items items-right">New Report<i class="fa fa-angle-right"></i></a>
+			<a href="report_detail_editor_choose_caliber.php?" class="tab-items items-right">New Report<i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
 
-	<!-- Table -->
-	<div class="topic-fix">
-		<div class="report-header-topic-fix">
-			<div class="col1">Date</div>
-			<div class="col2">LINE NO.</div>
-			<div class="col3">SHIFT</div>
-			<div class="col4">Daily Prs (Hrs.)</div>
-			<div class="col5">Month Prs (Hrs.)</div>
-			<div class="col6">Update</div>
-			<div class="col7">Leader</div>
+	<div class="list-container">
+		<div class="caliber-items topic-fix">
+			<div class="col1">Caliber</div>
+			<div class="col2">ROUTE</div>
+			<div class="col3">Std.time (Hrs/K)</div>
+			<div class="col4">Description</div>
 		</div>
-	</div>
-	<div class="list">
+
 		<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items'));?>
-	</div>
-
-	<div>
-		<?php
-		// $report->createDetail(34,23,234,10,10,2333,'remark message',34,344,34.54,221,23.54);
-		?>
 	</div>
 </div>
 </body>

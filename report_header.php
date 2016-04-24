@@ -4,6 +4,9 @@ if(!$user_online){
 	header("Location: login.php");
 	die();
 }
+
+// current page
+$current_page['1'] = 'report';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -45,26 +48,22 @@ if(!$user_online){
 		</div>
 	</div>
 
-	<!-- Table -->
-	<div class="topic-fix">
-		<div class="report-header-topic-fix">
+	<div class="list-container">
+		<div class="report-header-items topic-fix">
 			<div class="col1">Date</div>
-			<div class="col2">LINE NO.</div>
+			<div class="col2">LINE</div>
 			<div class="col3">SHIFT</div>
 			<div class="col4">Daily Prs (Hrs.)</div>
 			<div class="col5">Month Prs (Hrs.)</div>
-			<div class="col6">Update</div>
-			<div class="col7">Leader</div>
+			<div class="col6">OT 1.0</div>
+			<div class="col7">OT 1.5</div>
+			<div class="col8">OT 2.0</div>
+			<div class="col9">OT 3.0</div>
+			<div class="col10">Updated</div>
+			<div class="col11">Leader</div>
 		</div>
-	</div>
-	<div class="list">
-		<?php $report->listAllHeaders(array('type' => 'report-header-items'));?>
-	</div>
 
-	<div>
-		<?php
-		// $report->createDetail(34,23,234,10,10,2333,'remark message',34,344,34.54,221,23.54);
-		?>
+		<?php $report->listAllHeaders(array('type' => 'report-header-items'));?>
 	</div>
 </div>
 </body>

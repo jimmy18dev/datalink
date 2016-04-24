@@ -1,4 +1,4 @@
-<a href="caliber_code.php?caliber=<?php echo $var['caliber_id'];?>">
+<a href="report_detail_editor.php?caliber=<?php echo $var['caliber_id'];?>">
 <div class="caliber-items">
 	<div class="col1"><?php echo $var['caliber_code'].' '.$var['caliber_family'];?></div>
 	<div class="col2"><?php echo (empty($var['route_name'])?'-':$var['route_name']);?></div>
