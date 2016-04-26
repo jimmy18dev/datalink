@@ -34,29 +34,28 @@ if(!$user_online){
 
 </head>
 <body>
-<header class="header">
-	<div class="logo">RONDA THAILAND</div>
-	<div class="profile">
-		<img src="image/avatar.png" alt="">
-	</div>
-</header>
+<?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<h1>Web Design Inspiration</h1>
-		<p>Ideas & Inspirations for Web Designers | We find the best web designs all over the world Responsive design for largest screens</p>
+		<div class="head-title">
+			<h1>Hi, <?php echo $user->fname;?></h1>
+			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
+		</div>
 
 		<div class="tab">
-			<div class="tab-items">Tab 1</div>
-			<div class="tab-items">Tab 2</div>
-			<div class="tab-items">Tab 3</div>
-			<div class="tab-items">Tab 4</div>
-			<div class="tab-items tab-items-active">Tab 5</div>
+			<a href="section_editor.php" class="btn-right create">Create section<i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
+
+	<div class="list-container">
+		<div class="section-items topic-fix">
+			<div class="col1">Name</div>
+			<div class="col2">Description</div>
+			<div class="col3">Updated</div>
+		</div>
+
+		<?php $section->listAllSection(array('type' => 'section-items'));?>
+	</div>
 </div>
-<footer class="footer">
-	<p>© Ronda (Thailand) co.,ltd 2016 | Datalink version 1.0</p>
-	<p class="mini">RONDA (Thailand) Co., Ltd. We are a subsidiary of a Swiss multinational company, one of the world's leading watch movement manufacturers.</p>
-</footer>
 </body>
 </html>

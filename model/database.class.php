@@ -127,8 +127,8 @@ class Database{
         return $date.' '.$month.' '.$year.' เวลา '.$hour.':'.$minute;
     }
 
-    public function date_thaiformat($datetime){
-        $monthText = array('มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');
+    public function date_format($datetime){
+        $monthText = array('ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.');
         $hour   = date("H",strtotime($datetime));
         $minute = date("i",strtotime($datetime));
         $year   = date('Y',strtotime($datetime))+543;

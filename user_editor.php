@@ -35,9 +35,8 @@ if(empty($userData['id'])){
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
-<title>USER EDITOR</title>
+<title>Edit : <?php echo $user->code;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -54,41 +53,50 @@ if(empty($userData['id'])){
 	<div class="head">
 		<div class="head-title">
 			<h1>User management</h1>
-		</div>
-		<div class="tab">
-			<a href="user.php" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
+			<p>User Management is an authentication feature that provides administrators with the ability to identify and control the state of users logged into the network.</p>
 		</div>
 	</div>
 
 	<div class="form-container">
-		<h3>USER</h3>
 		<div class="form-items">
 			<div class="caption">รหัสพนักงาน</div>
 			<div class="input">
-				<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" autofocus>
+				<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" autofocus placeholder="ตัวเลขหรือตัวอักษรเท่านั้น">
 			</div>
 		</div>
 		<div class="form-items">
-			<div class="caption">ชื่อจริง</div>
+			<div class="caption">ชื่อ-นามสกุล</div>
 			<div class="input">
-				<input class="input-text" type="text" id="fname" value="<?php echo $userData['fname'];?>">
+				<input class="input-text half-size" type="text" id="fname" value="<?php echo $userData['fname'];?>" placeholder="ชื่อจริง">
+				<input class="input-text half-size" type="text" id="lname" value="<?php echo $userData['lname'];?>" placeholder="นามสกุล">
 			</div>
 		</div>
 		<div class="form-items">
-			<div class="caption">นามสกุล</div>
+			<div class="caption">Username</div>
 			<div class="input">
-				<input class="input-text" type="text" id="lname" value="<?php echo $userData['lname'];?>">
+				<input class="input-text" type="text" id="username" value="<?php echo $userData['username'];?>" placeholder="ไม่น้อยกว่า 6 ตัวอีกษร">
 			</div>
 		</div>
 		<div class="form-items">
 			<div class="caption">รหัสผ่าน</div>
 			<div class="input">
-				<input class="input-text" type="text" id="password" value="<?php echo $userData['password'];?>">
+				<input class="input-text" type="text" id="password" value="<?php echo $userData['password'];?>" placeholder="ไม่น้อยกว่า 6 ตัวอีกษร">
+			</div>
+		</div>
+		<div class="form-items">
+			<div class="caption">Section</div>
+			<div class="input">
+				<select class="input-text" id="section_id">
+					<option value="0">Section/Position</option>
+					<?php $section->listAllSection(array('type' => 'section-option-select-items','current'=> $userData['section_id']));?>
+				</select>
 			</div>
 		</div>
 
+		<a href="user.php" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
+
 		<?php if(empty($userData['id'])){?>
-		<div class="submit-btn" onclick="javascript:register();">Register</div>
+		<div class="submit-btn" onclick="javascript:register();">Register<i class="fa fa-angle-right"></i></div>
 		<?php }else{?>
 		<div class="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);">SAVE</div>
 		<?php }?>

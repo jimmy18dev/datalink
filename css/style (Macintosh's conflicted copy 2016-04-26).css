@@ -229,29 +229,28 @@ body {
   color: #555555;
 }
 .container .head .header-report-table {
-  width: 100%;
+  width: 98%;
+  padding: 1%;
   float: left;
   display: inline-block;
   margin: 1% 0%;
-  line-height: 2em;
-  font-size: 0.9em;
+  background: #FAFAFA;
+  border: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box1 {
-  width: 25%;
+  width: 20%;
   float: left;
   display: inline-block;
-  text-align: center;
   border: 1px solid #EEEEEE;
-  border-right: 0px solid transparent;
+  text-align: center;
 }
 .container .head .header-report-table .box1 .box-topic {
   width: 100%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box1 .col {
-  width: 25%;
+  width: 33.33%;
   float: left;
   display: inline-block;
 }
@@ -259,28 +258,23 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box1 .col .col-val {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box2 {
-  width: 30%;
+  width: 20%;
   float: left;
   display: inline-block;
-  text-align: center;
   border: 1px solid #EEEEEE;
-  border-right: 0px solid transparent;
 }
 .container .head .header-report-table .box2 .box-topic {
   width: 100%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
+  text-align: center;
 }
 .container .head .header-report-table .box2 .col {
   width: 20%;
@@ -291,28 +285,23 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box2 .col .col-val {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box3 {
   width: 20%;
   float: left;
   display: inline-block;
-  text-align: center;
   border: 1px solid #EEEEEE;
-  border-right: 0px solid transparent;
 }
 .container .head .header-report-table .box3 .box-topic {
   width: 100%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
+  text-align: center;
 }
 .container .head .header-report-table .box3 .col {
   width: 33.33%;
@@ -323,28 +312,23 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box3 .col .col-val {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box4 {
-  width: 12%;
+  width: 20%;
   float: left;
   display: inline-block;
-  text-align: center;
   border: 1px solid #EEEEEE;
-  border-right: 0px solid transparent;
 }
 .container .head .header-report-table .box4 .box-topic {
   width: 100%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
+  text-align: center;
 }
 .container .head .header-report-table .box4 .col {
   width: 50%;
@@ -355,27 +339,23 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box4 .col .col-val {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box5 {
-  width: 12%;
+  width: 20%;
   float: left;
   display: inline-block;
-  text-align: center;
   border: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box5 .box-topic {
   width: 100%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
+  text-align: center;
 }
 .container .head .header-report-table .box5 .col {
   width: 50%;
@@ -386,14 +366,11 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
 }
 .container .head .header-report-table .box5 .col .col-val {
   width: 100%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
 }
 .container .head .tab {
   width: 100%;
@@ -434,32 +411,9 @@ body {
   color: #e74c3c;
   border-bottom: 1px solid #e74c3c;
 }
-.container .head .tab .btn-right {
-  float: right;
-  padding: 5px 10px;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 0.9em;
-  color: #AAAAAA;
-  background: #CCCCCC;
-  margin-bottom: 1%;
-  border-radius: 3px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-.container .head .tab .btn-right:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
-.container .head .tab .btn-right i {
-  margin-left: 5px;
-}
-.container .head .tab .create {
-  color: #FFFFFF;
-  background: #4CAF50;
-}
 .container .menu-function {
-  width: 60%;
-  padding: 0% 20%;
+  width: 50%;
+  padding: 0% 25%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
@@ -512,18 +466,16 @@ body {
   float: right;
 }
 .container .form-container {
-  width: 46%;
-  padding: 2%;
-  margin: 2% 25%;
+  width: 60%;
+  padding: 0% 20%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
-  border: 1px solid #EEEEEE;
-  border-radius: 3px;
+  margin-top: 3%;
 }
 .container .form-container h3 {
-  color: #DDDDDD;
-  font-size: 1.5em;
+  color: #CCCCCC;
+  font-size: 2em;
   font-weight: normal;
 }
 .container .form-container .form-items {
@@ -537,9 +489,9 @@ body {
   padding: 0% 5%;
   float: left;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.5em;
-  color: #555555;
+  color: #CCCCCC;
   text-align: right;
 }
 .container .form-container .form-items .input {
@@ -552,95 +504,30 @@ body {
   float: left;
   display: inline-block;
   font-family: sans-serif, 'Open Sans';
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.5em;
   border: 0px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #CCCCCC;
   color: #555555;
-}
-.container .form-container .form-items .input .input-textarea {
-  resize: none;
-}
-.container .form-container .form-items .input .half-size {
-  width: 50%;
-}
-.container .form-container .cancel-btn {
-  float: left;
-  margin-top: 5%;
-  padding: 8px 0px;
-  font-size: 0.9em;
-  line-height: 1.5em;
-  color: #AAAAAA;
-}
-.container .form-container .cancel-btn i {
-  margin-right: 10px;
-}
-.container .form-container .cancel-btn:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 .container .form-container .submit-btn {
   float: right;
-  margin-top: 5%;
-  padding: 8px 25px;
+  margin-top: 3%;
+  padding: 10px 15px;
   font-size: 0.9em;
   line-height: 1.5em;
-  background: #4CAF50;
+  background: #003399;
   color: #FFFFFF;
   border-radius: 3px;
-  font-weight: bold;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .container .form-container .submit-btn:hover {
   cursor: pointer;
   opacity: 0.8;
 }
-.container .form-container .submit-btn i {
-  margin-left: 10px;
-}
 .container .list-container {
   width: 100%;
   float: left;
   display: inline-block;
-}
-.container .list-container .empty-items {
-  width: 100%;
-  padding: 5% 0%;
-  float: left;
-  display: inline-block;
-  font-size: 1em;
-  color: #CCCCCC;
-  text-align: center;
-}
-.container .list-container .btn-control {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .btn-control a.btn {
-  width: 18%;
-  margin: 0% 41%;
-  padding: 1% 0%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  background: #27ae60;
-  color: #FFFFFF;
-  font-size: 0.9em;
-  border-radius: 3px;
-  font-weight: bold;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-.container .list-container .btn-control a.btn i {
-  margin-right: 10px;
-}
-.container .list-container .btn-control a.btn:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
-.container .list-container .btn-control a.btn:active {
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .container .list-container .report-caliber-detail-items {
   width: 60%;
@@ -821,57 +708,6 @@ body {
   float: left;
   display: inline-block;
 }
-.container .list-container .section-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-}
-.container .list-container .section-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .section-items .col1 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .section-items .col2 {
-  width: 60%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .section-items .col3 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .remark-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-  color: #555555;
-}
-.container .list-container .remark-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .remark-items .col1 {
-  width: 5%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .remark-items .col2 {
-  width: 95%;
-  float: left;
-  display: inline-block;
-}
 .container .list-container .caliber-items {
   width: 60%;
   padding: 0.5% 20%;
@@ -880,13 +716,12 @@ body {
   border-bottom: 1px solid #EEEEEE;
   line-height: 1.5em;
   font-size: 0.9em;
-  color: #555555;
 }
 .container .list-container .caliber-items:hover {
   background: #FAFAFA;
 }
 .container .list-container .caliber-items .col1 {
-  width: 15%;
+  width: 20%;
   float: left;
   display: inline-block;
 }
@@ -903,7 +738,7 @@ body {
   margin-right: 5%;
 }
 .container .list-container .caliber-items .col4 {
-  width: 40%;
+  width: 45%;
   float: left;
   display: inline-block;
 }
@@ -915,7 +750,6 @@ body {
   border-bottom: 1px solid #EEEEEE;
   line-height: 1.5em;
   font-size: 0.9em;
-  color: #CCCCCC;
 }
 .container .list-container .route-items:hover {
   background: #FAFAFA;
@@ -926,93 +760,422 @@ body {
   display: inline-block;
 }
 .container .list-container .route-items .col2 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col3 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col4 {
-  width: 40%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items-primary {
-  color: #555555;
-}
-.container .list-container .user-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-}
-.container .list-container .user-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .user-items .col1 {
   width: 15%;
   float: left;
   display: inline-block;
 }
-.container .list-container .user-items .col2 {
-  width: 26%;
+.container .list-container .route-items .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  margin-right: 5%;
+}
+.container .list-container .route-items .col4 {
+  width: 25%;
   float: left;
   display: inline-block;
 }
-.container .list-container .user-items .col2 i {
-  margin-right: 10px;
+.container .list-container .route-items .col5 {
+  width: 20%;
+  float: left;
+  display: inline-block;
 }
-.container .list-container .user-items .col2 .fa-circle {
-  color: #4CAF50;
-}
-.container .list-container .user-items .col2 .fa-circle-o {
-  color: #CCCCCC;
-}
-.container .list-container .user-items .col2 a {
+.container .list-container .topic-fix {
+  background: #FAFAFA;
   font-size: 0.7em;
-  color: #003399;
 }
-.container .list-container .user-items .col2 a:hover {
-  text-decoration: underline;
+.container .topic-fixs {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
 }
-.container .list-container .user-items .col3 {
-  width: 12%;
+.container .topic-fixs .report-header-topic-fix {
+  width: 50%;
+  padding: 1% 25%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fixs .report-header-topic-fix .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .report-header-topic-fix .col2 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .report-header-topic-fix .col3 {
+  width: 10%;
   float: left;
   display: inline-block;
   text-align: center;
 }
-.container .list-container .user-items .col4 {
-  width: 12%;
+.container .topic-fixs .report-header-topic-fix .col4 {
+  width: 15%;
   float: left;
   display: inline-block;
-  text-align: center;
 }
-.container .list-container .user-items .col5 {
-  width: 13%;
+.container .topic-fixs .report-header-topic-fix .col5 {
+  width: 15%;
   float: left;
   display: inline-block;
-  margin-left: 2%;
+  text-align: right;
 }
-.container .list-container .user-items .col6 {
+.container .topic-fixs .report-header-topic-fix .col6 {
   width: 20%;
   float: left;
   display: inline-block;
   text-align: right;
 }
-.container .list-container .user-items .col6 .visit {
-  font-size: 0.8em;
-  font-style: italic;
-  color: #CCCCCC;
+.container .topic-fixs .report-header-topic-fix .col7 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
 }
-.container .list-container .topic-fix {
+.container .topic-fixs .user-topic-fix {
+  width: 50%;
+  padding: 1% 25%;
+  float: left;
+  display: inline-block;
   background: #FAFAFA;
-  font-size: 0.7em;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fixs .user-topic-fix .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .user-topic-fix .col2 {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .user-topic-fix .col3 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .topic-fixs .user-topic-fix .col4 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .user-topic-fix .col5 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .topic-fixs .remark-topic-fix {
+  width: 50%;
+  padding: 1% 25%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fixs .remark-topic-fix .col1 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .remark-topic-fix .col2 {
+  width: 75%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .remark-topic-fix .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .topic-fixs .operation-topic-fix {
+  width: 50%;
+  padding: 1% 25%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fixs .operation-topic-fix .col1 {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .operation-topic-fix .col2 {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .operation-topic-fix .col3 {
+  width: 40%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .caliber-topic-fix {
+  width: 50%;
+  padding: 1% 25%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.container .topic-fixs .caliber-topic-fix .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .topic-fixs .caliber-topic-fix .col2 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .topic-fixs .caliber-topic-fix .col3 {
+  width: 60%;
+  float: left;
+  display: inline-block;
+  padding: 0% 5%;
+}
+.container .list {
+  width: 50%;
+  margin: 0% 25%;
+  float: left;
+  display: inline-block;
+}
+.container .list .empty-items {
+  width: 100%;
+  padding: 20% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 1em;
+  color: #CCCCCC;
+  text-align: center;
+}
+.container .list .report-header-items {
+  width: 100%;
+  padding: 0.5% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.container .list .report-header-items .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list .report-header-items .col2 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .list .report-header-items .col3 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list .report-header-items .col4 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list .report-header-items .col5 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list .report-header-items .col6 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list .report-header-items .col7 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list .remark-items {
+  width: 100%;
+  padding: 0.5% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.container .list .remark-items .col1 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .list .remark-items .col2 {
+  width: 75%;
+  float: left;
+  display: inline-block;
+}
+.container .list .remark-items .col2 a {
+  color: #003399;
+}
+.container .list .remark-items .col2 a:hover {
+  text-decoration: underline;
+}
+.container .list .remark-items .col2 a i {
+  margin-left: 5px;
+}
+.container .list .remark-items .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list .operation-items {
+  width: 100%;
+  padding: 0.5% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.container .list .operation-items .col1 {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.container .list .operation-items .col2 {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.container .list .operation-items .col3 {
+  width: 40%;
+  float: left;
+  display: inline-block;
+}
+.container .list .operation-items .col3 a {
+  color: #003399;
+}
+.container .list .operation-items .col3 a:hover {
+  text-decoration: underline;
+}
+.container .list .operation-items .col3 a i {
+  margin-left: 5px;
+}
+.container .list .caliber-items {
+  width: 100%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  color: #000000;
+}
+.container .list .caliber-items a {
+  color: #000000;
+}
+.container .list .caliber-items:hover {
+  background: #FAFAFA;
+}
+.container .list .caliber-items .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list .caliber-items .col1 a {
+  color: #000000;
+}
+.container .list .caliber-items .col1 a:hover {
+  text-decoration: underline;
+}
+.container .list .caliber-items .col2 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list .caliber-items .col3 {
+  width: 65%;
+  float: left;
+  display: inline-block;
+  margin-left: 5%;
+  font-size: 0.8em;
+}
+.container .list .caliber-items .col3 .operation {
+  color: #999999;
+  font-style: italic;
+}
+.container .list .caliber-items .col3 a {
+  color: #003399;
+  font-style: italic;
+}
+.container .list .caliber-items .col3 a:hover {
+  text-decoration: underline;
+}
+.container .list .user-items {
+  width: 100%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  color: #000000;
+}
+.container .list .user-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list .user-items .col2 {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.container .list .user-items .col2 a {
+  color: #003399;
+}
+.container .list .user-items .col2 a i {
+  margin-left: 5px;
+}
+.container .list .user-items .col2 a:hover {
+  text-decoration: underline;
+}
+.container .list .user-items .col3 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list .user-items .col4 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list .user-items .col5 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: right;
 }
 .container .content {
   width: 70%;

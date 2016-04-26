@@ -3,7 +3,9 @@ $(document).ready(function(){
     $bar        = $('#progress-bar');
     $icon       = $('#progress-icon');
     $message    = $('#progress-message');
-    var order_id   = $('#order_id').val();
+
+
+    var header_id = $('#header_id').val();
 
     $('#ReportDetail').ajaxForm({
         beforeSubmit: function(){
@@ -35,6 +37,7 @@ $(document).ready(function(){
             $message.html('<i class="fa fa-check"></i>ส่งหลักฐานการโอนเงินแล้ว');
             // location.reload();
             console.log(xhr.responseText);
+            window.location = 'report_detail.php?header='+header_id;
         }
     });
 });

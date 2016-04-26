@@ -44,7 +44,7 @@ if($_POST['calling'] != ''){
 					break;
 				case 'create_operation':
 					if(true){
-						$return_id = $caliber->createOperation($_POST['caliber_id'],$_POST['route_id'],$_POST['route_name'],$_POST['name']);
+						$return_id = $caliber->createOperation($_POST['name'],$_POST['description']);
 						
 						// if(!empty($user_id) && $user_id != 0){
 						// 	$return_message = 'register successful';
@@ -63,7 +63,64 @@ if($_POST['calling'] != ''){
 					break;
 				case 'edit_operation':
 					if(true){
-						$return_id = $caliber->editOperation($_POST['id'],$_POST['route_id'],$_POST['route_name'],$_POST['name']);
+						$return_id = $caliber->editOperation($_POST['id'],$_POST['name'],$_POST['description']);
+						
+						// if(!empty($user_id) && $user_id != 0){
+						// 	$return_message = 'register successful';
+						// 	$register_state = true;
+
+						// 	// Autologin after register successful
+						// 	// $login_state = $people->login($_POST['email'],$_POST['password'],'');
+						// }else{
+						// 	$return_message = 'register fail!';
+						// 	$register_state = false;
+						// }
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
+				case 'create_route':
+					if(true){
+						$return_id = $caliber->createRoute($_POST['caliber_id'],$_POST['route_code'],$_POST['route_name'],$_POST['name']);
+						
+						// if(!empty($user_id) && $user_id != 0){
+						// 	$return_message = 'register successful';
+						// 	$register_state = true;
+
+						// 	// Autologin after register successful
+						// 	// $login_state = $people->login($_POST['email'],$_POST['password'],'');
+						// }else{
+						// 	$return_message = 'register fail!';
+						// 	$register_state = false;
+						// }
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
+				case 'edit_route':
+					if(true){
+						$return_id = $caliber->editRoute($_POST['route_id'],$_POST['route_code'],$_POST['route_name'],$_POST['name']);
+						
+						// if(!empty($user_id) && $user_id != 0){
+						// 	$return_message = 'register successful';
+						// 	$register_state = true;
+
+						// 	// Autologin after register successful
+						// 	// $login_state = $people->login($_POST['email'],$_POST['password'],'');
+						// }else{
+						// 	$return_message = 'register fail!';
+						// 	$register_state = false;
+						// }
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
+				case 'create_macthing':
+					if(true){
+						$return_id = $caliber->connectOperationAndRoute($_POST['route_id'],$_POST['operation_id']);
 						
 						// if(!empty($user_id) && $user_id != 0){
 						// 	$return_message = 'register successful';

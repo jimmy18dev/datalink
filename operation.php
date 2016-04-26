@@ -6,8 +6,12 @@ if(!$user_online){
 	die();
 }
 
+if(!empty($_GET['route'])){
+	$caliber->getRoute($_GET['route']);
+}
+
 // current page
-$current_page['1'] = 'remark';
+$current_page['1'] = 'caliber';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -24,9 +28,8 @@ $current_page['1'] = 'remark';
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
-<title>General Remark</title>
+<title>Route</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -34,6 +37,7 @@ $current_page['1'] = 'remark';
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/caliber.service.js"></script>
 
 </head>
 <body>
@@ -41,24 +45,28 @@ $current_page['1'] = 'remark';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>General Remark</h1>
-			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
+			<h1>Operation in <?php echo $caliber->route_name;?></h1>
+			<p>| <a href="route_editor.php?route=<?php echo $caliber->route_id;?>">edit</a></p>
 		</div>
 
 		<div class="tab">
-			<a href="remark_editor.php?" class="btn-right create">New Remark<i class="fa fa-angle-right"></i></a>
+			<!-- <div class="tab-items tab-items-active">All</div> -->
+			<a href="operation_editor.php" class="tab-items items-right"><i class="fa fa-plus" aria-hidden="true"></i>CREATE OPERATION</a>
 		</div>
 	</div>
-
 	<!-- Table -->
 	<div class="list-container">
-		<div class="remark-items topic-fix">
-			<div class="col1">No.</div>
-			<div class="col2">Message</div>
+		<div class="operation-items topic-fix">
+			<div class="col1">Name</div>
+			<div class="col2">Descriptions</div>
+			<div class="col3">Updated</div>
+			<div class="col5">Status</div>
 		</div>
 
-		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
+		<?php $caliber->listAllOperations($caliber->route_id,array('type' => 'operation-items'));?>
 	</div>
+
+	<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
 </div>
 </body>
 </html>

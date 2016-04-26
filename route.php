@@ -6,8 +6,12 @@ if(!$user_online){
 	die();
 }
 
+if(!empty($_GET['caliber'])){
+	$caliber->getCaliber($_GET['caliber']);
+}
+
 // current page
-$current_page['1'] = 'remark';
+$current_page['1'] = 'caliber';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -24,9 +28,8 @@ $current_page['1'] = 'remark';
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
-<title>General Remark</title>
+<title>Route</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -41,23 +44,25 @@ $current_page['1'] = 'remark';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>General Remark</h1>
-			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
+			<h1>Route of <?php echo $caliber->code.' '.$caliber->family;?></h1>
+			<p>Standard time: <strong><?php echo $caliber->hrs;?></strong> Hrs/K | Updated: <?php echo $caliber->update_time;?> | <?php echo $caliber->description;?></p>
 		</div>
 
 		<div class="tab">
-			<a href="remark_editor.php?" class="btn-right create">New Remark<i class="fa fa-angle-right"></i></a>
+			<!-- <div class="tab-items tab-items-active">All</div> -->
+			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="btn-right create">Create route<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 		</div>
 	</div>
-
 	<!-- Table -->
 	<div class="list-container">
-		<div class="remark-items topic-fix">
-			<div class="col1">No.</div>
-			<div class="col2">Message</div>
+		<div class="route-items topic-fix">
+			<div class="col1">Route Name</div>
+			<div class="col2">Type</div>
+			<div class="col3">Updated</div>
+			<div class="col4">Description</div>
 		</div>
 
-		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
+		<?php $caliber->listAllRoutes($caliber->id,array('type' => 'route-items'));?>
 	</div>
 </div>
 </body>

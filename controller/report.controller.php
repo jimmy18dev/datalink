@@ -1,8 +1,6 @@
 <?php
 class ReportController extends ReportModel{
 	public $id;
-	public $leader_id;
-	public $leader_name;
 	public $line_no;
 	public $line_type;
 	public $shift;
@@ -27,10 +25,15 @@ class ReportController extends ReportModel{
 	public $sort_oversea;
 	public $rework_local;
 	public $rework_oversea;
-	public $create_time;
-	public $update_time;
 	public $type;
 	public $status;
+
+	public $date;
+	public $update;
+	public $update_time;
+
+	public $leader_name;
+	public $leader_id;
 
 	public function getHeader($id){
 		$data = parent::getData($id);
@@ -62,8 +65,14 @@ class ReportController extends ReportModel{
 		$this->sort_oversea = $data['sort_oversea'];
 		$this->rework_local = $data['rework_local'];
 		$this->rework_oversea = $data['rework_oversea'];
-		$this->create_time = $data['create_time'];
+
+		// timer
+		$this->date = $data['date'];
+		$this->update = $data['update'];
 		$this->update_time = $data['update_time'];
+
+		$this->leader_name = $data['fname'].' '.$data['lname'];
+		
 		$this->type  = $data['type'];
 		$this->status  = $data['status'];
 	}

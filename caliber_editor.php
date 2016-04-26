@@ -34,7 +34,6 @@ if(empty($caliber->id)){
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
 <title>Editor : Caliber Code</title>
 
@@ -55,49 +54,41 @@ if(empty($caliber->id)){
 			<h1>Caliber Code</h1>
 			<p>a system of words, letters, figures, or other symbols substituted for other words, letters, etc., especially for the purposes of secrecy.</p>
 		</div>
-		<div class="tab">
-			<a href="caliber.php" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
-		</div>
 	</div>
 
 	<div class="form-container">
-		<h3>Create caliber code</h3>
 		<div class="form-items">
-			<div class="caption">Code</div>
+			<div class="caption">Caliber Code</div>
 			<div class="input">
-				<input class="input-text" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus>
+				<input class="input-text half-size" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus placeholder="CODE">
+				<input class="input-text half-size" type="text" id="family" value="<?php echo $caliber->family;?>" placeholder="Family">
 			</div>
 		</div>
-		<div class="form-items">
-			<div class="caption">Family</div>
-			<div class="input">
-				<input class="input-text" type="text" id="family" value="<?php echo $caliber->family;?>">
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Description</div>
-			<div class="input">
-				<input class="input-text" type="text" id="description" value="<?php echo $caliber->description;?>">
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Name</div>
-			<div class="input">
-				<input class="input-text" type="text" id="name" value="<?php echo $caliber->name;?>">
-			</div>
-		</div>
+		
 		<div class="form-items">
 			<div class="caption">Std.time (Hrs/K)</div>
 			<div class="input">
-				<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>">
+				<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>" placeholder="0.00">
 			</div>
 		</div>
+
+		<div class="form-items">
+			<div class="caption">Description</div>
+			<div class="input">
+				<textarea class="input-text input-textarea" id="description"><?php echo $caliber->description;?></textarea>
+			</div>
+		</div>
+
 		<div class="form-items">
 			<div class="caption">Remark</div>
 			<div class="input">
 				<input class="input-text" type="text" id="remark" value="<?php echo $caliber->remark;?>">
 			</div>
 		</div>
+
+		<input class="input-text" type="hidden" id="name" value="<?php echo $caliber->name;?>">
+
+		<a href="caliber.php" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
 
 		<?php if(empty($caliber->id)){?>
 		<div class="submit-btn" onclick="javascript:create();">Create</div>

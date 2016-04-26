@@ -1,5 +1,6 @@
 function login(){
     var href        = 'api.user.php';
+    var username    = $('#username').val();
     var password    = $('#password').val();
 
     if(password == ""){
@@ -18,6 +19,7 @@ function login(){
         data:{
             calling             :'user',
             action              :'login',
+            username:username,
             password: password,
         },
         error: function (request, status, error) {
@@ -40,7 +42,9 @@ function register(){
     var code        = $('#code').val();
     var fname       = $('#fname').val();
     var lname       = $('#lname').val();
+    var username    = $('#username').val();
     var password    = $('#password').val();
+    var section_id  = $('#section_id').val();
 
     $('#loading-message').html('กำลังเพิ่มพนักงานใหม่...');
     $('#loading-box').fadeIn(300);
@@ -56,7 +60,9 @@ function register(){
             code:code,
             fname:fname,
             lname:lname,
+            username:username,
             password:password,
+            section_id:section_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -80,7 +86,9 @@ function edit(id){
     var code        = $('#code').val();
     var fname       = $('#fname').val();
     var lname       = $('#lname').val();
+    var username    = $('#username').val();
     var password    = $('#password').val();
+    var section_id  = $('#section_id').val();
 
     $('#loading-message').html('กำลังเข้าระบบ...');
     $('#loading-box').fadeIn(300);
@@ -97,7 +105,9 @@ function edit(id){
             code:code,
             fname:fname,
             lname:lname,
+            username:username,
             password:password,
+            section_id:section_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");

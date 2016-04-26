@@ -45,8 +45,8 @@ $current_page['1'] = 'caliber';
 		</div>
 
 		<div class="tab">
-			<div class="tab-items tab-items-active">All</div>
-			<a href="caliber_editor.php" class="tab-items items-right">New <i class="fa fa-angle-right"></i></a>
+			<!-- <div class="tab-items tab-items-active">All</div> -->
+			<a href="caliber_editor.php" class="btn-right create">New caliber code<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 		</div>
 	</div>
 	<!-- Table -->

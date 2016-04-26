@@ -12,27 +12,27 @@ class UserController extends UserModel{
 	public $status;
 
 	// Register new user
-	public function register($code,$fname,$lname,$password){
+	public function register($section_id,$code,$fname,$lname,$username,$password){
 		$already_id = parent::already($code,$fname,$lname);
 
 		if(empty($already_id)){
-			return parent::create($code,$fname,$lname,$password);
+			return parent::create($section_id,$code,$fname,$lname,$username,$password);
 		}else{
 			return 0;
 		}
 	}
 
-	public function editInfo($id,$code,$fname,$lname,$password){
+	public function editInfo($id,$section_id,$code,$fname,$lname,$username,$password){
 
 		if(empty($id) || empty($code) || empty($fname) || empty($lname) || empty($password)){ return false; }
 		
-		parent::edit($id,$code,$fname,$lname,$password);
+		parent::edit($id,$section_id,$code,$fname,$lname,$username,$password);
 	}
 
-	public function login($password){
-		if(empty($password)){ return false; }
+	public function login($username,$password){
+		if(empty($username) || empty($password)){ return false; }
 
-		$user_id = parent::userLogin($password);
+		$user_id = parent::userLogin($username,$password);
 		
 		if(!empty($user_id)){
 			$_SESSION['user_id'] = $user_id;
@@ -84,6 +84,15 @@ class UserController extends UserModel{
     	$total_items = 0;
         if($option['type'] == 'user-items'){
             foreach ($data as $var){
+
+            	// Online checking
+            	$timestamp = strtotime($var['visit']);
+            	if(time() - $timestamp < 300){
+            		$online = true;
+            	}else{
+            		$online = false;
+            	}
+
                 include'template/user/user.items.php';
                 $total_items++;
             }

@@ -38,6 +38,15 @@ class RemarkController extends RemarkModel{
             if($total_items == 0){
             	// include'template/article/article.empty.items.php';
             }
+        }else if($option['type'] == 'remark-option-select-items'){
+            foreach ($data as $var){
+                include'template/remark/remark.option.select.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	// include'template/article/article.empty.items.php';
+            }
         }
 
         unset($data);

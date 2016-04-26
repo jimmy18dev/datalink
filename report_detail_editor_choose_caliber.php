@@ -52,10 +52,7 @@ $current_page['2'] = 'new_operation';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>REPORT DETAIL</h1>
-		</div>
-		<div class="tab">
-			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
+			<h1>Choose Caliber Code...</h1>
 		</div>
 	</div>
 
@@ -68,7 +65,7 @@ $current_page['2'] = 'new_operation';
 			<div class="col4">Description</div>
 		</div>
 
-		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items'));?>
+		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
 	</div>
 </div>
 

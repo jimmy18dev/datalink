@@ -7,13 +7,9 @@ if(!$user_online){
 	die();
 }
 
-// if(!empty($_GET['caliber'])){
-// 	$caliber->getcaliber($_GET['caliber']);
-// }
-
-// if(!empty($_GET['operation_id'])){
-// 	$caliber->getOperationRecipe($_GET['operation_id']);
-// }
+if(!empty($_GET['caliber'])){
+	$caliber->getCaliber($_GET['caliber']);
+}
 
 // current page
 $current_page['1'] = 'report';
@@ -52,7 +48,7 @@ $current_page['2'] = 'new_operation';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>REPORT DETAIL</h1>
+			<h1>REPORT DETAIL of <?php echo $caliber->code.' '.$caliber->family;?></h1>
 		</div>
 		<div class="tab">
 			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
@@ -64,9 +60,12 @@ $current_page['2'] = 'new_operation';
 	</div>
 
 	<div class="form-container">
-		<h3>Operations of ROUTE #1</h3>
+		<h3>Operations in <?php echo $caliber->route_name;?></h3>
 		<form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
-			<?php $caliber->listOperationInRoute(1,array('type' => 'operation-form-items'));?>
+			<?php $caliber->listOperationInRoute($caliber->id,array('type' => 'operation-form-items'));?>
+
+
+			<input type="hidden" name="header_id" value="<?php echo $_GET['header'];?>">
 			<button type="submit">SAVE</button>
 		</form>
 	</div>

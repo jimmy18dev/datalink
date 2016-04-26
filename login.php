@@ -21,7 +21,6 @@ if($user_online){
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
 <title>LOGIN</title>
 
@@ -40,7 +39,8 @@ if($user_online){
 	<p>Version 1.0</p>
 	<div class="input">
 		<form action="javascript:login();">
-			<input type="password" class="input-text" placeholder="Enter your password..." id="password" autofocus>
+			<input type="text" class="input-text" id="username" placeholder="Username" autofocus>
+			<input type="password" class="input-text" placeholder="Enter your password..." id="password">
 			<button type="submit" class="login-btn"><i class="fa fa-arrow-right"></i></button>
 		</form>
 	</div>

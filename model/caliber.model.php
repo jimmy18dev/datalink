@@ -27,7 +27,11 @@ class CaliberModel extends Database{
 	}
 
 	public function getData($id){
-		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark FROM RTH_CaliberCode AS caliber LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id WHERE caliber.id = :id');
+		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,route.id route_id,route.route_code,route.route_name 
+			FROM RTH_CaliberCode AS caliber 
+			LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
+			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
+			WHERE caliber.id = :id');
 		parent::bind(':id', $id);
 		parent::execute();
 		return $dataset = parent::single();
@@ -36,7 +40,8 @@ class CaliberModel extends Database{
 		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,route.id route_id,route.route_name route_name,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_opearation 
 			FROM RTH_CaliberCode AS caliber 
 			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
-			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary"');
+			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
+			ORDER BY caliber.update_time DESC');
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
@@ -66,48 +71,152 @@ class CaliberModel extends Database{
 	/////////////////////////////////////////////////////////
 	// ROUTE ////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////
-	public function createOperation($caliber_id,$route_id,$route_name,$name){
-		parent::query('INSERT INTO RTH_OperationRecipe(caliber_id,route_id,route_name,name,create_time,update_time) VALUE(:caliber_id,:route_id,:route_name,:name,:create_time,:update_time)');
+	public function createRoute($caliber_id,$route_code,$route_name,$name){
+		
+		// Clean primary type
+		$this->clearPrimaryRoute($caliber_id);
+
+		parent::query('INSERT INTO RTH_Route(caliber_id,route_code,route_name,name,create_time,update_time,type) VALUE(:caliber_id,:route_code,:route_name,:name,:create_time,:update_time,:type)');
 		parent::bind(':caliber_id', 	$caliber_id);
-		parent::bind(':route_id', 		$route_id);
+		parent::bind(':route_code', 	$route_code);
 		parent::bind(':route_name', 	$route_name);
 		parent::bind(':name', 			$name);
+		parent::bind(':create_time',	date('Y-m-d H:i:s'));
+		parent::bind(':update_time',	date('Y-m-d H:i:s'));
+		parent::bind(':type', 			'primary');
+		parent::execute();
+		return parent::lastInsertId();
+	}
+
+	public function clearPrimaryRoute($caliber_id){
+		parent::query('UPDATE RTH_Route SET type = "secondary" WHERE caliber_id = :caliber_id');
+		parent::bind(':caliber_id', $caliber_id);
+		parent::execute();
+	}
+
+	public function editRoute($route_id,$route_code,$route_name,$name){
+		parent::query('UPDATE RTH_Route SET route_code = :route_code,route_name = :route_name,name = :name,update_time = :update_time WHERE id = :route_id');
+		parent::bind(':route_id', 		$route_id);
+		parent::bind(':route_code', 	$route_code);
+		parent::bind(':route_name', 	$route_name);
+		parent::bind(':name', 			$name);
+		parent::bind(':update_time',	date('Y-m-d H:i:s'));
+		parent::execute();
+	}
+
+	public function listAllRoute(){
+		parent::query('SELECT * FROM RTH_Route');
+		parent::execute();
+		return $dataset = parent::resultset();
+	}
+
+	public function listRouteInCaliber($caliber_id){
+		parent::query('SELECT route.id,route.caliber_id,route.route_code,route.route_name,route.name,route.create_time,route.update_time,route.type,route.status,(SELECT COUNT(id) FROM RTH_RouteMatchOperation AS rmo WHERE rmo.route_id = route.id) total_operation FROM RTH_Route AS route WHERE caliber_id = :caliber_id');
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::execute();
+		$dataset = parent::resultset();
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['create_time'] = parent::datetime_thaiformat($var['create_time']);
+			$dataset[$k]['update_time'] = parent::date_format($var['update_time']);
+		}
+
+		return $dataset;
+	}
+
+	// ROUTE
+	public function getRouteData($route_id){
+		parent::query('SELECT * FROM RTH_Route WHERE id = :route_id');
+		parent::bind(':route_id', $route_id);
+		parent::execute();
+		return $dataset = parent::single();
+	}
+	public function listOperationInRouteData($caliber_id){
+		parent::query('SELECT * FROM RTH_Route AS route RIGHT JOIN RTH_RouteMatchOperation AS matchs ON matchs.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = matchs.operation_id WHERE caliber_id = :caliber_id AND route.type = "primary"');
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::execute();
+		return $dataset = parent::resultset();
+	}
+
+
+	// OPERATION
+	public function getOperationData($operation_id){
+		parent::query('SELECT * FROM RTH_Operation WHERE id = :operation_id');
+		parent::bind(':operation_id', $operation_id);
+		parent::execute();
+		return $dataset = parent::single();
+	}
+	public function createOperation($name,$description){
+		parent::query('INSERT INTO RTH_Operation(name,description,create_time,update_time) VALUE(:name,:description,:create_time,:update_time)');
+		parent::bind(':name', 			$name);
+		parent::bind(':description', 	$description);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::execute();
 		return parent::lastInsertId();
 	}
-
-	public function editOperation($id,$route_id,$route_name,$name){
-		parent::query('UPDATE RTH_OperationRecipe SET route_id = :route_id,route_name = :route_name,name = :name,update_time = :update_time WHERE id = :id');
+	public function editOperation($id,$name,$description){
+		parent::query('UPDATE RTH_Operation SET name = :name,description = :description,update_time = :update_time WHERE id = :id');
 		parent::bind(':id', 			$id);
-		parent::bind(':route_id', 		$route_id);
-		parent::bind(':route_name', 	$route_name);
 		parent::bind(':name', 			$name);
+		parent::bind(':description', 	$description);
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::execute();
+		return parent::lastInsertId();
 	}
 
-	public function listallOperation($caliber_id){
-		parent::query('SELECT * FROM RTH_OperationRecipe WHERE caliber_id = :caliber_id');
-		parent::bind(':caliber_id', 	$caliber_id);
+	// List all operation and checking operation in route id.
+	public function listOperationAllInRoute($route_id){
+		parent::query('SELECT operation.id,operation.name,operation.description,operation.create_time,operation.update_time,operation.type,operation.status,rmo.id match_id FROM RTH_Operation AS operation LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.operation_id = operation.id AND rmo.route_id = :route_id');
+		parent::bind(':route_id', 	$route_id);
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
-	public function getDataOperation($id){
-		parent::query('SELECT * FROM RTH_OperationRecipe WHERE id = :id');
-		parent::bind(':id', $id);
-		parent::execute();
-		return $dataset = parent::single();
-	}
 
-
-	// ROUTE
-	public function listOperationInRouteData($caliber_id){
-		parent::query('SELECT * FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS matchs ON matchs.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = matchs.operation_id WHERE caliber_id = :caliber_id');
-		parent::bind(':caliber_id', 	$caliber_id);
+	// list all operation by route id
+	public function listAllOperation($route_id){
+		parent::query('SELECT * FROM RTH_Operation');
+		parent::bind(':route_id', 	$route_id);
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
+
+
+	// Matching operation to route
+	public function connectOperationToRoute($route_id,$operation_id){
+		parent::query('INSERT INTO RTH_RouteMatchOperation(route_id,operation_id,create_time) VALUE(:route_id,:operation_id,:create_time)');
+		parent::bind(':route_id', 		$route_id);
+		parent::bind(':operation_id', 	$operation_id);
+		parent::bind(':create_time',	date('Y-m-d H:i:s'));
+		parent::execute();
+		return parent::lastInsertId();
+	}
+	public function alreadyConnect($route_id,$operation_id){
+		parent::query('SELECT id FROM RTH_RouteMatchOperation WHERE route_id = :route_id AND operation_id = :operation_id');
+		parent::bind(':route_id', 		$route_id);
+		parent::bind(':operation_id', 	$operation_id);
+		parent::execute();
+		$dataset = parent::single();
+
+		if(empty($dataset['id']))
+			return true;
+		else
+			return false;
+	}
+	public function removeOperationOnRoute($route_id,$operation_id){
+		parent::query('DELETE FROM RTH_RouteMatchOperation WHERE route_id = :route_id AND operation_id = :operation_id');
+		parent::bind(':route_id', 		$route_id);
+		parent::bind(':operation_id', 	$operation_id);
+		parent::execute();
+	}
+
+
+
+	// REMARKS
+	public function listAllRemark(){
+		parent::query('SELECT * FROM RTH_GeneralRemark');
+		parent::execute();
+		return $dataset = parent::resultset();
+	}
+
 }
 ?>

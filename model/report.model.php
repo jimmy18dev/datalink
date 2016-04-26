@@ -40,16 +40,28 @@ class ReportModel extends Database{
 	}
 
 	public function getData($id){
-		parent::query('SELECT * FROM RTH_DailyOutputHeader WHERE id = :id');
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.create_time,header.update_time,header.type,header.status,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
 		parent::bind(':id', $id);
 		parent::execute();
-		return $dataset = parent::single();
+		$dataset = parent::single();
+
+		$dataset['date'] = parent::date_format($dataset['create_time']);
+		$dataset['update'] = parent::date_facebookformat($dataset['update_time']);
+		$dataset['update_time'] = parent::datetime_thaiformat($dataset['update_time']);
+
+		return $dataset;
 	}
 
 	public function listAllHeader(){
-		parent::query('SELECT * FROM RTH_DailyOutputHeader');
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.create_time,header.update_time,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id');
 		parent::execute();
-		return $dataset = parent::resultset();
+		$dataset = parent::resultset();
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['date'] = parent::date_format($var['create_time']);
+			$dataset[$k]['update'] = parent::date_facebookformat($var['update_time']);
+			$dataset[$k]['update_time'] = parent::datetime_thaiformat($var['update_time']);
+		}
+		return $dataset;
 	}
 
 	public function listAllCaliber($header_id){

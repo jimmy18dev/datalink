@@ -24,7 +24,6 @@ $current_page['1'] = 'user';
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
 <title>USER</title>
 
@@ -45,23 +44,22 @@ $current_page['1'] = 'user';
 			<p>User Management is an authentication feature that provides administrators with the ability to identify and control the state of users logged into the network.</p>
 		</div>
 		<div class="tab">
-			<div class="tab-items tab-items-active">All User</div>
-			<a href="user_editor.php" class="tab-items items-right">New user <i class="fa fa-angle-right"></i></a>
+			<!-- <div class="tab-items tab-items-active">All User</div> -->
+			<a href="user_editor.php" class="btn-right create">New user <i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
 
 	<!-- Table -->
-	<div class="topic-fix">
-		<div class="user-topic-fix">
+	<div class="list-container">
+		<div class="user-items topic-fix">
 			<div class="col1">NO.</div>
-			<div class="col2">NAME</div>
-			<div class="col3">PASSWORD</div>
-			<div class="col4">LAST VISIT</div>
-			<div class="col5">ACTIVE</div>
+			<div class="col2">Nane</div>
+			<div class="col3">Username</div>
+			<div class="col4">Password</div>
+			<div class="col5">Section/Pisition</div>
+			<div class="col6">Last visit</div>
 		</div>
-	</div>
-	
-	<div class="list">
+
 		<?php echo $user->listAllUser(array('type' => 'user-items'));?>
 	</div>
 </div>

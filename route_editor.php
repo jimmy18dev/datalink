@@ -7,17 +7,15 @@ if(!$user_online){
 	die();
 }
 
-if(!empty($_GET['id'])){
-	$remark->getRemark($_GET['id']);
+if(!empty($_GET['caliber'])){
+	$caliber->getCaliber($_GET['caliber']);
+}
+
+if(!empty($_GET['route'])){
+	$caliber->getRoute($_GET['route']);
 }
 
 // current page
-$current_page['1'] = 'remark';
-if(empty($remark->id)){
-	$current_page['2'] = 'new_remark';
-}else{
-	$current_page['2'] = 'edit_remark';
-}
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -44,7 +42,7 @@ if(empty($remark->id)){
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/remark.service.js"></script>
+<script type="text/javascript" src="js/service/caliber.service.js"></script>
 
 </head>
 <body>
@@ -59,20 +57,35 @@ if(empty($remark->id)){
 
 	<div class="form-container">
 		<div class="form-items">
+			<div class="caption">Route Code</div>
+			<div class="input">
+				<input class="input-text" type="text" id="route_code" value="<?php echo $caliber->route_code;?>" autofocus>
+			</div>
+		</div>
+		<div class="form-items">
+			<div class="caption">Route Name</div>
+			<div class="input">
+				<input class="input-text" type="text" id="route_name" value="<?php echo $caliber->route_name;?>">
+			</div>
+		</div>
+		<div class="form-items">
 			<div class="caption">Description</div>
 			<div class="input">
-				<input class="input-text" type="text" id="description" value="<?php echo $remark->description;?>" autofocus>
+				<input class="input-text" type="text" id="name" value="<?php echo $caliber->name;?>">
 			</div>
 		</div>
 
-		<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
+		<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
 
-		<a href="remark.php?" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
+		<!-- You can't update caliner code! -->
+		<input type="hidden" id="caliber_id" value="<?php echo $caliber->id;?>">
 
-		<?php if(empty($remark->id)){?>
-		<div class="submit-btn" onclick="javascript:create();">CREATE<i class="fa fa-angle-right"></i></div>
+		<a href="route.php?caliber=<?php echo $caliber->id;?>" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
+		
+		<?php if(empty($caliber->route_id)){?>
+		<div class="submit-btn" onclick="javascript:createRoute();">CREATE<i class="fa fa-angle-right"></i></div>
 		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
+		<div class="submit-btn" onclick="javascript:editRoute(<?php echo $caliber->route_id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
 		<?php }?>
 	</div>
 </div>

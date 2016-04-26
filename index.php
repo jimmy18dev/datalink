@@ -67,7 +67,7 @@ if(!$user_online){
 			<div class="menu-container">
 				<a href="user.php" class="menu-items">
 					<span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
-					<span class="caption">User<i class="fa fa-angle-right"></i></span>
+					<span class="caption">User management<i class="fa fa-angle-right"></i></span>
 				</a>
 				<a href="caliber.php" class="menu-items">
 					<span class="icon"><i class="fa fa-barcode" aria-hidden="true"></i></span>
@@ -76,6 +76,10 @@ if(!$user_online){
 				<a href="remark.php" class="menu-items">
 					<span class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
 					<span class="caption">General Remark<i class="fa fa-angle-right"></i></span>
+				</a>
+				<a href="section.php" class="menu-items">
+					<span class="icon"><i class="fa fa-sitemap" aria-hidden="true"></i></span>
+					<span class="caption">Section<i class="fa fa-angle-right"></i></span>
 				</a>
 			</div>
 		</div>

@@ -7,16 +7,16 @@ if(!$user_online){
 	die();
 }
 
-if(!empty($_GET['id'])){
-	$remark->getRemark($_GET['id']);
+if(!empty($_GET['section'])){
+	$section->getSection($_GET['section']);
 }
 
 // current page
-$current_page['1'] = 'remark';
-if(empty($remark->id)){
-	$current_page['2'] = 'new_remark';
+$current_page['1'] = 'section';
+if(empty($section->id)){
+	$current_page['2'] = 'new_section';
 }else{
-	$current_page['2'] = 'edit_remark';
+	$current_page['2'] = 'edit_section';
 }
 ?>
 <!doctype html>
@@ -36,7 +36,7 @@ if(empty($remark->id)){
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
-<title>Editor : General Remark</title>
+<title>Editor : Section</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -44,7 +44,7 @@ if(empty($remark->id)){
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/remark.service.js"></script>
+<script type="text/javascript" src="js/service/section.service.js"></script>
 
 </head>
 <body>
@@ -59,20 +59,24 @@ if(empty($remark->id)){
 
 	<div class="form-container">
 		<div class="form-items">
+			<div class="caption">Name</div>
+			<div class="input">
+				<input class="input-text" type="text" id="name" value="<?php echo $section->name;?>" autofocus>
+			</div>
+		</div>
+		<div class="form-items">
 			<div class="caption">Description</div>
 			<div class="input">
-				<input class="input-text" type="text" id="description" value="<?php echo $remark->description;?>" autofocus>
+				<input class="input-text" type="text" id="description" value="<?php echo $section->description;?>">
 			</div>
 		</div>
 
-		<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
+		<a href="section.php?" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
 
-		<a href="remark.php?" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
-
-		<?php if(empty($remark->id)){?>
-		<div class="submit-btn" onclick="javascript:create();">CREATE<i class="fa fa-angle-right"></i></div>
+		<?php if(empty($section->id)){?>
+		<div class="submit-btn" onclick="javascript:createSection();">CREATE<i class="fa fa-angle-right"></i></div>
 		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
+		<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
 		<?php }?>
 	</div>
 </div>

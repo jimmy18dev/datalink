@@ -7,12 +7,8 @@ if(!$user_online){
 	die();
 }
 
-if(!empty($_GET['caliber'])){
-	$caliber->getcaliber($_GET['caliber']);
-}
-
-if(!empty($_GET['operation_id'])){
-	$caliber->getOperationRecipe($_GET['operation_id']);
+if(!empty($_GET['operation'])){
+	$caliber->getOperation($_GET['operation']);
 }
 
 // current page
@@ -34,9 +30,8 @@ $current_page['2'] = 'new_operation';
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
-<title>Editor : Operation Recipe</title>
+<title>CREATE OPERATIONS</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -52,40 +47,34 @@ $current_page['2'] = 'new_operation';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>Operation Recipe</h1>
+			<h1>OPERATIONS</h1>
 		</div>
 		<div class="tab">
-			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
+			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right cancel"><i class="fa fa-times"></i>Cancel</a>
 		</div>
 	</div>
 
 	<div class="form-container">
-		<h3>Operation Recipe</h3>
-		<div class="form-items">
-			<div class="caption">Route ID</div>
-			<div class="input">
-				<input class="input-text" type="text" id="route_id" value="<?php echo $caliber->opt_route_id;?>" autofocus>
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Route Name</div>
-			<div class="input">
-				<input class="input-text" type="text" id="route_name" value="<?php echo $caliber->opt_route_name;?>">
-			</div>
-		</div>
+		<h3>Create Operation</h3>
 		<div class="form-items">
 			<div class="caption">Name</div>
 			<div class="input">
-				<input class="input-text" type="text" id="name" value="<?php echo $caliber->opt_name;?>">
+				<input class="input-text" type="text" id="name" value="<?php echo $caliber->operation_name;?>">
+			</div>
+		</div>
+		<div class="form-items">
+			<div class="caption">Description</div>
+			<div class="input">
+				<input class="input-text" type="text" id="description" value="<?php echo $caliber->operation_description;?>" autofocus>
 			</div>
 		</div>
 
-		<input class="input-text" type="hidden" id="caliber_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
+		<input class="input-text" type="hidden" id="operation_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
 
-		<?php if(empty($caliber->opt_id)){?>
-		<div class="submit-btn" onclick="javascript:createOperation();">Create</div>
+		<?php if(empty($caliber->operation_id)){?>
+		<div class="submit-btn" onclick="javascript:createOperation();">CREATE</div>
 		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->opt_id;?>);">SAVE</div>
+		<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->operation_id;?>);">SAVE</div>
 		<?php }?>
 	</div>
 </div>
