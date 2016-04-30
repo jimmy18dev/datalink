@@ -45,7 +45,7 @@ $current_page['2'] = 'report_detail';
 	<div class="head">
 		<div class="head-title">
 			<h1>วันที่ <?php echo $report->date;?>, NO.<?php echo $report->line_no;?>, Shift: <?php echo $report->shift;?></h1>
-			<p>Leader: <?php echo $report->leader_name;?> <span title="<?php echo $report->update_time;?>">อัพเดท <?php echo $report->update;?></span> | <a href="#">แก้ไข</a></p>
+			<p>Leader: <?php echo $report->leader_name;?> <span title="<?php echo $report->update_time;?>">อัพเดท <?php echo $report->update;?></span> | <a href="report_header_editor.php?header=<?php echo $report->id;?>">[แก้ไข]</a></p>
 		</div>
 
 		<div class="header-report-table">
@@ -137,7 +137,7 @@ $current_page['2'] = 'report_detail';
 		</div>
 
 		<div class="tab">
-			<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="tab-items items-right">New Report<i class="fa fa-angle-right"></i></a>
+			<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="btn-right create">Add report<i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
 
@@ -149,11 +149,7 @@ $current_page['2'] = 'report_detail';
 			<div class="col4">Description</div>
 		</div>
 
-		<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items'));?>
-
-		<div class="btn-control">
-			<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="btn"><i class="fa fa-plus"></i>CREATE REPORT</a>
-		</div>
+		<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items','header_id' => $report->id));?>
 	</div>
 </div>
 </body>

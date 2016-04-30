@@ -48,26 +48,28 @@ $current_page['3'] = 'report_caliber_detail';
 			<h1>Report Detail in Caliber ID: <?php echo $_GET['caliber'];?></h1>
 			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
 		</div>
-
-		<div class="tab">
-			<a href="report_header_editor.php?" class="tab-items items-right">New Report<i class="fa fa-angle-right"></i></a>
-		</div>
 	</div>
 	
 	<div class="list-container">
 		<div class="report-caliber-detail-items topic-fix">
-			<div class="col1">Name</div>
-			<div class="col2">Good</div>
-			<div class="col3">Reject</div>
+			<div class="col1"><i class="fa fa-file-text-o" aria-hidden="true"></i> Name</div>
+			<div class="col2">Good <i class="fa fa-thumbs-up" aria-hidden="true"></i></div>
+			<div class="col3">Reject <i class="fa fa-times" aria-hidden="true"></i></div>
 			<div class="col4">Product eff</div>
 			<div class="col5">ttl eff</div>
 			<div class="col6">Std time</div>
 			<div class="col7">Output</div>
-			<div class="col8">Required hrs</div>
-			<div class="col9">Remark</div>
+			<div class="col8"><i class="fa fa-hourglass-half" aria-hidden="true"></i> Required hrs</div>
+			<div class="col9">Remark <i class="fa fa-comment" aria-hidden="true"></i></div>
 		</div>
 
-		<?php $report->listAllOperations(1,1,array('type' => 'report-caliber-detail-items'));?>
+		<?php $report->listAllOperations($report->id,$_GET['caliber'],array('type' => 'report-caliber-detail-items'));?>
+
+		<div class="option-control">
+			<div class="btn btn-delete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+			<a href="report_detail_editor.php?header_id=<?php echo $report->id;?>&caliber=<?php echo $_GET['caliber'];?>" class="btn">Edit report</a>
+			<div class="update-time">Updated 27 เม.ย. 2559</div>
+		</div>
 	</div>
 </div>
 </body>

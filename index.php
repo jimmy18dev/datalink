@@ -55,7 +55,7 @@ if(!$user_online){
 			<div class="menu-container">
 				<a href="report_header.php" class="menu-items">
 					<span class="icon"><i class="fa fa-child" aria-hidden="true"></i></span>
-					<span class="caption">Report<i class="fa fa-angle-right"></i></span>
+					<span class="caption">Daily Report<i class="fa fa-angle-right"></i></span>
 				</a>
 			</div>
 		</div>
@@ -65,6 +65,10 @@ if(!$user_online){
 		<div class="section">
 			<h3>Administrator</h3>
 			<div class="menu-container">
+				<a href="#" class="menu-items">
+					<span class="icon"><i class="fa fa-child" aria-hidden="true"></i></span>
+					<span class="caption">Query Reports<i class="fa fa-angle-right"></i></span>
+				</a>
 				<a href="user.php" class="menu-items">
 					<span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
 					<span class="caption">User management<i class="fa fa-angle-right"></i></span>

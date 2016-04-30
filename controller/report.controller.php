@@ -35,6 +35,34 @@ class ReportController extends ReportModel{
 	public $leader_name;
 	public $leader_id;
 
+
+
+
+	/* REPORT MANAGEMENT */
+
+	// Header report
+	public function newReport($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea){
+
+		if(parent::alreadyHeader($user_id,$line_no,$shift,$report_date)){
+			$header_id = parent::createHeader($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea);
+
+			return $header_id;
+		}else{
+			return 0;
+		}
+	}
+	
+	public function updateReport(){}
+
+	// Detail report
+	public function addOperationReport(){}
+	public function updateOerationReport(){}
+	public function deleteOperationReport(){}
+
+
+
+
+
 	public function getHeader($id){
 		$data = parent::getData($id);
 
@@ -97,6 +125,11 @@ class ReportController extends ReportModel{
 	// 	$this->render($data,$option);
 	// }
 
+	public function listDetailReport($header_id,$caliber_id,$option){
+		$data = parent::listDetailReportData($header_id,$caliber_id);
+		$this->render($data,$option);
+	}
+
 	// render dataset to view.
     private function render($data,$option){
     	$total_items = 0;
@@ -120,6 +153,7 @@ class ReportController extends ReportModel{
             }
         }else if($option['type'] == 'report-caliber-items'){
             foreach ($data as $var){
+            	$header_id = $option['header_id'];
                 include'template/report/report.caliber.items.php';
                 $total_items++;
             }
@@ -130,6 +164,19 @@ class ReportController extends ReportModel{
         }else if($option['type'] == 'report-caliber-detail-items'){
             foreach ($data as $var){
                 include'template/report/report.caliber.detail.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }else if($option['type'] == 'operation-form-items'){
+        	$remark_data = parent::listAllRemark();
+        	foreach ($remark_data as $vars)
+        		$remark_option .= '<option value="'.$vars['id'].'">'.$vars['description'].'</option>';
+
+            foreach ($data as $var){
+                include'template/caliber/operation.form.items.php';
                 $total_items++;
             }
 

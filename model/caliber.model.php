@@ -37,7 +37,7 @@ class CaliberModel extends Database{
 		return $dataset = parent::single();
 	}
 	public function listAllCaliber(){
-		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,route.id route_id,route.route_name route_name,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_opearation 
+		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,route.id route_id,route.route_name route_name,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation 
 			FROM RTH_CaliberCode AS caliber 
 			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
 			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
@@ -131,10 +131,20 @@ class CaliberModel extends Database{
 		return $dataset = parent::single();
 	}
 	public function listOperationInRouteData($caliber_id){
-		parent::query('SELECT * FROM RTH_Route AS route RIGHT JOIN RTH_RouteMatchOperation AS matchs ON matchs.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = matchs.operation_id WHERE caliber_id = :caliber_id AND route.type = "primary"');
+		parent::query('SELECT route.id route_id,route.caliber_id,stdtime.id stdtime_id,stdtime.hrs stdtime_hrs,route.route_name,operation.name operation_name FROM RTH_Route AS route LEFT JOIN RTH_StandardTime AS stdtime ON stdtime.caliber_id = route.caliber_id AND stdtime.type = "primary" LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = rmo.operation_id WHERE route.type = "primary" AND route.caliber_id = :caliber_id');
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::execute();
-		return $dataset = parent::resultset();
+		$dataset = parent::resultset();
+
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['create_time'] = parent::datetime_thaiformat($var['create_time']);
+			$dataset[$k]['update_time'] = parent::date_format($var['update_time']);
+		}
+		echo'<pre>';
+		print_r($dataset);
+		echo'</pre>';
+
+		return $dataset;
 	}
 
 
@@ -169,7 +179,14 @@ class CaliberModel extends Database{
 		parent::query('SELECT operation.id,operation.name,operation.description,operation.create_time,operation.update_time,operation.type,operation.status,rmo.id match_id FROM RTH_Operation AS operation LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.operation_id = operation.id AND rmo.route_id = :route_id');
 		parent::bind(':route_id', 	$route_id);
 		parent::execute();
-		return $dataset = parent::resultset();
+		$dataset = parent::resultset();
+
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['create_time'] = parent::datetime_thaiformat($var['create_time']);
+			$dataset[$k]['update_time'] = parent::date_format($var['update_time']);
+		}
+
+		return $dataset;
 	}
 
 	// list all operation by route id
@@ -208,8 +225,6 @@ class CaliberModel extends Database{
 		parent::bind(':operation_id', 	$operation_id);
 		parent::execute();
 	}
-
-
 
 	// REMARKS
 	public function listAllRemark(){

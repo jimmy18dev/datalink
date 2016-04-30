@@ -46,27 +46,30 @@ $current_page['2'] = 'new_operation';
 <body>
 <?php include 'header.php';?>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>REPORT DETAIL of <?php echo $caliber->code.' '.$caliber->family;?></h1>
-		</div>
-		<div class="tab">
-			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right cancel">Cancel<i class="fa fa-times"></i></a>
-		</div>
-	</div>
-
-	<div>
-		<?php //echo 'Detail ID: '.$report->createDetail(34,23,234,10,10,2333,'remark message',34,344,34.54,221,23.54);?>
-	</div>
-
 	<div class="form-container">
 		<h3>Operations in <?php echo $caliber->route_name;?></h3>
 		<form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
-			<?php $caliber->listOperationInRoute($caliber->id,array('type' => 'operation-form-items'));?>
+			<div class="operation-items">
+				<div class="col1">Operation name</div>
+				<div class="col2">Good</div>
+				<div class="col3">Reject</div>
+				<div class="col4">Product eff</div>
+				<div class="col5">ttl eff</div>
+				<div class="col6">Std. Time</div>
+				<div class="col7">Output</div>
+				<div class="col8">Required Hrs</div>
+			</div>
 
-
-			<input type="hidden" name="header_id" value="<?php echo $_GET['header'];?>">
-			<button type="submit">SAVE</button>
+			<?php
+			if(!empty($_GET['header_id'])){
+				$report->listDetailReport($_GET['header_id'],$caliber->id,array('type' => 'operation-form-items'));
+			}
+			else{
+				$caliber->listOperationInRoute($caliber->id,array('type' => 'operation-form-items'));
+			}
+			?>
+			<input type="hidden" id="header_id" name="header_id" value="<?php echo $_GET['header'];?>">
+			<button type="submit" class="submit-btn">SAVE<i class="fa fa-angle-right"></i></button>
 		</form>
 	</div>
 </div>

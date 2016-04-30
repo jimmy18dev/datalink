@@ -5,6 +5,9 @@ if(!$user_online){
 	header("Location: index.php");
 	die();
 }
+
+// current page
+$current_page['1'] = 'section';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">

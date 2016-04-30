@@ -3,8 +3,9 @@
 
 	<?php if($current_page['1'] == 'caliber'){?>
 		<a href="caliber.php" class="navibar"><i class="fa fa-angle-right"></i>Caliber Code</a>
+		
 		<?php if($current_page['2'] == 'caliber_code'){?>
-		<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="navibar"><i class="fa fa-angle-right"></i><?php echo $caliber->code.' '.$caliber->family;?></a>
+		<a href="route.php?caliber=<?php echo $caliber->id;?>" class="navibar"><i class="fa fa-angle-right"></i><?php echo $caliber->code.' '.$caliber->family;?></a>
 		<?php }else if($current_page['2'] == 'new_caliber'){?>
 		<a href="#" class="navibar"><i class="fa fa-angle-right"></i>New</a>
 		<?php }else if($current_page['2'] == 'edit_caliber'){?>
@@ -29,6 +30,14 @@
 		<a href="#" class="navibar"><i class="fa fa-angle-right"></i>Create User</a>
 		<?php }else if($current_page['2'] == 'edit_user'){?>
 		<a href="#" class="navibar"><i class="fa fa-angle-right"></i>Edit User</a>
+		<?php }?>
+	<?php }else if($current_page['1'] == 'section'){?>
+		<a href="section.php" class="navibar"><i class="fa fa-angle-right"></i>Section</a>
+
+		<?php if($current_page['2'] == 'new_section'){?>
+		<a href="#" class="navibar"><i class="fa fa-angle-right"></i>Create section</a>
+		<?php }else if($current_page['2'] == 'edit_section'){?>
+		<a href="#" class="navibar"><i class="fa fa-angle-right"></i>Edit: <?php echo $section->name;?></a>
 		<?php }?>
 	<?php }else if($current_page['1'] == 'report'){?>
 		<a href="report_header.php" class="navibar"><i class="fa fa-angle-right"></i>Report</a>

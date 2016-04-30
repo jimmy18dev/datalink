@@ -71,7 +71,7 @@ if(!empty($_GET['route'])){
 		<div class="form-items">
 			<div class="caption">Description</div>
 			<div class="input">
-				<input class="input-text" type="text" id="name" value="<?php echo $caliber->name;?>">
+				<input class="input-text" type="text" id="name" value="<?php echo $caliber->route_description;?>">
 			</div>
 		</div>
 

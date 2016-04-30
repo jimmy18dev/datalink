@@ -1,23 +1,20 @@
 <div class="operation-items">
-	<?php echo $var['name'];?><br>
-	<input type="text" name="total_good[]" placeholder="Total Good">
-	<input type="text" name="total_reject[]" placeholder="Total Reject">
-	
-	<input type="text" name="product_eff[]" placeholder="product eff">
-	<input type="text" name="ttl_eff[]" placeholder="ttl eff">
-	<input type="text" name="std_time[]" placeholder="Std. Time">
-	<input type="text" name="output[]" placeholder="Output">
-	<input type="text" name="required_hrs[]" placeholder="Required Hrs">
+	<div class="col1"><?php echo $var['operation_name'];?></div>
+	<div class="col2"><input type="text" class="input-text" name="total_good[]" placeholder="Total Good" value="<?php echo $var['total_good'];?>"></div>
+	<div class="col3"><input type="text" name="total_reject[]" placeholder="Total Reject" value="<?php echo $var['total_reject'];?>"></div>
+	<div class="col7"><input type="text" class="input-text" name="output[]" placeholder="Output" value="<?php echo $var['output'];?>"></div>
+	<div class="col8"><input type="text" class="input-text" name="required_hrs[]" placeholder="Required Hrs" value="<?php echo $var['required_hrs'];?>"></div>
+	<div class="col9"><input type="text" class="input-text" name="remark_message[]" placeholder="Remark messages" value="<?php echo $var['remark_message'];?>"></div>
+	<div class="col10"><select name="remark_id[]" class="input-text input-select"><?php echo $remark_option;?></select></div>
 
-	<input type="text" name="remark_message[]" placeholder="Remark messages">
-	<select name="remark_id[]">
-		<?php echo $remark_option;?>
-	</select>
+	<input type="text" name="operation_id[]" placeholder="Pperation id" value="<?php echo $var['operation_id'];?>">
 
-	<input type="hidden" name="operation_id[]" value="<?php echo $var['id'];?>">
-
-	<!-- <input type="text" name="header_id[]" placeholder="Header" value="1"> -->
 	<input type="text" name="caliber_id[]" placeholder="Caliber" value="<?php echo $var['caliber_id'];?>">
 	<input type="text" name="route_id[]" placeholder="Route" value="<?php echo $var['route_id'];?>">
+	<input type="text" name="stdtime_id[]" placeholder="Std Time ID" value="<?php echo $var['stdtime_id'];?>">
+
+	<!-- echo detail id for edit -->
+	<input type="text" name="detail_id[]" placeholder="Detail ID" value="<?php echo $var['detail_id'];?>">
 </div>
-<br>
+<p>...</p>
+<p>...</p>

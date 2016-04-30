@@ -21,6 +21,7 @@ class CaliberController extends CaliberModel{
 	public $route_caliber_id;
 	public $route_code;
 	public $route_name;
+	public $route_description;
 	public $route_create_time;
 	public $route_update_time;
 	public $route_type;
@@ -91,6 +92,7 @@ class CaliberController extends CaliberModel{
 		$this->route_caliber_id = $dataset['caliber_id'];
 		$this->route_code = $dataset['route_code'];
 		$this->route_name = $dataset['route_name'];
+		$this->route_description = $dataset['name'];
 		$this->route_create_time = $dataset['create_time'];
 		$this->route_update_time = $dataset['update_time'];
 		$this->route_type = $dataset['type'];
