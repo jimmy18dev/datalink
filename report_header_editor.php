@@ -103,6 +103,14 @@ $current_page['2'] = 'new_operation';
 					<input type="text" id="ttl_daily_hrs" placeholder="Normal Hrs." value="<?php echo $report->ttl_daily_hrs;?>">
 				</div>
 			</div>
+
+			<div class="setting-section-items">
+				<div class="caption">Efficiency</div>
+				<div class="input">
+					<input type="text" id="product_eff" placeholder="Product EFF." value="<?php echo $report->product_eff;?>">
+					<input type="text" id="ttl_eff" placeholder="Total EFF." value="<?php echo $report->ttl_eff;?>">
+				</div>
+			</div>
 		</div>
 
 		<div class="form-section">

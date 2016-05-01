@@ -21,10 +21,13 @@ class ReportController extends ReportModel{
 	public $downtime_mc;
 	public $downtime_mat;
 	public $downtime_fac;
+	public $downtime_other;
 	public $sort_local;
 	public $sort_oversea;
 	public $rework_local;
 	public $rework_oversea;
+	public $product_eff;
+	public $ttl_eff;
 	public $type;
 	public $status;
 
@@ -41,22 +44,36 @@ class ReportController extends ReportModel{
 	/* REPORT MANAGEMENT */
 
 	// Header report
-	public function newReport($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea){
+	public function newHeaderReport($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff){
 
 		if(parent::alreadyHeader($user_id,$line_no,$shift,$report_date)){
-			$header_id = parent::createHeader($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea);
+			$header_id = parent::createHeader($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff);
 
 			return $header_id;
 		}else{
 			return 0;
 		}
 	}
-	
-	public function updateReport(){}
+
+	public function updateHeaderReport($header_id,$line_no,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff){
+
+		parent::editHeader($header_id,$line_no,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff);
+	}
 
 	// Detail report
-	public function addOperationReport(){}
-	public function updateOerationReport(){}
+	public function addOperationReport($header_id,$caliber_id,$route_id,$stdtime_id,$stdtime_hrs,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output){
+
+		if(parent::alreadyDetail($header_id,$caliber_id,$route_id,$operation_id)){
+			$required_hrs = $stdtime_hrs * $output;
+			parent::createDetail($header_id,$caliber_id,$route_id,$stdtime_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
+		}else{
+		}
+	}
+	public function updateOerationReport($detail_id,$total_good,$total_reject,$remark_id,$remark_message,$stdtime_hrs,$output,$required_hrs){
+
+		$required_hrs = $stdtime_hrs * $output;
+		parent::editDetail($detail_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
+	}
 	public function deleteOperationReport(){}
 
 
@@ -89,6 +106,7 @@ class ReportController extends ReportModel{
 		$this->downtime_mc = $data['downtime_mc'];
 		$this->downtime_mat = $data['downtime_mat'];
 		$this->downtime_fac = $data['downtime_fac'];
+		$this->downtime_other = $data['downtime_other'];
 		$this->sort_local = $data['sort_local'];
 		$this->sort_oversea = $data['sort_oversea'];
 		$this->rework_local = $data['rework_local'];

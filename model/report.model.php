@@ -2,10 +2,10 @@
 class ReportModel extends Database{
 
 	// REPORT HEADER
-	public function createHeader($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea){
+	public function createHeader($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff){
 
-		parent::query('INSERT INTO RTH_DailyOutputHeader(user_id,line_no,line_type,shift,report_date,no_monthly_emplys,no_daily_emplys,ttl_monthly_hrs,ttl_daily_hrs,ot_10,ot_15,ot_20,ot_30,losttime_vac,losttime_sick,losttime_abs,losttime_mat,losttime_other,downtime_mc,downtime_mat,downtime_fac,downtime_other,sort_local,sort_oversea,rework_local,rework_oversea,create_time,update_time) 
-			VALUE(:user_id,:line_no,:line_type,:shift,:report_date,:no_monthly_emplys,:no_daily_emplys,:ttl_monthly_hrs,:ttl_daily_hrs,:ot_10,:ot_15,:ot_20,:ot_30,:losttime_vac,:losttime_sick,:losttime_abs,:losttime_mat,:losttime_other,:downtime_mc,:downtime_mat,:downtime_fac,:downtime_other,:sort_local,:sort_oversea,:rework_local,:rework_oversea,:create_time,:update_time)');
+		parent::query('INSERT INTO RTH_DailyOutputHeader(user_id,line_no,line_type,shift,report_date,no_monthly_emplys,no_daily_emplys,ttl_monthly_hrs,ttl_daily_hrs,ot_10,ot_15,ot_20,ot_30,losttime_vac,losttime_sick,losttime_abs,losttime_mat,losttime_other,downtime_mc,downtime_mat,downtime_fac,downtime_other,sort_local,sort_oversea,rework_local,rework_oversea,product_eff,ttl_eff,create_time,update_time) 
+			VALUE(:user_id,:line_no,:line_type,:shift,:report_date,:no_monthly_emplys,:no_daily_emplys,:ttl_monthly_hrs,:ttl_daily_hrs,:ot_10,:ot_15,:ot_20,:ot_30,:losttime_vac,:losttime_sick,:losttime_abs,:losttime_mat,:losttime_other,:downtime_mc,:downtime_mat,:downtime_fac,:downtime_other,:sort_local,:sort_oversea,:rework_local,:rework_oversea,:product_eff,:ttl_eff,:create_time,:update_time)');
 		
 
 		parent::bind(':user_id', 		$user_id);
@@ -34,6 +34,8 @@ class ReportModel extends Database{
 		parent::bind(':sort_oversea', 	$sort_oversea);
 		parent::bind(':rework_local', 	$rework_local);
 		parent::bind(':rework_oversea', $rework_oversea);
+		parent::bind(':product_eff', 	$product_eff);
+		parent::bind(':ttl_eff', 		$ttl_eff);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::execute();
@@ -55,9 +57,9 @@ class ReportModel extends Database{
 			return false;
 	}
 
-	public function editHeader($header_id,$line_no,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea){
+	public function editHeader($header_id,$line_no,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff){
 
-		parent::query('UPDATE RTH_DailyOutputHeader SET line_no = :line_no,line_type = :line_type,shift = :shift,no_monthly_emplys = :no_monthly_emplys,no_daily_emplys = :no_daily_emplys,ttl_monthly_hrs = :ttl_monthly_hrs,ttl_daily_hrs = :ttl_daily_hrs,ot_10 = :ot_10,ot_15 = :ot_15,ot_20 = :ot_20,ot_30 = :ot_30,losttime_vac = :losttime_vac,losttime_sick = :losttime_sick,losttime_abs = :losttime_abs,losttime_mat = :losttime_mat,losttime_other = :losttime_other,downtime_mc = :downtime_mc,downtime_mat = :downtime_mat,downtime_fac = :downtime_fac,downtime_other = :downtime_other,sort_local = :sort_local,sort_oversea = :sort_oversea,rework_local = :rework_local,rework_oversea = :rework_oversea,update_time = :update_time WHERE id = :header_id');
+		parent::query('UPDATE RTH_DailyOutputHeader SET line_no = :line_no,line_type = :line_type,shift = :shift,no_monthly_emplys = :no_monthly_emplys,no_daily_emplys = :no_daily_emplys,ttl_monthly_hrs = :ttl_monthly_hrs,ttl_daily_hrs = :ttl_daily_hrs,ot_10 = :ot_10,ot_15 = :ot_15,ot_20 = :ot_20,ot_30 = :ot_30,losttime_vac = :losttime_vac,losttime_sick = :losttime_sick,losttime_abs = :losttime_abs,losttime_mat = :losttime_mat,losttime_other = :losttime_other,downtime_mc = :downtime_mc,downtime_mat = :downtime_mat,downtime_fac = :downtime_fac,downtime_other = :downtime_other,sort_local = :sort_local,sort_oversea = :sort_oversea,rework_local = :rework_local,rework_oversea = :rework_oversea,product_eff = :product_eff,ttl_eff = :ttl_eff,update_time = :update_time WHERE id = :header_id');
 		
 
 		parent::bind(':header_id', 		$header_id);
@@ -87,12 +89,14 @@ class ReportModel extends Database{
 		parent::bind(':sort_oversea', 	$sort_oversea);
 		parent::bind(':rework_local', 	$rework_local);
 		parent::bind(':rework_oversea', $rework_oversea);
+		parent::bind(':product_eff', 	$product_eff);
+		parent::bind(':ttl_eff', 		$ttl_eff);
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::execute();
 	}
 
 	public function getData($id){
-		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.create_time,header.update_time,header.type,header.status,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.downtime_other,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.create_time,header.update_time,header.type,header.status,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
 		parent::bind(':id', $id);
 		parent::execute();
 		$dataset = parent::single();
@@ -166,7 +170,22 @@ class ReportModel extends Database{
 		return parent::lastInsertId();
 	}
 
-	public function editDetail($detail_id,$total_good,$total_reject,$remark_id,$remark_message,$std_time,$output,$required_hrs){
+	public function alreadyDetail($header_id,$caliber_id,$route_id,$operation_id){
+		parent::query('SELECT id FROM RTH_DailyOutputDetail WHERE header_id = :header_id AND caliber_id = :caliber_id AND route_id = :route_id AND operation_id = :operation_id');
+		parent::bind(':header_id', 		$header_id);
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::bind(':route_id', 		$route_id);
+		parent::bind(':operation_id', 	$operation_id);
+		parent::execute();
+		$dataset = parent::single();
+
+		if(empty($dataset['id']))
+			return true;
+		else
+			return false;
+	}
+
+	public function editDetail($detail_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs){
 		parent::query('UPDATE RTH_DailyOutputDetail SET total_good = :total_good, total_reject = :total_reject, remark_id = :remark_id, remark_message = :remark_message,output = :output,required_hrs = :required_hrs,update_time = :update_time WHERE id = :detail_id');
 
 		parent::bind(':detail_id', 		$detail_id);
@@ -183,11 +202,19 @@ class ReportModel extends Database{
 
 
 	public function listDetailReportData($header_id,$caliber_id){
-		parent::query('SELECT dod.id detail_id,dod.header_id,dod.caliber_id,dod.route_id,dod.operation_id,dod.total_good,dod.total_reject,dod.remark_id,dod.remark_message,dod.output,dod.required_hrs,dod.update_time,operation.id operation_id,operation.name operation_name,operation.description operation_description FROM RTH_DailyOutputDetail AS dod LEFT JOIN RTH_Operation AS operation ON dod.operation_id = operation.id WHERE header_id = :header_id AND caliber_id = :caliber_id');
+		parent::query('SELECT dod.id detail_id,dod.header_id,dod.caliber_id,dod.route_id,dod.operation_id,dod.total_good,dod.total_reject,dod.remark_id,dod.remark_message,dod.output,dod.required_hrs,dod.update_time,operation.id operation_id,operation.name operation_name,operation.description operation_description,stdtime.id stdtime_id,stdtime.hrs stdtime_hrs 
+			FROM RTH_DailyOutputDetail AS dod 
+			LEFT JOIN RTH_Operation AS operation ON dod.operation_id = operation.id 
+			LEFT JOIN RTH_StandardTime AS stdtime ON dod.stdtime_id = stdtime.id 
+			WHERE dod.header_id = :header_id AND dod.caliber_id = :caliber_id');
 		parent::bind(':header_id', 		$header_id);
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::execute();
 		$dataset = parent::resultset();
+
+		echo'<pre>';
+		print_r($dataset);
+		echo'</pre>';
 		return $dataset;
 	}
 	// REMARKS

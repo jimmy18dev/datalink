@@ -5,6 +5,7 @@ class UserController extends UserModel{
 	public $fname;
 	public $lname;
 	public $password;
+	public $line_default;
 	public $register_time;
 	public $update_time;
 	public $visit_time;
@@ -12,21 +13,21 @@ class UserController extends UserModel{
 	public $status;
 
 	// Register new user
-	public function register($section_id,$code,$fname,$lname,$username,$password){
+	public function register($section_id,$code,$fname,$lname,$username,$password,$line_default){
 		$already_id = parent::already($code,$fname,$lname);
 
 		if(empty($already_id)){
-			return parent::create($section_id,$code,$fname,$lname,$username,$password);
+			return parent::create($section_id,$code,$fname,$lname,$username,$password,$line_default);
 		}else{
 			return 0;
 		}
 	}
 
-	public function editInfo($id,$section_id,$code,$fname,$lname,$username,$password){
+	public function editInfo($id,$section_id,$code,$fname,$lname,$username,$password,$line_default){
 
 		if(empty($id) || empty($code) || empty($fname) || empty($lname) || empty($password)){ return false; }
 		
-		parent::edit($id,$section_id,$code,$fname,$lname,$username,$password);
+		parent::edit($id,$section_id,$code,$fname,$lname,$username,$password,$line_default);
 	}
 
 	public function login($username,$password){
@@ -67,6 +68,7 @@ class UserController extends UserModel{
 		$this->fname = $dataset['fname'];
 		$this->lname = $dataset['lname'];
 		$this->password = $dataset['password'];
+		$this->line_default = $dataset['line_default'];
 		$this->register_time = $dataset['register_time'];
 		$this->update_time = $dataset['update_time'];
 		$this->visit_time = $dataset['visit_time'];

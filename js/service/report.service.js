@@ -25,6 +25,8 @@ function createHeaderReport(){
     var sort_oversea     = $('#sort_oversea').val();
     var rework_local     = $('#rework_local').val();
     var rework_oversea     = $('#rework_oversea').val();
+    var product_eff     = $('#product_eff').val();
+    var ttl_eff     = $('#ttl_eff').val();
 
     // $('#loading-message').html('กำลังเข้าระบบ...');
     // $('#loading-box').fadeIn(300);
@@ -62,6 +64,8 @@ function createHeaderReport(){
             sort_oversea:sort_oversea,
             rework_local:rework_local,
             rework_oversea:rework_oversea,
+            product_eff:product_eff,
+            ttl_eff:ttl_eff,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -106,6 +110,8 @@ function editHeaderReport(id){
     var sort_oversea     = $('#sort_oversea').val();
     var rework_local     = $('#rework_local').val();
     var rework_oversea     = $('#rework_oversea').val();
+    var product_eff     = $('#product_eff').val();
+    var ttl_eff     = $('#ttl_eff').val();
 
     // $('#loading-message').html('กำลังเข้าระบบ...');
     // $('#loading-box').fadeIn(300);
@@ -144,6 +150,8 @@ function editHeaderReport(id){
             sort_oversea:sort_oversea,
             rework_local:rework_local,
             rework_oversea:rework_oversea,
+            product_eff:product_eff,
+            ttl_eff:ttl_eff,
         },
         error: function (request, status, error) {
             console.log("Request Error");

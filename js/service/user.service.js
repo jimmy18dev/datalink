@@ -44,6 +44,7 @@ function register(){
     var lname       = $('#lname').val();
     var username    = $('#username').val();
     var password    = $('#password').val();
+    var line_default = $('#line_default').val();
     var section_id  = $('#section_id').val();
 
     $('#loading-message').html('กำลังเพิ่มพนักงานใหม่...');
@@ -62,6 +63,7 @@ function register(){
             lname:lname,
             username:username,
             password:password,
+            line_default:line_default,
             section_id:section_id,
         },
         error: function (request, status, error) {
@@ -89,6 +91,7 @@ function edit(id){
     var username    = $('#username').val();
     var password    = $('#password').val();
     var section_id  = $('#section_id').val();
+    var line_default = $('#line_default').val();
 
     $('#loading-message').html('กำลังเข้าระบบ...');
     $('#loading-box').fadeIn(300);
@@ -107,6 +110,7 @@ function edit(id){
             lname:lname,
             username:username,
             password:password,
+            line_default:line_default,
             section_id:section_id,
         },
         error: function (request, status, error) {

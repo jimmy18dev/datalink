@@ -52,15 +52,12 @@ $current_page['3'] = 'report_caliber_detail';
 	
 	<div class="list-container">
 		<div class="report-caliber-detail-items topic-fix">
-			<div class="col1"><i class="fa fa-file-text-o" aria-hidden="true"></i> Name</div>
+			<div class="col1"><i class="fa fa-file-text-o" aria-hidden="true"></i> Operation</div>
 			<div class="col2">Good <i class="fa fa-thumbs-up" aria-hidden="true"></i></div>
 			<div class="col3">Reject <i class="fa fa-times" aria-hidden="true"></i></div>
-			<div class="col4">Product eff</div>
-			<div class="col5">ttl eff</div>
-			<div class="col6">Std time</div>
-			<div class="col7">Output</div>
-			<div class="col8"><i class="fa fa-hourglass-half" aria-hidden="true"></i> Required hrs</div>
-			<div class="col9">Remark <i class="fa fa-comment" aria-hidden="true"></i></div>
+			<div class="col4">Output</div>
+			<div class="col5"><i class="fa fa-hourglass-half" aria-hidden="true"></i> Required hrs</div>
+			<div class="col6">Remark <i class="fa fa-comment" aria-hidden="true"></i></div>
 		</div>
 
 		<?php $report->listAllOperations($report->id,$_GET['caliber'],array('type' => 'report-caliber-detail-items'));?>

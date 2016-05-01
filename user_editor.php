@@ -92,6 +92,28 @@ if(empty($userData['id'])){
 				</select>
 			</div>
 		</div>
+		<div class="form-items">
+			<div class="caption">Line No.</div>
+			<div class="input">
+				<select class="input-text" id="line_default">
+					<option value="0">Line No.</option>
+					<option value="1" <?php echo ($userData['line_default'] == 1?'selected':'');?>>1</option>
+					<option value="2" <?php echo ($userData['line_default'] == 2?'selected':'');?>>2</option>
+					<option value="3" <?php echo ($userData['line_default'] == 3?'selected':'');?>>3</option>
+					<option value="4" <?php echo ($userData['line_default'] == 4?'selected':'');?>>4</option>
+					<option value="5" <?php echo ($userData['line_default'] == 5?'selected':'');?>>5</option>
+					<option value="6" <?php echo ($userData['line_default'] == 6?'selected':'');?>>6</option>
+					<option value="7" <?php echo ($userData['line_default'] == 7?'selected':'');?>>7</option>
+					<option value="8" <?php echo ($userData['line_default'] == 8?'selected':'');?>>8</option>
+					<option value="9" <?php echo ($userData['line_default'] == 9?'selected':'');?>>9</option>
+					<option value="10" <?php echo ($userData['line_default'] == 10?'selected':'');?>>10</option>
+					<option value="11" <?php echo ($userData['line_default'] == 11?'selected':'');?>>11</option>
+					<option value="12" <?php echo ($userData['line_default'] == 12?'selected':'');?>>12</option>
+					<option value="13" <?php echo ($userData['line_default'] == 13?'selected':'');?>>13</option>
+					<option value="14" <?php echo ($userData['line_default'] == 14?'selected':'');?>>14</option>
+				</select>
+			</div>
+		</div>
 
 		<a href="user.php" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
 

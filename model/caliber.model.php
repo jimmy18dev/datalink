@@ -131,7 +131,7 @@ class CaliberModel extends Database{
 		return $dataset = parent::single();
 	}
 	public function listOperationInRouteData($caliber_id){
-		parent::query('SELECT route.id route_id,route.caliber_id,stdtime.id stdtime_id,stdtime.hrs stdtime_hrs,route.route_name,operation.name operation_name FROM RTH_Route AS route LEFT JOIN RTH_StandardTime AS stdtime ON stdtime.caliber_id = route.caliber_id AND stdtime.type = "primary" LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = rmo.operation_id WHERE route.type = "primary" AND route.caliber_id = :caliber_id');
+		parent::query('SELECT route.id route_id,route.caliber_id,stdtime.id stdtime_id,stdtime.hrs stdtime_hrs,route.route_name,operation.id operation_id,operation.name operation_name FROM RTH_Route AS route LEFT JOIN RTH_StandardTime AS stdtime ON stdtime.caliber_id = route.caliber_id AND stdtime.type = "primary" LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = rmo.operation_id WHERE route.type = "primary" AND route.caliber_id = :caliber_id');
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::execute();
 		$dataset = parent::resultset();

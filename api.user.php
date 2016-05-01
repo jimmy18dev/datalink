@@ -9,7 +9,7 @@ if($_POST['calling'] != ''){
 			switch ($_POST['action']) {
 				case 'register':
 					if(true){
-						$user_id = $user->register($_POST['section_id'],$_POST['code'],$_POST['fname'],$_POST['lname'],$_POST['username'],$_POST['password']);
+						$user_id = $user->register($_POST['section_id'],$_POST['code'],$_POST['fname'],$_POST['lname'],$_POST['username'],$_POST['password'],$_POST['line_default']);
 						
 						if(!empty($user_id) && $user_id != 0){
 							$return_message = 'register successful';
@@ -28,7 +28,7 @@ if($_POST['calling'] != ''){
 					break;
 				case 'edit':
 					if(true){
-						$user_id = $user->editInfo($_POST['id'],$_POST['section_id'],$_POST['code'],$_POST['fname'],$_POST['lname'],$_POST['username'],$_POST['password']);
+						$user_id = $user->editInfo($_POST['id'],$_POST['section_id'],$_POST['code'],$_POST['fname'],$_POST['lname'],$_POST['username'],$_POST['password'],$_POST['line_default']);
 
 						$api->successMessage($return_message,$register_state,'');
 					}else{
