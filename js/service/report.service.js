@@ -28,6 +28,14 @@ function createHeaderReport(){
     var product_eff     = $('#product_eff').val();
     var ttl_eff     = $('#ttl_eff').val();
 
+    var d = $('#r_date').val();
+    var m = $('#r_month').val();
+    var y = $('#r_year').val();
+
+    var report_date = y+'-'+m+'-'+d;
+
+    alert(report_date);
+
     // $('#loading-message').html('กำลังเข้าระบบ...');
     // $('#loading-box').fadeIn(300);
 
@@ -42,7 +50,7 @@ function createHeaderReport(){
             line_no:line_no,
             line_type:line_type,
             shift:shift,
-            report_date:'23 DEC 2016',
+            report_date:report_date,
             no_monthly_emplys:no_monthly_emplys,
             no_daily_emplys:no_daily_emplys,
             ttl_monthly_hrs:ttl_monthly_hrs,

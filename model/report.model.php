@@ -12,7 +12,7 @@ class ReportModel extends Database{
 		parent::bind(':line_no', 		$line_no);
 		parent::bind(':line_type', 		$line_type);
 		parent::bind(':shift', 			$shift);
-		parent::bind(':report_date', 	$report_date);
+		parent::bind(':report_date', 	date('Y-m-d',strtotime($report_date)));
 		parent::bind(':no_monthly_emplys', 	$no_monthly_emplys);
 		parent::bind(':no_daily_emplys', 	$no_daily_emplys);
 		parent::bind(':ttl_monthly_hrs',  	$ttl_monthly_hrs);
