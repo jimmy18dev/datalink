@@ -138,6 +138,11 @@ class ReportController extends ReportModel{
 		$this->render($data,$option);
 	}
 
+	public function listEfficencyReport($option){
+		$data = parent::listEfficencyReportData();
+		$this->render($data,$option);
+	}
+
 	// public function listAllOperationRecipe($caliber_id,$option){
 	// 	$data = parent::listallOperation($caliber_id);
 	// 	$this->render($data,$option);
@@ -173,6 +178,20 @@ class ReportController extends ReportModel{
             foreach ($data as $var){
             	$header_id = $option['header_id'];
                 include'template/report/report.caliber.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }else if($option['type'] == 'weekly-eff-items'){
+            foreach ($data as $var){
+
+            	$stdtime 	= $var['caliber_stdtime'];
+            	$qty 		= $var['caliber_qty'];
+            	$earned 	= $var['caliber_qty'] * $var['caliber_stdtime'];
+
+                include'template/report/weekly-eff-items.php';
                 $total_items++;
             }
 

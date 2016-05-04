@@ -34,8 +34,6 @@ function createHeaderReport(){
 
     var report_date = y+'-'+m+'-'+d;
 
-    alert(report_date);
-
     // $('#loading-message').html('กำลังเข้าระบบ...');
     // $('#loading-box').fadeIn(300);
 

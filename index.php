@@ -65,7 +65,7 @@ if(!$user_online){
 		<div class="section">
 			<h3>Administrator</h3>
 			<div class="menu-container">
-				<a href="#" class="menu-items">
+				<a href="report.php" class="menu-items">
 					<span class="icon"><i class="fa fa-child" aria-hidden="true"></i></span>
 					<span class="caption">Query Reports<i class="fa fa-angle-right"></i></span>
 				</a>

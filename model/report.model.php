@@ -223,5 +223,20 @@ class ReportModel extends Database{
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
+
+	public function listEfficencyReportData(){
+		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT SUM(dod.output) FROM RTH_DailyOutputDetail AS dod WHERE dod.caliber_id = caliber.id) caliber_qty 
+			FROM RTH_CaliberCode AS caliber 
+			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary"
+			ORDER BY caliber.update_time DESC');
+		parent::execute();
+		$dataset = parent::resultset();
+
+		// echo'<pre>';
+		// print_r($dataset);
+		// echo'</pre>';
+		
+		return $dataset;
+	}
 }
 ?>

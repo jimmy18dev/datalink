@@ -14,6 +14,11 @@ if(!empty($_GET['header'])){
 // current page
 $current_page['1'] = 'report';
 $current_page['2'] = 'new_operation';
+
+// Get current day mouth year
+$day = date('d');
+$mouth = date('m');
+$year = date('Y');
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -49,14 +54,14 @@ $current_page['2'] = 'new_operation';
 		<div class="heads">
 			<div class="title">
 				<h1>Create Daily output report</h1>
-				<p>Movement assembly</p>
+				<p>Movement assembly <?php echo 'Date:'.$day.'-'.$mouth.'-'.$year;?></p>
 			</div>
 			<div class="date">
 				<select id="r_date">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
+					<option value="1" <?php echo ($day == '01'?'selected':'');?>>1</option>
+					<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
+					<option value="3" <?php echo ($day == '03'?'selected':'');?>>3</option>
+					<option value="4" <?php echo ($day == '04'?'selected':'');?>>4</option>
 					<option value="5">5</option>
 					<option value="6">6</option>
 					<option value="7">7</option>
@@ -86,21 +91,21 @@ $current_page['2'] = 'new_operation';
 					<option value="31">31</option>
 				</select>
 				<select id="r_month">
-					<option value="1">January</option>
-					<option value="2">February</option>
-					<option value="3">March</option>
-					<option value="4">April</option>
-					<option value="5">May</option>
-					<option value="6">June</option>
-					<option value="7">July</option>
-					<option value="8">August</option>
-					<option value="9">September</option>
-					<option value="10">October</option>
-					<option value="11">November</option>
-					<option value="12">December</option>
+					<option value="1" <?php echo ($mouth == '01'?'selected':'');?>>January</option>
+					<option value="2" <?php echo ($mouth == '02'?'selected':'');?>>February</option>
+					<option value="3" <?php echo ($mouth == '03'?'selected':'');?>>March</option>
+					<option value="4" <?php echo ($mouth == '04'?'selected':'');?>>April</option>
+					<option value="5" <?php echo ($mouth == '05'?'selected':'');?>>May</option>
+					<option value="6" <?php echo ($mouth == '06'?'selected':'');?>>June</option>
+					<option value="7" <?php echo ($mouth == '07'?'selected':'');?>>July</option>
+					<option value="8" <?php echo ($mouth == '08'?'selected':'');?>>August</option>
+					<option value="9" <?php echo ($mouth == '09'?'selected':'');?>>September</option>
+					<option value="10" <?php echo ($mouth == '10'?'selected':'');?>>October</option>
+					<option value="11" <?php echo ($mouth == '11'?'selected':'');?>>November</option>
+					<option value="12" <?php echo ($mouth == '12'?'selected':'');?>>December</option>
 				</select>
 				<select id="r_year">
-					<option value="2016">2016</option>
+					<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
 				</select>
 			</div>
 		</div>
