@@ -5,6 +5,6 @@
 	</div>
 	<div class="col3"><?php echo (empty($var['username'])?'-':$var['username']);?></div>
 	<div class="col4"><?php echo (empty($var['password'])?'-':$var['password']);?></div>
-	<div class="col5"><?php echo (empty($var['section_name'])?'-':$var['section_name']);?></div>
+	<div class="col5"><?php echo (empty($var['section_name'])?'-':$var['section_name'].' / Line No.'.$var['line_default']);?></div>
 	<div class="col6"><span class="visit"><?php echo $var['visit_time'];?></span></div>
 </div>

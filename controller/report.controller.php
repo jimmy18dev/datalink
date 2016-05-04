@@ -188,8 +188,8 @@ class ReportController extends ReportModel{
             foreach ($data as $var){
 
             	$stdtime 	= $var['caliber_stdtime'];
-            	$qty 		= $var['caliber_qty'];
-            	$earned 	= $var['caliber_qty'] * $var['caliber_stdtime'];
+            	$qty 		= number_format($var['caliber_qty']/1000,3);
+            	$earned 	= $qty * $stdtime;
 
                 include'template/report/weekly-eff-items.php';
                 $total_items++;

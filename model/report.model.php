@@ -109,11 +109,14 @@ class ReportModel extends Database{
 	}
 
 	public function listAllHeader(){
-		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.create_time,header.update_time,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id ORDER BY header.create_time DESC,header.line_no ASC');
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.create_time,header.update_time,user.code user_code,user.fname,user.lname 
+			FROM RTH_DailyOutputHeader AS header 
+			LEFT JOIN RTH_User AS user ON header.user_id = user.id 
+			ORDER BY header.report_date DESC,header.line_no ASC');
 		parent::execute();
 		$dataset = parent::resultset();
 		foreach ($dataset as $k => $var) {
-			$dataset[$k]['date'] = parent::date_format($var['create_time']);
+			$dataset[$k]['date'] = parent::date_format($var['report_date']);
 			$dataset[$k]['update'] = parent::date_facebookformat($var['update_time']);
 			$dataset[$k]['update_time'] = parent::datetime_thaiformat($var['update_time']);
 		}

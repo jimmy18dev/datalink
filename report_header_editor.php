@@ -16,9 +16,9 @@ $current_page['1'] = 'report';
 $current_page['2'] = 'new_operation';
 
 // Get current day mouth year
-$day = date('d');
-$mouth = date('m');
-$year = date('Y');
+$day 	= date('d');
+$mouth 	= date('m');
+$year 	= date('Y');
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
