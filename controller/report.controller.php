@@ -138,15 +138,28 @@ class ReportController extends ReportModel{
 		$this->render($data,$option);
 	}
 
-	public function listEfficencyReport($option){
-		$data = parent::listEfficencyReportData();
+	public function listEfficencyReport($s_year,$s_monthly,$s_day,$e_year,$e_monthly,$e_day,$option){
+
+		$start_date = $s_year.'-'.$s_monthly.'-'.$s_day;
+		$end_date 	= $e_year.'-'.$e_monthly.'-'.$e_day;
+
+		$data = parent::listEfficencyReportData($start_date,$end_date);
 		$this->render($data,$option);
 	}
 
-	// public function listAllOperationRecipe($caliber_id,$option){
-	// 	$data = parent::listallOperation($caliber_id);
-	// 	$this->render($data,$option);
-	// }
+	public function getIdleTime($s_year,$s_monthly,$s_day,$e_year,$e_monthly,$e_day){
+
+		$start_date = $s_year.'-'.$s_monthly.'-'.$s_day;
+		$end_date 	= $e_year.'-'.$e_monthly.'-'.$e_day;
+
+		$data = parent::getIdleTimeData($start_date,$end_date);
+
+		$data['normal_time'] 	= $data['ttl_monthly_hrs'] + $data['ttl_daily_hrs'];
+		$data['over_time'] 		= $data['ot_10'] + $data['ot_15'] + $data['ot_20'] + $data['ot_30'];
+		$data['ttl_idle_time'] 	= $data['downtime_mc'] + $data['downtime_mat'] + $data['downtime_fac'] + $data['sort_local'] + $data['sort_oversea'] + $data['rework_local'] + $data['rework_oversea'] + $data['downtime_other'];		
+
+		return $data;
+	}
 
 	public function listDetailReport($header_id,$caliber_id,$option){
 		$data = parent::listDetailReportData($header_id,$caliber_id);
