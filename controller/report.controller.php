@@ -161,6 +161,16 @@ class ReportController extends ReportModel{
 		return $data;
 	}
 
+	public function totalEfficencyReport($s_year,$s_monthly,$s_day,$e_year,$e_monthly,$e_day){
+
+		$start_date = $s_year.'-'.$s_monthly.'-'.$s_day;
+		$end_date 	= $e_year.'-'.$e_monthly.'-'.$e_day;
+
+		$data = parent::totalEfficencyReportData($start_date,$end_date);
+
+		return $data;
+	}
+
 	public function listDetailReport($header_id,$caliber_id,$option){
 		$data = parent::listDetailReportData($header_id,$caliber_id);
 		$this->render($data,$option);

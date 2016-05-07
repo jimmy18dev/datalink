@@ -10,7 +10,7 @@ button {
   /* IE11 */
 }
 body {
-  background: #FFFFFF;
+  background: #F5F5F5;
   font-family: sans-serif, 'Open Sans';
   overflow-y: scroll;
   overflow-x: hidden;
@@ -27,21 +27,19 @@ body {
   left: 0%;
   width: 60%;
   padding: 0% 20%;
-  height: 60px;
+  height: 40px;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
-  border-bottom: 1px solid #EEEEEE;
+  background: #003399;
 }
 .header .logo {
   float: left;
   display: inline-block;
   font-weight: bold;
-  font-size: 1.3em;
-  padding: 20px 0px;
-  height: 20px;
-  color: #003399;
-  background: #FAFACC;
+  font-size: 1em;
+  padding: 12px 0px;
+  height: 16px;
+  color: #FFFFFF;
 }
 .header .logo i {
   margin-right: 5px;
@@ -49,11 +47,9 @@ body {
 .header .navibar {
   float: left;
   display: inline-block;
-  font-size: 0.9em;
-  padding: 23px 2%;
-  height: 14px;
-  color: #003399;
-  background: #DADADA;
+  padding: 12px 2%;
+  height: 16px;
+  color: #EEEEEE;
 }
 .header .navibar i {
   margin-right: 10px;
@@ -61,21 +57,19 @@ body {
 .header .profile {
   float: right;
   display: inline-block;
-  padding: 20px 0px;
-  height: 20px;
-  color: #003399;
-  background: #FAFADD;
+  padding: 12px 0px;
+  height: 16px;
+  color: #FFFFFF;
 }
 .header .profile .name {
   float: left;
   display: inline-block;
-  line-height: 2em;
   margin-right: 10px;
   font-size: 0.9em;
-  color: #003399;
+  color: #FFFFFF;
 }
 .header .profile a {
-  color: #003399;
+  color: #FFFFFF;
 }
 .header .profile a.logout {
   color: #ea6153;
@@ -203,7 +197,7 @@ body {
 }
 .container {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 40px;
   min-height: 500px;
   float: left;
   display: inline-block;
@@ -213,8 +207,6 @@ body {
   padding: 0% 20%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
-  border-bottom: 1px solid #EEEEEE;
 }
 .container .head .head-title {
   width: 100%;
@@ -224,12 +216,12 @@ body {
   color: #000000;
 }
 .container .head .head-title h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   color: #000000;
   line-height: 1.3em;
 }
 .container .head .head-title p {
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.3em;
   color: #555555;
 }
@@ -792,6 +784,164 @@ body {
 }
 .container .form-container .submit-btn i {
   margin-left: 10px;
+}
+.container .report-container {
+  width: 60%;
+  margin: 0% 20%;
+  float: left;
+  display: inline-block;
+}
+.container .report-container .datepicker {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 3%;
+}
+.container .report-container .datepicker .caption {
+  float: left;
+  display: inline-block;
+  padding: 5px 0px;
+  margin-right: 10px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.container .report-container .datepicker .input {
+  float: left;
+  display: inline-block;
+}
+.container .report-container .datepicker .submit {
+  float: left;
+  display: inline-block;
+}
+.container .report-container .datepicker .input-select {
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  font-family: sans-serif, 'Open Sans';
+  -webkit-appearance: none;
+  line-height: 1.5em;
+  padding: 5px 8px;
+  margin-right: 5px;
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+  text-align: center;
+}
+.container .report-container .datepicker .submit-btn {
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  font-family: sans-serif, 'Open Sans';
+  line-height: 1.5em;
+  padding: 5px 10px;
+  border: 0px;
+  border-radius: 3px;
+  background: #003399;
+  color: #FFFFFF;
+  margin-left: 5px;
+}
+.container .report-container .datepicker .submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.container .report-container .report-box {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  margin-bottom: 3%;
+  border-radius: 2px;
+  border: 1px solid #EEEEEE;
+}
+.container .report-container .report-box .weekly-eff-items {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 2.5em;
+  border-bottom: 1px solid #FAFAFA;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .report-container .report-box .weekly-eff-items:hover {
+  background: #FAFAFA;
+}
+.container .report-container .report-box .weekly-eff-items .col1 {
+  width: 26%;
+  padding: 0% 2%;
+  float: left;
+  display: inline-block;
+}
+.container .report-container .report-box .weekly-eff-items .col1 .count {
+  color: #CCCCCC;
+  margin-right: 10px;
+}
+.container .report-container .report-box .weekly-eff-items .col2 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .report-container .report-box .weekly-eff-items .col3 {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .report-container .report-box .weekly-eff-items .col4 {
+  width: 21%;
+  padding: 0% 2%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .report-container .report-box .weekly-eff-items .col5 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  margin-right: 50%;
+}
+.container .report-container .report-box .topic-fix {
+  font-weight: bold;
+  border-bottom: 1px solid #EEEEEE;
+  color: #000000;
+}
+.container .report-container .report-box .total-fix {
+  font-weight: bold;
+  color: #003399;
+}
+.container .report-container .report-box .topic {
+  width: 96%;
+  padding: 0% 2%;
+  float: left;
+  display: inline-block;
+  line-height: 2.5em;
+  font-weight: bold;
+  font-size: 0.9em;
+  font-family: sans-serif, 'Open Sans';
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .report-container .report-box .eff-items {
+  width: 21%;
+  padding: 4% 2%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  line-height: 1.5em;
+}
+.container .report-container .report-box .eff-items .v {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+}
+.container .report-container .report-box .eff-items .v .unit {
+  font-size: 0.5em;
+}
+.container .report-container .report-box .eff-items .k {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
 }
 .container .list-container {
   width: 100%;

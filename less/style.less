@@ -6,34 +6,31 @@
 	left: 0%;
 	width: 60%;
 	padding: 0% 20%;
-	height: 60px;
+	height: 40px;
 	float: left;
 	display: inline-block;
-	background: #FFFFFF;
-	border-bottom: 1px solid #EEEEEE;
+	background: #003399;
 
 	.logo{
 		float: left;
 		display: inline-block;
 		font-weight: bold;
-		font-size: 1.3em;
-		padding: 20px 0px;
-		height: 20px;
-		color: #003399;
-		background: #FAFACC;
+		font-size: 1em;
+		padding: 12px 0px;
+		height: 16px;
+		color: #FFFFFF;
 
 		i{
 			margin-right: 5px;
 		}
 	}
+
 	.navibar{
 		float: left;
 		display: inline-block;
-		font-size: 0.9em;
-		padding: 23px 2%;
-		height: 14px;
-		color: #003399;
-		background: #DADADA;
+		padding: 12px 2%;
+		height: 16px;
+		color: #EEEEEE;
 
 		i{
 			margin-right: 10px;
@@ -42,22 +39,20 @@
 	.profile{
 		float: right;
 		display: inline-block;
-		padding: 20px 0px;
-		height: 20px;
-		color: #003399;
-		background: #FAFADD;
+		padding: 12px 0px;
+		height: 16px;
+		color: #FFFFFF;
 
 		.name{
 			float: left;
 			display: inline-block;
-			line-height: 2em;
 			margin-right: 10px;
 			font-size: 0.9em;
-			color: #003399;
+			color: #FFFFFF;
 		}
 
 		a{
-			color: #003399;
+			color: #FFFFFF;
 		}
 
 		a.logout{
@@ -203,7 +198,7 @@
 
 .container{
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 40px;
 	min-height: 500px;
 	float: left;
 	display: inline-block;
@@ -213,8 +208,6 @@
 		padding: 0% 20%;
 		float: left;
 		display: inline-block;
-		background: #FFFFFF;
-		border-bottom: 1px solid #EEEEEE;
 
 		.head-title{
 			width: 100%;
@@ -224,13 +217,13 @@
 			color: #000000;
 
 			h1{
-				font-size: 2em;
+				font-size: 1.5em;
 				color: #000000;
 				line-height: 1.3em;
 			}
 
 			p{
-				font-size: 0.9em;
+				font-size: 1em;
 				line-height: 1.3em;
 				color: #555555;
 			}
@@ -868,6 +861,182 @@
 
 			i{
 				margin-left: 10px;
+			}
+		}
+	}
+
+	.report-container{
+		width: 60%;
+		margin: 0% 20%;
+		float: left;
+		display: inline-block;
+
+		.datepicker{
+			width: 100%;
+			float: left;
+			display: inline-block;
+			margin-bottom: 3%;
+
+			.caption{
+				float: left;
+				display: inline-block;
+				padding: 5px 0px;
+				margin-right: 10px;
+				font-size: 0.9em;
+				line-height: 1.5em;
+			}
+			.input{
+				float: left;
+				display: inline-block;
+			}
+			.submit{
+				float: left;
+				display: inline-block;
+			}
+
+			.input-select{
+				float: left;
+				display: inline-block;
+				font-size: 0.9em;
+				font-family: @FontStylePrimary;
+				-webkit-appearance: none;
+				line-height: 1.5em;
+				padding: 5px 8px;
+				margin-right: 5px;
+				border: 1px solid #EEEEEE;
+				border-radius: 3px;
+				text-align: center;
+			}
+
+			.submit-btn{
+				float: left;
+				display: inline-block;
+				font-size: 0.9em;
+				font-family: @FontStylePrimary;
+				line-height: 1.5em;
+				padding: 5px 10px;
+				border: 0px;
+				border-radius: 3px;
+				background: #003399;
+				color: #FFFFFF;
+				margin-left: 5px;
+
+				&:hover{
+					cursor: pointer;
+					opacity: 0.7;
+				}
+			}
+		}
+
+		.report-box{
+			width: 100%;
+			float: left;
+			display: inline-block;
+			background: #FFFFFF;
+			margin-bottom: 3%;
+			border-radius: 2px;
+			border: 1px solid #EEEEEE;
+
+			.weekly-eff-items{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				font-size: 0.9em;
+				line-height: 2.5em;
+				border-bottom: 1px solid #FAFAFA;
+				color: rgba(0, 0, 0, 0.8);
+
+				&:hover{
+					background: #FAFAFA;
+				}
+
+				.col1{
+					width: 26%;
+					padding: 0% 2%;
+					float: left;
+					display: inline-block;
+
+					.count{
+						color: #CCCCCC;
+						margin-right: 10px;
+					}
+				}
+				.col2{
+					width: 20%;
+					float: left;
+					display: inline-block;
+					text-align: right;
+				}
+				.col3{
+					width: 25%;
+					float: left;
+					display: inline-block;
+					text-align: right;
+				}
+				.col4{
+					width: 21%;
+					padding: 0% 2%;
+					float: left;
+					display: inline-block;
+					text-align: right;
+				}
+
+				.col5{
+					width: 20%;
+					float: left;
+					display: inline-block;
+					text-align: right;
+					margin-right: 50%;
+				}
+			}
+
+			.topic-fix{
+				font-weight: bold;
+				border-bottom: 1px solid #EEEEEE;
+				color: rgba(0, 0, 0, 1);
+			}
+
+			.total-fix{
+				font-weight: bold;
+				color: #003399;
+			}
+
+			.topic{
+				width: 96%;
+				padding: 0% 2%;
+				float: left;
+				display: inline-block;
+				line-height: 2.5em;
+				font-weight: bold;
+				font-size: 0.9em;
+				font-family: @FontStylePrimary;
+				border-bottom: 1px solid #EEEEEE;
+			}
+
+			.eff-items{
+				width: 21%;
+				padding: 4% 2%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+				line-height: 1.5em;
+
+				.v{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					font-size: 2em;
+
+					.unit{
+						font-size: 0.5em;
+					}
+				}
+				.k{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					font-size: 0.9em;
+				}
 			}
 		}
 	}
