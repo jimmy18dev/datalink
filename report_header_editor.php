@@ -1,17 +1,23 @@
 <?php
 include'config/autoload.php';
 
-// Permission
+// Authorization
 if(!$user_online){
 	header("Location: index.php");
 	die();
-}
-
-if(!empty($_GET['header'])){
+}else if(empty($_GET['header']) AND $_GET['action'] != 'create'){
+	header("Location: report_header.php?error=header_id_is_empty!");
+	die();
+}else{
 	$report->getHeader($_GET['header']);
+
+	if($user->id != $report->leader_id AND $_GET['action'] != 'create'){
+		header("Location: report_header.php?error=you_don't_have_permission!");
+		die();
+	}	
 }
 
-// current page
+// Current page
 $current_page['1'] = 'report';
 $current_page['2'] = 'new_operation';
 
@@ -62,33 +68,33 @@ $year 	= date('Y');
 					<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
 					<option value="3" <?php echo ($day == '03'?'selected':'');?>>3</option>
 					<option value="4" <?php echo ($day == '04'?'selected':'');?>>4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-					<option value="11">11</option>
-					<option value="12">12</option>
-					<option value="13">13</option>
-					<option value="14">14</option>
-					<option value="15">15</option>
-					<option value="16">16</option>
-					<option value="17">17</option>
-					<option value="18">18</option>
-					<option value="19">19</option>
-					<option value="20">20</option>
-					<option value="21">21</option>
-					<option value="22">22</option>
-					<option value="23">23</option>
-					<option value="24">24</option>
-					<option value="25">25</option>
-					<option value="26">26</option>
-					<option value="27">27</option>
-					<option value="28">28</option>
-					<option value="29">29</option>
-					<option value="30">30</option>
-					<option value="31">31</option>
+					<option value="5" <?php echo ($day == '05'?'selected':'');?>>5</option>
+					<option value="6" <?php echo ($day == '06'?'selected':'');?>>6</option>
+					<option value="7" <?php echo ($day == '07'?'selected':'');?>>7</option>
+					<option value="8" <?php echo ($day == '08'?'selected':'');?>>8</option>
+					<option value="9" <?php echo ($day == '09'?'selected':'');?>>9</option>
+					<option value="10" <?php echo ($day == '10'?'selected':'');?>>10</option>
+					<option value="11" <?php echo ($day == '11'?'selected':'');?>>11</option>
+					<option value="12" <?php echo ($day == '12'?'selected':'');?>>12</option>
+					<option value="13" <?php echo ($day == '13'?'selected':'');?>>13</option>
+					<option value="14" <?php echo ($day == '14'?'selected':'');?>>14</option>
+					<option value="15" <?php echo ($day == '15'?'selected':'');?>>15</option>
+					<option value="16" <?php echo ($day == '16'?'selected':'');?>>16</option>
+					<option value="17" <?php echo ($day == '17'?'selected':'');?>>17</option>
+					<option value="18" <?php echo ($day == '18'?'selected':'');?>>18</option>
+					<option value="19" <?php echo ($day == '19'?'selected':'');?>>19</option>
+					<option value="20" <?php echo ($day == '20'?'selected':'');?>>20</option>
+					<option value="21" <?php echo ($day == '21'?'selected':'');?>>21</option>
+					<option value="22" <?php echo ($day == '22'?'selected':'');?>>22</option>
+					<option value="23" <?php echo ($day == '23'?'selected':'');?>>23</option>
+					<option value="24" <?php echo ($day == '24'?'selected':'');?>>24</option>
+					<option value="25" <?php echo ($day == '25'?'selected':'');?>>25</option>
+					<option value="26" <?php echo ($day == '26'?'selected':'');?>>26</option>
+					<option value="27" <?php echo ($day == '27'?'selected':'');?>>27</option>
+					<option value="28" <?php echo ($day == '28'?'selected':'');?>>28</option>
+					<option value="29" <?php echo ($day == '29'?'selected':'');?>>29</option>
+					<option value="30" <?php echo ($day == '30'?'selected':'');?>>30</option>
+					<option value="31" <?php echo ($day == '31'?'selected':'');?>>31</option>
 				</select>
 				<select id="r_month">
 					<option value="1" <?php echo ($mouth == '01'?'selected':'');?>>January</option>
@@ -114,8 +120,8 @@ $year 	= date('Y');
 			<div class="setting-section-items">
 				<div class="caption">Line</div>
 				<div class="input">
-					<span class="minicaption">No:</span>
-					<select id="line_no" class="input-select">
+					<span class="minicaption">No: <?php echo $user->line_default;?></span>
+					<!-- <select id="line_no" class="input-select">
 						<option value="1" <?php echo ($report->line_no == 1?'selected':'');?>>1</option>
 						<option value="2" <?php echo ($report->line_no == 2?'selected':'');?>>2</option>
 						<option value="3" <?php echo ($report->line_no == 3?'selected':'');?>>3</option>
@@ -130,7 +136,7 @@ $year 	= date('Y');
 						<option value="12" <?php echo ($report->line_no == 12?'selected':'');?>>12</option>
 						<option value="13" <?php echo ($report->line_no == 13?'selected':'');?>>13</option>
 						<option value="14" <?php echo ($report->line_no == 14?'selected':'');?>>14</option>
-					</select>
+					</select> -->
 
 					<span class="minicaption">Type:</span>
 					<select id="line_type" class="input-select">
@@ -256,7 +262,7 @@ $year 	= date('Y');
 		</div>		
 
 		<div class="form-control">
-			<div class="username">Puwadon Sricharoen</div>
+			<div class="username">Report by <?php echo $user->name;?></div>
 
 			<?php if(empty($report->id)){?>
 			<div class="submit-btn" onclick="javascript:createHeaderReport();">Create<i class="fa fa-angle-right"></i></div>

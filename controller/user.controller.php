@@ -4,6 +4,7 @@ class UserController extends UserModel{
 	public $code;
 	public $fname;
 	public $lname;
+	public $name;
 	public $password;
 	public $line_default;
 	public $register_time;
@@ -67,6 +68,7 @@ class UserController extends UserModel{
 		$this->code = $dataset['code'];
 		$this->fname = $dataset['fname'];
 		$this->lname = $dataset['lname'];
+		$this->name = $this->fname.' '.$this->lname;
 		$this->password = $dataset['password'];
 		$this->line_default = $dataset['line_default'];
 		$this->register_time = $dataset['register_time'];

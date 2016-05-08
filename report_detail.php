@@ -45,7 +45,7 @@ $current_page['2'] = 'report_detail';
 	<div class="head">
 		<div class="head-title">
 			<h1>วันที่ <?php echo $report->date;?>, NO.<?php echo $report->line_no;?>, Shift: <?php echo $report->shift;?></h1>
-			<p>Leader: <?php echo $report->leader_name;?> <span title="<?php echo $report->update_time;?>">อัพเดท <?php echo $report->update;?></span> | <a href="report_header_editor.php?header=<?php echo $report->id;?>">[แก้ไข]</a></p>
+			<p>Leader: <?php echo $report->leader_name;?> <span title="<?php echo $report->update_time;?>">อัพเดท <?php echo $report->update;?></span> | <?php if($user->id == $report->leader_id){?><a href="report_header_editor.php?header=<?php echo $report->id;?>">[แก้ไข]</a><?php }?></p>
 		</div>
 
 		<div class="header-report-table">

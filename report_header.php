@@ -44,7 +44,7 @@ $current_page['1'] = 'report';
 		</div>
 
 		<div class="tab">
-			<a href="report_header_editor.php?" class="btn-right create">New report<i class="fa fa-angle-right"></i></a>
+			<a href="report_header_editor.php?action=create" class="btn-right create">New report<i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
 
@@ -63,7 +63,7 @@ $current_page['1'] = 'report';
 			<div class="col11"><i class="fa fa-user" aria-hidden="true"></i> Leader</div>
 		</div>
 
-		<?php $report->listAllHeaders(array('type' => 'report-header-items'));?>
+		<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items'));?>
 	</div>
 </div>
 </body>

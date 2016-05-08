@@ -46,7 +46,7 @@ class ReportController extends ReportModel{
 	// Header report
 	public function newHeaderReport($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff){
 
-		if(parent::alreadyHeader($user_id,$line_no,$shift,$report_date)){
+		if(parent::alreadyHeader($line_no,$shift,$report_date)){
 			$header_id = parent::createHeader($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff);
 
 			return $header_id;
@@ -55,24 +55,24 @@ class ReportController extends ReportModel{
 		}
 	}
 
-	public function updateHeaderReport($header_id,$line_no,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff){
+	public function updateHeaderReport($header_id,$user_id,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff){
 
-		parent::editHeader($header_id,$line_no,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff);
+		parent::editHeader($header_id,$user_id,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff);
 	}
 
 	// Detail report
-	public function addOperationReport($header_id,$caliber_id,$route_id,$stdtime_id,$stdtime_hrs,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output){
+	public function addOperationReport($header_id,$user_id,$caliber_id,$route_id,$stdtime_id,$stdtime_hrs,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output){
 
 		if(parent::alreadyDetail($header_id,$caliber_id,$route_id,$operation_id)){
 			$required_hrs = $stdtime_hrs * $output;
-			parent::createDetail($header_id,$caliber_id,$route_id,$stdtime_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
+			parent::createDetail($header_id,$user_id,$caliber_id,$route_id,$stdtime_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
 		}else{
 		}
 	}
-	public function updateOerationReport($detail_id,$total_good,$total_reject,$remark_id,$remark_message,$stdtime_hrs,$output,$required_hrs){
+	public function updateOerationReport($user_id,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$stdtime_hrs,$output,$required_hrs){
 
 		$required_hrs = $stdtime_hrs * $output;
-		parent::editDetail($detail_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
+		parent::editDetail($user_id,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
 	}
 	public function deleteOperationReport(){}
 
@@ -84,7 +84,7 @@ class ReportController extends ReportModel{
 		$data = parent::getData($id);
 
 		$this->id = $data['id'];
-		$this->leader_id = $data['leadder_id'];
+		$this->leader_id = $data['leader_id'];
 		$this->leader_name = $data['leader_name'];
 		$this->line_no = $data['line_no'];
 		$this->line_type = $data['line_type'];
@@ -123,8 +123,8 @@ class ReportController extends ReportModel{
 		$this->status  = $data['status'];
 	}
 
-	public function listAllHeaders($option){
-		$data = parent::listAllHeader($option);
+	public function listAllHeader($line_no,$option){
+		$data = parent::listAllHeaderData($line_no);
 		$this->render($data,$option);
 	}
 
