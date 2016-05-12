@@ -26,6 +26,7 @@ class CaliberController extends CaliberModel{
 	public $route_update_time;
 	public $route_type;
 	public $route_status;
+	public $total_operation;
 
 	// Operation
 	public $operation_id;
@@ -102,29 +103,30 @@ class CaliberController extends CaliberModel{
 	public function getCaliber($id){
 		$dataset = parent::getData($id);
 
-		$this->id = $dataset['id'];
-		$this->code = $dataset['code'];
-		$this->name = $dataset['name'];
-		$this->description = $dataset['description'];
-		$this->family = $dataset['family'];
-		$this->create_time = $dataset['create_time'];
-		$this->update_time = $dataset['update_time'];
-		$this->type = $dataset['type'];
-		$this->status = $dataset['status'];
+		$this->id 			= $dataset['id'];
+		$this->code 		= $dataset['code'];
+		$this->name 		= $dataset['name'];
+		$this->description 	= $dataset['description'];
+		$this->family 		= $dataset['family'];
+		$this->create_time 	= $dataset['create_time'];
+		$this->update_time 	= $dataset['update_time'];
+		$this->type 		= $dataset['type'];
+		$this->status 		= $dataset['status'];
 
 		// Std. Time
-		$this->standard_id = $dataset['standard_id'];
-		$this->hrs = $dataset['standard_hrs'];
-		$this->remark = $dataset['standard_remark'];
+		$this->standard_id 	= $dataset['standard_id'];
+		$this->hrs 			= $dataset['standard_hrs'];
+		$this->remark 		= $dataset['standard_remark'];
 
 		// Route
-		$this->route_id = $dataset['route_id'];
-		$this->route_code = $dataset['route_code'];
-		$this->route_name = $dataset['route_name'];
+		$this->route_id 	= $dataset['route_id'];
+		$this->route_code 	= $dataset['route_code'];
+		$this->route_name 	= $dataset['route_name'];
+		$this->total_operation = $dataset['total_operation'];
 	}
 
 	public function listAllCalibers($option){
-		$data = parent::listAllCaliber($option);
+		$data = parent::listAllCaliber($option['header_id']);
 		$this->render($data,$option);
 	}
 
@@ -162,6 +164,7 @@ class CaliberController extends CaliberModel{
             }
         }else if($option['type'] == 'operation-form-items'){
         	$remark_data = parent::listAllRemark();
+        	$remark_option .= '<option value="0">select remark...</option>';
         	foreach ($remark_data as $vars)
         		$remark_option .= '<option value="'.$vars['id'].'">'.$vars['description'].'</option>';
 
@@ -176,7 +179,9 @@ class CaliberController extends CaliberModel{
         }else if($option['type'] == 'caliber-choose-items'){
         	$header_id = $option['header_id'];
             foreach ($data as $var){
-                include'template/caliber/caliber.choose.items.php';
+
+            	if($var['total_operation'] > 0)
+            		include'template/caliber/caliber.choose.items.php';
                 $total_items++;
             }
 

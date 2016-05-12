@@ -33,7 +33,7 @@ if($user_online){
 <script type="text/javascript" src="js/service/user.service.js"></script>
 
 </head>
-<body>
+<body class="blue">
 <div class="login-container">
 	<div class="logo"><i class="fa fa-code-fork" aria-hidden="true"></i> DATALINK</div>
 	<p>Version 1.0</p>

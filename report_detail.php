@@ -44,13 +44,20 @@ $current_page['2'] = 'report_detail';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>วันที่ <?php echo $report->date;?>, NO.<?php echo $report->line_no;?>, Shift: <?php echo $report->shift;?></h1>
-			<p>Leader: <?php echo $report->leader_name;?> <span title="<?php echo $report->update_time;?>">อัพเดท <?php echo $report->update;?></span> | <?php if($user->id == $report->leader_id){?><a href="report_header_editor.php?header=<?php echo $report->id;?>">[แก้ไข]</a><?php }?></p>
+			<h2>Daily output report of Line no.<strong><?php echo $report->line_no;?></strong> (Shift: <?php echo $report->shift;?>)</h2>
+			<h1><?php echo $report->date;?></h1>
+			<p>Leader: <strong><?php echo $report->leader_name;?></strong> · <span title="<?php echo $report->update_time;?>"><i class="fa fa-clock-o" aria-hidden="true"></i> updated <?php echo $report->update;?></span><?php if($user->id == $report->leader_id){?> · <a href="report_header_editor.php?header=<?php echo $report->id;?>">Edit Report<i class="fa fa-angle-right"></i></a><?php }?></p>
+
+			<div class="btn">
+				<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="btn-create">Add caliber code<i class="fa fa-plus"></i></a>
+			</div>
 		</div>
+	</div>
 
+	<div class="list-container">
+		<p class="topic"><strong>1. Manpower:</strong></p>
+		<p><?php echo $report->no_monthly_emplys;?> Monthly Prs (<?php echo $report->ttl_monthly_hrs;?> Hrs.), <?php echo $report->no_daily_emplys;?> Daily Prs (<?php echo $report->ttl_daily_hrs;?> Hrs) Product EFF: <?php echo $report->product_eff;?>% Total EFF: <?php echo $report->ttl_eff;?>%</p>
 		<div class="header-report-table">
-			<p><strong>Manpower:</strong> <?php echo $report->no_monthly_emplys;?> Monthly Prs (<?php echo $report->ttl_monthly_hrs;?> Hrs.), <?php echo $report->no_daily_emplys;?> Daily Prs (<?php echo $report->ttl_daily_hrs;?> Hrs)</p>
-
 			<div class="box1">
 				<div class="box-topic">OT</div>
 				<div class="col">
@@ -109,6 +116,10 @@ $current_page['2'] = 'report_detail';
 					<div class="col-caption">Fac</div>
 					<div class="col-val"><?php echo $report->downtime_fac;?></div>
 				</div>
+				<div class="col">
+					<div class="col-caption">Other</div>
+					<div class="col-val"><?php echo $report->downtime_other;?></div>
+				</div>
 			</div>
 
 			<div class="box4">
@@ -136,20 +147,10 @@ $current_page['2'] = 'report_detail';
 			</div>
 		</div>
 
-		<div class="tab">
-			<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="btn-right create">Add report<i class="fa fa-angle-right"></i></a>
+		<p class="topic"><strong>2. Output</strong></p>
+		<div class="container-box">
+			<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items','header_id' => $report->id));?>
 		</div>
-	</div>
-
-	<div class="list-container">
-		<div class="caliber-items topic-fix">
-			<div class="col1">Caliber</div>
-			<div class="col2">ROUTE</div>
-			<div class="col3">Std.time (Hrs/K)</div>
-			<div class="col4">Description</div>
-		</div>
-
-		<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items','header_id' => $report->id));?>
 	</div>
 </div>
 </body>

@@ -1,0 +1,1 @@
+<option value="<?php echo $var['id'];?>" <?php echo ($var['id']== $current?'selected':'');?>><?php echo $var['name'];?></option>

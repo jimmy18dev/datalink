@@ -6,6 +6,9 @@ $(document).ready(function(){
 
 
     var header_id = $('#header_id').val();
+    if(header_id == ''){
+        header_id = $('#header').val();
+    }
 
     $('#ReportDetail').ajaxForm({
         beforeSubmit: function(){

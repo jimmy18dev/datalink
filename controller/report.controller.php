@@ -112,6 +112,9 @@ class ReportController extends ReportModel{
 		$this->rework_local = $data['rework_local'];
 		$this->rework_oversea = $data['rework_oversea'];
 
+		$this->product_eff = $data['product_eff'];
+		$this->ttl_eff = $data['ttl_eff'];
+
 		// timer
 		$this->date = $data['date'];
 		$this->update = $data['update'];
@@ -180,7 +183,16 @@ class ReportController extends ReportModel{
     private function render($data,$option){
     	$total_items = 0;
         if($option['type'] == 'report-header-items'){
+        	$now = time();
             foreach ($data as $var){
+            	$update = intval(strtotime($var['update_time']));
+            	$update = ($now - $update);
+            	
+            	if($update < 600)
+            		$new_items = true;
+            	else
+            		$new_items = false;
+
                 include'template/report/header.items.php';
                 $total_items++;
             }
@@ -201,6 +213,7 @@ class ReportController extends ReportModel{
             foreach ($data as $var){
             	$header_id = $option['header_id'];
                 include'template/report/report.caliber.items.php';
+                
                 $total_items++;
             }
 
@@ -232,6 +245,8 @@ class ReportController extends ReportModel{
             }
         }else if($option['type'] == 'operation-form-items'){
         	$remark_data = parent::listAllRemark();
+
+        	$remark_option .= '<option value="0">remark...</option>';
         	foreach ($remark_data as $vars)
         		$remark_option .= '<option value="'.$vars['id'].'">'.$vars['description'].'</option>';
 

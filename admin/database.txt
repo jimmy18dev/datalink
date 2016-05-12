@@ -1,0 +1,127 @@
+RTH_SectionName
+- id
+- cc
+- name
+- create_time
+- update_time
+- type
+- status
+RTH_SectionFunction
+RTH_DailyOutputHeader
+- id
+- line_no
+- line_type
+- leader_name (user_id)
+- shift (A,B)
+- report_date
+- no_monthly_emplys
+- no_daily_emplys
+- ttl_monthly_hrs
+- ttl_daily_hrs
+- ot_10
+- ot_15
+- ot_20
+- ot_30
+- losttime_vac
+- losttime_sick
+- losttime_abs
+- losttime_mat
+- losttime_other
+- downtime_mc
+- downtime_mat
+- downtime_fac
+- sort_local
+- sort_oversea
+- rework_local
+- rework_oversea
+- create_time
+- update_time
+- type
+- status
+RTH_DailyOutputDetail
+- id
+- header_id
+- operation_id
+- caliber_id
+- total_good
+- total_reject
+- remark
+- product_eff
+- ttl_eff
+- std_time
+- output
+- required_hrs
+- create_time
+- update_time
+- type
+- status
+(Admin)
+RTH_User
+- id
+- fname
+- lname
+- password
+- register_time
+- update_time
+- visit_time
+- ip
+- type
+- status
+
+RTH_Route
+- id
+- caliber_id
+- name
+- description
+- create_time
+- update_time
+- type
+- status
+|
+RTH_Operation
+- id
+- route_id
+- name
+- desscription
+- create_time
+- update_time
+- type
+- status
+
+RTH_RouteMatchOperation
+RTH_OperationRecipe
+- id
+- route_id
+- route_name
+- name
+- create_time
+- update_time
+- type
+- status
+RTH_CaliberCode
+- id
+- code
+- name
+- description
+- family
+- create_time
+- update_time
+- type
+- status
+RTH_GeneralRemark
+- id
+- category_id
+- description
+- create_time
+- update_time
+- type
+- status
+RTH_StandardTime
+- id
+- caliber_id
+- hrs
+- remark
+- create_time
+- update_time
+- type
+- status

@@ -60,10 +60,10 @@ $year 	= date('Y');
 		<div class="heads">
 			<div class="title">
 				<h1>Create Daily output report</h1>
-				<p>Movement assembly <?php echo 'Date:'.$day.'-'.$mouth.'-'.$year;?></p>
+				<p>Movement assembly Daily report by <strong><?php echo $user->name;?></strong> Line No. <?php echo $user->line_default;?></p>
 			</div>
 			<div class="date">
-				<select id="r_date">
+				<select id="r_date" class="input-select">
 					<option value="1" <?php echo ($day == '01'?'selected':'');?>>1</option>
 					<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
 					<option value="3" <?php echo ($day == '03'?'selected':'');?>>3</option>
@@ -96,7 +96,7 @@ $year 	= date('Y');
 					<option value="30" <?php echo ($day == '30'?'selected':'');?>>30</option>
 					<option value="31" <?php echo ($day == '31'?'selected':'');?>>31</option>
 				</select>
-				<select id="r_month">
+				<select id="r_month" class="input-select">
 					<option value="1" <?php echo ($mouth == '01'?'selected':'');?>>January</option>
 					<option value="2" <?php echo ($mouth == '02'?'selected':'');?>>February</option>
 					<option value="3" <?php echo ($mouth == '03'?'selected':'');?>>March</option>
@@ -110,160 +110,190 @@ $year 	= date('Y');
 					<option value="11" <?php echo ($mouth == '11'?'selected':'');?>>November</option>
 					<option value="12" <?php echo ($mouth == '12'?'selected':'');?>>December</option>
 				</select>
-				<select id="r_year">
+				<select id="r_year" class="input-select">
 					<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
 				</select>
 			</div>
 		</div>
 
-		<div class="setting-section">
-			<div class="setting-section-items">
-				<div class="caption">Line</div>
-				<div class="input">
-					<span class="minicaption">No: <?php echo $user->line_default;?></span>
-					<!-- <select id="line_no" class="input-select">
-						<option value="1" <?php echo ($report->line_no == 1?'selected':'');?>>1</option>
-						<option value="2" <?php echo ($report->line_no == 2?'selected':'');?>>2</option>
-						<option value="3" <?php echo ($report->line_no == 3?'selected':'');?>>3</option>
-						<option value="4" <?php echo ($report->line_no == 4?'selected':'');?>>4</option>
-						<option value="5" <?php echo ($report->line_no == 5?'selected':'');?>>5</option>
-						<option value="6" <?php echo ($report->line_no == 6?'selected':'');?>>6</option>
-						<option value="7" <?php echo ($report->line_no == 7?'selected':'');?>>7</option>
-						<option value="8" <?php echo ($report->line_no == 8?'selected':'');?>>8</option>
-						<option value="9" <?php echo ($report->line_no == 9?'selected':'');?>>9</option>
-						<option value="10" <?php echo ($report->line_no == 10?'selected':'');?>>10</option>
-						<option value="11" <?php echo ($report->line_no == 11?'selected':'');?>>11</option>
-						<option value="12" <?php echo ($report->line_no == 12?'selected':'');?>>12</option>
-						<option value="13" <?php echo ($report->line_no == 13?'selected':'');?>>13</option>
-						<option value="14" <?php echo ($report->line_no == 14?'selected':'');?>>14</option>
-					</select> -->
-
-					<span class="minicaption">Type:</span>
-					<select id="line_type" class="input-select">
-						<option value="DI">DI</option>
-						<option value="NDI">NDI</option>
-					</select>
-
-					<span class="minicaption">Shift:</span>
-					<select id="shift" class="input-select">
-						<option value="A" <?php echo ($report->shift == 'A'?'selected':'');?>>A</option>
-						<option value="B" <?php echo ($report->shift == 'B'?'selected':'');?>>B</option>
-					</select>
+		<div class="form-section">
+			<div class="title">1. Line</div>
+			<div class="input">
+				<div class="section-items">
+					<div class="input">
+						<select id="shift" class="input-text input-select" autofocus>
+							<option value="A" <?php echo ($report->shift == 'A'?'selected':'');?>>A</option>
+							<option value="B" <?php echo ($report->shift == 'B'?'selected':'');?>>B</option>
+						</select>
+					</div>
+					<div class="caption">Shift:</div>
 				</div>
-			</div>
-			<div class="setting-section-items">
-				<div class="caption">Monthly</div>
-				<div class="input">
-					<input type="text" id="no_monthly_emplys" placeholder="Monthly Prs" value="<?php echo $report->no_monthly_emplys;?>">
-					<input type="text" id="ttl_monthly_hrs" placeholder="Normal Hrs" value="<?php echo $report->ttl_monthly_hrs;?>">
-				</div>
-			</div>
-			<div class="setting-section-items">
-				<div class="caption">Daily</div>
-				<div class="input">
-					<input type="text" id="no_daily_emplys" placeholder="Daily Prs" value="<?php echo $report->no_daily_emplys;?>">
-					<input type="text" id="ttl_daily_hrs" placeholder="Normal Hrs." value="<?php echo $report->ttl_daily_hrs;?>">
-				</div>
-			</div>
-
-			<div class="setting-section-items">
-				<div class="caption">Efficiency</div>
-				<div class="input">
-					<input type="text" id="product_eff" placeholder="Product EFF." value="<?php echo $report->product_eff;?>">
-					<input type="text" id="ttl_eff" placeholder="Total EFF." value="<?php echo $report->ttl_eff;?>">
+				<div class="section-items">
+					<div class="input">
+						<select id="line_type" class="input-text input-select">
+							<option value="DI">DI</option>
+							<option value="NDI">NDI</option>
+						</select>
+					</div>
+					<div class="caption">Line Type</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="form-section">
-			<h3 class="title">OT</h3>
-			<div class="section-items">
-				<div class="caption">1.0</div>
-				<div class="input"><input type="text" class="input-text" id="ot_10" placeholder="0" value="<?php echo $report->ot_10;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">1.5</div>
-				<div class="input"><input type="text" class="input-text" id="ot_15" placeholder="0" value="<?php echo $report->ot_15;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">2.0</div>
-				<div class="input"><input type="text" class="input-text" id="ot_20" placeholder="0" value="<?php echo $report->ot_20;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">3.0</div>
-				<div class="input"><input type="text" class="input-text" id="ot_30" placeholder="0" value="<?php echo $report->ot_30;?>"></div>
-			</div>
-		</div>
-		<div class="form-section">
-			<h3 class="title">Lost time</h3>
-			<div class="section-items">
-				<div class="caption">VAC</div>
-				<div class="input"><input type="text" class="input-text" id="losttime_vac" placeholder="0" value="<?php echo $report->losttime_vac;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">SICK</div>
-				<div class="input"><input type="text" class="input-text" id="losttime_sick" placeholder="0" value="<?php echo $report->losttime_sick;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">ABS</div>
-				<div class="input"><input type="text" class="input-text" id="losttime_abs" placeholder="0" value="<?php echo $report->losttime_abs;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">MAT</div>
-				<div class="input"><input type="text" class="input-text" id="losttime_mat" placeholder="0" value="<?php echo $report->losttime_mat;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">Other</div>
-				<div class="input"><input type="text" class="input-text" id="losttime_other" placeholder="0" value="<?php echo $report->losttime_other;?>"></div>
-			</div>
-		</div>
-		<div class="form-section">
-			<h3 class="title">Down time</h3>
-			<div class="section-items">
-				<div class="caption">M/C</div>
-				<div class="input"><input type="text" class="input-text" id="downtime_mc" placeholder="0" value="<?php echo $report->downtime_mc;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">MAT</div>
-				<div class="input"><input type="text" class="input-text" id="downtime_mat" placeholder="0" value="<?php echo $report->downtime_mat;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">FAC</div>
-				<div class="input"><input type="text" class="input-text" id="downtime_fac" placeholder="0" value="<?php echo $report->downtime_fac;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">Other</div>
-				<div class="input"><input type="text" class="input-text" id="downtime_other" placeholder="0" value="<?php echo $report->downtime_other;?>"></div>
+			<div class="title">2. Monthly</div>
+			<div class="input">
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text" id="no_monthly_emplys" placeholder="0" value="<?php echo $report->no_monthly_emplys;?>"></div>
+					<div class="caption">Monthly Prs</div>
+				</div>
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text" id="ttl_monthly_hrs" placeholder="0.00" value="<?php echo $report->ttl_monthly_hrs;?>"></div>
+					<div class="caption">Normal Hrs</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="form-section">
-			<h3 class="title">Sort</h3>
-			<div class="section-items">
-				<div class="caption">Loc</div>
-				<div class="input"><input type="text" class="input-text" id="sort_local" placeholder="0" value="<?php echo $report->sort_local;?>"></div>
-			</div>
-			<div class="section-items">
-				<div class="caption">Ove</div>
-				<div class="input"><input type="text" class="input-text" id="sort_oversea" placeholder="0" value="<?php echo $report->sort_oversea;?>"></div>
+			<div class="title">3. Daily</div>
+			<div class="input">
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text" id="no_daily_emplys" placeholder="0" value="<?php echo $report->no_daily_emplys;?>"></div>
+					<div class="caption">Daily Prs</div>
+				</div>
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text"  id="ttl_daily_hrs" placeholder="0.00" value="<?php echo $report->ttl_daily_hrs;?>"></div>
+					<div class="caption">Normal Hrs.</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="form-section">
-			<h3 class="title">Reword</h3>
-			<div class="section-items">
-				<div class="caption">Loc</div>
-				<div class="input"><input type="text" class="input-text" id="rework_local" placeholder="0" value="<?php echo $report->rework_local;?>"></div>
+			<div class="title">4. Efficiency</div>
+			<div class="input">
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text" id="product_eff" placeholder="0" value="<?php echo $report->product_eff;?>"></div>
+					<div class="caption">Product EFF</div>
+				</div>
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text" id="ttl_eff" placeholder="0.00" value="<?php echo $report->ttl_eff;?>"></div>
+					<div class="caption">Total EFF</div>
+				</div>
 			</div>
-			<div class="section-items">
-				<div class="caption">Ove</div>
-				<div class="input"><input type="text" class="input-text" id="rework_oversea" placeholder="0" value="<?php echo $report->rework_oversea;?>"></div>
+		</div>
+
+		<div class="form-section">
+			<div class="title">5. Overtime</div>
+			<div class="input">
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="ot_10" placeholder="0" value="<?php echo $report->ot_10;?>"></div>
+					<div class="caption">1.0</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="ot_15" placeholder="0" value="<?php echo $report->ot_15;?>"></div>
+					<div class="caption">1.5</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="ot_20" placeholder="0" value="<?php echo $report->ot_20;?>"></div>
+					<div class="caption">2.0</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="ot_30" placeholder="0" value="<?php echo $report->ot_30;?>"></div>
+					<div class="caption">3.0</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<div class="title">6. Lost time</div>
+			<div class="input">
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text" id="losttime_vac" placeholder="0" value="<?php echo $report->losttime_vac;?>"></div>
+					<div class="caption">VAC</div>
+				</div>
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text" id="losttime_sick" placeholder="0" value="<?php echo $report->losttime_sick;?>"></div>
+					<div class="caption">SICK</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="losttime_abs" placeholder="0" value="<?php echo $report->losttime_abs;?>"></div>
+					<div class="caption">ABS</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="losttime_mat" placeholder="0" value="<?php echo $report->losttime_mat;?>"></div>
+					<div class="caption">MAT</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="losttime_other" placeholder="0" value="<?php echo $report->losttime_other;?>"></div>
+					<div class="caption">Other</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-section">
+			<div class="title">7. Down time</div>
+			<div class="input">
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="downtime_mc" placeholder="0" value="<?php echo $report->downtime_mc;?>"></div>
+					<div class="caption">M/C</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="downtime_mat" placeholder="0" value="<?php echo $report->downtime_mat;?>"></div>
+					<div class="caption">MAT</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="downtime_fac" placeholder="0" value="<?php echo $report->downtime_fac;?>"></div>
+					<div class="caption">FAC</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="downtime_other" placeholder="0" value="<?php echo $report->downtime_other;?>"></div>
+					<div class="caption">Other</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<div class="title">8. Sort</div>
+			<div class="input">
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="sort_local" placeholder="0" value="<?php echo $report->sort_local;?>"></div>
+					<div class="caption">Local</div>
+				</div>
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="sort_oversea" placeholder="0" value="<?php echo $report->sort_oversea;?>"></div>
+					<div class="caption">Overseas</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<div class="title">9. Reword</div>
+			<div class="input">
+				<div class="section-items">
+					
+					<div class="input"><input type="text" class="input-text" id="rework_local" placeholder="0" value="<?php echo $report->rework_local;?>"></div>
+					<div class="caption">Local</div>
+				</div>
+				<div class="section-items">
+					<div class="input"><input type="text" class="input-text" id="rework_oversea" placeholder="0" value="<?php echo $report->rework_oversea;?>"></div>
+					<div class="caption">Overseas</div>
+				</div>
 			</div>
 		</div>		
 
 		<div class="form-control">
-			<div class="username">Report by <?php echo $user->name;?></div>
-
 			<?php if(empty($report->id)){?>
 			<div class="submit-btn" onclick="javascript:createHeaderReport();">Create<i class="fa fa-angle-right"></i></div>
 			<?php }else{?>

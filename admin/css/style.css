@@ -1,0 +1,1681 @@
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+a[href],
+button {
+  -ms-touch-action: none;
+  /* IE10 */
+  touch-action: none;
+  /* IE11 */
+}
+body {
+  background: #F5F5F5;
+  font-family: sans-serif, 'Open Sans';
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: rgba(0, 0, 0, 0.8);
+}
+.animated {
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+  transition: height 0.2s;
+}
+.header {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 60%;
+  padding: 0% 20%;
+  height: 40px;
+  float: left;
+  display: inline-block;
+  background: #003399;
+}
+.header .logo {
+  float: left;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 12px 0px;
+  height: 16px;
+  color: #FFFFFF;
+}
+.header .logo i {
+  margin-right: 5px;
+}
+.header .navibar {
+  float: left;
+  display: inline-block;
+  padding: 12px 2%;
+  height: 16px;
+  color: #EEEEEE;
+}
+.header .navibar i {
+  margin-right: 10px;
+}
+.header .profile {
+  float: right;
+  display: inline-block;
+  padding: 12px 0px;
+  height: 16px;
+  color: #FFFFFF;
+}
+.header .profile .name {
+  float: left;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 0.9em;
+  color: #FFFFFF;
+}
+.header .profile a {
+  color: #FFFFFF;
+}
+.header .profile a.logout {
+  color: #ea6153;
+}
+.header .profile a.logout:hover {
+  text-decoration: underline;
+}
+.dialog-box {
+  width: 100%;
+  margin-top: 20%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.dialog-box .icon {
+  color: #003399;
+  font-size: 3em;
+  margin-bottom: 2%;
+}
+.dialog-box p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #999999;
+}
+.loading-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  float: left;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+}
+.loading-box .dialog {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  margin-top: 20%;
+}
+.loading-box .dialog .icon {
+  font-size: 3em;
+  margin-bottom: 3%;
+  color: #003399;
+}
+.loading-box .dialog p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #999999;
+}
+.login-container {
+  width: 30%;
+  margin: 0% 35%;
+  float: left;
+  display: inline-block;
+  margin-top: 15%;
+  text-align: center;
+}
+.login-container .logo {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 3em;
+  color: #003399;
+}
+.login-container p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #999999;
+}
+.login-container .input {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 20%;
+}
+.login-container .input .input-text {
+  width: 85%;
+  padding: 1.5% 0%;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif, 'Open Sans';
+  font-size: 1.5em;
+  line-height: 1.5em;
+  border: 0px;
+  border-bottom: 1px solid #FAFAFA;
+  text-align: center;
+  color: #003399;
+}
+.login-container .input .input-text:focus {
+  border-bottom: 1px solid #EEEEEE;
+}
+.login-container .input .login-btn {
+  width: 15%;
+  padding: 1.5% 0%;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif, 'Open Sans';
+  font-size: 1.5em;
+  line-height: 1.5em;
+  border: 0px;
+  border-bottom: 1px solid #EEEEEE;
+  text-align: center;
+  color: #003399;
+  background: #FFFFFF;
+}
+.login-container .input .login-btn:hover {
+  cursor: pointer;
+  background: #FAFAFA;
+}
+.version-bar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  color: #EEEEEE;
+  font-size: 0.8em;
+}
+.container {
+  width: 100%;
+  margin-top: 40px;
+  min-height: 500px;
+  float: left;
+  display: inline-block;
+}
+.container .head {
+  width: 60%;
+  padding: 0% 20%;
+  float: left;
+  display: inline-block;
+}
+.container .head .head-title {
+  width: 100%;
+  padding: 3% 0%;
+  float: left;
+  display: inline-block;
+  color: #000000;
+}
+.container .head .head-title h1 {
+  font-size: 1.5em;
+  color: #000000;
+  line-height: 1.3em;
+}
+.container .head .head-title p {
+  font-size: 1em;
+  line-height: 1.3em;
+  color: #555555;
+}
+.container .head .header-report-table {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin: 1% 0%;
+  line-height: 2em;
+  font-size: 0.9em;
+}
+.container .head .header-report-table .box1 {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #EEEEEE;
+  border-right: 0px solid transparent;
+}
+.container .head .header-report-table .box1 .box-topic {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box1 .col {
+  width: 25%;
+  float: left;
+  display: inline-block;
+}
+.container .head .header-report-table .box1 .col .col-caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box1 .col .col-val {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box2 {
+  width: 30%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #EEEEEE;
+  border-right: 0px solid transparent;
+}
+.container .head .header-report-table .box2 .box-topic {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box2 .col {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .head .header-report-table .box2 .col .col-caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box2 .col .col-val {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box3 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #EEEEEE;
+  border-right: 0px solid transparent;
+}
+.container .head .header-report-table .box3 .box-topic {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box3 .col {
+  width: 33.33%;
+  float: left;
+  display: inline-block;
+}
+.container .head .header-report-table .box3 .col .col-caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box3 .col .col-val {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box4 {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #EEEEEE;
+  border-right: 0px solid transparent;
+}
+.container .head .header-report-table .box4 .box-topic {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box4 .col {
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+.container .head .header-report-table .box4 .col .col-caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box4 .col .col-val {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box5 {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box5 .box-topic {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box5 .col {
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+.container .head .header-report-table .box5 .col .col-caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head .header-report-table .box5 .col .col-val {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .head .tab {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .head .tab .tab-items {
+  padding: 2% 0%;
+  color: #999999;
+  float: left;
+  display: inline-block;
+  margin-right: 3%;
+  margin-bottom: -1px;
+  border-bottom: 1px solid transparent;
+  font-size: 0.9em;
+}
+.container .head .tab .tab-items:hover {
+  cursor: pointer;
+  color: #003399;
+  border-bottom: 1px solid #003399;
+}
+.container .head .tab .tab-items i {
+  margin-right: 5px;
+}
+.container .head .tab .tab-items-active {
+  color: #003399;
+  border-bottom: 1px solid #003399;
+}
+.container .head .tab .items-right {
+  float: right;
+  margin-right: 0%;
+  margin-left: 3%;
+}
+.container .head .tab .cancel {
+  color: #e74c3c;
+}
+.container .head .tab .cancel:hover {
+  color: #e74c3c;
+  border-bottom: 1px solid #e74c3c;
+}
+.container .head .tab .btn-right {
+  float: right;
+  padding: 5px 10px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #AAAAAA;
+  background: #CCCCCC;
+  margin-bottom: 1%;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.container .head .tab .btn-right:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.container .head .tab .btn-right i {
+  margin-left: 5px;
+}
+.container .head .tab .create {
+  color: #FFFFFF;
+  background: #4CAF50;
+}
+.container .menu-function {
+  width: 60%;
+  padding: 0% 20%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  margin-top: 3%;
+}
+.container .menu-function .section {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .menu-function .section h3 {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 1.5em;
+  color: #CCCCCC;
+  font-weight: normal;
+  line-height: 2em;
+}
+.container .menu-function .section .menu-container {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border: 1px solid #FAFAFA;
+}
+.container .menu-function .section .menu-container .menu-items {
+  width: 94%;
+  float: left;
+  display: inline-block;
+  padding: 3%;
+  border-bottom: 1px solid #FAFAFA;
+  color: #000000;
+}
+.container .menu-function .section .menu-container .menu-items:hover {
+  cursor: pointer;
+  background: #FAFAFA;
+  color: #003399;
+}
+.container .menu-function .section .menu-container .menu-items .icon {
+  width: 5%;
+  float: left;
+  display: inline-block;
+}
+.container .menu-function .section .menu-container .menu-items .caption {
+  width: 95%;
+  float: left;
+  display: inline-block;
+}
+.container .menu-function .section .menu-container .menu-items .caption .fa-angle-right {
+  float: right;
+}
+.container .header-report-form-container {
+  width: 46%;
+  padding: 2%;
+  margin: 2% 25%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+}
+.container .header-report-form-container .heads {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 3%;
+}
+.container .header-report-form-container .heads .title {
+  float: left;
+  display: inline-block;
+}
+.container .header-report-form-container .heads .title h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.container .header-report-form-container .heads .title p {
+  font-size: 0.8em;
+}
+.container .header-report-form-container .heads .date {
+  float: right;
+  display: inline-block;
+}
+.container .header-report-form-container .setting-section {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .header-report-form-container .setting-section .setting-section-items {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 3%;
+}
+.container .header-report-form-container .setting-section .setting-section-items .caption {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .header-report-form-container .setting-section .setting-section-items .input {
+  width: 80%;
+  float: right;
+  display: inline-block;
+}
+.container .header-report-form-container .form-section {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 3%;
+}
+.container .header-report-form-container .form-section h3.title {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  line-height: 1.5em;
+  color: #AAAAAA;
+}
+.container .header-report-form-container .form-section .section-items {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  border: 1px solid #EEEEEE;
+}
+.container .header-report-form-container .form-section .section-items .caption {
+  width: 100%;
+  padding: 10% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5em;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  margin-bottom: 1%;
+  color: #555555;
+  font-weight: bold;
+}
+.container .header-report-form-container .form-section .section-items .input {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .header-report-form-container .form-section .section-items .input .input-text {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif, 'Open Sans';
+  font-size: 0.9em;
+  border: 0px;
+  text-align: center;
+  line-height: 2em;
+}
+.container .header-report-form-container .form-control {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .header-report-form-container .form-control .username {
+  float: left;
+  display: inline-block;
+  padding: 8px 0px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.container .header-report-form-container .form-control .submit-btn {
+  float: right;
+  display: inline-block;
+  padding: 8px 25px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  background: #4CAF50;
+  color: #FFFFFF;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.container .header-report-form-container .form-control .submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.container .header-report-form-container .form-control .submit-btn i {
+  margin-left: 10px;
+}
+.container .form-container {
+  width: 46%;
+  padding: 2%;
+  margin: 2% 25%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+}
+.container .form-container .operation-items {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .input-text {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col1 {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col2 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col3 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col4 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col5 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col6 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col7 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col8 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col9 {
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .operation-items .col10 {
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container h3 {
+  color: #DDDDDD;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+.container .form-container .form-items {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 5%;
+}
+.container .form-container .form-items .caption {
+  width: 20%;
+  padding: 0% 5%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  color: #555555;
+  text-align: right;
+}
+.container .form-container .form-items .input {
+  width: 70%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .form-items .input .input-text {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif, 'Open Sans';
+  font-size: 0.9em;
+  line-height: 1.5em;
+  border: 0px;
+  border-bottom: 1px solid #DDDDDD;
+  color: #555555;
+}
+.container .form-container .form-items .input .input-textarea {
+  resize: none;
+}
+.container .form-container .form-items .input .half-size {
+  width: 50%;
+}
+.container .form-container .cancel-btn {
+  float: left;
+  margin-top: 5%;
+  padding: 8px 0px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  color: #AAAAAA;
+}
+.container .form-container .cancel-btn i {
+  margin-right: 10px;
+}
+.container .form-container .cancel-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.container .form-container .submit-btn {
+  float: right;
+  margin-top: 5%;
+  padding: 8px 25px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  background: #4CAF50;
+  color: #FFFFFF;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.container .form-container .submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.container .form-container .submit-btn i {
+  margin-left: 10px;
+}
+.container .report-container {
+  width: 60%;
+  margin: 0% 20%;
+  float: left;
+  display: inline-block;
+}
+.container .report-container .datepicker {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 3%;
+}
+.container .report-container .datepicker .caption {
+  float: left;
+  display: inline-block;
+  padding: 5px 0px;
+  margin-right: 10px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.container .report-container .datepicker .input {
+  float: left;
+  display: inline-block;
+}
+.container .report-container .datepicker .submit {
+  float: left;
+  display: inline-block;
+}
+.container .report-container .datepicker .input-select {
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  font-family: sans-serif, 'Open Sans';
+  -webkit-appearance: none;
+  line-height: 1.5em;
+  padding: 5px 8px;
+  margin-right: 5px;
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+  text-align: center;
+}
+.container .report-container .datepicker .submit-btn {
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  font-family: sans-serif, 'Open Sans';
+  line-height: 1.5em;
+  padding: 5px 10px;
+  border: 0px;
+  border-radius: 3px;
+  background: #003399;
+  color: #FFFFFF;
+  margin-left: 5px;
+}
+.container .report-container .datepicker .submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.container .report-container .report-box {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  margin-bottom: 3%;
+  border-radius: 2px;
+  border: 1px solid #EEEEEE;
+}
+.container .report-container .report-box .weekly-eff-items {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 2.5em;
+  border-bottom: 1px solid #FAFAFA;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .report-container .report-box .weekly-eff-items:hover {
+  background: #FAFAFA;
+}
+.container .report-container .report-box .weekly-eff-items .col1 {
+  width: 26%;
+  padding: 0% 2%;
+  float: left;
+  display: inline-block;
+}
+.container .report-container .report-box .weekly-eff-items .col1 .count {
+  color: #CCCCCC;
+  margin-right: 10px;
+}
+.container .report-container .report-box .weekly-eff-items .col2 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .report-container .report-box .weekly-eff-items .col3 {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .report-container .report-box .weekly-eff-items .col4 {
+  width: 21%;
+  padding: 0% 2%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .report-container .report-box .weekly-eff-items .col5 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  margin-right: 50%;
+}
+.container .report-container .report-box .topic-fix {
+  font-weight: bold;
+  border-bottom: 1px solid #EEEEEE;
+  color: #000000;
+}
+.container .report-container .report-box .total-fix {
+  font-weight: bold;
+  color: #003399;
+}
+.container .report-container .report-box .topic {
+  width: 96%;
+  padding: 0% 2%;
+  float: left;
+  display: inline-block;
+  line-height: 2.5em;
+  font-weight: bold;
+  font-size: 0.9em;
+  font-family: sans-serif, 'Open Sans';
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .report-container .report-box .eff-items {
+  width: 21%;
+  padding: 4% 2%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  line-height: 1.5em;
+}
+.container .report-container .report-box .eff-items .v {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+}
+.container .report-container .report-box .eff-items .v .unit {
+  font-size: 0.5em;
+}
+.container .report-container .report-box .eff-items .k {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+}
+.container .list-container {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .empty-items {
+  width: 100%;
+  padding: 5% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 1em;
+  color: #CCCCCC;
+  text-align: center;
+}
+.container .list-container .option-control {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .option-control .update-time {
+  float: right;
+  display: inline-block;
+  padding: 5px 0px;
+  color: #777777;
+  font-size: 0.8em;
+}
+.container .list-container .option-control .btn {
+  float: right;
+  display: inline-block;
+  padding: 5px 8px;
+  color: #003399;
+  border: 1px solid #003399;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-left: 10px;
+  border-radius: 3px;
+  background: #FFFFFF;
+}
+.container .list-container .option-control .btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.container .list-container .option-control .btn-delete {
+  float: left;
+  margin-left: 0px;
+  border: 1px solid #F44336;
+  color: #F44336;
+}
+.container .list-container .btn-control {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .btn-control a.btn {
+  width: 18%;
+  margin: 0% 41%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  background: #27ae60;
+  color: #FFFFFF;
+  font-size: 0.9em;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.container .list-container .btn-control a.btn i {
+  margin-right: 10px;
+}
+.container .list-container .btn-control a.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.container .list-container .btn-control a.btn:active {
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.container .list-container .weekly-eff-items {
+  width: 60%;
+  padding: 0% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 2.5em;
+}
+.container .list-container .weekly-eff-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .weekly-eff-items .col1 {
+  width: 53%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .weekly-eff-items .col2 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .weekly-eff-items .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .weekly-eff-items .col4 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-caliber-detail-items {
+  width: 60%;
+  padding: 0% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+  line-height: 2.5em;
+}
+.container .list-container .report-caliber-detail-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .report-caliber-detail-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-caliber-detail-items .col2 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-caliber-detail-items .col3 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-caliber-detail-items .col4 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-caliber-detail-items .col5 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-caliber-detail-items .col6 {
+  width: 20%;
+  padding-right: 1%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items {
+  width: 60%;
+  padding: 0% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 2.5em;
+  font-size: 0.9em;
+}
+.container .list-container .report-header-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .report-header-items .mini {
+  font-size: 0.7em;
+}
+.container .list-container .report-header-items .col1 {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col2 {
+  width: 8%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col3 {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col4 {
+  width: 11%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  padding-right: 1%;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col5 {
+  width: 11%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  padding-right: 1%;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col6 {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col7 {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col8 {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col9 {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col10 {
+  width: 11%;
+  float: left;
+  display: inline-block;
+  padding: 0% 1%;
+  border-right: 1px solid #EEEEEE;
+}
+.container .list-container .report-header-items .col11 {
+  width: 11%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .operation-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  color: #AAAAAA;
+}
+.container .list-container .operation-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .operation-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .operation-items .col2 {
+  width: 55%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .operation-items .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .operation-items .col4 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .operation-items .col4 .btn {
+  background: #CCCCCC;
+  padding: 3px 5px;
+  font-size: 0.8em;
+  border-radius: 3px;
+  color: #FFFFFF;
+}
+.container .list-container .operation-items .col4 .btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.container .list-container .operation-items .col4 .btn i {
+  margin-left: 5px;
+}
+.container .list-container .operation-items .col4 .btn-active {
+  background: #003399;
+}
+.container .list-container .operation-items-add {
+  color: #555555;
+}
+.container .list-container .section-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+}
+.container .list-container .section-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .section-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .section-items .col2 {
+  width: 60%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .section-items .col3 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .remark-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .remark-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .remark-items .col1 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .remark-items .col2 {
+  width: 95%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .caliber-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .caliber-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .caliber-items .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .caliber-items .col2 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .caliber-items .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  margin-right: 5%;
+}
+.container .list-container .caliber-items .col4 {
+  width: 40%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  color: #CCCCCC;
+}
+.container .list-container .route-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .route-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items .col2 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items .col3 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items .col4 {
+  width: 40%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items-primary {
+  color: #555555;
+}
+.container .list-container .user-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+}
+.container .list-container .user-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .user-items .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-items .col2 {
+  width: 26%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-items .col2 i {
+  margin-right: 10px;
+}
+.container .list-container .user-items .col2 .fa-circle {
+  color: #4CAF50;
+}
+.container .list-container .user-items .col2 .fa-circle-o {
+  color: #CCCCCC;
+}
+.container .list-container .user-items .col2 a {
+  font-size: 0.7em;
+  color: #003399;
+}
+.container .list-container .user-items .col2 a:hover {
+  text-decoration: underline;
+}
+.container .list-container .user-items .col3 {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .user-items .col4 {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .user-items .col5 {
+  width: 13%;
+  float: left;
+  display: inline-block;
+  margin-left: 2%;
+}
+.container .list-container .user-items .col6 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .user-items .col6 .visit {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #CCCCCC;
+}
+.container .list-container .topic-fix {
+  background: #FAFAFA;
+  font-size: 0.7em;
+}
+.container .content {
+  width: 70%;
+  padding: 0% 15%;
+  float: left;
+  display: inline-block;
+}
+.container .main-menu {
+  width: 70%;
+  padding: 0% 15%;
+  float: left;
+  display: inline-block;
+}
+.container .main-menu .menu-items {
+  width: 31.33%;
+  padding: 4% 0%;
+  margin-top: 3%;
+  margin-right: 3%;
+  float: left;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 3px;
+}
+.container .main-menu .menu-items:nth-child(3n) {
+  margin-right: 0%;
+  float: right;
+}
+.container .main-menu .menu-items .icon {
+  font-size: 3em;
+  line-height: 1.5em;
+}
+.container .main-menu .menu-items .title {
+  font-size: 1em;
+  line-height: 2em;
+}
+.container .main-menu .menu-items .tag {
+  font-size: 0.7em;
+  line-height: 1.5em;
+  background: #DDDDDD;
+  display: inline-block;
+  padding: 0px 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.footer {
+  width: 70%;
+  padding: 3% 15%;
+  margin-top: 3%;
+  float: left;
+  display: inline-block;
+  background: #F7F7F7;
+  text-align: center;
+}
+.footer p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.footer p.mini {
+  font-size: 0.8em;
+}
+/* Other Device and Screen */
+@media only screen and (min-width: 520px) and (max-width: 759px) {
+  .header {
+    width: 100%;
+    padding: 0%;
+    height: 50px;
+  }
+  .header .logo {
+    font-size: 1em;
+    height: 20px;
+    padding: 15px 2%;
+  }
+  .header .profile {
+    height: 26px;
+    padding: 12px 2%;
+  }
+  .header .profile img {
+    width: 26px;
+    height: 26px;
+  }
+  .header .profile .name {
+    line-height: 2em;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  .container {
+    width: 100%;
+    margin-top: 50px;
+    min-height: 300px;
+  }
+  .container .head {
+    width: 96%;
+    padding: 0% 2%;
+  }
+  .container .head .head-title {
+    padding: 3% 0%;
+    font-size: 2.5em;
+  }
+  .container .head .tab .tab-items {
+    padding: 15px;
+    color: #EEEEEE;
+    margin-right: 1%;
+  }
+  .container .head .tab .tab-items i {
+    margin-left: 10px;
+  }
+  .container .head .tab .items-right {
+    margin-right: 0%;
+    margin-left: 1%;
+  }
+  .container .topic-fix .user-topic-fix {
+    width: 96%;
+    padding: 3% 2%;
+    font-size: 0.8em;
+  }
+  .container .topic-fix .user-topic-fix .info {
+    width: 45%;
+  }
+  .container .topic-fix .user-topic-fix .online {
+    width: 25%;
+  }
+  .container .topic-fix .user-topic-fix .time {
+    width: 15%;
+  }
+  .container .topic-fix .user-topic-fix .status {
+    width: 15%;
+  }
+  .container .list .user-items {
+    width: 96%;
+    padding: 2% 0%;
+    margin: 0% 2%;
+  }
+  .container .list .user-items .avatar {
+    width: 8%;
+    margin-right: 2%;
+  }
+  .container .list .user-items .info {
+    width: 35%;
+    line-height: 1.2em;
+    padding-top: 0.5%;
+  }
+  .container .list .user-items .info .position {
+    font-size: 0.8em;
+  }
+  .container .list .user-items .online {
+    width: 25%;
+    font-size: 0.9em;
+    padding-top: 2%;
+    line-height: 1.7em;
+  }
+  .container .list .user-items .online i {
+    margin-left: 5px;
+    font-size: 0.8em;
+  }
+  .container .list .user-items .time {
+    width: 15%;
+    font-size: 0.9em;
+    padding-top: 2%;
+    line-height: 1.7em;
+  }
+  .container .list .user-items .status {
+    width: 15%;
+    font-size: 0.9em;
+    padding-top: 2%;
+    line-height: 1.7em;
+  }
+  .container .list .user-items .status i {
+    margin-left: 10px;
+  }
+  .container .content {
+    width: 70%;
+    padding: 0% 15%;
+  }
+  .container .main-menu {
+    width: 70%;
+    padding: 0% 15%;
+  }
+  .container .main-menu .menu-items {
+    width: 31.33%;
+    padding: 4% 0%;
+    margin-top: 3%;
+    margin-right: 3%;
+    float: left;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 3px;
+  }
+  .container .main-menu .menu-items:nth-child(3n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .container .main-menu .menu-items .icon {
+    font-size: 3em;
+    line-height: 1.5em;
+  }
+  .container .main-menu .menu-items .title {
+    font-size: 1em;
+    line-height: 2em;
+  }
+  .container .main-menu .menu-items .tag {
+    font-size: 0.7em;
+    line-height: 1.5em;
+    background: #DDDDDD;
+    display: inline-block;
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .footer {
+    width: 70%;
+    padding: 3% 15%;
+    margin-top: 3%;
+    float: left;
+    display: inline-block;
+    background: #F7F7F7;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+  }
+  .footer p.mini {
+    font-size: 0.8em;
+  }
+  /* Other Device and Screen */
+}

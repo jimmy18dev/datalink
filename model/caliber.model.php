@@ -27,7 +27,7 @@ class CaliberModel extends Database{
 	}
 
 	public function getData($id){
-		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,route.id route_id,route.route_code,route.route_name 
+		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,route.id route_id,route.route_code,route.route_name,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation 
 			FROM RTH_CaliberCode AS caliber 
 			LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
 			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
@@ -36,12 +36,15 @@ class CaliberModel extends Database{
 		parent::execute();
 		return $dataset = parent::single();
 	}
-	public function listAllCaliber(){
-		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,route.id route_id,route.route_name route_name,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation 
-			FROM RTH_CaliberCode AS caliber 
-			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
-			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
-			ORDER BY caliber.update_time DESC');
+	public function listAllCaliber($header_id){
+		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,route.id route_id,route.route_name route_name,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation,dod.id detail_id 
+FROM RTH_CaliberCode AS caliber 
+LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
+LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
+LEFT JOIN RTH_DailyOutputDetail AS dod ON dod.header_id = :header_id AND dod.caliber_id = caliber.id
+GROUP BY caliber.id 
+ORDER BY caliber.update_time DESC');
+		parent::bind(':header_id', $header_id);
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
@@ -140,9 +143,6 @@ class CaliberModel extends Database{
 			$dataset[$k]['create_time'] = parent::datetime_thaiformat($var['create_time']);
 			$dataset[$k]['update_time'] = parent::date_format($var['update_time']);
 		}
-		echo'<pre>';
-		print_r($dataset);
-		echo'</pre>';
 
 		return $dataset;
 	}

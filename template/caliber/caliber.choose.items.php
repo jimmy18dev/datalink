@@ -1,8 +1,7 @@
-<a href="report_detail_editor.php?caliber=<?php echo $var['caliber_id'];?>&header=<?php echo $header_id;?>">
-<div class="caliber-items">
-	<div class="col1"><?php echo $var['caliber_code'].' '.$var['caliber_family'];?></div>
-	<div class="col2"><?php echo (empty($var['route_name'])?'-':$var['route_name']);?></div>
-	<div class="col3"><?php echo (empty($var['caliber_stdtime'])?'-':$var['caliber_stdtime']);?></div>
-	<div class="col4"><?php echo $var['caliber_description'];?></div>
-</div>
+<?php if(empty($var['detail_id'])){?>
+<a href="report_detail_editor.php?caliber=<?php echo $var['caliber_id'];?>&header=<?php echo $header_id;?>" class="caliber-choose-items"><strong><?php echo $var['caliber_code'].' '.$var['caliber_family'];?></strong> : Std.time <?php echo $var['caliber_stdtime'];?> <span class="ttl_operation">(<?php echo $var['total_operation'];?> operations)</span><i class="fa fa-angle-right" aria-hidden="true"></i>
 </a>
+<?php }else{?>
+<div class="caliber-choose-items unlink-items"><strong><?php echo $var['caliber_code'].' '.$var['caliber_family'];?></strong> : Std.time <?php echo $var['caliber_stdtime'];?> <span class="ttl_operation">(<?php echo $var['total_operation'];?> operations)</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+</div>
+<?php }?>

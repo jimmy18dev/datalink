@@ -93,7 +93,7 @@ class ReportModel extends Database{
 	}
 
 	public function getData($id){
-		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.downtime_other,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.create_time,header.update_time,header.type,header.status,user.id leader_id,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.downtime_other,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.product_eff,header.ttl_eff,header.create_time,header.update_time,header.type,header.status,user.id leader_id,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
 		parent::bind(':id', $id);
 		parent::execute();
 		$dataset = parent::single();
@@ -106,7 +106,7 @@ class ReportModel extends Database{
 	}
 
 	public function listAllHeaderData($line_no){
-		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.create_time,header.update_time,user.code user_code,user.fname,user.lname 
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.product_eff,header.ttl_eff,header.create_time,header.update_time,user.code user_code,user.fname,user.lname 
 			FROM RTH_DailyOutputHeader AS header 
 			LEFT JOIN RTH_User AS user ON header.user_id = user.id 
 			WHERE header.line_no = :line_no 
@@ -117,22 +117,19 @@ class ReportModel extends Database{
 		foreach ($dataset as $k => $var) {
 			$dataset[$k]['date'] = parent::date_format($var['report_date']);
 			$dataset[$k]['update'] = parent::date_facebookformat($var['update_time']);
-			$dataset[$k]['update_time'] = parent::datetime_thaiformat($var['update_time']);
+			$dataset[$k]['updated'] = parent::datetime_thaiformat($var['update_time']);
 		}
 		return $dataset;
 	}
 
 	public function listAllCaliber($header_id){
-		/* SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,route.id route_id,route.route_name route_name,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation 
-			FROM RTH_CaliberCode AS caliber 
-			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
-			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
-			ORDER BY caliber.update_time DESC */
-		parent::query('SELECT detail.id detail_id,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation 
-			FROM RTH_DailyOutputDetail AS detail 
-			LEFT JOIN RTH_CaliberCode AS caliber ON caliber.id = detail.caliber_id 
-			WHERE detail.header_id = :header_id 
-			GROUP BY detail.caliber_id');
+		parent::query('SELECT detail.id detail_id,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,caliber.description caliber_description,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation,standard.hrs stdtime,route.route_name route_name 
+FROM RTH_DailyOutputDetail AS detail 
+LEFT JOIN RTH_CaliberCode AS caliber ON caliber.id = detail.caliber_id 
+LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
+LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
+WHERE detail.header_id = :header_id 
+GROUP BY detail.caliber_id');
 		parent::bind(':header_id', 		$header_id);
 		parent::execute();
 		return $dataset = parent::resultset();
@@ -215,10 +212,6 @@ class ReportModel extends Database{
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::execute();
 		$dataset = parent::resultset();
-
-		echo'<pre>';
-		print_r($dataset);
-		echo'</pre>';
 		return $dataset;
 	}
 	// REMARKS

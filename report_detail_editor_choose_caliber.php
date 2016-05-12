@@ -53,19 +53,17 @@ $current_page['2'] = 'new_operation';
 	<div class="head">
 		<div class="head-title">
 			<h1>Choose Caliber Code...</h1>
+			<p><i class="fa fa-angle-double-down" aria-hidden="true"></i></p>
 		</div>
 	</div>
 
 	<!-- Table -->
 	<div class="list-container">
-		<div class="caliber-items topic-fix">
-			<div class="col1">Caliber Code</div>
-			<div class="col2">Route</div>
-			<div class="col3">Std.time (Hrs/K)</div>
-			<div class="col4">Description</div>
-		</div>
-
 		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
+	</div>
+
+	<div class="control-container">
+		<a href="report_detail.php?header=<?php echo $_GET['header'];?>" target="_parent" class="btn-back"><i class="fa fa-angle-left"></i>Back</a>
 	</div>
 </div>
 
