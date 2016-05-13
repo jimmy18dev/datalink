@@ -241,22 +241,22 @@ $year 	= date('Y');
 			<div class="input">
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="downtime_mc" placeholder="0" value="<?php echo $report->downtime_mc;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="downtime_mc" placeholder="0" value="<?php echo $report->downtime_mc;?>"></div>
 					<div class="caption">M/C</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="downtime_mat" placeholder="0" value="<?php echo $report->downtime_mat;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="downtime_mat" placeholder="0" value="<?php echo $report->downtime_mat;?>"></div>
 					<div class="caption">MAT</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="downtime_fac" placeholder="0" value="<?php echo $report->downtime_fac;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="downtime_fac" placeholder="0" value="<?php echo $report->downtime_fac;?>"></div>
 					<div class="caption">FAC</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="downtime_other" placeholder="0" value="<?php echo $report->downtime_other;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="downtime_other" placeholder="0" value="<?php echo $report->downtime_other;?>"></div>
 					<div class="caption">Other</div>
 				</div>
 			</div>
@@ -267,12 +267,12 @@ $year 	= date('Y');
 			<div class="input">
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="sort_local" placeholder="0" value="<?php echo $report->sort_local;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="sort_local" placeholder="0" value="<?php echo $report->sort_local;?>"></div>
 					<div class="caption">Local</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="sort_oversea" placeholder="0" value="<?php echo $report->sort_oversea;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="sort_oversea" placeholder="0" value="<?php echo $report->sort_oversea;?>"></div>
 					<div class="caption">Overseas</div>
 				</div>
 			</div>
@@ -283,24 +283,24 @@ $year 	= date('Y');
 			<div class="input">
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="rework_local" placeholder="0" value="<?php echo $report->rework_local;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="rework_local" placeholder="0" value="<?php echo $report->rework_local;?>"></div>
 					<div class="caption">Local</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text" id="rework_oversea" placeholder="0" value="<?php echo $report->rework_oversea;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="rework_oversea" placeholder="0" value="<?php echo $report->rework_oversea;?>"></div>
 					<div class="caption">Overseas</div>
 				</div>
 			</div>
 		</div>		
+	</div>
 
-		<div class="form-control">
-			<div onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>');">DELETE</div>
-			<?php if(empty($report->id)){?>
-			<div class="submit-btn" onclick="javascript:createHeaderReport();">Create<i class="fa fa-angle-right"></i></div>
-			<?php }else{?>
-			<div class="submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
-			<?php }?>
-		</div>
+	<div class="control-container">
+		<div onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>');">DELETE</div>
+		<?php if(empty($report->id)){?>
+		<div class="submit-btn" onclick="javascript:createHeaderReport();">Create<i class="fa fa-angle-right"></i></div>
+		<?php }else{?>
+		<div class="submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
+		<?php }?>
 	</div>
 </div>
 

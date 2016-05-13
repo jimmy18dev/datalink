@@ -33,15 +33,18 @@ if($user_online){
 <script type="text/javascript" src="js/service/user.service.js"></script>
 
 </head>
-<body class="blue">
+<body>
 <div class="login-container">
-	<div class="logo"><i class="fa fa-code-fork" aria-hidden="true"></i> DATALINK</div>
-	<p>Version 1.0</p>
+	<div class="logo">
+		<div class="icon"><i class="fa fa-code-fork" aria-hidden="true"></i></div>
+		<h1>DATALINK</h1>
+		<p class="version">Version 1.0</p>
+	</div>
 	<div class="input">
 		<form action="javascript:login();">
 			<input type="text" class="input-text" id="username" placeholder="Username" autofocus>
 			<input type="password" class="input-text" placeholder="Enter your password..." id="password">
-			<button type="submit" class="login-btn"><i class="fa fa-arrow-right"></i></button>
+			<button type="submit" class="login-btn">Login<i class="fa fa-arrow-right"></i></button>
 		</form>
 	</div>
 </div>
@@ -52,7 +55,5 @@ if($user_online){
 		<p id="loading-message"></p>
 	</div>
 </div>
-
-<div class="version-bar">Development by Puwadon Sricharoen | Ronda Thailand</div>
 </body>
 </html>

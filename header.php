@@ -53,6 +53,6 @@
 	<?php }?>
 	<a href="logout.php" class="profile">Logout</a>
 	<div class="profile">
-		<div class="name"><a href="profile.php"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $user->fname?></a></div>
+		<div class="name"><a href="profile.php"><i class="fa fa-user" aria-hidden="true"></i><?php echo $user->fname?></a></div>
 	</div>
 </header>

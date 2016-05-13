@@ -56,8 +56,7 @@ $current_page['2'] = 'report_detail';
 	</div>
 
 	<div class="list-container">
-		<p class="topic"><strong>1. Manpower:</strong></p>
-		<p><?php echo $report->no_monthly_emplys;?> Monthly Prs (<?php echo $report->ttl_monthly_hrs;?> Hrs.), <?php echo $report->no_daily_emplys;?> Daily Prs (<?php echo $report->ttl_daily_hrs;?> Hrs) Product EFF: <?php echo $report->product_eff;?>% Total EFF: <?php echo $report->ttl_eff;?>%</p>
+		<p class="topic"><strong>1. Manpower:</strong> <?php echo $report->no_monthly_emplys;?> Monthly Prs (<?php echo $report->ttl_monthly_hrs;?> Hrs.), <?php echo $report->no_daily_emplys;?> Daily Prs (<?php echo $report->ttl_daily_hrs;?> Hrs) Product EFF: <?php echo $report->product_eff;?>% Total EFF: <?php echo $report->ttl_eff;?>%</p>
 		<div class="header-report-table">
 			<div class="box1">
 				<div class="box-topic">OT</div>

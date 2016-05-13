@@ -1,7 +1,6 @@
 @import "default";
-.blue{
-	background: #1947a3;
-}
+
+// Header bar style
 .header{
 	position: fixed;
 	top: 0%;
@@ -70,65 +69,20 @@
 				text-decoration: underline;
 			}
 		}
-	}
-}
 
-.dialog-box{
-	width: 100%;
-	margin-top: 20%;
-	float: left;
-	display: inline-block;
-	text-align: center;
-
-	.icon{
-		color: #003399;
-		font-size: 3em;
-		margin-bottom: 2%;
-	}
-	p{
-		font-size: 1em;
-		line-height: 1.5em;
-		color: #999999;
-	}
-}
-
-.loading-box{
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	float: left;
-	display: inline-block;
-	background: rgba(255, 255, 255, 0.95);
-	display: none;
-
-	.dialog{
-		width: 100%;
-		float: left;
-		display: inline-block;
-		text-align: center;
-		margin-top: 20%;
-
-		.icon{
-			font-size: 3em;
-			margin-bottom: 3%;
-			color: #003399;
-		}
-		p{
-			font-size: 1em;
-			line-height: 1.5em;
-			color: #999999;
+		i{
+			margin-right: 5px;
 		}
 	}
 }
 
+// Login page style
 .login-container{
 	width: 30%;
 	margin: 0% 35%;
 	float: left;
 	display: inline-block;
-	margin-top: 15%;
+	margin-top: 10%;
 	text-align: center;
 
 	.logo{
@@ -136,14 +90,20 @@
 		float: left;
 		display: inline-block;
 		text-align: center;
-		font-size: 3em;
-		color: #003399;
-	}
 
-	p{
-		font-size: 1em;
-		line-height: 1.5em;
-		color: #999999;
+		h1{
+			font-size: 3.5em;
+		}
+		.icon{
+			font-size: 3em;
+			margin-bottom: 5%;
+			color: #003399;
+		}
+
+		p.version{
+			font-size: 0.8em;
+			color: rgba(0, 0, 0, 0.3);
+		}
 	}
 
 	.input{
@@ -153,17 +113,17 @@
 		margin-top: 20%;
 
 		.input-text{
-			width: 85%;
-			padding: 1.5% 0%;
+			width: 96%;
+			padding: 2%;
 			float: left;
 			display: inline-block;
 			font-family: @FontStylePrimary;
 			font-size: 1.5em;
 			line-height: 1.5em;
-			border: 0px;
-			border-bottom: 1px solid #FAFAFA;
-			text-align: center;
 			color: #003399;
+			margin-bottom: 3%;
+			border: 1px solid #EEEEEE;
+			border-radius: 2px;
 
 			&:focus{
 				border-bottom: 1px solid #EEEEEE;
@@ -171,40 +131,34 @@
 		}
 
 		.login-btn{
-			width: 15%;
-			padding: 1.5% 0%;
-			float: left;
+			width: 35%;
+			padding: 3% 0%;
+			float: right;
 			display: inline-block;
 			font-family: @FontStylePrimary;
-			font-size: 1.5em;
+			font-size: 1em;
 			line-height: 1.5em;
 			border: 0px;
-			border-bottom: 1px solid #EEEEEE;
 			text-align: center;
-			color: #003399;
-			background: #FFFFFF;
+			background: #003399;
+			color: #FFFFFF;
+			border-radius: 2px;
+
+			i{
+				margin-left: 10px;
+			}
 
 			&:hover{
 				cursor: pointer;
-				background: #FAFAFA;
+				opacity: 0.8;
 			}
 		}
 	}
 }
-.version-bar{
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	padding: 1% 0%;
-	float: left;
-	display: inline-block;
-	text-align: center;
-	color: #EEEEEE;
-	font-size: 0.8em;
-}
+// END login page style
 
 
+// Container all Page
 .container{
 	width: 100%;
 	margin-top: 40px;
@@ -212,6 +166,7 @@
 	float: left;
 	display: inline-block;
 
+	// Head page
 	.head{
 		width: 60%;
 		padding: 0% 20%;
@@ -281,144 +236,10 @@
 				}
 			}
 		}
-
-		.tab{
-			width: 100%;
-			float: left;
-			display: inline-block;
-
-			.tab-items{
-				padding: 2% 0%;
-				color: #999999;
-				float: left;
-				display: inline-block;
-				margin-right: 3%;
-				margin-bottom: -1px;
-				border-bottom: 1px solid transparent;
-				font-size: 0.9em;
-
-				&:hover{
-					cursor: pointer;
-					color: #003399;
-					border-bottom: 1px solid #003399;
-				}
-
-				i{
-					margin-right: 5px;
-				}
-			}
-
-			.tab-items-active{
-				color: #003399;
-				border-bottom: 1px solid #003399;
-			}
-
-			.items-right{
-				float: right;
-				margin-right: 0%;
-				margin-left: 3%;
-			}
-
-			.cancel{
-				color: #e74c3c;
-				&:hover{
-					color: #e74c3c;
-					border-bottom: 1px solid #e74c3c;
-				}
-			}
-
-			.btn-right{
-				float: right;
-				padding: 5px 10px;
-				display: inline-block;
-				font-weight: bold;
-				font-size: 0.9em;
-				color: #AAAAAA;
-				background: #CCCCCC;
-				margin-bottom: 1%;
-				border-radius: 3px;
-				box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-
-				&:hover{
-					cursor: pointer;
-					opacity: 0.8;
-				}
-
-
-				i{
-					margin-left: 5px;
-				}
-			}
-
-			.create{
-				color: #FFFFFF;
-				background: #4CAF50;
-			}
-		}
 	}
 
-	.menu-function{
-		width: 60%;
-		padding: 0% 20%;
-		float: left;
-		display: inline-block;
-		background: #FFFFFF;
-		margin-top: 3%;
 
-		.section{
-			width: 100%;
-			float: left;
-			display: inline-block;
-
-			h3{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-size: 1.5em;
-				color: #CCCCCC;
-				font-weight: normal;
-				line-height: 2em;
-			}
-
-			.menu-container{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				border: 1px solid #FAFAFA;
-
-				.menu-items{
-					width: 94%;
-					float: left;
-					display: inline-block;
-					padding: 3%;
-					border-bottom: 1px solid #FAFAFA;
-					color: #000000;
-
-					&:hover{
-						cursor: pointer;
-						background: #FAFAFA;
-						color: #003399;
-					}
-
-					.icon{
-						width: 5%;
-						float: left;
-						display: inline-block;
-					}
-					.caption{
-						width: 95%;
-						float: left;
-						display: inline-block;
-
-						.fa-angle-right{
-							float: right;
-						}
-					}
-				}
-			}
-		}
-	}
-
+	// Report detail editor (Add operation to caliber)
 	.operation-form-container{
 		width: 60%;
 		margin: 2% 20%;
@@ -507,6 +328,7 @@
 		}
 	}
 
+	// Create Header report
 	.header-report-form-container{
 		width: 60%;
 		margin: 2% 20%;
@@ -611,385 +433,16 @@
 				}
 			}
 		}
-
-		.form-control{
-			width: 100%;
-			float: left;
-			display: inline-block;
-
-			.submit-btn{
-				float: right;
-				display: inline-block;
-				padding: 10px 20px;
-				font-size: 0.9em;
-				line-height: 1.5em;
-				background: #4CAF50;
-				color: #FFFFFF;
-				border-radius: 3px;
-				font-weight: bold;
-
-				&:hover{
-					cursor: pointer;
-					opacity: 0.7;
-				}
-
-				i{
-					margin-left: 10px;
-				}
-			}
-		}
 	}
 
-	.form-container{
-		width: 46%;
-		padding: 2%;
-		margin: 2% 25%;
-		float: left;
-		display: inline-block;
-		background: #FFFFFF;
-		border: 1px solid #EEEEEE;
-		border-radius: 3px;
-
-		.operation-items{
-			width: 100%;
-			float: left;
-			display: inline-block;
-
-			.input-text{
-				width: 100%;
-				float: left;
-				display: inline-block;
-			}
-
-			.col1{
-				width: 30%;
-				float: left;
-				display: inline-block;
-			}
-			.col2{
-				width: 10%;
-				float: left;
-				display: inline-block;
-			}
-			.col3{
-				width: 10%;
-				float: left;
-				display: inline-block;
-			}
-			.col4{
-				width: 10%;
-				float: left;
-				display: inline-block;
-			}
-			.col5{
-				width: 10%;
-				float: left;
-				display: inline-block;
-			}
-			.col6{
-				width: 10%;
-				float: left;
-				display: inline-block;
-			}
-			.col7{
-				width: 10%;
-				float: left;
-				display: inline-block;
-			}
-			.col8{
-				width: 10%;
-				float: left;
-				display: inline-block;
-			}
-			.col9{
-				width: 50%;
-				float: left;
-				display: inline-block;
-			}
-			.col10{
-				width: 50%;
-				float: left;
-				display: inline-block;
-			}
-		}
-
-		h3{
-			color: #DDDDDD;
-			font-size: 1.5em;
-			font-weight: normal;
-		}
-
-		.form-items{
-			width: 100%;
-			float: left;
-			display: inline-block;
-			margin-top: 5%;
-
-			.caption{
-				width: 20%;
-				padding: 0% 5%;
-				float: left;
-				display: inline-block;
-				font-size: 0.9em;
-				line-height: 1.5em;
-				color: #555555;
-				text-align: right;
-			}
-
-			.input{
-				width: 70%;
-				float: left;
-				display: inline-block;
-
-				.input-text{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					font-family: @FontStylePrimary;
-					font-size: 0.9em;
-					line-height: 1.5em;
-					border: 0px;
-					border-bottom: 1px solid #DDDDDD;
-					color: #555555;
-				}
-
-				.input-textarea{
-					resize: none;
-				}
-
-				.half-size{
-					width: 50%;
-				}
-			}
-		}
-
-		.cancel-btn{
-			float: left;
-			margin-top: 5%;
-			padding: 8px 0px;
-			font-size: 0.9em;
-			line-height: 1.5em;
-			color: #AAAAAA;
-
-			i{
-				margin-right: 10px;
-			}
-
-			&:hover{
-				cursor: pointer;
-				text-decoration: underline;
-			}
-		}
-
-		.submit-btn{
-			float: right;
-			margin-top: 5%;
-			padding: 8px 25px;
-			font-size: 0.9em;
-			line-height: 1.5em;
-			background: #4CAF50;
-			color: #FFFFFF;
-			border-radius: 3px;
-			font-weight: bold;
-			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-
-			&:hover{
-				cursor: pointer;
-				opacity: 0.8;
-			}
-
-			i{
-				margin-left: 10px;
-			}
-		}
-	}
-
-	.report-container{
-		width: 60%;
-		margin: 0% 20%;
-		float: left;
-		display: inline-block;
-
-		.datepicker{
-			width: 100%;
-			float: left;
-			display: inline-block;
-			margin-bottom: 3%;
-
-			.caption{
-				float: left;
-				display: inline-block;
-				padding: 5px 0px;
-				margin-right: 10px;
-				font-size: 0.9em;
-				line-height: 1.5em;
-			}
-			.input{
-				float: left;
-				display: inline-block;
-			}
-			.submit{
-				float: left;
-				display: inline-block;
-			}
-
-			.input-select{
-				float: left;
-				display: inline-block;
-				font-size: 0.9em;
-				font-family: @FontStylePrimary;
-				-webkit-appearance: none;
-				line-height: 1.5em;
-				padding: 5px 8px;
-				margin-right: 5px;
-				border: 1px solid #EEEEEE;
-				border-radius: 3px;
-				text-align: center;
-			}
-
-			.submit-btn{
-				float: left;
-				display: inline-block;
-				font-size: 0.9em;
-				font-family: @FontStylePrimary;
-				line-height: 1.5em;
-				padding: 5px 10px;
-				border: 0px;
-				border-radius: 3px;
-				background: #003399;
-				color: #FFFFFF;
-				margin-left: 5px;
-
-				&:hover{
-					cursor: pointer;
-					opacity: 0.7;
-				}
-			}
-		}
-
-		.report-box{
-			width: 100%;
-			float: left;
-			display: inline-block;
-			background: #FFFFFF;
-			margin-bottom: 3%;
-			border-radius: 2px;
-			border: 1px solid #EEEEEE;
-
-			.weekly-eff-items{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-size: 0.9em;
-				line-height: 2.5em;
-				border-bottom: 1px solid #FAFAFA;
-				color: rgba(0, 0, 0, 0.8);
-
-				&:hover{
-					background: #FAFAFA;
-				}
-
-				.col1{
-					width: 26%;
-					padding: 0% 2%;
-					float: left;
-					display: inline-block;
-
-					.count{
-						color: #CCCCCC;
-						margin-right: 10px;
-					}
-				}
-				.col2{
-					width: 20%;
-					float: left;
-					display: inline-block;
-					text-align: right;
-				}
-				.col3{
-					width: 25%;
-					float: left;
-					display: inline-block;
-					text-align: right;
-				}
-				.col4{
-					width: 21%;
-					padding: 0% 2%;
-					float: left;
-					display: inline-block;
-					text-align: right;
-				}
-
-				.col5{
-					width: 20%;
-					float: left;
-					display: inline-block;
-					text-align: right;
-					margin-right: 50%;
-				}
-			}
-
-			.topic-fix{
-				font-weight: bold;
-				border-bottom: 1px solid #EEEEEE;
-				color: rgba(0, 0, 0, 1);
-
-				&:hover{
-					color: rgba(0, 0, 0, 0.8);
-				}
-			}
-
-			.total-fix{
-				font-weight: bold;
-				color: #003399;
-			}
-
-			.topic{
-				width: 96%;
-				padding: 0% 2%;
-				float: left;
-				display: inline-block;
-				line-height: 2.5em;
-				font-weight: bold;
-				font-size: 0.9em;
-				font-family: @FontStylePrimary;
-				border-bottom: 1px solid #EEEEEE;
-			}
-
-			.eff-items{
-				width: 21%;
-				padding: 4% 2%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-				line-height: 1.5em;
-
-				.v{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					font-size: 2em;
-
-					.unit{
-						font-size: 0.5em;
-					}
-				}
-				.k{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					font-size: 0.9em;
-				}
-			}
-		}
-	}
-
+	// Form control style
 	.control-container{
 		width: 60%;
 		margin: 0% 20%;
 		float: left;
 		display: inline-block;
 
+		// Back button style
 		a.btn-back{
 			float: left;
 			display: inline-block;
@@ -1008,6 +461,7 @@
 			}
 		}
 
+		// Submit button style
 		.submit-btn{
 			float: right;
 			display: inline-block;
@@ -1046,6 +500,7 @@
 		}
 
 		// Header info detail in table-layout
+		// Manpower: report detail page
 		.header-report-table{
 			width: 100%;
 			float: left;
@@ -1233,7 +688,10 @@
 				}
 			}
 		}
+		// END Header info detail in table-layout
 
+		// Caliber items stype
+		// Output: Report detail
 		.caliber-in-report-items{
 			width: 98%;
 			padding: 1%;
@@ -1279,6 +737,7 @@
 				}
 			}
 
+			// Opearation box
 			.operations{
 				width: 100%;
 				float: left;
@@ -1287,6 +746,7 @@
 				border-radius: 3px;
 				margin-top: 2%;
 
+				// Operations items style
 				.operation-items{
 					width: 100%;
 					padding: 1% 0%;
@@ -1372,7 +832,7 @@
 			display: inline-block;
 			line-height: 1.5em;
 			font-size: 0.9em;
-			border-bottom: 1px solid #EEEEEE;
+			border-bottom: 1px solid #DDDDDD;
 			color: rgba(0, 0, 0, 0.8);
 
 			&:hover{
@@ -1412,10 +872,10 @@
 				text-align: right;
 			}
 			.col6{
-				width: 20%;
+				width: 16%;
+				margin-left: 4%;
 				float: left;
 				display: inline-block;
-				text-align: center;
 			}
 			.col7{
 				width: 23%;
@@ -1429,84 +889,10 @@
 			}
 		}
 
+		// Last items highlight
 		.last-items{
 			font-weight: bold;
 			color: rgba(0, 0, 0, 0.8);
-		}
-
-		.option-control{
-			width: 60%;
-			padding: 0.5% 20%;
-			float: left;
-			display: inline-block;
-
-			.update-time{
-				float: right;
-				display: inline-block;
-				padding: 5px 0px;
-				color: #777777;
-				font-size: 0.8em;
-			}
-
-			.btn{
-				float: right;
-				display: inline-block;
-				padding: 5px 8px;
-				color: #003399;
-				border: 1px solid #003399;
-				font-size: 0.8em;
-				font-weight: bold;
-				margin-left: 10px;
-				border-radius: 3px;
-				background: #FFFFFF;
-
-				&:hover{
-					cursor: pointer;
-					opacity: 0.8;
-				}
-			}
-
-			.btn-delete{
-				float: left;
-				margin-left: 0px;
-				border: 1px solid #F44336;
-				color: #F44336;
-			}
-		}
-
-		.btn-control{
-			width: 60%;
-			padding: 0.5% 20%;
-			float: left;
-			display: inline-block;
-
-			a.btn{
-				width: 18%;
-				margin: 0% 41%;
-				padding: 1% 0%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				background: #27ae60;
-				color: #FFFFFF;
-				font-size: 0.9em;
-				border-radius: 3px;
-				font-weight: bold;
-				box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-
-				i{
-					margin-right: 10px;
-				}
-
-				&:hover{
-					cursor: pointer;
-					opacity: 0.8;
-				}
-
-				&:active{
-					box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.2);
-				}
-			}
 		}
 
 		// Operation items in Report detail by Caliber ID
@@ -1567,23 +953,23 @@
 			}
 		}
 
+		// 	List all caliber before insert
 		.caliber-choose-items{
 			width: 100%;
 			padding: 2% 0%;
 			line-height: 1.5em;
 			float: left;
 			display: inline-block;
-			border-top: 1px solid #EEEEEE;
-			color: rgba(0, 0, 0, 0.6);
+			border-top: 1px solid #DDDDDD;
+			color: rgba(0, 0, 0, 0.5);
 			font-size: 1em;
 
 			&:last-child{
-				border-bottom: 1px solid #EEEEEE;
+				border-bottom: 1px solid #DDDDDD;
 			}
 
 			strong{
 				color: rgba(0, 0, 0, 1);
-				font-size: 1.2em;
 			}
 
 			&:hover{
@@ -1602,6 +988,7 @@
 			}
 		}
 
+		// Caliber unlink (Aleady items to report detail)
 		.unlink-items{
 			color: rgba(0, 0, 0, 0.1);
 
@@ -1616,6 +1003,7 @@
 
 		.topic-fix{
 			font-size: 0.6em;
+			padding: 1% 0% !important;
 			font-style: italic;
 			color: rgba(0, 0, 0, 0.4);
 			border-bottom: 3px solid #EEEEEE;
@@ -1624,6 +1012,58 @@
 				color: rgba(0, 0, 0, 0.4);
 			}
 		}
+	}
+}
+
+// Loading dialog and animate
+.loading-box{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	float: left;
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.95);
+	display: none;
+
+	.dialog{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+		margin-top: 20%;
+
+		.icon{
+			font-size: 4em;
+			margin-bottom: 3%;
+			color: #003399;
+		}
+		p{
+			font-size: 1em;
+			line-height: 1.5em;
+			color: #999999;
+		}
+	}
+}
+
+// Logout page style
+.dialog-box{
+	width: 100%;
+	margin-top: 20%;
+	float: left;
+	display: inline-block;
+	text-align: center;
+
+	.icon{
+		color: #003399;
+		font-size: 3em;
+		margin-bottom: 2%;
+	}
+	p{
+		font-size: 1em;
+		line-height: 1.5em;
+		color: #999999;
 	}
 }
 

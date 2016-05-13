@@ -51,11 +51,11 @@ $current_page['1'] = 'report';
 		<div class="report-header-items topic-fix">
 			<div class="col1"><i class="fa fa-calendar" aria-hidden="true"></i> Date</div>
 			<div class="col2">SHIFT</div>
-			<div class="col3">Daily Prs (Hrs.)</div>
-			<div class="col4">Month Prs (Hrs.)</div>
+			<div class="col3">Daily Prs</div>
+			<div class="col4">Month Prs</div>
 			<div class="col5">Total EFF</div>
-			<div class="col6"><i class="fa fa-user" aria-hidden="true"></i> Leader</div>
-			<div class="col7">Updated</div>
+			<div class="col6">Updated</div>
+			<div class="col7">Leader</div>
 		</div>
 
 		<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items'));?>
