@@ -201,6 +201,26 @@ GROUP BY detail.caliber_id');
 		return parent::lastInsertId();
 	}
 
+	public function deleteHeader($header_id,$shift){
+		// Delete all report detail by header_id
+		parent::query('DELETE FROM RTH_DailyOutputDetail WHERE header_id = :header_id');
+		parent::bind(':header_id', 		$header_id);
+		parent::execute();
+
+		// Delete header report by header_id and shift
+		parent::query('DELETE FROM RTH_DailyOutputHeader WHERE id = :header_id AND shift = :shift');
+		parent::bind(':header_id', 		$header_id);
+		parent::bind(':shift', 			$shift);
+		parent::execute();
+	}
+
+	public function deleteDetail($header_id,$caliber_id){
+		parent::query('DELETE FROM RTH_DailyOutputDetail WHERE header_id = :header_id AND caliber_id = :caliber_id');
+		parent::bind(':header_id', 		$header_id);
+		parent::bind(':caliber_id', 		$caliber_id);
+		parent::execute();
+	}
+
 
 	public function listDetailReportData($header_id,$caliber_id){
 		parent::query('SELECT dod.id detail_id,dod.header_id,dod.caliber_id,dod.route_id,dod.operation_id,dod.total_good,dod.total_reject,dod.remark_id,dod.remark_message,dod.output,dod.required_hrs,dod.update_time,operation.id operation_id,operation.name operation_name,operation.description operation_description,stdtime.id stdtime_id,stdtime.hrs stdtime_hrs 

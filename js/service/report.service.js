@@ -167,3 +167,51 @@ function editHeaderReport(id){
         window.location = 'report_header.php';
     }).error();
 }
+
+// Update user information
+function deleteReport(header_id,caliber_id){
+    var href        = 'api.report.php';
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'report',
+            action              :'delete_report_detail',
+            header_id:header_id,
+            caliber_id:caliber_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        location.reload();
+    }).error();
+}
+
+// Update user information
+function deleteHeaderReport(header_id,shift){
+    var href        = 'api.report.php';
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'report',
+            action              :'delete_header_report',
+            header_id:header_id,
+            shift:shift,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'index.php';
+    }).error();
+}

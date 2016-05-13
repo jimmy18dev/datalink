@@ -37,6 +37,7 @@ $current_page['2'] = 'report_detail';
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/report.service.js"></script>
 
 </head>
 <body>

@@ -74,7 +74,15 @@ class ReportController extends ReportModel{
 		$required_hrs = $stdtime_hrs * $output;
 		parent::editDetail($user_id,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
 	}
-	public function deleteOperationReport(){}
+
+	public function deleteHeaderReport($header_id,$shift){
+		parent::deleteHeader($header_id,$shift);
+	}
+
+
+	public function deleteReportDetail($header_id,$caliber_id){
+		parent::deleteDetail($header_id,$caliber_id);
+	}
 
 
 

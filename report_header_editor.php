@@ -294,6 +294,7 @@ $year 	= date('Y');
 		</div>		
 
 		<div class="form-control">
+			<div onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>');">DELETE</div>
 			<?php if(empty($report->id)){?>
 			<div class="submit-btn" onclick="javascript:createHeaderReport();">Create<i class="fa fa-angle-right"></i></div>
 			<?php }else{?>
