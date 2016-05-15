@@ -7,13 +7,18 @@ if(!$user_online){
 	die();
 }
 
+if(!empty($_GET['header'])){
+	$report->getHeader($_GET['header']);
+}
+
 if(!empty($_GET['caliber'])){
 	$caliber->getCaliber($_GET['caliber']);
 }
 
 // current page
-$current_page['1'] = 'report';
-$current_page['2'] = 'new_operation';
+$current_page['1'] = 'report_detail';
+$current_page['2'] = 'choose_caliber';
+$current_page['3'] = 'add_caliber';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -31,7 +36,7 @@ $current_page['2'] = 'new_operation';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Editor : Operation Recipe</title>
+<title><?php echo $caliber->code;?> <?php echo $caliber->family;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -63,19 +68,23 @@ $current_page['2'] = 'new_operation';
 
 		<div class="operations">
 			<?php
-			if(!empty($_GET['header_id'])){
-				$report->listDetailReport($_GET['header_id'],$caliber->id,array('type' => 'operation-form-items'));
+			if($_GET['action'] == 'edit'){
+				$report->listDetailReport($_GET['header'],$caliber->id,array('type' => 'operation-form-items'));
 			}else{
 				$caliber->listOperationInRoute($caliber->id,array('type' => 'operation-form-items'));
 			}
 			?>
 		</div>
 		<input type="hidden" id="header_id" name="header_id" value="<?php echo $_GET['header'];?>">
-		<input type="hidden" id="header" value="<?php echo $_GET['header_id'];?>">
 	</div>
 	<div class="control-container">
-		<a href="report_detail_editor_choose_caliber.php?header=<?php echo $_GET['header'];?>" target="_parent" class="btn-back"><i class="fa fa-angle-left"></i>Back</a>
-		<button type="submit" class="submit-btn">SAVE<i class="fa fa-angle-right"></i></button>
+		<?php if($_GET['action'] == 'edit'){?>
+		<div class="delete-btn" onclick="javascript:deleteReport(<?php echo $header_id;?>,<?php echo $var['caliber_id'];?>);">
+			Delete this Caliber</div>
+			<button type="submit" class="btn submit-btn">Save</button>
+		<?php }else{?>
+		<button type="submit" class="btn submit-btn">Add to Report</button>
+		<?php }?>
 	</div>
 	</form>
 </div>

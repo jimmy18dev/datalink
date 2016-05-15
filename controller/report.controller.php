@@ -201,6 +201,11 @@ class ReportController extends ReportModel{
             	else
             		$new_items = false;
 
+            	$owner = false;
+            	if($option['user_id'] == $var['leader_id']){
+            		$owner = true;
+            	}
+
                 include'template/report/header.items.php';
                 $total_items++;
             }

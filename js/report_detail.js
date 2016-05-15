@@ -3,12 +3,8 @@ $(document).ready(function(){
     $bar        = $('#progress-bar');
     $icon       = $('#progress-icon');
     $message    = $('#progress-message');
-
-
+    
     var header_id = $('#header_id').val();
-    if(header_id == ''){
-        header_id = $('#header').val();
-    }
 
     $('#ReportDetail').ajaxForm({
         beforeSubmit: function(){

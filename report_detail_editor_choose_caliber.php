@@ -7,17 +7,13 @@ if(!$user_online){
 	die();
 }
 
-// if(!empty($_GET['caliber'])){
-// 	$caliber->getcaliber($_GET['caliber']);
-// }
-
-// if(!empty($_GET['operation_id'])){
-// 	$caliber->getOperationRecipe($_GET['operation_id']);
-// }
+if(!empty($_GET['header'])){
+	$report->getHeader($_GET['header']);
+}
 
 // current page
-$current_page['1'] = 'report';
-$current_page['2'] = 'new_operation';
+$current_page['1'] = 'report_detail';
+$current_page['2'] = 'choose_caliber';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -35,7 +31,7 @@ $current_page['2'] = 'new_operation';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Editor : Operation Recipe</title>
+<title>Choose Caliber Code...</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -60,10 +56,6 @@ $current_page['2'] = 'new_operation';
 	<!-- Table -->
 	<div class="list-container">
 		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
-	</div>
-
-	<div class="control-container">
-		<a href="report_detail.php?header=<?php echo $_GET['header'];?>" target="_parent" class="btn-back"><i class="fa fa-angle-left"></i>Back</a>
 	</div>
 </div>
 

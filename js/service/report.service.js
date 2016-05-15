@@ -164,7 +164,7 @@ function editHeaderReport(id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'report_header.php';
+        window.location = 'index.php?callback=edit_success';
     }).error();
 }
 
@@ -212,6 +212,6 @@ function deleteHeaderReport(header_id,shift){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'index.php';
+        window.location = 'index.php?callback=delete_success';
     }).error();
 }

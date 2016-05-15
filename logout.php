@@ -26,7 +26,7 @@ session_destroy();
 
 <?php include'favicon.php';?>
 
-<title>กำลังออกจากระบบ...</title>
+<title>Logout...</title>
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>

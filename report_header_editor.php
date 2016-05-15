@@ -18,8 +18,7 @@ if(!$user_online){
 }
 
 // Current page
-$current_page['1'] = 'report';
-$current_page['2'] = 'new_operation';
+$current_page['1'] = 'report_create';
 
 // Get current day mouth year
 $day 	= date('d');
@@ -42,7 +41,7 @@ $year 	= date('Y');
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Editor : Operation Recipe</title>
+<title>Report Editor</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -60,7 +59,7 @@ $year 	= date('Y');
 		<div class="heads">
 			<div class="title">
 				<h1>Create Daily output report</h1>
-				<p>Movement assembly Daily report by <strong><?php echo $user->name;?></strong> Line No. <?php echo $user->line_default;?></p>
+				<p>Daily report by <strong><?php echo $user->name;?></strong> Line No. <strong><?php echo $user->line_default;?></strong></p>
 			</div>
 			<div class="date">
 				<select id="r_date" class="input-select">
@@ -144,11 +143,11 @@ $year 	= date('Y');
 			<div class="title">2. Monthly</div>
 			<div class="input">
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text" id="no_monthly_emplys" placeholder="0" value="<?php echo $report->no_monthly_emplys;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="no_monthly_emplys" placeholder="0" value="<?php echo $report->no_monthly_emplys;?>"></div>
 					<div class="caption">Monthly Prs</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text" id="ttl_monthly_hrs" placeholder="0.00" value="<?php echo $report->ttl_monthly_hrs;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ttl_monthly_hrs" placeholder="0.00" value="<?php echo $report->ttl_monthly_hrs;?>"></div>
 					<div class="caption">Normal Hrs</div>
 				</div>
 			</div>
@@ -158,11 +157,11 @@ $year 	= date('Y');
 			<div class="title">3. Daily</div>
 			<div class="input">
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text" id="no_daily_emplys" placeholder="0" value="<?php echo $report->no_daily_emplys;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="no_daily_emplys" placeholder="0" value="<?php echo $report->no_daily_emplys;?>"></div>
 					<div class="caption">Daily Prs</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text"  id="ttl_daily_hrs" placeholder="0.00" value="<?php echo $report->ttl_daily_hrs;?>"></div>
+					<div class="input"><input type="number" class="input-text"  id="ttl_daily_hrs" placeholder="0.00" value="<?php echo $report->ttl_daily_hrs;?>"></div>
 					<div class="caption">Normal Hrs.</div>
 				</div>
 			</div>
@@ -172,11 +171,11 @@ $year 	= date('Y');
 			<div class="title">4. Efficiency</div>
 			<div class="input">
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text" id="product_eff" placeholder="0" value="<?php echo $report->product_eff;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="product_eff" placeholder="0" value="<?php echo $report->product_eff;?>"></div>
 					<div class="caption">Product EFF</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text" id="ttl_eff" placeholder="0.00" value="<?php echo $report->ttl_eff;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ttl_eff" placeholder="0.00" value="<?php echo $report->ttl_eff;?>"></div>
 					<div class="caption">Total EFF</div>
 				</div>
 			</div>
@@ -187,22 +186,22 @@ $year 	= date('Y');
 			<div class="input">
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="ot_10" placeholder="0" value="<?php echo $report->ot_10;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ot_10" placeholder="0" value="<?php echo $report->ot_10;?>"></div>
 					<div class="caption">1.0</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="ot_15" placeholder="0" value="<?php echo $report->ot_15;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ot_15" placeholder="0" value="<?php echo $report->ot_15;?>"></div>
 					<div class="caption">1.5</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="ot_20" placeholder="0" value="<?php echo $report->ot_20;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ot_20" placeholder="0" value="<?php echo $report->ot_20;?>"></div>
 					<div class="caption">2.0</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="ot_30" placeholder="0" value="<?php echo $report->ot_30;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ot_30" placeholder="0" value="<?php echo $report->ot_30;?>"></div>
 					<div class="caption">3.0</div>
 				</div>
 			</div>
@@ -212,26 +211,26 @@ $year 	= date('Y');
 			<div class="title">6. Lost time</div>
 			<div class="input">
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text" id="losttime_vac" placeholder="0" value="<?php echo $report->losttime_vac;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_vac" placeholder="0" value="<?php echo $report->losttime_vac;?>"></div>
 					<div class="caption">VAC</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="text" class="input-text" id="losttime_sick" placeholder="0" value="<?php echo $report->losttime_sick;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_sick" placeholder="0" value="<?php echo $report->losttime_sick;?>"></div>
 					<div class="caption">SICK</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="losttime_abs" placeholder="0" value="<?php echo $report->losttime_abs;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_abs" placeholder="0" value="<?php echo $report->losttime_abs;?>"></div>
 					<div class="caption">ABS</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="losttime_mat" placeholder="0" value="<?php echo $report->losttime_mat;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_mat" placeholder="0" value="<?php echo $report->losttime_mat;?>"></div>
 					<div class="caption">MAT</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="text" class="input-text" id="losttime_other" placeholder="0" value="<?php echo $report->losttime_other;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_other" placeholder="0" value="<?php echo $report->losttime_other;?>"></div>
 					<div class="caption">Other</div>
 				</div>
 			</div>
@@ -295,11 +294,14 @@ $year 	= date('Y');
 	</div>
 
 	<div class="control-container">
-		<div onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>');">DELETE</div>
+		<?php if(!empty($report->id)){?>
+		<div class="delete-btn" onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>');">Delete Report</div>
+		<?php }?>
+
 		<?php if(empty($report->id)){?>
-		<div class="submit-btn" onclick="javascript:createHeaderReport();">Create<i class="fa fa-angle-right"></i></div>
+		<div class="submit-btn" onclick="javascript:createHeaderReport();">Create Report</div>
 		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
+		<div class="submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);">Save Report</div>
 		<?php }?>
 	</div>
 </div>

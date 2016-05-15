@@ -1,25 +1,32 @@
 // Header bar style
 .header{
-	width: 96%;
-	padding: 0% 2%;
-	height: 40px;
+	width: 100%;
+	padding: 0%;
+	height: 50px;
 
 	.logo{
 		font-size: 1em;
-		padding: 12px 0px;
+		padding: 17px 2%;
+		padding-right: 1%;
 		height: 16px;
 		i{ margin-right: 5px; }
 	}
 
 	.navibar{
-		padding: 12px 2%;
-		height: 16px;
-		i{ margin-right: 10px; }
+		padding: 17px 0%;
+		margin-left: 1%;
+		height: 14px;
+		&:hover{ border-bottom: 2px solid #FFFFFF; }
+		i{ margin-right: 5px; }
 	}
 	.profile{
-		padding: 12px 1%;
+		padding: 17px 2%;
 		height: 16px;
 		font-size: 0.9em;
+
+		i{
+			margin-right: 5px;
+		}
 	}
 }
 
@@ -29,22 +36,18 @@
 	margin: 10%;
 
 	.logo{
-		h1{
-			font-size: 3.5em;
-		}
+
+		h1{ font-size: 3.5em; }
 		.icon{
 			font-size: 3em;
 			margin-bottom: 5%;
 		}
-
-		p.version{
-			font-size: 0.8em;
-		}
+		p.version{ font-size: 1em; }
 	}
 
 	.input{
-		width: 70%;
-		margin: 15%;
+		width: 60%;
+		margin: 20%;
 
 		.input-text{
 			width: 94%;
@@ -55,15 +58,10 @@
 		}
 
 		.login-btn{
-			width: 45%;
-			padding: 3% 0%;
-			font-size: 1.1em;
-			line-height: 1.5em;
-
-			i{
-				margin-left: 10px;
-			}
-		}
+			width: 100%;
+			padding: 3%;
+			font-size: 1.2em;
+			line-height: 1.5em;		}
 	}
 }
 // END login page style
@@ -71,8 +69,8 @@
 
 // Container all Page
 .container{
-	margin-top: 40px;
-	min-height: 500px;
+	min-height: 300px;
+	margin-top: 50px;
 
 	// Head page
 	.head{
@@ -80,66 +78,25 @@
 		padding: 0% 2%;
 
 		.head-title{
-			width: 100%;
 			padding: 5% 0%;
-			float: left;
-			display: inline-block;
-			color: #000000;
-			text-align: center;
+			padding-bottom: 6%;
 
-			h2{
-				font-size: 0.9em;
-				font-weight: normal;
-			}
+			h2{ font-size: 1em; }
 
 			h1{
-				font-size: 3em;
-				color: #000000;
+				font-size: 2em;
 				line-height: 1.2em;
 			}
+			h1.date{ font-size: 4em; }
 
 			p{
-				font-size: 0.9em;
+				font-size: 1em;
 				line-height: 1.3em;
-				color: #555555;
-			}
-
-			a{
-				color: #003399;
-
-				&:hover{
-					text-decoration: underline;
-				}
-
-				i{
-					margin-left: 5px;
-				}
 			}
 
 			.btn{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				margin-top: 5%;
-
-				a.btn-create{
-					background: #4CAF50;
-					padding: 10px 15px;
-					color: #FFFFFF;
-					border-radius: 3px;
-					font-weight: bold;
-
-					&:hover{
-						cursor: pointer;
-						text-decoration: none;
-						opacity: 0.7;
-					}
-
-					i{
-						margin-left: 10px;
-						font-size: 0.8em;
-					}
-				}
+				margin-top: 4%;
+				a.btn-create{ padding: 10px 15px; }
 			}
 		}
 	}
@@ -147,20 +104,14 @@
 
 	// Report detail editor (Add operation to caliber)
 	.operation-form-container{
-		width: 60%;
-		margin: 2% 20%;
-		float: left;
-		display: inline-block;
-		background: #FFFFFF;
+		width: 96%;
+		padding: 2%;
+		margin: 0%;
+		border: 0px;
 
 		.heads{
-			width: 100%;
-			float: left;
-			display: inline-block;
 			margin-bottom: 3%;
-			h3{
-				font-size: 2em;
-			}
+			h3{ font-size: 2em; }
 			p{
 				font-size: 1em;
 				line-height: 1.5em;
@@ -168,173 +119,91 @@
 		}
 
 		.operation-items{
-			width: 100%;
-			float: left;
-			display: inline-block;
 			line-height: 3em;
 			font-size: 1em;
-			border-bottom: 1px solid #FAFAFA;
+			border-top: 1px dotted #DDDDDD;
 
-			.col1{
-				width: 40%;
-				float: left;
-				display: inline-block;
-			}
+			.col1{ width: 44%; }
 			.col2{
-				width: 8%;
+				width: 10%;
 				padding: 0% 1%;
-				float: left;
-				display: inline-block;
-				text-align: right;
 			}
 			.col3{
-				width: 8%;
+				width: 10%;
 				padding: 0% 1%;
-				float: left;
-				display: inline-block;
-				text-align: right;
 			}
 			.col4{
-				width: 8%;
+				width: 10%;
 				padding: 0% 1%;
-				float: left;
-				display: inline-block;
-				text-align: right;
 			}
 			.col5{
-				width: 27%;
-				float: left;
-				display: inline-block;
-				margin-left: 3%;
+				width: 15%;
+				margin-left: 5%;
 			}
 
 			.input-text{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-family: @FontStylePrimary;
 				font-size: 1em;
-				border: 0px;
 				line-height: 3em;
-				border-radius: 2px;
-				text-align: right;
-			}
-
-			.input-select{
-				width: 100%;
-				text-align: left;
-				-webkit-appearance: none;
 			}
 		}
 
-		.topic-fix{
-			font-size: 0.7em;
-			font-style: italic;
-			color: rgba(0, 0, 0, 0.4);
-		}
+		.topic-fix{ font-size: 0.7em; }
 	}
 
 	// Create Header report
 	.header-report-form-container{
-		width: 60%;
-		margin: 2% 20%;
-		float: left;
-		display: inline-block;
-		background: #FFFFFF;
+		width: 96%;
+		padding: 2%;
+		margin: 0%;
+		border: 0px;
 
 		.heads{
-			width: 100%;
-			float: left;
-			display: inline-block;
 			margin-bottom: 3%;
 
 			.title{
-				float: left;
-				display: inline-block;
 
-				h1{
-					font-size: 1.5em;
-					font-weight: bold;
-				}
+				h1{ font-size: 1.5em; }
 				p{
 					font-size: 0.9em;
 					line-height: 1.5em;
 				}
 			}
 			.date{
-				float: right;
-				display: inline-block;
-
 				.input-select{
-					float: left;
-					display: inline-block;
-					font-size: 0.9em;
-					font-family: @FontStylePrimary;
-					-webkit-appearance: none;
+					font-size: 1.3em;
 					line-height: 1.5em;
 					padding: 5px 8px;
-					margin-right: 5px;
-					border: 1px solid #EEEEEE;
-					border-radius: 3px;
-					text-align: center;
+					margin-left: 5px;
 				}
 			}
 		}
 
 		.form-section{
-			width: 100%;
 			padding: 2% 0%;
-			float: left;
-			display: inline-block;
-			border-top: 1px dotted #EEEEEE;
 
 			.title{
-				width: 30%;
-				float: left;
-				display: inline-block;
+				width: 100%;
 				line-height: 2em;
-				font-size: 0.9em;
+				font-size: 1em;
 			}
 			.input{
-				width: 70%;
-				float: left;
-				display: inline-block;
+				width: 100%;
 
 				.section-items{
-					width: 15%;
-					margin-right: 5%;
-					float: left;
-					display: inline-block;
+					width: 19%;
+					margin-right: 1%;
 
 					.caption{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						font-size: 0.7em;
-						color: #555555;
-						line-height: 2em;
+						font-size: 0.8em;
+						line-height: 1em;
 					}
 					.input{
-						width: 100%;
-						float: left;
-						display: inline-block;
-
 						.input-text{
-							width: 100%;
-							float: left;
-							display: inline-block;
-							font-family: @FontStylePrimary;
 							font-size: 2em;
-							border: 0px;
-							border-bottom: 1px solid #FAFAFA;
-							line-height: 1.3em;
-							border-radius: 2px;
-
+							line-height: 1em;
 						}
 
-						.input-select{
-							-webkit-appearance: none;
-						}
+						.input-select{ padding: 0% 10%; }
 					}
 				}
 			}
@@ -343,50 +212,18 @@
 
 	// Form control style
 	.control-container{
-		width: 60%;
-		margin: 0% 20%;
-		float: left;
-		display: inline-block;
+		width: 96%;
+		margin: 2%;
 
-		// Back button style
-		a.btn-back{
-			float: left;
-			display: inline-block;
-			font-size: 0.9em;
-			line-height: 1.5em;
-			padding: 10px 0px;
-			color: rgba(0, 0, 0, 0.4);
-
-			&:hover{
-				cursor: pointer;
-				text-decoration: underline;
-			}
-
-			i{
-				margin-right: 10px;
-			}
+		.delete-btn{
+			font-size: 1em;
+			padding: 15px 0px;
 		}
 
 		// Submit button style
 		.submit-btn{
-			float: right;
-			display: inline-block;
-			font-size: 0.9em;
-			padding: 10px 20px;
-			background: #4CAF50;
-			color: #FFFFFF;
-			border: 0px;
-			border-radius: 2px;
-			font-weight: bold;
-
-			&:hover{
-				opacity: 0.8;
-				cursor: pointer;
-			}
-
-			i{
-				margin-left: 10px;
-			}
+			font-size: 1em;
+			padding: 15px 20px;
 		}
 	}
 
@@ -399,241 +236,58 @@
 		p.topic{
 			width: 96%;
 			margin: 0% 2%;
-			margin-bottom: 1%;
-			line-height: 1.5em;
+			margin-bottom: 2%;
+		}
+
+		.report-stat{
+			width: 96%;
+			padding: 0% 2%;
+
+			.stat-items{
+				width: 20.25%;
+				padding: 4% 2%;
+				margin-right: 1%;
+				margin-bottom: 1%;
+
+				.v{
+					font-size: 1.7em;
+				}
+				.k{
+					font-size: 0.9em;
+				}
+			}
 		}
 
 		// Header info detail in table-layout
 		// Manpower: report detail page
 		.header-report-table{
-			width: 100%;
+			width: 96%;
 			margin: 0% 2%;
-			margin-bottom: 2%;
-			line-height: 2em;
 			font-size: 0.9em;
-
-			.box1{
-				width: 45%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border: 1px solid #EEEEEE;
-				border-right: 0px solid transparent;
-				margin-bottom: 1%;
-
-				.box-topic{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					border-bottom: 1px solid #EEEEEE;
-				}
-
-				.col{
-					width: 25%;
-					float: left;
-					display: inline-block;
-
-					.col-caption{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-						border-bottom: 1px solid #EEEEEE;
-					}
-					.col-val{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-					}
-				}
-			}
-
-			.box2{
-				width: 50%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border: 1px solid #EEEEEE;
-				border-right: 0px solid transparent;
-				margin-bottom: 1%;
-
-				.box-topic{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					border-bottom: 1px solid #EEEEEE;
-				}
-
-				.col{
-					width: 20%;
-					float: left;
-					display: inline-block;
-
-					.col-caption{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-						border-bottom: 1px solid #EEEEEE;
-					}
-					.col-val{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-					}
-				}
-			}
-
-			.box3{
-				width: 45%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border: 1px solid #EEEEEE;
-				border-right: 0px solid transparent;
-
-				.box-topic{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					border-bottom: 1px solid #EEEEEE;
-				}
-
-				.col{
-					width: 25%;
-					float: left;
-					display: inline-block;
-
-					.col-caption{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-						border-bottom: 1px solid #EEEEEE;
-					}
-					.col-val{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-					}
-				}
-			}
-
-			.box4{
-				width: 25%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border: 1px solid #EEEEEE;
-				border-right: 0px solid transparent;
-
-				.box-topic{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					border-bottom: 1px solid #EEEEEE;
-				}
-
-				.col{
-					width: 50%;
-					float: left;
-					display: inline-block;
-
-					.col-caption{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-						border-bottom: 1px solid #EEEEEE;
-					}
-					.col-val{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-					}
-				}
-			}
-
-			.box5{
-				width: 25%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border: 1px solid #EEEEEE;
-
-				.box-topic{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					border-bottom: 1px solid #EEEEEE;
-				}
-
-				.col{
-					width: 50%;
-					float: left;
-					display: inline-block;
-
-					.col-caption{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-						border-bottom: 1px solid #EEEEEE;
-					}
-					.col-val{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						border-right: 1px solid #EEEEEE;
-					}
-				}
-			}
+			margin-bottom: 3%;
 		}
 		// END Header info detail in table-layout
 
 		// Caliber items stype
 		// Output: Report detail
 		.caliber-in-report-items{
-			width: 91%;
+			width: 92%;
 			padding: 2%;
 			margin: 0% 2%;
 			margin-bottom: 2%;
 
 			.info{
-				width: 100%;
-				float: left;
-				display: inline-block;
-
 				.name{
-					width: 50%;
-					float: left;
-					font-size: 1.5em;
-					font-weight: bold;
-				}
-				.control{
-					width: 50%;
-					float: left;
-					display: inline-block;
+					font-size: 1.2em;
 
-					a.btn{
-						float: right;
-						display: inline-block;
-						background: #EEEEEE;
-						color: #AAAAAA;
-						margin-left: 5px;
-						padding: 5px;
-						font-size: 0.8em;
-						border-radius: 3px;
+					a{
+						padding: 2px 3px;
+						padding-top: 3px;
+						font-size: 0.7em;
 					}
 				}
+
 				.description{
-					width: 100%;
-					float: left;
-					display: inline-block;
 					font-size: 0.9em;
 					line-height: 1.5em;
 				}
@@ -641,56 +295,31 @@
 
 			// Opearation box
 			.operations{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				background: #FAFAFA;
-				border-radius: 3px;
 				margin-top: 2%;
+				border: 1px solid #EEEEEE;
 
 				// Operations items style
 				.operation-items{
-					width: 100%;
-					padding: 1% 0%;
-					float: left;
-					display: inline-block;
-					border-bottom: 1px solid #EEEEEE;
-					font-size: 0.9em;
-
-					&:last-child{
-						border-bottom: 0px;
-					}
+					padding: 1.5% 0%;
+					font-size: 1em;
 
 					.col1{
-						width: 47%;
-						padding: 0% 1%;
-						float: left;
-						display: inline-block;
+						width: 38%;
+						padding: 0% 2%;
 					}
 					.col2{
-						width: 12%;
-						float: left;
-						display: inline-block;
-						text-align: right;
+						width: 14%;
 					}
 					.col3{
-						width: 12%;
-						float: left;
-						display: inline-block;
-						text-align: right;
+						width: 14%;
 					}
 					.col4{
-						width: 12%;
-						float: left;
-						display: inline-block;
-						text-align: right;
+						width: 14%;
 					}
 					.col5{
-						width: 13%;
-						padding: 0% 1%;
-						float: left;
-						display: inline-block;
-						text-align: right;
+						width: 14%;
+						padding: 0%;
+						padding-right: 2%;
 					}
 					.col6{
 						width: 100%;
@@ -707,6 +336,7 @@
 					font-style: italic;
 					color: rgba(0, 0, 0, 0.6);
 					font-size: 0.6em;
+					background: #FAFAFA;
 
 					&:hover{
 						color: rgba(0, 0, 0, 0.6);
@@ -717,149 +347,135 @@
 
 		// Empty items style
 		.empty-items{
-			width: 100%;
-			padding: 5% 0%;
-			float: left;
-			display: inline-block;
-			font-size: 1em;
-			color: #CCCCCC;
-			text-align: center;
-		}
-
-		// Header report items style
-		.report-header-items{
-			width: 100%;
-			padding: 3% 0%;
-			line-height: 1.5em;
-			font-size: 0.9em;
-
-			.mini{ font-size: 0.5em; }
-
-			.col1{
-				width: 16%;
-				padding: 0% 2%;
-			}
-			.col2{
-				width: 6%;
-			}
-			.col3{
-				width: 13%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-			}
-			.col4{
-				width: 13%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-			}
-			.col5{
-				width: 10%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-			}
-			.col6{
-				width: 16%;
-				margin-left: 4%;
-				float: left;
-				display: inline-block;
-			}
-			.col7{
-				width: 16%;
-				padding-right: 2%;
-				float: left;
-				display: inline-block;
-
-				i{
-					float: right;
-					line-height: 1.5em;
-				}
-			}
+			padding: 10% 0%;
+			font-size: 1.2em;
 		}
 
 		// Operation items in Report detail by Caliber ID
-		.report-caliber-detail-items{
-			width: 60%;
-			padding: 0% 20%;
-			float: left;
-			display: inline-block;
-			border-bottom: 1px solid #EEEEEE;
-			font-size: 0.9em;
-			line-height: 2.5em;
+		// .report-caliber-detail-items{
+		// 	width: 60%;
+		// 	padding: 0% 20%;
+		// 	float: left;
+		// 	display: inline-block;
+		// 	border-bottom: 1px solid #EEEEEE;
+		// 	font-size: 0.9em;
+		// 	line-height: 2.5em;
 
-			&:hover{
-				background: #FAFAFA;
-			}
+		// 	&:hover{
+		// 		background: #FAFAFA;
+		// 	}
 
-			.col1{
-				width: 20%;
-				float: left;
-				display: inline-block;
-				border-right: 1px solid #EEEEEE;
-			}
-			.col2{
-				width: 10%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border-right: 1px solid #EEEEEE;
-			}
-			.col3{
-				width: 10%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border-right: 1px solid #EEEEEE;
-			}
-			.col4{
-				width: 20%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border-right: 1px solid #EEEEEE;
-			}
-			.col5{
-				width: 20%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-				border-right: 1px solid #EEEEEE;
-			}
-			.col6{
-				width: 20%;
-				padding-right: 1%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-				border-right: 1px solid #EEEEEE;
-			}
-		}
+		// 	.col1{
+		// 		width: 20%;
+		// 		float: left;
+		// 		display: inline-block;
+		// 		border-right: 1px solid #EEEEEE;
+		// 	}
+		// 	.col2{
+		// 		width: 10%;
+		// 		float: left;
+		// 		display: inline-block;
+		// 		text-align: center;
+		// 		border-right: 1px solid #EEEEEE;
+		// 	}
+		// 	.col3{
+		// 		width: 10%;
+		// 		float: left;
+		// 		display: inline-block;
+		// 		text-align: center;
+		// 		border-right: 1px solid #EEEEEE;
+		// 	}
+		// 	.col4{
+		// 		width: 20%;
+		// 		float: left;
+		// 		display: inline-block;
+		// 		text-align: center;
+		// 		border-right: 1px solid #EEEEEE;
+		// 	}
+		// 	.col5{
+		// 		width: 20%;
+		// 		float: left;
+		// 		display: inline-block;
+		// 		text-align: center;
+		// 		border-right: 1px solid #EEEEEE;
+		// 	}
+		// 	.col6{
+		// 		width: 20%;
+		// 		padding-right: 1%;
+		// 		float: left;
+		// 		display: inline-block;
+		// 		text-align: right;
+		// 		border-right: 1px solid #EEEEEE;
+		// 	}
+		// }
 
 		// 	List all caliber before insert
 		.caliber-choose-items{
 			width: 96%;
-			padding: 2%;
-			line-height: 2em;
+			padding: 3% 2%;
+			line-height: 1.5em;
 			font-size: 1em;
 
 			i{
-				float: right;
 				font-size: 1em;
 				line-height: 1.5em;
 			}
 		}
 
-		.topic-fix{
-			font-size: 0.6em;
-			font-style: italic;
-			color: rgba(0, 0, 0, 0.4);
-			border-bottom: 3px solid #EEEEEE;
+		// Header report items style
+		.report-header-items{
+			padding: 4% 0%;
+			font-size: 1em;
 
-			&:hover{
-				color: rgba(0, 0, 0, 0.4);
+			.col1{
+				width: 21%;
+				padding: 0% 2%;
+				float: left;
+				display: inline-block;
 			}
+			.col2{
+				width: 8%;
+				padding: 0% 1%;
+				float: left;
+				display: inline-block;
+				text-align: center;
+			}
+			.col3{
+				width: 8%;
+				padding: 0% 1%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+			.col4{
+				width: 8%;
+				padding: 0% 1%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+			.col5{
+				width: 16%;
+				padding: 0% 2%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+			.col6{
+				width: 21%;
+				padding: 0% 2%;
+				float: left;
+				display: inline-block;
+
+				i{
+					float: right;
+				}
+			}
+		}
+
+		.header-topic-fix{
+			font-size: 0.6em;
+			padding: 2% 0%;
 		}
 	}
 }
@@ -867,8 +483,7 @@
 // Loading dialog and animate
 .loading-box{
 	.dialog{
-		margin-top: 35%;
-
+		margin-top: 45%;
 		.icon{
 			font-size: 4em;
 			margin-bottom: 3%;
@@ -882,9 +497,7 @@
 
 // Logout page style
 .dialog-box{
-	width: 100%;
-	margin-top: 35%;
-
+	margin-top: 45%;
 	.icon{
 		font-size: 4em;
 		margin-bottom: 3%;
