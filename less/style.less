@@ -80,6 +80,10 @@
 			margin-right: 5px;
 		}
 	}
+
+	.logout{
+		background: #003399;
+	}
 }
 
 // Login page style
@@ -660,6 +664,7 @@
 				display: inline-block;
 				background: #FFFFFF;
 				margin-right: 1%;
+				margin-bottom: 2%;
 
 				.box-topic{
 					width: 100%;
@@ -977,12 +982,13 @@
 			line-height: 1.5em;
 			float: left;
 			display: inline-block;
-			border-top: 1px solid #DDDDDD;
+			border-bottom: 1px solid #DDDDDD;
 			color: rgba(0, 0, 0, 0.5);
 			font-size: 1em;
+			background: #FFFFFF;
 
 			&:last-child{
-				border-bottom: 1px solid #DDDDDD;
+				border-bottom: 0px solid transparent;
 			}
 
 			strong{
@@ -1007,14 +1013,16 @@
 
 		// Caliber unlink (Aleady items to report detail)
 		.unlink-items{
-			color: rgba(0, 0, 0, 0.1);
+			color: rgba(0, 0, 0, 0.2);
+			border-bottom: 1px solid #EEEEEE;
+			background: #FAFAFA;
 
 			strong{
-				color: rgba(0, 0, 0, 0.1);
+				color: rgba(0, 0, 0, 0.2);
 			}
 
 			&:hover{
-				background: #FFFFFF;
+				background: #FAFAFA;
 			}
 		}
 

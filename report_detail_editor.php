@@ -79,7 +79,7 @@ $current_page['3'] = 'add_caliber';
 	</div>
 	<div class="control-container">
 		<?php if($_GET['action'] == 'edit'){?>
-		<div class="delete-btn" onclick="javascript:deleteReport(<?php echo $header_id;?>,<?php echo $var['caliber_id'];?>);">
+		<div class="delete-btn" onclick="javascript:deleteCaliberReport(<?php echo $report->id;?>,<?php echo $caliber->id;?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">
 			Delete this Caliber</div>
 			<button type="submit" class="btn submit-btn">Save</button>
 		<?php }else{?>

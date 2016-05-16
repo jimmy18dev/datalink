@@ -7,7 +7,7 @@
 		<?php if($current_page['2'] == 'choose_caliber'){?>
 			<?php if($current_page['2'] == 'choose_caliber'){?>
 				<?php if($_GET['action'] != 'edit'){?>
-				<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="navibar"><i class="fa fa-angle-right" aria-hidden="true"></i>Choose Caliber : </a>
+				<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="navibar"><i class="fa fa-angle-right" aria-hidden="true"></i>Caliber : </a>
 				<a href="#" class="navibar"><strong><?php echo $caliber->code;?> <?php echo $caliber->family;?></strong></a>
 				<?php }else{?>
 				<a href="#" class="navibar"><i class="fa fa-angle-right" aria-hidden="true"></i>Edit : <strong><?php echo $caliber->code;?> <?php echo $caliber->family;?></strong></a>
@@ -23,7 +23,7 @@
 	<?php }?>
 
 
-	<a href="logout.php" class="profile">Logout</a>
+	<a href="logout.php" class="profile logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
 	<div class="profile">
 		<div class="name"><a href="profile.php"><i class="fa fa-user" aria-hidden="true"></i><?php echo $user->fname?></a></div>
 	</div>

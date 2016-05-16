@@ -90,6 +90,9 @@ body {
 .header .profile i {
   margin-right: 5px;
 }
+.header .logout {
+  background: #003399;
+}
 .login-container {
   width: 30%;
   margin: 0% 35%;
@@ -594,6 +597,7 @@ body {
   display: inline-block;
   background: #FFFFFF;
   margin-right: 1%;
+  margin-bottom: 2%;
 }
 .container .list-container .header-report-table .box3 .box-topic {
   width: 100%;
@@ -873,12 +877,13 @@ body {
   line-height: 1.5em;
   float: left;
   display: inline-block;
-  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
   color: rgba(0, 0, 0, 0.5);
   font-size: 1em;
+  background: #FFFFFF;
 }
 .container .list-container .caliber-choose-items:last-child {
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 0px solid transparent;
 }
 .container .list-container .caliber-choose-items strong {
   color: #000000;
@@ -896,13 +901,15 @@ body {
   line-height: 1.5em;
 }
 .container .list-container .unlink-items {
-  color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #EEEEEE;
+  background: #FAFAFA;
 }
 .container .list-container .unlink-items strong {
-  color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .unlink-items:hover {
-  background: #FFFFFF;
+  background: #FAFAFA;
 }
 .container .list-container .report-header-items {
   width: 100%;
@@ -1134,7 +1141,7 @@ body {
     border: 0px;
   }
   .container .operation-form-container .heads {
-    margin-bottom: 3%;
+    margin: 5% 0%;
   }
   .container .operation-form-container .heads h3 {
     font-size: 2em;
@@ -1227,12 +1234,12 @@ body {
     margin: 2%;
   }
   .container .control-container .delete-btn {
-    font-size: 1em;
-    padding: 15px 0px;
+    font-size: 1.2em;
+    padding: 12px 0px;
   }
   .container .control-container .submit-btn {
-    font-size: 1em;
-    padding: 15px 20px;
+    font-size: 1.2em;
+    padding: 12px 20px;
   }
   .container .list-container {
     width: 100%;
@@ -1348,45 +1355,26 @@ body {
   .container .list-container .report-header-items .col1 {
     width: 21%;
     padding: 0% 2%;
-    float: left;
-    display: inline-block;
   }
   .container .list-container .report-header-items .col2 {
     width: 8%;
     padding: 0% 1%;
-    float: left;
-    display: inline-block;
-    text-align: center;
   }
   .container .list-container .report-header-items .col3 {
     width: 8%;
     padding: 0% 1%;
-    float: left;
-    display: inline-block;
-    text-align: right;
   }
   .container .list-container .report-header-items .col4 {
     width: 8%;
     padding: 0% 1%;
-    float: left;
-    display: inline-block;
-    text-align: right;
   }
   .container .list-container .report-header-items .col5 {
     width: 16%;
     padding: 0% 2%;
-    float: left;
-    display: inline-block;
-    text-align: right;
   }
   .container .list-container .report-header-items .col6 {
     width: 21%;
     padding: 0% 2%;
-    float: left;
-    display: inline-block;
-  }
-  .container .list-container .report-header-items .col6 i {
-    float: right;
   }
   .container .list-container .header-topic-fix {
     font-size: 0.6em;

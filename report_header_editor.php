@@ -295,7 +295,7 @@ $year 	= date('Y');
 
 	<div class="control-container">
 		<?php if(!empty($report->id)){?>
-		<div class="delete-btn" onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>');">Delete Report</div>
+		<div class="delete-btn" onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>','<?php echo $report->date;?>','<?php echo $report->line_no;?>');">Delete Report</div>
 		<?php }?>
 
 		<?php if(empty($report->id)){?>

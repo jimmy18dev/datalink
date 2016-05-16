@@ -168,9 +168,12 @@ function editHeaderReport(id){
     }).error();
 }
 
-// Update user information
-function deleteReport(header_id,caliber_id){
+function deleteCaliberReport(header_id,caliber_id,caliber_code){
     var href        = 'api.report.php';
+
+    if(!confirm('Are you sure to delete '+caliber_code+' ?')){
+        return false;
+    }
 
     $.ajax({
         url         :href,
@@ -193,8 +196,12 @@ function deleteReport(header_id,caliber_id){
 }
 
 // Update user information
-function deleteHeaderReport(header_id,shift){
+function deleteHeaderReport(header_id,shift,date,line){
     var href        = 'api.report.php';
+
+    if(!confirm('Are you sure to delete report '+ date+' (line no.'+line+', shift '+shift+') ?')){
+        return false;
+    }
 
     $.ajax({
         url         :href,
