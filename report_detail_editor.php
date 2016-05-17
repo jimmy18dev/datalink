@@ -46,6 +46,7 @@ $current_page['3'] = 'add_caliber';
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery.form.min.js"></script>
 <script type="text/javascript" src="js/service/report.service.js"></script>
+<script type="text/javascript" src="js/report_detail.js"></script>
 
 </head>
 <body>
@@ -95,7 +96,5 @@ $current_page['3'] = 'add_caliber';
 		<p id="loading-message"></p>
 	</div>
 </div>
-
-<script type="text/javascript" src="js/report_detail.js"></script>
 </body>
 </html>

@@ -11,6 +11,8 @@ $(document).ready(function(){
             console.log('Process: BeforeSubmit...');
             $panel.fadeIn();
             $bar.width('0%');
+            $('#loading-box').fadeIn(300);
+
         },
         uploadProgress: function(event,position,total,percentComplete) {
             var percent = percentComplete;

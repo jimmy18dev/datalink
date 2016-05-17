@@ -34,8 +34,7 @@ function createHeaderReport(){
 
     var report_date = y+'-'+m+'-'+d;
 
-    // $('#loading-message').html('กำลังเข้าระบบ...');
-    // $('#loading-box').fadeIn(300);
+    $('#loading-box').fadeIn(300);
 
     $.ajax({
         url         :href,
@@ -119,8 +118,7 @@ function editHeaderReport(id){
     var product_eff     = $('#product_eff').val();
     var ttl_eff     = $('#ttl_eff').val();
 
-    // $('#loading-message').html('กำลังเข้าระบบ...');
-    // $('#loading-box').fadeIn(300);
+    $('#loading-box').fadeIn(300);
 
     $.ajax({
         url         :href,
@@ -175,6 +173,8 @@ function deleteCaliberReport(header_id,caliber_id,caliber_code){
         return false;
     }
 
+    $('#loading-box').fadeIn(300);
+
     $.ajax({
         url         :href,
         cache       :false,
@@ -202,6 +202,8 @@ function deleteHeaderReport(header_id,shift,date,line){
     if(!confirm('Are you sure to delete report '+ date+' (line no.'+line+', shift '+shift+') ?')){
         return false;
     }
+
+    $('#loading-box').fadeIn(300);
 
     $.ajax({
         url         :href,

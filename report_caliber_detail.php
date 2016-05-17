@@ -69,5 +69,12 @@ $current_page['3'] = 'report_caliber_detail';
 		</div>
 	</div>
 </div>
+
+<div class="loading-box" id="loading-box">
+	<div class="dialog">
+		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+		<p id="loading-message"></p>
+	</div>
+</div>
 </body>
 </html>

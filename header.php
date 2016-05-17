@@ -25,6 +25,6 @@
 
 	<a href="logout.php" class="profile logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
 	<div class="profile">
-		<div class="name"><a href="profile.php"><i class="fa fa-user" aria-hidden="true"></i><?php echo $user->fname?></a></div>
+		<div class="name"><i class="fa fa-user" aria-hidden="true"></i><?php echo $user->fname?></div>
 	</div>
 </header>
