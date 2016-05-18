@@ -47,9 +47,11 @@ $current_page['1'] = 'report_detail';
 			<h1><?php echo $report->date;?></h1>
 			<p>Leader: <strong><?php echo $report->leader_name;?></strong> · Line no.<strong><?php echo $report->line_no;?></strong> (Shift: <?php echo $report->shift;?>) · <span title="<?php echo $report->update_time;?>"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $report->update;?></span></p>
 
+			<?php if($user->id == $report->leader_id && $report->can_edit){?>
 			<div class="btn">
 				<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="btn-create">ADD CALIBER CODE</a>
 			</div>
+			<?php }?>
 		</div>
 	</div>
 
@@ -57,7 +59,7 @@ $current_page['1'] = 'report_detail';
 		<p class="topic">
 			<strong>1. Manpower:</strong>
 			<?php if($user->id == $report->leader_id && $report->can_edit){?>
-			<a href="report_header_editor.php?header=<?php echo $report->id;?>" class="edit-btn">Edit Report</a>
+			<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="edit-btn">Edit Report</a>
 			<?php }?>
 		</p>
 		<div class="report-stat">

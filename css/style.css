@@ -1038,6 +1038,36 @@ body {
   line-height: 1.5em;
   color: #999999;
 }
+.error-container {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  padding-top: 18%;
+}
+.error-container .icon {
+  font-size: 4em;
+  margin-bottom: 2%;
+}
+.error-container h1 {
+  font-size: 2em;
+  line-height: 1.5em;
+}
+.error-container p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin-bottom: 5%;
+}
+.error-container a {
+  background: #003399;
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 0.9em;
+}
+fon .error-container a:hover {
+  opacity: 0.8;
+}
 /* Other Device and Screen */
 @media only screen and (min-width: 520px) and (max-width: 759px) {
   .header {

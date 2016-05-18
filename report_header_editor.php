@@ -1,20 +1,23 @@
 <?php
 include'config/autoload.php';
 
-// Authorization
 if(!$user_online){
-	header("Location: index.php");
+	header("Location: login.php");
 	die();
-}else if(empty($_GET['header']) AND $_GET['action'] != 'create'){
-	header("Location: report_header.php?error=header_id_is_empty!");
+}else if(empty($_GET['header']) && $_GET['action'] == 'edit'){
+	header("Location: index.php?error=action_is_not_validate!");
 	die();
-}else{
+}else if(!empty($_GET['header']) && $_GET['action'] == 'edit'){
 	$report->getHeader($_GET['header']);
 
-	if($user->id != $report->leader_id AND $_GET['action'] != 'create'){
-		header("Location: report_header.php?error=you_don't_have_permission!");
+	// Leader authorization
+	if(($user->id != $report->leader_id && $_GET['action'] != 'create') || !$report->can_edit){
+		header("Location: error_permission.php?error=you_don't_have_permission!");
 		die();
 	}	
+}else if($_GET['action'] != 'create'){
+	header("Location: index.php?error=action_is_not_validate!");
+	die();
 }
 
 // Current page
@@ -60,6 +63,7 @@ $year 	= date('Y');
 			<div class="title">
 				<h1>Create Daily output report</h1>
 				<p>Daily report by <strong><?php echo $user->name;?></strong> Line No. <strong><?php echo $user->line_default;?></strong></p>
+				<p><?php echo 'Can: '.($report->can_edit?'true':'false');?></p>
 			</div>
 			<div class="date">
 				<select id="r_date" class="input-select">

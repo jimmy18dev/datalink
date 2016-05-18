@@ -1,24 +1,9 @@
+<?php include'config/autoload.php';?>
 <?php
-include'config/autoload.php';
-
-// Permission
 if(!$user_online){
-	header("Location: index.php");
+	header("Location: login.php");
 	die();
 }
-
-if(!empty($_GET['header'])){
-	$report->getHeader($_GET['header']);
-
-	if(!$report->can_edit){
-		header("Location: error_permission.php?error=you_don't_have_permission!");
-		die();
-	}	
-}
-
-// current page
-$current_page['1'] = 'report_detail';
-$current_page['2'] = 'choose_caliber';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -36,7 +21,7 @@ $current_page['2'] = 'choose_caliber';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Choose Caliber Code...</title>
+<title>You don't have permission to access!</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -44,26 +29,15 @@ $current_page['2'] = 'choose_caliber';
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/lib/jquery.form.min.js"></script>
 <script type="text/javascript" src="js/service/report.service.js"></script>
 
 </head>
 <body>
-<?php include 'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>Choose Caliber Code...</h1>
-			<p><i class="fa fa-angle-double-down" aria-hidden="true"></i></p>
-		</div>
-	</div>
-
-	<!-- Table -->
-	<div class="list-container">
-		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
-	</div>
+<div class="error-container">
+	<div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+	<h1>Sorry!</h1>
+	<p>Access Denied  You don't have permission to access</p>
+	<a href="index.php">Back to Home</a>
 </div>
-
-<script type="text/javascript" src="js/report_detail.js"></script>
 </body>
 </html>
