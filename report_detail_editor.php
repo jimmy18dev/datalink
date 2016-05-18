@@ -1,18 +1,32 @@
 <?php
 include'config/autoload.php';
 
-// Permission
 if(!$user_online){
-	header("Location: index.php");
+	header("Location: login.php");
 	die();
-}
-
-if(!empty($_GET['header'])){
+}else if($_GET['action'] != 'create' && $_GET['action'] != 'edit'){
+	header("Location: index.php?error=action_is_not_validate!");
+	die();
+}else if(empty($_GET['caliber'])){
+	header("Location: index.php?error=caliber_is_null!");
+	die();
+}else if(empty($_GET['header'])){
+	header("Location: index.php?error=header_is_null!");
+	die();
+}else{
 	$report->getHeader($_GET['header']);
-}
 
-if(!empty($_GET['caliber'])){
+	// Leader authorization
+	if(($user->id != $report->leader_id && $_GET['action'] != 'create') || !$report->can_edit){
+		header("Location: error_permission.php?error=you_don't_have_permission!");
+		die();
+	}
+
 	$caliber->getCaliber($_GET['caliber']);
+	if(empty($caliber->id)){
+		header("Location: index.php?error=caliber_is_null!");
+		die();
+	}
 }
 
 // current page

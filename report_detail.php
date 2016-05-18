@@ -7,6 +7,9 @@ if(!$user_online){
 
 if(!empty($_GET['header'])){
 	$report->getHeader($_GET['header']);
+}else{
+	header("Location: index.php?error=header_is_empty!");
+	die();
 }
 
 // current page
