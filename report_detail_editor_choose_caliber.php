@@ -1,16 +1,17 @@
 <?php
 include'config/autoload.php';
 
-// Permission
 if(!$user_online){
-	header("Location: index.php");
+	header("Location: login.php");
 	die();
-}
-
-if(!empty($_GET['header'])){
+}else if(empty($_GET['header'])){
+	header("Location: index.php?error=header_is_empty!");
+	die();
+}else if(!empty($_GET['header'])){
 	$report->getHeader($_GET['header']);
 
-	if(!$report->can_edit){
+	// Leader authorization
+	if($user->id != $report->leader_id || !$report->can_edit){
 		header("Location: error_permission.php?error=you_don't_have_permission!");
 		die();
 	}	
