@@ -28,6 +28,10 @@ function createHeaderReport(){
     var product_eff     = $('#product_eff').val();
     var ttl_eff     = $('#ttl_eff').val();
 
+    var yield     = $('#yield').val();
+    var target_yield     = $('#target_yield').val();
+    var target_eff     = $('#target_eff').val();
+
     var d = $('#r_date').val();
     var m = $('#r_month').val();
     var y = $('#r_year').val();
@@ -71,6 +75,9 @@ function createHeaderReport(){
             rework_oversea:rework_oversea,
             product_eff:product_eff,
             ttl_eff:ttl_eff,
+            yield:yield,
+            target_yield:target_yield,
+            target_eff:target_eff,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -118,6 +125,10 @@ function editHeaderReport(id){
     var product_eff     = $('#product_eff').val();
     var ttl_eff     = $('#ttl_eff').val();
 
+    var yield     = $('#yield').val();
+    var target_yield     = $('#target_yield').val();
+    var target_eff     = $('#target_eff').val();
+
     $('#loading-box').fadeIn(300);
 
     $.ajax({
@@ -156,6 +167,9 @@ function editHeaderReport(id){
             rework_oversea:rework_oversea,
             product_eff:product_eff,
             ttl_eff:ttl_eff,
+            yield:yield,
+            target_yield:target_yield,
+            target_eff:target_eff,
         },
         error: function (request, status, error) {
             console.log("Request Error");

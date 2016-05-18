@@ -294,6 +294,25 @@ $year 	= date('Y');
 					<div class="caption">Overseas</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="form-section">
+			<div class="title">10. Target</div>
+			<div class="input">
+				<div class="section-items">
+					
+					<div class="input"><input type="number" class="input-text" id="yield" placeholder="0" value="<?php echo $report->yield;?>"></div>
+					<div class="caption">Yield</div>
+				</div>
+				<div class="section-items">
+					<div class="input"><input type="number" class="input-text" id="target_yield" placeholder="0" value="<?php echo $report->target_yield;?>"></div>
+					<div class="caption">Target Yield</div>
+				</div>
+				<div class="section-items">
+					<div class="input"><input type="number" class="input-text" id="target_eff" placeholder="0" value="<?php echo $report->target_eff;?>"></div>
+					<div class="caption">Target EFF</div>
+				</div>
+			</div>
 		</div>		
 	</div>
 
