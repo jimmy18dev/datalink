@@ -56,7 +56,7 @@ $current_page['1'] = 'report_detail';
 	<div class="list-container">
 		<p class="topic">
 			<strong>1. Manpower:</strong>
-			<?php if($user->id == $report->leader_id){?>
+			<?php if($user->id == $report->leader_id && $report->can_edit){?>
 			<a href="report_header_editor.php?header=<?php echo $report->id;?>" class="edit-btn">Edit Report</a>
 			<?php }?>
 		</p>

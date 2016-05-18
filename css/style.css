@@ -386,6 +386,7 @@ body {
   font-size: 0.7em;
   color: #555555;
   line-height: 1em;
+  margin-left: 3%;
 }
 .container .header-report-form-container .form-section .input .section-items .input {
   width: 100%;
@@ -398,9 +399,10 @@ body {
   display: inline-block;
   font-family: sans-serif, 'Open Sans';
   font-size: 2em;
-  border: 0px;
   line-height: 1em;
   background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  padding: 5% 0%;
 }
 .container .header-report-form-container .form-section .input .section-items .input .input-select {
   border: 1px solid #DDDDDD;

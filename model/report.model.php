@@ -93,10 +93,12 @@ class ReportModel extends Database{
 	}
 
 	public function getData($id){
-		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.downtime_other,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.product_eff,header.ttl_eff,header.create_time,header.update_time,header.type,header.status,user.id leader_id,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.downtime_other,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.product_eff,header.ttl_eff,header.create_time,header.update_time,header.type,header.status,user.id leader_id,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
 		parent::bind(':id', $id);
 		parent::execute();
 		$dataset = parent::single();
+
+		$dataset['report_date'] = parent::date_format($dataset['report_date']);
 
 		$dataset['date'] = parent::date_format($dataset['create_time']);
 		$dataset['update'] = parent::date_facebookformat($dataset['update_time']);
