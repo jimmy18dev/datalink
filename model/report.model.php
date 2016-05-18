@@ -105,7 +105,6 @@ class ReportModel extends Database{
 		$dataset = parent::single();
 
 		$dataset['report_date'] = parent::date_format($dataset['report_date']);
-
 		$dataset['date'] = parent::date_format($dataset['create_time']);
 		$dataset['update'] = parent::date_facebookformat($dataset['update_time']);
 		$dataset['update_time'] = parent::datetime_thaiformat($dataset['update_time']);
@@ -117,7 +116,7 @@ class ReportModel extends Database{
 		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.product_eff,header.ttl_eff,header.create_time,header.update_time,user.id leader_id,user.code user_code,user.fname,user.lname 
 			FROM RTH_DailyOutputHeader AS header 
 			LEFT JOIN RTH_User AS user ON header.user_id = user.id 
-			WHERE header.line_no = :line_no 
+			WHERE header.line_no = :line_no AND header.status = "active" 
 			ORDER BY header.report_date DESC,header.line_no ASC');
 		parent::bind(':line_no', 		$line_no);
 		parent::execute();
@@ -132,12 +131,12 @@ class ReportModel extends Database{
 
 	public function listAllCaliber($header_id){
 		parent::query('SELECT detail.id detail_id,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,caliber.description caliber_description,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation,standard.hrs stdtime,route.route_name route_name 
-FROM RTH_DailyOutputDetail AS detail 
-LEFT JOIN RTH_CaliberCode AS caliber ON caliber.id = detail.caliber_id 
-LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
-LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
-WHERE detail.header_id = :header_id 
-GROUP BY detail.caliber_id');
+			FROM RTH_DailyOutputDetail AS detail 
+			LEFT JOIN RTH_CaliberCode AS caliber ON caliber.id = detail.caliber_id 
+			LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
+			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
+			WHERE detail.header_id = :header_id AND detail.status = "active" 
+			GROUP BY detail.caliber_id');
 		parent::bind(':header_id', 		$header_id);
 		parent::execute();
 		return $dataset = parent::resultset();
@@ -211,19 +210,22 @@ GROUP BY detail.caliber_id');
 
 	public function deleteHeader($header_id,$shift){
 		// Delete all report detail by header_id
-		parent::query('DELETE FROM RTH_DailyOutputDetail WHERE header_id = :header_id');
+		// parent::query('DELETE FROM RTH_DailyOutputDetail WHERE header_id = :header_id');
+		parent::query('UPDATE RTH_DailyOutputDetail SET status = "deleted" WHERE header_id = :header_id');
 		parent::bind(':header_id', 		$header_id);
 		parent::execute();
 
 		// Delete header report by header_id and shift
-		parent::query('DELETE FROM RTH_DailyOutputHeader WHERE id = :header_id AND shift = :shift');
+		// parent::query('DELETE FROM RTH_DailyOutputHeader WHERE id = :header_id AND shift = :shift');
+		parent::query('UPDATE RTH_DailyOutputHeader SET status = "deleted" WHERE id = :header_id AND shift = :shift');
 		parent::bind(':header_id', 		$header_id);
 		parent::bind(':shift', 			$shift);
 		parent::execute();
 	}
 
 	public function deleteDetail($header_id,$caliber_id){
-		parent::query('DELETE FROM RTH_DailyOutputDetail WHERE header_id = :header_id AND caliber_id = :caliber_id');
+		// parent::query('DELETE FROM RTH_DailyOutputDetail WHERE header_id = :header_id AND caliber_id = :caliber_id');
+		parent::query('UPDATE RTH_DailyOutputDetail SET status = "deleted" WHERE header_id = :header_id AND caliber_id = :caliber_id');
 		parent::bind(':header_id', 		$header_id);
 		parent::bind(':caliber_id', 		$caliber_id);
 		parent::execute();

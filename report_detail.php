@@ -7,6 +7,11 @@ if(!$user_online){
 
 if(!empty($_GET['header'])){
 	$report->getHeader($_GET['header']);
+
+	if($report->status == 'deleted'){
+		header("Location: error_deleted.php?");
+		die();
+	}
 }else{
 	header("Location: index.php?error=header_is_empty!");
 	die();
@@ -60,7 +65,7 @@ $current_page['1'] = 'report_detail';
 
 	<div class="list-container">
 		<p class="topic">
-			<strong>1. Manpower:</strong>
+			<strong>1. Manpower: <?php echo $report->status;?></strong>
 			<?php if($user->id == $report->leader_id && $report->can_edit){?>
 			<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="edit-btn">Edit Report</a>
 			<?php }?>

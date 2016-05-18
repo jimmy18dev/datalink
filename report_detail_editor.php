@@ -16,8 +16,11 @@ if(!$user_online){
 }else{
 	$report->getHeader($_GET['header']);
 
-	// Leader authorization
-	if(($user->id != $report->leader_id && $_GET['action'] != 'create') || !$report->can_edit){
+	if($report->status == 'deleted'){
+		header("Location: error_deleted.php?");
+		die();
+	}else if(($user->id != $report->leader_id && $_GET['action'] != 'create') || !$report->can_edit){
+		// Leader authorization
 		header("Location: error_permission.php?error=you_don't_have_permission!");
 		die();
 	}

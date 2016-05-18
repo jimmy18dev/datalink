@@ -31,6 +31,7 @@ class ReportController extends ReportModel{
 	public $yield;
 	public $target_yield;
 	public $target_eff;
+	
 	public $type;
 	public $status;
 
