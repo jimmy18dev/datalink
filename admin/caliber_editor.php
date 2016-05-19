@@ -57,44 +57,28 @@ if(empty($caliber->id)){
 	</div>
 
 	<div class="form-container">
-		<div class="form-items">
-			<div class="caption">Caliber Code</div>
-			<div class="input">
-				<input class="input-text half-size" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus placeholder="CODE">
-				<input class="input-text half-size" type="text" id="family" value="<?php echo $caliber->family;?>" placeholder="Family">
-			</div>
+
+		<div class="input">
+			<input class="input-text half-size font-bigsize" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus placeholder="Code">
+			<input class="input-text half-size font-bigsize" type="text" id="family" value="<?php echo $caliber->family;?>" placeholder="Family">
+
+			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this caliber code"><?php echo $caliber->description;?></textarea>
+
+			<p class="caption">Std.time (Hrs/K)</p>
+			<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>" placeholder="0.00">
+		</div>
+		<div class="control">
+			<div class="delete-btn">Delete Caliber</div>
+			<?php if(empty($caliber->id)){?>
+			<div class="submit-btn" onclick="javascript:create();">Create Caliber</div>
+			<?php }else{?>
+			<div class="submit-btn" onclick="javascript:edit(<?php echo $caliber->id;?>);">SAVE</div>
+			<?php }?>
 		</div>
 		
-		<div class="form-items">
-			<div class="caption">Std.time (Hrs/K)</div>
-			<div class="input">
-				<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>" placeholder="0.00">
-			</div>
-		</div>
 
-		<div class="form-items">
-			<div class="caption">Description</div>
-			<div class="input">
-				<textarea class="input-text input-textarea" id="description"><?php echo $caliber->description;?></textarea>
-			</div>
-		</div>
-
-		<div class="form-items">
-			<div class="caption">Remark</div>
-			<div class="input">
-				<input class="input-text" type="text" id="remark" value="<?php echo $caliber->remark;?>">
-			</div>
-		</div>
-
+		<input class="input-text" type="hidden" id="remark" value="<?php echo $caliber->remark;?>">
 		<input class="input-text" type="hidden" id="name" value="<?php echo $caliber->name;?>">
-
-		<a href="caliber.php" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
-
-		<?php if(empty($caliber->id)){?>
-		<div class="submit-btn" onclick="javascript:create();">Create</div>
-		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:edit(<?php echo $caliber->id;?>);">SAVE</div>
-		<?php }?>
 	</div>
 </div>
 

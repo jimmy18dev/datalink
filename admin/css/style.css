@@ -25,57 +25,37 @@ body {
   position: fixed;
   top: 0%;
   left: 0%;
-  width: 60%;
-  padding: 0% 20%;
-  height: 40px;
+  width: 100%;
+  padding: 0%;
+  height: 60px;
   float: left;
   display: inline-block;
-  background: #003399;
+  border-bottom: 2px solid #EEEEEE;
 }
-.header .logo {
+.header .header-items {
+  padding: 23px 0%;
+  height: 14px;
   float: left;
   display: inline-block;
-  font-weight: bold;
-  font-size: 1em;
-  padding: 12px 0px;
-  height: 16px;
-  color: #FFFFFF;
+  margin-left: 2%;
+  color: #555555;
 }
-.header .logo i {
+.header .header-items i {
   margin-right: 5px;
 }
-.header .navibar {
-  float: left;
-  display: inline-block;
-  padding: 12px 2%;
-  height: 16px;
-  color: #EEEEEE;
+.header .header-items:hover {
+  cursor: pointer;
+  color: #003399;
+  border-bottom: 2px solid #003399;
 }
-.header .navibar i {
-  margin-right: 10px;
+.header .header-items-active {
+  color: #003399;
+  border-bottom: 2px solid #003399;
 }
-.header .profile {
+.header .user-items {
   float: right;
-  display: inline-block;
-  padding: 12px 0px;
-  height: 16px;
-  color: #FFFFFF;
-}
-.header .profile .name {
-  float: left;
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 0.9em;
-  color: #FFFFFF;
-}
-.header .profile a {
-  color: #FFFFFF;
-}
-.header .profile a.logout {
-  color: #ea6153;
-}
-.header .profile a.logout:hover {
-  text-decoration: underline;
+  margin-right: 2%;
+  margin-left: 0%;
 }
 .dialog-box {
   width: 100%;
@@ -197,14 +177,14 @@ body {
 }
 .container {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 60px;
   min-height: 500px;
   float: left;
   display: inline-block;
 }
 .container .head {
-  width: 60%;
-  padding: 0% 20%;
+  width: 70%;
+  padding: 0% 15%;
   float: left;
   display: inline-block;
 }
@@ -216,297 +196,36 @@ body {
   color: #000000;
 }
 .container .head .head-title h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #000000;
   line-height: 1.3em;
 }
 .container .head .head-title p {
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 1.3em;
   color: #555555;
 }
-.container .head .header-report-table {
+.container .head .head-control {
   width: 100%;
   float: left;
   display: inline-block;
-  margin: 1% 0%;
-  line-height: 2em;
+  margin-bottom: 1%;
+}
+.container .head .head-control .create-btn {
+  float: left;
+  display: inline-block;
+  background: #003399;
+  color: #FFFFFF;
+  padding: 10px 20px;
   font-size: 0.9em;
+  border-radius: 3px;
 }
-.container .head .header-report-table .box1 {
-  width: 25%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border: 1px solid #EEEEEE;
-  border-right: 0px solid transparent;
-}
-.container .head .header-report-table .box1 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box1 .col {
-  width: 25%;
-  float: left;
-  display: inline-block;
-}
-.container .head .header-report-table .box1 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box1 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box2 {
-  width: 30%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border: 1px solid #EEEEEE;
-  border-right: 0px solid transparent;
-}
-.container .head .header-report-table .box2 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box2 .col {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .head .header-report-table .box2 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box2 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box3 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border: 1px solid #EEEEEE;
-  border-right: 0px solid transparent;
-}
-.container .head .header-report-table .box3 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box3 .col {
-  width: 33.33%;
-  float: left;
-  display: inline-block;
-}
-.container .head .header-report-table .box3 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box3 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box4 {
-  width: 12%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border: 1px solid #EEEEEE;
-  border-right: 0px solid transparent;
-}
-.container .head .header-report-table .box4 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box4 .col {
-  width: 50%;
-  float: left;
-  display: inline-block;
-}
-.container .head .header-report-table .box4 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box4 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box5 {
-  width: 12%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box5 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box5 .col {
-  width: 50%;
-  float: left;
-  display: inline-block;
-}
-.container .head .header-report-table .box5 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .head .header-report-table .box5 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.container .head .tab {
-  width: 100%;
-  float: left;
-  display: inline-block;
-}
-.container .head .tab .tab-items {
-  padding: 2% 0%;
-  color: #999999;
-  float: left;
-  display: inline-block;
-  margin-right: 3%;
-  margin-bottom: -1px;
-  border-bottom: 1px solid transparent;
-  font-size: 0.9em;
-}
-.container .head .tab .tab-items:hover {
-  cursor: pointer;
-  color: #003399;
-  border-bottom: 1px solid #003399;
-}
-.container .head .tab .tab-items i {
+.container .head .head-control .create-btn i {
   margin-right: 5px;
 }
-.container .head .tab .tab-items-active {
-  color: #003399;
-  border-bottom: 1px solid #003399;
-}
-.container .head .tab .items-right {
-  float: right;
-  margin-right: 0%;
-  margin-left: 3%;
-}
-.container .head .tab .cancel {
-  color: #e74c3c;
-}
-.container .head .tab .cancel:hover {
-  color: #e74c3c;
-  border-bottom: 1px solid #e74c3c;
-}
-.container .head .tab .btn-right {
-  float: right;
-  padding: 5px 10px;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 0.9em;
-  color: #AAAAAA;
-  background: #CCCCCC;
-  margin-bottom: 1%;
-  border-radius: 3px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-.container .head .tab .btn-right:hover {
+.container .head .head-control .create-btn:hover {
   cursor: pointer;
   opacity: 0.8;
-}
-.container .head .tab .btn-right i {
-  margin-left: 5px;
-}
-.container .head .tab .create {
-  color: #FFFFFF;
-  background: #4CAF50;
-}
-.container .menu-function {
-  width: 60%;
-  padding: 0% 20%;
-  float: left;
-  display: inline-block;
-  background: #FFFFFF;
-  margin-top: 3%;
-}
-.container .menu-function .section {
-  width: 100%;
-  float: left;
-  display: inline-block;
-}
-.container .menu-function .section h3 {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.5em;
-  color: #CCCCCC;
-  font-weight: normal;
-  line-height: 2em;
-}
-.container .menu-function .section .menu-container {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border: 1px solid #FAFAFA;
-}
-.container .menu-function .section .menu-container .menu-items {
-  width: 94%;
-  float: left;
-  display: inline-block;
-  padding: 3%;
-  border-bottom: 1px solid #FAFAFA;
-  color: #000000;
-}
-.container .menu-function .section .menu-container .menu-items:hover {
-  cursor: pointer;
-  background: #FAFAFA;
-  color: #003399;
-}
-.container .menu-function .section .menu-container .menu-items .icon {
-  width: 5%;
-  float: left;
-  display: inline-block;
-}
-.container .menu-function .section .menu-container .menu-items .caption {
-  width: 95%;
-  float: left;
-  display: inline-block;
-}
-.container .menu-function .section .menu-container .menu-items .caption .fa-angle-right {
-  float: right;
 }
 .container .header-report-form-container {
   width: 46%;
@@ -639,14 +358,82 @@ body {
   margin-left: 10px;
 }
 .container .form-container {
-  width: 46%;
-  padding: 2%;
-  margin: 2% 25%;
+  width: 40%;
+  margin: 0% 30%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
   border: 1px solid #EEEEEE;
   border-radius: 3px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.container .form-container .input {
+  width: 80%;
+  padding: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .input p.caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 3%;
+  font-size: 1.2em;
+  line-height: 2em;
+}
+.container .form-container .control {
+  width: 80%;
+  padding: 5% 10%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+}
+.container .form-container .control .submit-btn {
+  background: #003399;
+  float: right;
+  display: inline-block;
+  padding: 20px 30px;
+  color: #EEEEEE;
+  font-size: 1em;
+  border-radius: 3px;
+}
+.container .form-container .control .submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.container .form-container .control .delete-btn {
+  float: left;
+  display: inline-block;
+  padding: 20px 0px;
+  color: #CCCCCC;
+  font-size: 1em;
+}
+.container .form-container .control .delete-btn:hover {
+  color: #AAAAAA;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.container .form-container .input-text {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif, 'Open Sans';
+  font-size: 1.1em;
+  line-height: 1.5em;
+  border: 0px;
+  border-bottom: 1px solid #DDDDDD;
+  color: #555555;
+}
+.container .form-container .font-bigsize {
+  font-size: 2em;
+}
+.container .form-container .half-size {
+  width: 50%;
+}
+.container .form-container .input-textarea {
+  padding: 3% 0%;
+  min-height: 100px;
+  resize: none;
 }
 .container .form-container .operation-items {
   width: 100%;
@@ -708,86 +495,9 @@ body {
   float: left;
   display: inline-block;
 }
-.container .form-container h3 {
-  color: #DDDDDD;
-  font-size: 1.5em;
-  font-weight: normal;
-}
-.container .form-container .form-items {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  margin-top: 5%;
-}
-.container .form-container .form-items .caption {
-  width: 20%;
-  padding: 0% 5%;
-  float: left;
-  display: inline-block;
-  font-size: 0.9em;
-  line-height: 1.5em;
-  color: #555555;
-  text-align: right;
-}
-.container .form-container .form-items .input {
-  width: 70%;
-  float: left;
-  display: inline-block;
-}
-.container .form-container .form-items .input .input-text {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-family: sans-serif, 'Open Sans';
-  font-size: 0.9em;
-  line-height: 1.5em;
-  border: 0px;
-  border-bottom: 1px solid #DDDDDD;
-  color: #555555;
-}
-.container .form-container .form-items .input .input-textarea {
-  resize: none;
-}
-.container .form-container .form-items .input .half-size {
-  width: 50%;
-}
-.container .form-container .cancel-btn {
-  float: left;
-  margin-top: 5%;
-  padding: 8px 0px;
-  font-size: 0.9em;
-  line-height: 1.5em;
-  color: #AAAAAA;
-}
-.container .form-container .cancel-btn i {
-  margin-right: 10px;
-}
-.container .form-container .cancel-btn:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-.container .form-container .submit-btn {
-  float: right;
-  margin-top: 5%;
-  padding: 8px 25px;
-  font-size: 0.9em;
-  line-height: 1.5em;
-  background: #4CAF50;
-  color: #FFFFFF;
-  border-radius: 3px;
-  font-weight: bold;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-.container .form-container .submit-btn:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
-.container .form-container .submit-btn i {
-  margin-left: 10px;
-}
 .container .report-container {
-  width: 60%;
-  margin: 0% 20%;
+  width: 70%;
+  margin: 0% 15%;
   float: left;
   display: inline-block;
 }
@@ -944,9 +654,12 @@ body {
   font-size: 0.9em;
 }
 .container .list-container {
-  width: 100%;
+  width: 70%;
+  margin: 0% 15%;
   float: left;
   display: inline-block;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 .container .list-container .empty-items {
   width: 100%;
@@ -956,6 +669,297 @@ body {
   font-size: 1em;
   color: #CCCCCC;
   text-align: center;
+}
+.container .list-container .caliber-items {
+  width: 96%;
+  padding: 2%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .caliber-items:hover {
+  cursor: pointer;
+  color: #000000;
+}
+.container .list-container .caliber-items .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .caliber-items .col2 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .caliber-items .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  margin-right: 5%;
+}
+.container .list-container .caliber-items .col4 {
+  width: 55%;
+  float: left;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.container .list-container .operation-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  color: #AAAAAA;
+}
+.container .list-container .operation-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .operation-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .operation-items .col2 {
+  width: 55%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .operation-items .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .operation-items .col4 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .operation-items .col4 .btn {
+  background: #CCCCCC;
+  padding: 3px 5px;
+  font-size: 0.8em;
+  border-radius: 3px;
+  color: #FFFFFF;
+}
+.container .list-container .operation-items .col4 .btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.container .list-container .operation-items .col4 .btn i {
+  margin-left: 5px;
+}
+.container .list-container .operation-items .col4 .btn-active {
+  background: #003399;
+}
+.container .list-container .operation-items-add {
+  color: #555555;
+}
+.container .list-container .section-items {
+  width: 96%;
+  padding: 2%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .section-items:hover {
+  cursor: pointer;
+  color: #000000;
+}
+.container .list-container .section-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .section-items .col2 {
+  width: 75%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .section-items .col3 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .section-items .col3 a {
+  color: #003399;
+  text-decoration: none;
+}
+.container .list-container .section-items .col3 a:hover {
+  text-decoration: underline;
+}
+.container .list-container .remark-items {
+  width: 96%;
+  padding: 2%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .remark-items:hover {
+  cursor: pointer;
+  color: #000000;
+}
+.container .list-container .remark-items .col1 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .remark-items .col2 {
+  width: 90%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .remark-items .col3 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .remark-items .col3 a {
+  color: #003399;
+  text-decoration: none;
+}
+.container .list-container .remark-items .col3 a:hover {
+  text-decoration: underline;
+}
+.container .list-container .route-items {
+  width: 60%;
+  padding: 0.5% 20%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  color: #CCCCCC;
+}
+.container .list-container .route-items:hover {
+  background: #FAFAFA;
+}
+.container .list-container .route-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items .col2 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items .col3 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items .col4 {
+  width: 40%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .route-items-primary {
+  color: #555555;
+}
+.container .list-container .user-items {
+  width: 96%;
+  padding: 2%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .user-items:hover {
+  cursor: pointer;
+  color: #000000;
+}
+.container .list-container .user-items .col1 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-items .col2 {
+  width: 23%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-items .col2 i {
+  margin-right: 5px;
+  font-size: 0.8em;
+}
+.container .list-container .user-items .col2 .fa-circle {
+  color: #4CAF50;
+}
+.container .list-container .user-items .col2 .fa-circle-o {
+  color: #CCCCCC;
+}
+.container .list-container .user-items .col3 {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .user-items .col4 {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .user-items .col5 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  margin-left: 2%;
+}
+.container .list-container .user-items .col5 .line {
+  color: #003399;
+  border: 1px solid #003399;
+  padding: 1px 5px;
+  font-size: 0.7em;
+  border-radius: 2px;
+  margin-right: 7px;
+  font-weight: bold;
+}
+.container .list-container .user-items .col6 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .user-items .col6 .visit {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #CCCCCC;
+}
+.container .list-container .user-items .col7 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .user-items .col7 a {
+  color: #003399;
+  text-decoration: none;
+}
+.container .list-container .user-items .col7 a:hover {
+  text-decoration: underline;
+}
+.container .list-container .topic-fix {
+  font-size: 0.8em;
+  font-weight: bold;
+  background: #FAFAFA;
+  color: #555555;
+  padding: 1% 2%;
 }
 .container .list-container .option-control {
   width: 60%;
@@ -1115,345 +1119,6 @@ body {
   text-align: right;
   border-right: 1px solid #EEEEEE;
 }
-.container .list-container .report-header-items {
-  width: 60%;
-  padding: 0% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 2.5em;
-  font-size: 0.9em;
-}
-.container .list-container .report-header-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .report-header-items .mini {
-  font-size: 0.7em;
-}
-.container .list-container .report-header-items .col1 {
-  width: 12%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col2 {
-  width: 8%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col3 {
-  width: 6%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col4 {
-  width: 11%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-  padding-right: 1%;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col5 {
-  width: 11%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-  padding-right: 1%;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col6 {
-  width: 6%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col7 {
-  width: 6%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col8 {
-  width: 6%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col9 {
-  width: 6%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col10 {
-  width: 11%;
-  float: left;
-  display: inline-block;
-  padding: 0% 1%;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-header-items .col11 {
-  width: 11%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .operation-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-  color: #AAAAAA;
-}
-.container .list-container .operation-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .operation-items .col1 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .operation-items .col2 {
-  width: 55%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .operation-items .col3 {
-  width: 15%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .operation-items .col4 {
-  width: 10%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .operation-items .col4 .btn {
-  background: #CCCCCC;
-  padding: 3px 5px;
-  font-size: 0.8em;
-  border-radius: 3px;
-  color: #FFFFFF;
-}
-.container .list-container .operation-items .col4 .btn:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-.container .list-container .operation-items .col4 .btn i {
-  margin-left: 5px;
-}
-.container .list-container .operation-items .col4 .btn-active {
-  background: #003399;
-}
-.container .list-container .operation-items-add {
-  color: #555555;
-}
-.container .list-container .section-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-}
-.container .list-container .section-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .section-items .col1 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .section-items .col2 {
-  width: 60%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .section-items .col3 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .remark-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-  color: #555555;
-}
-.container .list-container .remark-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .remark-items .col1 {
-  width: 5%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .remark-items .col2 {
-  width: 95%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .caliber-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-  color: #555555;
-}
-.container .list-container .caliber-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .caliber-items .col1 {
-  width: 15%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .caliber-items .col2 {
-  width: 15%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .caliber-items .col3 {
-  width: 15%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-  margin-right: 5%;
-}
-.container .list-container .caliber-items .col4 {
-  width: 40%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-  color: #CCCCCC;
-}
-.container .list-container .route-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .route-items .col1 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col2 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col3 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col4 {
-  width: 40%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items-primary {
-  color: #555555;
-}
-.container .list-container .user-items {
-  width: 60%;
-  padding: 0.5% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-}
-.container .list-container .user-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .user-items .col1 {
-  width: 15%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .user-items .col2 {
-  width: 26%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .user-items .col2 i {
-  margin-right: 10px;
-}
-.container .list-container .user-items .col2 .fa-circle {
-  color: #4CAF50;
-}
-.container .list-container .user-items .col2 .fa-circle-o {
-  color: #CCCCCC;
-}
-.container .list-container .user-items .col2 a {
-  font-size: 0.7em;
-  color: #003399;
-}
-.container .list-container .user-items .col2 a:hover {
-  text-decoration: underline;
-}
-.container .list-container .user-items .col3 {
-  width: 12%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-}
-.container .list-container .user-items .col4 {
-  width: 12%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-}
-.container .list-container .user-items .col5 {
-  width: 13%;
-  float: left;
-  display: inline-block;
-  margin-left: 2%;
-}
-.container .list-container .user-items .col6 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .user-items .col6 .visit {
-  font-size: 0.8em;
-  font-style: italic;
-  color: #CCCCCC;
-}
-.container .list-container .topic-fix {
-  background: #FAFAFA;
-  font-size: 0.7em;
-}
 .container .content {
   width: 70%;
   padding: 0% 15%;
@@ -1514,168 +1179,3 @@ body {
   font-size: 0.8em;
 }
 /* Other Device and Screen */
-@media only screen and (min-width: 520px) and (max-width: 759px) {
-  .header {
-    width: 100%;
-    padding: 0%;
-    height: 50px;
-  }
-  .header .logo {
-    font-size: 1em;
-    height: 20px;
-    padding: 15px 2%;
-  }
-  .header .profile {
-    height: 26px;
-    padding: 12px 2%;
-  }
-  .header .profile img {
-    width: 26px;
-    height: 26px;
-  }
-  .header .profile .name {
-    line-height: 2em;
-    margin-right: 10px;
-    font-size: 0.9em;
-  }
-  .container {
-    width: 100%;
-    margin-top: 50px;
-    min-height: 300px;
-  }
-  .container .head {
-    width: 96%;
-    padding: 0% 2%;
-  }
-  .container .head .head-title {
-    padding: 3% 0%;
-    font-size: 2.5em;
-  }
-  .container .head .tab .tab-items {
-    padding: 15px;
-    color: #EEEEEE;
-    margin-right: 1%;
-  }
-  .container .head .tab .tab-items i {
-    margin-left: 10px;
-  }
-  .container .head .tab .items-right {
-    margin-right: 0%;
-    margin-left: 1%;
-  }
-  .container .topic-fix .user-topic-fix {
-    width: 96%;
-    padding: 3% 2%;
-    font-size: 0.8em;
-  }
-  .container .topic-fix .user-topic-fix .info {
-    width: 45%;
-  }
-  .container .topic-fix .user-topic-fix .online {
-    width: 25%;
-  }
-  .container .topic-fix .user-topic-fix .time {
-    width: 15%;
-  }
-  .container .topic-fix .user-topic-fix .status {
-    width: 15%;
-  }
-  .container .list .user-items {
-    width: 96%;
-    padding: 2% 0%;
-    margin: 0% 2%;
-  }
-  .container .list .user-items .avatar {
-    width: 8%;
-    margin-right: 2%;
-  }
-  .container .list .user-items .info {
-    width: 35%;
-    line-height: 1.2em;
-    padding-top: 0.5%;
-  }
-  .container .list .user-items .info .position {
-    font-size: 0.8em;
-  }
-  .container .list .user-items .online {
-    width: 25%;
-    font-size: 0.9em;
-    padding-top: 2%;
-    line-height: 1.7em;
-  }
-  .container .list .user-items .online i {
-    margin-left: 5px;
-    font-size: 0.8em;
-  }
-  .container .list .user-items .time {
-    width: 15%;
-    font-size: 0.9em;
-    padding-top: 2%;
-    line-height: 1.7em;
-  }
-  .container .list .user-items .status {
-    width: 15%;
-    font-size: 0.9em;
-    padding-top: 2%;
-    line-height: 1.7em;
-  }
-  .container .list .user-items .status i {
-    margin-left: 10px;
-  }
-  .container .content {
-    width: 70%;
-    padding: 0% 15%;
-  }
-  .container .main-menu {
-    width: 70%;
-    padding: 0% 15%;
-  }
-  .container .main-menu .menu-items {
-    width: 31.33%;
-    padding: 4% 0%;
-    margin-top: 3%;
-    margin-right: 3%;
-    float: left;
-    text-align: center;
-    background: #FFFFFF;
-    border-radius: 3px;
-  }
-  .container .main-menu .menu-items:nth-child(3n) {
-    margin-right: 0%;
-    float: right;
-  }
-  .container .main-menu .menu-items .icon {
-    font-size: 3em;
-    line-height: 1.5em;
-  }
-  .container .main-menu .menu-items .title {
-    font-size: 1em;
-    line-height: 2em;
-  }
-  .container .main-menu .menu-items .tag {
-    font-size: 0.7em;
-    line-height: 1.5em;
-    background: #DDDDDD;
-    display: inline-block;
-    padding: 0px 5px;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-  .footer {
-    width: 70%;
-    padding: 3% 15%;
-    margin-top: 3%;
-    float: left;
-    display: inline-block;
-    background: #F7F7F7;
-    text-align: center;
-  }
-  .footer p {
-    font-size: 0.9em;
-    line-height: 1.5em;
-  }
-  .footer p.mini {
-    font-size: 0.8em;
-  }
-  /* Other Device and Screen */
-}

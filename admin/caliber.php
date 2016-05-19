@@ -44,9 +44,9 @@ $current_page['1'] = 'caliber';
 			<p>a system of words, letters, figures, or other symbols substituted for other words, letters, etc., especially for the purposes of secrecy.</p>
 		</div>
 
-		<div class="tab">
+		<div class="head-control">
 			<!-- <div class="tab-items tab-items-active">All</div> -->
-			<a href="caliber_editor.php" class="btn-right create">New caliber code<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a href="caliber_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW CALIBER</a>
 		</div>
 	</div>
 	<!-- Table -->

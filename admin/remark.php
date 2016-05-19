@@ -45,8 +45,8 @@ $current_page['1'] = 'remark';
 			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
 		</div>
 
-		<div class="tab">
-			<a href="remark_editor.php?" class="btn-right create">New Remark<i class="fa fa-angle-right"></i></a>
+		<div class="head-control">
+			<a href="remark_editor.php?" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a>
 		</div>
 	</div>
 
@@ -55,6 +55,7 @@ $current_page['1'] = 'remark';
 		<div class="remark-items topic-fix">
 			<div class="col1">No.</div>
 			<div class="col2">Message</div>
+			<div class="col3">Edit</div>
 		</div>
 
 		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>

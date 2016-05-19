@@ -45,16 +45,16 @@ $current_page['1'] = 'section';
 			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
 		</div>
 
-		<div class="tab">
-			<a href="section_editor.php" class="btn-right create">Create section<i class="fa fa-angle-right"></i></a>
+		<div class="head-control">
+			<a href="section_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a>
 		</div>
 	</div>
 
 	<div class="list-container">
 		<div class="section-items topic-fix">
-			<div class="col1">Name</div>
+			<div class="col1">Section</div>
 			<div class="col2">Description</div>
-			<div class="col3">Updated</div>
+			<div class="col3">Edit</div>
 		</div>
 
 		<?php $section->listAllSection(array('type' => 'section-items'));?>

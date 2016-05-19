@@ -43,9 +43,8 @@ $current_page['1'] = 'user';
 			<h1>User management</h1>
 			<p>User Management is an authentication feature that provides administrators with the ability to identify and control the state of users logged into the network.</p>
 		</div>
-		<div class="tab">
-			<!-- <div class="tab-items tab-items-active">All User</div> -->
-			<a href="user_editor.php" class="btn-right create">New user <i class="fa fa-angle-right"></i></a>
+		<div class="head-control">
+			<a href="user_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW USER</a>
 		</div>
 	</div>
 
@@ -56,8 +55,9 @@ $current_page['1'] = 'user';
 			<div class="col2">Nane</div>
 			<div class="col3">Username</div>
 			<div class="col4">Password</div>
-			<div class="col5">Section / Line No.</div>
+			<div class="col5">Line No. / Section</div>
 			<div class="col6">Last visit</div>
+			<div class="col7">Edit</div>
 		</div>
 
 		<?php echo $user->listAllUser(array('type' => 'user-items'));?>
