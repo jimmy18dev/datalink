@@ -49,9 +49,8 @@ $current_page['2'] = 'caliber_code';
 			<p>Standard time: <strong><?php echo $caliber->hrs;?></strong> Hrs/K | Updated: <?php echo $caliber->update_time;?> | <?php echo $caliber->description;?> | <a href="caliber_editor.php?caliber=<?php echo $caliber->id?>">[Edit]</a></p>
 		</div>
 
-		<div class="tab">
-			<!-- <div class="tab-items tab-items-active">All</div> -->
-			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="btn-right create">Create route<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+		<div class="head-control">
+			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE ROUTE</a>
 		</div>
 	</div>
 	<!-- Table -->
@@ -61,6 +60,7 @@ $current_page['2'] = 'caliber_code';
 			<div class="col2">Type</div>
 			<div class="col3">Updated</div>
 			<div class="col4">Description</div>
+			<div class="col5">Edit</div>
 		</div>
 
 		<?php $caliber->listAllRoutes($caliber->id,array('type' => 'route-items'));?>

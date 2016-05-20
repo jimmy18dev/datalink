@@ -16,6 +16,8 @@ if(!empty($_GET['route'])){
 }
 
 // current page
+$current_page['1'] = 'caliber';
+$current_page['2'] = 'caliber_code';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -48,45 +50,25 @@ if(!empty($_GET['route'])){
 <body>
 <?php include'header.php';?>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>General Remark</h1>
-			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
-		</div>
-	</div>
-
 	<div class="form-container">
-		<div class="form-items">
-			<div class="caption">Route Code</div>
-			<div class="input">
-				<input class="input-text" type="text" id="route_code" value="<?php echo $caliber->route_code;?>" autofocus>
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Route Name</div>
-			<div class="input">
-				<input class="input-text" type="text" id="route_name" value="<?php echo $caliber->route_name;?>">
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Description</div>
-			<div class="input">
-				<input class="input-text" type="text" id="name" value="<?php echo $caliber->route_description;?>">
-			</div>
-		</div>
 
-		<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
+		<div class="input">
+			<input class="input-text font-bigsize" type="text" id="route_code" value="<?php echo $caliber->route_code;?>" autofocus>
+			<input class="input-text" type="text" id="route_name" value="<?php echo $caliber->route_name;?>">
 
-		<!-- You can't update caliner code! -->
-		<input type="hidden" id="caliber_id" value="<?php echo $caliber->id;?>">
+			<textarea class="input-text input-textarea" id="name" placeholder="Add a description for this route"><?php echo $caliber->route_description;?></textarea>
 
-		<a href="route.php?caliber=<?php echo $caliber->id;?>" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
-		
-		<?php if(empty($caliber->route_id)){?>
-		<div class="submit-btn" onclick="javascript:createRoute();">CREATE<i class="fa fa-angle-right"></i></div>
-		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:editRoute(<?php echo $caliber->route_id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
-		<?php }?>
+			<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
+			<!-- You can't update caliner code! -->
+			<input type="hidden" id="caliber_id" value="<?php echo $caliber->id;?>">
+		</div>
+		<div class="control">
+			<?php if(empty($caliber->route_id)){?>
+			<div class="submit-btn" onclick="javascript:createRoute();">CREATE<i class="fa fa-angle-right"></i></div>
+			<?php }else{?>
+			<div class="submit-btn" onclick="javascript:editRoute(<?php echo $caliber->route_id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
+			<?php }?>
+		</div>
 	</div>
 </div>
 

@@ -360,6 +360,7 @@ body {
 .container .form-container {
   width: 40%;
   margin: 0% 30%;
+  margin-top: 3%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
@@ -423,6 +424,7 @@ body {
   border: 0px;
   border-bottom: 1px solid #DDDDDD;
   color: #555555;
+  margin-bottom: 3%;
 }
 .container .form-container .font-bigsize {
   font-size: 2em;
@@ -709,17 +711,17 @@ body {
   overflow: hidden;
 }
 .container .list-container .operation-items {
-  width: 60%;
-  padding: 0.5% 20%;
+  width: 96%;
+  padding: 2%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
+  border-bottom: 1px solid #F0F0F0;
   font-size: 0.9em;
-  color: #AAAAAA;
+  color: #555555;
 }
 .container .list-container .operation-items:hover {
-  background: #FAFAFA;
+  cursor: pointer;
+  color: #000000;
 }
 .container .list-container .operation-items .col1 {
   width: 20%;
@@ -727,7 +729,7 @@ body {
   display: inline-block;
 }
 .container .list-container .operation-items .col2 {
-  width: 55%;
+  width: 50%;
   float: left;
   display: inline-block;
 }
@@ -758,6 +760,19 @@ body {
 }
 .container .list-container .operation-items .col4 .btn-active {
   background: #003399;
+}
+.container .list-container .operation-items .col5 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .operation-items .col5 a {
+  color: #003399;
+  text-decoration: none;
+}
+.container .list-container .operation-items .col5 a:hover {
+  text-decoration: underline;
 }
 .container .list-container .operation-items-add {
   color: #555555;
@@ -835,17 +850,17 @@ body {
   text-decoration: underline;
 }
 .container .list-container .route-items {
-  width: 60%;
-  padding: 0.5% 20%;
+  width: 96%;
+  padding: 2%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  line-height: 1.5em;
+  border-bottom: 1px solid #F0F0F0;
   font-size: 0.9em;
-  color: #CCCCCC;
+  color: #555555;
 }
 .container .list-container .route-items:hover {
-  background: #FAFAFA;
+  cursor: pointer;
+  color: #000000;
 }
 .container .list-container .route-items .col1 {
   width: 20%;
@@ -863,9 +878,22 @@ body {
   display: inline-block;
 }
 .container .list-container .route-items .col4 {
-  width: 40%;
+  width: 35%;
   float: left;
   display: inline-block;
+}
+.container .list-container .route-items .col5 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .route-items .col5 a {
+  color: #003399;
+  text-decoration: none;
+}
+.container .list-container .route-items .col5 a:hover {
+  text-decoration: underline;
 }
 .container .list-container .route-items-primary {
   color: #555555;

@@ -50,51 +50,23 @@ if(empty($userData['id'])){
 <body>
 <?php include'header.php';?>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>User management</h1>
-			<p>User Management is an authentication feature that provides administrators with the ability to identify and control the state of users logged into the network.</p>
-		</div>
-	</div>
-
 	<div class="form-container">
-		<div class="form-items">
-			<div class="caption">รหัสพนักงาน</div>
-			<div class="input">
-				<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" autofocus placeholder="ตัวเลขหรือตัวอักษรเท่านั้น">
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">ชื่อ-นามสกุล</div>
-			<div class="input">
-				<input class="input-text half-size" type="text" id="fname" value="<?php echo $userData['fname'];?>" placeholder="ชื่อจริง">
-				<input class="input-text half-size" type="text" id="lname" value="<?php echo $userData['lname'];?>" placeholder="นามสกุล">
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Username</div>
-			<div class="input">
-				<input class="input-text" type="text" id="username" value="<?php echo $userData['username'];?>" placeholder="ไม่น้อยกว่า 6 ตัวอีกษร">
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">รหัสผ่าน</div>
-			<div class="input">
-				<input class="input-text" type="text" id="password" value="<?php echo $userData['password'];?>" placeholder="ไม่น้อยกว่า 6 ตัวอีกษร">
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Section</div>
-			<div class="input">
-				<select class="input-text" id="section_id">
+		<div class="input">
+			<input class="input-text half-size font-bigsize" type="text" id="fname" value="<?php echo $userData['fname'];?>" placeholder="First Name">
+			<input class="input-text half-size font-bigsize" type="text" id="lname" value="<?php echo $userData['lname'];?>" placeholder="Last Name">
+
+			<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" autofocus placeholder="Employee ID">
+
+			<p class="caption">User Login</p>
+			<input class="input-text" type="text" id="username" value="<?php echo $userData['username'];?>" placeholder="Username">
+			<input class="input-text" type="text" id="password" value="<?php echo $userData['password'];?>" placeholder="Password">
+
+			<p class="caption">Section</p>
+			<select class="input-text" id="section_id">
 					<option value="0">Section/Position</option>
 					<?php $section->listAllSection(array('type' => 'section-option-select-items','current'=> $userData['section_id']));?>
 				</select>
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Line No.</div>
-			<div class="input">
+
 				<select class="input-text" id="line_default">
 					<option value="0">Line No.</option>
 					<option value="1" <?php echo ($userData['line_default'] == 1?'selected':'');?>>1</option>
@@ -112,16 +84,14 @@ if(empty($userData['id'])){
 					<option value="13" <?php echo ($userData['line_default'] == 13?'selected':'');?>>13</option>
 					<option value="14" <?php echo ($userData['line_default'] == 14?'selected':'');?>>14</option>
 				</select>
-			</div>
 		</div>
-
-		<a href="user.php" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
-
-		<?php if(empty($userData['id'])){?>
-		<div class="submit-btn" onclick="javascript:register();">Register<i class="fa fa-angle-right"></i></div>
-		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);">SAVE</div>
-		<?php }?>
+		<div class="control">
+			<?php if(empty($userData['id'])){?>
+			<div class="submit-btn" onclick="javascript:register();">Register<i class="fa fa-angle-right"></i></div>
+			<?php }else{?>
+			<div class="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);">SAVE</div>
+			<?php }?>
+		</div>		
 	</div>
 </div>
 

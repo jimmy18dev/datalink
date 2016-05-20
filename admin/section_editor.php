@@ -50,34 +50,18 @@ if(empty($section->id)){
 <body>
 <?php include'header.php';?>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>General Remark</h1>
-			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
-		</div>
-	</div>
-
 	<div class="form-container">
-		<div class="form-items">
-			<div class="caption">Name</div>
-			<div class="input">
-				<input class="input-text" type="text" id="name" value="<?php echo $section->name;?>" autofocus>
-			</div>
+		<div class="input">
+			<input class="input-text font-bigsize" type="text" id="name" value="<?php echo $section->name;?>" placeholder="Section Name" autofocus>
+			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this section"><?php echo $section->description;?></textarea>
 		</div>
-		<div class="form-items">
-			<div class="caption">Description</div>
-			<div class="input">
-				<input class="input-text" type="text" id="description" value="<?php echo $section->description;?>">
-			</div>
-		</div>
-
-		<a href="section.php?" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
-
-		<?php if(empty($section->id)){?>
-		<div class="submit-btn" onclick="javascript:createSection();">CREATE<i class="fa fa-angle-right"></i></div>
-		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
-		<?php }?>
+		<div class="control">
+			<?php if(empty($section->id)){?>
+			<div class="submit-btn" onclick="javascript:createSection();">CREATE<i class="fa fa-angle-right"></i></div>
+			<?php }else{?>
+			<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
+			<?php }?>
+		</div>		
 	</div>
 </div>
 

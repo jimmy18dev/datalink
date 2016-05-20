@@ -45,37 +45,21 @@ $current_page['2'] = 'new_operation';
 <body>
 <?php include 'header.php';?>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>OPERATIONS</h1>
-		</div>
-		<div class="tab">
-			<a href="caliber_code.php?caliber=<?php echo $caliber->id;?>" class="tab-items items-right cancel"><i class="fa fa-times"></i>Cancel</a>
-		</div>
-	</div>
-
 	<div class="form-container">
-		<h3>Create Operation</h3>
-		<div class="form-items">
-			<div class="caption">Name</div>
-			<div class="input">
-				<input class="input-text" type="text" id="name" value="<?php echo $caliber->operation_name;?>">
-			</div>
-		</div>
-		<div class="form-items">
-			<div class="caption">Description</div>
-			<div class="input">
-				<input class="input-text" type="text" id="description" value="<?php echo $caliber->operation_description;?>" autofocus>
-			</div>
-		</div>
 
-		<input class="input-text" type="hidden" id="operation_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
+		<div class="input">
+			<input class="input-text font-bigsize" type="text" id="name" placeholder="Operation Name" value="<?php echo $caliber->operation_name;?>">
+			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this operation"><?php echo $caliber->operation_description;?></textarea>
 
-		<?php if(empty($caliber->operation_id)){?>
-		<div class="submit-btn" onclick="javascript:createOperation();">CREATE</div>
-		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->operation_id;?>);">SAVE</div>
-		<?php }?>
+			<input class="input-text" type="hidden" id="operation_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
+		</div>
+		<div class="control">
+			<?php if(empty($caliber->operation_id)){?>
+			<div class="submit-btn" onclick="javascript:createOperation();">CREATE</div>
+			<?php }else{?>
+			<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->operation_id;?>);">SAVE</div>
+			<?php }?>
+		</div>
 	</div>
 </div>
 

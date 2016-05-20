@@ -49,8 +49,8 @@ $current_page['1'] = 'caliber';
 			<p>| <a href="route_editor.php?route=<?php echo $caliber->route_id;?>">edit</a></p>
 		</div>
 
-		<div class="tab">
-			<a href="operation_editor.php" class="btn-right create">Create operation<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+		<div class="head-control">
+			<a href="operation_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE OPEARATION</a>
 		</div>
 	</div>
 	<!-- Table -->
@@ -60,6 +60,7 @@ $current_page['1'] = 'caliber';
 			<div class="col2">Descriptions</div>
 			<div class="col3">Updated</div>
 			<div class="col4">Status</div>
+			<div class="col5">Edit</div>
 		</div>
 
 		<?php $caliber->listAllOperations($caliber->route_id,array('type' => 'operation-items'));?>

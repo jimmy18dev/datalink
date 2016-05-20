@@ -49,15 +49,7 @@ if(empty($caliber->id)){
 <body>
 <?php include'header.php';?>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>Caliber Code</h1>
-			<p>a system of words, letters, figures, or other symbols substituted for other words, letters, etc., especially for the purposes of secrecy.</p>
-		</div>
-	</div>
-
 	<div class="form-container">
-
 		<div class="input">
 			<input class="input-text half-size font-bigsize" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus placeholder="Code">
 			<input class="input-text half-size font-bigsize" type="text" id="family" value="<?php echo $caliber->family;?>" placeholder="Family">

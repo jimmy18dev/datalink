@@ -50,30 +50,19 @@ if(empty($remark->id)){
 <body>
 <?php include'header.php';?>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>General Remark</h1>
-			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
-		</div>
-	</div>
-
 	<div class="form-container">
-		<div class="form-items">
-			<div class="caption">Description</div>
-			<div class="input">
-				<input class="input-text" type="text" id="description" value="<?php echo $remark->description;?>" autofocus>
-			</div>
+		<div class="input">
+			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this remark"><?php echo $remark->description;?></textarea>
+
+			<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
 		</div>
-
-		<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
-
-		<a href="remark.php?" class="cancel-btn"><i class="fa fa-angle-left"></i>Cancel</a>
-
-		<?php if(empty($remark->id)){?>
-		<div class="submit-btn" onclick="javascript:create();">CREATE<i class="fa fa-angle-right"></i></div>
-		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
-		<?php }?>
+		<div class="control">
+			<?php if(empty($remark->id)){?>
+			<div class="submit-btn" onclick="javascript:create();">CREATE<i class="fa fa-angle-right"></i></div>
+			<?php }else{?>
+			<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
+			<?php }?>
+		</div>
 	</div>
 </div>
 
