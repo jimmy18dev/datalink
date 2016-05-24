@@ -10,7 +10,7 @@
 	float: left;
 	display: inline-block;
 	box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.1);
-	background: #FAFAFA;
+	background: #FFFFFF;
 	z-index: 99;
 
 	.logo{
@@ -743,62 +743,54 @@
 		}
 	}
 
-	.filter{
+	.graph-filter{
 		width: 90%;
 		padding: 0% 5%;
 		float: left;
 		display: inline-block;
+		font-size: 0.9em;
+		color: #000000;
 
 		.line{
-			width: 100%;
-			padding: 2.5% 0%;
-			padding-bottom: 1%;
-			float: left;
+			width: 45%;
+			float: right;
 			display: inline-block;
-			font-size: 1.2em;
-			color: #000000;
 
 			.caption{
-				float: left;
-				display: inline-block;
+				float: right;
 			}
-			.line-items{
-				float: left;
-				display: inline-block;
-				margin-left: 10px;
-				color: #AAAAAA;
-			}
-			.active{
-				text-decoration: underline;
-				color: #003399;
-				font-weight: bold;
+			.filter-items{
+				float: right;
 			}
 		}
 
 		.month{
-			width: 100%;
-			padding-bottom: 2.5%;
+			.caption{
+				padding-left: 0px;
+			}
+		}
+
+		.caption{
+			padding: 20px 10px;
 			float: left;
 			display: inline-block;
-			font-size: 1em;
-			color: #000000;
+		}
+		.filter-items{
+			float: left;
+			display: inline-block;
+			padding: 20px 10px;
+			color: #AAAAAA;
+			border-top: 1px solid transparent;
 
-			.caption{
-				float: left;
-				display: inline-block;
+			&:hover{
+				border-top: 1px solid #CCCCCC;
+				color: #000000;
 			}
-
-			.month-items{
-				float: left;
-				display: inline-block;
-				margin-left: 10px;
-				color: #AAAAAA;
-			}
-			.active{
-				text-decoration: underline;
-				color: #003399;
-				font-weight: bold;
-			}
+		}
+		.active{
+			border-top: 1px solid #003399;
+			color: #003399;
+			font-weight: bold;
 		}
 	}
 

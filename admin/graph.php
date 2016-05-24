@@ -44,27 +44,28 @@ $current_page['1'] = 'report';
         <p>MOVEMENT ASSEMBLY</p>
 		<h1>YIELD & TOTAL EFFICIENCY</h1>
 	</div>
-    <div class="filter">
-        <div class="line">
-            <span class="caption">Line No:</span>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=1" class="line-items <?php echo ($_GET['line'] == 1?'active':'');?>">1</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=2" class="line-items <?php echo ($_GET['line'] == 2?'active':'');?>">2</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=3" class="line-items <?php echo ($_GET['line'] == 3?'active':'');?>">3</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=4" class="line-items <?php echo ($_GET['line'] == 4?'active':'');?>">4</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=5" class="line-items <?php echo ($_GET['line'] == 5?'active':'');?>">5</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=6" class="line-items <?php echo ($_GET['line'] == 6?'active':'');?>">6</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=7" class="line-items <?php echo ($_GET['line'] == 7?'active':'');?>">7</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=8" class="line-items <?php echo ($_GET['line'] == 8?'active':'');?>">8</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=9" class="line-items <?php echo ($_GET['line'] == 9?'active':'');?>">9</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=10" class="line-items <?php echo ($_GET['line'] == 10?'active':'');?>">10</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=11" class="line-items <?php echo ($_GET['line'] == 11?'active':'');?>">11</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=12" class="line-items <?php echo ($_GET['line'] == 12?'active':'');?>">12</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=13" class="line-items <?php echo ($_GET['line'] == 13?'active':'');?>">13</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=14" class="line-items <?php echo ($_GET['line'] == 14?'active':'');?>">14</a>
-        </div>
+    <div class="graph-filter">
         <div class="month">
-            <span class="caption">Retrieve data from month:</span>
+            <span class="caption">Month:</span>
             <?php $report->ListMonth(array('type' => 'month-items','line_current' => $_GET['line'],'year_current' => $_GET['year'],'month_current' => $_GET['month']));?>
+        </div>
+
+        <div class="line">
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=14" class="filter-items <?php echo ($_GET['line'] == 14?'active':'');?>">14</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=13" class="filter-items <?php echo ($_GET['line'] == 13?'active':'');?>">13</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=12" class="filter-items <?php echo ($_GET['line'] == 12?'active':'');?>">12</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=11" class="filter-items <?php echo ($_GET['line'] == 11?'active':'');?>">11</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=10" class="filter-items <?php echo ($_GET['line'] == 10?'active':'');?>">10</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=9" class="filter-items <?php echo ($_GET['line'] == 9?'active':'');?>">9</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=8" class="filter-items <?php echo ($_GET['line'] == 8?'active':'');?>">8</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=7" class="filter-items <?php echo ($_GET['line'] == 7?'active':'');?>">7</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=6" class="filter-items <?php echo ($_GET['line'] == 6?'active':'');?>">6</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=5" class="filter-items <?php echo ($_GET['line'] == 5?'active':'');?>">5</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=4" class="filter-items <?php echo ($_GET['line'] == 4?'active':'');?>">4</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=3" class="filter-items <?php echo ($_GET['line'] == 3?'active':'');?>">3</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=2" class="filter-items <?php echo ($_GET['line'] == 2?'active':'');?>">2</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=1" class="filter-items <?php echo ($_GET['line'] == 1?'active':'');?>">1</a>
+            <span class="caption">Line No:</span>
         </div>
     </div>
 

@@ -31,7 +31,7 @@ body {
   float: left;
   display: inline-block;
   box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.1);
-  background: #FAFAFA;
+  background: #FFFFFF;
   z-index: 99;
 }
 .header .logo {
@@ -684,56 +684,46 @@ body {
   font-size: 1em;
   line-height: 1.5em;
 }
-.container .filter {
+.container .graph-filter {
   width: 90%;
   padding: 0% 5%;
   float: left;
   display: inline-block;
-}
-.container .filter .line {
-  width: 100%;
-  padding: 2.5% 0%;
-  padding-bottom: 1%;
-  float: left;
-  display: inline-block;
-  font-size: 1.2em;
+  font-size: 0.9em;
   color: #000000;
 }
-.container .filter .line .caption {
+.container .graph-filter .line {
+  width: 45%;
+  float: right;
+  display: inline-block;
+}
+.container .graph-filter .line .caption {
+  float: right;
+}
+.container .graph-filter .line .filter-items {
+  float: right;
+}
+.container .graph-filter .month .caption {
+  padding-left: 0px;
+}
+.container .graph-filter .caption {
+  padding: 20px 10px;
   float: left;
   display: inline-block;
 }
-.container .filter .line .line-items {
+.container .graph-filter .filter-items {
   float: left;
   display: inline-block;
-  margin-left: 10px;
+  padding: 20px 10px;
   color: #AAAAAA;
+  border-top: 1px solid transparent;
 }
-.container .filter .line .active {
-  text-decoration: underline;
-  color: #003399;
-  font-weight: bold;
-}
-.container .filter .month {
-  width: 100%;
-  padding-bottom: 2.5%;
-  float: left;
-  display: inline-block;
-  font-size: 1em;
+.container .graph-filter .filter-items:hover {
+  border-top: 1px solid #CCCCCC;
   color: #000000;
 }
-.container .filter .month .caption {
-  float: left;
-  display: inline-block;
-}
-.container .filter .month .month-items {
-  float: left;
-  display: inline-block;
-  margin-left: 10px;
-  color: #AAAAAA;
-}
-.container .filter .month .active {
-  text-decoration: underline;
+.container .graph-filter .active {
+  border-top: 1px solid #003399;
   color: #003399;
   font-weight: bold;
 }
