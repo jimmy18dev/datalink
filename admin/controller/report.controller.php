@@ -176,6 +176,11 @@ class ReportController extends ReportModel{
 		$this->render($data,$option);
 	}
 
+	public function ListMonth($option){
+		$data = parent::ListMonthData();
+		$this->render($data,$option);
+	}
+
 	// render dataset to view.
     private function render($data,$option){
     	$total_items = 0;
@@ -243,10 +248,123 @@ class ReportController extends ReportModel{
             if($total_items == 0){
             	include'template/empty.items.php';
             }
-        }
+        }else if($option['type'] == 'yield-table-items'){
+            foreach ($data as $var){
+                include'template/report/yield.table.items.php';
+                $total_items++;
+            }
 
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }else if($option['type'] == 'month-items'){
+        	$line = $option['line_current'];
+        	$year = $option['year_current'];
+        	$month = $option['month_current'];
+        	
+            foreach ($data as $var){
+                include'template/report/month.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }
         unset($data);
         $total_items = 0;
     }
+
+    public function getGraph($month,$year,$shift,$line,$option){
+
+    	$month = $year.'-'.$month.'-1';
+    	$dataset = parent::getGraphData($month,$shift,$line);
+
+    	if($month == 4 || $month == 6 || $month == 9 || $month == 11){
+    		$day_month = 30;
+    	}else if($month == 2){
+    		$day_month = 28;
+    	}else{
+    		$day_month = 31;
+    	}
+
+    	// echo'<pre>';
+    	// print_r($dataset);
+    	// echo'</pre>';
+
+		$result = array();
+
+		for($i = 0;$i < $day_month;$i++){
+			$result[$i]['date'] = $i+1;
+
+			$result[$i]['yield'] 		= 0;
+			$result[$i]['target'] 		= 0;
+			$result[$i]['output'] 		= 0;
+			$result[$i]['product_eff'] 	= 0;
+			$result[$i]['total_eff'] 	= 0;
+
+			foreach ($dataset as $var) {
+				if($i+1 == date('j',strtotime($var['report_date']))){
+					$result[$i]['yield'] 		= $var['yield'];
+					$result[$i]['target'] 		= $var['target_eff'];
+					$result[$i]['output'] 		= $var['target_yield'];
+					$result[$i]['product_eff'] 	= $var['product_eff'];
+					$result[$i]['total_eff'] 	= $var['ttl_eff'];
+				}
+			}
+		}
+
+    	// echo'<pre>';
+    	// print_r($result);
+    	// echo'</pre>';
+
+    	if($option['render'] == 'html'){
+    		$this->render($result,array('type' => 'yield-table-items'));
+    	}else if($option['render'] == 'json'){
+    		$this->toJSON($result);
+
+    	}
+    }
+
+    // Export to json
+	private function toJSON($dataset){
+
+		$date 				= array();
+		$product_eff 		= array();
+		$total_eff 			= array();
+		$actual_yield 		= array();
+		$taget_output 		= array();
+		$actual_output 		= array();
+
+		foreach ($dataset as $var){
+			$date[] 		= $var['date'];
+			$product_eff[] 	= floatval($var['product_eff']);
+			$total_eff[] 	= floatval($var['total_eff']);
+			$actual_yield[] 	= floatval($var['yield']);
+			$target_output[] 	= floatval($var['target']);
+			$actual_output[] 	= floatval($var['output']);
+        }
+
+
+		$data = array(
+			"apiVersion" 	=> "1.0",
+			"data" 			=> array(
+				"time_now" 		=> date('Y-m-d H:i:s'),
+				"message" 		=> $message,
+				"execute_time" 	=> round(microtime(true)-StTime,4)."s",
+				"totalFeeds" 	=> floatval(count($dataset)),
+				"date" 			=> $date,
+				"product_eff" 	=> $product_eff,
+				"total_eff" 	=> $total_eff,
+				"actual_yield" 	=> $actual_yield,
+				"target_output" => $target_output,
+				"actual_output" => $actual_output,
+
+			),
+		);
+
+	    // JSON Encode and Echo.
+	    echo json_encode($data);
+	}
 }
 ?>

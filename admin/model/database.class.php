@@ -127,6 +127,12 @@ class Database{
         return $date.' '.$month.' '.$year.' เวลา '.$hour.':'.$minute;
     }
 
+    public function month_name($datetime){
+        $monthText = array('January','February','March','April','May','June','July','August','September','October','November','December');
+        $month  = date('n',strtotime($datetime));
+        return $monthText[$month-1];
+    }
+
     public function date_format($datetime){
         $monthText = array('ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.');
         $hour   = date("H",strtotime($datetime));

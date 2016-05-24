@@ -35,69 +35,98 @@ $current_page['1'] = 'report';
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="plugin/highcharts/highcharts.js"></script>
 <script type="text/javascript" src="plugin/highcharts//modules/exporting.js"></script>
-<script type="text/javascript">
-$(function () {
-    $('#container').highcharts({
-        title: {
-            text: 'Monthly Average Temperature',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Source: WorldClimate.com',
-            x: -20
-        },
-        xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-                text: 'Temperature (°C)'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            valueSuffix: '°C'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Tokyo',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        }, {
-            name: 'New York',
-            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-        }, {
-            name: 'Berlin',
-            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-        }, {
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-        }]
-    });
-});
-		</script>
 
 </head>
 <body>
 <?php include'header.php';?>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>MOVEMENT ASSEMBLY</h1>
-			<p>Weekly efficiency report From</p>
-		</div>
+	<div class="head-graph-report">
+        <p>MOVEMENT ASSEMBLY</p>
+		<h1>YIELD & TOTAL EFFICIENCY</h1>
 	</div>
+    <div class="filter">
+        <div class="line">
+            <span class="caption">Line No:</span>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=1" class="line-items <?php echo ($_GET['line'] == 1?'active':'');?>">1</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=2" class="line-items <?php echo ($_GET['line'] == 2?'active':'');?>">2</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=3" class="line-items <?php echo ($_GET['line'] == 3?'active':'');?>">3</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=4" class="line-items <?php echo ($_GET['line'] == 4?'active':'');?>">4</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=5" class="line-items <?php echo ($_GET['line'] == 5?'active':'');?>">5</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=6" class="line-items <?php echo ($_GET['line'] == 6?'active':'');?>">6</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=7" class="line-items <?php echo ($_GET['line'] == 7?'active':'');?>">7</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=8" class="line-items <?php echo ($_GET['line'] == 8?'active':'');?>">8</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=9" class="line-items <?php echo ($_GET['line'] == 9?'active':'');?>">9</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=10" class="line-items <?php echo ($_GET['line'] == 10?'active':'');?>">10</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=11" class="line-items <?php echo ($_GET['line'] == 11?'active':'');?>">11</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=12" class="line-items <?php echo ($_GET['line'] == 12?'active':'');?>">12</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=13" class="line-items <?php echo ($_GET['line'] == 13?'active':'');?>">13</a>
+            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=14" class="line-items <?php echo ($_GET['line'] == 14?'active':'');?>">14</a>
+        </div>
+        <div class="month">
+            <span class="caption">Retrieve data from month:</span>
+            <?php $report->ListMonth(array('type' => 'month-items','line_current' => $_GET['line'],'year_current' => $_GET['year'],'month_current' => $_GET['month']));?>
+        </div>
+    </div>
 
-	<div id="container"></div>
+    <div class="filter">
+        
+    </div>
+	<div class="graph-report">
+        <h2>Shift A</h2>
+        <div class="graph" id="container-A"></div>
+        <div class="report-yield-table">
+            <div class="caption-col">
+                <div class="row">Date</div>
+                <div class="row">Actual yield</div>
+                <div class="row">Taget output</div>
+                <div class="row">Actual output</div>
+                <div class="row">Product EFF</div>
+                <div class="row">Total Efficiency</div>
+            </div>
+
+            <?php echo $report->getGraph($_GET['month'],$_GET['year'],'A',$_GET['line'],array('render' => 'html'));?>
+        </div>
+
+        <h2>Shift B</h2>
+        <div class="graph" id="container-B"></div>
+        <div class="report-yield-table">
+            <div class="caption-col">
+                <div class="row">Date</div>
+                <div class="row">Actual yield</div>
+                <div class="row">Taget output</div>
+                <div class="row">Actual output</div>
+                <div class="row">Product EFF</div>
+                <div class="row">Total Efficiency</div>
+            </div>
+
+            <?php echo $report->getGraph($_GET['month'],$_GET['year'],'B',$_GET['line'],array('render' => 'html'));?>
+        </div>   
+    </div>
+
+    <input type="hidden" id="month" value="<?php echo $_GET['month'];?>">
+    <input type="hidden" id="year" value="<?php echo $_GET['year'];?>">
+    <input type="hidden" id="line" value="<?php echo $_GET['line'];?>">
 </div>
+
+<script type="text/javascript" src="js/service/report.service.js"></script>
+<script type="text/javascript">
+$(function(){
+    // include service/analytic.service.js
+    Highcharts.setOptions({
+        colors:[
+        '#003399',
+        '#333333',
+        '#AAAAAA',
+        '#2196F3',
+        '#F44336',
+        '#8cddcd',
+        '#a3e4d7',
+        ]
+    });
+
+    getGraph('A');
+    getGraph('B');
+});
+</script>
 </body>
 </html>

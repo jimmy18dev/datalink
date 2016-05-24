@@ -50,13 +50,10 @@ if($_POST['calling'] != ''){
 // API Request $_GET
 else if($_GET['calling'] != ''){
 	switch ($_GET['calling']) {
-		case 'Comment':
+		case 'report':
 			switch ($_GET['action']) {
-				case 'List':
-					break;
-				case 'LiveComment':
-					break;
-				default:
+				case 'getGraph':
+					$report->getGraph($_GET['month'],$_GET['year'],$_GET['shift'],$_GET['line'],array('render' => 'json'));
 					break;
 			}
 			break;

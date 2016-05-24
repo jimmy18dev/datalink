@@ -10,7 +10,7 @@ button {
   /* IE11 */
 }
 body {
-  background: #F5F5F5;
+  background: #FAFAFA;
   font-family: sans-serif, 'Open Sans';
   overflow-y: scroll;
   overflow-x: hidden;
@@ -30,15 +30,29 @@ body {
   height: 60px;
   float: left;
   display: inline-block;
-  border-bottom: 2px solid #EEEEEE;
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.1);
+  background: #FAFAFA;
+  z-index: 99;
+}
+.header .logo {
+  width: 5%;
+  padding: 20px 0%;
+  height: 20px;
+  float: left;
+  display: inline-block;
+  color: #FFFFFF;
+  text-align: center;
+  background: #003399;
+  font-size: 1.5em;
 }
 .header .header-items {
   padding: 23px 0%;
-  height: 14px;
+  height: 12px;
   float: left;
   display: inline-block;
   margin-left: 2%;
   color: #555555;
+  font-size: 0.9em;
 }
 .header .header-items i {
   margin-right: 5px;
@@ -654,6 +668,148 @@ body {
   float: left;
   display: inline-block;
   font-size: 0.9em;
+}
+.container .head-graph-report {
+  width: 90%;
+  padding: 2.5% 5%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .head-graph-report h1 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
+.container .head-graph-report p {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.container .filter {
+  width: 90%;
+  padding: 0% 5%;
+  float: left;
+  display: inline-block;
+}
+.container .filter .line {
+  width: 100%;
+  padding: 2.5% 0%;
+  padding-bottom: 1%;
+  float: left;
+  display: inline-block;
+  font-size: 1.2em;
+  color: #000000;
+}
+.container .filter .line .caption {
+  float: left;
+  display: inline-block;
+}
+.container .filter .line .line-items {
+  float: left;
+  display: inline-block;
+  margin-left: 10px;
+  color: #AAAAAA;
+}
+.container .filter .line .active {
+  text-decoration: underline;
+  color: #003399;
+  font-weight: bold;
+}
+.container .filter .month {
+  width: 100%;
+  padding-bottom: 2.5%;
+  float: left;
+  display: inline-block;
+  font-size: 1em;
+  color: #000000;
+}
+.container .filter .month .caption {
+  float: left;
+  display: inline-block;
+}
+.container .filter .month .month-items {
+  float: left;
+  display: inline-block;
+  margin-left: 10px;
+  color: #AAAAAA;
+}
+.container .filter .month .active {
+  text-decoration: underline;
+  color: #003399;
+  font-weight: bold;
+}
+.container .graph-report {
+  width: 90%;
+  margin: 0% 5%;
+  margin-bottom: 5%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+.container .graph-report h2 {
+  width: 96%;
+  padding: 2%;
+  float: left;
+  display: inline-block;
+  font-size: 1.5em;
+}
+.container .graph-report .graph {
+  width: 96.3%;
+  margin-left: 2.7%;
+  margin-right: 1%;
+  float: left;
+  display: inline-block;
+  background: #DADADA;
+}
+.container .graph-report .report-yield-table {
+  width: 99%;
+  margin: 3% 0%;
+  margin-right: 1%;
+  float: left;
+  display: inline-block;
+  line-height: 3em;
+  font-size: 0.6em;
+}
+.container .graph-report .report-yield-table:last-child {
+  margin-bottom: 0%;
+}
+.container .graph-report .report-yield-table .caption-col {
+  width: 8%;
+  float: left;
+  display: inline-block;
+  font-weight: bold;
+}
+.container .graph-report .report-yield-table .caption-col .row {
+  width: 90%;
+  padding-left: 10%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .graph-report .report-yield-table .data-items {
+  width: 2.95%;
+  float: left;
+  display: inline-block;
+}
+.container .graph-report .report-yield-table .data-items .v {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  border-left: 1px solid #EEEEEE;
+  text-align: center;
+}
+.container .graph-report .report-yield-table .data-items .date {
+  font-weight: bold;
+  background: #FAFAFA;
+}
+.container .graph-report .report-yield-table .data-items .highlight {
+  color: #003399;
+  font-weight: bold;
+}
+.container .graph-report .report-yield-table .data-items .zero {
+  color: #EEEEEE;
 }
 .container .list-container {
   width: 70%;

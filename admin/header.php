@@ -1,5 +1,6 @@
 <header class="header">
-	<a href="index.php" class="header-items <?php echo ($current_page['1'] == 'home'?'header-items-active':'');?>"><i class="fa fa-code-fork" aria-hidden="true"></i>HOME</a>
+	<div class="logo"><i class="fa fa-code-fork" aria-hidden="true"></i></div>
+	<a href="index.php" class="header-items <?php echo ($current_page['1'] == 'home'?'header-items-active':'');?>">HOME</a>
 	<a href="report.php" class="header-items <?php echo ($current_page['1'] == 'report'?'header-items-active':'');?>">Reports</a>
 	<a href="caliber.php" class="header-items <?php echo ($current_page['1'] == 'caliber'?'header-items-active':'');?>">Caliber Code</a>
 	<a href="user.php" class="header-items <?php echo ($current_page['1'] == 'user'?'header-items-active':'');?>">User</a>
