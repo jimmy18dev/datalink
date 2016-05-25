@@ -5,8 +5,8 @@ if(!$user_online){
 	die();
 }
 
-
-$current_page['1'] = 'home';
+// current page
+$current_page['1'] = 'report';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -24,7 +24,7 @@ $current_page['1'] = 'home';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>DATA LINK</title>
+<title>Weekly efficiency report</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -39,9 +39,31 @@ $current_page['1'] = 'home';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>Hi, <?php echo $user->fname;?></h1>
-			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
+			<h1>DATALINK REPORT</h1>
 		</div>
+	</div>
+
+	<div class="report-container">
+		<a href="header_report.php">
+		<div class="report-items">
+			<div class="icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+			<div class="title">Header Reports</div>
+		</div>
+		</a>
+
+		<a href="weekly_eff_report.php">
+		<div class="report-items">
+			<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
+			<div class="title">Weekly Efficiency</div>
+		</div>
+		</a>
+
+		<a href="yield_total_eff.php">
+		<div class="report-items">
+			<div class="icon"><i class="fa fa-line-chart" aria-hidden="true"></i></div>
+			<div class="title">Yield & Total Efficiency</div>
+		</div>
+		</a>
 	</div>
 </div>
 </body>

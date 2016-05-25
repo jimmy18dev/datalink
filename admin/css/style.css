@@ -517,6 +517,38 @@ body {
   float: left;
   display: inline-block;
 }
+.container .report-container .report-items {
+  width: 16%;
+  padding: 2%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  margin-right: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+  border-radius: 3px;
+  color: #333333;
+}
+.container .report-container .report-items:hover {
+  color: #003399;
+  cursor: pointer;
+}
+.container .report-container .report-items .icon {
+  width: 100%;
+  padding: 10% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 3em;
+  margin-bottom: 10%;
+}
+.container .report-container .report-items .title {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: bold;
+}
 .container .report-container .datepicker {
   width: 100%;
   float: left;
