@@ -200,6 +200,7 @@ function editOperation(id){
     var href            = 'api.caliber.php';
     var name            = $('#name').val();
     var description     = $('#description').val();
+    var route_id        = $('#route_id').val();
 
     $('#login-status').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังสมัครสมาชิก...');
 
@@ -220,7 +221,7 @@ function editOperation(id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'operation.php';
+        window.location = 'operation.php?route='+route_id;
     }).error();
 }
 

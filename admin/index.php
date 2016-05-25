@@ -39,6 +39,7 @@ $current_page['1'] = 'report';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
+			<p><?php echo 'Today is '.date('l');?></p>
 			<h1>DATALINK REPORT</h1>
 		</div>
 	</div>

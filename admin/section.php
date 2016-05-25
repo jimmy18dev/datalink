@@ -56,8 +56,9 @@ $current_page['1'] = 'section';
 			<div class="col2">Description</div>
 			<div class="col3">Edit</div>
 		</div>
-
-		<?php $section->listAllSection(array('type' => 'section-items'));?>
+		<div class="items-container">
+			<?php $section->listAllSection(array('type' => 'section-items'));?>
+		</div>
 	</div>
 </div>
 </body>

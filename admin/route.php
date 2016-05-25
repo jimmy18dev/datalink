@@ -62,8 +62,9 @@ $current_page['2'] = 'caliber_code';
 			<div class="col4">Description</div>
 			<div class="col5">Edit</div>
 		</div>
-
-		<?php $caliber->listAllRoutes($caliber->id,array('type' => 'route-items'));?>
+		<div class="items-container">
+			<?php $caliber->listAllRoutes($caliber->id,array('type' => 'route-items'));?>
+		</div>
 	</div>
 </div>
 </body>

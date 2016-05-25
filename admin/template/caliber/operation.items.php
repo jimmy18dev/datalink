@@ -9,5 +9,5 @@
 		<span class="btn btn-active" onclick="javascript:createMatching(<?php echo $var['id'];?>);">Active</span>
 		<?php }?>
 	</div>
-	<div class="col5"><a href="operation_editor.php?operation=<?php echo $var['id'];?>">Edit</a></div>
+	<div class="col5"><a href="operation_editor.php?operation=<?php echo $var['id'];?>&route=<?php echo $route_current;?>"><i class="fa fa-cog" aria-hidden="true"></i>EDIT</a></div>
 </div>

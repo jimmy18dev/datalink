@@ -4,6 +4,6 @@
 	<div class="col2"><?php echo ($var['type'] == 'primary'?'<i class="fa fa-check-circle" aria-hidden="true"></i> Primary':'Secondary');?></div>
 	<div class="col3"><?php echo $var['update_time'];?></div>
 	<div class="col4"><?php echo ($var['total_operation'] == 0?'-':$var['total_operation'].' operations');?> <?php echo $var['name'];?></div>
-	<div class="col5"><a href="route_editor.php?route=<?php echo $var['id'];?>">Edit</a></div>
+	<div class="col5"><a href="route_editor.php?route=<?php echo $var['id'];?>"><i class="fa fa-cog" aria-hidden="true"></i>EDIT</a></div>
 </div>
 </a>

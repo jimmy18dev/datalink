@@ -11,5 +11,5 @@
 		<?php }?>
 		<?php echo (empty($var['section_name'])?'':$var['section_name']);?></div>
 	<div class="col6"><span class="visit"><?php echo $var['visit_time'];?></span></div>
-	<div class="col7"><a href="user_editor.php?user=<?php echo $var['id'];?>">Edit</a></div>
+	<div class="col7"><a href="user_editor.php?user=<?php echo $var['id'];?>"><i class="fa fa-cog" aria-hidden="true"></i>EDIT</a></div>
 </div>

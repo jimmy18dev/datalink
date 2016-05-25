@@ -40,8 +40,8 @@ $current_page['1'] = 'user';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>User management</h1>
-			<p>User Management is an authentication feature that provides administrators with the ability to identify and control the state of users logged into the network.</p>
+			<h1>USER MANAGEMENT</h1>
+			<p>12 Users is <strong>active</strong></p>
 		</div>
 		<div class="head-control">
 			<a href="user_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW USER</a>
@@ -57,10 +57,11 @@ $current_page['1'] = 'user';
 			<div class="col4">Password</div>
 			<div class="col5">Line No. / Section</div>
 			<div class="col6">Last visit</div>
-			<div class="col7">Edit</div>
+			<div class="col7"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
 		</div>
-
-		<?php echo $user->listAllUser(array('type' => 'user-items'));?>
+		<div class="items-container">
+			<?php echo $user->listAllUser(array('type' => 'user-items'));?>
+		</div>
 	</div>
 </div>
 </body>

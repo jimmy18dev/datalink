@@ -55,10 +55,11 @@ $current_page['1'] = 'remark';
 		<div class="remark-items topic-fix">
 			<div class="col1">No.</div>
 			<div class="col2">Message</div>
-			<div class="col3">Edit</div>
+			<div class="col3"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
 		</div>
-
-		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
+		<div class="items-container">
+			<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
+		</div>
 	</div>
 </div>
 </body>

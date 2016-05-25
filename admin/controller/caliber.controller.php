@@ -152,8 +152,14 @@ class CaliberController extends CaliberModel{
             if($total_items == 0){ include'template/article/article.empty.items.php'; }
 
         }else if($option['type'] == 'operation-items'){
+        	$status = $option['status'];
+        	$route_current = $option['route_current'];
             foreach ($data as $var){
-                include'template/caliber/operation.items.php';
+            	if($status == 'active' && !empty($var['match_id'])){
+            		include'template/caliber/operation.items.php';
+            	}else if($status == 'disable' && empty($var['match_id'])){
+            		include'template/caliber/operation.items.php';
+            	}
                 $total_items++;
             }
 

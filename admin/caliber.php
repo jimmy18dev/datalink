@@ -57,8 +57,9 @@ $current_page['1'] = 'caliber';
 			<div class="col3">Std.time (Hrs/K)</div>
 			<div class="col4">Description</div>
 		</div>
-
-		<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
+		<div class="items-container">
+			<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
+		</div>
 	</div>
 </div>
 </body>

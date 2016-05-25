@@ -52,6 +52,7 @@ $current_page['2'] = 'new_operation';
 			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this operation"><?php echo $caliber->operation_description;?></textarea>
 
 			<input class="input-text" type="hidden" id="operation_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
+			<input type="hidden" id="route_id" value="<?php echo $_GET['route'];?>">
 		</div>
 		<div class="control">
 			<?php if(empty($caliber->operation_id)){?>

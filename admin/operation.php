@@ -55,15 +55,21 @@ $current_page['1'] = 'caliber';
 	</div>
 	<!-- Table -->
 	<div class="list-container">
+		<h3>Active</h3>
 		<div class="operation-items topic-fix">
 			<div class="col1">Name</div>
 			<div class="col2">Descriptions</div>
 			<div class="col3">Updated</div>
 			<div class="col4">Status</div>
-			<div class="col5">Edit</div>
+			<div class="col5"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
 		</div>
-
-		<?php $caliber->listAllOperations($caliber->route_id,array('type' => 'operation-items'));?>
+		<div class="items-container">
+			<?php $caliber->listAllOperations($caliber->route_id,array('type' => 'operation-items','status' => 'active','route_current' => $_GET['route']));?>
+		</div>
+		<h3>Disable</h3>
+		<div class="items-container">
+			<?php $caliber->listAllOperations($caliber->route_id,array('type' => 'operation-items','status' => 'disable','route_current' => $_GET['route']));?>
+		</div>
 	</div>
 
 	<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
