@@ -181,10 +181,20 @@ class ReportController extends ReportModel{
 		$this->render($data,$option);
 	}
 
+	public function groupHeaderReport($option){
+		$data = parent::groupHeaderReportData();
+		$this->render($data,$option);
+	}
+
+	public function listHeaderReport($date,$option){
+		$data = parent::listHeaderReportData($date);
+		$this->render($data,$option);
+	}
+
 	// render dataset to view.
     private function render($data,$option){
     	$total_items = 0;
-        if($option['type'] == 'report-header-items'){
+        if($option['type'] == 'header-items'){
             foreach ($data as $var){
                 include'template/report/header.items.php';
                 $total_items++;
@@ -196,6 +206,15 @@ class ReportController extends ReportModel{
         }else if($option['type'] == 'operation-items'){
             foreach ($data as $var){
                 include'template/caliber/operation.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }else if($option['type'] == 'header-date-items'){
+            foreach ($data as $var){
+                include'template/report/header.date.items.php';
                 $total_items++;
             }
 

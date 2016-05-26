@@ -56,7 +56,7 @@ $current_page['2'] = 'new_operation';
 		</div>
 		<div class="control">
 			<?php if(empty($caliber->operation_id)){?>
-			<div class="submit-btn" onclick="javascript:createOperation();">CREATE</div>
+			<div class="submit-btn" onclick="javascript:createOperation();">Create Operation</div>
 			<?php }else{?>
 			<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->operation_id;?>);">SAVE</div>
 			<?php }?>

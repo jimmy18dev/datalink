@@ -87,7 +87,7 @@ if(empty($userData['id'])){
 		</div>
 		<div class="control">
 			<?php if(empty($userData['id'])){?>
-			<div class="submit-btn" onclick="javascript:register();">Register</div>
+			<div class="submit-btn" onclick="javascript:register();">Register new user</div>
 			<?php }else{?>
 			<div class="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);">SAVE</div>
 			<?php }?>

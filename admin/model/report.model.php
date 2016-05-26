@@ -278,5 +278,28 @@ class ReportModel extends Database{
 		}
 		return $dataset;
 	}
+
+
+	// Group header report by date
+	public function groupHeaderReportData(){
+		parent::query('SELECT report_date,COUNT(id) total_report FROM RTH_DailyOutputHeader WHERE status = "active" GROUP BY report_date ORDER BY report_date DESC');
+		parent::execute();
+		$dataset = parent::resultset();
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['year'] 		= date('Y',strtotime($var['report_date']));
+			$dataset[$k]['month'] 		= date('n',strtotime($var['report_date']));
+			$dataset[$k]['month_name'] 	= parent::month_name($var['report_date']);
+			$dataset[$k]['day'] 		= date('j',strtotime($var['report_date']));
+		}
+		return $dataset;
+	}
+
+	public function listHeaderReportData($report_date){
+		parent::query('SELECT * FROM RTH_DailyOutputHeader WHERE report_date = :report_date AND status = "active"');
+		parent::bind(':report_date', $report_date);
+		parent::execute();
+		$dataset = parent::resultset();
+		return $dataset;
+	}
 }
 ?>

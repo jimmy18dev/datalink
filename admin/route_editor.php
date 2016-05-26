@@ -64,7 +64,7 @@ $current_page['2'] = 'caliber_code';
 		</div>
 		<div class="control">
 			<?php if(empty($caliber->route_id)){?>
-			<div class="submit-btn" onclick="javascript:createRoute();">CREATE<i class="fa fa-angle-right"></i></div>
+			<div class="submit-btn" onclick="javascript:createRoute();">Create Route</div>
 			<?php }else{?>
 			<div class="submit-btn" onclick="javascript:editRoute(<?php echo $caliber->route_id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
 			<?php }?>

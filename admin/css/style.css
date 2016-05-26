@@ -855,6 +855,45 @@ body {
   float: left;
   display: inline-block;
 }
+.container .list-container .header-report-date-items {
+  width: 10%;
+  padding: 3% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+  margin-top: 1%;
+  margin-right: 1%;
+  border-radius: 3px;
+}
+.container .list-container .header-report-date-items .day {
+  font-size: 3em;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5%;
+}
+.container .list-container .header-report-date-items .month {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #555555;
+}
+.container .list-container .header-report-date-items .year {
+  font-size: 0.7em;
+  color: #CCCCCC;
+}
+.container .list-container .header-report-date-items:hover {
+  cursor: pointer;
+}
+.container .list-container .header-report-date-items:hover .day {
+  color: #003399;
+}
+.container .list-container .header-report-date-items:hover .month {
+  color: #003399;
+}
+.container .list-container .header-report-date-items:hover .year {
+  color: #003399;
+}
 .container .list-container .empty-items {
   width: 98%;
   padding: 5% 1%;
@@ -977,6 +1016,19 @@ body {
 }
 .container .list-container .operation-items-add {
   color: #555555;
+}
+.container .list-container .header-report-items {
+  width: 98%;
+  padding: 1%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .header-report-items:hover {
+  cursor: pointer;
+  color: #000000;
 }
 .container .list-container .section-items {
   width: 98%;

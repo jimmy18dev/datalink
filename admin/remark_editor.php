@@ -58,7 +58,7 @@ if(empty($remark->id)){
 		</div>
 		<div class="control">
 			<?php if(empty($remark->id)){?>
-			<div class="submit-btn" onclick="javascript:create();">CREATE<i class="fa fa-angle-right"></i></div>
+			<div class="submit-btn" onclick="javascript:create();">Create Remark</div>
 			<?php }else{?>
 			<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
 			<?php }?>
