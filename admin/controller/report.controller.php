@@ -28,8 +28,15 @@ class ReportController extends ReportModel{
 	public $rework_oversea;
 	public $product_eff;
 	public $ttl_eff;
+	public $yield;
+	public $target_yield;
+	public $target_eff;
+	
 	public $type;
 	public $status;
+
+	public $create_timestamp;
+	public $update_timestamp;
 
 	public $date;
 	public $update;
@@ -83,44 +90,61 @@ class ReportController extends ReportModel{
 	public function getHeader($id){
 		$data = parent::getData($id);
 
-		$this->id = $data['id'];
-		$this->leader_id = $data['leader_id'];
-		$this->leader_name = $data['leader_name'];
-		$this->line_no = $data['line_no'];
-		$this->line_type = $data['line_type'];
-		$this->shift = $data['shift'];
-		$this->report_date = $data['report_date'];
+		$this->id 				= $data['id'];
+		$this->leader_id 		= $data['leader_id'];
+		$this->leader_name 		= $data['leader_name'];
+		$this->line_no 			= $data['line_no'];
+		$this->line_type 		= $data['line_type'];
+		$this->shift 			= $data['shift'];
+		$this->report_date 		= $data['report_date'];
 		$this->no_monthly_emplys = $data['no_monthly_emplys'];
-		$this->no_daily_emplys = $data['no_daily_emplys'];
-		$this->ttl_monthly_hrs = $data['ttl_monthly_hrs'];
-		$this->ttl_daily_hrs = $data['ttl_daily_hrs'];
-		$this->ot_10 = $data['ot_10'];
-		$this->ot_15 = $data['ot_15'];
-		$this->ot_20 = $data['ot_20'];
-		$this->ot_30 = $data['ot_30'];
-		$this->losttime_vac = $data['losttime_vac'];
-		$this->losttime_sick = $data['losttime_sick'];
-		$this->losttime_abs = $data['losttime_abs'];
-		$this->losttime_mat = $data['losttime_mat'];
-		$this->losttime_other = $data['losttime_other'];
-		$this->downtime_mc = $data['downtime_mc'];
-		$this->downtime_mat = $data['downtime_mat'];
-		$this->downtime_fac = $data['downtime_fac'];
-		$this->downtime_other = $data['downtime_other'];
-		$this->sort_local = $data['sort_local'];
-		$this->sort_oversea = $data['sort_oversea'];
-		$this->rework_local = $data['rework_local'];
-		$this->rework_oversea = $data['rework_oversea'];
+		$this->no_daily_emplys 	= $data['no_daily_emplys'];
+		$this->ttl_monthly_hrs 	= $data['ttl_monthly_hrs'];
+		$this->ttl_daily_hrs 	= $data['ttl_daily_hrs'];
+		$this->ot_10 			= $data['ot_10'];
+		$this->ot_15 			= $data['ot_15'];
+		$this->ot_20 			= $data['ot_20'];
+		$this->ot_30 			= $data['ot_30'];
+		$this->losttime_vac 	= $data['losttime_vac'];
+		$this->losttime_sick 	= $data['losttime_sick'];
+		$this->losttime_abs 	= $data['losttime_abs'];
+		$this->losttime_mat 	= $data['losttime_mat'];
+		$this->losttime_other 	= $data['losttime_other'];
+		$this->downtime_mc 		= $data['downtime_mc'];
+		$this->downtime_mat 	= $data['downtime_mat'];
+		$this->downtime_fac 	= $data['downtime_fac'];
+		$this->downtime_other 	= $data['downtime_other'];
+		$this->sort_local 		= $data['sort_local'];
+		$this->sort_oversea 	= $data['sort_oversea'];
+		$this->rework_local 	= $data['rework_local'];
+		$this->rework_oversea 	= $data['rework_oversea'];
+
+		$this->product_eff 		= $data['product_eff'];
+		$this->ttl_eff 			= $data['ttl_eff'];
+
+		$this->yield 			= $data['yield'];
+		$this->target_yield 	= $data['target_yield'];
+		$this->target_eff 		= $data['target_eff'];
 
 		// timer
-		$this->date = $data['date'];
-		$this->update = $data['update'];
-		$this->update_time = $data['update_time'];
+		$this->date 			= $data['report_date'];
+		$this->update 			= $data['update'];
+		$this->update_time 		= $data['update_time'];
+		// timestamp
+		$this->create_timestamp = strtotime($data['create_time']);
+		$this->update_timestamp = strtotime($data['update_time']);
 
-		$this->leader_name = $data['fname'].' '.$data['lname'];
+		// Leader can't update header report after 7 days
+		if((time()-$this->create_timestamp) < (60*60*24*7)){
+			$this->can_edit = true;
+		}else{
+			$this->can_edit = false;
+		}
+
+		$this->leader_name 		= $data['fname'].' '.$data['lname'];
 		
-		$this->type  = $data['type'];
-		$this->status  = $data['status'];
+		$this->type  			= $data['type'];
+		$this->status  			= $data['status'];
 	}
 
 	public function listAllHeader($line_no,$option){
@@ -213,7 +237,14 @@ class ReportController extends ReportModel{
             	include'template/empty.items.php';
             }
         }else if($option['type'] == 'header-date-items'){
+        	$month_start = 0;
             foreach ($data as $var){
+
+            	if($month_start != $var['month']){
+            		$month_start = $var['month'];
+            		include'template/report/month.caption.items.php';
+            	}
+
                 include'template/report/header.date.items.php';
                 $total_items++;
             }
