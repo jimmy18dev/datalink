@@ -941,6 +941,98 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+.container .list-container .header-report-items {
+  width: 98%;
+  padding: 1%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .header-report-items:hover {
+  cursor: pointer;
+  color: #000000;
+}
+.container .list-container .header-report-items .col1 {
+  width: 4%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+.container .list-container .header-report-items .col2 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+.container .list-container .header-report-items .col3 {
+  width: 8%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .header-report-items .col4 {
+  width: 8%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .header-report-items .col5 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .header-report-items .col6 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  margin-right: 5%;
+}
+.container .list-container .header-report-items .col7 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .header-report-items .col8 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .header-report-items .col9 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .header-report-items .col10 {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .header-report-items .col11 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .header-report-items .col12 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  margin-left: 5%;
+}
+.container .list-container .header-report-items .col13 {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
 .container .list-container .operation-items {
   width: 98%;
   padding: 1%;
