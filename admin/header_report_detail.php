@@ -54,23 +54,18 @@ $current_page['1'] = 'report';
 		<div class="head-title">
 			<h1><?php echo $report->date;?></h1>
 			<p>Leader: <strong><?php echo $report->leader_name;?></strong> · Line no.<strong><?php echo $report->line_no;?></strong> (Shift: <?php echo $report->shift;?>) · <span title="<?php echo $report->update_time;?>"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $report->update;?></span></p>
-
-			<?php if($user->id == $report->leader_id && $report->can_edit){?>
-			<div class="btn">
-				<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="btn-create">ADD CALIBER CODE</a>
-			</div>
-			<?php }?>
 		</div>
 	</div>
 
 	<div class="list-container">
 		<p class="topic">
-			<strong>1. Manpower: <?php echo $report->status;?></strong>
-			<?php if($user->id == $report->leader_id && $report->can_edit){?>
-			<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="edit-btn">Edit Report</a>
-			<?php }?>
+			<strong>1. Manpower:</strong>
 		</p>
 		<div class="report-stat">
+			<div class="stat-items stat-items-highlight">
+				<div class="v">LINE <?php echo $report->line_no;?> Shift <?php echo $report->shift;?></div>
+				<div class="k">Updated <?php echo $report->update;?></div>
+			</div>
 			<div class="stat-items">
 				<div class="v"><?php echo $report->ttl_monthly_hrs;?></div>
 				<div class="k"><?php echo $report->no_monthly_emplys;?> Monthly Prs</div>
@@ -85,6 +80,22 @@ $current_page['1'] = 'report';
 			</div>
 			<div class="stat-items">
 				<div class="v"><?php echo number_format($report->ttl_eff,2);?> %</div>
+				<div class="k">Total EFF</div>
+			</div>
+
+
+			<div class="stat-items">
+				<div class="v"><?php echo number_format($report->yield,2);?> %</div>
+				<div class="k">Total EFF</div>
+			</div>
+
+			<div class="stat-items">
+				<div class="v"><?php echo number_format($report->target_yield,2);?> %</div>
+				<div class="k">Total EFF</div>
+			</div>
+
+			<div class="stat-items">
+				<div class="v"><?php echo number_format($report->target_eff,2);?> %</div>
 				<div class="k">Total EFF</div>
 			</div>
 		</div>

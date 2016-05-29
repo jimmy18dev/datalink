@@ -45,7 +45,7 @@ $current_page['2'] = 'caliber_code';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>Route of <?php echo $caliber->code.' '.$caliber->family;?></h1>
+			<h1>ROUTE OF <?php echo $caliber->code.' '.$caliber->family;?></h1>
 			<p>Standard time: <strong><?php echo $caliber->hrs;?></strong> Hrs/K | Updated: <?php echo $caliber->update_time;?> | <?php echo $caliber->description;?> | <a href="caliber_editor.php?caliber=<?php echo $caliber->id?>">[Edit]</a></p>
 		</div>
 

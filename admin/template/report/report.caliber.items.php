@@ -2,14 +2,13 @@
 	<div class="info">
 	<div class="name">
 		<?php echo $var['caliber_code'].' '.$var['caliber_family'];?>
-		<a href="report_detail_editor.php?caliber=<?php echo $var['caliber_id'];?>&header=<?php echo $header_id;?>&action=edit" class="btn">Edit caliber</a>
 	</div>
 	<div class="description">
 		<p>Route: <strong><?php echo $var['route_name'];?></strong> Std.time <strong><?php echo $var['stdtime'];?></strong> Hrs/K, (<?php echo $var['total_operation'];?> operations)</p>
 	</div>
 	</div>
 	<div class="operations">
-		<div class="operation-items topic-fix">
+		<div class="operations-items topic-fix">
 			<div class="col1">Operation</div>
 			<div class="col2">Good</div>
 			<div class="col3">Reject</div>

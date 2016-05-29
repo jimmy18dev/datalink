@@ -41,7 +41,7 @@ $current_page['1'] = 'section';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>Hi, <?php echo $user->fname;?></h1>
+			<h1>SECTION</h1>
 			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
 		</div>
 

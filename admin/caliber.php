@@ -40,7 +40,7 @@ $current_page['1'] = 'caliber';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>Caliber Code</h1>
+			<h1>CALIBER CODE</h1>
 			<p>a system of words, letters, figures, or other symbols substituted for other words, letters, etc., especially for the purposes of secrecy.</p>
 		</div>
 

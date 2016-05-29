@@ -1,4 +1,4 @@
-<div class="report-caliber-detail-items">
+<div class="operations-items">
 	<div class="col1"><strong><?php echo $var['operation_name'];?></strong></div>
 	<div class="col2"><?php echo $var['total_good'];?></div>
 	<div class="col3"><?php echo $var['total_reject'];?></div>

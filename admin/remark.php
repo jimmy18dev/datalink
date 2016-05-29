@@ -41,7 +41,7 @@ $current_page['1'] = 'remark';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>General Remark</h1>
+			<h1>GENERAL REMARK</h1>
 			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
 		</div>
 
