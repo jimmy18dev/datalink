@@ -63,3 +63,25 @@ function editSection(id){
         // window.location = 'section.php';
     }).error();
 }
+
+function deleteSection(section_id){
+    var href        = 'api.section.php';
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'section',
+            action              :'delete',
+            section_id:section_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'section.php?';
+    }).error();
+}

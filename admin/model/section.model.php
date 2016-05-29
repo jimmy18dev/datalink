@@ -24,7 +24,7 @@ class SectionModel extends Database{
 		return $dataset = parent::single();
 	}
 	public function listall(){
-		parent::query('SELECT * FROM RTH_Section');
+		parent::query('SELECT * FROM RTH_Section WHERE status = "active"');
 		parent::execute();
 		$dataset = parent::resultset();
 
@@ -34,6 +34,31 @@ class SectionModel extends Database{
 		}
 
 		return $dataset;
+	}
+
+	// Delete function
+	public function setToDelete($section_id){
+		parent::query('UPDATE RTH_Section SET status = "deleted" WHERE id = :section_id');
+		parent::bind(':section_id', $section_id);
+		parent::execute();
+	}
+	public function delete($section_id){
+		parent::query('DELETE FROM RTH_Section WHERE id = :section_id');
+		parent::bind(':section_id', $section_id);
+		parent::execute();
+	}
+
+	public function checkingBeforeDelate($section_id){
+		parent::query('SELECT id FROM RTH_User WHERE section_id = :section_id');
+		parent::bind(':section_id', $section_id);
+		parent::execute();
+		$dataset = parent::single();
+
+		if(empty($dataset['id'])){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
 ?>

@@ -42,7 +42,7 @@ class RemarkModel extends Database{
 		parent::execute();
 	}
 
-	public function checkingRemarkBeforeDelate($remark_id){
+	public function checkingBeforeDelate($remark_id){
 		parent::query('SELECT id FROM RTH_DailyOutputDetail WHERE remark_id = :remark_id');
 		parent::bind(':remark_id', $remark_id);
 		parent::execute();

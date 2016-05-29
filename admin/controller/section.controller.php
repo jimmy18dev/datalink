@@ -25,6 +25,14 @@ class SectionController extends SectionModel{
 		$this->render($data,$option);
 	}
 
+    public function deleteSection($section_id){
+        if(parent::checkingBeforeDelate($section_id)){
+            parent::delete($section_id);
+        }else{
+            parent::setToDelete($section_id);
+        }
+    }
+
 	// render dataset to view.
     private function render($data,$option){
     	$total_items = 0;

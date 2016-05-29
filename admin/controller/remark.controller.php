@@ -27,7 +27,7 @@ class RemarkController extends RemarkModel{
 	}
 
 	public function deleteRamark($remark_id){
-		if(parent::checkingRemarkBeforeDelate($remark_id)){
+		if(parent::checkingBeforeDelate($remark_id)){
 			parent::delete($remark_id);
 		}else{
 			parent::setToDelete($remark_id);

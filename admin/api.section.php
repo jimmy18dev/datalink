@@ -42,6 +42,22 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'delete':
+					if(true){
+						$return_id = $section->deleteSection($_POST['section_id']);
+						
+						if(!empty($return_id) && $return_id != 0){
+							$message = 'register successful';
+							$state = true;
+						}else{
+							$message = 'register fail!';
+							$state = false;
+						}
+						$api->successMessage($message,$state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				default:
 					break;
 			}
