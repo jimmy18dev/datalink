@@ -25,18 +25,34 @@ class RemarkModel extends Database{
 		return $dataset = parent::single();
 	}
 	public function listall(){
-		parent::query('SELECT * FROM RTH_GeneralRemark');
+		parent::query('SELECT * FROM RTH_GeneralRemark WHERE status = "active"');
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
 
-	public function toDelete(){
-
-	}
-	public function deleteAll(){
-		parent::query('SELECT * FROM RTH_GeneralRemark');
+	// Delete function
+	public function setToDelete($remark_id){
+		parent::query('UPDATE RTH_GeneralRemark SET status = "deleted" WHERE id = :remark_id');
+		parent::bind(':remark_id', $remark_id);
 		parent::execute();
-		return $dataset = parent::resultset();
+	}
+	public function delete($remark_id){
+		parent::query('DELETE FROM RTH_GeneralRemark WHERE id = :remark_id');
+		parent::bind(':remark_id', $remark_id);
+		parent::execute();
+	}
+
+	public function checkingRemarkBeforeDelate($remark_id){
+		parent::query('SELECT id FROM RTH_DailyOutputDetail WHERE remark_id = :remark_id');
+		parent::bind(':remark_id', $remark_id);
+		parent::execute();
+		$dataset = parent::single();
+
+		if(empty($dataset['id'])){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
 ?>

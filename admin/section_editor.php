@@ -59,7 +59,7 @@ if(empty($section->id)){
 			<?php if(empty($section->id)){?>
 			<div class="submit-btn" onclick="javascript:createSection();">Create Section</div>
 			<?php }else{?>
-			<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE<i class="fa fa-angle-right"></i></div>
+			<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE</div>
 			<?php }?>
 		</div>		
 	</div>

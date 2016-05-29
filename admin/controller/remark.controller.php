@@ -26,6 +26,14 @@ class RemarkController extends RemarkModel{
 		$this->render($data,$option);
 	}
 
+	public function deleteRamark($remark_id){
+		if(parent::checkingRemarkBeforeDelate($remark_id)){
+			parent::delete($remark_id);
+		}else{
+			parent::setToDelete($remark_id);
+		}
+	}
+
 	// render dataset to view.
     private function render($data,$option){
     	$total_items = 0;

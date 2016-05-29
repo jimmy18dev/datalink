@@ -42,6 +42,22 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'delete':
+					if(true){
+						$return_id = $remark->deleteRamark($_POST['remark_id']);
+						
+						if(!empty($return_id) && $return_id != 0){
+							$message = 'register successful';
+							$state = true;
+						}else{
+							$message = 'register fail!';
+							$state = false;
+						}
+						$api->successMessage($message,$state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				case 'login':
 					if(true){
 						$login_state = $user->login($_POST['password']);
