@@ -197,6 +197,37 @@ class CaliberModel extends Database{
 		return $dataset = parent::resultset();
 	}
 
+	// Delete function
+	public function setOperationToDelete($operation_id){
+		parent::query('UPDATE RTH_Operation SET status = "deleted" WHERE id = :operation_id');
+		parent::bind(':operation_id', $operation_id);
+		parent::execute();
+	}
+	public function deleteOperation($operation_id){
+		// Delete operation Matching
+		parent::query('DELETE FROM RTH_RouteMatchOperation WHERE id = :operation_id');
+		parent::bind(':operation_id', $operation_id);
+		parent::execute();
+
+		// Delete Operation item
+		parent::query('DELETE FROM RTH_Operation WHERE id = :operation_id');
+		parent::bind(':operation_id', $operation_id);
+		parent::execute();
+	}
+
+	public function checkingOperationBeforeDelate($operation_id){
+		parent::query('SELECT id FROM RTH_DailyOutputDetail WHERE operation_id = :operation_id');
+		parent::bind(':operation_id', $operation_id);
+		parent::execute();
+		$dataset = parent::single();
+
+		if(empty($dataset['id'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 
 	// Matching operation to route
 	public function connectOperationToRoute($route_id,$operation_id){

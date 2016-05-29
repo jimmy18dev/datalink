@@ -61,6 +61,14 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'delete_operation':
+					if(true){
+						$return_id = $caliber->deleteOperation($_POST['operation_id']);
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				case 'edit_operation':
 					if(true){
 						$return_id = $caliber->editOperation($_POST['id'],$_POST['name'],$_POST['description']);

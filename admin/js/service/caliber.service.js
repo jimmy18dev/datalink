@@ -225,6 +225,29 @@ function editOperation(id){
     }).error();
 }
 
+function deleteOperation(operation_id){
+    var href            = 'api.caliber.php';
+    var route_id        = $('#route_id').val();
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'caliber',
+            action              :'delete_operation',
+            operation_id:operation_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'operation.php?route='+route_id;
+    }).error();
+}
+
 // Connect Operation to Route
 function createMatching(operation_id){
     var href            = 'api.caliber.php';

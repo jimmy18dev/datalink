@@ -58,8 +58,11 @@ $current_page['2'] = 'new_operation';
 			<?php if(empty($caliber->operation_id)){?>
 			<div class="submit-btn" onclick="javascript:createOperation();">Create Operation</div>
 			<?php }else{?>
+			<div class="delete-btn" onclick="javascript:deleteOperation(<?php echo $caliber->operation_id;?>);">Delete this operation</div>
 			<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->operation_id;?>);">SAVE</div>
 			<?php }?>
+
+			<?php $caliber->deleteOperation(7);?>
 		</div>
 	</div>
 </div>

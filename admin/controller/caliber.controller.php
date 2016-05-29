@@ -56,6 +56,14 @@ class CaliberController extends CaliberModel{
 		$this->render($data,$option);
 	}
 
+	public function deleteOperation($operation_id){
+        if(parent::checkingOperationBeforeDelate($operation_id)){
+            parent::deleteOperation($operation_id);
+        }else{
+            parent::setOperationToDelete($operation_id);
+        }
+    }
+
 	public function createCaliber($code,$name,$description,$family,$hrs,$remark){
 		$caliber_id = parent::create($code,$name,$description,$family);
 
