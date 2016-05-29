@@ -89,6 +89,7 @@ if(empty($userData['id'])){
 			<?php if(empty($userData['id'])){?>
 			<div class="submit-btn" onclick="javascript:register();">Register new user</div>
 			<?php }else{?>
+			<div class="delete-btn" onclick="javascript:deactiveUser(<?php echo $userData['id'];?>);">Deactive this user account</div>
 			<div class="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);">SAVE</div>
 			<?php }?>
 		</div>		

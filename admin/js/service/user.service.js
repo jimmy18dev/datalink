@@ -122,6 +122,28 @@ function edit(id){
     }).error();
 }
 
+function deactiveUser(user_id){
+    var href        = 'api.user.php';
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'user',
+            action              :'deactive',
+            user_id:user_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'user.php?';
+    }).error();
+}
+
 
 function changePassword(){
     var href        = 'api.people.php';

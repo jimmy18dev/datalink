@@ -83,6 +83,10 @@ class UserController extends UserModel{
 		$this->render($data,$option);
 	}
 
+	public function deactiveUser($user_id){
+		parent::setToDeactive($user_id);
+	}
+
 	// render dataset to view.
     private function render($data,$option){
     	$total_items = 0;

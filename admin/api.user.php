@@ -49,28 +49,14 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
-				
-				// case 'changePassword':
-				// 	if($app->verifySignature($_POST['signature'])){
-
-				// 		// Change password process
-				// 		$process_state = $people->changePassword($people->id,$_POST['password']);
-						
-				// 		if($process_state){
-				// 			$return_message = 'password changed';
-				// 			$check_state = true;
-
-				// 			// Autologin after register successful
-				// 			$login_state = $people->login($people->email,$_POST['password'],'');
-				// 		}else{
-				// 			$return_message = 'change password fail!';
-				// 			$check_state = false;
-				// 		}
-				// 		$api->successMessage($return_message,$check_state,'');
-				// 	}else{
-				// 		$api->errorMessage('signature error!');
-				// 	}
-				// 	break;
+				case 'deactive':
+					if(true){
+						$user_id = $user->deactiveUser($_POST['user_id']);
+						$api->successMessage($return_message,$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				default:
 					break;
 			}

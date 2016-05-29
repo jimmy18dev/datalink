@@ -88,5 +88,12 @@ class UserModel extends Database{
 		$dataset = parent::single();
 		return $dataset['id'];
 	}
+
+	// Delete function
+	public function setToDeactive($user_id){
+		parent::query('UPDATE RTH_User SET status = "deactive" WHERE id = :user_id');
+		parent::bind(':user_id', $user_id);
+		parent::execute();
+	}
 }
 ?>
