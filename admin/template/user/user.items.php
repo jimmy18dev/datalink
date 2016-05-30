@@ -1,7 +1,9 @@
 <div class="user-items">
 	<div class="col1"><?php echo $var['code'];?></div>
 	<div class="col2">
+		<a href="user_profile.php?user=<?php echo $var['id'];?>">
 		<?php echo ($online?'<i class="fa fa-circle" aria-hidden="true"></i>':'<i class="fa fa-circle-o" aria-hidden="true"></i>');?><?php echo $var['fname'].' '.$var['lname'];?>
+		</a>
 	</div>
 	<div class="col3"><?php echo (empty($var['username'])?'-':$var['username']);?></div>
 	<div class="col4"><?php echo (empty($var['password'])?'-':$var['password']);?></div>
