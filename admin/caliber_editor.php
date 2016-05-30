@@ -44,6 +44,12 @@ if(empty($caliber->id)){
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/service/caliber.service.js"></script>
+<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.animated').autosize({append: "\n"});
+});
+</script>
 
 </head>
 <body>
@@ -54,7 +60,7 @@ if(empty($caliber->id)){
 			<input class="input-text half-size font-bigsize" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus placeholder="Code">
 			<input class="input-text half-size font-bigsize" type="text" id="family" value="<?php echo $caliber->family;?>" placeholder="Family">
 
-			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this caliber code"><?php echo $caliber->description;?></textarea>
+			<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this caliber code"><?php echo $caliber->description;?></textarea>
 
 			<p class="caption">Std.time (Hrs/K)</p>
 			<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>" placeholder="0.00">

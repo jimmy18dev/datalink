@@ -45,6 +45,12 @@ if(empty($section->id)){
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/service/section.service.js"></script>
+<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.animated').autosize({append: "\n"});
+});
+</script>
 
 </head>
 <body>
@@ -53,7 +59,7 @@ if(empty($section->id)){
 	<div class="form-container">
 		<div class="input">
 			<input class="input-text font-bigsize" type="text" id="name" value="<?php echo $section->name;?>" placeholder="Section Name" autofocus>
-			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this section"><?php echo $section->description;?></textarea>
+			<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this section"><?php echo $section->description;?></textarea>
 		</div>
 		<div class="control">
 			<?php if(empty($section->id)){?>

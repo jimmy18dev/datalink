@@ -45,6 +45,12 @@ if(empty($remark->id)){
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/service/remark.service.js"></script>
+<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.animated').autosize({append: "\n"});
+});
+</script>
 
 </head>
 <body>
@@ -52,7 +58,7 @@ if(empty($remark->id)){
 <div class="container">
 	<div class="form-container">
 		<div class="input">
-			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this remark"><?php echo $remark->description;?></textarea>
+			<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this remark"><?php echo $remark->description;?></textarea>
 
 			<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
 		</div>

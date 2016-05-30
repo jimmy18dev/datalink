@@ -40,6 +40,12 @@ $current_page['2'] = 'new_operation';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/service/caliber.service.js"></script>
+<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.animated').autosize({append: "\n"});
+});
+</script>
 
 </head>
 <body>
@@ -49,7 +55,7 @@ $current_page['2'] = 'new_operation';
 
 		<div class="input">
 			<input class="input-text font-bigsize" type="text" id="name" placeholder="Operation Name" value="<?php echo $caliber->operation_name;?>">
-			<textarea class="input-text input-textarea" id="description" placeholder="Add a description for this operation"><?php echo $caliber->operation_description;?></textarea>
+			<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this operation"><?php echo $caliber->operation_description;?></textarea>
 
 			<input class="input-text" type="hidden" id="operation_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
 			<input type="hidden" id="route_id" value="<?php echo $_GET['route'];?>">

@@ -45,6 +45,12 @@ $current_page['2'] = 'caliber_code';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/service/caliber.service.js"></script>
+<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.animated').autosize({append: "\n"});
+});
+</script>
 
 </head>
 <body>
@@ -56,7 +62,7 @@ $current_page['2'] = 'caliber_code';
 			<input class="input-text font-bigsize" type="text" id="route_code" value="<?php echo $caliber->route_code;?>" autofocus>
 			<input class="input-text" type="text" id="route_name" value="<?php echo $caliber->route_name;?>">
 
-			<textarea class="input-text input-textarea" id="name" placeholder="Add a description for this route"><?php echo $caliber->route_description;?></textarea>
+			<textarea class="input-text input-textarea animated" id="name" placeholder="Add a description for this route"><?php echo $caliber->route_description;?></textarea>
 
 			<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
 			<!-- You can't update caliner code! -->
