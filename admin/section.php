@@ -8,6 +8,7 @@ if(!$user_online){
 
 // current page
 $current_page['1'] = 'section';
+$total_section = $section->countSection();
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -42,15 +43,19 @@ $current_page['1'] = 'section';
 	<div class="head">
 		<div class="head-title">
 			<h1>SECTION</h1>
-			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
+			<p><?php echo $total_section;?> items, Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
 		</div>
 
+		<?php if($total_section > 0){?>
 		<div class="head-control">
 			<a href="section_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a>
 		</div>
+		<?php }?>
 	</div>
 
 	<div class="list-container">
+
+		<?php if($total_section > 0){?>
 		<div class="section-items topic-fix">
 			<div class="col1">Section</div>
 			<div class="col2">Description</div>
@@ -59,6 +64,11 @@ $current_page['1'] = 'section';
 		<div class="items-container">
 			<?php $section->listAllSection(array('type' => 'section-items'));?>
 		</div>
+		<?php }else{?>
+		<div class="creating-container">
+			<a href="section_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a>
+		</div>
+		<?php }?>
 	</div>
 </div>
 </body>

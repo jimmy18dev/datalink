@@ -10,6 +10,7 @@ if($_POST['calling'] != ''){
 				case 'create':
 					if(true){
 						$return_id = $remark->create($_POST['category_id'],$_POST['description']);
+						$useractivity->saveActivity($user->id,'CreateRemark','',$return_id);
 						
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'register successful';

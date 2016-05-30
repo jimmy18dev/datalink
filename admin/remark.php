@@ -8,6 +8,7 @@ if(!$user_online){
 
 // current page
 $current_page['1'] = 'remark';
+$total_remark = $remark->countRemark();
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -42,16 +43,19 @@ $current_page['1'] = 'remark';
 	<div class="head">
 		<div class="head-title">
 			<h1>GENERAL REMARK</h1>
-			<p>General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
+			<p><?php echo $total_remark;?> items, General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
 		</div>
 
+		<?php if($total_remark > 0){?>		
 		<div class="head-control">
 			<a href="remark_editor.php?" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a>
 		</div>
+		<?php }?>
 	</div>
 
 	<!-- Table -->
 	<div class="list-container">
+		<?php if($total_remark > 0){?>
 		<div class="remark-items topic-fix">
 			<div class="col1">No.</div>
 			<div class="col2">Message</div>
@@ -60,6 +64,11 @@ $current_page['1'] = 'remark';
 		<div class="items-container">
 			<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
 		</div>
+		<?php }else{?>
+		<div class="creating-container">
+			<a href="remark_editor.php?" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a>
+		</div>
+		<?php }?>
 	</div>
 </div>
 </body>

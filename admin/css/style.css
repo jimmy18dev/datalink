@@ -1338,6 +1338,39 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+.container .list-container .user-activity-items {
+  width: 98%;
+  padding: 1%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 0.9em;
+  color: #555555;
+}
+.container .list-container .user-activity-items:hover {
+  cursor: pointer;
+  color: #000000;
+}
+.container .list-container .user-activity-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-activity-items .col2 {
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-activity-items .col3 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-activity-items .col4 {
+  width: 15%;
+  float: left;
+  display: inline-block;
+}
 .container .list-container .header-report-items {
   width: 98%;
   padding: 1%;
@@ -1767,6 +1800,35 @@ body {
   display: inline-block;
   background: #FFFFFF;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.container .list-container .creating-container {
+  width: 100%;
+  padding: 5% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .list-container .creating-container .icon {
+  font-size: 2em;
+  margin-bottom: 1%;
+  color: #EEEEEE;
+}
+.container .list-container .creating-container .title {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 3%;
+}
+.container .list-container .creating-container a.create-btn {
+  background: #003399;
+  color: #FFFFFF;
+  padding: 10px;
+  font-size: 0.9em;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.container .list-container .creating-container a.create-btn i {
+  margin-right: 5px;
 }
 .container .list-container h3 {
   width: 100%;

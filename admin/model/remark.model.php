@@ -54,5 +54,12 @@ class RemarkModel extends Database{
 			return false;
 		}
 	}
+
+	public function countRemark(){
+		parent::query('SELECT COUNT(id) total FROM RTH_GeneralRemark WHERE status = "active"');
+		parent::execute();
+		$dataset = parent::single();
+		return $dataset['total'];
+	}
 }
 ?>

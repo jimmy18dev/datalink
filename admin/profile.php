@@ -44,9 +44,16 @@ $current_page['1'] = 'proflie';
 			<h1><?php echo $user->fname.' '.$user->lname?></h1>
 			<p>No. <?php echo $user->code?> | Last Visit: <?php echo $user->visit_time;?> | <a href="logout.php">Logout</a></p>
 		</div>
-		<div class="tab">
-			<!-- <div class="tab-items tab-items-active">All User</div>
-			<a href="user_editor.php" class="tab-items items-right">New user <i class="fa fa-angle-right"></i></a> -->
+	</div>
+	<div class="list-container">
+		<div class="user-activity-items topic-fix">
+			<div class="col1">Date/Time</div>
+			<div class="col2">Action</div>
+			<div class="col3">Description</div>
+			<div class="col4">IP Address</div>
+		</div>
+		<div class="items-container">
+			<?php $useractivity->listActivity($user->id,array('type' => 'user-activity-items'));?>
 		</div>
 	</div>
 </div>

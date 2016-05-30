@@ -60,5 +60,12 @@ class SectionModel extends Database{
 			return false;
 		}
 	}
+
+	public function countSection(){
+		parent::query('SELECT COUNT(id) total FROM RTH_Section WHERE status = "active"');
+		parent::execute();
+		$dataset = parent::single();
+		return $dataset['total'];
+	}
 }
 ?>
