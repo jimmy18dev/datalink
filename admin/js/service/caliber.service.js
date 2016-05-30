@@ -167,6 +167,28 @@ function editRoute(){
         window.location = 'caliber.php';
     }).error();
 }
+function deleteRoute(route_id){
+    var href            = 'api.caliber.php';
+    var caliber_id      = $('#caliber_id').val();
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'caliber',
+            action              :'delete_route',
+            route_id:route_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'route.php?caliber='+caliber_id;
+    }).error();
+}
 
 
 // OPERATION RECIPE

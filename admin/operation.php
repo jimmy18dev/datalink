@@ -45,7 +45,7 @@ $current_page['1'] = 'caliber';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>OPERATIONS IN <?php echo $caliber->route_name;?></h1>
+			<h1>OPERATIONS IN <strong><?php echo $caliber->route_name;?></strong> OF <strong><?php echo $caliber->code.' '.$caliber->family;?></strong></h1>
 			<p>| <a href="route_editor.php?route=<?php echo $caliber->route_id;?>">edit</a></p>
 		</div>
 

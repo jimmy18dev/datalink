@@ -126,6 +126,14 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'delete_route':
+					if(true){
+						$return_id = $caliber->deleteRoute($_POST['route_id']);
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				case 'create_macthing':
 					if(true){
 						$return_id = $caliber->connectOperationAndRoute($_POST['route_id'],$_POST['operation_id']);

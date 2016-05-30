@@ -50,6 +50,15 @@ class CaliberController extends CaliberModel{
 			parent::removeOperationOnRoute($route_id,$operation_id);
 		}
 	}
+	public function deleteRoute($route_id){
+        if(parent::checkingRouteBeforeDelate($route_id)){
+            parent::deleteRoute($route_id);
+        }else{
+            parent::setRouteToDelete($route_id);
+        }
+    }
+
+
 	// OPERATION
 	public function listAllOperations($route_id,$option){
 		$data = parent::listOperationAllInRoute($route_id);
