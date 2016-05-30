@@ -104,6 +104,28 @@ function edit(id){
     }).error();
 }
 
+function deleteCaliber(caliber_id){
+    var href            = 'api.caliber.php';
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'caliber',
+            action              :'delete_caliber',
+            caliber_id:caliber_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'caliber.php';
+    }).error();
+}
+
 //ROUTE
 function createRoute(){
     var href            = 'api.caliber.php';

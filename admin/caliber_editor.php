@@ -60,10 +60,10 @@ if(empty($caliber->id)){
 			<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>" placeholder="0.00">
 		</div>
 		<div class="control">
-			<div class="delete-btn">Delete Caliber</div>
 			<?php if(empty($caliber->id)){?>
 			<div class="submit-btn" onclick="javascript:create();">Create Caliber</div>
 			<?php }else{?>
+			<div class="delete-btn" onclick="javascript:deleteCaliber(<?php echo $caliber->id;?>);">Delete this caliber code</div>
 			<div class="submit-btn" onclick="javascript:edit(<?php echo $caliber->id;?>);">SAVE</div>
 			<?php }?>
 		</div>

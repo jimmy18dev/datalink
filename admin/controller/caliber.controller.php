@@ -38,6 +38,14 @@ class CaliberController extends CaliberModel{
 
 
 	// CALIBER CODE
+	public function deleteCaliber($caliber_id){
+        if(parent::checkingCaliberBeforeDelate($caliber_id)){
+            parent::deleteCaliber($caliber_id);
+        }else{
+            parent::setCaliberToDelete($caliber_id);
+        }
+    }
+
 	// ROUTE
 	public function listAllRoutes($caliber_id,$option){
 		$data = parent::listRouteInCaliber($caliber_id);

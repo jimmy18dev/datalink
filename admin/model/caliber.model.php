@@ -46,6 +46,39 @@ class CaliberModel extends Database{
 		return $dataset = parent::resultset();
 	}
 
+	// Delete function
+	public function setCaliberToDelete($caliber_id){
+		parent::query('UPDATE RTH_CaliberCode SET status = "deleted" WHERE id = :caliber_id');
+		parent::bind(':caliber_id', $caliber_id);
+		parent::execute();
+	}
+	public function deleteCaliber($caliber_id){
+		parent::query('DELETE FROM RTH_StandardTime WHERE caliber_id = :caliber_id');
+		parent::bind(':caliber_id', $caliber_id);
+		parent::execute();
+
+		parent::query('DELETE FROM RTH_Route WHERE caliber_id = :caliber_id');
+		parent::bind(':caliber_id', $caliber_id);
+		parent::execute();
+
+		parent::query('DELETE FROM RTH_CaliberCode WHERE id = :caliber_id');
+		parent::bind(':caliber_id', $caliber_id);
+		parent::execute();
+	}
+
+	public function checkingCaliberBeforeDelate($caliber_id){
+		parent::query('SELECT id FROM RTH_DailyOutputDetail WHERE caliber_id = :caliber_id');
+		parent::bind(':caliber_id', $caliber_id);
+		parent::execute();
+		$dataset = parent::single();
+
+		if(empty($dataset['id'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	/////////////////////////////////////////////////////////
 	// Standard Time ////////////////////////////////////////
 	/////////////////////////////////////////////////////////
