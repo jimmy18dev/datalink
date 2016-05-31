@@ -42,7 +42,7 @@ session_destroy();
 </div>
 
 <script type="text/javascript">
-	setTimeout(function(){window.location = 'index.php';},300);
+	setTimeout(function(){window.location = 'login.php';},300);
 </script>
 
 </body>
