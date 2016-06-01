@@ -46,20 +46,18 @@ $current_page['1'] = 'caliber';
 
 		<div class="head-control">
 			<!-- <div class="tab-items tab-items-active">All</div> -->
-			<a href="caliber_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW CALIBER</a>
+			<a href="caliber_editor.php" class="create-btn">NEW CALIBER</a>
 		</div>
 	</div>
 	<!-- Table -->
 	<div class="list-container">
-		<div class="caliber-items topic-fix">
+		<div class="items caliber-items topic-fix">
 			<div class="col1">Caliber Code</div>
 			<div class="col2">Route</div>
 			<div class="col3">Std.time (Hrs/K)</div>
 			<div class="col4">Description</div>
 		</div>
-		<div class="items-container">
-			<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
-		</div>
+		<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
 	</div>
 </div>
 </body>

@@ -57,24 +57,30 @@ $(document).ready(function(){
 <?php include'header.php';?>
 <div class="container">
 	<div class="form-container">
-
-		<div class="input">
-			<input class="input-text font-bigsize" type="text" id="route_code" value="<?php echo $caliber->route_code;?>" autofocus>
-			<input class="input-text" type="text" id="route_name" value="<?php echo $caliber->route_name;?>">
-
-			<textarea class="input-text input-textarea animated" id="name" placeholder="Add a description for this route"><?php echo $caliber->route_description;?></textarea>
-
-			<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
-			<!-- You can't update caliner code! -->
-			<input type="hidden" id="caliber_id" value="<?php echo $caliber->id;?>">
+		<div class="form-detail">
+			<div class="icon"><i class="fa fa-code-fork" aria-hidden="true"></i></div>
+			<h1>Create new remark</h1>
+			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
-		<div class="control">
-			<?php if(empty($caliber->route_id)){?>
-			<div class="submit-btn" onclick="javascript:createRoute();">Create Route</div>
-			<?php }else{?>
-			<div class="delete-btn" onclick="javascript:deleteRoute(<?php echo $caliber->route_id;?>);">Delete this route</div>
-			<div class="submit-btn" onclick="javascript:editRoute(<?php echo $caliber->route_id;?>);">SAVE</div>
-			<?php }?>
+		<div class="form-input">
+			<div class="input">
+				<input class="input-text font-bigsize" type="text" id="route_code" value="<?php echo $caliber->route_code;?>" autofocus>
+				<input class="input-text" type="text" id="route_name" value="<?php echo $caliber->route_name;?>">
+
+				<textarea class="input-text input-textarea animated" id="name" placeholder="Add a description for this route"><?php echo $caliber->route_description;?></textarea>
+
+				<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
+				<!-- You can't update caliner code! -->
+				<input type="hidden" id="caliber_id" value="<?php echo $caliber->id;?>">
+			</div>
+			<div class="control">
+				<?php if(empty($caliber->route_id)){?>
+				<div class="submit-btn" onclick="javascript:createRoute();">Create Route</div>
+				<?php }else{?>
+				<div class="delete-btn" onclick="javascript:deleteRoute(<?php echo $caliber->route_id;?>);">Delete this route</div>
+				<div class="submit-btn" onclick="javascript:editRoute(<?php echo $caliber->route_id;?>);">SAVE</div>
+				<?php }?>
+			</div>
 		</div>
 	</div>
 </div>

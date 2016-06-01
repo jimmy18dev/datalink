@@ -50,21 +50,12 @@ $current_page['2'] = 'caliber_code';
 		</div>
 
 		<div class="head-control">
-			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE ROUTE</a>
+			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="create-btn">CREATE ROUTE</a>
 		</div>
 	</div>
 	<!-- Table -->
 	<div class="list-container">
-		<div class="route-items topic-fix">
-			<div class="col1">Route Name</div>
-			<div class="col2">Type</div>
-			<div class="col3">Updated</div>
-			<div class="col4">Description</div>
-			<div class="col5">Edit</div>
-		</div>
-		<div class="items-container">
-			<?php $caliber->listAllRoutes($caliber->id,array('type' => 'route-items'));?>
-		</div>
+		<?php $caliber->listAllRoutes($caliber->id,array('type' => 'route-items'));?>
 	</div>
 </div>
 </body>

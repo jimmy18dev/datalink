@@ -52,23 +52,29 @@ $(document).ready(function(){
 <?php include 'header.php';?>
 <div class="container">
 	<div class="form-container">
-
-		<div class="input">
-			<input class="input-text font-bigsize" type="text" id="name" placeholder="Operation Name" value="<?php echo $caliber->operation_name;?>">
-			<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this operation"><?php echo $caliber->operation_description;?></textarea>
-
-			<input class="input-text" type="hidden" id="operation_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
-			<input type="hidden" id="route_id" value="<?php echo $_GET['route'];?>">
+		<div class="form-detail">
+			<div class="icon"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+			<h1>Create new remark</h1>
+			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
-		<div class="control">
-			<?php if(empty($caliber->operation_id)){?>
-			<div class="submit-btn" onclick="javascript:createOperation();">Create Operation</div>
-			<?php }else{?>
-			<div class="delete-btn" onclick="javascript:deleteOperation(<?php echo $caliber->operation_id;?>);">Delete this operation</div>
-			<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->operation_id;?>);">SAVE</div>
-			<?php }?>
+		<div class="form-input">
+			<div class="input">
+				<input class="input-text font-bigsize" type="text" id="name" placeholder="Operation Name" value="<?php echo $caliber->operation_name;?>">
+				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this operation"><?php echo $caliber->operation_description;?></textarea>
 
-			<?php $caliber->deleteOperation(7);?>
+				<input class="input-text" type="hidden" id="operation_id" value="<?php echo (empty($caliber->opt_caliber_id)?$caliber->id:$caliber->opt_caliber_id);?>">
+				<input type="hidden" id="route_id" value="<?php echo $_GET['route'];?>">
+			</div>
+			<div class="control">
+				<?php if(empty($caliber->operation_id)){?>
+				<div class="submit-btn" onclick="javascript:createOperation();">Create Operation</div>
+				<?php }else{?>
+				<div class="delete-btn" onclick="javascript:deleteOperation(<?php echo $caliber->operation_id;?>);">Delete this operation</div>
+				<div class="submit-btn" onclick="javascript:editOperation(<?php echo $caliber->operation_id;?>);">SAVE</div>
+				<?php }?>
+
+				<?php $caliber->deleteOperation(7);?>
+			</div>
 		</div>
 	</div>
 </div>

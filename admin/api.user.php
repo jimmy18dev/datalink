@@ -37,12 +37,15 @@ if($_POST['calling'] != ''){
 					break;
 				case 'login':
 					if(true){
-						$login_state = $user->login($_POST['username'],$_POST['password']);
+						$user_id = $user->login($_POST['username'],$_POST['password']);
+						$useractivity->saveActivity($user_id,'Login','','');
 
-						if($login_state){
+						if(!empty($user_id) && $user_id != 0){
 							$return_message = 'login successful';
+							$login_state = true;
 						}else{
 							$return_message = 'login fail!';
+							$login_state = false;
 						}
 						$api->successMessage($return_message,$login_state,'');
 					}else{

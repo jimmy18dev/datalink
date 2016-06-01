@@ -10,7 +10,7 @@ button {
   /* IE11 */
 }
 body {
-  background: #FAFAFA;
+  background: #FFFFFF;
   font-family: sans-serif, 'Open Sans';
   overflow-y: scroll;
   overflow-x: hidden;
@@ -30,8 +30,8 @@ body {
   height: 60px;
   float: left;
   display: inline-block;
-  box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.1);
   background: #FFFFFF;
+  border-bottom: 1px solid #EEEEEE;
   z-index: 99;
 }
 .header .logo {
@@ -40,9 +40,8 @@ body {
   height: 20px;
   float: left;
   display: inline-block;
-  color: #FFFFFF;
   text-align: center;
-  background: #003399;
+  color: #003399;
   font-size: 1.5em;
 }
 .header .signout {
@@ -59,11 +58,11 @@ body {
 }
 .header .header-items {
   padding: 23px 0%;
-  height: 12px;
+  height: 14px;
   float: left;
   display: inline-block;
-  margin-left: 2%;
-  color: #555555;
+  margin-right: 2%;
+  color: #AAAAAA;
   font-size: 0.9em;
 }
 .header .header-items i {
@@ -71,12 +70,12 @@ body {
 }
 .header .header-items:hover {
   cursor: pointer;
-  color: #003399;
-  border-bottom: 2px solid #003399;
+  color: #555555;
 }
 .header .header-items-active {
-  color: #003399;
-  border-bottom: 2px solid #003399;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
 }
 .header .user-items {
   float: right;
@@ -210,7 +209,8 @@ body {
 }
 .container .head {
   width: 90%;
-  padding: 2.5% 5%;
+  margin: 0% 5%;
+  padding: 2.5% 0%;
   float: left;
   display: inline-block;
   border-bottom: 1px solid #EEEEEE;
@@ -221,30 +221,29 @@ body {
   display: inline-block;
 }
 .container .head .head-title h1 {
-  font-size: 1.7em;
-  font-weight: normal;
+  font-size: 2em;
   line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .head .head-title p {
   font-size: 0.9em;
-  line-height: 1.1em;
+  line-height: 1.3em;
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .head .head-control {
   width: 50%;
   float: left;
   display: inline-block;
-  margin-top: 1%;
+  margin-top: 0.5%;
 }
 .container .head .head-control .create-btn {
   float: right;
   display: inline-block;
-  background: #003399;
-  color: #FFFFFF;
-  padding: 10px;
-  font-size: 0.9em;
-  border-radius: 3px;
-  font-weight: bold;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid #003399;
+  color: #003399;
+  padding: 10px 15px;
+  font-size: 0.8em;
+  border-radius: 20px;
 }
 .container .head .head-control .create-btn i {
   margin-right: 10px;
@@ -384,64 +383,86 @@ body {
   margin-left: 10px;
 }
 .container .form-container {
-  width: 40%;
-  margin: 0% 30%;
-  margin-top: 3%;
-  float: left;
-  display: inline-block;
-  background: #FFFFFF;
-  border: 1px solid #EEEEEE;
-  border-radius: 3px;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-}
-.container .form-container .input {
   width: 90%;
-  padding: 5%;
+  margin: 0% 5%;
+  margin-top: 6%;
   float: left;
   display: inline-block;
 }
-.container .form-container .input p.caption {
+.container .form-container .form-detail {
+  width: 40%;
+  padding: 0% 5%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .form-detail .icon {
+  font-size: 5em;
+  margin-bottom: 3%;
+  color: rgba(0, 0, 0, 0.1);
+}
+.container .form-container .form-detail h1 {
+  font-size: 2em;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .form-container .form-detail p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.6);
+}
+.container .form-container .form-input {
+  width: 39%;
+  padding: 0% 5%;
+  float: right;
+  display: inline-block;
+  border-left: 1px solid #F5F5F5	;
+}
+.container .form-container .form-input .input {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .form-container .form-input .input p.caption {
   width: 100%;
   float: left;
   display: inline-block;
   margin-top: 3%;
   font-size: 1.2em;
   line-height: 3em;
+  font-weight: bold;
 }
-.container .form-container .control {
-  width: 90%;
-  padding: 3% 5%;
+.container .form-container .form-input .control {
+  width: 100%;
+  padding: 2% 0%;
   float: left;
   display: inline-block;
-  background: #FAFAFA;
 }
-.container .form-container .control .submit-btn {
+.container .form-container .form-input .control .submit-btn {
   background: #003399;
   float: right;
   display: inline-block;
-  padding: 10px;
-  color: #EEEEEE;
+  padding: 11px 20px;
+  color: #FFFFFF;
   font-size: 0.9em;
-  border-radius: 3px;
-  font-weight: bold;
+  border-radius: 20px;
 }
-.container .form-container .control .submit-btn:hover {
+.container .form-container .form-input .control .submit-btn:hover {
   cursor: pointer;
   opacity: 0.9;
 }
-.container .form-container .control .delete-btn {
+.container .form-container .form-input .control .delete-btn {
   float: left;
   display: inline-block;
   padding: 10px 0px;
   color: #CCCCCC;
   font-size: 1em;
 }
-.container .form-container .control .delete-btn:hover {
+.container .form-container .form-input .control .delete-btn:hover {
   color: #AAAAAA;
   cursor: pointer;
   text-decoration: underline;
 }
-.container .form-container .input-text {
+.container .form-container .form-input .input-text {
   width: 100%;
   float: left;
   display: inline-block;
@@ -453,80 +474,80 @@ body {
   color: #555555;
   margin-bottom: 3%;
 }
-.container .form-container .font-bigsize {
+.container .form-container .form-input .font-bigsize {
   font-size: 1.5em;
 }
-.container .form-container .half-size {
+.container .form-container .form-input .half-size {
   width: 50%;
 }
-.container .form-container .input-textarea {
+.container .form-container .form-input .input-textarea {
   padding: 3% 0%;
   min-height: 100px;
   resize: none;
 }
-.container .form-container .operation-items {
+.container .form-container .form-input .operation-items {
   width: 100%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .input-text {
+.container .form-container .form-input .operation-items .input-text {
   width: 100%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col1 {
+.container .form-container .form-input .operation-items .col1 {
   width: 30%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col2 {
+.container .form-container .form-input .operation-items .col2 {
   width: 10%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col3 {
+.container .form-container .form-input .operation-items .col3 {
   width: 10%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col4 {
+.container .form-container .form-input .operation-items .col4 {
   width: 10%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col5 {
+.container .form-container .form-input .operation-items .col5 {
   width: 10%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col6 {
+.container .form-container .form-input .operation-items .col6 {
   width: 10%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col7 {
+.container .form-container .form-input .operation-items .col7 {
   width: 10%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col8 {
+.container .form-container .form-input .operation-items .col8 {
   width: 10%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col9 {
+.container .form-container .form-input .operation-items .col9 {
   width: 50%;
   float: left;
   display: inline-block;
 }
-.container .form-container .operation-items .col10 {
+.container .form-container .form-input .operation-items .col10 {
   width: 50%;
   float: left;
   display: inline-block;
 }
 .container .report-container {
   width: 90%;
-  margin: 0% 5%;
+  margin: 2% 5%;
   float: left;
   display: inline-block;
 }
@@ -537,15 +558,15 @@ body {
   float: left;
   display: inline-block;
   background: #FFFFFF;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid #EEEEEE;
   margin-right: 1%;
   margin-top: 1%;
   text-align: center;
-  border-radius: 3px;
   color: #333333;
 }
 .container .report-container .report-items:hover {
   color: #003399;
+  border: 1px solid #DDDDDD;
   cursor: pointer;
 }
 .container .report-container .report-items .icon {
@@ -562,7 +583,7 @@ body {
   display: inline-block;
   font-size: 0.9em;
   font-weight: bold;
-  height: 50px;
+  height: 80px;
   line-height: 1.2em;
 }
 .container .report-container .datepicker {
@@ -851,7 +872,7 @@ body {
 }
 .container .list-container {
   width: 90%;
-  margin: 0% 5%;
+  margin: 2% 5%;
   float: left;
   display: inline-block;
 }
@@ -1300,18 +1321,30 @@ body {
   color: #CCCCCC;
   text-align: center;
 }
-.container .list-container .caliber-items {
-  width: 98%;
-  padding: 1%;
+.container .list-container .items {
+  width: 100%;
+  padding: 1.5% 0%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F5F5F5;
   font-size: 0.9em;
-  color: #555555;
+  color: rgba(0, 0, 0, 0.4);
 }
-.container .list-container .caliber-items:hover {
+.container .list-container .items:hover {
   cursor: pointer;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .list-container .items .col-control {
+  width: 5%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .list-container .items .col-control a {
+  color: rgba(0, 0, 0, 0.4);
+}
+.container .list-container .items .col-control a:hover {
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .list-container .caliber-items .col1 {
   width: 15%;
@@ -1552,19 +1585,6 @@ body {
   cursor: pointer;
   color: #000000;
 }
-.container .list-container .section-items {
-  width: 98%;
-  padding: 1%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #F0F0F0;
-  font-size: 0.9em;
-  color: #555555;
-}
-.container .list-container .section-items:hover {
-  cursor: pointer;
-  color: #000000;
-}
 .container .list-container .section-items .col1 {
   width: 20%;
   float: left;
@@ -1575,157 +1595,76 @@ body {
   float: left;
   display: inline-block;
 }
-.container .list-container .section-items .col3 {
-  width: 5%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .section-items .col3 a {
-  text-decoration: none;
-  background: #DDDDDD;
-  color: #FFFFFF;
-  padding: 5px;
-  border-radius: 1px;
-  font-size: 0.5em;
-  border-radius: 3px;
-}
-.container .list-container .section-items .col3 a i {
-  margin-right: 5px;
-}
-.container .list-container .section-items .col3 a:hover {
-  cursor: pointer;
-  background: #BBBBBB;
-}
-.container .list-container .remark-items {
-  width: 98%;
-  padding: 1%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #F0F0F0;
-  font-size: 0.9em;
-  color: #555555;
-}
-.container .list-container .remark-items:hover {
-  cursor: pointer;
-  color: #000000;
-}
 .container .list-container .remark-items .col1 {
-  width: 3%;
+  width: 95%;
   float: left;
   display: inline-block;
-}
-.container .list-container .remark-items .col2 {
-  width: 92%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .remark-items .col3 {
-  width: 5%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .remark-items .col3 a {
-  text-decoration: none;
-  background: #DDDDDD;
-  color: #FFFFFF;
-  padding: 5px;
-  border-radius: 1px;
-  font-size: 0.5em;
-  border-radius: 3px;
-}
-.container .list-container .remark-items .col3 a i {
-  margin-right: 5px;
-}
-.container .list-container .remark-items .col3 a:hover {
-  cursor: pointer;
-  background: #BBBBBB;
 }
 .container .list-container .route-items {
-  width: 98%;
-  padding: 1%;
+  width: 13%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #F0F0F0;
-  font-size: 0.9em;
-  color: #555555;
+  border: 1px solid #EEEEEE;
+  padding: 2%;
+  margin-top: 1%;
+  margin-right: 1%;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .list-container .route-items .title {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin-bottom: 2%;
+  font-weight: bold;
+}
+.container .list-container .route-items .description {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  min-height: 100px;
+  font-size: 0.8em;
+  line-height: 1.2em;
+}
+.container .list-container .route-items .status {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+  color: #003399;
+  font-weight: bold;
 }
 .container .list-container .route-items:hover {
-  cursor: pointer;
-  color: #000000;
-}
-.container .list-container .route-items .col1 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col2 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col3 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col4 {
-  width: 35%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .route-items .col5 {
-  width: 5%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .route-items .col5 a {
   color: #003399;
-  text-decoration: none;
-}
-.container .list-container .route-items .col5 a:hover {
-  text-decoration: underline;
-}
-.container .list-container .route-items-primary {
-  color: #555555;
-}
-.container .list-container .user-items {
-  width: 98%;
-  padding: 1%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #F0F0F0;
-  font-size: 0.9em;
-  color: #555555;
-}
-.container .list-container .user-items:hover {
   cursor: pointer;
-  color: #000000;
-}
-.container .list-container .user-items:last-child {
-  border-bottom: 0px;
 }
 .container .list-container .user-items .col1 {
-  width: 15%;
+  width: 10%;
   float: left;
   display: inline-block;
 }
 .container .list-container .user-items .col2 {
-  width: 23%;
+  width: 28%;
   float: left;
   display: inline-block;
 }
+.container .list-container .user-items .col2 a {
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .list-container .user-items .col2 a:hover {
+  text-decoration: underline;
+}
 .container .list-container .user-items .col2 i {
-  margin-right: 5px;
   font-size: 0.8em;
+}
+.container .list-container .user-items .col2 .admin {
+  font-size: 0.7em;
+  color: rgba(0, 0, 0, 0.4);
+  font-style: italic;
 }
 .container .list-container .user-items .col2 .fa-circle {
   color: #4CAF50;
 }
 .container .list-container .user-items .col2 .fa-circle-o {
-  color: #CCCCCC;
+  color: #FFFFFF;
 }
 .container .list-container .user-items .col3 {
   width: 12%;
@@ -1744,13 +1683,9 @@ body {
   margin-left: 2%;
 }
 .container .list-container .user-items .col5 .line {
-  color: #003399;
-  border: 1px solid #003399;
-  padding: 1px 5px;
-  font-size: 0.7em;
-  border-radius: 2px;
-  margin-right: 7px;
   font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.8em;
 }
 .container .list-container .user-items .col6 {
   width: 10%;
@@ -1785,21 +1720,13 @@ body {
   background: #BBBBBB;
 }
 .container .list-container .topic-fix {
-  font-size: 0.7em;
-  font-weight: bold;
-  color: #AAAAAA;
-  padding: 1%;
-  border-bottom: 1px solid transparent;
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .list-container .topic-fix:hover {
-  color: #AAAAAA;
+  color: rgba(0, 0, 0, 0.8);
 }
-.container .list-container .items-container {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  background: #FFFFFF;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+.container .list-container .topic-fix strong {
+  color: #003399;
 }
 .container .list-container .creating-container {
   width: 100%;

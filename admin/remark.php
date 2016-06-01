@@ -25,7 +25,6 @@ $total_remark = $remark->countRemark();
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
 <title>General Remark</title>
 
@@ -43,12 +42,11 @@ $total_remark = $remark->countRemark();
 	<div class="head">
 		<div class="head-title">
 			<h1>GENERAL REMARK</h1>
-			<p><?php echo $total_remark;?> items, General remarks. The first part of the text is to familiarize the reader with the main types of existing irrigation organizations.</p>
 		</div>
 
 		<?php if($total_remark > 0){?>		
 		<div class="head-control">
-			<a href="remark_editor.php?" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a>
+			<a href="remark_editor.php?" class="create-btn">NEW REMARK</a>
 		</div>
 		<?php }?>
 	</div>
@@ -56,14 +54,11 @@ $total_remark = $remark->countRemark();
 	<!-- Table -->
 	<div class="list-container">
 		<?php if($total_remark > 0){?>
-		<div class="remark-items topic-fix">
-			<div class="col1">No.</div>
-			<div class="col2">Message</div>
-			<div class="col3"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+		<div class="items remark-items topic-fix">
+			<div class="col1">Total remark <strong><?php echo $total_remark;?> items.</strong></div>
 		</div>
-		<div class="items-container">
-			<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
-		</div>
+		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
+
 		<?php }else{?>
 		<div class="creating-container">
 			<a href="remark_editor.php?" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a>

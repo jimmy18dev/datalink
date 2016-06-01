@@ -56,27 +56,35 @@ $(document).ready(function(){
 <?php include'header.php';?>
 <div class="container">
 	<div class="form-container">
-		<div class="input">
-			<input class="input-text half-size font-bigsize" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus placeholder="Code">
-			<input class="input-text half-size font-bigsize" type="text" id="family" value="<?php echo $caliber->family;?>" placeholder="Family">
-
-			<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this caliber code"><?php echo $caliber->description;?></textarea>
-
-			<p class="caption">Std.time (Hrs/K)</p>
-			<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>" placeholder="0.00">
+		<div class="form-detail">
+			<div class="icon"><i class="fa fa-database" aria-hidden="true"></i></div>
+			<h1>Create new remark</h1>
+			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
-		<div class="control">
-			<?php if(empty($caliber->id)){?>
-			<div class="submit-btn" onclick="javascript:create();">Create Caliber</div>
-			<?php }else{?>
-			<div class="delete-btn" onclick="javascript:deleteCaliber(<?php echo $caliber->id;?>);">Delete this caliber code</div>
-			<div class="submit-btn" onclick="javascript:edit(<?php echo $caliber->id;?>);">SAVE</div>
-			<?php }?>
-		</div>
-		
+		<div class="form-input">
+			<div class="input">
+				<p class="caption">Cliber Code</p>
+				<input class="input-text half-size font-bigsize" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus placeholder="Code">
+				<input class="input-text half-size font-bigsize" type="text" id="family" value="<?php echo $caliber->family;?>" placeholder="Family">
 
-		<input class="input-text" type="hidden" id="remark" value="<?php echo $caliber->remark;?>">
-		<input class="input-text" type="hidden" id="name" value="<?php echo $caliber->name;?>">
+				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this caliber code"><?php echo $caliber->description;?></textarea>
+
+				<p class="caption">Std.time (Hrs/K)</p>
+				<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>" placeholder="0.00">
+			</div>
+			<div class="control">
+				<?php if(empty($caliber->id)){?>
+				<div class="submit-btn" onclick="javascript:create();">Create Caliber</div>
+				<?php }else{?>
+				<div class="delete-btn" onclick="javascript:deleteCaliber(<?php echo $caliber->id;?>);">Delete this caliber code</div>
+				<div class="submit-btn" onclick="javascript:edit(<?php echo $caliber->id;?>);">SAVE</div>
+				<?php }?>
+			</div>
+			
+
+			<input class="input-text" type="hidden" id="remark" value="<?php echo $caliber->remark;?>">
+			<input class="input-text" type="hidden" id="name" value="<?php echo $caliber->name;?>">
+		</div>
 	</div>
 </div>
 

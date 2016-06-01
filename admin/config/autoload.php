@@ -22,6 +22,8 @@ include_once'model/database.class.php';
 
 // Site Setting include /////////////
 // Model ////////////////////////////
+include_once'model/operation.model.php';
+include_once'model/route.model.php';
 include_once'model/caliber.model.php';
 include_once'model/section.model.php';
 include_once'model/remark.model.php';
@@ -31,6 +33,8 @@ include_once'model/report.model.php';
 
 // Controller ///////////////////////
 include_once'controller/api.controller.php';
+include_once'controller/operation.controller.php';
+include_once'controller/route.controller.php';
 include_once'controller/caliber.controller.php';
 include_once'controller/section.controller.php';
 include_once'controller/remark.controller.php';
@@ -39,13 +43,15 @@ include_once'controller/user.activity.controller.php';
 include_once'controller/report.controller.php';
 
 // Object of Controller
-$api = new ApiController;
-$caliber = new CaliberController;
-$section = new SectionController;
-$remark = new RemarkController;
-$user = new UserController;
-$useractivity = new UserActivityController;
-$report = new ReportController;
+$api 			= new ApiController;
+$operation 		= new OperationController;
+$route 			= new RouteController;
+$caliber 		= new CaliberController;
+$section 		= new SectionController;
+$remark 		= new RemarkController;
+$user 			= new UserController;
+$useractivity 	= new UserActivityController;
+$report 		= new ReportController;
 
 
 // Cookie Checking

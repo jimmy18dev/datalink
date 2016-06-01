@@ -43,12 +43,11 @@ $total_section = $section->countSection();
 	<div class="head">
 		<div class="head-title">
 			<h1>SECTION</h1>
-			<p><?php echo $total_section;?> items, Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
 		</div>
 
 		<?php if($total_section > 0){?>
 		<div class="head-control">
-			<a href="section_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a>
+			<a href="section_editor.php" class="create-btn">NEW SECTION</a>
 		</div>
 		<?php }?>
 	</div>
@@ -56,14 +55,12 @@ $total_section = $section->countSection();
 	<div class="list-container">
 
 		<?php if($total_section > 0){?>
-		<div class="section-items topic-fix">
-			<div class="col1">Section</div>
+		<div class="items section-items topic-fix">
+			<div class="col1">Total section <strong><?php echo $total_section;?> items</strong></div>
 			<div class="col2">Description</div>
-			<div class="col3">Edit</div>
 		</div>
-		<div class="items-container">
-			<?php $section->listAllSection(array('type' => 'section-items'));?>
-		</div>
+		<?php $section->listAllSection(array('type' => 'section-items'));?>
+		
 		<?php }else{?>
 		<div class="creating-container">
 			<a href="section_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a>

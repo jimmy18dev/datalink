@@ -51,20 +51,20 @@ $current_page['1'] = 'report';
         </div>
 
         <div class="line">
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=14" class="filter-items <?php echo ($_GET['line'] == 14?'active':'');?>">14</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=13" class="filter-items <?php echo ($_GET['line'] == 13?'active':'');?>">13</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=12" class="filter-items <?php echo ($_GET['line'] == 12?'active':'');?>">12</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=11" class="filter-items <?php echo ($_GET['line'] == 11?'active':'');?>">11</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=10" class="filter-items <?php echo ($_GET['line'] == 10?'active':'');?>">10</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=9" class="filter-items <?php echo ($_GET['line'] == 9?'active':'');?>">9</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=8" class="filter-items <?php echo ($_GET['line'] == 8?'active':'');?>">8</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=7" class="filter-items <?php echo ($_GET['line'] == 7?'active':'');?>">7</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=6" class="filter-items <?php echo ($_GET['line'] == 6?'active':'');?>">6</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=5" class="filter-items <?php echo ($_GET['line'] == 5?'active':'');?>">5</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=4" class="filter-items <?php echo ($_GET['line'] == 4?'active':'');?>">4</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=3" class="filter-items <?php echo ($_GET['line'] == 3?'active':'');?>">3</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=2" class="filter-items <?php echo ($_GET['line'] == 2?'active':'');?>">2</a>
-            <a href="graph.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=1" class="filter-items <?php echo ($_GET['line'] == 1?'active':'');?>">1</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=14" class="filter-items <?php echo ($_GET['line'] == 14?'active':'');?>">14</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=13" class="filter-items <?php echo ($_GET['line'] == 13?'active':'');?>">13</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=12" class="filter-items <?php echo ($_GET['line'] == 12?'active':'');?>">12</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=11" class="filter-items <?php echo ($_GET['line'] == 11?'active':'');?>">11</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=10" class="filter-items <?php echo ($_GET['line'] == 10?'active':'');?>">10</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=9" class="filter-items <?php echo ($_GET['line'] == 9?'active':'');?>">9</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=8" class="filter-items <?php echo ($_GET['line'] == 8?'active':'');?>">8</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=7" class="filter-items <?php echo ($_GET['line'] == 7?'active':'');?>">7</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=6" class="filter-items <?php echo ($_GET['line'] == 6?'active':'');?>">6</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=5" class="filter-items <?php echo ($_GET['line'] == 5?'active':'');?>">5</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=4" class="filter-items <?php echo ($_GET['line'] == 4?'active':'');?>">4</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=3" class="filter-items <?php echo ($_GET['line'] == 3?'active':'');?>">3</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=2" class="filter-items <?php echo ($_GET['line'] == 2?'active':'');?>">2</a>
+            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=1" class="filter-items <?php echo ($_GET['line'] == 1?'active':'');?>">1</a>
             <span class="caption">Line No:</span>
         </div>
     </div>

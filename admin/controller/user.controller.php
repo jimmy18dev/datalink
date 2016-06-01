@@ -39,9 +39,9 @@ class UserController extends UserModel{
 		if(!empty($user_id)){
 			$_SESSION['user_id'] = $user_id;
             setcookie('user_id', $user_id, COOKIE_TIME);
-            return true;
+            return $user_id;
 		}else{
-			return false;
+			return 0;
 		}
 	}
 

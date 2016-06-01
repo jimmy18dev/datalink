@@ -34,7 +34,6 @@ if(empty($remark->id)){
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
 <title>Editor : General Remark</title>
 
@@ -57,18 +56,25 @@ $(document).ready(function(){
 <?php include'header.php';?>
 <div class="container">
 	<div class="form-container">
-		<div class="input">
-			<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this remark"><?php echo $remark->description;?></textarea>
-
-			<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
+		<div class="form-detail">
+			<div class="icon"><i class="fa fa-commenting" aria-hidden="true"></i></div>
+			<h1>Create new remark</h1>
+			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
-		<div class="control">
-			<?php if(empty($remark->id)){?>
-			<div class="submit-btn" onclick="javascript:create();">Create Remark</div>
-			<?php }else{?>
-			<div class="delete-btn" onclick="javascript:deleteRemark(<?php echo $remark->id;?>);">Delete this remark</div>
-			<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE</div>
-			<?php }?>
+		<div class="form-input">
+			<div class="input">
+				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this remark"><?php echo $remark->description;?></textarea>
+
+				<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
+			</div>
+			<div class="control">
+				<?php if(empty($remark->id)){?>
+				<div class="submit-btn" onclick="javascript:create();">Create Remark</div>
+				<?php }else{?>
+				<div class="delete-btn" onclick="javascript:deleteRemark(<?php echo $remark->id;?>);">Delete this remark</div>
+				<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE</div>
+				<?php }?>
+			</div>
 		</div>
 	</div>
 </div>

@@ -57,18 +57,25 @@ $(document).ready(function(){
 <?php include'header.php';?>
 <div class="container">
 	<div class="form-container">
-		<div class="input">
-			<input class="input-text font-bigsize" type="text" id="name" value="<?php echo $section->name;?>" placeholder="Section Name" autofocus>
-			<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this section"><?php echo $section->description;?></textarea>
+		<div class="form-detail">
+			<div class="icon"><i class="fa fa-tags" aria-hidden="true"></i></div>
+			<h1>Create new remark</h1>
+			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
-		<div class="control">
-			<?php if(empty($section->id)){?>
-			<div class="submit-btn" onclick="javascript:createSection();">Create Section</div>
-			<?php }else{?>
-			<div class="delete-btn" onclick="javascript:deleteSection(<?php echo $section->id;?>);">Delete this section</div>
-			<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE</div>
-			<?php }?>
-		</div>		
+		<div class="form-input">
+			<div class="input">
+				<input class="input-text font-bigsize" type="text" id="name" value="<?php echo $section->name;?>" placeholder="Section Name" autofocus>
+				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this section"><?php echo $section->description;?></textarea>
+			</div>
+			<div class="control">
+				<?php if(empty($section->id)){?>
+				<div class="submit-btn" onclick="javascript:createSection();">Create Section</div>
+				<?php }else{?>
+				<div class="delete-btn" onclick="javascript:deleteSection(<?php echo $section->id;?>);">Delete this section</div>
+				<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE</div>
+				<?php }?>
+			</div>
+		</div>	
 	</div>
 </div>
 
