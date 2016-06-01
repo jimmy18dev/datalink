@@ -7,7 +7,7 @@ if(!$user_online){
 }
 
 if(!empty($_GET['route'])){
-	$caliber->getRoute($_GET['route']);
+	$route->getRoute($_GET['route']);
 }
 
 // current page
@@ -29,7 +29,7 @@ $current_page['1'] = 'caliber';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Route</title>
+<title><?php echo $route->name;?> in <?php echo $route->caliber_name;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -45,8 +45,8 @@ $current_page['1'] = 'caliber';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>OPERATIONS IN <strong><?php echo $caliber->route_name;?></strong> OF <strong><?php echo $caliber->code.' '.$caliber->family;?></strong></h1>
-			<p>| <a href="route_editor.php?route=<?php echo $caliber->route_id;?>">edit</a></p>
+			<h1><strong><?php echo $route->name;?></strong> in <a href="route.php?caliber=<?php echo $route->caliber_id;?>"><strong><?php echo $route->caliber_name;?></strong></a></h1>
+			<p>This route has <?php echo $route->total_operation;?> items and updated at <?php echo $route->update_time;?> <a href="route_editor.php?route=<?php echo $route->id;?>"><i class="fa fa-cog" aria-hidden="true"></i>Edit Route</a></p>
 		</div>
 
 		<div class="head-control">
@@ -64,15 +64,15 @@ $current_page['1'] = 'caliber';
 			<div class="col5"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
 		</div>
 		<div class="items-container">
-			<?php $caliber->listAllOperations($caliber->route_id,array('type' => 'operation-items','status' => 'active','route_current' => $_GET['route']));?>
+			<?php $caliber->listAllOperations($route->id,array('type' => 'operation-items','status' => 'active','route_current' => $_GET['route']));?>
 		</div>
 		<h3>Disable</h3>
 		<div class="items-container">
-			<?php $caliber->listAllOperations($caliber->route_id,array('type' => 'operation-items','status' => 'disable','route_current' => $_GET['route']));?>
+			<?php $caliber->listAllOperations($route->id,array('type' => 'operation-items','status' => 'disable','route_current' => $_GET['route']));?>
 		</div>
 	</div>
 
-	<input type="hidden" id="route_id" value="<?php echo $caliber->route_id;?>">
+	<input type="hidden" id="route_id" value="<?php echo $route->id;?>">
 </div>
 </body>
 </html>

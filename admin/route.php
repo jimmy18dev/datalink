@@ -55,7 +55,7 @@ $current_page['2'] = 'caliber_code';
 	</div>
 	<!-- Table -->
 	<div class="list-container">
-		<?php $caliber->listAllRoutes($caliber->id,array('type' => 'route-items'));?>
+		<?php $route->listRouteInCaliber($caliber->id,array('type' => 'route-items'));?>
 	</div>
 </div>
 </body>
