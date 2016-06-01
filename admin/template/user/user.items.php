@@ -3,7 +3,10 @@
 	<div class="col2">
 		<a href="user_profile.php?user=<?php echo $var['id'];?>">
 		<?php echo $var['fname'].' '.$var['lname'];?><?php echo ($online?' <i class="fa fa-circle" aria-hidden="true"></i> ':'');?>
+
+		<?php if($var['type']== 'Administrator'){?>
 		<span class="admin">(Administrator)</span>
+		<?php }?>
 		</a>
 	</div>
 	<div class="col3"><?php echo (empty($var['username'])?'-':$var['username']);?></div>

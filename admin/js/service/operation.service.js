@@ -1,28 +1,9 @@
-function create(){
-    var href        = 'api.caliber.php';
-
-    var code        = $('#code').val();
-    var name        = $('#name').val();
-    var description = $('#description').val();
-    var family      = $('#family').val();
-    var hrs         = $('#hrs').val();
-    var remark      = $('#remark').val();
-
-    // if(email == ""){
-    //     showAlert('กรุณากรอกอีเมลของคุณด้วยค่ะ');
-    //     return false;
-    // }
-    // else if(name == ""){
-    //     showAlert('กรุณากรอกชื่อและนามสุกลของคุณด้วยค่ะ');
-    //     return false;
-    // }
-    // else if(password == ""){
-    //     showAlert('กรุณากรอกรหัสผ่านด้วยค่ะ');
-    //     return false;
-    // }
-
-    $('#loading-message').html('กำลังเข้าระบบ...');
-    $('#loading-box').fadeIn(300);
+// OPERATION RECIPE
+function createOperation(){
+    var href            = 'api.operation.php';
+    var name            = $('#name').val();
+    var description     = $('#description').val();
+    var route_id        = $('#route_id').val();
 
     $.ajax({
         url         :href,
@@ -30,51 +11,49 @@ function create(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'caliber',
-            action              :'create',
-            code:code,
+            calling             :'operation',
+            action              :'create_operation',
             name:name,
             description:description,
-            family:family,
-            hrs:hrs,
-            remark:remark,
         },
         error: function (request, status, error) {
             console.log("Request Error");
         }
     }).done(function(data){
         console.log('Return: '+data.message);
+        window.location = 'operation.php?route='+route_id;
+    }).error();
+}
+function editOperation(id){
+    var href            = 'api.operation.php';
+    var name            = $('#name').val();
+    var description     = $('#description').val();
+    var route_id        = $('#route_id').val();
 
-        // if(data.return){
-        //     $('#dialog-message').html('กำลังสมัครสมาชิกใหม่...');
-        //     $('#dialog-box').fadeIn(300);
-
-        //     if(redirect == 'editor'){
-        //         window.location = 'editor.php?';
-        //     }else if(redirect){
-        //         window.location = 'case-'+redirect+'.html';
-        //     }else{
-        //         window.location = 'profile.php';
-        //     }
-        // }
-        // else{
-        //     $('#status-message').html('อีเมลนี้ถูกใช้แล้ว!').slideDown(500).delay(3000).slideUp(300);
-        //     $('#login-status').html('สมัครสมาชิก');
-        // }
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'operation',
+            action              :'edit_operation',
+            id:id,
+            name:name,
+            description:description,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'operation.php?route='+route_id;
     }).error();
 }
 
-// Update user information
-function edit(id){
-    var href        = 'api.caliber.php';
-
-    var code        = $('#code').val();
-    var name        = $('#name').val();
-    var description = $('#description').val();
-    var family      = $('#family').val();
-
-    $('#loading-message').html('กำลังเข้าระบบ...');
-    $('#loading-box').fadeIn(300);
+function deleteOperation(operation_id){
+    var href            = 'api.operation.php';
+    var route_id        = $('#route_id').val();
 
     $.ajax({
         url         :href,
@@ -82,35 +61,40 @@ function edit(id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'caliber',
-            action              :'edit',
-            id:id,
-            code:code,
-            name:name,
-            description:description,
-            family:family,
+            calling             :'operation',
+            action              :'delete_operation',
+            operation_id:operation_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
         }
     }).done(function(data){
         console.log('Return: '+data.message);
+        window.location = 'operation.php?route='+route_id;
+    }).error();
+}
 
-        // if(data.return){
-        //     $('#dialog-message').html('กำลังสมัครสมาชิกใหม่...');
-        //     $('#dialog-box').fadeIn(300);
+// Connect Operation to Route
+function createMatching(operation_id){
+    var href            = 'api.operation.php';
+    var route_id = $('#route_id').val();
 
-        //     if(redirect == 'editor'){
-        //         window.location = 'editor.php?';
-        //     }else if(redirect){
-        //         window.location = 'case-'+redirect+'.html';
-        //     }else{
-        //         window.location = 'profile.php';
-        //     }
-        // }
-        // else{
-        //     $('#status-message').html('อีเมลนี้ถูกใช้แล้ว!').slideDown(500).delay(3000).slideUp(300);
-        //     $('#login-status').html('สมัครสมาชิก');
-        // }
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'operation',
+            action              :'create_macthing',
+            route_id:route_id,
+            operation_id:operation_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'operation.php?route='+route_id;
     }).error();
 }

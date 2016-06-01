@@ -64,11 +64,11 @@ $current_page['1'] = 'caliber';
 			<div class="col5"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
 		</div>
 		<div class="items-container">
-			<?php $caliber->listAllOperations($route->id,array('type' => 'operation-items','status' => 'active','route_current' => $_GET['route']));?>
+			<?php $operation->listAllOperations($route->id,array('type' => 'operation-items','status' => 'active','route_current' => $_GET['route']));?>
 		</div>
 		<h3>Disable</h3>
 		<div class="items-container">
-			<?php $caliber->listAllOperations($route->id,array('type' => 'operation-items','status' => 'disable','route_current' => $_GET['route']));?>
+			<?php $operation->listAllOperations($route->id,array('type' => 'operation-items','status' => 'disable','route_current' => $_GET['route']));?>
 		</div>
 	</div>
 

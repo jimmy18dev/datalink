@@ -46,20 +46,6 @@ class CaliberController extends CaliberModel{
         }
     }
 
-	// OPERATION
-	public function listAllOperations($route_id,$option){
-		$data = parent::listOperationAllInRoute($route_id);
-		$this->render($data,$option);
-	}
-
-	public function deleteOperation($operation_id){
-        if(parent::checkingOperationBeforeDelate($operation_id)){
-            parent::deleteOperation($operation_id);
-        }else{
-            parent::setOperationToDelete($operation_id);
-        }
-    }
-
 	public function createCaliber($code,$name,$description,$family,$hrs,$remark){
 		$caliber_id = parent::create($code,$name,$description,$family);
 
@@ -74,33 +60,6 @@ class CaliberController extends CaliberModel{
 		parent::setStdTimeToSecondary($id);
 		// Create standrad time
 		parent::createStandardTime($id,$hrs,$remark);
-	}
-
-	public function getOperation($operation_id){
-		$dataset = parent::getOperationData($operation_id);
-
-		$this->operation_id 			= $dataset['id'];
-		$this->operation_name 			= $dataset['name'];
-		$this->operation_description 	= $dataset['description'];
-		$this->operation_create_time 	= $dataset['create_time'];
-		$this->operation_update_time 	= $dataset['update_time'];
-		$this->operation_type 			= $dataset['type'];
-		$this->operation_status 		= $dataset['status'];
-	}
-
-
-	public function getRoute($route_id){
-		$dataset = parent::getRouteData($route_id);
-
-		$this->route_id = $dataset['id'];
-		$this->route_caliber_id = $dataset['caliber_id'];
-		$this->route_code = $dataset['route_code'];
-		$this->route_name = $dataset['route_name'];
-		$this->route_description = $dataset['name'];
-		$this->route_create_time = $dataset['create_time'];
-		$this->route_update_time = $dataset['update_time'];
-		$this->route_type = $dataset['type'];
-		$this->route_status = $dataset['status'];
 	}
 
 	public function getCaliber($id){
