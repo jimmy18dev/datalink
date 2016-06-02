@@ -40,10 +40,12 @@ $current_page['1'] = 'report';
 <body>
 <?php include'header.php';?>
 <div class="container">
-	<div class="head-graph-report">
-        <p>MOVEMENT ASSEMBLY</p>
-		<h1>YIELD & TOTAL EFFICIENCY</h1>
-	</div>
+    <div class="head">
+        <div class="head-title">
+            <h1>YIELD & TOTAL EFFICIENCY</h1>
+            <p>MOVEMENT ASSEMBLY</p>
+        </div>
+    </div>
     <div class="graph-filter">
         <div class="month">
             <span class="caption">Month:</span>
@@ -102,7 +104,7 @@ $current_page['1'] = 'report';
         </div>   
     </div>
     <?php }else{?>
-    <div class="starter">Select Month and Line No.</div>
+    <div class="starter-message">Select Month and Line No.</div>
     <?php }?>
 
     <input type="hidden" id="month" value="<?php echo $_GET['month'];?>">

@@ -58,7 +58,7 @@ if(empty($userData['id'])){
 		</div>
 		<div class="form-input">
 
-			<?php if(!empty($userData['id'])){?>
+			<?php if(!empty($userData['id']) && $userData['id'] != $user->id){?>
 			<div class="grant-control">
 				<?php if($userData['type'] != 'Administrator'){?>
 				<div class="grant-btn" onclick="javascript:addToAdmin(<?php echo $userData['id'];?>);">Add to admin</div>

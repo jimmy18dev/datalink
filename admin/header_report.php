@@ -39,8 +39,8 @@ $current_page['1'] = 'report';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<p><?php echo 'Today is '.date('l');?></p>
 			<h1>HEADER REPORT</h1>
+			<p><?php echo 'Today is '.date('l');?></p>
 		</div>
 	</div>
 
@@ -48,7 +48,7 @@ $current_page['1'] = 'report';
 		<?php if(empty($_GET['date'])){?>
 		<?php $report->groupHeaderReport(array('type' => 'header-date-items'));?>
 		<?php }else{?>
-		<div class="header-report-items topic-fix">
+		<div class="items header-report-items topic-fix">
 			<div class="col1">Line No.</div>
 			<div class="col2">Shift</div>
 			<div class="col3">Product EFF</div>

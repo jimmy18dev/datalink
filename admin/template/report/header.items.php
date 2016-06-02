@@ -1,5 +1,5 @@
 <a href="header_report_detail.php?header=<?php echo $var['id'];?>" target="_parent">
-<div class="header-report-items">
+<div class="items header-report-items">
 	<div class="col1"><?php echo $var['line_no'];?></div>
 	<div class="col2"><?php echo $var['shift'];?></div>
 	<div class="col3"><?php echo number_format($var['product_eff'],2);?> %</div>
