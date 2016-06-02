@@ -57,6 +57,8 @@ if(empty($userData['id'])){
 			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
 		<div class="form-input">
+			<div class="grant-control">Set to Administrator</div>
+			
 			<div class="input">
 				<input class="input-text half-size font-bigsize" type="text" id="fname" value="<?php echo $userData['fname'];?>" placeholder="First Name">
 				<input class="input-text half-size font-bigsize" type="text" id="lname" value="<?php echo $userData['lname'];?>" placeholder="Last Name">

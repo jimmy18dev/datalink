@@ -7,7 +7,8 @@ if(!$user_online){
 }
 
 // current page
-$current_page['1'] = 'proflie';
+$current_page['1'] = 'profile';
+
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">

@@ -53,7 +53,7 @@ class UserModel extends Database{
 	}
 
 	public function listall(){
-		parent::query('SELECT user.id,user.code,user.fname,user.lname,user.username,user.password,user.line_default,user.register_time,user.update_time,user.visit_time,section.name section_name FROM RTH_User AS user LEFT JOIN RTH_Section AS section ON user.section_id = section.id ORDER BY visit_time DESC,create_time DESC');
+		parent::query('SELECT user.id,user.code,user.fname,user.lname,user.username,user.password,user.line_default,user.register_time,user.update_time,user.visit_time,user.type,user.status,section.name section_name FROM RTH_User AS user LEFT JOIN RTH_Section AS section ON user.section_id = section.id ORDER BY visit_time DESC,create_time DESC');
 		parent::execute();
 		$dataset = parent::resultset();
 
@@ -80,8 +80,9 @@ class UserModel extends Database{
 		parent::execute();
 	}
 
+	// Administrator only can login to control panel
 	public function userLogin($username,$password){
-		parent::query('SELECT id FROM RTH_User WHERE password = :password AND username = :username');
+		parent::query('SELECT id FROM RTH_User WHERE password = :password AND username = :username AND type = "Administrator"');
 		parent::bind(':username', $username);
 		parent::bind(':password', $password);
 		parent::execute();
@@ -92,6 +93,20 @@ class UserModel extends Database{
 	// Delete function
 	public function setToDeactive($user_id){
 		parent::query('UPDATE RTH_User SET status = "deactive" WHERE id = :user_id');
+		parent::bind(':user_id', $user_id);
+		parent::execute();
+	}
+
+
+	// User and Grant Permissions
+	public function setToAdmin($user_id){
+		parent::query('UPDATE RTH_User SET type = "Administrator" WHERE id = :user_id');
+		parent::bind(':user_id', $user_id);
+		parent::execute();
+	}
+
+	public function setToUser($user_id){
+		parent::query('UPDATE RTH_User SET type = "normal" WHERE id = :user_id');
 		parent::bind(':user_id', $user_id);
 		parent::execute();
 	}

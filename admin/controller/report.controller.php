@@ -327,8 +327,8 @@ class ReportController extends ReportModel{
 
     public function getGraph($month,$year,$shift,$line,$option){
 
-    	$month = $year.'-'.$month.'-1';
-    	$dataset = parent::getGraphData($month,$shift,$line);
+    	$month_time = $year.'-'.$month.'-1';
+    	$dataset = parent::getGraphData($month_time,$shift,$line);
 
     	if($month == 4 || $month == 6 || $month == 9 || $month == 11){
     		$day_month = 30;
@@ -371,35 +371,42 @@ class ReportController extends ReportModel{
     	if($option['render'] == 'html'){
     		$this->render($result,array('type' => 'yield-table-items'));
     	}else if($option['render'] == 'json'){
-    		$this->toJSON($result);
+    		$this->toJSON($result,$shift,$line,$month,$year);
 
     	}
     }
 
     // Export to json
-	private function toJSON($dataset){
+	private function toJSON($dataset,$shift,$line,$month,$year){
 
-		$date 				= array();
-		$product_eff 		= array();
-		$total_eff 			= array();
-		$actual_yield 		= array();
-		$taget_output 		= array();
-		$actual_output 		= array();
+		$date 					= array();
+		$product_eff 			= array();
+		$total_eff 				= array();
+		$actual_yield 			= array();
+		$taget_output 			= array();
+		$actual_output 			= array();
 
 		foreach ($dataset as $var){
-			$date[] 		= $var['date'];
-			$product_eff[] 	= floatval($var['product_eff']);
-			$total_eff[] 	= floatval($var['total_eff']);
+			$date[] 			= $var['date'];
+			$product_eff[] 		= floatval($var['product_eff']);
+			$total_eff[] 		= floatval($var['total_eff']);
 			$actual_yield[] 	= floatval($var['yield']);
 			$target_output[] 	= floatval($var['target']);
 			$actual_output[] 	= floatval($var['output']);
         }
+
+        $monthText = array('January','February','March','April','May','June','July','August','September','October','November','December');
+        $month = $monthText[$month-1];
 
 
 		$data = array(
 			"apiVersion" 	=> "1.0",
 			"data" 			=> array(
 				"time_now" 		=> date('Y-m-d H:i:s'),
+				"shift" 		=> $shift,
+				"line" 			=> $line,
+				"month" 		=> $month,
+				"year" 			=> $year,
 				"message" 		=> $message,
 				"execute_time" 	=> round(microtime(true)-StTime,4)."s",
 				"totalFeeds" 	=> floatval(count($dataset)),

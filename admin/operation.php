@@ -37,7 +37,7 @@ $current_page['1'] = 'caliber';
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/caliber.service.js"></script>
+<script type="text/javascript" src="js/service/operation.service.js"></script>
 
 </head>
 <body>

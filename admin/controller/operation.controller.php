@@ -42,6 +42,14 @@ class OperationController extends OperationModel{
         }
     }
 
+    public function connectOperationAndRoute($route_id,$operation_id){
+		if(parent::alreadyConnect($route_id,$operation_id)){
+			parent::connectOperationToRoute($route_id,$operation_id);
+		}else{
+			parent::removeOperationOnRoute($route_id,$operation_id);
+		}
+	}
+
     // render dataset to view.
     private function render($data,$option){
     	$total_items = 0;

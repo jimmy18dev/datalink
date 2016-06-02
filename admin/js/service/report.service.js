@@ -196,7 +196,7 @@ function getGraph(shift){
         // Build the chart
         $('#container-'+shift).highcharts({
             title: {
-                text: 'Shift A, Line 9, December 2016',
+                text: 'Shift '+data.data.shift+', Line '+data.data.line+', '+data.data.month+' '+data.data.year,
                 x: -20 //center
             },
             xAxis: {

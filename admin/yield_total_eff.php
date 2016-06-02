@@ -69,9 +69,7 @@ $current_page['1'] = 'report';
         </div>
     </div>
 
-    <div class="filter">
-        
-    </div>
+    <?php if(!empty($_GET['month']) && !empty($_GET['line'])){?>
 	<div class="graph-report">
         <h2>Shift A</h2>
         <div class="graph" id="container-A"></div>
@@ -103,12 +101,16 @@ $current_page['1'] = 'report';
             <?php echo $report->getGraph($_GET['month'],$_GET['year'],'B',$_GET['line'],array('render' => 'html'));?>
         </div>   
     </div>
+    <?php }else{?>
+    <div class="starter">Select Month and Line No.</div>
+    <?php }?>
 
     <input type="hidden" id="month" value="<?php echo $_GET['month'];?>">
     <input type="hidden" id="year" value="<?php echo $_GET['year'];?>">
     <input type="hidden" id="line" value="<?php echo $_GET['line'];?>">
 </div>
 
+<?php if(!empty($_GET['month']) && !empty($_GET['line'])){?>
 <script type="text/javascript" src="js/service/report.service.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -129,5 +131,6 @@ $(function(){
     getGraph('B');
 });
 </script>
+<?php }?>
 </body>
 </html>

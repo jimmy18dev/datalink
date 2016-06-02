@@ -76,8 +76,8 @@ function deleteOperation(operation_id){
 
 // Connect Operation to Route
 function createMatching(operation_id){
-    var href            = 'api.operation.php';
-    var route_id = $('#route_id').val();
+    var href        = 'api.operation.php';
+    var route_id    = $('#route_id').val();
 
     $.ajax({
         url         :href,
