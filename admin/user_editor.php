@@ -57,13 +57,22 @@ if(empty($userData['id'])){
 			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
 		<div class="form-input">
-			<div class="grant-control">Set to Administrator</div>
+
+			<?php if(!empty($userData['id'])){?>
+			<div class="grant-control">
+				<?php if($userData['type'] != 'Administrator'){?>
+				<div class="grant-btn" onclick="javascript:addToAdmin(<?php echo $userData['id'];?>);">Add to admin</div>
+				<?php }else{?>
+				<div class="grant-btn grant-remove-btn" onclick="javascript:removeAdmin(<?php echo $userData['id'];?>);">Remove admin</div>
+				<?php }?>
+			</div>
+			<?php }?>
 			
 			<div class="input">
 				<input class="input-text half-size font-bigsize" type="text" id="fname" value="<?php echo $userData['fname'];?>" placeholder="First Name">
 				<input class="input-text half-size font-bigsize" type="text" id="lname" value="<?php echo $userData['lname'];?>" placeholder="Last Name">
 
-				<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" autofocus placeholder="Employee ID">
+				<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" placeholder="Employee ID">
 
 				<p class="caption">User Login</p>
 				<input class="input-text" type="text" id="username" value="<?php echo $userData['username'];?>" placeholder="Username">

@@ -90,6 +90,7 @@ class UserController extends UserModel{
 	public function removeAdmin($user_id){
 		parent::setToUser($user_id);
 	}
+	
 	public function deactiveUser($user_id){
 		parent::setToDeactive($user_id);
 	}

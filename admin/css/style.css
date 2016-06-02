@@ -415,7 +415,26 @@ body {
   padding: 0% 5%;
   float: right;
   display: inline-block;
-  border-left: 1px solid #F5F5F5	;
+  border-left: 1px solid #F5F5F5;
+}
+.container .form-container .form-input .grant-control {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 3%;
+}
+.container .form-container .form-input .grant-control .grant-btn {
+  float: right;
+  display: inline-block;
+  font-size: 0.9em;
+  color: #003399;
+}
+.container .form-container .form-input .grant-control .grant-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.container .form-container .form-input .grant-control .grant-remove-btn {
+  color: #CCCCCC;
 }
 .container .form-container .form-input .input {
   width: 100%;

@@ -60,6 +60,22 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'add_to_admin':
+					if(true){
+						$user_id = $user->grantAdmin($_POST['user_id']);
+						$api->successMessage($return_message,$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
+				case 'remove_admin':
+					if(true){
+						$user_id = $user->removeAdmin($_POST['user_id']);
+						$api->successMessage($return_message,$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				default:
 					break;
 			}
