@@ -129,65 +129,79 @@ body {
   color: #999999;
 }
 .login-container {
-  width: 30%;
-  margin: 0% 35%;
+  width: 70%;
+  margin: 0% 15%;
   float: left;
   display: inline-block;
-  margin-top: 15%;
-  text-align: center;
+  margin-top: 12%;
+  color: #000000;
 }
-.login-container .logo {
+.login-container .login-detail {
+  width: 39%;
+  padding: 5%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.login-container .login-detail .icon {
   width: 100%;
   float: left;
   display: inline-block;
-  text-align: center;
-  font-size: 3em;
-  color: #003399;
+  font-size: 4em;
+  margin-bottom: 5%;
+  color: rgba(0, 0, 0, 0.8);
 }
-.login-container p {
+.login-container .login-detail h1 {
+  font-size: 2em;
+  margin-bottom: 1%;
+  color: rgba(0, 0, 0, 0.8);
+}
+.login-container .login-detail p {
   font-size: 1em;
   line-height: 1.5em;
-  color: #999999;
+  color: rgba(0, 0, 0, 0.6);
 }
-.login-container .input {
-  width: 100%;
+.login-container .login-input {
+  width: 40%;
+  padding: 5%;
   float: left;
   display: inline-block;
-  margin-top: 20%;
 }
-.login-container .input .input-text {
-  width: 85%;
-  padding: 1.5% 0%;
+.login-container .login-input p.caption {
+  font-size: 0.9em;
+  line-height: 2em;
+  color: rgba(0, 0, 0, 0.4);
+}
+.login-container .login-input .input-text {
+  width: 96%;
   float: left;
   display: inline-block;
+  font-size: 1.4em;
+  padding: 2%;
+  margin-bottom: 7%;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5em;
-  line-height: 1.5em;
-  border: 0px;
-  border-bottom: 1px solid #FAFAFA;
-  text-align: center;
-  color: #003399;
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.login-container .input .input-text:focus {
-  border-bottom: 1px solid #EEEEEE;
+.login-container .login-input .input-text:focus {
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }
-.login-container .input .login-btn {
-  width: 15%;
-  padding: 1.5% 0%;
-  float: left;
+.login-container .login-input .submit-btn {
+  float: right;
   display: inline-block;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1em;
+  padding: 10px 20px;
+  background: #003399;
   border: 0px;
-  border-bottom: 1px solid #EEEEEE;
-  text-align: center;
-  color: #003399;
-  background: #FFFFFF;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
 }
-.login-container .input .login-btn:hover {
+.login-container .login-input .submit-btn i {
+  margin-left: 10px;
+}
+.login-container .login-input .submit-btn:hover {
   cursor: pointer;
-  background: #FAFAFA;
+  opacity: 0.8;
 }
 .version-bar {
   position: fixed;
@@ -268,6 +282,26 @@ body {
 }
 .container .head .head-title p a.add-btn:hover {
   text-decoration: underline;
+}
+.container .head .head-title p .control-btn {
+  float: left;
+  display: inline-block;
+  border: 1px solid #DDDDDD;
+  color: #CCCCCC;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.7em;
+  line-height: 1em;
+  margin-top: 2%;
+  margin-right: 1%;
+}
+.container .head .head-title p .control-btn i {
+  margin-left: 5px;
+}
+.container .head .head-title p .control-btn:hover {
+  cursor: pointer;
+  border: 1px solid #CCCCCC;
+  color: #AAAAAA;
 }
 .container .head .head-control {
   width: 50%;
@@ -1322,7 +1356,8 @@ body {
   color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .user-activity-items .col1 {
-  width: 15%;
+  width: 14%;
+  padding-left: 1%;
   float: left;
   display: inline-block;
 }
@@ -1340,7 +1375,8 @@ body {
   display: inline-block;
 }
 .container .list-container .user-activity-items .col4 {
-  width: 60%;
+  width: 59%;
+  padding-right: 1%;
   float: left;
   display: inline-block;
   text-overflow: ellipsis;
@@ -1437,6 +1473,14 @@ body {
   float: left;
   display: inline-block;
   text-align: left;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 1em;
+  text-align: center;
+  font-style: italic;
+}
+.container .list-container .operation-container h3 i {
+  margin-left: 5px;
+  color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .operation-container .operation-items {
   width: 100%;
@@ -1500,7 +1544,8 @@ body {
   float: right;
 }
 .container .list-container .section-items .col1 {
-  width: 20%;
+  width: 19%;
+  padding-left: 1%;
   float: left;
   display: inline-block;
 }
@@ -1510,7 +1555,8 @@ body {
   display: inline-block;
 }
 .container .list-container .remark-items .col1 {
-  width: 95%;
+  width: 94%;
+  padding-left: 1%;
   float: left;
   display: inline-block;
 }
@@ -1544,7 +1590,8 @@ body {
   text-align: right;
 }
 .container .list-container .user-items .col1 {
-  width: 10%;
+  width: 9.5%;
+  padding-left: 0.5%;
   float: left;
   display: inline-block;
 }
@@ -1609,6 +1656,22 @@ body {
 .container .list-container .user-items .col7 .online {
   color: #4CAF50;
   font-weight: bold;
+}
+.container .list-container .user-items .col7 .deactive {
+  color: #F44336;
+  font-weight: bold;
+}
+.container .list-container .user-items-deactive {
+  color: rgba(0, 0, 0, 0.2);
+}
+.container .list-container .user-items-deactive .col2 a {
+  color: rgba(0, 0, 0, 0.2);
+}
+.container .list-container .user-items-deactive .col2 .admin {
+  color: rgba(0, 0, 0, 0.2);
+}
+.container .list-container .user-items-deactive .col5 .line {
+  color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .topic-fix {
   color: rgba(0, 0, 0, 0.2);

@@ -110,8 +110,15 @@ class CaliberModel extends Database{
 	}
 
 	// COUNTER
-	public function countCaliber(){
-		parent::query('SELECT COUNT(id) total_caliber FROM RTH_CaliberCode WHERE status = "active"');
+	public function countCaliber($type){
+		if($type == 'active'){
+			parent::query('SELECT COUNT(id) total_caliber FROM RTH_CaliberCode WHERE status = "active"');
+		}else if($type == 'pending'){
+			parent::query('SELECT COUNT(id) total_caliber FROM RTH_CaliberCode WHERE status = "active"');
+		}else{
+			parent::query('SELECT COUNT(id) total_caliber FROM RTH_CaliberCode WHERE status != "deleted"');
+		}
+
 		parent::execute();
 		$dataset = parent::single();
 		return $dataset['total_caliber'];

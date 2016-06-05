@@ -26,5 +26,13 @@ class UserActivityModel extends Database{
 
 		return $dataset;
 	}
+
+	public function countActivity($user_id){
+		parent::query('SELECT COUNT(id) total_activity FROM RTH_User_activity WHERE user_id = :user_id');
+		parent::bind(':user_id', $user_id);
+		parent::execute();
+		$dataset = parent::single();
+		return $dataset['total_activity'];
+	}
 }
 ?>

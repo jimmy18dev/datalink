@@ -55,7 +55,7 @@ $total_remark = $remark->countRemark();
 	<div class="list-container">
 		<?php if($total_remark > 0){?>
 		<div class="items remark-items topic-fix">
-			<div class="col1">Total remark <strong><?php echo $total_remark;?> items.</strong></div>
+			<div class="col1">Total remark <strong><?php echo $total_remark;?> items.</strong> <i class="fa fa-comment-o" aria-hidden="true"></i></div>
 		</div>
 		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
 

@@ -110,5 +110,13 @@ class UserModel extends Database{
 		parent::bind(':user_id', $user_id);
 		parent::execute();
 	}
+
+	// Total user account
+	public function countUser(){
+		parent::query('SELECT COUNT(id) total_user FROM RTH_User WHERE status = "active"');
+		parent::execute();
+		$dataset = parent::single();
+		return $dataset['total_user'];
+	}
 }
 ?>

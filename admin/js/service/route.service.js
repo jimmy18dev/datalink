@@ -3,7 +3,7 @@ function createRoute(){
     var href            = 'api.route.php';
     var caliber_id      = $('#caliber_id').val();
     var code            = $('#code').val();
-    var name            = $('#code').val();
+    var name            = $('#name').val();
     var description     = $('#description').val();
 
     $.ajax({
@@ -52,7 +52,7 @@ function editRoute(){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        // window.location = 'caliber.php';
+        window.location = 'operation.php?route='+route_id;
     }).error();
 }
 

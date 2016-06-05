@@ -59,14 +59,14 @@ $(document).ready(function(){
 		</div>
 		<div class="form-input">
 			<div class="input">
-				<input class="input-text font-bigsize" type="text" id="code" value="<?php echo $route->code;?>" autofocus>
-				<input class="input-text" type="text" id="name" value="<?php echo $route->name;?>">
+				<input class="input-text font-bigsize" type="text" id="name" value="<?php echo $route->name;?>" placeholder="Route name">
+				<input class="input-text font-bigsize" type="hidden" id="code" value="<?php echo $route->code;?>">
 
 				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this route"><?php echo $route->description;?></textarea>
 
-				<input type="text" id="route_id" value="<?php echo $route->id;?>">
+				<input type="hidden" id="route_id" value="<?php echo $route->id;?>">
 				<!-- You can't update caliner code! -->
-				<input type="text" id="caliber_id" value="<?php echo (empty($route->caliber_id)?$_GET['caliber']:$route->caliber_id);?>">
+				<input type="hidden" id="caliber_id" value="<?php echo (empty($route->caliber_id)?$_GET['caliber']:$route->caliber_id);?>">
 			</div>
 			<div class="control">
 				<?php if(empty($route->id)){?>

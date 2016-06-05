@@ -11,7 +11,7 @@ if(!empty($_GET['user'])){
 }
 
 // current page
-$current_page['1'] = 'user_proflie';
+$current_page['1'] = 'user';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -45,7 +45,7 @@ $current_page['1'] = 'user_proflie';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $userData['fname'].' '.$userData['lname'];?></h1>
-			<p>No. <?php echo $userData['code'];?> | Last Visit: <?php echo $userData['visit_time'];?></p>
+			<p>Account ID <strong><?php echo $userData['code'];?></strong> has <strong><?php echo $useractivity->countActivity($userData['id']);?> Activitys</strong> and Last visit at <strong><?php echo $userData['visit_time'];?></strong></p>
 		</div>
 	</div>
 	<div class="list-container">

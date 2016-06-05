@@ -42,7 +42,8 @@ $current_page['1'] = 'profile';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $user->fname.' '.$user->lname?></h1>
-			<p>No. <?php echo $user->code?> | Last Visit: <?php echo $user->visit_time;?> | <a href="logout.php">Logout</a></p>
+			<p>Account ID <strong><?php echo $user->code;?></strong> has <strong><?php echo $useractivity->countActivity($user->id);?> Activitys</strong> and Last visit at <strong><?php echo $user->visit_time;?></strong></p>
+			<p><a href="logout.php" class="control-btn">Logout</a></p>
 		</div>
 	</div>
 	<div class="list-container">

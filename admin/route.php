@@ -54,13 +54,15 @@ $current_page['2'] = 'caliber_code';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $caliber->code.' '.$caliber->family;?></h1>
-			<p>Caliber is <strong><?php echo $caliber->status;?></strong> and <strong><?php echo $caliber->total_route;?> routes</strong>, Standard time: <?php echo ($caliber->hrs == 0?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add standard time</a>':'<strong>'.$caliber->hrs.' Hrs/K.</strong>');?>, Last updated: <strong><?php echo $caliber->update_time;?></strong>, <?php echo (empty($caliber->description)?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add description</a>':$caliber->description);?><?php if($caliber->status == 'active'){?>, <span onclick="javascript:deactiveCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="activate-btn"><i class="fa fa-circle-thin" aria-hidden="true"></i>Set to pending</span><?php }?>
-			
-			</p>
+			<p>Caliber is <strong><?php echo $caliber->status;?></strong> and <strong><?php echo $caliber->total_route;?> routes</strong>, Standard time: <?php echo ($caliber->hrs == 0?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add standard time</a>':'<strong>'.$caliber->hrs.' Hrs/K.</strong>');?></p>
+			<p>Last updated: <strong><?php echo $caliber->update_time;?></strong>, <?php echo (empty($caliber->description)?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add description</a>':$caliber->description);?></p>
+			<p>
+				<a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="control-btn">Edit this Caliber<i class="fa fa-cog" aria-hidden="true"></i></a>
+				<?php if($caliber->status == 'active'){?><span onclick="javascript:deactiveCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="control-btn">Set to pending<i class="fa fa-angle-right" aria-hidden="true"></i></span><?php }?></p>
 		</div>
 
 		<div class="head-control">
-			<a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="btn"><i class="fa fa-cog" aria-hidden="true"></i>Edit Caliber</a>
+			
 			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE ROUTE</a>
 		</div>
 	</div>
