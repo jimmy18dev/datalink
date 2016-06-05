@@ -3,6 +3,9 @@
 if(!$user_online){
 	header("Location: login.php");
 	die();
+}else if($user->status == 'deactive'){
+	header("Location: profile.php");
+	die();
 }
 
 // current page

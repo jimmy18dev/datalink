@@ -2,7 +2,10 @@
 <?php
 // Permission
 if(!$user_online){
-	header("Location: index.php");
+	header("Location: login.php");
+	die();
+}else if($user->status == 'deactive'){
+	header("Location: profile.php");
 	die();
 }
 

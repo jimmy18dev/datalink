@@ -39,6 +39,11 @@ $current_page['1'] = 'profile';
 <body>
 <?php include'header.php';?>
 <div class="container">
+	<?php if($user->status == 'deactive'){?>
+	<div class="message-control">
+		<div class="user-deactive"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>This account is <strong>Deactive</strong> by administrator</div>
+	</div>
+	<?php }?>
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $user->fname.' '.$user->lname?></h1>

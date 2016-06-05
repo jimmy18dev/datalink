@@ -4,6 +4,9 @@
 if(!$user_online){
 	header("Location: index.php");
 	die();
+}else if($user->status == 'deactive'){
+	header("Location: profile.php");
+	die();
 }
 
 if(!empty($_GET['user'])){
@@ -42,10 +45,17 @@ $current_page['1'] = 'user';
 <body>
 <?php include'header.php';?>
 <div class="container">
+	<?php if($userData['status'] == 'deactive'){?>
+	<div class="message-control">
+		<div class="user-deactive"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>This account is <strong>Deactive</strong> by administrator</div>
+	</div>
+	<?php }?>
+
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $userData['fname'].' '.$userData['lname'];?></h1>
 			<p>Account ID <strong><?php echo $userData['code'];?></strong> has <strong><?php echo $useractivity->countActivity($userData['id']);?> Activitys</strong> and Last visit at <strong><?php echo $userData['visit_time'];?></strong></p>
+			<p><a href="user_editor.php?user=<?php echo $userData['id'];?>" class="control-btn">Edit user</a></p>
 		</div>
 	</div>
 	<div class="list-container">

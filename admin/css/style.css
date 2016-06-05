@@ -222,6 +222,25 @@ body {
   float: left;
   display: inline-block;
 }
+.container .message-control {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.container .message-control i {
+  margin-right: 10px;
+}
+.container .message-control .user-deactive {
+  width: 100%;
+  padding: 2% 0%;
+  float: left;
+  display: inline-block;
+  color: #F44336;
+  background: #FFEBEE;
+}
 .container .available-control {
   width: 90%;
   padding: 2.5% 5%;
