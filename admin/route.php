@@ -30,7 +30,7 @@ $current_page['2'] = 'caliber_code';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Route</title>
+<title>Route in <?php echo $caliber->code.' '.$caliber->family;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -44,22 +44,23 @@ $current_page['2'] = 'caliber_code';
 <body>
 <?php include'header.php';?>
 <div class="container">
+	<?php if($caliber->status == 'pending' && $caliber->has_primary_route){?>
+	<div class="available-control">
+		<p>You can set this caliber to<span onclick="javascript:activeCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="activate-btn">Actived<i class="fa fa-check" aria-hidden="true"></i></span> state by click to actived button.</p>
+		<p>Note. Leader can see caliber's actived only!</p>
+	</div>
+	<?php }?>
+
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $caliber->code.' '.$caliber->family;?></h1>
-			<p>Caliber is <strong>Available</strong> and <strong>5 routes</strong>, Standard time: <strong><?php echo $caliber->hrs;?> Hrs/K</strong>. Last updated: <strong><?php echo $caliber->update_time;?></strong> <?php echo $caliber->description;?>
+			<p>Caliber is <strong><?php echo $caliber->status;?></strong> and <strong><?php echo $caliber->total_route;?> routes</strong>, Standard time: <?php echo ($caliber->hrs == 0?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add standard time</a>':'<strong>'.$caliber->hrs.' Hrs/K.</strong>');?>, Last updated: <strong><?php echo $caliber->update_time;?></strong>, <?php echo (empty($caliber->description)?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add description</a>':$caliber->description);?><?php if($caliber->status == 'active'){?>, <span onclick="javascript:deactiveCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="activate-btn"><i class="fa fa-circle-thin" aria-hidden="true"></i>Set to pending</span><?php }?>
 			
 			</p>
 		</div>
 
 		<div class="head-control">
-			<?php if($caliber->status == 'active'){?>
-			<div onclick="javascript:deactiveCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="btn">Set to panding</div>
-			<?php }else if($caliber->status == 'deactive'){?>
-			<div onclick="javascript:activeCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="btn"><i class="fa fa-check" aria-hidden="true"></i>Set to Available</div>
-			<?php }?>
-
-			<a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="btn"><i class="fa fa-cog" aria-hidden="true"></i>Edit this caliber</a>
+			<a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="btn"><i class="fa fa-cog" aria-hidden="true"></i>Edit Caliber</a>
 			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE ROUTE</a>
 		</div>
 	</div>
@@ -67,8 +68,9 @@ $current_page['2'] = 'caliber_code';
 	<div class="list-container">
 		<div class="items route-items topic-fix">
 			<div class="col1">Route</div>
-			<div class="col2">Description</div>
-			<div class="col3">Updated</div>
+			<div class="col2">Status</div>
+			<div class="col3">Description</div>
+			<div class="col4">Updated</div>
 		</div>
 
 		<?php $route->listRouteInCaliber($caliber->id,array('type' => 'route-items'));?>

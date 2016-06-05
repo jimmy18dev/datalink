@@ -3,10 +3,6 @@ class RouteModel extends Database{
 
 	// ROUTE CREATE FUNCTIONS
 	public function create($caliber_id,$code,$name,$description){
-		
-		// Clean primary type
-		$this->clearPrimary($caliber_id);
-
 		parent::query('INSERT INTO RTH_Route(caliber_id,code,name,description,create_time,update_time,type) VALUE(:caliber_id,:code,:name,:description,:create_time,:update_time,:type)');
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::bind(':code', 			$code);
@@ -14,7 +10,7 @@ class RouteModel extends Database{
 		parent::bind(':description', 	$description);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
-		parent::bind(':type', 			'primary');
+		parent::bind(':type', 			'disable');
 		parent::execute();
 		return parent::lastInsertId();
 	}

@@ -21,6 +21,9 @@ class CaliberController extends CaliberModel{
 	public $route_code;
 	public $route_name;
 
+	public $total_route;
+	public $has_primary_route;
+
 
 	// CALIBER CODE
 	public function deleteCaliber($caliber_id){
@@ -69,6 +72,9 @@ class CaliberController extends CaliberModel{
 		$this->route_id 		= $dataset['route_id'];
 		$this->route_code 		= $dataset['route_code'];
 		$this->route_name 		= $dataset['route_name'];
+
+		$this->total_route 		= parent::countRouteinCaliber($this->id);
+		$this->has_primary_route = parent::hasPrimaryRoute($this->id);
 	}
 
 	public function listAllCalibers($option){

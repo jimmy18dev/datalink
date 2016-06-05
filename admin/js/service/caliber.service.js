@@ -77,30 +77,7 @@ function edit(id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-
-        if(data.return){
-            window.location = 'caliber.php';
-        }
-        else{
-
-        }
-
-        // if(data.return){
-        //     $('#dialog-message').html('กำลังสมัครสมาชิกใหม่...');
-        //     $('#dialog-box').fadeIn(300);
-
-        //     if(redirect == 'editor'){
-        //         window.location = 'editor.php?';
-        //     }else if(redirect){
-        //         window.location = 'case-'+redirect+'.html';
-        //     }else{
-        //         window.location = 'profile.php';
-        //     }
-        // }
-        // else{
-        //     $('#status-message').html('อีเมลนี้ถูกใช้แล้ว!').slideDown(500).delay(3000).slideUp(300);
-        //     $('#login-status').html('สมัครสมาชิก');
-        // }
+        window.location = 'route.php?caliber='+id;
     }).error();
 }
 

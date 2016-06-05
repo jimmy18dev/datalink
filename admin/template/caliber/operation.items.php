@@ -6,11 +6,14 @@
 		<div class="description"><?php echo $var['description'];?></div>
 		<?php }?>
 	</div>
+
+	<?php if($route_type != 'primary'){?>
 	<div class="control">
 		<?php if(empty($var['match_id'])){?>
-		<span class="btn" onclick="javascript:createMatching(<?php echo $var['id'];?>);"><i class="fa fa-arrow-left" aria-hidden="true"></i> Add</span>
+		<span class="btn" onclick="javascript:createMatching(<?php echo $var['id'];?>);"><i class="fa fa-arrow-left" aria-hidden="true"></i>Add</span>
 		<?php }else{?>
 		<span class="btn btn-remove" onclick="javascript:createMatching(<?php echo $var['id'];?>);">Remove</span>
 		<?php }?>
 	</div>
+	<?php }?>
 </div>

@@ -208,6 +208,36 @@
 	float: left;
 	display: inline-block;
 
+	.available-control{
+		width: 90%;
+		padding: 2.5% 5%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+
+		p{
+			font-size: 0.9em;
+			line-height: 2em;
+		}
+
+		.activate-btn{
+			background: #4CAF50;
+			color: #FFFFFF;
+			padding: 5px 15px;
+			border-radius: 20px;
+			margin: 0px 5px;
+
+			i{
+				margin-left: 5px;
+			}
+
+			&:hover{
+				cursor: pointer;
+				opacity: 0.8;
+			}
+		}
+	}
+
 	.head{
 		width: 90%;
 		padding: 2.5% 5%;
@@ -236,8 +266,17 @@
 			}
 			p{
 				font-size: 1em;
-				line-height: 1.3em;
+				line-height: 1.5em;
 				color: rgba(0, 0, 0, 0.6);
+
+				a.add-btn{
+					font-style: italic;
+					color: #003399;
+
+					&:hover{
+						text-decoration: underline;
+					}
+				}
 			}
 		}
 
@@ -265,6 +304,17 @@
 					cursor: pointer;
 					opacity: 0.8;
 				}
+			}
+
+			.active-btn{
+				border: 1px solid #4CAF50;
+				background: #4CAF50;
+				color: #FFFFFF;
+			}
+
+			.edit-btn{
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				color: rgba(0,0,0,0.2);
 			}
 		}	
 	}
@@ -1354,9 +1404,10 @@
 			padding: 5% 1%;
 			float: left;
 			display: inline-block;
-			font-size: 0.9em;
+			font-size: 1.2em;
 			color: #CCCCCC;
 			text-align: center;
+			font-style: italic;
 		}
 
 		.items{
@@ -1403,6 +1454,7 @@
 				float: left;
 				display: inline-block;
 				text-align: center;
+				margin-right: 5%;
 
 				.active{
 					color: #4CAF50;
@@ -1427,7 +1479,7 @@
 				text-align: right;
 			}
 			.col5{
-				width: 44%;
+				width: 39%;
 				padding-right: 1%;
 				float: left;
 				display: inline-block;
@@ -1436,7 +1488,10 @@
                 overflow: hidden;
 			}
 		}
-		.caliber-items-deactive{
+		.caliber-items-pending{
+			color: rgba(0, 0, 0, 0.4);
+		}
+		.caliber-items-deleted{
 			color: rgba(0, 0, 0, 0.2);
 		}
 
@@ -1606,11 +1661,17 @@
 						display: inline-block;
 						text-align: center;
 						padding: 5px 15px;
-						border: 1px solid #EEEEEE;
+						border: 1px solid #4CAF50;
+						color: #4CAF50;
 						border-radius: 20px;
+
+						i{
+							margin-right: 10px;
+						}
 
 						&:hover{
 							cursor: pointer;
+							opacity: 0.8;
 						}
 					}
 					.btn-remove{
@@ -1655,17 +1716,31 @@
 
 		.route-items{
 			.col1{
-				width: 25%;
+				width: 19%;
+				padding-left: 1%;
 				float: left;
 				display: inline-block;
 			}
 			.col2{
-				width: 60%;
+				width: 10%;
+				float: left;
+				display: inline-block;
+				text-align: center;
+				margin-right: 5%;
+
+				.active{
+					color: #4CAF50;
+					font-weight: bold;
+				}
+			}
+			.col3{
+				width: 50%;
 				float: left;
 				display: inline-block;
 			}
-			.col3{
-				width: 15%;
+			.col4{
+				width: 14%;
+				padding-right: 1%;
 				float: left;
 				display: inline-block;
 				text-align: right;

@@ -10,7 +10,7 @@ class CaliberModel extends Database{
 		parent::bind(':family', 		$family);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
-		parent::bind(':status', 		'disable');
+		parent::bind(':status', 		'pending');
 		parent::execute();
 		return parent::lastInsertId();
 	}
@@ -116,6 +116,13 @@ class CaliberModel extends Database{
 		$dataset = parent::single();
 		return $dataset['total_caliber'];
 	}
+	public function countRouteinCaliber($caliber_id){
+		parent::query('SELECT COUNT(id) total_route FROM RTH_Route WHERE caliber_id = :caliber_id AND status = "active"');
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::execute();
+		$dataset = parent::single();
+		return $dataset['total_route'];
+	}
 
 
 	// Caliber status
@@ -126,12 +133,23 @@ class CaliberModel extends Database{
 		parent::execute();
 	}
 	public function setToDeactive($caliber_id){
-		parent::query('UPDATE RTH_CaliberCode SET status = "deactive", update_time = :update_time WHERE id = :caliber_id');
+		parent::query('UPDATE RTH_CaliberCode SET status = "pending", update_time = :update_time WHERE id = :caliber_id');
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::execute();
 	}
 
+	public function hasPrimaryRoute($caliber_id){
+		parent::query('SELECT id FROM RTH_Route WHERE caliber_id = :caliber_id AND status = "active" AND type = "primary" LIMIT 1');
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::execute();
+		$dataset = parent::single();
 
+		if(!empty($dataset['id'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
 ?>

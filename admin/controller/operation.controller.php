@@ -57,6 +57,8 @@ class OperationController extends OperationModel{
         if($option['type'] == 'operation-items'){
         	$status = $option['status'];
         	$route_current = $option['route_current'];
+        	$route_type = $option['route_type'];
+        	
             foreach ($data as $var){
             	if($status == 'active' && !empty($var['match_id'])){
             		include'template/caliber/operation.items.php';

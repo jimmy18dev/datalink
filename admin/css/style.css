@@ -208,6 +208,31 @@ body {
   float: left;
   display: inline-block;
 }
+.container .available-control {
+  width: 90%;
+  padding: 2.5% 5%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .available-control p {
+  font-size: 0.9em;
+  line-height: 2em;
+}
+.container .available-control .activate-btn {
+  background: #4CAF50;
+  color: #FFFFFF;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin: 0px 5px;
+}
+.container .available-control .activate-btn i {
+  margin-left: 5px;
+}
+.container .available-control .activate-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 .container .head {
   width: 90%;
   padding: 2.5% 5%;
@@ -234,8 +259,15 @@ body {
 }
 .container .head .head-title p {
   font-size: 1em;
-  line-height: 1.3em;
+  line-height: 1.5em;
   color: rgba(0, 0, 0, 0.6);
+}
+.container .head .head-title p a.add-btn {
+  font-style: italic;
+  color: #003399;
+}
+.container .head .head-title p a.add-btn:hover {
+  text-decoration: underline;
 }
 .container .head .head-control {
   width: 50%;
@@ -259,6 +291,15 @@ body {
 .container .head .head-control .btn:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+.container .head .head-control .active-btn {
+  border: 1px solid #4CAF50;
+  background: #4CAF50;
+  color: #FFFFFF;
+}
+.container .head .head-control .edit-btn {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
 }
 .container .header-report-form-container {
   width: 46%;
@@ -1199,9 +1240,10 @@ body {
   padding: 5% 1%;
   float: left;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: #CCCCCC;
   text-align: center;
+  font-style: italic;
 }
 .container .list-container .items {
   width: 100%;
@@ -1240,6 +1282,7 @@ body {
   float: left;
   display: inline-block;
   text-align: center;
+  margin-right: 5%;
 }
 .container .list-container .caliber-items .col4 .active {
   color: #4CAF50;
@@ -1264,7 +1307,7 @@ body {
   text-align: right;
 }
 .container .list-container .caliber-items .col5 {
-  width: 44%;
+  width: 39%;
   padding-right: 1%;
   float: left;
   display: inline-block;
@@ -1272,7 +1315,10 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
-.container .list-container .caliber-items-deactive {
+.container .list-container .caliber-items-pending {
+  color: rgba(0, 0, 0, 0.4);
+}
+.container .list-container .caliber-items-deleted {
   color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .user-activity-items .col1 {
@@ -1431,11 +1477,16 @@ body {
   display: inline-block;
   text-align: center;
   padding: 5px 15px;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #4CAF50;
+  color: #4CAF50;
   border-radius: 20px;
+}
+.container .list-container .operation-container .operation-items .control .btn i {
+  margin-right: 10px;
 }
 .container .list-container .operation-container .operation-items .control .btn:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 .container .list-container .operation-container .operation-items .control .btn-remove {
   color: rgba(0, 0, 0, 0.4);
@@ -1464,17 +1515,30 @@ body {
   display: inline-block;
 }
 .container .list-container .route-items .col1 {
-  width: 25%;
+  width: 19%;
+  padding-left: 1%;
   float: left;
   display: inline-block;
 }
 .container .list-container .route-items .col2 {
-  width: 60%;
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  margin-right: 5%;
+}
+.container .list-container .route-items .col2 .active {
+  color: #4CAF50;
+  font-weight: bold;
+}
+.container .list-container .route-items .col3 {
+  width: 50%;
   float: left;
   display: inline-block;
 }
-.container .list-container .route-items .col3 {
-  width: 15%;
+.container .list-container .route-items .col4 {
+  width: 14%;
+  padding-right: 1%;
   float: left;
   display: inline-block;
   text-align: right;
