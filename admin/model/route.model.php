@@ -25,6 +25,14 @@ class RouteModel extends Database{
 		parent::execute();
 	}
 
+	public function setPrimary($route_id,$caliber_id){
+		$this->clearPrimary($caliber_id);
+
+		parent::query('UPDATE RTH_Route SET type = "primary" WHERE id = :route_id');
+		parent::bind(':route_id', $route_id);
+		parent::execute();
+	}
+
 	// ROUTE EDITING
 	public function edit($route_id,$code,$name,$description){
 		parent::query('UPDATE RTH_Route SET code = :code,name = :name,description = :description,update_time = :update_time WHERE id = :route_id');

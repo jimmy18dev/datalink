@@ -38,6 +38,7 @@ $current_page['1'] = 'caliber';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/service/operation.service.js"></script>
+<?php if($route->type!='primary'){?><script type="text/javascript" src="js/service/route.service.js"></script><?php }?>
 
 </head>
 <body>
@@ -46,28 +47,21 @@ $current_page['1'] = 'caliber';
 	<div class="head">
 		<div class="head-title">
 			<h1><strong><?php echo $route->name;?></strong> in <a href="route.php?caliber=<?php echo $route->caliber_id;?>"><strong><?php echo $route->caliber_name;?></strong></a></h1>
-			<p>This route has <?php echo $route->total_operation;?> items and updated at <?php echo $route->update_time;?> <a href="route_editor.php?route=<?php echo $route->id;?>"><i class="fa fa-cog" aria-hidden="true"></i>Edit Route</a></p>
+			<p>This route has operations <strong><?php echo $route->total_operation;?> items</strong> and last updated at <strong><?php echo $route->update_time;?></strong> <a href="route_editor.php?route=<?php echo $route->id;?>"><i class="fa fa-cog" aria-hidden="true"></i>Edit Route</a> | <?php echo ($route->type != "primary"?'<span onclick="javascript:setPrimary('.$route->id.','.$route->caliber_id.');">Set to primary</span>':'');?></p>
 		</div>
 
 		<div class="head-control">
-			<a href="operation_editor.php" class="create-btn">CREATE OPEARATION</a>
+			<a href="operation_editor.php" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE OPEARATION</a>
 		</div>
 	</div>
 	<!-- Table -->
 	<div class="list-container">
-		<h3>Active</h3>
-		<div class="operation-items topic-fix">
-			<div class="col1">Name</div>
-			<div class="col2">Descriptions</div>
-			<div class="col3">Updated</div>
-			<div class="col4">Status</div>
-			<div class="col5"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-		</div>
-		<div class="items-container">
+		<div class="operation-container">
+			<h3>Operation in <?php echo $route->name;?></h3>
 			<?php $operation->listAllOperations($route->id,array('type' => 'operation-items','status' => 'active','route_current' => $_GET['route']));?>
 		</div>
-		<h3>Disable</h3>
-		<div class="items-container">
+		<div class="operation-container">
+			<h3>Disable operation</h3>
 			<?php $operation->listAllOperations($route->id,array('type' => 'operation-items','status' => 'disable','route_current' => $_GET['route']));?>
 		</div>
 	</div>

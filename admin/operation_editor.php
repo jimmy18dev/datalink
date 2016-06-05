@@ -54,7 +54,7 @@ $(document).ready(function(){
 	<div class="form-container">
 		<div class="form-detail">
 			<div class="icon"><i class="fa fa-bolt" aria-hidden="true"></i></div>
-			<h1>Create new Operation</h1>
+			<h1><?php echo (empty($operation->id)?'Create new Operation':'Operation Editing...');?></h1>
 			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
 		<div class="form-input">

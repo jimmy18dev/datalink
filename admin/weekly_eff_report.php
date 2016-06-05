@@ -83,7 +83,7 @@ $ttl_eff 			= ($ttl_earned * 100) / $ttl_hrs; // (4.4)
 
 	<div class="report-container">
 		<div class="datepicker">
-			<form action="report.php" method="post">
+			<form action="weekly_eff_report.php" method="post">
 				<div class="caption">Get report from </div>
 				<div class="input">
 					<select name="s_day" class="input-select">

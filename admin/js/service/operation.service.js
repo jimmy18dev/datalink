@@ -55,6 +55,9 @@ function deleteOperation(operation_id){
     var href            = 'api.operation.php';
     var route_id        = $('#route_id').val();
 
+    var agree       = confirm('Are you sure you want to delete this operation ?');
+    if(!agree){ return false; }
+
     $.ajax({
         url         :href,
         cache       :false,

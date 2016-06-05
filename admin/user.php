@@ -25,7 +25,7 @@ $current_page['1'] = 'user';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>USER</title>
+<title>User management</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -44,7 +44,7 @@ $current_page['1'] = 'user';
 			<p>12 Users is <strong>active</strong></p>
 		</div>
 		<div class="head-control">
-			<a href="user_editor.php" class="create-btn">NEW USER</a>
+			<a href="user_editor.php" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE NEW USER</a>
 		</div>
 	</div>
 
@@ -57,6 +57,7 @@ $current_page['1'] = 'user';
 			<div class="col4">Password</div>
 			<div class="col5">Line No. / Section</div>
 			<div class="col6">Last visit</div>
+			<div class="col7">State</div>
 		</div>
 		<div class="items-container">
 			<?php echo $user->listAllUser(array('type' => 'user-items'));?>

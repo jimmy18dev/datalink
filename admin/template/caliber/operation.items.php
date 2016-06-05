@@ -1,13 +1,16 @@
 <div class="operation-items <?php echo (!empty($var['match_id'])?'operation-items-add':'');?>">
-	<div class="col1"><strong><?php echo $var['name'];?></strong></div>
-	<div class="col2"><?php echo (empty($var['description'])?'-':$var['description']);?></div>
-	<div class="col3"><?php echo $var['update_time'];?></div>
-	<div class="col4">
-		<?php if(empty($var['match_id'])){?>
-		<span class="btn" onclick="javascript:createMatching(<?php echo $var['id'];?>);">disable</span>
-		<?php }else{?>
-		<span class="btn btn-active" onclick="javascript:createMatching(<?php echo $var['id'];?>);">Active</span>
+	<div class="detail">
+		<div class="title"><strong><?php echo $var['name'];?></strong> <a href="operation_editor.php?operation=<?php echo $var['id'];?>&route=<?php echo $route_current;?>">[edit]</a></div>
+
+		<?php if(!empty($var['description'])){?>
+		<div class="description"><?php echo $var['description'];?></div>
 		<?php }?>
 	</div>
-	<div class="col5"><a href="operation_editor.php?operation=<?php echo $var['id'];?>&route=<?php echo $route_current;?>"><i class="fa fa-cog" aria-hidden="true"></i>EDIT</a></div>
+	<div class="control">
+		<?php if(empty($var['match_id'])){?>
+		<span class="btn" onclick="javascript:createMatching(<?php echo $var['id'];?>);"><i class="fa fa-arrow-left" aria-hidden="true"></i> Add</span>
+		<?php }else{?>
+		<span class="btn btn-remove" onclick="javascript:createMatching(<?php echo $var['id'];?>);">Remove</span>
+		<?php }?>
+	</div>
 </div>

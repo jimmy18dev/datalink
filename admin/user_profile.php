@@ -6,8 +6,12 @@ if(!$user_online){
 	die();
 }
 
+if(!empty($_GET['user'])){
+	$userData = $user->getData($_GET['user']);
+}
+
 // current page
-$current_page['1'] = 'proflie';
+$current_page['1'] = 'user_proflie';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -24,9 +28,8 @@ $current_page['1'] = 'proflie';
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
-<title>USER ACTIVITY</title>
+<title><?php echo $userData['fname'].' '.$userData['lname'];?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -41,19 +44,19 @@ $current_page['1'] = 'proflie';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1><?php echo $user->fname.' '.$user->lname?></h1>
-			<p>No. <?php echo $user->code?> | Last Visit: <?php echo $user->visit_time;?> | <a href="logout.php">Logout</a></p>
+			<h1><?php echo $userData['fname'].' '.$userData['lname'];?></h1>
+			<p>No. <?php echo $userData['code'];?> | Last Visit: <?php echo $userData['visit_time'];?></p>
 		</div>
 	</div>
 	<div class="list-container">
-		<div class="user-activity-items topic-fix">
+		<div class="items user-activity-items topic-fix">
 			<div class="col1">Date/Time</div>
 			<div class="col2">Action</div>
-			<div class="col3">Description</div>
-			<div class="col4">IP Address</div>
+			<div class="col3">IP Address <i class="fa fa-location-arrow" aria-hidden="true"></i></div>
+			<div class="col4">Description</div>
 		</div>
 		<div class="items-container">
-			<?php $useractivity->listActivity($_GET['user'],array('type' => 'user-activity-items'));?>
+			<?php $useractivity->listActivity($userData['id'],array('type' => 'user-activity-items'));?>
 		</div>
 	</div>
 </div>

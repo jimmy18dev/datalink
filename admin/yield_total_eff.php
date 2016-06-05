@@ -5,6 +5,10 @@ if(!$user_online){
 	die();
 }
 
+if(!empty($_GET['month']) && !empty($_GET['line'])){
+    $useractivity->saveActivity($user->id,'ViewYieldEfficiencyReport','View Yield & total efficiency report at line:'.$_GET['line'].', '.$_GET['month'].' '.$_GET['year'],'');
+}
+
 // current page
 $current_page['1'] = 'report';
 
@@ -25,7 +29,7 @@ $current_page['1'] = 'report';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Weekly efficiency report</title>
+<title>Yield & total efficiency report</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>

@@ -27,7 +27,7 @@ $total_section = $section->countSection();
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
-<title>Caliber Code</title>
+<title>Section</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -47,7 +47,7 @@ $total_section = $section->countSection();
 
 		<?php if($total_section > 0){?>
 		<div class="head-control">
-			<a href="section_editor.php" class="create-btn">NEW SECTION</a>
+			<a href="section_editor.php" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a>
 		</div>
 		<?php }?>
 	</div>

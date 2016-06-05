@@ -26,7 +26,7 @@ $total_remark = $remark->countRemark();
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>General Remark</title>
+<title>General remark</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -46,7 +46,7 @@ $total_remark = $remark->countRemark();
 
 		<?php if($total_remark > 0){?>		
 		<div class="head-control">
-			<a href="remark_editor.php?" class="create-btn">NEW REMARK</a>
+			<a href="remark_editor.php?" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a>
 		</div>
 		<?php }?>
 	</div>

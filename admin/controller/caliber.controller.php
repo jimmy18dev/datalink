@@ -18,23 +18,8 @@ class CaliberController extends CaliberModel{
 
 	// Route
 	public $route_id;
-	public $route_caliber_id;
 	public $route_code;
 	public $route_name;
-	public $route_description;
-	public $route_create_time;
-	public $route_update_time;
-	public $route_type;
-	public $route_status;
-
-	// Operation
-	public $operation_id;
-	public $operation_name;
-	public $operation_description;
-	public $operation_create_time;
-	public $operation_update_time;
-	public $operation_type;
-	public $operation_status;
 
 
 	// CALIBER CODE
@@ -65,25 +50,25 @@ class CaliberController extends CaliberModel{
 	public function getCaliber($id){
 		$dataset = parent::getData($id);
 
-		$this->id = $dataset['id'];
-		$this->code = $dataset['code'];
-		$this->name = $dataset['name'];
-		$this->description = $dataset['description'];
-		$this->family = $dataset['family'];
-		$this->create_time = $dataset['create_time'];
-		$this->update_time = $dataset['update_time'];
-		$this->type = $dataset['type'];
-		$this->status = $dataset['status'];
+		$this->id 				= $dataset['id'];
+		$this->code 			= $dataset['code'];
+		$this->name 			= $dataset['name'];
+		$this->description 		= $dataset['description'];
+		$this->family 			= $dataset['family'];
+		$this->create_time 		= $dataset['create_time'];
+		$this->update_time 		= $dataset['update_time'];
+		$this->type 			= $dataset['type'];
+		$this->status 			= $dataset['status'];
 
 		// Std. Time
-		$this->standard_id = $dataset['standard_id'];
-		$this->hrs = $dataset['standard_hrs'];
-		$this->remark = $dataset['standard_remark'];
+		$this->standard_id 		= $dataset['standard_id'];
+		$this->hrs 				= $dataset['standard_hrs'];
+		$this->remark 			= $dataset['standard_remark'];
 
 		// Route
-		$this->route_id = $dataset['route_id'];
-		$this->route_code = $dataset['route_code'];
-		$this->route_name = $dataset['route_name'];
+		$this->route_id 		= $dataset['route_id'];
+		$this->route_code 		= $dataset['route_code'];
+		$this->route_name 		= $dataset['route_name'];
 	}
 
 	public function listAllCalibers($option){

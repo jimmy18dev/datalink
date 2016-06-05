@@ -25,7 +25,7 @@ $current_page['1'] = 'caliber';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
-<title>Caliber Code</title>
+<title>Caliber code</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -45,17 +45,17 @@ $current_page['1'] = 'caliber';
 		</div>
 
 		<div class="head-control">
-			<!-- <div class="tab-items tab-items-active">All</div> -->
-			<a href="caliber_editor.php" class="create-btn">NEW CALIBER</a>
+			<a href="caliber_editor.php" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW CALIBER</a>
 		</div>
 	</div>
 	<!-- Table -->
 	<div class="list-container">
 		<div class="items caliber-items topic-fix">
 			<div class="col1">Caliber Code</div>
+			<div class="col4">Status</div>
 			<div class="col2">Route</div>
 			<div class="col3">Std.time (Hrs/K)</div>
-			<div class="col4">Description</div>
+			<div class="col5">Description</div>
 		</div>
 		<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
 	</div>

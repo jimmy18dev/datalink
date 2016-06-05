@@ -50,6 +50,22 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'setActive':
+					if(true){
+						$return_id = $caliber->setToActive($_POST['caliber_id']);
+						$api->successMessage($return_message,$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
+				case 'setDeactive':
+					if(true){
+						$return_id = $caliber->setToDeactive($_POST['caliber_id']);
+						$api->successMessage($return_message,$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				default:
 					break;
 			}

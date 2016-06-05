@@ -24,7 +24,7 @@ function createRoute(){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        // window.location = 'caliber.php';
+        window.location = 'route.php?caliber='+caliber_id;
     }).error();
 }
 function editRoute(){
@@ -59,6 +59,8 @@ function editRoute(){
 function deleteRoute(route_id){
     var href            = 'api.route.php';
     var caliber_id      = $('#caliber_id').val();
+    var agree       = confirm('Are you sure you want to delete this route ?');
+    if(!agree){ return false; }
 
     $.ajax({
         url         :href,
@@ -76,5 +78,30 @@ function deleteRoute(route_id){
     }).done(function(data){
         console.log('Return: '+data.message);
         window.location = 'route.php?caliber='+caliber_id;
+    }).error();
+}
+
+function setPrimary(route_id,caliber_id){
+    var href            = 'api.route.php';
+    var agree           = confirm('Are you sure you want set this route to primary ?');
+    if(!agree){ return false; }
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'route',
+            action              :'set_primary',
+            route_id:route_id,
+            caliber_id:caliber_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        location.reload();
     }).error();
 }

@@ -25,7 +25,6 @@ $current_page['1'] = 'profile';
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
 <title>USER</title>
 
@@ -47,11 +46,11 @@ $current_page['1'] = 'profile';
 		</div>
 	</div>
 	<div class="list-container">
-		<div class="user-activity-items topic-fix">
+		<div class="items user-activity-items topic-fix">
 			<div class="col1">Date/Time</div>
 			<div class="col2">Action</div>
-			<div class="col3">Description</div>
-			<div class="col4">IP Address</div>
+			<div class="col3">IP Address <i class="fa fa-location-arrow" aria-hidden="true"></i></div>
+			<div class="col4">Description</div>
 		</div>
 		<div class="items-container">
 			<?php $useractivity->listActivity($user->id,array('type' => 'user-activity-items'));?>

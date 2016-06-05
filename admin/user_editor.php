@@ -53,7 +53,7 @@ if(empty($userData['id'])){
 	<div class="form-container">
 		<div class="form-detail">
 			<div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-			<h1>Create new remark</h1>
+			<h1><?php echo (empty($userData['id'])?'Create new User':'User Editing...');?></h1>
 			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
 		<div class="form-input">
@@ -61,9 +61,9 @@ if(empty($userData['id'])){
 			<?php if(!empty($userData['id']) && $userData['id'] != $user->id){?>
 			<div class="grant-control">
 				<?php if($userData['type'] != 'Administrator'){?>
-				<div class="grant-btn" onclick="javascript:addToAdmin(<?php echo $userData['id'];?>);">Add to admin</div>
+				<div class="grant-btn" onclick="javascript:addToAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');">Add to admin</div>
 				<?php }else{?>
-				<div class="grant-btn grant-remove-btn" onclick="javascript:removeAdmin(<?php echo $userData['id'];?>);">Remove admin</div>
+				<div class="grant-btn grant-remove-btn" onclick="javascript:removeAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');">Remove admin</div>
 				<?php }?>
 			</div>
 			<?php }?>
@@ -106,7 +106,7 @@ if(empty($userData['id'])){
 				<?php if(empty($userData['id'])){?>
 				<div class="submit-btn" onclick="javascript:register();">Register new user</div>
 				<?php }else{?>
-				<div class="delete-btn" onclick="javascript:deactiveUser(<?php echo $userData['id'];?>);">Deactive this user account</div>
+				<div class="delete-btn" onclick="javascript:deactiveUser(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');">Deactive this user account</div>
 				<div class="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);">SAVE</div>
 				<?php }?>
 			</div>

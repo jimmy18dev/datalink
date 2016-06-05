@@ -66,6 +66,9 @@ function edit(id){
 
 function deleteRemark(remark_id){
     var href        = 'api.remark.php';
+    var agree       = confirm('Are you sure you want to delete this remark ?');
+
+    if(!agree){ return false; }
 
     $.ajax({
         url         :href,

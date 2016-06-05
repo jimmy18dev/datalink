@@ -66,6 +66,9 @@ function editSection(id){
 
 function deleteSection(section_id){
     var href        = 'api.section.php';
+    var agree       = confirm('Are you sure you want to delete this section ?');
+
+    if(!agree){ return false; }
 
     $.ajax({
         url         :href,

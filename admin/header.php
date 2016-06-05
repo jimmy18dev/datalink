@@ -10,5 +10,5 @@
 	<div class="signout"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
 	</a>
 	
-	<a href="profile.php" class="header-items <?php echo ($current_page['1'] == 'profile'?'header-items-active':'');?> user-items"><i class="fa fa-user" aria-hidden="true"></i><?php echo $user->fname;?></a>
+	<a href="profile.php" class="header-items <?php echo ($current_page['1'] == 'profile'?'header-items-active':'');?> user-items"><?php echo $user->fname.' '.$user->lname;?></a>
 </header>

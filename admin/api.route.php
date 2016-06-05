@@ -53,6 +53,14 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'set_primary':
+					if(true){
+						$return_id = $route->setPrimary($_POST['route_id'],$_POST['caliber_id']);
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				default:
 					break;
 			}

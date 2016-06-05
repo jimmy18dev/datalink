@@ -122,8 +122,11 @@ function edit(id){
     }).error();
 }
 
-function deactiveUser(user_id){
+function deactiveUser(user_id,username){
     var href        = 'api.user.php';
+    var agree       = confirm('Are you sure you want to deactive this '+username+' account ?');
+
+    if(!agree){ return false; }
 
     $.ajax({
         url         :href,
@@ -144,8 +147,11 @@ function deactiveUser(user_id){
     }).error();
 }
 
-function addToAdmin(user_id){
+function addToAdmin(user_id,username){
     var href        = 'api.user.php';
+    var agree       = confirm('Are you sure you want add '+username+' to admin ?');
+
+    if(!agree){ return false; }
 
     $.ajax({
         url         :href,
@@ -166,8 +172,11 @@ function addToAdmin(user_id){
     }).error();
 }
 
-function removeAdmin(user_id){
+function removeAdmin(user_id,username){
     var href        = 'api.user.php';
+    var agree       = confirm('Are you sure you want remove '+username+' as an admin ?');
+
+    if(!agree){ return false; }
 
     $.ajax({
         url         :href,

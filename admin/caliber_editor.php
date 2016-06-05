@@ -58,7 +58,7 @@ $(document).ready(function(){
 	<div class="form-container">
 		<div class="form-detail">
 			<div class="icon"><i class="fa fa-database" aria-hidden="true"></i></div>
-			<h1>Create new remark</h1>
+			<h1><?php echo (empty($caliber->id)?'Create new Caliber':'Caliber Editing...');?></h1>
 			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
 		<div class="form-input">
@@ -81,7 +81,6 @@ $(document).ready(function(){
 				<?php }?>
 			</div>
 			
-
 			<input class="input-text" type="hidden" id="remark" value="<?php echo $caliber->remark;?>">
 			<input class="input-text" type="hidden" id="name" value="<?php echo $caliber->name;?>">
 		</div>

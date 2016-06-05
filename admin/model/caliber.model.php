@@ -3,13 +3,14 @@ class CaliberModel extends Database{
 
 	// Caliber Code
 	public function create($code,$name,$description,$family){
-		parent::query('INSERT INTO RTH_CaliberCode(code,name,description,family,create_time,update_time) VALUE(:code,:name,:description,:family,:create_time,:update_time)');
+		parent::query('INSERT INTO RTH_CaliberCode(code,name,description,family,create_time,update_time,status) VALUE(:code,:name,:description,:family,:create_time,:update_time,:status)');
 		parent::bind(':code', 			$code);
 		parent::bind(':name', 			$name);
 		parent::bind(':description', 	$description);
 		parent::bind(':family', 		$family);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
+		parent::bind(':status', 		'disable');
 		parent::execute();
 		return parent::lastInsertId();
 	}
@@ -27,7 +28,7 @@ class CaliberModel extends Database{
 	}
 
 	public function getData($id){
-		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,route.id route_id,route.code,route.name 
+		parent::query('SELECT caliber.id,caliber.code,caliber.name,caliber.description,caliber.family,caliber.create_time,caliber.update_time,caliber.type,caliber.status,standard.id standard_id,standard.hrs standard_hrs,standard.remark standard_remark,route.id route_id,route.code route_code,route.name route_name 
 			FROM RTH_CaliberCode AS caliber 
 			LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
 			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
@@ -115,6 +116,22 @@ class CaliberModel extends Database{
 		$dataset = parent::single();
 		return $dataset['total_caliber'];
 	}
+
+
+	// Caliber status
+	public function setToActive($caliber_id){
+		parent::query('UPDATE RTH_CaliberCode SET status = "active", update_time = :update_time WHERE id = :caliber_id');
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::bind(':update_time',	date('Y-m-d H:i:s'));
+		parent::execute();
+	}
+	public function setToDeactive($caliber_id){
+		parent::query('UPDATE RTH_CaliberCode SET status = "deactive", update_time = :update_time WHERE id = :caliber_id');
+		parent::bind(':caliber_id', 	$caliber_id);
+		parent::bind(':update_time',	date('Y-m-d H:i:s'));
+		parent::execute();
+	}
+
 
 }
 ?>
