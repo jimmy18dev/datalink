@@ -56,7 +56,6 @@ $total_section = $section->countSection();
 	</div>
 
 	<div class="list-container">
-
 		<?php if($total_section > 0){?>
 		<div class="items section-items topic-fix">
 			<div class="col1">Total section <strong><?php echo $total_section;?> items</strong> <i class="fa fa-tag" aria-hidden="true"></i></div>
@@ -66,7 +65,11 @@ $total_section = $section->countSection();
 		
 		<?php }else{?>
 		<div class="creating-container">
-			<a href="section_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a>
+			<p>You can create new <strong>section</strong> items by click a button.</p>
+			<br>
+			<p><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+			<br><br>
+			<p><a href="section_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a></p>
 		</div>
 		<?php }?>
 	</div>

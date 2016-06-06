@@ -13,12 +13,10 @@ if($_POST['calling'] != ''){
 						
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'register successful';
-							$state = true;
 						}else{
 							$message = 'register fail!';
-							$state = false;
 						}
-						$api->successMessage($message,$state,'');
+						$api->successMessage($message,$return_id,'');
 					}else{
 						$api->errorMessage('signature error!');
 					}

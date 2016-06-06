@@ -64,7 +64,11 @@ $total_remark = $remark->countRemark();
 
 		<?php }else{?>
 		<div class="creating-container">
-			<a href="remark_editor.php?" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a>
+			<p>You can create new <strong>remark</strong> items by click a button.</p>
+			<br>
+			<p><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+			<br><br>
+			<p><a href="remark_editor.php?" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a></p>
 		</div>
 		<?php }?>
 	</div>

@@ -13,6 +13,9 @@ if(!$user_online){
 if(!empty($_GET['route'])){
 	$route->getRoute($_GET['route']);
 }
+if(!empty($_GET['caliber'])){
+	$caliber->getCaliber($_GET['caliber']);
+}
 
 // current page
 $current_page['1'] = 'caliber';
@@ -57,7 +60,13 @@ $(document).ready(function(){
 	<div class="form-container">
 		<div class="form-detail">
 			<div class="icon"><i class="fa fa-code-fork" aria-hidden="true"></i></div>
-			<h1><?php echo (empty($route->id)?'Create new Route':'Route Editing...');?></h1>
+			<h1>
+				<?php if(empty($route->id)){?>
+				Create new route to <a href="route.php?caliber=<?php echo $caliber->id;?>"><?php echo $caliber->code.''.$caliber->family;?></a>
+				<?php }else{?>
+				<?php echo $route->name;?> editing...
+				<?php }?>
+			</h1>
 			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
 		<div class="form-input">

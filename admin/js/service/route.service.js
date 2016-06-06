@@ -23,8 +23,14 @@ function createRoute(){
             console.log("Request Error");
         }
     }).done(function(data){
-        console.log('Return: '+data.message);
-        window.location = 'route.php?caliber='+caliber_id;
+        console.log(data);
+        
+        if(data.return){
+            window.location = 'operation.php?route='+data.return;
+        }
+        else{
+            window.location = 'route.php?caliber='+caliber_id;
+        }
     }).error();
 }
 function editRoute(){

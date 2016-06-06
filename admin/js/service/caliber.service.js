@@ -32,12 +32,11 @@ function create(){
     }).done(function(data){
         console.log('Return: '+data.message);
 
-        if(data.return){
-            window.location = 'caliber.php';
+        if(data.return && data.return > 0){
+            window.location = 'route.php?caliber='+data.return;
         }
         else{
-            $('#loading-box').fadeOut(300);
-            alert('แก้ข้อผิดพลาด!');
+            window.location = 'caliber.php?';
         }
     }).error();
 }

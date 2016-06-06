@@ -243,7 +243,7 @@ body {
 }
 .container .available-control {
   width: 90%;
-  padding: 2.5% 5%;
+  padding: 1.5% 5%;
   float: left;
   display: inline-block;
   text-align: center;
@@ -251,6 +251,11 @@ body {
 .container .available-control p {
   font-size: 0.9em;
   line-height: 2em;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .available-control p.note {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
 }
 .container .available-control .activate-btn {
   background: #4CAF50;
@@ -506,6 +511,12 @@ body {
   font-size: 2em;
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.8);
+}
+.container .form-container .form-detail h1 a {
+  color: #003399;
+}
+.container .form-container .form-detail h1 a:hover {
+  text-decoration: underline;
 }
 .container .form-container .form-detail p {
   font-size: 1em;
@@ -1375,8 +1386,8 @@ body {
   color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .user-activity-items .col1 {
-  width: 14%;
-  padding-left: 1%;
+  width: 14.5%;
+  padding-left: 0.5%;
   float: left;
   display: inline-block;
 }
@@ -1501,6 +1512,22 @@ body {
   margin-left: 5px;
   color: rgba(0, 0, 0, 0.2);
 }
+.container .list-container .operation-container .tip-container {
+  width: 100%;
+  padding: 10% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+.container .list-container .operation-container .tip-container i {
+  color: rgba(0, 0, 0, 0.1);
+}
+.container .list-container .operation-container .tip-container p {
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.2);
+}
 .container .list-container .operation-container .operation-items {
   width: 100%;
   padding: 1.5% 0%;
@@ -1563,8 +1590,8 @@ body {
   float: right;
 }
 .container .list-container .section-items .col1 {
-  width: 19%;
-  padding-left: 1%;
+  width: 19.5%;
+  padding-left: 0.5%;
   float: left;
   display: inline-block;
 }
@@ -1574,14 +1601,14 @@ body {
   display: inline-block;
 }
 .container .list-container .remark-items .col1 {
-  width: 94%;
-  padding-left: 1%;
+  width: 94.5%;
+  padding-left: 0.5%;
   float: left;
   display: inline-block;
 }
 .container .list-container .route-items .col1 {
-  width: 19%;
-  padding-left: 1%;
+  width: 19.5%;
+  padding-left: 0.5%;
   float: left;
   display: inline-block;
 }
@@ -1723,14 +1750,17 @@ body {
 .container .list-container .creating-container a.create-btn {
   background: #003399;
   color: #FFFFFF;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 0.9em;
-  border-radius: 3px;
+  border-radius: 20px;
   font-weight: bold;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .container .list-container .creating-container a.create-btn i {
   margin-right: 5px;
+}
+.container .list-container .creating-container a.create-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 .container .list-container h3 {
   width: 100%;

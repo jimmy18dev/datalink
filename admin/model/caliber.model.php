@@ -42,6 +42,7 @@ class CaliberModel extends Database{
 			FROM RTH_CaliberCode AS caliber 
 			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
 			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
+			WHERE caliber.status != "deleted" 
 			ORDER BY caliber.update_time DESC');
 		parent::execute();
 		return $dataset = parent::resultset();
@@ -114,7 +115,7 @@ class CaliberModel extends Database{
 		if($type == 'active'){
 			parent::query('SELECT COUNT(id) total_caliber FROM RTH_CaliberCode WHERE status = "active"');
 		}else if($type == 'pending'){
-			parent::query('SELECT COUNT(id) total_caliber FROM RTH_CaliberCode WHERE status = "active"');
+			parent::query('SELECT COUNT(id) total_caliber FROM RTH_CaliberCode WHERE status = "pending"');
 		}else{
 			parent::query('SELECT COUNT(id) total_caliber FROM RTH_CaliberCode WHERE status != "deleted"');
 		}

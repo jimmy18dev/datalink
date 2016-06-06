@@ -47,10 +47,14 @@ $current_page['2'] = 'caliber_code';
 <body>
 <?php include'header.php';?>
 <div class="container">
-	<?php if($caliber->status == 'pending' && $caliber->has_primary_route){?>
+	<?php if($caliber->status == 'pending'){?>
 	<div class="available-control">
-		<p>You can set this caliber to<span onclick="javascript:activeCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="activate-btn">Actived<i class="fa fa-check" aria-hidden="true"></i></span> state by click to actived button.</p>
-		<p>Note. Leader can see caliber's actived only!</p>
+		<?php if($caliber->has_primary_route){?>
+			<p>You can set this caliber to<span onclick="javascript:activeCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="activate-btn">Actived<i class="fa fa-check" aria-hidden="true"></i></span> state by click to actived button.</p>
+		<p class="note">Note. Leader can see caliber's actived only!</p>
+		<?php }else{?>
+			<p class="note">This caliber's <strong>pending</strong> state because this caliber without <strong>activated route!</strong></p>
+		<?php }?>
 	</div>
 	<?php }?>
 
@@ -65,20 +69,30 @@ $current_page['2'] = 'caliber_code';
 		</div>
 
 		<div class="head-control">
-			
+			<?php if($caliber->total_route > 0){?>
 			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE ROUTE</a>
+			<?php }?>
 		</div>
 	</div>
 	<!-- Table -->
 	<div class="list-container">
+		<?php if($caliber->total_route > 0){?>
 		<div class="items route-items topic-fix">
 			<div class="col1">Route</div>
 			<div class="col2">Status</div>
 			<div class="col3">Description</div>
 			<div class="col4">Updated</div>
 		</div>
-
 		<?php $route->listRouteInCaliber($caliber->id,array('type' => 'route-items'));?>
+		<?php }else{?>
+		<div class="creating-container">
+			<p>You can create new <strong>route</strong> items by click a button.</p>
+			<br>
+			<p><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+			<br><br>
+			<p><a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE ROUTE</a></p>
+		</div>
+		<?php }?>
 	</div>
 </div>
 </body>

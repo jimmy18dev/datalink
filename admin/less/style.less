@@ -247,7 +247,7 @@
 
 	.available-control{
 		width: 90%;
-		padding: 2.5% 5%;
+		padding: 1.5% 5%;
 		float: left;
 		display: inline-block;
 		text-align: center;
@@ -255,6 +255,12 @@
 		p{
 			font-size: 0.9em;
 			line-height: 2em;
+			color: rgba(0, 0, 0, 0.8);
+		}
+
+		p.note{
+			font-style: italic;
+			color: rgba(0, 0, 0, 0.6);
 		}
 
 		.activate-btn{
@@ -548,6 +554,14 @@
 				font-size: 2em;
 				line-height: 1.5em;
 				color: rgba(0, 0, 0, 0.8);
+
+				a{
+					color: #003399;
+
+					&:hover{
+						text-decoration: underline;
+					}
+				}
 			}
 			p{
 				font-size: 1em;
@@ -1557,8 +1571,8 @@
 
 		.user-activity-items{
 			.col1{
-				width: 14%;
-				padding-left: 1%;
+				width: 14.5%;
+				padding-left: 0.5%;
 				float: left;
 				display: inline-block;
 			}
@@ -1690,6 +1704,25 @@
 				}
 			}
 
+			.tip-container{
+				width: 100%;
+				padding: 10% 0%;
+				float: left;
+				display: inline-block;
+				text-align: center;
+				line-height: 1.5em;
+				font-size: 1em;
+
+				i{
+					color: rgba(0, 0, 0, 0.1);
+				}
+
+				p{
+					font-size: 0.9em;
+					color: rgba(0, 0, 0, 0.2);
+				}
+			}
+
 			.operation-items{
 				width: 100%;
 				padding: 1.5% 0%;
@@ -1765,8 +1798,8 @@
 		// Section items style
 		.section-items{
 			.col1{
-				width: 19%;
-				padding-left: 1%;
+				width: 19.5%;
+				padding-left: 0.5%;
 				float: left;
 				display: inline-block;
 			}
@@ -1780,8 +1813,8 @@
 		// Remark items style
 		.remark-items{
 			.col1{
-				width: 94%;
-				padding-left: 1%;
+				width: 94.5%;
+				padding-left: 0.5%;
 				float: left;
 				display: inline-block;
 			}
@@ -1789,8 +1822,8 @@
 
 		.route-items{
 			.col1{
-				width: 19%;
-				padding-left: 1%;
+				width: 19.5%;
+				padding-left: 0.5%;
 				float: left;
 				display: inline-block;
 			}
@@ -1941,14 +1974,18 @@
 			a.create-btn{
 				background: #003399;
 				color: #FFFFFF;
-				padding: 10px;
+				padding: 10px 20px;
 				font-size: 0.9em;
-				border-radius: 3px;
+				border-radius: 20px;
 				font-weight: bold;
-				box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 
 				i{
 					margin-right: 5px;
+				}
+
+				&:hover{
+					opacity: 0.8;
+					cursor: pointer;
 				}
 			}
 		}

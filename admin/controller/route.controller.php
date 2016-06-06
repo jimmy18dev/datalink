@@ -30,7 +30,8 @@ class RouteController extends RouteModel{
 
 
 	public function createRoute($caliber_id,$code,$name,$description){
-		parent::create($caliber_id,$code,$name,$description);
+		$route_id = parent::create($caliber_id,$code,$name,$description);
+		return $route_id;
 	}
 	public function editRoute($route_id,$code,$name,$description){
 		parent::edit($route_id,$code,$name,$description);

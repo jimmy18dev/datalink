@@ -52,9 +52,10 @@ $current_page['1'] = 'caliber';
 	<?php if($route->type != "primary" && $route->total_operation > 0){?>
 	<div class="available-control">
 		<p>You can <span onclick="javascript:setPrimary(<?php echo $route->id;?>,<?php echo $route->caliber_id;?>);" class="btn activate-btn">Activate<i class="fa fa-check" aria-hidden="true"></i></span> a route of <strong><?php echo $route->caliber_name;?></strong> by click to activate button.</p>
-		<p>Note. You can't add or remove a operation from control center in route's activated!</p>
+		<p>Note. You can't add or remove a operation in route's activated!</p>
 	</div>
 	<?php }?>
+	
 	<div class="head">
 		<div class="head-title">
 			<h1><strong><?php echo $route->name;?></strong> in <a href="route.php?caliber=<?php echo $route->caliber_id;?>"><strong><?php echo $route->caliber_name;?></strong></a></h1>
@@ -69,8 +70,15 @@ $current_page['1'] = 'caliber';
 	<!-- Table -->
 	<div class="list-container">
 		<div class="operation-container">
-			<h3>Operation in <strong><?php echo $route->name;?></strong><i class="fa fa-check" aria-hidden="true"></i></h3>
+			<h3>Operation <strong><?php echo $route->total_operation;?> items</strong> in <strong><?php echo $route->name;?></strong><i class="fa fa-check" aria-hidden="true"></i></h3>
+			<?php if($route->total_operation > 0){?>
 			<?php $operation->listAllOperations($route->id,array('type' => 'operation-items','status' => 'active','route_current' => $_GET['route'],'route_type' => $route->type));?>
+			<?php }else{?>
+			<div class="tip-container">
+				<p>You can select a operation in right box. <i class="fa fa-comment-o" aria-hidden="true"></i></p>
+				<p>click <strong>"Add"</strong> button for add a operation to route.</p>
+			</div>
+			<?php }?>
 		</div>
 		<div class="operation-container">
 			<h3>Disable operation</h3>

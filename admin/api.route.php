@@ -11,17 +11,12 @@ if($_POST['calling'] != ''){
 					if(true){
 						$return_id = $route->createRoute($_POST['caliber_id'],$_POST['code'],$_POST['name'],$_POST['description']);
 						
-						// if(!empty($user_id) && $user_id != 0){
-						// 	$return_message = 'register successful';
-						// 	$register_state = true;
-
-						// 	// Autologin after register successful
-						// 	// $login_state = $people->login($_POST['email'],$_POST['password'],'');
-						// }else{
-						// 	$return_message = 'register fail!';
-						// 	$register_state = false;
-						// }
-						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+						if(!empty($return_id) && $return_id != 0){
+							$return_message = 'register successful';
+						}else{
+							$return_message = 'register fail!';
+						}
+						$api->successMessage($return_message,$return_id,'');
 					}else{
 						$api->errorMessage('signature error!');
 					}
