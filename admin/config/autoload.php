@@ -15,7 +15,7 @@ date_default_timezone_set('Asia/Bangkok');
 
 error_reporting(E_ALL ^ E_NOTICE);
 
-include'config.php';
+include'../config/config.php';
 
 // Database (PDO class) ///////////////
 include_once'model/database.class.php';
@@ -64,4 +64,6 @@ $user_online = $user->sessionOnline();
 if($user_online){
 	$user->getUser($_SESSION['user_id']);
 }
+
+$version = '1.01';
 ?>

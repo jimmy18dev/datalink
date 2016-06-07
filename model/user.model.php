@@ -15,7 +15,7 @@ class UserModel extends Database{
 	}
 
 	public function userLogin($username,$password){
-		parent::query('SELECT id FROM RTH_User WHERE password = :password AND username = :username');
+		parent::query('SELECT id FROM RTH_User WHERE password = :password AND username = :username AND type = "normal"');
 		parent::bind(':username', $username);
 		parent::bind(':password', $password);
 		parent::execute();

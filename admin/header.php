@@ -6,6 +6,8 @@
 	<a href="section.php" class="header-items <?php echo ($current_page['1'] == 'section'?'header-items-active':'');?>">Section</a>
 	<a href="remark.php" class="header-items <?php echo ($current_page['1'] == 'remark'?'header-items-active':'');?>">General Remark</a>
 
+	<div class="version-items">Version <?php echo $version;?></div>
+
 	<a href="logout.php">
 	<div class="signout"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
 	</a>

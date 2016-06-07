@@ -40,7 +40,7 @@ if($user_online){
 		<h1>DATALINK</h1>
 		<p>The username and password to log into Datalink Panel can be found in your email. If you do not have the correct login credentials, please contact Administrator via phone or live chat</p>
 		<br>
-		<p>Version <strong>1.0</strong></p>
+		<p>Version <strong><?php echo $version;?></strong></p>
 	</div>
 	<div class="login-input">
 		<div class="input">
