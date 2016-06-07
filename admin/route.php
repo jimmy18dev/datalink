@@ -50,8 +50,7 @@ $current_page['2'] = 'caliber_code';
 	<?php if($caliber->status == 'pending'){?>
 	<div class="available-control">
 		<?php if($caliber->has_primary_route){?>
-			<p>You can set this caliber to<span onclick="javascript:activeCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="activate-btn">Actived<i class="fa fa-check" aria-hidden="true"></i></span> state by click to actived button.</p>
-		<p class="note">Note. Leader can see caliber's actived only!</p>
+			<p>You can set this caliber to<span onclick="javascript:activeCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="activate-btn">Actived<i class="fa fa-check" aria-hidden="true"></i></span> state by click to actived button, Leader can see caliber's actived only!</p>
 		<?php }else{?>
 			<p class="note">This caliber's <strong>pending</strong> state because this caliber without <strong>activated route!</strong></p>
 		<?php }?>

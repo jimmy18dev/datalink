@@ -793,53 +793,88 @@
 			display: inline-block;
 			margin-bottom: 3%;
 
-			.caption{
+			.picker-items{
+				width: 30%;
+				margin: 0% 35%;
 				float: left;
 				display: inline-block;
-				padding: 5px 0px;
-				margin-right: 10px;
-				font-size: 0.9em;
-				line-height: 1.5em;
-			}
-			.input{
-				float: left;
-				display: inline-block;
-			}
-			.submit{
-				float: left;
-				display: inline-block;
+
+				.caption{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					font-size: 1em;
+					line-height: 1.5em;
+					color: rgba(0, 0, 0, 0.2);
+				}
+				.picker{
+					width: 100%;
+					float: left;
+					display: inline-block;
+
+					.input-select{
+						float: left;
+						display: inline-block;
+						font-size: 2em;
+						font-family: @FontStylePrimary;
+						-webkit-appearance: none;
+						line-height: 1.5em;
+						padding: 5px 0px;
+						border: 0px;
+						border-bottom: 1px solid #EEEEEE;
+						border-radius: 0px;
+						color: rgba(0, 0, 0, 0.8);
+						outline: none;
+
+						&:hover{
+							border-bottom: 1px solid #AAAAAA;
+							color: rgba(0, 0, 0, 1);
+							cursor: pointer;
+						}
+					}
+
+					.input-select-day{
+						width: 20%;
+					}
+					.input-select-month{
+						width: 50%;
+					}
+					.input-select-year{
+						width: 30%;
+					}
+				}
 			}
 
-			.input-select{
+			.icon{
+				width: 100%;
+				padding: 5% 0%;
 				float: left;
 				display: inline-block;
-				font-size: 0.9em;
-				font-family: @FontStylePrimary;
-				-webkit-appearance: none;
-				line-height: 1.5em;
-				padding: 5px 8px;
-				margin-right: 5px;
-				border: 1px solid #EEEEEE;
-				border-radius: 3px;
 				text-align: center;
+				font-size: 2em;
+				color: rgba(0, 0, 0, 0.2);
 			}
-
-			.submit-btn{
+			.picker-control{
+				width: 30%;
+				margin: 0% 35%;
 				float: left;
 				display: inline-block;
-				font-size: 0.9em;
-				font-family: @FontStylePrimary;
-				line-height: 1.5em;
-				padding: 5px 10px;
-				border: 0px;
-				border-radius: 3px;
-				background: #003399;
-				color: #FFFFFF;
-				margin-left: 5px;
+				margin-top: 1.6%;
 
-				&:hover{
-					cursor: pointer;
-					opacity: 0.7;
+				.submit-btn{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					background: #003399;
+					color: #FFFFFF;
+					padding: 10px 15px;
+					border: 0px;
+					font-size: 1em;
+					font-family: @FontStylePrimary;
+
+					i{
+						margin-left: 10px;
+					}
 				}
 			}
 		}
@@ -849,15 +884,13 @@
 			float: left;
 			display: inline-block;
 			background: #FFFFFF;
-			margin-bottom: 3%;
-			border-radius: 2px;
-			border: 1px solid #EEEEEE;
+			margin-bottom: 5%;
 
 			.weekly-eff-items{
 				width: 100%;
 				float: left;
 				display: inline-block;
-				font-size: 0.9em;
+				font-size: 1em;
 				line-height: 2.5em;
 				border-bottom: 1px solid #FAFAFA;
 				color: rgba(0, 0, 0, 0.8);
@@ -867,8 +900,8 @@
 				}
 
 				.col1{
-					width: 26%;
-					padding: 0% 2%;
+					width: 29.5%;
+					padding-left: 0.5%;
 					float: left;
 					display: inline-block;
 
@@ -890,8 +923,8 @@
 					text-align: right;
 				}
 				.col4{
-					width: 21%;
-					padding: 0% 2%;
+					width: 24.5%;
+					padding-right: 0.5%;
 					float: left;
 					display: inline-block;
 					text-align: right;
@@ -909,39 +942,39 @@
 			.topic-fix{
 				font-weight: bold;
 				border-bottom: 1px solid #EEEEEE;
-				color: rgba(0, 0, 0, 1);
+				color: rgba(0, 0, 0, 0.8);
+
+				&:hover{
+					background: #FFFFFF;
+				}
 			}
 
-			.total-fix{
-				font-weight: bold;
-				color: #003399;
-			}
+			.total-fix{ font-weight: bold; }
 
 			.topic{
-				width: 96%;
-				padding: 0% 2%;
+				width: 100%;
 				float: left;
 				display: inline-block;
-				line-height: 2.5em;
+				line-height: 3em;
 				font-weight: bold;
-				font-size: 0.9em;
+				font-size: 1.2em;
 				font-family: @FontStylePrimary;
-				border-bottom: 1px solid #EEEEEE;
 			}
 
 			.eff-items{
-				width: 21%;
-				padding: 4% 2%;
+				width: 21.5%;
+				padding-left: 3%;
+				margin-top: 2%;
 				float: left;
 				display: inline-block;
-				text-align: right;
 				line-height: 1.5em;
+				border-left: 1px solid #EEEEEE;
 
 				.v{
 					width: 100%;
 					float: left;
 					display: inline-block;
-					font-size: 2em;
+					font-size: 2.2em;
 
 					.unit{
 						font-size: 0.5em;

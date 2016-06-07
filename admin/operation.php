@@ -51,8 +51,7 @@ $current_page['1'] = 'caliber';
 <div class="container">
 	<?php if($route->type != "primary" && $route->total_operation > 0){?>
 	<div class="available-control">
-		<p>You can <span onclick="javascript:setPrimary(<?php echo $route->id;?>,<?php echo $route->caliber_id;?>);" class="btn activate-btn">Activate<i class="fa fa-check" aria-hidden="true"></i></span> a route of <strong><?php echo $route->caliber_name;?></strong> by click to activate button.</p>
-		<p>Note. You can't add or remove a operation in route's activated!</p>
+		<p>You can <span onclick="javascript:setPrimary(<?php echo $route->id;?>,<?php echo $route->caliber_id;?>);" class="btn activate-btn">Activate<i class="fa fa-check" aria-hidden="true"></i></span> a route of <strong><?php echo $route->caliber_name;?></strong> by click to activate button, You can't add or remove a operation in route's activated!</p>
 	</div>
 	<?php }?>
 	

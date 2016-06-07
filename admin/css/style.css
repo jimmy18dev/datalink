@@ -724,66 +724,95 @@ body {
   display: inline-block;
   margin-bottom: 3%;
 }
-.container .report-container .datepicker .caption {
+.container .report-container .datepicker .picker-items {
+  width: 30%;
+  margin: 0% 35%;
   float: left;
   display: inline-block;
-  padding: 5px 0px;
-  margin-right: 10px;
-  font-size: 0.9em;
+}
+.container .report-container .datepicker .picker-items .caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 1em;
   line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.2);
 }
-.container .report-container .datepicker .input {
+.container .report-container .datepicker .picker-items .picker {
+  width: 100%;
   float: left;
   display: inline-block;
 }
-.container .report-container .datepicker .submit {
+.container .report-container .datepicker .picker-items .picker .input-select {
   float: left;
   display: inline-block;
-}
-.container .report-container .datepicker .input-select {
-  float: left;
-  display: inline-block;
-  font-size: 0.9em;
+  font-size: 2em;
   font-family: 'Roboto', sans-serif;
   -webkit-appearance: none;
   line-height: 1.5em;
-  padding: 5px 8px;
-  margin-right: 5px;
-  border: 1px solid #EEEEEE;
-  border-radius: 3px;
-  text-align: center;
+  padding: 5px 0px;
+  border: 0px;
+  border-bottom: 1px solid #EEEEEE;
+  border-radius: 0px;
+  color: rgba(0, 0, 0, 0.8);
+  outline: none;
 }
-.container .report-container .datepicker .submit-btn {
+.container .report-container .datepicker .picker-items .picker .input-select:hover {
+  border-bottom: 1px solid #AAAAAA;
+  color: #000000;
+  cursor: pointer;
+}
+.container .report-container .datepicker .picker-items .picker .input-select-day {
+  width: 20%;
+}
+.container .report-container .datepicker .picker-items .picker .input-select-month {
+  width: 50%;
+}
+.container .report-container .datepicker .picker-items .picker .input-select-year {
+  width: 30%;
+}
+.container .report-container .datepicker .icon {
+  width: 100%;
+  padding: 5% 0%;
   float: left;
   display: inline-block;
-  font-size: 0.9em;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.5em;
-  padding: 5px 10px;
-  border: 0px;
-  border-radius: 3px;
+  text-align: center;
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.2);
+}
+.container .report-container .datepicker .picker-control {
+  width: 30%;
+  margin: 0% 35%;
+  float: left;
+  display: inline-block;
+  margin-top: 1.6%;
+}
+.container .report-container .datepicker .picker-control .submit-btn {
+  width: 100%;
+  float: left;
+  display: inline-block;
   background: #003399;
   color: #FFFFFF;
-  margin-left: 5px;
+  padding: 10px 15px;
+  border: 0px;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
 }
-.container .report-container .datepicker .submit-btn:hover {
-  cursor: pointer;
-  opacity: 0.7;
+.container .report-container .datepicker .picker-control .submit-btn i {
+  margin-left: 10px;
 }
 .container .report-container .report-box {
   width: 100%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
-  margin-bottom: 3%;
-  border-radius: 2px;
-  border: 1px solid #EEEEEE;
+  margin-bottom: 5%;
 }
 .container .report-container .report-box .weekly-eff-items {
   width: 100%;
   float: left;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 2.5em;
   border-bottom: 1px solid #FAFAFA;
   color: rgba(0, 0, 0, 0.8);
@@ -792,8 +821,8 @@ body {
   background: #FAFAFA;
 }
 .container .report-container .report-box .weekly-eff-items .col1 {
-  width: 26%;
-  padding: 0% 2%;
+  width: 29.5%;
+  padding-left: 0.5%;
   float: left;
   display: inline-block;
 }
@@ -814,8 +843,8 @@ body {
   text-align: right;
 }
 .container .report-container .report-box .weekly-eff-items .col4 {
-  width: 21%;
-  padding: 0% 2%;
+  width: 24.5%;
+  padding-right: 0.5%;
   float: left;
   display: inline-block;
   text-align: right;
@@ -830,36 +859,37 @@ body {
 .container .report-container .report-box .topic-fix {
   font-weight: bold;
   border-bottom: 1px solid #EEEEEE;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .report-container .report-box .topic-fix:hover {
+  background: #FFFFFF;
 }
 .container .report-container .report-box .total-fix {
   font-weight: bold;
-  color: #003399;
 }
 .container .report-container .report-box .topic {
-  width: 96%;
-  padding: 0% 2%;
+  width: 100%;
   float: left;
   display: inline-block;
-  line-height: 2.5em;
+  line-height: 3em;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 1.2em;
   font-family: 'Roboto', sans-serif;
-  border-bottom: 1px solid #EEEEEE;
 }
 .container .report-container .report-box .eff-items {
-  width: 21%;
-  padding: 4% 2%;
+  width: 21.5%;
+  padding-left: 3%;
+  margin-top: 2%;
   float: left;
   display: inline-block;
-  text-align: right;
   line-height: 1.5em;
+  border-left: 1px solid #EEEEEE;
 }
 .container .report-container .report-box .eff-items .v {
   width: 100%;
   float: left;
   display: inline-block;
-  font-size: 2em;
+  font-size: 2.2em;
 }
 .container .report-container .report-box .eff-items .v .unit {
   font-size: 0.5em;
