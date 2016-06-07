@@ -827,8 +827,15 @@ body {
   display: inline-block;
 }
 .container .report-container .report-box .weekly-eff-items .col1 .count {
+  width: 10%;
+  float: left;
+  display: inline-block;
   color: #CCCCCC;
-  margin-right: 10px;
+}
+.container .report-container .report-box .weekly-eff-items .col1 .caliber {
+  width: 90%;
+  float: left;
+  display: inline-block;
 }
 .container .report-container .report-box .weekly-eff-items .col2 {
   width: 20%;
@@ -855,6 +862,12 @@ body {
   display: inline-block;
   text-align: right;
   margin-right: 50%;
+}
+.container .report-container .report-box .weekly-eff-items-pending {
+  color: rgba(0, 0, 0, 0.2);
+}
+.container .report-container .report-box .weekly-eff-items-deleted {
+  color: rgba(0, 0, 0, 0.1);
 }
 .container .report-container .report-box .topic-fix {
   font-weight: bold;

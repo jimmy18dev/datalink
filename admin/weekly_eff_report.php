@@ -246,7 +246,7 @@ if($date_validate){
 			<div class="weekly-eff-items total-fix">
 				<div class="col1">Total</div>
 				<div class="col2"><?php echo number_format($ttl_std_time,2);?></div>
-				<div class="col3"><?php echo number_format($ttl_qty,2);?></div>
+				<div class="col3"><?php echo number_format(($ttl_qty/1000),3);?></div>
 				<div class="col4"><?php echo number_format($ttl_earned,2);?></div>
 			</div>
 		</div>
