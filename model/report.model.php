@@ -130,7 +130,7 @@ class ReportModel extends Database{
 	}
 
 	public function listAllCaliber($header_id){
-		parent::query('SELECT detail.id detail_id,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,caliber.description caliber_description,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation,standard.hrs stdtime,route.route_name route_name 
+		parent::query('SELECT detail.id detail_id,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,caliber.description caliber_description,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation,standard.hrs stdtime,route.name route_name 
 			FROM RTH_DailyOutputDetail AS detail 
 			LEFT JOIN RTH_CaliberCode AS caliber ON caliber.id = detail.caliber_id 
 			LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
