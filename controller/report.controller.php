@@ -48,6 +48,8 @@ class ReportController extends ReportModel{
 	// Permission access
 	public $can_edit;
 
+	public $total_caliber;
+
 
 
 	/* REPORT MANAGEMENT */
@@ -150,6 +152,8 @@ class ReportController extends ReportModel{
 		
 		$this->type  			= $data['type'];
 		$this->status  			= $data['status'];
+
+		$this->total_caliber  	= parent::countCaliberInHeaderReport($this->id);
 	}
 
 	public function listAllHeader($line_no,$option){

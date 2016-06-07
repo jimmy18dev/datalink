@@ -54,22 +54,18 @@ $current_page['1'] = 'report_detail';
 		<div class="head-title">
 			<h1><?php echo $report->date;?></h1>
 			<p>Leader: <strong><?php echo $report->leader_name;?></strong> · Line no.<strong><?php echo $report->line_no;?></strong> (Shift: <?php echo $report->shift;?>) · <span title="<?php echo $report->update_time;?>"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $report->update;?></span></p>
-
-			<?php if($user->id == $report->leader_id && $report->can_edit){?>
-			<div class="btn">
-				<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="btn-create">ADD CALIBER CODE</a>
-			</div>
-			<?php }?>
 		</div>
 	</div>
 
 	<div class="list-container">
-		<p class="topic">
-			<strong>1. Manpower: <?php echo $report->status;?></strong>
-			<?php if($user->id == $report->leader_id && $report->can_edit){?>
-			<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="edit-btn">Edit Report</a>
-			<?php }?>
-		</p>
+		<div class="topic-container">
+			<div class="title">1. Manpower:</div>
+			<div class="control">
+				<?php if($user->id == $report->leader_id && $report->can_edit){?>
+				<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="edit-btn">Edit Report<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				<?php }?>
+			</div>
+		</div>
 		<div class="report-stat">
 			<div class="stat-items">
 				<div class="v"><?php echo $report->ttl_monthly_hrs;?></div>
@@ -179,10 +175,24 @@ $current_page['1'] = 'report_detail';
 			</div>
 		</div>
 
-		<p class="topic"><strong>2. Output:</strong></p>
+		<div class="topic-container">
+			<div class="title">2. Output: <?php echo $report->total_caliber;?> items</div>
+			<div class="control">
+				<?php if($user->id == $report->leader_id && $report->can_edit && $report->total_caliber == 0){?>
+				<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>ADD CALIBER CODE</a>
+			<?php }?>
+			</div>
+		</div>
+
+		<?php if($user->id == $report->leader_id && $report->can_edit && $report->total_caliber > 0){?>
+		<div class="starter-container">
+			<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>ADD CALIBER CODE</a>
+		</div>
+		<?php }else{?>
 		<div class="container-box">
 			<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items','header_id' => $report->id));?>
 		</div>
+		<?php }?>
 	</div>
 </div>
 </body>

@@ -57,7 +57,7 @@ $current_page['2'] = 'choose_caliber';
 	<div class="head">
 		<div class="head-title">
 			<h1>Choose Caliber Code...</h1>
-			<p><i class="fa fa-angle-double-down" aria-hidden="true"></i></p>
+			<p>Select a caliber code for add report to <strong>463 DD</strong></p>
 		</div>
 	</div>
 

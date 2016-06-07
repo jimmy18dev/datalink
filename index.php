@@ -6,6 +6,7 @@ if(!$user_online){
 }
 
 // current page
+$current_page['1'] = 'index';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -40,9 +41,6 @@ if(!$user_online){
 		<div class="head-title">
 			<h1>Daily output report</h1>
 			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
-			<div class="btn">
-				<a href="report_header_editor.php?action=create" class="btn-create">NEW REPORT</a>
-			</div>
 		</div>
 	</div>
 

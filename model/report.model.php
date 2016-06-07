@@ -142,6 +142,14 @@ class ReportModel extends Database{
 		return $dataset = parent::resultset();
 	}
 
+	public function countCaliberInHeaderReport($header_id){
+		parent::query('SELECT COUNT(*) FROM (SELECT COUNT(id) total FROM RTH_DailyOutputDetail WHERE header_id = 26 GROUP BY caliber_id) AS total');
+		parent::bind(':header_id', $header_id);
+		parent::execute();
+		$dataset = parent::single();
+		return $dataset['COUNT(*)'];
+	}
+
 	public function listallOperation($header_id,$caliber_id){
 		parent::query('SELECT detail.id detail_name,detail.header_id,detail.caliber_id,detail.route_id,detail.operation_id,operation.name operation_name,detail.total_good,detail.total_reject,detail.remark_id,remark.description remark_description,detail.remark_message,detail.output,detail.required_hrs,detail.create_time,detail.update_time,detail.type,detail.status 
 			FROM RTH_DailyOutputDetail AS detail 
