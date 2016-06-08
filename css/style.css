@@ -984,76 +984,59 @@ body {
 }
 .container .list-container .report-header-items {
   width: 100%;
-  padding: 1.5% 0%;
+  padding: 2% 0%;
   float: left;
   display: inline-block;
-  line-height: 1.5em;
+  line-height: 1em;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.8);
-  background: #FFFFFF;
-  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
 }
 .container .list-container .report-header-items:hover {
   cursor: pointer;
-  background: #FAFAFA;
+  color: #000000;
 }
 .container .list-container .report-header-items .col1 {
   width: 20%;
   float: left;
   display: inline-block;
 }
-.container .list-container .report-header-items .col1 i {
-  margin-right: 5px;
-}
 .container .list-container .report-header-items .col2 {
-  width: 8%;
-  padding: 0% 1%;
+  width: 10%;
   float: left;
   display: inline-block;
   text-align: center;
 }
 .container .list-container .report-header-items .col3 {
-  width: 8%;
-  padding: 0% 1%;
+  width: 25%;
   float: left;
   display: inline-block;
   text-align: right;
 }
 .container .list-container .report-header-items .col4 {
-  width: 8%;
-  padding: 0% 1%;
+  width: 25%;
   float: left;
   display: inline-block;
   text-align: right;
 }
 .container .list-container .report-header-items .col5 {
-  width: 18%;
-  padding: 0% 1%;
+  width: 20%;
   float: left;
   display: inline-block;
   text-align: right;
 }
-.container .list-container .report-header-items .col6 {
-  width: 28%;
-  padding: 0% 1%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .report-header-items .col6 i {
-  float: right;
+.container .list-container .report-header-items .col5 i {
+  margin-left: 10px;
 }
 .container .list-container .last-items {
   font-weight: bold;
   color: #003399;
 }
 .container .list-container .not_owner {
-  background: #F5F5F5;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .header-topic-fix {
-  font-size: 0.6em;
   padding: 1% 0%;
-  font-style: italic;
   color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .header-topic-fix:hover {

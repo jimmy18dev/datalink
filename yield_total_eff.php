@@ -13,7 +13,7 @@ if(!$user_online){
 // }
 
 // current page
-$current_page['1'] = 'report';
+$current_page['1'] = 'yield';
 
 ?>
 <!doctype html>
