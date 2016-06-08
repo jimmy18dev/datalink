@@ -189,6 +189,77 @@ body {
 .container .head .head-title .btn a.btn-create:active {
   background: #2E7D32;
 }
+.container .graph-report {
+  width: 90%;
+  margin: 3% 5%;
+  float: left;
+  display: inline-block;
+}
+.container .graph-report h2 {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 1.5em;
+}
+.container .graph-report .graph {
+  width: 97.5%;
+  margin-left: 2.5%;
+  float: left;
+  display: inline-block;
+  background: #DADADA;
+}
+.container .graph-report .report-yield-table {
+  width: 99%;
+  margin: 3% 0%;
+  margin-right: 1%;
+  float: left;
+  display: inline-block;
+  line-height: 3em;
+  font-size: 0.6em;
+  margin-bottom: 10%;
+  border-top: 1px solid #EEEEEE;
+  border-left: 1px solid #EEEEEE;
+}
+.container .graph-report .report-yield-table .caption-col {
+  width: 8%;
+  float: left;
+  display: inline-block;
+  font-weight: bold;
+}
+.container .graph-report .report-yield-table .caption-col .row {
+  width: 90%;
+  padding-left: 10%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .graph-report .report-yield-table .data-items {
+  width: 2.965%;
+  float: left;
+  display: inline-block;
+}
+.container .graph-report .report-yield-table .data-items .v {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  border-left: 1px solid #EEEEEE;
+  text-align: center;
+}
+.container .graph-report .report-yield-table .data-items .date {
+  font-weight: bold;
+  background: #FAFAFA;
+}
+.container .graph-report .report-yield-table .data-items .highlight {
+  color: #003399;
+  font-weight: bold;
+}
+.container .graph-report .report-yield-table .data-items .zero {
+  color: #EEEEEE;
+}
+.container .graph-report .report-yield-table .data-items:last-child .v {
+  border-right: 1px solid #EEEEEE;
+}
 .container .operation-form-container {
   width: 58%;
   padding: 1%;

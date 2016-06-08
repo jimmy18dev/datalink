@@ -285,5 +285,32 @@ class ReportModel extends Database{
 		$dataset = parent::single();
 		return $dataset;
 	}
+
+	// List month of header report
+	public function ListMonthData(){
+		parent::query('SELECT report_date FROM RTH_DailyOutputHeader WHERE status = "active" GROUP BY MONTH(report_date), YEAR(report_date) ORDER BY report_date ASC');
+		parent::execute();
+		$dataset = parent::resultset();
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['year'] = date('Y',strtotime($var['report_date']));
+			$dataset[$k]['month'] = date('n',strtotime($var['report_date']));
+			$dataset[$k]['month_name'] = parent::month_name($var['report_date']);
+		}
+		return $dataset;
+	}
+	
+	// GRAPH REPORT
+	public function getGraphData($month,$shift,$line_no){
+		parent::query('SELECT report_date,shift,product_eff,ttl_eff,yield,target_yield,target_eff 
+			FROM RTH_DailyOutputHeader 
+			WHERE MONTH(report_date) = MONTH(:month) AND shift = :shift AND line_no = :line_no 
+			ORDER BY report_date ASC');
+		parent::bind(':month', 		$month);
+		parent::bind(':shift', 		$shift);
+		parent::bind(':line_no', 	$line_no);
+		parent::execute();
+		$dataset = parent::resultset();
+		return $dataset;
+	}
 }
 ?>

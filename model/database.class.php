@@ -219,5 +219,11 @@ class Database{
 
         return $text;
     }
+
+    public function month_name($datetime){
+        $monthText = array('January','February','March','April','May','June','July','August','September','October','November','December');
+        $month  = date('n',strtotime($datetime));
+        return $monthText[$month-1];
+    }
 }
 ?>
