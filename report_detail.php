@@ -107,26 +107,6 @@ $current_page['1'] = 'report_detail';
 		</div>
 
 		<div class="header-report-table">
-			<div class="box box1">
-				<div class="box-topic">Over time<i class="fa fa-history" aria-hidden="true"></i></div>
-				<div class="col">
-					<div class="col-val"><?php echo number_format($report->ot_10,2);?></div>
-					<div class="col-caption">1.0</div>
-				</div>
-				<div class="col">
-					<div class="col-val"><?php echo number_format($report->ot_15,2);?></div>
-					<div class="col-caption">1.5</div>
-				</div>
-				<div class="col">
-					<div class="col-val"><?php echo number_format($report->ot_20,2);?></div>
-					<div class="col-caption">2.0</div>
-				</div>
-				<div class="col">
-					<div class="col-val"><?php echo number_format($report->ot_30,2);?></div>
-					<div class="col-caption">3.0</div>
-				</div>
-			</div>
-
 			<div class="box box2">
 				<div class="box-topic">Lost time<i class="fa fa-plug" aria-hidden="true"></i></div>
 				<div class="col">
@@ -148,6 +128,26 @@ $current_page['1'] = 'report_detail';
 				<div class="col">
 					<div class="col-val"><?php echo number_format($report->losttime_other,2);?></div>
 					<div class="col-caption">Other</div>
+				</div>
+			</div>
+			
+			<div class="box box1">
+				<div class="box-topic">Over time<i class="fa fa-history" aria-hidden="true"></i></div>
+				<div class="col">
+					<div class="col-val"><?php echo number_format($report->ot_10,2);?></div>
+					<div class="col-caption">1.0</div>
+				</div>
+				<div class="col">
+					<div class="col-val"><?php echo number_format($report->ot_15,2);?></div>
+					<div class="col-caption">1.5</div>
+				</div>
+				<div class="col">
+					<div class="col-val"><?php echo number_format($report->ot_20,2);?></div>
+					<div class="col-caption">2.0</div>
+				</div>
+				<div class="col">
+					<div class="col-val"><?php echo number_format($report->ot_30,2);?></div>
+					<div class="col-caption">3.0</div>
 				</div>
 			</div>
 
