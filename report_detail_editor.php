@@ -53,6 +53,7 @@ $current_page['3'] = 'add_caliber';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title><?php echo $caliber->code;?> <?php echo $caliber->family;?></title>
 
 <!-- CSS -->
@@ -67,15 +68,25 @@ $current_page['3'] = 'add_caliber';
 
 </head>
 <body>
-<?php include 'header.php';?>
-<div class="container">
 
-	<form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
-	<div class="operation-form-container">
-		<div class="heads">
-			<h3><?php echo $caliber->code;?> <?php echo $caliber->family;?></h3>
-			<p>Route: <strong><?php echo $caliber->route_name;?></strong> · Std.Time: <strong><?php echo $caliber->hrs;?></strong> Hrs/K · <strong><?php echo $caliber->total_operation;?> Operations</strong></p>
+<form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
+<header class="header">
+	<a href="index.php" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
+
+	<?php if($_GET['action'] == 'edit'){?>
+	<button type="submit" class="header-items submit-btn"><i class="fa fa-check" aria-hidden="true"></i>Save</button>
+	<?php }else{?>
+	<button type="submit" class="header-items submit-btn"><i class="fa fa-check" aria-hidden="true"></i>Add to Report</button>
+	<?php }?>
+</header>
+<div class="container">
+	<div class="head">
+		<div class="head-title">
+			<h1><?php echo $caliber->code;?> <?php echo $caliber->family;?></h1>
+			<p>Route <strong><?php echo $caliber->route_name;?></strong> and standard time <strong><?php echo $caliber->hrs;?></strong> Hrs/K</p>
 		</div>
+	</div>
+	<div class="operation-form-container">
 		<div class="operation-items topic-fix">
 			<div class="col1">Operation</div>
 			<div class="col2">Good</div>
@@ -97,15 +108,11 @@ $current_page['3'] = 'add_caliber';
 	</div>
 	<div class="control-container">
 		<?php if($_GET['action'] == 'edit'){?>
-		<div class="delete-btn" onclick="javascript:deleteCaliberReport(<?php echo $report->id;?>,<?php echo $caliber->id;?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">
-			Delete this Caliber</div>
-			<button type="submit" class="btn submit-btn">Save</button>
-		<?php }else{?>
-		<button type="submit" class="btn submit-btn">Add to Report</button>
+		<div class="delete-btn" onclick="javascript:deleteCaliberReport(<?php echo $report->id;?>,<?php echo $caliber->id;?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">Delete this caliber</div>
 		<?php }?>
 	</div>
-	</form>
 </div>
+</form>
 
 <div class="loading-box" id="loading-box">
 	<div class="dialog">

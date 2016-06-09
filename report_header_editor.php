@@ -46,6 +46,7 @@ $year 	= date('Y');
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title>Report Editor</title>
 
 <!-- CSS -->
@@ -58,17 +59,29 @@ $year 	= date('Y');
 
 </head>
 <body>
-<?php include 'header.php';?>
+<header class="header">
+	<a href="index.php" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
+
+	<?php if(empty($report->id)){?>
+	<div class="header-items submit-btn" onclick="javascript:createHeaderReport();"><i class="fa fa-check" aria-hidden="true"></i>CREATE</div>
+	<?php }else{?>
+	<div class="header-items submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);"><i class="fa fa-check" aria-hidden="true"></i>SAVE</div>
+	<?php }?>
+</header>
 <div class="container">
+	<div class="head">
+		<div class="head-title">
+			<h1>NEW DAILY REPORT</h1>
+			<p>By <strong><?php echo $user->name;?></strong>, Line No. <strong><?php echo $user->line_default;?></strong></p>
+		</div>
+	</div>
 	<div class="header-report-form-container">
-		<div class="heads">
-			<div class="title">
-				<h1>Create Daily output report</h1>
-				<p>Daily report by <strong><?php echo $user->name;?></strong> Line No. <strong><?php echo $user->line_default;?></strong></p>
-				<p><?php echo 'Can: '.($report->can_edit?'true':'false');?></p>
-			</div>
-			<div class="date">
-				<select id="r_date" class="input-select">
+		<div class="form-section">
+			<div class="title">1. Datetime</div>
+			<div class="input">
+				<div class="section-items">
+					<div class="input">
+						<select id="r_date" class="input-text input-select">
 					<option value="1" <?php echo ($day == '01'?'selected':'');?>>1</option>
 					<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
 					<option value="3" <?php echo ($day == '03'?'selected':'');?>>3</option>
@@ -101,7 +114,12 @@ $year 	= date('Y');
 					<option value="30" <?php echo ($day == '30'?'selected':'');?>>30</option>
 					<option value="31" <?php echo ($day == '31'?'selected':'');?>>31</option>
 				</select>
-				<select id="r_month" class="input-select">
+					</div>
+					<div class="caption">Day:</div>
+				</div>
+				<div class="section-items">
+					<div class="input">
+						<select id="r_month" class="input-text input-select">
 					<option value="1" <?php echo ($mouth == '01'?'selected':'');?>>January</option>
 					<option value="2" <?php echo ($mouth == '02'?'selected':'');?>>February</option>
 					<option value="3" <?php echo ($mouth == '03'?'selected':'');?>>March</option>
@@ -115,11 +133,20 @@ $year 	= date('Y');
 					<option value="11" <?php echo ($mouth == '11'?'selected':'');?>>November</option>
 					<option value="12" <?php echo ($mouth == '12'?'selected':'');?>>December</option>
 				</select>
-				<select id="r_year" class="input-select">
+					</div>
+					<div class="caption">Month</div>
+				</div>
+				<div class="section-items">
+					<div class="input">
+						<select id="r_year" class="input-text input-select">
 					<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
 				</select>
+					</div>
+					<div class="caption">Year</div>
+				</div>
 			</div>
 		</div>
+
 
 		<div class="form-section">
 			<div class="title">1. Line</div>
@@ -321,12 +348,6 @@ $year 	= date('Y');
 	<div class="control-container">
 		<?php if(!empty($report->id)){?>
 		<div class="delete-btn" onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>','<?php echo $report->date;?>','<?php echo $report->line_no;?>');">Delete Report</div>
-		<?php }?>
-
-		<?php if(empty($report->id)){?>
-		<div class="submit-btn" onclick="javascript:createHeaderReport();">Create Report</div>
-		<?php }else{?>
-		<div class="submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);">Save Report</div>
 		<?php }?>
 	</div>
 </div>

@@ -11,7 +11,7 @@ button {
   /* IE11 */
 }
 body {
-  background: #FFFFFF;
+  background: #ffffff;
   font-family: 'Roboto', sans-serif;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -30,9 +30,9 @@ body {
   height: 60px;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
+  background: #ffffff;
   z-index: 99;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .header .header-items {
   padding: 23px 0%;
@@ -40,31 +40,47 @@ body {
   float: left;
   display: inline-block;
   margin-right: 2%;
-  color: #AAAAAA;
+  color: rgba(0, 0, 0, 0.4);
   font-size: 1em;
+  background: #ffffff;
+  border: 0px;
 }
 .header .header-items:hover {
   cursor: pointer;
-  color: #555555;
+  color: rgba(0, 0, 0, 0.8);
 }
 .header .header-items-active {
   color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
   border-bottom: 1px solid #000000;
 }
+.header .back-btn i {
+  margin-right: 10px;
+}
 .header .create-btn {
   float: right;
-  color: #4CAF50;
+  color: #003399;
+  margin-right: 0%;
+  font-weight: bold;
 }
 .header .create-btn i {
+  margin-right: 5px;
+}
+.header .submit-btn {
+  float: right;
+  color: #4caf50;
+  margin-right: 0%;
+  font-weight: bold;
+}
+.header .submit-btn i {
   margin-right: 5px;
 }
 .header .profile {
   float: right;
 }
 .login-container {
-  width: 30%;
-  margin: 0% 35%;
+  width: 26%;
+  margin: 0% 37%;
   float: left;
   display: inline-block;
   margin-top: 10%;
@@ -77,16 +93,12 @@ body {
   text-align: center;
 }
 .login-container .logo h1 {
-  font-size: 3.5em;
-}
-.login-container .logo .icon {
   font-size: 3em;
-  margin-bottom: 5%;
-  color: #003399;
+  margin-bottom: 3%;
 }
 .login-container .logo p.version {
-  font-size: 0.8em;
-  color: rgba(0, 0, 0, 0.3);
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.4);
 }
 .login-container .input {
   width: 100%;
@@ -95,20 +107,18 @@ body {
   margin-top: 20%;
 }
 .login-container .input .input-text {
-  width: 96%;
-  padding: 2%;
+  width: 94%;
+  padding: 3%;
   float: left;
   display: inline-block;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 1.5em;
-  color: #003399;
   margin-bottom: 3%;
-  border: 1px solid #EEEEEE;
-  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .login-container .input .input-text:focus {
-  border: 1px solid #CCCCCC;
+  border: 1px solid rgba(0, 0, 0, 0.4);
 }
 .login-container .input .login-btn {
   width: 30%;
@@ -121,8 +131,7 @@ body {
   border: 0px;
   text-align: center;
   background: #003399;
-  color: #FFFFFF;
-  border-radius: 3px;
+  color: #ffffff;
 }
 .login-container .input .login-btn i {
   margin-left: 10px;
@@ -138,6 +147,25 @@ body {
   float: left;
   display: inline-block;
 }
+.container .message-control {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.container .message-control i {
+  margin-right: 10px;
+}
+.container .message-control .user-deactive {
+  width: 100%;
+  padding: 2% 0%;
+  float: left;
+  display: inline-block;
+  color: #f44336;
+  background: #FFEBEE;
+}
 .container .head {
   width: 60%;
   padding: 0% 20%;
@@ -151,13 +179,9 @@ body {
   float: left;
   display: inline-block;
 }
-.container .head .head-title h2 {
-  font-size: 1em;
-  font-weight: normal;
-}
 .container .head .head-title h1 {
   font-size: 2em;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.8);
   line-height: 1.2em;
 }
 .container .head .head-title h1.date {
@@ -169,29 +193,33 @@ body {
   line-height: 1.3em;
   color: rgba(0, 0, 0, 0.4);
 }
-.container .head .head-title .btn {
-  width: 100%;
+.container .graph-filter {
+  width: 60%;
+  margin: 0% 20%;
   float: left;
   display: inline-block;
-  margin-top: 4%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.container .head .head-title .btn a.btn-create {
-  background: #4CAF50;
-  padding: 10px 15px;
-  color: #FFFFFF;
-  font-weight: bold;
-  text-decoration: none;
+.container .graph-filter .filter-items {
+  padding: 1% 0%;
+  margin-right: 2%;
+  float: left;
+  display: inline-block;
+  margin-bottom: -1px;
+  color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid transparent;
 }
-.container .head .head-title .btn a.btn-create:hover {
+.container .graph-filter .filter-items:hover {
   cursor: pointer;
-  background: #43A047;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
-.container .head .head-title .btn a.btn-create:active {
-  background: #2E7D32;
+.container .graph-filter .filter-items-active {
+  color: #000000;
+  border-bottom: 1px solid #000000;
 }
 .container .graph-report {
-  width: 90%;
-  margin: 3% 5%;
+  width: 60%;
+  margin: 3% 20%;
   float: left;
   display: inline-block;
 }
@@ -200,13 +228,13 @@ body {
   float: left;
   display: inline-block;
   font-size: 1.5em;
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .graph-report .graph {
   width: 97.5%;
   margin-left: 2.5%;
   float: left;
   display: inline-block;
-  background: #DADADA;
 }
 .container .graph-report .report-yield-table {
   width: 99%;
@@ -215,13 +243,14 @@ body {
   float: left;
   display: inline-block;
   line-height: 3em;
-  font-size: 0.6em;
+  font-size: 0.5em;
   margin-bottom: 10%;
-  border-top: 1px solid #EEEEEE;
-  border-left: 1px solid #EEEEEE;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .graph-report .report-yield-table .caption-col {
-  width: 8%;
+  width: 12%;
   float: left;
   display: inline-block;
   font-weight: bold;
@@ -231,10 +260,14 @@ body {
   padding-left: 10%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.container .graph-report .report-yield-table .caption-col .date {
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.05);
 }
 .container .graph-report .report-yield-table .data-items {
-  width: 2.965%;
+  width: 5.5%;
   float: left;
   display: inline-block;
 }
@@ -242,46 +275,39 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  border-left: 1px solid #EEEEEE;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 .container .graph-report .report-yield-table .data-items .date {
   font-weight: bold;
-  background: #FAFAFA;
+  background: rgba(0, 0, 0, 0.05);
 }
 .container .graph-report .report-yield-table .data-items .highlight {
-  color: #003399;
-  font-weight: bold;
+  color: #4caf50;
 }
 .container .graph-report .report-yield-table .data-items .zero {
-  color: #EEEEEE;
+  color: rgba(0, 0, 0, 0.1);
 }
 .container .graph-report .report-yield-table .data-items:last-child .v {
-  border-right: 1px solid #EEEEEE;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+.container .starter-message {
+  width: 100%;
+  padding: 10% 0%;
+  float: left;
+  display: inherit;
+  text-align: center;
+  font-style: italic;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .operation-form-container {
-  width: 58%;
-  padding: 1%;
+  width: 60%;
   margin: 0% 20%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
-  border: 1px solid #EEEEEE;
   border-top: 0px;
-}
-.container .operation-form-container .heads {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  margin-bottom: 3%;
-}
-.container .operation-form-container .heads h3 {
-  font-size: 2em;
-}
-.container .operation-form-container .heads p {
-  font-size: 1em;
-  line-height: 1.5em;
 }
 .container .operation-form-container .operation-items {
   width: 100%;
@@ -289,7 +315,8 @@ body {
   display: inline-block;
   line-height: 3em;
   font-size: 1em;
-  border-top: 1px dotted #DDDDDD;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .operation-form-container .operation-items .col1 {
   width: 40%;
@@ -333,97 +360,64 @@ body {
   line-height: 3em;
   border-radius: 2px;
   text-align: right;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 .container .operation-form-container .operation-items .input-select {
-  width: 100%;
-  text-align: left;
   -webkit-appearance: none;
 }
 .container .operation-form-container .topic-fix {
-  font-size: 0.7em;
-  font-style: italic;
-  color: rgba(0, 0, 0, 0.3);
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .header-report-form-container {
-  width: 58%;
-  padding: 1%;
+  width: 60%;
   margin: 0% 20%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
-  border: 1px solid #EEEEEE;
-  border-top: 0px;
-}
-.container .header-report-form-container .heads {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  margin-bottom: 3%;
-}
-.container .header-report-form-container .heads .title {
-  float: left;
-  display: inline-block;
-}
-.container .header-report-form-container .heads .title h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-.container .header-report-form-container .heads .title p {
-  font-size: 0.9em;
-  line-height: 1.5em;
-}
-.container .header-report-form-container .heads .date {
-  float: right;
-  display: inline-block;
-}
-.container .header-report-form-container .heads .date .input-select {
-  float: left;
-  display: inline-block;
-  font-size: 1.3em;
-  font-family: 'Roboto', sans-serif;
-  -webkit-appearance: none;
-  line-height: 1.5em;
-  padding: 5px 8px;
-  margin-left: 5px;
-  border: 1px solid #DDDDDD;
-  border-radius: 3px;
-  text-align: center;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 .container .header-report-form-container .form-section {
   width: 100%;
-  padding: 2% 0%;
+  padding-top: 3%;
   float: left;
   display: inline-block;
-  border-top: 1px dotted #DDDDDD;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.05);
 }
 .container .header-report-form-container .form-section .title {
-  width: 30%;
+  width: 100%;
   float: left;
   display: inline-block;
-  line-height: 2em;
-  font-size: 0.9em;
+  line-height: 1.5em;
+  font-size: 1em;
+  margin-bottom: 3%;
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .header-report-form-container .form-section .input {
-  width: 70%;
+  width: 100%;
   float: left;
   display: inline-block;
 }
 .container .header-report-form-container .form-section .input .section-items {
-  width: 15%;
-  margin-right: 5%;
+  width: 31.33%;
+  margin-bottom: 5%;
+  margin-right: 3%;
   float: left;
   display: inline-block;
+}
+.container .header-report-form-container .form-section .input .section-items:nth-child(3n) {
+  float: right;
+  margin-right: 0%;
 }
 .container .header-report-form-container .form-section .input .section-items .caption {
   width: 100%;
   float: left;
   display: inline-block;
-  font-size: 0.7em;
-  color: #555555;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.4);
   line-height: 1em;
   margin-left: 3%;
+  line-height: 2em;
+  text-align: center;
 }
 .container .header-report-form-container .form-section .input .section-items .input {
   width: 100%;
@@ -435,58 +429,40 @@ body {
   float: left;
   display: inline-block;
   font-family: 'Roboto', sans-serif;
-  font-size: 2em;
+  font-size: 3em;
   line-height: 1em;
-  background: #FFFFFF;
-  border: 1px solid #EEEEEE;
-  padding: 5% 0%;
+  background: #ffffff;
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-radius: 0px;
+  outline: none;
 }
 .container .header-report-form-container .form-section .input .section-items .input .input-select {
-  border: 1px solid #DDDDDD;
-  border-bottom: 1px solid #DDDDDD;
-  padding: 0% 5%;
   -webkit-appearance: none;
+}
+.container .header-report-form-container .form-section .input .section-items .input .input-select:hover {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 .container .control-container {
   width: 60%;
-  margin: 1% 20%;
+  margin: 5% 20%;
   float: left;
   display: inline-block;
 }
 .container .control-container .delete-btn {
   float: left;
   display: inline-block;
-  font-size: 1em;
-  padding: 10px 0px;
-  color: #AAAAAA;
+  font-size: 0.9em;
+  padding: 5px 15px;
+  color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 20px;
 }
 .container .control-container .delete-btn:hover {
   cursor: pointer;
-  background: #CCCCCC;
-  color: #555555;
-}
-.container .control-container .delete-btn:active {
-  background: #BBBBBB;
-  color: #333333;
-}
-.container .control-container .submit-btn {
-  float: right;
-  display: inline-block;
-  font-size: 1em;
-  padding: 10px 20px;
-  background: #4CAF50;
-  color: #FFFFFF;
-  border: 0px;
-  border-radius: 3px;
-  font-weight: bold;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-.container .control-container .submit-btn:hover {
-  background: #43A047;
-  cursor: pointer;
-}
-.container .control-container .submit-btn:active {
-  background: #2E7D32;
+  opacity: 0.8;
 }
 .container .list-container {
   width: 60%;
@@ -498,15 +474,17 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
   margin-bottom: 2%;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .container .list-container .topic-container .title {
   width: 70%;
   float: left;
   display: inline-block;
   font-size: 1.2em;
+  padding: 8px 0px;
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .list-container .topic-container .control {
   width: 30%;
@@ -520,7 +498,7 @@ body {
   background: rgba(0, 0, 0, 0.05);
   padding: 8px 20px;
   font-size: 0.9em;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
 }
 .container .list-container .topic-container .control a.edit-btn i,
@@ -528,8 +506,8 @@ body {
   margin-left: 10px;
 }
 .container .list-container .topic-container .control a.create-btn {
-  background: #4CAF50;
-  color: #FFFFFF;
+  background: #4caf50;
+  color: #ffffff;
 }
 .container .list-container .topic-container .control a.create-btn i {
   margin-left: 0px;
@@ -543,8 +521,8 @@ body {
   text-align: center;
 }
 .container .list-container .starter-container a.create-btn {
-  background: #4CAF50;
-  color: #FFFFFF;
+  background: #4caf50;
+  color: #ffffff;
   padding: 8px 20px;
   font-size: 0.9em;
   border-radius: 20px;
@@ -558,32 +536,36 @@ body {
   display: inline-block;
 }
 .container .list-container .report-stat .stat-items {
-  width: 20.25%;
-  padding: 2%;
-  margin-right: 1%;
-  margin-bottom: 1%;
-  border-radius: 2px;
+  width: 22.66%;
+  margin-right: 3%;
+  margin-bottom: 3%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+.container .list-container .report-stat .stat-items:nth-child(4n) {
+  border-right: 0px;
+  margin-right: 0%;
 }
 .container .list-container .report-stat .stat-items .v {
   width: 100%;
   float: left;
   display: inline-block;
-  font-size: 2.5em;
+  font-size: 2em;
   color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 3%;
 }
 .container .list-container .report-stat .stat-items .k {
   width: 100%;
   float: left;
   display: inline-block;
-  font-size: 0.9em;
-  color: rgba(0, 0, 0, 0.5);
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.4);
 }
-.container .list-container .report-stat .stat-items:last-child {
-  float: right;
-  margin-right: 0%;
+.container .list-container .report-stat .stat-items .k i {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.1);
+  margin-left: 5px;
 }
 .container .list-container .header-report-table {
   width: 100%;
@@ -592,185 +574,109 @@ body {
   font-size: 0.9em;
   margin-bottom: 3%;
 }
-.container .list-container .header-report-table .box1 {
-  width: 45.5%;
-  padding: 2%;
+.container .list-container .header-report-table .box {
+  padding: 2% 0%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
-  margin-right: 1%;
-  margin-bottom: 1%;
+  background: #ffffff;
 }
-.container .list-container .header-report-table .box1 .box-topic {
+.container .list-container .header-report-table .box .box-topic {
   width: 100%;
   float: left;
   display: inline-block;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.8);
   margin-bottom: 2%;
+}
+.container .list-container .header-report-table .box .box-topic i {
+  margin-left: 5px;
+  color: rgba(0, 0, 0, 0.1);
+  font-size: 0.8em;
+}
+.container .list-container .header-report-table .box .col {
+  float: left;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.8);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+.container .list-container .header-report-table .box .col .col-val {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .list-container .header-report-table .box .col .col-caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-left: 5px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.container .list-container .header-report-table .box .col:last-child {
+  border-right: 0px;
+  margin-right: 0%;
+}
+.container .list-container .header-report-table .box1 {
+  width: 49.5%;
+  padding: 2% 0%;
+  margin-right: 1%;
+  margin-bottom: 1%;
 }
 .container .list-container .header-report-table .box1 .col {
-  width: 25%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.8);
-}
-.container .list-container .header-report-table .box1 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.5em;
-  line-height: 1em;
-}
-.container .list-container .header-report-table .box1 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.8em;
+  width: 21%;
+  margin-right: 4%;
 }
 .container .list-container .header-report-table .box2 {
-  width: 45.5%;
-  padding: 2%;
-  float: left;
-  display: inline-block;
-  background: #FFFFFF;
+  width: 49.5%;
+  padding: 2% 0%;
   margin-bottom: 1%;
 }
-.container .list-container .header-report-table .box2 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 2%;
-}
 .container .list-container .header-report-table .box2 .col {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.8);
-}
-.container .list-container .header-report-table .box2 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.5em;
-  line-height: 1em;
-}
-.container .list-container .header-report-table .box2 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.8em;
+  width: 16%;
+  margin-right: 4%;
 }
 .container .list-container .header-report-table .box3 {
-  width: 45.5%;
-  padding: 2%;
-  float: left;
-  display: inline-block;
-  background: #FFFFFF;
+  width: 49.5%;
+  padding: 2% 0%;
   margin-right: 1%;
-  margin-bottom: 2%;
-}
-.container .list-container .header-report-table .box3 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.5);
   margin-bottom: 2%;
 }
 .container .list-container .header-report-table .box3 .col {
-  width: 25%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.8);
-}
-.container .list-container .header-report-table .box3 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.5em;
-  line-height: 1em;
-}
-.container .list-container .header-report-table .box3 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.8em;
+  width: 21%;
+  margin-right: 4%;
 }
 .container .list-container .header-report-table .box4 {
-  width: 20%;
-  padding: 2.2% 2%;
-  float: left;
-  display: inline-block;
-  background: #FFFFFF;
+  width: 24%;
+  padding: 2.2% 0%;
 }
 .container .list-container .header-report-table .box4 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.5);
   margin-bottom: 3%;
 }
 .container .list-container .header-report-table .box4 .col {
-  width: 50%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.8);
-}
-.container .list-container .header-report-table .box4 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.5em;
-  line-height: 1em;
-}
-.container .list-container .header-report-table .box4 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.8em;
+  width: 47%;
+  margin-right: 5%;
 }
 .container .list-container .header-report-table .box5 {
-  width: 20.5%;
-  padding: 2.2% 2%;
-  float: right;
-  display: inline-block;
-  background: #FFFFFF;
+  width: 24.5%;
+  padding: 2.2% 0%;
 }
 .container .list-container .header-report-table .box5 .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.5);
   margin-bottom: 3%;
 }
 .container .list-container .header-report-table .box5 .col {
-  width: 50%;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.8);
-}
-.container .list-container .header-report-table .box5 .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.5em;
-  line-height: 1em;
-}
-.container .list-container .header-report-table .box5 .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.8em;
+  width: 47%;
+  margin-right: 5%;
 }
 .container .list-container .caliber-in-report-items {
   width: 96%;
   padding: 2%;
   float: left;
   display: inline-block;
-  border-radius: 3px;
   margin-bottom: 2%;
-  background: #FFFFFF;
-  border: 1px solid #EEEEEE;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .container .list-container .caliber-in-report-items .info {
   width: 100%;
@@ -787,12 +693,12 @@ body {
 .container .list-container .caliber-in-report-items .info .name a {
   float: right;
   display: inline-block;
-  color: #003399;
-  border: 1px solid #003399;
-  padding: 2px 3px;
-  padding-top: 3px;
-  font-size: 0.7em;
-  border-radius: 2px;
+  color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  padding-top: 6px;
+  font-size: 0.6em;
+  border-radius: 20px;
   font-weight: normal;
 }
 .container .list-container .caliber-in-report-items .info .name a:hover {
@@ -800,7 +706,7 @@ body {
   opacity: 0.8;
 }
 .container .list-container .caliber-in-report-items .info .name a:active {
-  color: #FFFFFF;
+  color: #ffffff;
   background: #003399;
 }
 .container .list-container .caliber-in-report-items .info .description {
@@ -809,30 +715,27 @@ body {
   display: inline-block;
   font-size: 0.9em;
   line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .list-container .caliber-in-report-items .operations {
   width: 100%;
   float: left;
   display: inline-block;
-  border-radius: 3px;
   margin-top: 2%;
-  border: 1px solid #EEEEEE;
 }
 .container .list-container .caliber-in-report-items .operations .operation-items {
   width: 100%;
   padding: 1% 0%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   font-size: 0.9em;
 }
 .container .list-container .caliber-in-report-items .operations .operation-items:last-child {
   border-bottom: 0px;
 }
 .container .list-container .caliber-in-report-items .operations .operation-items .col1 {
-  width: 47%;
-  padding: 0% 1%;
+  width: 49%;
   float: left;
   display: inline-block;
 }
@@ -855,8 +758,7 @@ body {
   text-align: right;
 }
 .container .list-container .caliber-in-report-items .operations .operation-items .col5 {
-  width: 13%;
-  padding: 0% 1%;
+  width: 15%;
   float: left;
   display: inline-block;
   text-align: right;
@@ -872,12 +774,42 @@ body {
 }
 .container .list-container .caliber-in-report-items .operations .topic-fix {
   font-style: italic;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 0.6em;
-  background: #FAFAFA;
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .list-container .caliber-in-report-items .operations .topic-fix:hover {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.4);
+}
+.container .list-container .user-activity-items {
+  width: 100%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.9em;
+}
+.container .list-container .user-activity-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-activity-items .col2 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-activity-items .col3 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .user-activity-items .col4 {
+  width: 40%;
+  float: left;
+  display: inline-block;
+}
+.container .list-container .topic-fix {
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .list-container .empty-items {
   width: 100%;
@@ -885,102 +817,50 @@ body {
   float: left;
   display: inline-block;
   font-size: 1em;
-  color: #CCCCCC;
+  color: rgba(0, 0, 0, 0.4);
   text-align: center;
-}
-.container .list-container .report-caliber-detail-items {
-  width: 60%;
-  padding: 0% 20%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  font-size: 0.9em;
-  line-height: 2.5em;
-}
-.container .list-container .report-caliber-detail-items:hover {
-  background: #FAFAFA;
-}
-.container .list-container .report-caliber-detail-items .col1 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-caliber-detail-items .col2 {
-  width: 10%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-caliber-detail-items .col3 {
-  width: 10%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-caliber-detail-items .col4 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-caliber-detail-items .col5 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container .report-caliber-detail-items .col6 {
-  width: 20%;
-  padding-right: 1%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-  border-right: 1px solid #EEEEEE;
 }
 .container .list-container .caliber-choose-items {
   width: 100%;
-  padding: 2% 0%;
-  line-height: 1.5em;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #DDDDDD;
-  color: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   font-size: 1em;
-  background: #FFFFFF;
+  line-height: 1em;
+  padding: 2% 0%;
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .list-container .caliber-choose-items:last-child {
-  border-bottom: 0px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.container .list-container .caliber-choose-items strong {
-  color: #000000;
+.container .list-container .caliber-choose-items .title {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  font-weight: bold;
 }
-.container .list-container .caliber-choose-items:hover {
-  cursor: pointer;
-  background: #FAFAFA;
+.container .list-container .caliber-choose-items .std {
+  width: 15%;
+  float: left;
+  display: inline-block;
 }
-.container .list-container .caliber-choose-items .ttl_operation {
-  font-style: italic;
+.container .list-container .caliber-choose-items .ttl {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.1);
 }
-.container .list-container .caliber-choose-items i {
-  float: right;
-  font-size: 1em;
-  line-height: 1.5em;
+.container .list-container .caliber-choose-items .icon {
+  width: 55%;
+  float: left;
+  display: inline-block;
+  text-align: right;
 }
 .container .list-container .unlink-items {
-  color: rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid #EEEEEE;
-  background: #FAFAFA;
+  color: rgba(0, 0, 0, 0.1);
 }
-.container .list-container .unlink-items strong {
-  color: rgba(0, 0, 0, 0.2);
-}
-.container .list-container .unlink-items:hover {
-  background: #FAFAFA;
+.container .list-container .unlink-items .ttl {
+  color: rgba(0, 0, 0, 0.1);
 }
 .container .list-container .report-header-items {
   width: 100%;
@@ -990,7 +870,7 @@ body {
   line-height: 1em;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .container .list-container .report-header-items:hover {
   cursor: pointer;
@@ -1000,6 +880,10 @@ body {
   width: 20%;
   float: left;
   display: inline-block;
+}
+.container .list-container .report-header-items .col1 .new-items {
+  font-size: 0.7em;
+  font-style: italic;
 }
 .container .list-container .report-header-items .col2 {
   width: 10%;
@@ -1033,14 +917,14 @@ body {
   color: #003399;
 }
 .container .list-container .not_owner {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .list-container .header-topic-fix {
   padding: 1% 0%;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .list-container .header-topic-fix:hover {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.4);
 }
 .loading-box {
   position: fixed;
@@ -1068,7 +952,7 @@ body {
 .loading-box .dialog p {
   font-size: 1em;
   line-height: 1.5em;
-  color: #999999;
+  color: rgba(0, 0, 0, 0.4);
 }
 .dialog-box {
   width: 100%;
@@ -1085,7 +969,7 @@ body {
 .dialog-box p {
   font-size: 1em;
   line-height: 1.5em;
-  color: #999999;
+  color: rgba(0, 0, 0, 0.4);
 }
 .error-container {
   width: 100%;
@@ -1101,15 +985,17 @@ body {
 .error-container h1 {
   font-size: 2em;
   line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.8);
 }
 .error-container p {
   font-size: 0.9em;
   line-height: 1.5em;
   margin-bottom: 5%;
+  color: rgba(0, 0, 0, 0.4);
 }
 .error-container a {
   background: #003399;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 10px;
   border-radius: 2px;
   font-size: 0.9em;
@@ -1122,81 +1008,124 @@ fon .error-container a:hover {
   .header {
     width: 100%;
     padding: 0%;
-    height: 50px;
+    height: 60px;
   }
-  .header .logo {
+  .header .header-items {
+    padding: 23px 0%;
+    height: 14px;
+    margin-right: 3%;
     font-size: 1em;
-    padding: 17px 2%;
-    padding-right: 1%;
-    height: 16px;
   }
-  .header .logo i {
+  .header:first-child {
+    margin-left: 3%;
+  }
+  .header .back-btn i {
+    margin-right: 10px;
+  }
+  .header .create-btn {
+    margin-right: 3%;
+  }
+  .header .create-btn i {
     margin-right: 5px;
   }
-  .header .navibar {
-    padding: 17px 0%;
-    margin-left: 1%;
-    height: 14px;
+  .header .submit-btn {
+    float: right;
+    color: #4caf50;
+    margin-right: 0%;
+    font-weight: bold;
   }
-  .header .navibar:hover {
-    border-bottom: 2px solid #FFFFFF;
-  }
-  .header .navibar i {
+  .header .submit-btn i {
     margin-right: 5px;
   }
   .header .profile {
-    padding: 17px 2%;
-    height: 16px;
-    font-size: 0.9em;
-  }
-  .header .profile i {
-    margin-right: 5px;
+    float: right;
   }
   .login-container {
     width: 80%;
-    margin: 10%;
+    margin: 0% 10%;
+    float: left;
+    display: inline-block;
+    margin-top: 10%;
+    text-align: center;
+  }
+  .login-container .logo {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    text-align: center;
   }
   .login-container .logo h1 {
-    font-size: 3.5em;
-  }
-  .login-container .logo .icon {
     font-size: 3em;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
   }
   .login-container .logo p.version {
-    font-size: 1em;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.4);
   }
   .login-container .input {
-    width: 60%;
-    margin: 20%;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    margin-top: 20%;
   }
   .login-container .input .input-text {
     width: 94%;
     padding: 3%;
-    font-size: 1.5em;
+    float: left;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
     line-height: 1.5em;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .login-container .input .input-text:focus {
+    border: 1px solid rgba(0, 0, 0, 0.4);
   }
   .login-container .input .login-btn {
-    width: 100%;
-    padding: 3%;
-    font-size: 1.2em;
+    width: 30%;
+    padding: 2% 0%;
+    float: right;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
     line-height: 1.5em;
+    border: 0px;
+    text-align: center;
+    background: #003399;
+    color: #ffffff;
+  }
+  .login-container .input .login-btn i {
+    margin-left: 10px;
+  }
+  .login-container .input .login-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
   }
   .container {
-    min-height: 300px;
-    margin-top: 50px;
+    margin-top: 60px;
+  }
+  .container .message-control {
+    width: 94%;
+    padding: 0% 3%;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+  .container .message-control i {
+    margin-right: 10px;
+  }
+  .container .message-control .user-deactive {
+    width: 100%;
+    padding: 2% 0%;
   }
   .container .head {
-    width: 96%;
-    padding: 0% 2%;
+    width: 94%;
+    padding: 0% 3%;
   }
   .container .head .head-title {
+    width: 100%;
     padding: 5% 0%;
     padding-bottom: 6%;
-  }
-  .container .head .head-title h2 {
-    font-size: 1em;
   }
   .container .head .head-title h1 {
     font-size: 2em;
@@ -1209,193 +1138,548 @@ fon .error-container a:hover {
     font-size: 1em;
     line-height: 1.3em;
   }
-  .container .head .head-title .btn {
-    margin-top: 4%;
+  .container .graph-filter {
+    width: 94%;
+    margin: 0% 3%;
   }
-  .container .head .head-title .btn a.btn-create {
-    padding: 10px 15px;
+  .container .graph-filter .filter-items {
+    padding: 2% 0%;
+    margin-right: 3%;
+  }
+  .container .graph-report {
+    width: 94%;
+    margin: 3%;
+  }
+  .container .graph-report h2 {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .container .graph-report .graph {
+    width: 97.5%;
+    margin-left: 2.5%;
+    float: left;
+    display: inline-block;
+  }
+  .container .graph-report .report-yield-table {
+    width: 99%;
+    margin: 3% 0%;
+    margin-right: 1%;
+    float: left;
+    display: inline-block;
+    line-height: 3em;
+    font-size: 0.5em;
+    margin-bottom: 10%;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .container .graph-report .report-yield-table .caption-col {
+    width: 12%;
+    float: left;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .container .graph-report .report-yield-table .caption-col .row {
+    width: 90%;
+    padding-left: 10%;
+    float: left;
+    display: inline-block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .container .graph-report .report-yield-table .caption-col .date {
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .container .graph-report .report-yield-table .data-items {
+    width: 5.5%;
+    float: left;
+    display: inline-block;
+  }
+  .container .graph-report .report-yield-table .data-items .v {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  .container .graph-report .report-yield-table .data-items .date {
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .container .graph-report .report-yield-table .data-items .highlight {
+    color: #4caf50;
+  }
+  .container .graph-report .report-yield-table .data-items .zero {
+    color: rgba(0, 0, 0, 0.1);
+  }
+  .container .graph-report .report-yield-table .data-items:last-child .v {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .container .starter-message {
+    width: 100%;
+    padding: 10% 0%;
+    float: left;
+    display: inherit;
+    text-align: center;
+    font-style: italic;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.4);
   }
   .container .operation-form-container {
-    width: 96%;
-    padding: 2%;
-    margin: 0%;
-    border: 0px;
-  }
-  .container .operation-form-container .heads {
-    margin: 5% 0%;
-  }
-  .container .operation-form-container .heads h3 {
-    font-size: 2em;
-  }
-  .container .operation-form-container .heads p {
-    font-size: 1em;
-    line-height: 1.5em;
+    width: 60%;
+    margin: 0% 20%;
+    float: left;
+    display: inline-block;
+    border-top: 0px;
   }
   .container .operation-form-container .operation-items {
+    width: 100%;
+    float: left;
+    display: inline-block;
     line-height: 3em;
     font-size: 1em;
-    border-top: 1px dotted #DDDDDD;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
   }
   .container .operation-form-container .operation-items .col1 {
-    width: 44%;
+    width: 40%;
+    float: left;
+    display: inline-block;
   }
   .container .operation-form-container .operation-items .col2 {
-    width: 10%;
+    width: 8%;
     padding: 0% 1%;
+    float: left;
+    display: inline-block;
+    text-align: right;
   }
   .container .operation-form-container .operation-items .col3 {
-    width: 10%;
+    width: 8%;
     padding: 0% 1%;
+    float: left;
+    display: inline-block;
+    text-align: right;
   }
   .container .operation-form-container .operation-items .col4 {
-    width: 10%;
+    width: 8%;
     padding: 0% 1%;
+    float: left;
+    display: inline-block;
+    text-align: right;
   }
   .container .operation-form-container .operation-items .col5 {
-    width: 15%;
-    margin-left: 5%;
+    width: 27%;
+    float: left;
+    display: inline-block;
+    margin-left: 3%;
   }
   .container .operation-form-container .operation-items .input-text {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
     font-size: 1em;
+    border: 0px;
     line-height: 3em;
+    border-radius: 2px;
+    text-align: right;
+    background: #ffffff;
+  }
+  .container .operation-form-container .operation-items .input-select {
+    -webkit-appearance: none;
   }
   .container .operation-form-container .topic-fix {
-    font-size: 0.7em;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.4);
   }
   .container .header-report-form-container {
-    width: 96%;
-    padding: 2%;
-    margin: 0%;
-    border: 0px;
-  }
-  .container .header-report-form-container .heads {
-    margin-bottom: 3%;
-  }
-  .container .header-report-form-container .heads .title h1 {
-    font-size: 1.5em;
-  }
-  .container .header-report-form-container .heads .title p {
-    font-size: 0.9em;
-    line-height: 1.5em;
-  }
-  .container .header-report-form-container .heads .date .input-select {
-    font-size: 1.3em;
-    line-height: 1.5em;
-    padding: 5px 8px;
-    margin-left: 5px;
+    width: 60%;
+    margin: 0% 20%;
+    float: left;
+    display: inline-block;
+    background: #ffffff;
   }
   .container .header-report-form-container .form-section {
-    padding: 2% 0%;
+    width: 100%;
+    padding-top: 3%;
+    float: left;
+    display: inline-block;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.05);
   }
   .container .header-report-form-container .form-section .title {
     width: 100%;
-    line-height: 2em;
+    float: left;
+    display: inline-block;
+    line-height: 1.5em;
     font-size: 1em;
+    margin-bottom: 3%;
+    color: rgba(0, 0, 0, 0.4);
   }
   .container .header-report-form-container .form-section .input {
     width: 100%;
+    float: left;
+    display: inline-block;
   }
   .container .header-report-form-container .form-section .input .section-items {
-    width: 19%;
-    margin-right: 1%;
+    width: 31.33%;
+    margin-bottom: 5%;
+    margin-right: 3%;
+    float: left;
+    display: inline-block;
+  }
+  .container .header-report-form-container .form-section .input .section-items:nth-child(3n) {
+    float: right;
+    margin-right: 0%;
   }
   .container .header-report-form-container .form-section .input .section-items .caption {
-    font-size: 0.8em;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.4);
     line-height: 1em;
+    margin-left: 3%;
+    line-height: 2em;
+    text-align: center;
+  }
+  .container .header-report-form-container .form-section .input .section-items .input {
+    width: 100%;
+    float: left;
+    display: inline-block;
   }
   .container .header-report-form-container .form-section .input .section-items .input .input-text {
-    font-size: 2em;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
     line-height: 1em;
+    background: #ffffff;
+    border: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-radius: 0px;
+    outline: none;
   }
   .container .header-report-form-container .form-section .input .section-items .input .input-select {
-    padding: 0% 10%;
+    -webkit-appearance: none;
+  }
+  .container .header-report-form-container .form-section .input .section-items .input .input-select:hover {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
   .container .control-container {
-    width: 96%;
-    margin: 2%;
+    width: 60%;
+    margin: 5% 20%;
+    float: left;
+    display: inline-block;
   }
   .container .control-container .delete-btn {
-    font-size: 1.2em;
-    padding: 12px 0px;
+    float: left;
+    display: inline-block;
+    font-size: 0.9em;
+    padding: 5px 15px;
+    color: #f44336;
+    border: 1px solid #f44336;
+    border-radius: 20px;
   }
-  .container .control-container .submit-btn {
-    font-size: 1.2em;
-    padding: 12px 20px;
+  .container .control-container .delete-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
   }
   .container .list-container {
     width: 100%;
     margin: 0%;
   }
-  .container .list-container p.topic {
-    width: 96%;
-    margin: 0% 2%;
+  .container .list-container .topic-container {
+    width: 94%;
+    margin: 0% 3%;
+    padding-bottom: 1%;
     margin-bottom: 2%;
   }
+  .container .list-container .topic-container .title {
+    width: 60%;
+    font-size: 1.2em;
+    padding: 8px 0px;
+  }
+  .container .list-container .topic-container .control {
+    width: 40%;
+  }
+  .container .list-container .topic-container .control a.edit-btn,
+  .container .list-container .topic-container .control a.create-btn {
+    float: right;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 8px 20px;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+  }
+  .container .list-container .topic-container .control a.edit-btn i,
+  .container .list-container .topic-container .control a.create-btn i {
+    margin-left: 10px;
+  }
+  .container .list-container .topic-container .control a.create-btn {
+    background: #4caf50;
+    color: #ffffff;
+  }
+  .container .list-container .topic-container .control a.create-btn i {
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+  .container .list-container .starter-container {
+    width: 100%;
+    padding: 5% 0%;
+    float: left;
+    display: inline-block;
+    text-align: center;
+  }
+  .container .list-container .starter-container a.create-btn {
+    background: #4caf50;
+    color: #ffffff;
+    padding: 8px 20px;
+    font-size: 0.9em;
+    border-radius: 20px;
+  }
+  .container .list-container .starter-container a.create-btn i {
+    margin-right: 10px;
+  }
   .container .list-container .report-stat {
-    width: 96%;
-    padding: 0% 2%;
+    width: 94%;
+    margin: 0% 3%;
   }
   .container .list-container .report-stat .stat-items {
-    width: 20.25%;
-    padding: 4% 2%;
-    margin-right: 1%;
-    margin-bottom: 1%;
+    width: 22.66%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    float: left;
+    display: inline-block;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .container .list-container .report-stat .stat-items:nth-child(4n) {
+    border-right: 0px;
+    margin-right: 0%;
   }
   .container .list-container .report-stat .stat-items .v {
-    font-size: 1.7em;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 3%;
   }
   .container .list-container .report-stat .stat-items .k {
-    font-size: 0.9em;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .container .list-container .report-stat .stat-items .k i {
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.1);
+    margin-left: 5px;
   }
   .container .list-container .header-report-table {
-    width: 96%;
-    margin: 0% 2%;
+    width: 94%;
+    margin: 0% 3%;
+    float: left;
+    display: inline-block;
     font-size: 0.9em;
     margin-bottom: 3%;
   }
-  .container .list-container .caliber-in-report-items {
-    width: 92%;
-    padding: 2%;
-    margin: 0% 2%;
+  .container .list-container .header-report-table .box {
+    padding: 2% 0%;
+    float: left;
+    display: inline-block;
+    background: #ffffff;
+  }
+  .container .list-container .header-report-table .box .box-topic {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.8);
     margin-bottom: 2%;
   }
+  .container .list-container .header-report-table .box .box-topic i {
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 0.8em;
+  }
+  .container .list-container .header-report-table .box .col {
+    float: left;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.8);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .container .list-container .header-report-table .box .col .col-val {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .container .list-container .header-report-table .box .col .col-caption {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .container .list-container .header-report-table .box .col:last-child {
+    border-right: 0px;
+    margin-right: 0%;
+  }
+  .container .list-container .header-report-table .box1 {
+    width: 49.5%;
+    padding: 2% 0%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+  }
+  .container .list-container .header-report-table .box1 .col {
+    width: 21%;
+    margin-right: 4%;
+  }
+  .container .list-container .header-report-table .box2 {
+    width: 49.5%;
+    padding: 2% 0%;
+    margin-bottom: 1%;
+  }
+  .container .list-container .header-report-table .box2 .col {
+    width: 16%;
+    margin-right: 4%;
+  }
+  .container .list-container .header-report-table .box3 {
+    width: 49.5%;
+    padding: 2% 0%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+  }
+  .container .list-container .header-report-table .box3 .col {
+    width: 21%;
+    margin-right: 4%;
+  }
+  .container .list-container .header-report-table .box4 {
+    width: 24%;
+    padding: 2.2% 0%;
+  }
+  .container .list-container .header-report-table .box4 .box-topic {
+    margin-bottom: 3%;
+  }
+  .container .list-container .header-report-table .box4 .col {
+    width: 47%;
+    margin-right: 5%;
+  }
+  .container .list-container .header-report-table .box5 {
+    width: 24.5%;
+    padding: 2.2% 0%;
+  }
+  .container .list-container .header-report-table .box5 .box-topic {
+    margin-bottom: 3%;
+  }
+  .container .list-container .header-report-table .box5 .col {
+    width: 47%;
+    margin-right: 5%;
+  }
+  .container .list-container .caliber-in-report-items {
+    width: 96%;
+    padding: 2%;
+    float: left;
+    display: inline-block;
+    margin-bottom: 2%;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .container .list-container .caliber-in-report-items .info {
+    width: 100%;
+    float: left;
+    display: inline-block;
+  }
   .container .list-container .caliber-in-report-items .info .name {
+    width: 100%;
+    float: left;
     font-size: 1.2em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
   }
   .container .list-container .caliber-in-report-items .info .name a {
-    padding: 2px 3px;
-    padding-top: 3px;
-    font-size: 0.7em;
+    float: right;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    padding-top: 6px;
+    font-size: 0.6em;
+    border-radius: 20px;
+    font-weight: normal;
+  }
+  .container .list-container .caliber-in-report-items .info .name a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .container .list-container .caliber-in-report-items .info .name a:active {
+    color: #ffffff;
+    background: #003399;
   }
   .container .list-container .caliber-in-report-items .info .description {
+    width: 100%;
+    float: left;
+    display: inline-block;
     font-size: 0.9em;
     line-height: 1.5em;
+    color: rgba(0, 0, 0, 0.4);
   }
   .container .list-container .caliber-in-report-items .operations {
+    width: 100%;
+    float: left;
+    display: inline-block;
     margin-top: 2%;
-    border: 1px solid #EEEEEE;
   }
   .container .list-container .caliber-in-report-items .operations .operation-items {
-    padding: 1.5% 0%;
-    font-size: 1em;
+    width: 100%;
+    padding: 1% 0%;
+    float: left;
+    display: inline-block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.9em;
+  }
+  .container .list-container .caliber-in-report-items .operations .operation-items:last-child {
+    border-bottom: 0px;
   }
   .container .list-container .caliber-in-report-items .operations .operation-items .col1 {
-    width: 38%;
-    padding: 0% 2%;
+    width: 49%;
+    float: left;
+    display: inline-block;
   }
   .container .list-container .caliber-in-report-items .operations .operation-items .col2 {
-    width: 14%;
+    width: 12%;
+    float: left;
+    display: inline-block;
+    text-align: right;
   }
   .container .list-container .caliber-in-report-items .operations .operation-items .col3 {
-    width: 14%;
+    width: 12%;
+    float: left;
+    display: inline-block;
+    text-align: right;
   }
   .container .list-container .caliber-in-report-items .operations .operation-items .col4 {
-    width: 14%;
+    width: 12%;
+    float: left;
+    display: inline-block;
+    text-align: right;
   }
   .container .list-container .caliber-in-report-items .operations .operation-items .col5 {
-    width: 14%;
-    padding: 0%;
-    padding-right: 2%;
+    width: 15%;
+    float: left;
+    display: inline-block;
+    text-align: right;
   }
   .container .list-container .caliber-in-report-items .operations .operation-items .col6 {
     width: 100%;
@@ -1408,79 +1692,201 @@ fon .error-container a:hover {
   }
   .container .list-container .caliber-in-report-items .operations .topic-fix {
     font-style: italic;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 0.6em;
-    background: #FAFAFA;
+    color: rgba(0, 0, 0, 0.4);
   }
   .container .list-container .caliber-in-report-items .operations .topic-fix:hover {
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .container .list-container .user-activity-items {
+    width: 100%;
+    padding: 1% 0%;
+    float: left;
+    display: inline-block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.9em;
+  }
+  .container .list-container .user-activity-items .col1 {
+    width: 20%;
+    float: left;
+    display: inline-block;
+  }
+  .container .list-container .user-activity-items .col2 {
+    width: 20%;
+    float: left;
+    display: inline-block;
+  }
+  .container .list-container .user-activity-items .col3 {
+    width: 20%;
+    float: left;
+    display: inline-block;
+  }
+  .container .list-container .user-activity-items .col4 {
+    width: 40%;
+    float: left;
+    display: inline-block;
+  }
+  .container .list-container .topic-fix {
+    color: rgba(0, 0, 0, 0.4);
   }
   .container .list-container .empty-items {
-    padding: 10% 0%;
-    font-size: 1.2em;
+    width: 100%;
+    padding: 5% 0%;
+    float: left;
+    display: inline-block;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
   }
   .container .list-container .caliber-choose-items {
-    width: 96%;
-    padding: 3% 2%;
-    line-height: 1.5em;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     font-size: 1em;
+    line-height: 1em;
+    padding: 2% 0%;
+    color: rgba(0, 0, 0, 0.8);
   }
-  .container .list-container .caliber-choose-items i {
-    font-size: 1em;
-    line-height: 1.5em;
+  .container .list-container .caliber-choose-items:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .container .list-container .caliber-choose-items .title {
+    width: 15%;
+    float: left;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .container .list-container .caliber-choose-items .std {
+    width: 15%;
+    float: left;
+    display: inline-block;
+  }
+  .container .list-container .caliber-choose-items .ttl {
+    width: 15%;
+    float: left;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.1);
+  }
+  .container .list-container .caliber-choose-items .icon {
+    width: 55%;
+    float: left;
+    display: inline-block;
+    text-align: right;
+  }
+  .container .list-container .unlink-items {
+    color: rgba(0, 0, 0, 0.1);
+  }
+  .container .list-container .unlink-items .ttl {
+    color: rgba(0, 0, 0, 0.1);
   }
   .container .list-container .report-header-items {
-    padding: 4% 0%;
+    width: 94%;
+    padding: 3%;
+    line-height: 1em;
     font-size: 1em;
   }
   .container .list-container .report-header-items .col1 {
-    width: 21%;
-    padding: 0% 2%;
+    width: 20%;
+  }
+  .container .list-container .report-header-items .col1 .new-items {
+    font-size: 0.7em;
+    font-style: italic;
   }
   .container .list-container .report-header-items .col2 {
-    width: 8%;
-    padding: 0% 1%;
+    width: 10%;
   }
   .container .list-container .report-header-items .col3 {
-    width: 8%;
-    padding: 0% 1%;
+    width: 25%;
   }
   .container .list-container .report-header-items .col4 {
-    width: 8%;
-    padding: 0% 1%;
+    width: 25%;
   }
   .container .list-container .report-header-items .col5 {
-    width: 16%;
-    padding: 0% 2%;
+    width: 20%;
   }
-  .container .list-container .report-header-items .col6 {
-    width: 21%;
-    padding: 0% 2%;
+  .container .list-container .report-header-items .col5 i {
+    margin-left: 10px;
   }
   .container .list-container .header-topic-fix {
-    font-size: 0.6em;
-    padding: 2% 0%;
+    font-size: 0.8em;
+    padding: 1.5% 3%;
+  }
+  .loading-box {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.95);
+    display: none;
   }
   .loading-box .dialog {
-    margin-top: 45%;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20%;
   }
   .loading-box .dialog .icon {
     font-size: 4em;
     margin-bottom: 3%;
+    color: #003399;
   }
   .loading-box .dialog p {
     font-size: 1em;
     line-height: 1.5em;
+    color: rgba(0, 0, 0, 0.4);
   }
   .dialog-box {
-    margin-top: 45%;
+    width: 100%;
+    margin-top: 20%;
+    float: left;
+    display: inline-block;
+    text-align: center;
   }
   .dialog-box .icon {
-    font-size: 4em;
-    margin-bottom: 3%;
+    color: #003399;
+    font-size: 3em;
+    margin-bottom: 2%;
   }
   .dialog-box p {
     font-size: 1em;
     line-height: 1.5em;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .error-container {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    padding-top: 18%;
+  }
+  .error-container .icon {
+    font-size: 4em;
+    margin-bottom: 2%;
+  }
+  .error-container h1 {
+    font-size: 2em;
+    line-height: 1.5em;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .error-container p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin-bottom: 5%;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .error-container a {
+    background: #003399;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: 0.9em;
+  }
+  fon .error-container a:hover {
+    opacity: 0.8;
   }
 }

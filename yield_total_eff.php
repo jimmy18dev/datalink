@@ -32,6 +32,7 @@ $current_page['1'] = 'yield';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title>Yield & total efficiency report</title>
 
 <!-- CSS -->
@@ -55,7 +56,6 @@ $current_page['1'] = 'yield';
     </div>
     <div class="graph-filter">
         <div class="month">
-            <span class="caption">Month:</span>
             <?php $report->ListMonth(array('type' => 'month-items','line_current' => $user->line_default,'year_current' => $_GET['year'],'month_current' => $_GET['month']));?>
         </div>
     </div>
@@ -65,30 +65,12 @@ $current_page['1'] = 'yield';
         <h2>Shift A</h2>
         <div class="graph" id="container-A"></div>
         <div class="report-yield-table">
-            <div class="caption-col">
-                <div class="row">Date</div>
-                <div class="row">Actual yield</div>
-                <div class="row">Taget output</div>
-                <div class="row">Actual output</div>
-                <div class="row">Product EFF</div>
-                <div class="row">Total Efficiency</div>
-            </div>
-
             <?php echo $report->getGraph($_GET['month'],$_GET['year'],'A',$user->line_default,array('render' => 'html'));?>
         </div>
 
         <h2>Shift B</h2>
         <div class="graph" id="container-B"></div>
         <div class="report-yield-table">
-            <div class="caption-col">
-                <div class="row">Date</div>
-                <div class="row">Actual yield</div>
-                <div class="row">Taget output</div>
-                <div class="row">Actual output</div>
-                <div class="row">Product EFF</div>
-                <div class="row">Total Efficiency</div>
-            </div>
-
             <?php echo $report->getGraph($_GET['month'],$_GET['year'],'B',$user->line_default,array('render' => 'html'));?>
         </div>   
     </div>

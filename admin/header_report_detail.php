@@ -75,7 +75,7 @@ $current_page['1'] = 'report';
 			</div>
 			<div class="stat-items">
 				<div class="v"><?php echo $report->ttl_daily_hrs;?></div>
-				<div class="k"><?php echo $report->no_monthly_emplys;?> Monthly Prs<i class="fa fa-user" aria-hidden="true"></i></div>
+				<div class="k"><?php echo $report->no_daily_emplys;?> Daily Prs<i class="fa fa-user" aria-hidden="true"></i></div>
 			</div>
 
 			<div class="stat-items">

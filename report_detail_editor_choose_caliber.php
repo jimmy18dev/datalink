@@ -39,6 +39,7 @@ $current_page['2'] = 'choose_caliber';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title>Choose Caliber Code...</title>
 
 <!-- CSS -->
@@ -52,7 +53,6 @@ $current_page['2'] = 'choose_caliber';
 
 </head>
 <body>
-<?php include 'header.php';?>
 <div class="container">
 	<div class="head">
 		<div class="head-title">

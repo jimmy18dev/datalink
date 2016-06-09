@@ -22,6 +22,7 @@ if($user_online){
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title>LOGIN</title>
 
 <!-- CSS -->
@@ -36,9 +37,8 @@ if($user_online){
 <body>
 <div class="login-container">
 	<div class="logo">
-		<div class="icon"><i class="fa fa-code-fork" aria-hidden="true"></i></div>
 		<h1>DATALINK</h1>
-		<p class="version">Version 1.0</p>
+		<p class="version">Version <strong>1.01</strong></p>
 	</div>
 	<div class="input">
 		<form action="javascript:login();">

@@ -1,5 +1,5 @@
 <div class="operation-items">
-	<div class="col1"><strong><?php echo $total_items+1;?>. <?php echo $var['operation_name'];?></strong></div>
+	<div class="col1"><?php echo $total_items+1;?>. <?php echo $var['operation_name'];?></div>
 	<div class="col2"><?php echo number_format($var['total_good']);?></div>
 	<div class="col3"><?php echo number_format($var['total_reject']);?></div>
 	<div class="col4"><?php echo number_format($var['output']);?></div>

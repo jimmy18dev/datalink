@@ -25,7 +25,6 @@ session_destroy();
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
 <?php include'favicon.php';?>
-
 <title>Logout...</title>
 
 <!-- CSS -->

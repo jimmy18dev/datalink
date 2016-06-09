@@ -307,7 +307,11 @@ class ReportController extends ReportModel{
             	include'template/empty.items.php';
             }
         }else if($option['type'] == 'yield-table-items'){
+        	include'template/report/yield.table.topic.php';
             foreach ($data as $var){
+            	if($total_items == 16){
+            		include'template/report/yield.table.topic.php';
+            	}
                 include'template/report/yield.table.items.php';
                 $total_items++;
             }
