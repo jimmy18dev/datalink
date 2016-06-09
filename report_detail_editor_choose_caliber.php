@@ -53,14 +53,11 @@ $current_page['2'] = 'choose_caliber';
 
 </head>
 <body>
+<header class="header">
+	<a href="index.php" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
+	<div class="header-items page-title">Select a caliber code add to <strong>12 December 2016</strong></div>
+</header>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>Choose Caliber Code...</h1>
-			<p>Select a caliber code for add report to <strong>463 DD</strong></p>
-		</div>
-	</div>
-
 	<!-- Table -->
 	<div class="list-container">
 		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>

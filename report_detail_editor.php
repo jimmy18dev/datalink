@@ -72,6 +72,7 @@ $current_page['3'] = 'add_caliber';
 <form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
 <header class="header">
 	<a href="index.php" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
+	<div class="header-items page-title"><strong>454 FD</strong> <i class="fa fa-long-arrow-right" aria-hidden="true"></i> <strong>12 Descember 2012</strong></div>
 
 	<?php if($_GET['action'] == 'edit'){?>
 	<button type="submit" class="header-items submit-btn"><i class="fa fa-check" aria-hidden="true"></i>Save</button>
@@ -80,12 +81,6 @@ $current_page['3'] = 'add_caliber';
 	<?php }?>
 </header>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1><?php echo $caliber->code;?> <?php echo $caliber->family;?></h1>
-			<p>Route <strong><?php echo $caliber->route_name;?></strong> and standard time <strong><?php echo $caliber->hrs;?></strong> Hrs/K</p>
-		</div>
-	</div>
 	<div class="operation-form-container">
 		<div class="operation-items topic-fix">
 			<div class="col1">Operation</div>

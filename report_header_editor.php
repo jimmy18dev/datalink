@@ -61,6 +61,7 @@ $year 	= date('Y');
 <body>
 <header class="header">
 	<a href="index.php" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
+	<div class="header-items page-title">Create new report</div>
 
 	<?php if(empty($report->id)){?>
 	<div class="header-items submit-btn" onclick="javascript:createHeaderReport();"><i class="fa fa-check" aria-hidden="true"></i>CREATE</div>
@@ -69,12 +70,6 @@ $year 	= date('Y');
 	<?php }?>
 </header>
 <div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>NEW DAILY REPORT</h1>
-			<p>By <strong><?php echo $user->name;?></strong>, Line No. <strong><?php echo $user->line_default;?></strong></p>
-		</div>
-	</div>
 	<div class="header-report-form-container">
 		<div class="form-section">
 			<div class="title">1. Datetime</div>

@@ -18,7 +18,7 @@ if(!empty($_GET['header'])){
 }
 
 // current page
-$current_page['1'] = 'report_detail';
+$current_page['1'] = 'index';
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">

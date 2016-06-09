@@ -40,6 +40,12 @@
 		i{ margin-right: 10px; }
 	}
 
+	.page-title{
+		border-left: 1px solid @border_color;
+		padding-left: 2%;
+		color: @normal_textcolor;
+	}
+
 	.create-btn{
 		float: right;
 		color: @primary_color;
@@ -350,21 +356,21 @@
 				padding: 0% 1%;
 				float: left;
 				display: inline-block;
-				text-align: right;
+				text-align: center;
 			}
 			.col3{
 				width: 8%;
 				padding: 0% 1%;
 				float: left;
 				display: inline-block;
-				text-align: right;
+				text-align: center;
 			}
 			.col4{
 				width: 8%;
 				padding: 0% 1%;
 				float: left;
 				display: inline-block;
-				text-align: right;
+				text-align: center;
 			}
 			.col5{
 				width: 27%;
@@ -381,8 +387,8 @@
 				font-size: 1em;
 				border: 0px;
 				line-height: 3em;
-				border-radius: 2px;
-				text-align: right;
+				border-radius: 0px;
+				text-align: center;
 				background: @white_color;
 			}
 
@@ -410,7 +416,7 @@
 			padding-top: 3%;
 			float: left;
 			display: inline-block;
-			border-bottom: 1px dotted @border_color;
+			border-top: 1px dotted @border_color;
 
 			.title{
 				width: 100%;
@@ -862,6 +868,7 @@
 				.topic-fix{
 					font-style: italic;
 					color: @light_textcolor;
+					font-size: 0.6em;
 
 					&:hover{
 						color: @light_textcolor;

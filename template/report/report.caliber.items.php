@@ -14,7 +14,7 @@
 			<div class="col2">Good</div>
 			<div class="col3">Reject</div>
 			<div class="col4">Output</div>
-			<div class="col5">Required hrs</div>
+			<div class="col5">Required</div>
 		</div>
 		<?php $this->listAllOperations($header_id,$var['caliber_id'],array('type' => 'report-caliber-detail-items'));?>
 	</div>
