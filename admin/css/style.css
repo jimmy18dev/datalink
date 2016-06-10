@@ -1591,7 +1591,7 @@ body {
   color: rgba(0, 0, 0, 0.8);
 }
 .container .list-container .operation-container .operation-items .detail {
-  width: 80%;
+  width: 70%;
   float: left;
   display: inline-block;
 }
@@ -1611,7 +1611,7 @@ body {
   font-size: 0.9em;
 }
 .container .list-container .operation-container .operation-items .control {
-  width: 20%;
+  width: 30%;
   float: right;
   display: inline-block;
 }

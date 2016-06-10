@@ -58,12 +58,16 @@ class OperationController extends OperationModel{
         	$status = $option['status'];
         	$route_current = $option['route_current'];
         	$route_type = $option['route_type'];
+
+        	$items = 1;
         	
             foreach ($data as $var){
             	if($status == 'active' && !empty($var['match_id'])){
             		include'template/caliber/operation.items.php';
+            		$items++;
             	}else if($status == 'disable' && empty($var['match_id'])){
             		include'template/caliber/operation.items.php';
+            		$items++;
             	}
                 $total_items++;
             }

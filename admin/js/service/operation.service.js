@@ -101,3 +101,28 @@ function createMatching(operation_id){
         window.location = 'operation.php?route='+route_id;
     }).error();
 }
+
+function swapMatch(operation_id){
+    var href            = 'api.operation.php';
+    var route_id        = $('#route_id').val();
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'operation',
+            action              :'swap_macth',
+            route_id:route_id,
+            operation_id:operation_id,
+
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        window.location = 'operation.php?route='+route_id;
+    }).error();
+}

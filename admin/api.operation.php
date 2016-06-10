@@ -72,6 +72,25 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'swap_macth':
+					if(true){
+						$return_id = $operation->swapMatch($_POST['route_id'],$_POST['operation_id']);
+						
+						// if(!empty($user_id) && $user_id != 0){
+						// 	$return_message = 'register successful';
+						// 	$register_state = true;
+
+						// 	// Autologin after register successful
+						// 	// $login_state = $people->login($_POST['email'],$_POST['password'],'');
+						// }else{
+						// 	$return_message = 'register fail!';
+						// 	$register_state = false;
+						// }
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				default:
 					break;
 			}

@@ -136,7 +136,7 @@ class CaliberModel extends Database{
 		return $dataset = parent::single();
 	}
 	public function listOperationInRouteData($caliber_id){
-		parent::query('SELECT route.id route_id,route.caliber_id,stdtime.id stdtime_id,stdtime.hrs stdtime_hrs,route.name,operation.id operation_id,operation.name operation_name FROM RTH_Route AS route LEFT JOIN RTH_StandardTime AS stdtime ON stdtime.caliber_id = route.caliber_id AND stdtime.type = "primary" LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = rmo.operation_id WHERE route.type = "primary" AND route.caliber_id = :caliber_id');
+		parent::query('SELECT route.id route_id,route.caliber_id,stdtime.id stdtime_id,stdtime.hrs stdtime_hrs,route.name,operation.id operation_id,operation.name operation_name FROM RTH_Route AS route LEFT JOIN RTH_StandardTime AS stdtime ON stdtime.caliber_id = route.caliber_id AND stdtime.type = "primary" LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id LEFT JOIN RTH_Operation AS operation ON operation.id = rmo.operation_id WHERE route.type = "primary" AND route.caliber_id = :caliber_id ORDER BY rmo.sort ASC');
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::execute();
 		$dataset = parent::resultset();
@@ -178,7 +178,7 @@ class CaliberModel extends Database{
 
 	// List all operation and checking operation in route id.
 	public function listOperationAllInRoute($route_id){
-		parent::query('SELECT operation.id,operation.name,operation.description,operation.create_time,operation.update_time,operation.type,operation.status,rmo.id match_id FROM RTH_Operation AS operation LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.operation_id = operation.id AND rmo.route_id = :route_id');
+		parent::query('SELECT operation.id,operation.name,operation.description,operation.create_time,operation.update_time,operation.type,operation.status,rmo.id match_id FROM RTH_Operation AS operation LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.operation_id = operation.id AND rmo.route_id = :route_id ORDER BY rmo.sort ASC');
 		parent::bind(':route_id', 	$route_id);
 		parent::execute();
 		$dataset = parent::resultset();
