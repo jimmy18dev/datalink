@@ -16,6 +16,9 @@ class UserController extends UserModel{
 	public function login($username,$password){
 		if(empty($username) || empty($password)){ return false; }
 
+		$username = strtolower(trim($username));
+		$password = trim($password);
+
 		$user_id = parent::userLogin($username,$password);
 		
 		if(!empty($user_id)){

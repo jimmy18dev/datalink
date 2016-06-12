@@ -17,6 +17,9 @@ class UserController extends UserModel{
 	public function register($section_id,$code,$fname,$lname,$username,$password,$line_default){
 		$already_id = parent::already($code,$fname,$lname);
 
+		$username = strtolower(trim($username));
+		$password = trim($password);
+
 		if(empty($already_id)){
 			return parent::create($section_id,$code,$fname,$lname,$username,$password,$line_default);
 		}else{

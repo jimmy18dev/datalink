@@ -31,7 +31,7 @@ if($user_online){
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/user.service.js"></script>
+<script type="text/javascript" src="js/service/min/user.service.min.js"></script>
 
 </head>
 <body>
@@ -51,7 +51,7 @@ if($user_online){
 
 <div class="loading-box" id="loading-box">
 	<div class="dialog">
-		<div class="icon"><i class="fa fa-spinner" aria-hidden="true"></i></div>
+		<div class="icon"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div>
 		<p id="login-message"></p>
 	</div>
 </div>
