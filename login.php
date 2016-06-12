@@ -23,7 +23,7 @@ if($user_online){
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>LOGIN</title>
+<title>Datalink login</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -42,17 +42,17 @@ if($user_online){
 	</div>
 	<div class="input">
 		<form action="javascript:login();">
-			<input type="text" class="input-text" id="username" placeholder="Username" autofocus>
+			<input type="text" class="input-text" id="username" placeholder="Username" autofocus autocomplete="off">
 			<input type="password" class="input-text" placeholder="Enter your password..." id="password">
-			<button type="submit" class="login-btn">Login<i class="fa fa-arrow-right"></i></button>
+			<button type="submit" class="login-btn">Login<i class="fa fa-angle-right"></i></button>
 		</form>
 	</div>
 </div>
 
 <div class="loading-box" id="loading-box">
 	<div class="dialog">
-		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="loading-message"></p>
+		<div class="icon"><i class="fa fa-spinner" aria-hidden="true"></i></div>
+		<p id="login-message"></p>
 	</div>
 </div>
 </body>
