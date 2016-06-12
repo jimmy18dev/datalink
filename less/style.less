@@ -177,17 +177,11 @@
 		display: inline-block;
 
 		.head-title{
-			width: 100%;
+			width: 70%;
 			padding: 5% 0%;
 			padding-bottom: 6%;
 			float: left;
 			display: inline-block;
-
-			// h2{
-			// 	font-size: 1em;
-			// 	font-weight: normal;
-			// 	color: @normal_textcolor;
-			// }
 
 			h1{
 				font-size: 2em;
@@ -203,6 +197,29 @@
 				font-size: 1em;
 				line-height: 1.3em;
 				color: @light_textcolor;
+			}
+		}
+
+		.head-control{
+			width: 30%;
+			padding-top: 6%;
+			float: right;
+			display: inline-block;
+
+			a.logout-btn{
+				float: right;
+				display: inline-block;
+				background: @red_color;
+				color: @white_color;
+				padding: 5px;
+				font-size: 0.8em;
+				border-radius: 3px;
+				line-height: 1em;
+
+				&:hover{
+					cursor: pointer;
+					opacity: 0.8;
+				}
 			}
 		}
 	}
@@ -335,7 +352,7 @@
 	// Report detail editor (Add operation to caliber)
 	.operation-form-container{
 		width: 60%;
-		margin: 0% 20%;
+		margin: 5% 20%;
 		float: left;
 		display: inline-block;
 		border-top: 0px;
@@ -393,10 +410,15 @@
 				border-radius: 0px;
 				text-align: center;
 				background: @white_color;
+				color: @dark_textcolor;
+				font-weight: bold;
+				outline: 0;
 			}
 
 			.input-select{
+				font-weight: normal;
 				-webkit-appearance: none;
+				color: @light_textcolor;
 			}
 		}
 
@@ -507,6 +529,52 @@
 			color: @red_color;
 			border: 1px solid @red_color;
 			border-radius: 20px;
+
+			&:hover{
+				cursor: pointer;
+				opacity: 0.8;
+			}
+		}
+	}
+
+	.choose-form-title{
+		width: 60%;
+		margin: 0% 20%;
+		margin-bottom: 3%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+
+		.icon{
+			font-size: 3em;
+			color: @light_textcolor;
+			margin-bottom: 2%;
+		}
+		.title{
+			font-size: 1.5em;
+			line-height: 1.5em;
+			color: @light_textcolor;
+		}
+
+		strong{ color: @normal_textcolor; }
+	}
+
+	.choose-control{
+		width: 60%;
+		margin: 0% 20%;
+		margin-top: 10%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+
+		a.back-btn{
+			background: @thin_textcolor;
+			color: @light_textcolor;
+			padding: 10px 20px;
+			font-size: 0.9em;
+			border-radius: 3px;
+
+			i{ margin-right: 10px; }
 
 			&:hover{
 				cursor: pointer;
@@ -1006,18 +1074,13 @@
 				font-weight: bold;
 			}
 			.std{
-				width: 15%;
+				width: 65%;
 				float: left;
 				display: inline-block;
-			}
-			.ttl{
-				width: 15%;
-				float: left;
-				display: inline-block;
-				color: @thin_textcolor;
+				color: @light_textcolor;
 			}
 			.icon{
-				width: 55%;
+				width: 20%;
 				float: left;
 				display: inline-block;
 				text-align: right;
@@ -1027,7 +1090,7 @@
 		// Caliber unlink (Aleady items to report detail)
 		.unlink-items{
 			color: @thin_textcolor;
-			.ttl{ color: @thin_textcolor; }
+			.std{ color: @thin_textcolor; }
 		}
 
 		// Header report items style
@@ -1081,6 +1144,10 @@
 				text-align: right;
 
 				i{ margin-left: 10px; }
+			}
+
+			.unit{
+				color: @light_textcolor;
 			}
 		}
 
@@ -1164,19 +1231,15 @@
 	padding-top: 18%;
 
 	.icon{
-		font-size: 4em;
-		margin-bottom: 2%;
-	}
-	h1{
 		font-size: 2em;
-		line-height: 1.5em;
-		color: @normal_textcolor;
+		margin-bottom: 2%;
+		color: @light_textcolor;
 	}
 	p{
-		font-size: 0.9em;
+		font-size: 1.2em;
 		line-height: 1.5em;
 		margin-bottom: 5%;
-		color: @light_textcolor;
+		color: @normal_textcolor;
 	}
 
 	a{
@@ -1185,7 +1248,6 @@
 		padding: 10px;
 		border-radius: 2px;
 		font-size: 0.9em;
-		fon
 
 		&:hover{ opacity: 0.8; }
 	}

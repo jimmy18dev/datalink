@@ -36,7 +36,6 @@ if(!$user_online){
 <body>
 <div class="error-container">
 	<div class="icon"><i class="fa fa-trash" aria-hidden="true"></i></div>
-	<h1>Sorry!</h1>
 	<p>This report has been deleted!</p>
 	<a href="index.php">Back to Home</a>
 </div>

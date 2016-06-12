@@ -40,7 +40,7 @@ $current_page['2'] = 'choose_caliber';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>Choose Caliber Code...</title>
+<title>Choose Caliber Code</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -53,12 +53,12 @@ $current_page['2'] = 'choose_caliber';
 
 </head>
 <body>
-<header class="header">
-	<a href="index.php" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
-	<div class="header-items page-title">Select a caliber code add to <strong>12 December 2016</strong></div>
-</header>
 <div class="container">
 	<!-- Table -->
+	<div class="choose-form-title">
+		<div class="icon"><i class="fa fa-database" aria-hidden="true"></i></div>
+		<div class="title">Select a caliber code add to <a href="#">12 December 2016</a></div>
+	</div>
 	<div class="list-container">
 		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
 	</div>

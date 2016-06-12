@@ -36,7 +36,6 @@ if(!$user_online){
 <body>
 <div class="error-container">
 	<div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
-	<h1>Sorry!</h1>
 	<p>Access Denied  You don't have permission to access</p>
 	<a href="index.php">Back to Home</a>
 </div>

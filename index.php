@@ -28,7 +28,7 @@ $current_page['1'] = 'index';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>DATALINK</title>
+<title>Daily Report</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>

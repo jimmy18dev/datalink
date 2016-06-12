@@ -54,7 +54,8 @@ $current_page['1'] = 'index';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $report->date;?></h1>
-			<p>Leader: <strong><?php echo $report->leader_name;?></strong> · Line no.<strong><?php echo $report->line_no;?></strong> (Shift: <?php echo $report->shift;?>) · <span title="<?php echo $report->update_time;?>"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $report->update;?></span></p>
+			<p>Leader: <strong><?php echo $report->leader_name;?></strong></p>
+			<p>Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · <span title="<?php echo $report->update_time;?>"> Updated <?php echo $report->update;?></span></p>
 		</div>
 	</div>
 

@@ -27,7 +27,7 @@ $current_page['1'] = 'profile';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>USER</title>
+<title>My profile</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -49,7 +49,9 @@ $current_page['1'] = 'profile';
 		<div class="head-title">
 			<h1><?php echo $user->fname.' '.$user->lname?></h1>
 			<p>Account ID <strong><?php echo $user->code;?></strong> has <strong><?php echo $useractivity->countActivity($user->id);?> Activitys</strong> and Last visit at <strong><?php echo $user->visit_time;?></strong></p>
-			<p><a href="logout.php" class="control-btn">Logout</a></p>
+		</div>
+		<div class="head-control">
+			<a href="logout.php" class="logout-btn">Logout</a>
 		</div>
 	</div>
 	<div class="list-container">
