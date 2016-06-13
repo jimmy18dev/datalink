@@ -1,4 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+  font-family: 'Roboto';
+  src: url('../font/Roboto.eot');
+  src: url('../font/Roboto.eot?#iefix') format('embedded-opentype'), url('../font/Roboto.woff') format('woff'), url('../font/Roboto.ttf') format('truetype'), url('../font/Roboto.svg#Roboto') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -32,11 +38,11 @@ body {
   display: inline-block;
   background: #ffffff;
   z-index: 99;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.3);
 }
 .header .header-items {
   padding: 23px 0%;
-  height: 14px;
+  height: 12px;
   float: left;
   display: inline-block;
   margin-right: 2%;
@@ -44,6 +50,7 @@ body {
   font-size: 1em;
   background: #ffffff;
   border: 0px;
+  border-bottom: 2px solid transparent;
 }
 .header .header-items:hover {
   cursor: pointer;
@@ -51,8 +58,7 @@ body {
 }
 .header .header-items-active {
   color: rgba(0, 0, 0, 0.8);
-  font-weight: bold;
-  border-bottom: 1px solid #000000;
+  border-bottom: 2px solid #000000;
 }
 .header .back-btn i {
   margin-right: 10px;
@@ -176,14 +182,12 @@ body {
 }
 .container .head {
   width: 60%;
-  padding: 0% 20%;
+  padding: 3% 20%;
   float: left;
   display: inline-block;
 }
 .container .head .head-title {
   width: 70%;
-  padding: 5% 0%;
-  padding-bottom: 6%;
   float: left;
   display: inline-block;
 }
@@ -191,10 +195,7 @@ body {
   font-size: 2em;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.2em;
-}
-.container .head .head-title h1.date {
-  font-size: 4em;
-  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 1%;
 }
 .container .head .head-title p {
   font-size: 1em;
@@ -203,23 +204,25 @@ body {
 }
 .container .head .head-control {
   width: 30%;
-  padding-top: 6%;
   float: right;
   display: inline-block;
 }
-.container .head .head-control a.logout-btn {
+.container .head .head-control .report-btn {
+  text-align: center;
   float: right;
   display: inline-block;
-  background: #f44336;
-  color: #ffffff;
-  padding: 5px;
-  font-size: 0.8em;
+  border: 1px solid #EEEEEE;
+  padding: 10px 20px;
   border-radius: 3px;
-  line-height: 1em;
+  color: rgba(0, 0, 0, 0.4);
 }
-.container .head .head-control a.logout-btn:hover {
-  cursor: pointer;
-  opacity: 0.8;
+.container .head .head-control .report-btn i {
+  font-size: 2em;
+  line-height: 1.5em;
+}
+.container .head .head-control .report-btn .caption {
+  font-size: 0.7em;
+  line-height: 1.5em;
 }
 .container .graph-filter {
   width: 60%;
@@ -550,8 +553,6 @@ body {
   width: 100%;
   float: left;
   display: inline-block;
-  padding-bottom: 1%;
-  margin-bottom: 2%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .container .list-container .topic-container .title {
@@ -1083,7 +1084,7 @@ body {
   }
   .header .header-items {
     padding: 23px 0%;
-    height: 14px;
+    height: 12px;
     margin-right: 0%;
     margin-left: 3%;
     font-size: 1em;
@@ -1156,38 +1157,44 @@ body {
   }
   .container .head {
     width: 94%;
-    padding: 0% 3%;
+    padding: 5% 3%;
     background: #EEEEEE;
   }
   .container .head .head-title {
-    width: 75%;
-    padding: 5% 0%;
-    padding-bottom: 6%;
+    width: 70%;
   }
   .container .head .head-title h1 {
-    font-size: 1.8em;
+    font-size: 2em;
     line-height: 1.2em;
+    margin-bottom: 1%;
   }
   .container .head .head-title p {
     font-size: 1em;
     line-height: 1.3em;
   }
   .container .head .head-control {
-    width: 25%;
+    width: 30%;
   }
-  .container .head .head-control a.logout-btn {
-    padding: 5px;
-    font-size: 0.8em;
-    border-radius: 3px;
-    line-height: 1em;
+  .container .head .head-control .report-btn {
+    border: 1px solid #CCCCCC;
+    padding: 10px 20px;
+  }
+  .container .head .head-control .report-btn i {
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+  .container .head .head-control .report-btn .caption {
+    font-size: 0.7em;
+    line-height: 1.5em;
   }
   .container .graph-filter {
-    width: 94%;
-    margin: 0% 3%;
+    width: 100%;
+    margin: 0%;
   }
   .container .graph-filter .filter-items {
-    padding: 2% 0%;
-    margin-right: 3%;
+    padding: 3% 0%;
+    margin-left: 3%;
+    margin-right: 0%;
   }
   .container .graph-report {
     width: 100%;

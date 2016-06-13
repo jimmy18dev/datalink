@@ -97,58 +97,16 @@ class Database{
         return $ip;
     }
 
-    // Text, Message to URL Friendly
-    public function url_friendly_process($data){
-        $data       = preg_replace('#[^-ก-๙a-zA-Z0-9]#u','-', $data);
-        if(substr($data,0,1) == '-'){
-            $data   = substr($data,1);
-        }
-        if(substr($data,-1) == '-'){
-          $data     = substr($data,0,-1);
-        }
-        $data       = urldecode($data);
-        $data       = str_replace(array('   ','  ',' '),array('-','-','-'),$data);
-        $data       = str_replace(array('---','--'),array('-','-'),$data);
-        
-        //return rawurlencode($data);
-        return ($data);
-    }
-
-    // Datetime to Thai Date format
-    public function datetime_thaiformat($datetime){
-        $monthText = array('มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');
-        $hour   = date("H",strtotime($datetime));
-        $minute = date("i",strtotime($datetime));
-        $year   = date('Y',strtotime($datetime))+543;
-        $month  = date('n',strtotime($datetime));
-        $date   = date('j',strtotime($datetime));
-
-        $month  = $monthText[$month-1];
-        return $date.' '.$month.' '.$year.' เวลา '.$hour.':'.$minute;
-    }
-
-    public function date_format($datetime){
-        $monthText = array('January','February','March','April','May','June','July','August','September','October','November','December');
-        $hour   = date("H",strtotime($datetime));
-        $minute = date("i",strtotime($datetime));
-        $year   = date('Y',strtotime($datetime));
-        $month  = date('n',strtotime($datetime));
-        $date   = date('j',strtotime($datetime));
-
-        $month  = $monthText[$month-1];
-        return $date.' '.$month.' '.$year;
-    }
-
     // Datetime to Facebook format
     public function date_facebookformat($datetime){
         $timestamp  = strtotime($datetime);
         $diff       = time() - $timestamp;
 
-        $periods    = array('วินาที','นาที','ชั่วโมง');
-        $words      = 'ที่แล้ว';
+        $periods    = array('second','minute','hour');
+        $words      = ' ago';
   
         if($diff < 30){
-            $text   = "เมื่อสักครู่"; 
+            $text   = "Just now"; 
         }
         else if($diff < 60){
             $i      = 0;
@@ -171,10 +129,10 @@ class Database{
         else if($diff < 432000){
             // 5 Day
             $diff   = round($diff/86400);
-            $text   = $diff.' วันที่แล้ว';                
+            $text   = $diff.' days ago';                
         }
         else{
-            $thMonth = array('ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.');
+            $thMonth = array('January','February','March','April','May','June','July','August','September','October','November','December');
             
             $date   = date("j", $timestamp);
             $month  = $thMonth[date("m", $timestamp)-1];
@@ -192,38 +150,35 @@ class Database{
         return $text;
     }
 
-    // Get age by Datetime
-    public function dateDifference($date){
-
-        $diff = time() - strtotime($date);
-
-        if($diff < 10){
-            $text   = 'ขณะนี้'; 
-        }
-        else if($diff < 60){
-            $text   = $diff.' วินาที'; 
-        }
-        else if($diff < 3600){
-            $diff   = round($diff/60);
-            $text   = $diff.' นาที'; 
-        }
-        else if($diff < 86400){
-            // less 1 day
-            $diff   = floor($diff/3600);
-            $text   = $diff.' ชั่วโมง'; 
-        }
-        else{
-            $diff   = round($diff/86400);
-            $text   = $diff.' วัน';                
-        }
-
-        return $text;
-    }
-
     public function month_name($datetime){
         $monthText = array('January','February','March','April','May','June','July','August','September','October','November','December');
         $month  = date('n',strtotime($datetime));
         return $monthText[$month-1];
+    }
+
+
+    public function datetime_thaiformat($datetime){
+        $monthText = array('มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');
+        $hour   = date("H",strtotime($datetime));
+        $minute = date("i",strtotime($datetime));
+        $year   = date('Y',strtotime($datetime))+543;
+        $month  = date('n',strtotime($datetime));
+        $date   = date('j',strtotime($datetime));
+
+        $month  = $monthText[$month-1];
+        return $date.' '.$month.' '.$year.' เวลา '.$hour.':'.$minute;
+    }
+
+    public function date_format($datetime){
+        $monthText = array('January','February','March','April','May','June','July','August','September','October','November','December');
+        $hour   = date("H",strtotime($datetime));
+        $minute = date("i",strtotime($datetime));
+        $year   = date('Y',strtotime($datetime));
+        $month  = date('n',strtotime($datetime));
+        $date   = date('j',strtotime($datetime));
+
+        $month  = $monthText[$month-1];
+        return $date.' '.$month.' '.$year;
     }
 }
 ?>

@@ -50,8 +50,8 @@ $current_page['1'] = 'yield';
 <div class="container">
     <div class="head">
         <div class="head-title">
-            <h1>YIELD & TOTAL EFFICIENCY</h1>
-            <p>MOVEMENT ASSEMBLY</p>
+            <h1>Yield & Total Efficiency</h1>
+            <p>Moment assembly</p>
         </div>
     </div>
     <div class="graph-filter">

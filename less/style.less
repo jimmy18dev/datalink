@@ -12,11 +12,11 @@
 	display: inline-block;
 	background: @white_color;
 	z-index: 99;
-	border-bottom: 1px solid @border_color;
+	box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.3);
 
 	.header-items{
 		padding: 23px 0%;
-		height: 14px;
+		height: 12px;
 		float: left;
 		display: inline-block;
 		margin-right: 2%;
@@ -24,6 +24,7 @@
 		font-size: 1em;
 		background: @white_color;
 		border: 0px;
+		border-bottom: 2px solid transparent;
 
 		&:hover{
 			cursor: pointer;
@@ -32,8 +33,7 @@
 	}
 	.header-items-active{
 		color: @normal_textcolor;
-		font-weight: bold;
-		border-bottom: 1px solid @dark_textcolor;
+		border-bottom: 2px solid @dark_textcolor;
 	}
 
 	.back-btn{
@@ -172,14 +172,12 @@
 	// Head page
 	.head{
 		width: 60%;
-		padding: 0% 20%;
+		padding: 3% 20%;
 		float: left;
 		display: inline-block;
 
 		.head-title{
 			width: 70%;
-			padding: 5% 0%;
-			padding-bottom: 6%;
 			float: left;
 			display: inline-block;
 
@@ -187,10 +185,7 @@
 				font-size: 2em;
 				color: @normal_textcolor;
 				line-height: 1.2em;
-			}
-			h1.date{
-				font-size: 4em;
-				color: @normal_textcolor;
+				margin-bottom: 1%;
 			}
 
 			p{
@@ -202,23 +197,25 @@
 
 		.head-control{
 			width: 30%;
-			padding-top: 6%;
 			float: right;
 			display: inline-block;
 
-			a.logout-btn{
+			.report-btn{
+				text-align: center;
 				float: right;
 				display: inline-block;
-				background: @red_color;
-				color: @white_color;
-				padding: 5px;
-				font-size: 0.8em;
+				border: 1px solid #EEEEEE;
+				padding: 10px 20px;
 				border-radius: 3px;
-				line-height: 1em;
+				color: @light_textcolor;
 
-				&:hover{
-					cursor: pointer;
-					opacity: 0.8;
+				i{
+					font-size: 2em;
+					line-height: 1.5em;
+				}
+				.caption{
+					font-size: 0.7em;
+					line-height: 1.5em;
 				}
 			}
 		}
@@ -595,8 +592,6 @@
 			width: 100%;
 			float: left;
 			display: inline-block;
-			padding-bottom: 1%;
-			margin-bottom: 2%;
 			border-bottom: 1px solid @border_color;
 
 			.title{

@@ -104,7 +104,7 @@ class ReportModel extends Database{
 		parent::execute();
 		$dataset = parent::single();
 
-		$dataset['report_date'] = parent::date_format($dataset['report_date']);
+		// $dataset['report_date'] = parent::date_format($dataset['report_date']);
 		$dataset['date'] = parent::date_format($dataset['create_time']);
 		$dataset['update'] = parent::date_facebookformat($dataset['update_time']);
 		$dataset['update_time'] = parent::datetime_thaiformat($dataset['update_time']);

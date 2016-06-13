@@ -54,19 +54,34 @@ $current_page['1'] = 'index';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $report->date;?></h1>
-			<p>Leader: <strong><?php echo $report->leader_name;?></strong></p>
-			<p>Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · <span title="<?php echo $report->update_time;?>"> Updated <?php echo $report->update;?></span></p>
+			<p>Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update;?></strong></p>
+			<p>Leader <strong><?php echo $report->leader_name;?></strong></p>
+		</div>
+		<div class="head-control">
+			<?php if($user->id == $report->leader_id && $report->can_edit){?>
+			<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="edit-btn">
+			<div class="report-btn">
+				<i class="fa fa-file-text-o" aria-hidden="true"></i>
+				<div class="caption">Edit report</div>
+			</div>
+			</a>
+			<?php }else{?>
+			<div class="report-btn">
+				<i class="fa fa-lock" aria-hidden="true"></i>
+				<div class="caption">Lock!</div>
+			</div>
+			<?php }?>
 		</div>
 	</div>
 
 	<div class="list-container">
 		<div class="topic-container">
 			<div class="title">1. Manpower:</div>
-			<div class="control">
+			<!-- <div class="control">
 				<?php if($user->id == $report->leader_id && $report->can_edit){?>
 				<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="edit-btn">Edit Report<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 				<?php }?>
-			</div>
+			</div> -->
 		</div>
 		<div class="report-stat">
 			<div class="stat-items stat-items-highlight">

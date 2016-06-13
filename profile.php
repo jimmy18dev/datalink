@@ -51,7 +51,12 @@ $current_page['1'] = 'profile';
 			<p>Account ID <strong><?php echo $user->code;?></strong> has <strong><?php echo $useractivity->countActivity($user->id);?> Activitys</strong> and Last visit at <strong><?php echo $user->visit_time;?></strong></p>
 		</div>
 		<div class="head-control">
-			<a href="logout.php" class="logout-btn">Logout</a>
+			<a href="logout.php" class="logout-btn">
+			<div class="report-btn">
+				<i class="fa fa-sign-out" aria-hidden="true"></i>
+				<div class="caption">Logout</div>
+			</div>
+			</a>
 		</div>
 	</div>
 	<div class="list-container">

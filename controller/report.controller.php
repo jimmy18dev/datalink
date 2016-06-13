@@ -45,12 +45,10 @@ class ReportController extends ReportModel{
 	public $leader_name;
 	public $leader_id;
 
-	// Permission access
-	public $can_edit;
-
 	public $total_caliber;
 
-
+	// Permission access
+	public $can_edit;
 
 	/* REPORT MANAGEMENT */
 
@@ -134,7 +132,7 @@ class ReportController extends ReportModel{
 		$this->target_eff 		= $data['target_eff'];
 
 		// timer
-		$this->date 			= $data['report_date'];
+		$this->date 			= date('l jS F Y', strtotime($data['report_date']));
 		$this->update 			= $data['update'];
 		$this->update_time 		= $data['update_time'];
 		// timestamp
