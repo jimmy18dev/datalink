@@ -77,11 +77,6 @@ $current_page['1'] = 'index';
 	<div class="list-container">
 		<div class="topic-container">
 			<div class="title">1. Manpower:</div>
-			<!-- <div class="control">
-				<?php if($user->id == $report->leader_id && $report->can_edit){?>
-				<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="edit-btn">Edit Report<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-				<?php }?>
-			</div> -->
 		</div>
 		<div class="report-stat">
 			<div class="stat-items stat-items-highlight">
@@ -123,7 +118,7 @@ $current_page['1'] = 'index';
 		</div>
 
 		<div class="header-report-table">
-			<div class="box box2">
+			<div class="box">
 				<div class="box-topic">Lost time<i class="fa fa-plug" aria-hidden="true"></i></div>
 				<div class="col">
 					<div class="col-val"><?php echo number_format($report->losttime_vac,2);?></div>
@@ -147,7 +142,7 @@ $current_page['1'] = 'index';
 				</div>
 			</div>
 			
-			<div class="box box1">
+			<div class="box">
 				<div class="box-topic">Over time<i class="fa fa-history" aria-hidden="true"></i></div>
 				<div class="col">
 					<div class="col-val"><?php echo number_format($report->ot_10,2);?></div>
@@ -167,7 +162,7 @@ $current_page['1'] = 'index';
 				</div>
 			</div>
 
-			<div class="box box3">
+			<div class="box">
 				<div class="box-topic">Down time<i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
 				<div class="col">
 					<div class="col-val"><?php echo number_format($report->downtime_mc,2);?></div>
@@ -187,7 +182,7 @@ $current_page['1'] = 'index';
 				</div>
 			</div>
 
-			<div class="box box4">
+			<div class="box">
 				<div class="box-topic">Sort<i class="fa fa-sort-amount-asc" aria-hidden="true"></i></div>
 				<div class="col">
 					<div class="col-val"><?php echo number_format($report->sort_local,2);?></div>
@@ -199,7 +194,7 @@ $current_page['1'] = 'index';
 				</div>
 			</div>
 
-			<div class="box box5">
+			<div class="box">
 				<div class="box-topic">Rework<i class="fa fa-recycle" aria-hidden="true"></i></div>
 				<div class="col">
 					<div class="col-val"><?php echo number_format($report->rework_local,2);?></div>

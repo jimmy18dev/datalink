@@ -60,8 +60,7 @@ $year 	= date('Y');
 </head>
 <body>
 <header class="header">
-	<a href="index.php" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
-	<div class="header-items page-title">Create new report</div>
+	<a href="index.php" class="header-items discard-btn">Discard</a>
 
 	<?php if(empty($report->id)){?>
 	<div class="header-items submit-btn" onclick="javascript:createHeaderReport();"><i class="fa fa-check" aria-hidden="true"></i>CREATE</div>
@@ -71,105 +70,78 @@ $year 	= date('Y');
 </header>
 <div class="container">
 	<div class="header-report-form-container">
-		<div class="form-section">
-			<div class="title">1. Datetime</div>
-			<div class="input">
-				<div class="section-items">
-					<div class="input">
-						<select id="r_date" class="input-text input-select">
-					<option value="1" <?php echo ($day == '01'?'selected':'');?>>1</option>
-					<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
-					<option value="3" <?php echo ($day == '03'?'selected':'');?>>3</option>
-					<option value="4" <?php echo ($day == '04'?'selected':'');?>>4</option>
-					<option value="5" <?php echo ($day == '05'?'selected':'');?>>5</option>
-					<option value="6" <?php echo ($day == '06'?'selected':'');?>>6</option>
-					<option value="7" <?php echo ($day == '07'?'selected':'');?>>7</option>
-					<option value="8" <?php echo ($day == '08'?'selected':'');?>>8</option>
-					<option value="9" <?php echo ($day == '09'?'selected':'');?>>9</option>
-					<option value="10" <?php echo ($day == '10'?'selected':'');?>>10</option>
-					<option value="11" <?php echo ($day == '11'?'selected':'');?>>11</option>
-					<option value="12" <?php echo ($day == '12'?'selected':'');?>>12</option>
-					<option value="13" <?php echo ($day == '13'?'selected':'');?>>13</option>
-					<option value="14" <?php echo ($day == '14'?'selected':'');?>>14</option>
-					<option value="15" <?php echo ($day == '15'?'selected':'');?>>15</option>
-					<option value="16" <?php echo ($day == '16'?'selected':'');?>>16</option>
-					<option value="17" <?php echo ($day == '17'?'selected':'');?>>17</option>
-					<option value="18" <?php echo ($day == '18'?'selected':'');?>>18</option>
-					<option value="19" <?php echo ($day == '19'?'selected':'');?>>19</option>
-					<option value="20" <?php echo ($day == '20'?'selected':'');?>>20</option>
-					<option value="21" <?php echo ($day == '21'?'selected':'');?>>21</option>
-					<option value="22" <?php echo ($day == '22'?'selected':'');?>>22</option>
-					<option value="23" <?php echo ($day == '23'?'selected':'');?>>23</option>
-					<option value="24" <?php echo ($day == '24'?'selected':'');?>>24</option>
-					<option value="25" <?php echo ($day == '25'?'selected':'');?>>25</option>
-					<option value="26" <?php echo ($day == '26'?'selected':'');?>>26</option>
-					<option value="27" <?php echo ($day == '27'?'selected':'');?>>27</option>
-					<option value="28" <?php echo ($day == '28'?'selected':'');?>>28</option>
-					<option value="29" <?php echo ($day == '29'?'selected':'');?>>29</option>
-					<option value="30" <?php echo ($day == '30'?'selected':'');?>>30</option>
-					<option value="31" <?php echo ($day == '31'?'selected':'');?>>31</option>
-				</select>
-					</div>
-					<div class="caption">Day:</div>
-				</div>
-				<div class="section-items">
-					<div class="input">
-						<select id="r_month" class="input-text input-select">
-					<option value="1" <?php echo ($mouth == '01'?'selected':'');?>>January</option>
-					<option value="2" <?php echo ($mouth == '02'?'selected':'');?>>February</option>
-					<option value="3" <?php echo ($mouth == '03'?'selected':'');?>>March</option>
-					<option value="4" <?php echo ($mouth == '04'?'selected':'');?>>April</option>
-					<option value="5" <?php echo ($mouth == '05'?'selected':'');?>>May</option>
-					<option value="6" <?php echo ($mouth == '06'?'selected':'');?>>June</option>
-					<option value="7" <?php echo ($mouth == '07'?'selected':'');?>>July</option>
-					<option value="8" <?php echo ($mouth == '08'?'selected':'');?>>August</option>
-					<option value="9" <?php echo ($mouth == '09'?'selected':'');?>>September</option>
-					<option value="10" <?php echo ($mouth == '10'?'selected':'');?>>October</option>
-					<option value="11" <?php echo ($mouth == '11'?'selected':'');?>>November</option>
-					<option value="12" <?php echo ($mouth == '12'?'selected':'');?>>December</option>
-				</select>
-					</div>
-					<div class="caption">Month</div>
-				</div>
-				<div class="section-items">
-					<div class="input">
-						<select id="r_year" class="input-text input-select">
-					<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
-				</select>
-					</div>
-					<div class="caption">Year</div>
-				</div>
-			</div>
+		<div class="form-title">
+			Creating a report for
+			<select id="r_date" class="input-select">
+				<option value="1" <?php echo ($day == '01'?'selected':'');?>>1</option>
+				<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
+				<option value="3" <?php echo ($day == '03'?'selected':'');?>>3</option>
+				<option value="4" <?php echo ($day == '04'?'selected':'');?>>4</option>
+				<option value="5" <?php echo ($day == '05'?'selected':'');?>>5</option>
+				<option value="6" <?php echo ($day == '06'?'selected':'');?>>6</option>
+				<option value="7" <?php echo ($day == '07'?'selected':'');?>>7</option>
+				<option value="8" <?php echo ($day == '08'?'selected':'');?>>8</option>
+				<option value="9" <?php echo ($day == '09'?'selected':'');?>>9</option>
+				<option value="10" <?php echo ($day == '10'?'selected':'');?>>10</option>
+				<option value="11" <?php echo ($day == '11'?'selected':'');?>>11</option>
+				<option value="12" <?php echo ($day == '12'?'selected':'');?>>12</option>
+				<option value="13" <?php echo ($day == '13'?'selected':'');?>>13</option>
+				<option value="14" <?php echo ($day == '14'?'selected':'');?>>14</option>
+				<option value="15" <?php echo ($day == '15'?'selected':'');?>>15</option>
+				<option value="16" <?php echo ($day == '16'?'selected':'');?>>16</option>
+				<option value="17" <?php echo ($day == '17'?'selected':'');?>>17</option>
+				<option value="18" <?php echo ($day == '18'?'selected':'');?>>18</option>
+				<option value="19" <?php echo ($day == '19'?'selected':'');?>>19</option>
+				<option value="20" <?php echo ($day == '20'?'selected':'');?>>20</option>
+				<option value="21" <?php echo ($day == '21'?'selected':'');?>>21</option>
+				<option value="22" <?php echo ($day == '22'?'selected':'');?>>22</option>
+				<option value="23" <?php echo ($day == '23'?'selected':'');?>>23</option>
+				<option value="24" <?php echo ($day == '24'?'selected':'');?>>24</option>
+				<option value="25" <?php echo ($day == '25'?'selected':'');?>>25</option>
+				<option value="26" <?php echo ($day == '26'?'selected':'');?>>26</option>
+				<option value="27" <?php echo ($day == '27'?'selected':'');?>>27</option>
+				<option value="28" <?php echo ($day == '28'?'selected':'');?>>28</option>
+				<option value="29" <?php echo ($day == '29'?'selected':'');?>>29</option>
+				<option value="30" <?php echo ($day == '30'?'selected':'');?>>30</option>
+				<option value="31" <?php echo ($day == '31'?'selected':'');?>>31</option>
+			</select>
+
+			<select id="r_month" class="input-select">
+				<option value="1" <?php echo ($mouth == '01'?'selected':'');?>>January</option>
+				<option value="2" <?php echo ($mouth == '02'?'selected':'');?>>February</option>
+				<option value="3" <?php echo ($mouth == '03'?'selected':'');?>>March</option>
+				<option value="4" <?php echo ($mouth == '04'?'selected':'');?>>April</option>
+				<option value="5" <?php echo ($mouth == '05'?'selected':'');?>>May</option>
+				<option value="6" <?php echo ($mouth == '06'?'selected':'');?>>June</option>
+				<option value="7" <?php echo ($mouth == '07'?'selected':'');?>>July</option>
+				<option value="8" <?php echo ($mouth == '08'?'selected':'');?>>August</option>
+				<option value="9" <?php echo ($mouth == '09'?'selected':'');?>>September</option>
+				<option value="10" <?php echo ($mouth == '10'?'selected':'');?>>October</option>
+				<option value="11" <?php echo ($mouth == '11'?'selected':'');?>>November</option>
+				<option value="12" <?php echo ($mouth == '12'?'selected':'');?>>December</option>
+			</select>
+
+			<select id="r_year" class="input-select">
+				<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
+			</select>
 		</div>
 
-
-		<div class="form-section">
-			<div class="title">1. Line</div>
-			<div class="input">
-				<div class="section-items">
-					<div class="input">
-						<select id="shift" class="input-text input-select" autofocus>
-							<option value="A" <?php echo ($report->shift == 'A'?'selected':'');?>>A</option>
-							<option value="B" <?php echo ($report->shift == 'B'?'selected':'');?>>B</option>
-						</select>
-					</div>
-					<div class="caption">Shift:</div>
-				</div>
-				<div class="section-items">
-					<div class="input">
-						<select id="line_type" class="input-text input-select">
-							<option value="DI">DI</option>
-							<option value="NDI">NDI</option>
-						</select>
-					</div>
-					<div class="caption">Line Type</div>
-				</div>
-			</div>
+		<div class="form-title">
+			Shift
+			<select id="shift" class="input-select">
+				<option value="A" <?php echo ($report->shift == 'A'?'selected':'');?>>A</option>
+				<option value="B" <?php echo ($report->shift == 'B'?'selected':'');?>>B</option>
+			</select>
+			Line type
+			<select id="line_type" class="input-select">
+				<option value="DI">DI</option>
+				<option value="NDI">NDI</option>
+			</select>
 		</div>
 
 		<div class="form-section">
-			<div class="title">2. Monthly</div>
-			<div class="input">
+			<div class="title">1. Monthly</div>
+			<div class="inputs">
 				<div class="section-items">
 					<div class="input"><input type="number" class="input-text" id="no_monthly_emplys" placeholder="0" value="<?php echo $report->no_monthly_emplys;?>"></div>
 					<div class="caption">Monthly Prs</div>
@@ -182,8 +154,8 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">3. Daily</div>
-			<div class="input">
+			<div class="title">2. Daily</div>
+			<div class="inputs">
 				<div class="section-items">
 					<div class="input"><input type="number" class="input-text" id="no_daily_emplys" placeholder="0" value="<?php echo $report->no_daily_emplys;?>"></div>
 					<div class="caption">Daily Prs</div>
@@ -196,8 +168,8 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">4. Efficiency</div>
-			<div class="input">
+			<div class="title">3. Efficiency</div>
+			<div class="inputs">
 				<div class="section-items">
 					<div class="input"><input type="number" class="input-text" id="product_eff" placeholder="0" value="<?php echo $report->product_eff;?>"></div>
 					<div class="caption">Product EFF</div>
@@ -210,8 +182,8 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">5. Overtime</div>
-			<div class="input">
+			<div class="title">4. Overtime</div>
+			<div class="inputs">
 				<div class="section-items">
 					
 					<div class="input"><input type="number" class="input-text" id="ot_10" placeholder="0" value="<?php echo $report->ot_10;?>"></div>
@@ -236,8 +208,8 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">6. Lost time</div>
-			<div class="input">
+			<div class="title">5. Lost time</div>
+			<div class="inputs">
 				<div class="section-items">
 					<div class="input"><input type="number" class="input-text" id="losttime_vac" placeholder="0" value="<?php echo $report->losttime_vac;?>"></div>
 					<div class="caption">VAC</div>
@@ -264,8 +236,8 @@ $year 	= date('Y');
 			</div>
 		</div>
 		<div class="form-section">
-			<div class="title">7. Down time</div>
-			<div class="input">
+			<div class="title">6. Down time</div>
+			<div class="inputs">
 				<div class="section-items">
 					
 					<div class="input"><input type="number" class="input-text" id="downtime_mc" placeholder="0" value="<?php echo $report->downtime_mc;?>"></div>
@@ -290,8 +262,8 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">8. Sort</div>
-			<div class="input">
+			<div class="title">7. Sort</div>
+			<div class="inputs">
 				<div class="section-items">
 					
 					<div class="input"><input type="number" class="input-text" id="sort_local" placeholder="0" value="<?php echo $report->sort_local;?>"></div>
@@ -306,8 +278,8 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">9. Reword</div>
-			<div class="input">
+			<div class="title">8. Reword</div>
+			<div class="inputs">
 				<div class="section-items">
 					
 					<div class="input"><input type="number" class="input-text" id="rework_local" placeholder="0" value="<?php echo $report->rework_local;?>"></div>
@@ -321,8 +293,8 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">10. Target</div>
-			<div class="input">
+			<div class="title">9. Target</div>
+			<div class="inputs">
 				<div class="section-items">
 					
 					<div class="input"><input type="number" class="input-text" id="yield" placeholder="0" value="<?php echo $report->yield;?>"></div>

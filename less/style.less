@@ -12,7 +12,7 @@
 	display: inline-block;
 	background: @white_color;
 	z-index: 99;
-	box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid @border_color;
 
 	.header-items{
 		padding: 23px 0%;
@@ -40,10 +40,12 @@
 		i{ margin-right: 10px; }
 	}
 
+	a.discard-btn{
+		color: @red_color;
+	}
+
 	.page-title{
-		border-left: 1px solid @border_color;
-		padding-left: 2%;
-		color: @normal_textcolor;
+		color: @light_textcolor;
 	}
 
 	.create-btn{
@@ -433,50 +435,56 @@
 		display: inline-block;
 		background: @white_color;
 
+		.form-title{
+			width: 100%;
+			padding: 3% 0%;
+			float: left;display: inline-block;
+			text-align: center;
+			font-size: 1.5em;
+
+			.input-select{
+				padding: 10px 7px;
+				margin-left: 5px;
+				font-size: 1em;
+				font-family: @FontStylePrimary;
+				border: 1px solid @thin_textcolor;
+				background: #FFFFFF;
+				border-radius: 3px;
+			}
+		}
+
 		.form-section{
 			width: 100%;
-			padding-top: 3%;
 			float: left;
 			display: inline-block;
-			border-top: 1px dotted @border_color;
 
 			.title{
-				width: 100%;
+				width: 98%;
+				padding: 1% 0%;
 				float: left;
 				display: inline-block;
 				line-height: 1.5em;
-				font-size: 1em;
-				margin-bottom: 3%;
-				color: @light_textcolor;
+				font-size: 1.5em;
+				color: @normal_textcolor;
+				margin-top: 2%;
 			}
-			.input{
+			.inputs{
 				width: 100%;
 				float: left;
 				display: inline-block;
 
 				.section-items{
-					width: 31.33%;
-					margin-bottom: 5%;
-					margin-right: 3%;
+					width: 49%;
+					margin-bottom: 1.5%;
 					float: left;
 					display: inline-block;
+					border: 1px solid @border_color;
+					border-radius: 2px;
 
-					&:nth-child(3n){
+					&:nth-child(even){
 						float: right;
-						margin-right: 0%;
 					}
 
-					.caption{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						font-size: 1em;
-						color: @light_textcolor;
-						line-height: 1em;
-						margin-left: 3%;
-						line-height: 2em;
-						text-align: center;
-					}
 					.input{
 						width: 100%;
 						float: left;
@@ -484,6 +492,7 @@
 
 						.input-text{
 							width: 100%;
+							padding-top: 3%;
 							float: left;
 							display: inline-block;
 							font-family: @FontStylePrimary;
@@ -491,20 +500,19 @@
 							line-height: 1em;
 							background: @white_color;
 							border: 0px;
-							border-bottom: 1px solid @border_color;
 							text-align: center;
-							border-radius: 0px;
 							outline: none;
 						}
-
-						.input-select{
-							-webkit-appearance: none;
-
-							&:hover{
-								cursor: pointer;
-								border-bottom: 1px solid @light_textcolor;
-							}
-						}
+					}
+					.caption{
+						width: 100%;
+						padding-bottom: 3%;
+						float: left;
+						display: inline-block;
+						font-size: 0.8em;
+						color: @light_textcolor;
+						line-height: 1em;
+						text-align: center;
 					}
 				}
 			}
@@ -590,9 +598,9 @@
 		// Topic style
 		.topic-container{
 			width: 100%;
+			margin-bottom: 2%;
 			float: left;
 			display: inline-block;
-			border-bottom: 1px solid @border_color;
 
 			.title{
 				width: 70%;
@@ -611,10 +619,11 @@
 					float: right;
 					display: inline-block;
 					background: @border_color;
-					padding: 8px 20px;
-					font-size: 0.9em;
+					padding: 8px 10px;
+					font-size: 1em;
 					color: @light_textcolor;
-					border-radius: 20px;
+					border-radius: 2px;
+					font-weight: bold;
 
 					i{ margin-left: 10px; }
 				}
@@ -625,7 +634,7 @@
 
 					i{
 						margin-left: 0px;
-						margin-right: 10px;
+						margin-right: 5px;
 					}
 				}
 			}
@@ -657,7 +666,7 @@
 			.stat-items{
 				width: 22.66%;
 				margin-right: 3%;
-				margin-bottom: 3%;
+				margin-bottom: 2%;
 				float: left;
 				display: inline-block;
 				border-right: 1px solid @border_color;
@@ -698,20 +707,26 @@
 			float: left;
 			display: inline-block;
 			font-size: 0.9em;
-			margin-bottom: 3%;
+			margin-bottom: 5%;
 
 			.box{
-				padding: 2% 0%;
+				width: 100%;
+				padding: 1% 0%;
 				float: left;
 				display: inline-block;
 				background: @white_color;
+				border-top: 1px solid #EEEEEE;
 
 				.box-topic{
-					width: 100%;
+					width: 22.5%;
+					padding: 1% 0%;
+					margin-right: 3%;
 					float: left;
 					display: inline-block;
 					color: @normal_textcolor;
-					margin-bottom: 2%;
+					font-size: 1em;
+					line-height: 1.5em;
+					border-right: 1px solid #EEEEEE;
 
 					i{
 						margin-left: 5px;
@@ -721,17 +736,17 @@
 				}
 
 				.col{
+					width: 14.85%;
 					float: left;
 					display: inline-block;
 					color: @normal_textcolor;
-					border-right: 1px solid @border_color;
 
 					.col-val{
 						width: 100%;
 						float: left;
 						display: inline-block;
-						font-size: 1.5em;
-						line-height: 1.5em;
+						font-size: 1.4em;
+						line-height: 1.2em;
 						color: @normal_textcolor;
 					}
 					.col-caption{
@@ -742,74 +757,10 @@
 						margin-left: 5px;
 						color: @light_textcolor;
 					}
-
-					&:last-child{
-						border-right: 0px;
-						margin-right: 0%;
-					}
-				}
-			}
-
-			.box1{
-				width: 49.5%;
-				padding: 2% 0%;
-				margin-right: 1%;
-				margin-bottom: 1%;
-
-
-				.col{
-					width: 21%;
-					margin-right: 4%;
-				}
-			}
-
-			.box2{
-				width: 49.5%;
-				padding: 2% 0%;
-				margin-bottom: 1%;
-
-
-				.col{
-					width: 16%;
-					margin-right: 4%;
-				}
-			}
-
-			.box3{
-				width: 49.5%;
-				padding: 2% 0%;
-				margin-right: 1%;
-				margin-bottom: 2%;
-
-				.col{
-					width: 21%;
-					margin-right: 4%;
-				}
-			}
-
-			.box4{
-				width: 24%;
-				padding: 2.2% 0%;
-
-				.box-topic{
-					margin-bottom: 3%;
 				}
 
-				.col{
-					width: 47%;
-					margin-right: 5%;
-				}
-			}
-
-			.box5{
-				width: 24.5%;
-				padding: 2.2% 0%;
-
-				.box-topic{ margin-bottom: 3%; }
-
-				.col{
-					width: 47%;
-					margin-right: 5%;
+				&:last-child{
+					border-bottom: 1px solid #EEEEEE;
 				}
 			}
 		}
