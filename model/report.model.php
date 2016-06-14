@@ -105,9 +105,9 @@ class ReportModel extends Database{
 		$dataset = parent::single();
 
 		// $dataset['report_date'] = parent::date_format($dataset['report_date']);
-		$dataset['date'] = parent::date_format($dataset['create_time']);
-		$dataset['update'] = parent::date_facebookformat($dataset['update_time']);
-		$dataset['update_time'] = parent::datetime_thaiformat($dataset['update_time']);
+		// $dataset['date'] 			= parent::date_format($dataset['create_time']);
+		$dataset['update_facebook_format'] = parent::date_facebookformat($dataset['update_time']);
+		// $dataset['update_time'] 	= parent::datetime_thaiformat($dataset['update_time']);
 
 		return $dataset;
 	}
@@ -143,7 +143,7 @@ class ReportModel extends Database{
 	}
 
 	public function countCaliberInHeaderReport($header_id){
-		parent::query('SELECT COUNT(*) FROM (SELECT COUNT(id) total FROM RTH_DailyOutputDetail WHERE header_id = 26 GROUP BY caliber_id) AS total');
+		parent::query('SELECT COUNT(*) FROM (SELECT COUNT(id) total FROM RTH_DailyOutputDetail WHERE header_id = :header_id GROUP BY caliber_id) AS total');
 		parent::bind(':header_id', $header_id);
 		parent::execute();
 		$dataset = parent::single();

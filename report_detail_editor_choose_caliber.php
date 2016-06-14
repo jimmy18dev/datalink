@@ -57,7 +57,7 @@ $current_page['2'] = 'choose_caliber';
 	<!-- Table -->
 	<div class="choose-form-title">
 		<div class="icon"><i class="fa fa-database" aria-hidden="true"></i></div>
-		<div class="title">Select a caliber code add to <a href="#">12 December 2016</a></div>
+		<div class="title">Select a caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
 	<div class="list-container">
 		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>

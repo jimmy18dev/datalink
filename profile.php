@@ -48,7 +48,8 @@ $current_page['1'] = 'profile';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $user->fname.' '.$user->lname?></h1>
-			<p>Account ID <strong><?php echo $user->code;?></strong> has <strong><?php echo $useractivity->countActivity($user->id);?> Activitys</strong> and Last visit at <strong><?php echo $user->visit_time;?></strong></p>
+			<p>Account ID <strong><?php echo $user->code;?></strong> has <strong><?php echo $useractivity->countActivity($user->id);?> Activitys</strong></p>
+			<p>Last visit at <strong><?php echo $user->visit_time;?></strong></p>
 		</div>
 		<div class="head-control">
 			<a href="logout.php" class="logout-btn">

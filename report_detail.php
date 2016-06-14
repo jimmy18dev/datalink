@@ -37,7 +37,7 @@ $current_page['1'] = 'index';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title><?php echo $report->date;?></title>
+<title><?php echo $report->report_date;?> : [ <?php echo $report->line_no;?> ] [ <?php echo $report->shift;?> ]</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -53,8 +53,8 @@ $current_page['1'] = 'index';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1><?php echo $report->date;?></h1>
-			<p>Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update;?></strong></p>
+			<h1><?php echo $report->report_full_date;?></h1>
+			<p>Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update_facebook_format;?></strong></p>
 			<p>Leader <strong><?php echo $report->leader_name;?></strong></p>
 		</div>
 		<div class="head-control">
