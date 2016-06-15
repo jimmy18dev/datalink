@@ -2,7 +2,10 @@
 	<div class="info">
 	<div class="name">
 		<?php echo $var['caliber_code'].' '.$var['caliber_family'];?>
+
+		<?php if($can_edit){?>
 		<a href="report_detail_editor.php?caliber=<?php echo $var['caliber_id'];?>&header=<?php echo $header_id;?>&action=edit" class="btn">Edit caliber</a>
+		<?php }?>
 	</div>
 	<div class="description">
 		<p>Route: <strong><?php echo $var['route_name'];?></strong> Std.time <strong><?php echo $var['stdtime'];?></strong> Hrs/K, (<?php echo $var['total_operation'];?> operations)</p>

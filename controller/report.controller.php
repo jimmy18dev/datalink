@@ -242,6 +242,7 @@ class ReportController extends ReportModel{
         }else if($option['type'] == 'report-caliber-items'){
             foreach ($data as $var){
             	$header_id = $option['header_id'];
+            	$can_edit = $option['can_edit'];
                 include'template/report/report.caliber.items.php';
                 
                 $total_items++;
