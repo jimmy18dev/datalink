@@ -49,7 +49,6 @@ class ReportController extends ReportModel{
 
 	// Permission access
 	public $can_edit;
-	public $lock;
 
 	public function getHeader($id){
 		$data = parent::getData($id);

@@ -225,6 +225,10 @@ body {
   font-size: 0.7em;
   line-height: 1.5em;
 }
+.container .head .head-control .report-btn-lock {
+  border: 1px solid transparent;
+  color: rgba(0, 0, 0, 0.1);
+}
 .container .graph-filter {
   width: 60%;
   margin: 0% 20%;

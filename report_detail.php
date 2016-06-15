@@ -66,7 +66,7 @@ $current_page['1'] = 'index';
 			</div>
 			</a>
 			<?php }else{?>
-			<div class="report-btn">
+			<div class="report-btn report-btn-lock">
 				<i class="fa fa-lock" aria-hidden="true"></i>
 				<div class="caption">Lock!</div>
 			</div>
@@ -222,7 +222,7 @@ $current_page['1'] = 'index';
 		</div>
 		<?php }else{?>
 		<div class="container-box">
-			<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items','header_id' => $report->id));?>
+			<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items','header_id' => $report->id,'can_edit'=>$report->can_edit));?>
 		</div>
 		<?php }?>
 	</div>
