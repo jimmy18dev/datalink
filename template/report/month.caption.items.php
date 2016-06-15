@@ -1,0 +1,1 @@
+<div class="month-caption-items"><?php echo $var['month_name'].' '.$var['year'];?></div>

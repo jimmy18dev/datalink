@@ -564,6 +564,11 @@
 			font-size: 1.5em;
 			line-height: 1.5em;
 			color: @light_textcolor;
+
+			a{
+				color: @dark_textcolor;
+				text-decoration: underline;
+			}
 		}
 
 		strong{ color: @normal_textcolor; }
@@ -802,7 +807,7 @@
 						padding: 5px 10px;
 						padding-top: 6px;
 						font-size: 0.6em;
-						border-radius: 20px;
+						border-radius: 2px;
 						font-weight: normal;
 
 						&:hover{
@@ -1042,6 +1047,18 @@
 		.unlink-items{
 			color: @thin_textcolor;
 			.std{ color: @thin_textcolor; }
+		}
+
+		.month-items{
+			width: 98%;
+			padding: 1%;
+			float: left;
+			display: inline-block;
+			line-height: 1em;
+			font-size: 0.8em;
+			background: @border_color;
+			font-style: italic;
+			color: @light_textcolor;
 		}
 
 		// Header report items style

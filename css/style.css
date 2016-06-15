@@ -530,6 +530,10 @@ body {
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.4);
 }
+.container .choose-form-title .title a {
+  color: #000000;
+  text-decoration: underline;
+}
 .container .choose-form-title strong {
   color: rgba(0, 0, 0, 0.8);
 }
@@ -742,7 +746,7 @@ body {
   padding: 5px 10px;
   padding-top: 6px;
   font-size: 0.6em;
-  border-radius: 20px;
+  border-radius: 2px;
   font-weight: normal;
 }
 .container .list-container .caliber-in-report-items .info .name a:hover {
@@ -901,6 +905,17 @@ body {
 }
 .container .list-container .unlink-items .std {
   color: rgba(0, 0, 0, 0.1);
+}
+.container .list-container .month-items {
+  width: 98%;
+  padding: 1%;
+  float: left;
+  display: inline-block;
+  line-height: 1em;
+  font-size: 0.8em;
+  background: rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.4);
 }
 .container .list-container .report-header-items {
   width: 100%;

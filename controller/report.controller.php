@@ -209,9 +209,11 @@ class ReportController extends ReportModel{
     	$total_items = 0;
         if($option['type'] == 'report-header-items'){
         	$now = time();
+        	$month_start = '';
             foreach ($data as $var){
             	$update = intval(strtotime($var['update_time']));
             	$update = ($now - $update);
+
             	
             	if($update < 600)
             		$new_items = true;
@@ -221,6 +223,12 @@ class ReportController extends ReportModel{
             	$owner = false;
             	if($option['user_id'] == $var['leader_id']){
             		$owner = true;
+            	}
+            	
+            	if($month_start != date('F', strtotime($var['report_date']))){
+            		// echo "Month:".$month_start;
+            		$month_start = date('F', strtotime($var['report_date']));
+            		include'template/report/month.items.php';
             	}
 
                 include'template/report/header.items.php';
