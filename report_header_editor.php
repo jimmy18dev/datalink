@@ -171,7 +171,7 @@ $year 	= date('Y');
 			<div class="title">3. Efficiency</div>
 			<div class="inputs">
 				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="product_eff" placeholder="0" value="<?php echo $report->product_eff;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="product_eff" placeholder="0.00" value="<?php echo $report->product_eff;?>"></div>
 					<div class="caption">Product EFF</div>
 				</div>
 				<div class="section-items">
@@ -186,22 +186,22 @@ $year 	= date('Y');
 			<div class="inputs">
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="ot_10" placeholder="0" value="<?php echo $report->ot_10;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ot_10" placeholder="0.00" value="<?php echo $report->ot_10;?>"></div>
 					<div class="caption">1.0</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="ot_15" placeholder="0" value="<?php echo $report->ot_15;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ot_15" placeholder="0.00" value="<?php echo $report->ot_15;?>"></div>
 					<div class="caption">1.5</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="ot_20" placeholder="0" value="<?php echo $report->ot_20;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ot_20" placeholder="0.00" value="<?php echo $report->ot_20;?>"></div>
 					<div class="caption">2.0</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="ot_30" placeholder="0" value="<?php echo $report->ot_30;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="ot_30" placeholder="0.00" value="<?php echo $report->ot_30;?>"></div>
 					<div class="caption">3.0</div>
 				</div>
 			</div>
@@ -211,26 +211,26 @@ $year 	= date('Y');
 			<div class="title">5. Lost time</div>
 			<div class="inputs">
 				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="losttime_vac" placeholder="0" value="<?php echo $report->losttime_vac;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_vac" placeholder="0.00" value="<?php echo $report->losttime_vac;?>"></div>
 					<div class="caption">VAC</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="losttime_sick" placeholder="0" value="<?php echo $report->losttime_sick;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_sick" placeholder="0.00" value="<?php echo $report->losttime_sick;?>"></div>
 					<div class="caption">SICK</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="losttime_abs" placeholder="0" value="<?php echo $report->losttime_abs;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_abs" placeholder="0.00" value="<?php echo $report->losttime_abs;?>"></div>
 					<div class="caption">ABS</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="losttime_mat" placeholder="0" value="<?php echo $report->losttime_mat;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_mat" placeholder="0.00" value="<?php echo $report->losttime_mat;?>"></div>
 					<div class="caption">MAT</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="losttime_other" placeholder="0" value="<?php echo $report->losttime_other;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="losttime_other" placeholder="0.00" value="<?php echo $report->losttime_other;?>"></div>
 					<div class="caption">Other</div>
 				</div>
 			</div>
@@ -240,22 +240,22 @@ $year 	= date('Y');
 			<div class="inputs">
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="downtime_mc" placeholder="0" value="<?php echo $report->downtime_mc;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="downtime_mc" placeholder="0.00" value="<?php echo $report->downtime_mc;?>"></div>
 					<div class="caption">M/C</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="downtime_mat" placeholder="0" value="<?php echo $report->downtime_mat;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="downtime_mat" placeholder="0.00" value="<?php echo $report->downtime_mat;?>"></div>
 					<div class="caption">MAT</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="downtime_fac" placeholder="0" value="<?php echo $report->downtime_fac;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="downtime_fac" placeholder="0.00" value="<?php echo $report->downtime_fac;?>"></div>
 					<div class="caption">FAC</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="downtime_other" placeholder="0" value="<?php echo $report->downtime_other;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="downtime_other" placeholder="0.00" value="<?php echo $report->downtime_other;?>"></div>
 					<div class="caption">Other</div>
 				</div>
 			</div>
@@ -266,12 +266,12 @@ $year 	= date('Y');
 			<div class="inputs">
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="sort_local" placeholder="0" value="<?php echo $report->sort_local;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="sort_local" placeholder="0.00" value="<?php echo $report->sort_local;?>"></div>
 					<div class="caption">Local</div>
 				</div>
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="sort_oversea" placeholder="0" value="<?php echo $report->sort_oversea;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="sort_oversea" placeholder="0.00" value="<?php echo $report->sort_oversea;?>"></div>
 					<div class="caption">Overseas</div>
 				</div>
 			</div>
@@ -282,11 +282,11 @@ $year 	= date('Y');
 			<div class="inputs">
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="rework_local" placeholder="0" value="<?php echo $report->rework_local;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="rework_local" placeholder="0.00" value="<?php echo $report->rework_local;?>"></div>
 					<div class="caption">Local</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="rework_oversea" placeholder="0" value="<?php echo $report->rework_oversea;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="rework_oversea" placeholder="0.00" value="<?php echo $report->rework_oversea;?>"></div>
 					<div class="caption">Overseas</div>
 				</div>
 			</div>
@@ -297,15 +297,15 @@ $year 	= date('Y');
 			<div class="inputs">
 				<div class="section-items">
 					
-					<div class="input"><input type="number" class="input-text" id="yield" placeholder="0" value="<?php echo $report->yield;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="yield" placeholder="0.00" value="<?php echo $report->yield;?>"></div>
 					<div class="caption">Yield</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="target_yield" placeholder="0" value="<?php echo $report->target_yield;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="target_yield" placeholder="0.00" value="<?php echo $report->target_yield;?>"></div>
 					<div class="caption">Target Yield</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="target_eff" placeholder="0" value="<?php echo $report->target_eff;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="target_eff" placeholder="0.00" value="<?php echo $report->target_eff;?>"></div>
 					<div class="caption">Target EFF</div>
 				</div>
 			</div>

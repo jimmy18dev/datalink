@@ -215,7 +215,7 @@ class ReportController extends ReportModel{
             	$update = ($now - $update);
 
             	
-            	if($update < 600)
+            	if($update < 3600)
             		$new_items = true;
             	else
             		$new_items = false;
@@ -226,10 +226,15 @@ class ReportController extends ReportModel{
             	}
             	
             	if($month_start != date('F', strtotime($var['report_date']))){
-            		// echo "Month:".$month_start;
             		$month_start = date('F', strtotime($var['report_date']));
-            		include'template/report/month.items.php';
+            		include'template/report/month.caption.items.php';
             	}
+
+            	if(($now-strtotime($var['create_time'])) < (60*60*24*1)){
+					$lock = false;
+				}else{
+					$lock = true;
+				}
 
                 include'template/report/header.items.php';
                 $total_items++;

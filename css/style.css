@@ -906,7 +906,7 @@ body {
 .container .list-container .unlink-items .std {
   color: rgba(0, 0, 0, 0.1);
 }
-.container .list-container .month-items {
+.container .list-container .month-caption-items {
   width: 98%;
   padding: 1%;
   float: left;
