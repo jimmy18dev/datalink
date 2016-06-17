@@ -63,13 +63,18 @@ $year 	= date('Y');
 	<a href="index.php" class="header-items discard-btn">Discard</a>
 
 	<?php if(empty($report->id)){?>
-	<div class="header-items submit-btn" onclick="javascript:createHeaderReport();"><i class="fa fa-check" aria-hidden="true"></i>CREATE</div>
+	<div class="header-items submit-btn" onclick="javascript:createHeaderReport();"><i class="fa fa-plus" aria-hidden="true"></i>CREATE</div>
 	<?php }else{?>
-	<div class="header-items submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);"><i class="fa fa-check" aria-hidden="true"></i>SAVE</div>
+	<div class="header-items submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);"><i class="fa fa-check" aria-hidden="true"></i>Update</div>
 	<?php }?>
 </header>
 <div class="container">
 	<div class="header-report-form-container">
+
+		<?php if(!empty($report->id)){?>
+		<div class="form-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editing report for <strong><?php echo $report->report_full_date;?></strong></div>
+		<div class="form-title">Shift <strong><?php echo $report->line_no;?></strong> and Line type <strong><?php echo $report->line_type;?></strong></div>
+		<?php }else{?>
 		<div class="form-title">
 			Creating a report for
 			<select id="r_date" class="input-select">
@@ -138,6 +143,7 @@ $year 	= date('Y');
 				<option value="NDI">NDI</option>
 			</select>
 		</div>
+		<?php }?>
 
 		<div class="form-section">
 			<div class="title">1. Monthly</div>
@@ -314,7 +320,7 @@ $year 	= date('Y');
 
 	<div class="control-container">
 		<?php if(!empty($report->id)){?>
-		<div class="delete-btn" onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>','<?php echo $report->date;?>','<?php echo $report->line_no;?>');">Delete Report</div>
+		You are owner and can <span class="delete-btn" onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>','<?php echo $report->date;?>','<?php echo $report->line_no;?>');">Delete <i class="fa fa-trash" aria-hidden="true"></i></span> your report. 
 		<?php }?>
 	</div>
 </div>

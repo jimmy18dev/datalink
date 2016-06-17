@@ -61,13 +61,13 @@ class ReportModel extends Database{
 
 	public function editHeader($header_id,$user_id,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff,$yield,$target_yield,$target_eff){
 
-		parent::query('UPDATE RTH_DailyOutputHeader SET line_type = :line_type,shift = :shift,no_monthly_emplys = :no_monthly_emplys,no_daily_emplys = :no_daily_emplys,ttl_monthly_hrs = :ttl_monthly_hrs,ttl_daily_hrs = :ttl_daily_hrs,ot_10 = :ot_10,ot_15 = :ot_15,ot_20 = :ot_20,ot_30 = :ot_30,losttime_vac = :losttime_vac,losttime_sick = :losttime_sick,losttime_abs = :losttime_abs,losttime_mat = :losttime_mat,losttime_other = :losttime_other,downtime_mc = :downtime_mc,downtime_mat = :downtime_mat,downtime_fac = :downtime_fac,downtime_other = :downtime_other,sort_local = :sort_local,sort_oversea = :sort_oversea,rework_local = :rework_local,rework_oversea = :rework_oversea,product_eff = :product_eff,ttl_eff = :ttl_eff,yield = :yield,target_yield = :target_yield,target_eff = :target_eff,update_time = :update_time WHERE id = :header_id AND user_id = :user_id');
+		parent::query('UPDATE RTH_DailyOutputHeader SET no_monthly_emplys = :no_monthly_emplys,no_daily_emplys = :no_daily_emplys,ttl_monthly_hrs = :ttl_monthly_hrs,ttl_daily_hrs = :ttl_daily_hrs,ot_10 = :ot_10,ot_15 = :ot_15,ot_20 = :ot_20,ot_30 = :ot_30,losttime_vac = :losttime_vac,losttime_sick = :losttime_sick,losttime_abs = :losttime_abs,losttime_mat = :losttime_mat,losttime_other = :losttime_other,downtime_mc = :downtime_mc,downtime_mat = :downtime_mat,downtime_fac = :downtime_fac,downtime_other = :downtime_other,sort_local = :sort_local,sort_oversea = :sort_oversea,rework_local = :rework_local,rework_oversea = :rework_oversea,product_eff = :product_eff,ttl_eff = :ttl_eff,yield = :yield,target_yield = :target_yield,target_eff = :target_eff,update_time = :update_time WHERE id = :header_id AND user_id = :user_id');
 		
 
 		parent::bind(':header_id', 		$header_id);
 		parent::bind(':user_id', 		$user_id);
-		parent::bind(':line_type', 		$line_type);
-		parent::bind(':shift', 			$shift);
+		// parent::bind(':line_type', 		$line_type);
+		// parent::bind(':shift', 			$shift);
 		parent::bind(':no_monthly_emplys', 	$no_monthly_emplys);
 		parent::bind(':no_daily_emplys', 	$no_daily_emplys);
 		parent::bind(':ttl_monthly_hrs',  	$ttl_monthly_hrs);
@@ -130,7 +130,7 @@ class ReportModel extends Database{
 	}
 
 	public function listAllCaliber($header_id){
-		parent::query('SELECT detail.id detail_id,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,caliber.description caliber_description,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation,standard.hrs stdtime,route.name route_name 
+		parent::query('SELECT detail.id detail_id,detail.update_time,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,caliber.description caliber_description,standard.hrs stdtime,route.name route_name 
 			FROM RTH_DailyOutputDetail AS detail 
 			LEFT JOIN RTH_CaliberCode AS caliber ON caliber.id = detail.caliber_id 
 			LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
@@ -139,7 +139,12 @@ class ReportModel extends Database{
 			GROUP BY detail.caliber_id');
 		parent::bind(':header_id', 		$header_id);
 		parent::execute();
-		return $dataset = parent::resultset();
+
+		$dataset = parent::resultset();
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['update_facebook_format'] = parent::date_facebookformat($var['update_time']);
+		}
+		return $dataset;
 	}
 
 	public function countCaliberInHeaderReport($header_id){

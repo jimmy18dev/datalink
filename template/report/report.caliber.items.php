@@ -1,4 +1,4 @@
-<div class="caliber-in-report-items">
+<div class="caliber-in-report-items" id="<?php echo $var['caliber_code'].$var['caliber_family'];?>">
 	<div class="info">
 	<div class="name">
 		<?php echo $var['caliber_code'].' '.$var['caliber_family'];?>
@@ -8,7 +8,7 @@
 		<?php }?>
 	</div>
 	<div class="description">
-		<p>Route: <strong><?php echo $var['route_name'];?></strong> Std.time <strong><?php echo $var['stdtime'];?></strong> Hrs/K, (<?php echo $var['total_operation'];?> operations)</p>
+		<p>Route: <strong><?php echo $var['route_name'];?></strong> · Std.time <strong><?php echo $var['stdtime'];?> Hrs/K</strong> · Updated <strong><?php echo $var['update_facebook_format'];?></strong></p>
 	</div>
 	</div>
 	<div class="operations">

@@ -29,13 +29,13 @@ class CaliberController extends CaliberModel{
 	public $total_operation;
 
 	// Operation
-	public $operation_id;
-	public $operation_name;
-	public $operation_description;
-	public $operation_create_time;
-	public $operation_update_time;
-	public $operation_type;
-	public $operation_status;
+	// public $operation_id;
+	// public $operation_name;
+	// public $operation_description;
+	// public $operation_create_time;
+	// public $operation_update_time;
+	// public $operation_type;
+	// public $operation_status;
 
 
 	// CALIBER CODE
@@ -73,50 +73,49 @@ class CaliberController extends CaliberModel{
 		parent::createStandardTime($id,$hrs,$remark);
 	}
 
-	public function getOperation($operation_id){
-		$dataset = parent::getOperationData($operation_id);
+	// public function getOperation($operation_id){
+	// 	$dataset = parent::getOperationData($operation_id);
 
-		$this->operation_id 			= $dataset['id'];
-		$this->operation_name 			= $dataset['name'];
-		$this->operation_description 	= $dataset['description'];
-		$this->operation_create_time 	= $dataset['create_time'];
-		$this->operation_update_time 	= $dataset['update_time'];
-		$this->operation_type 			= $dataset['type'];
-		$this->operation_status 		= $dataset['status'];
-	}
+	// 	$this->operation_id 			= $dataset['id'];
+	// 	$this->operation_name 			= $dataset['name'];
+	// 	$this->operation_description 	= $dataset['description'];
+	// 	$this->operation_create_time 	= $dataset['create_time'];
+	// 	$this->operation_update_time 	= $dataset['update_time'];
+	// 	$this->operation_type 			= $dataset['type'];
+	// 	$this->operation_status 		= $dataset['status'];
+	// }
 
 
-	public function getRoute($route_id){
-		$dataset = parent::getRouteData($route_id);
+	// public function getRoute($route_id){
+	// 	$dataset = parent::getRouteData($route_id);
 
-		$this->route_id = $dataset['id'];
-		$this->route_caliber_id = $dataset['caliber_id'];
-		$this->route_code = $dataset['route_code'];
-		$this->route_name = $dataset['route_name'];
-		$this->route_description = $dataset['name'];
-		$this->route_create_time = $dataset['create_time'];
-		$this->route_update_time = $dataset['update_time'];
-		$this->route_type = $dataset['type'];
-		$this->route_status = $dataset['status'];
-	}
+	// 	$this->route_id = $dataset['id'];
+	// 	$this->route_caliber_id = $dataset['caliber_id'];
+	// 	$this->route_code = $dataset['route_code'];
+	// 	$this->route_name = $dataset['route_name'];
+	// 	$this->route_description = $dataset['name'];
+	// 	$this->route_create_time = $dataset['create_time'];
+	// 	$this->route_update_time = $dataset['update_time'];
+	// 	$this->route_type = $dataset['type'];
+	// 	$this->route_status = $dataset['status'];
+	// }
 
 	public function getCaliber($id){
 		$dataset = parent::getData($id);
 
 		$this->id 			= $dataset['id'];
 		$this->code 		= $dataset['code'];
-		$this->name 		= $dataset['name'];
-		$this->description 	= $dataset['description'];
+		$this->name 		= $dataset['code'].' '.$dataset['family'];
 		$this->family 		= $dataset['family'];
+		$this->description 	= $dataset['description'];
 		$this->create_time 	= $dataset['create_time'];
 		$this->update_time 	= $dataset['update_time'];
 		$this->type 		= $dataset['type'];
 		$this->status 		= $dataset['status'];
 
 		// Std. Time
-		$this->standard_id 	= $dataset['standard_id'];
-		$this->hrs 			= $dataset['standard_hrs'];
-		$this->remark 		= $dataset['standard_remark'];
+		$this->std_id 		= $dataset['std_id'];
+		$this->std_time 	= $dataset['std_time'];
 
 		// Route
 		$this->route_id 	= $dataset['route_id'];

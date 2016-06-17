@@ -56,14 +56,24 @@
 
 		i{ margin-right: 5px; }
 	}
+
 	.submit-btn{
 		float: right;
 		color: @green_color;
+		background: @white_color;
 		margin-right: 0%;
 		font-weight: bold;
+		height: 60px;
+		padding: 0px 10px;
+		display: inline-block;
+		font-size: 1em;
+		border: 0px;
+		outline: 0;
 
+		&:hover{ cursor: pointer; }
 		i{ margin-right: 5px; }
 	}
+
 	.profile{ float: right; }
 }
 
@@ -356,10 +366,10 @@
 	// Report detail editor (Add operation to caliber)
 	.operation-form-container{
 		width: 60%;
-		margin: 5% 20%;
+		margin: 0% 20%;
+		margin-top: 5%;
 		float: left;
 		display: inline-block;
-		border-top: 0px;
 
 		.operation-items{
 			width: 100%;
@@ -452,9 +462,11 @@
 				margin-left: 5px;
 				font-size: 1em;
 				font-family: @FontStylePrimary;
-				border: 1px solid @thin_textcolor;
+				border: 1px solid @primary_color;
+				color: @primary_color;
 				background: #FFFFFF;
 				border-radius: 3px;
+				font-weight: bold;
 			}
 		}
 
@@ -524,21 +536,33 @@
 		}
 	}
 
+	.note{
+		width: 60%;
+		margin: 1% 20%;
+		float: left;
+		display: inline-block;
+		font-size: 0.8em;
+		line-height: 1.5em;
+		color: @light_textcolor;
+	}
+
 	// Form control style
 	.control-container{
 		width: 60%;
 		margin: 5% 20%;
 		float: left;
 		display: inline-block;
+		text-align: center;
+		color: @light_textcolor;
 
 		.delete-btn{
-			float: left;
 			display: inline-block;
 			font-size: 0.9em;
 			padding: 5px 15px;
 			color: @red_color;
 			border: 1px solid @red_color;
 			border-radius: 20px;
+			margin-left: 5px;
 
 			&:hover{
 				cursor: pointer;
@@ -625,27 +649,18 @@
 				float: right;
 				display: inline-block;
 
-				a.edit-btn, a.create-btn{
-					float: right;
-					display: inline-block;
-					background: @border_color;
-					padding: 8px 10px;
-					font-size: 1em;
-					color: @light_textcolor;
-					border-radius: 2px;
-					font-weight: bold;
-
-					i{ margin-left: 10px; }
-				}
-
 				a.create-btn{
 					background: @green_color;
 					color: @white_color;
+					float: right;
+					display: inline-block;
+					padding: 8px 10px;
+					font-size: 1em;
+					border-radius: 2px;
+					font-weight: bold;
+					box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 
-					i{
-						margin-left: 0px;
-						margin-right: 5px;
-					}
+					i{ margin-right: 10px; }
 				}
 			}
 		}
@@ -660,9 +675,11 @@
 			a.create-btn{
 				background: @green_color;
 				color: @white_color;
-				padding: 8px 20px;
-				font-size: 0.9em;
-				border-radius: 20px;
+				padding: 8px 10px;
+				font-size: 1em;
+				border-radius: 2px;
+				font-weight: bold;
+				box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 
 				i{ margin-right: 10px; }
 			}
@@ -1056,7 +1073,7 @@
 			display: inline-block;
 			line-height: 1em;
 			font-size: 0.8em;
-			background: @border_color;
+			background: rgba(0, 0, 0, 0.03);
 			font-style: italic;
 			color: @light_textcolor;
 		}
@@ -1085,6 +1102,10 @@
 				.new-items{
 					font-size: 0.7em;
 					font-style: italic;
+				}
+
+				.lock{
+					font-size: 0.7em;
 				}
 			}
 			.col2{
@@ -1147,7 +1168,7 @@
 	height: 100%;
 	float: left;
 	display: inline-block;
-	background: rgba(255, 255, 255, 0.95);
+	background: rgba(255, 255, 255, 0.9);
 	display: none;
 
 	.dialog{
@@ -1156,17 +1177,10 @@
 		display: inline-block;
 		text-align: center;
 		margin-top: 20%;
-
-		.icon{
-			font-size: 4em;
-			margin-bottom: 3%;
-			color: @primary_color;
-		}
-		p{
-			font-size: 1em;
-			line-height: 1.5em;
-			color: @light_textcolor;
-		}
+		font-size: 1em;
+		line-height: 1.5em;
+		color: @normal_textcolor;
+		font-style: italic;
 	}
 }
 

@@ -1,44 +1,33 @@
 $(document).ready(function(){
-    $panel      = $('#progress-panel');
-    $bar        = $('#progress-bar');
-    $icon       = $('#progress-icon');
-    $message    = $('#progress-message');
-    
-    var header_id = $('#header_id').val();
+    var header_id       = $('#header_id').val();
+    var action          = $('#action').val();
+    var caliber_name    = $('#caliber_name').val();
 
     $('#ReportDetail').ajaxForm({
         beforeSubmit: function(){
             console.log('Process: BeforeSubmit...');
-            $panel.fadeIn();
-            $bar.width('0%');
             $('#loading-box').fadeIn(300);
+            $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
 
+            if(action == 'edit')
+                $('#btn-caption').html('Updating');
+            else
+                $('#btn-caption').html('Creating');
         },
         uploadProgress: function(event,position,total,percentComplete) {
             var percent = percentComplete;
-            var loadingProcess = '';
-            
-            $bar.animate({width:percent+'%'},300);
-
-            if(percent > 80){
-                $message.html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังส่งอีเมล...');
-            }
-            // console.clear();
-            for (i = 0; i < percent; i++) { 
-                loadingProcess += '|';
-            }
-            console.log('Photo Upload => '+percent+'% ' + loadingProcess);
         },
         success: function() {
             console.log('Upload Successed and Waiting...');
-            $message.html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังบันทึก...');
         },
         complete: function(xhr) {
             console.log('Complete!');
-            $message.html('<i class="fa fa-check"></i>ส่งหลักฐานการโอนเงินแล้ว');
             // location.reload();
             console.log(xhr.responseText);
-            window.location = 'report_detail.php?header='+header_id;
+
+            setTimeout(function(){
+                window.location = 'report_detail.php?header='+header_id+'#'+caliber_name;
+            },1000);
         }
     });
 });

@@ -19,12 +19,15 @@
 
 		i{ margin-right: 5px; }
 	}
+	
+
 	.submit-btn{
 		margin-right: 0%;
-		padding-left: 3%;
-		padding-right: 3%;
+		height: 60px;
+		padding: 0px 3%;
+		font-size: 1em;
 
-		i{ margin-right: 5px; }
+		i{ margin-right: 10px; }
 	}
 }
 
@@ -181,7 +184,8 @@
 	// Report detail editor (Add operation to caliber)
 	.operation-form-container{
 		width: 100%;
-		margin: 10% 0%;
+		margin: 0%;
+		margin-top: 5%;
 
 		.operation-items{
 			width: 94%;
@@ -230,10 +234,6 @@
 				padding: 10px 7px;
 				margin-left: 5px;
 				font-size: 1em;
-				font-family: @FontStylePrimary;
-				border: 1px solid @thin_textcolor;
-				background: #FFFFFF;
-				border-radius: 3px;
 			}
 		}
 
@@ -270,15 +270,21 @@
 		}
 	}
 
+	.note{
+		width: 94%;
+		margin: 3%;
+		font-size: 0.8em;
+		line-height: 1.5em;
+	}
+
 	// Form control style
 	.control-container{
-		width: 60%;
-		margin: 5% 20%;
+		width: 94%;
+		margin: 5% 3%;
 		float: left;
 		display: inline-block;
 
 		.delete-btn{
-			float: left;
 			display: inline-block;
 			font-size: 0.9em;
 			padding: 5px 15px;
@@ -344,32 +350,24 @@
 			.title{
 				width: 60%;
 				font-size: 1.2em;
-				padding: 8px 0px;
+				padding: 10px 0px;
 			}
 			.control{
 				width: 40%;
-				a.edit-btn, a.create-btn{
-					padding: 8px 10px;
-					font-size: 1em;
 
-					i{ margin-left: 5px; }
+				a.edit-btn, a.create-btn{
+					padding: 10px;
+					font-size: 1em;
 				}
 			}
 		}
 
 		.starter-container{
-			width: 100%;
-			padding: 5% 0%;
-			float: left;
-			display: inline-block;
-			text-align: center;
+			padding: 3% 0%;
 
 			a.create-btn{
-				background: @green_color;
-				color: @white_color;
-				padding: 8px 20px;
-				font-size: 0.9em;
-				border-radius: 20px;
+				padding: 10px;
+				font-size: 1em;
 
 				i{ margin-right: 10px; }
 			}
@@ -475,31 +473,16 @@
 			padding: 3%;
 			margin-bottom: 2%;
 			border: 0px;
+			border-top: 1px solid @border_color;
 
 			.info{
 				.name{
 					font-size: 1.2em;
 
 					a{
-						float: right;
-						display: inline-block;
-						color: @light_textcolor;
-						background: @thin_textcolor;
 						padding: 5px 10px;
 						padding-top: 6px;
 						font-size: 0.6em;
-						border-radius: 20px;
-						font-weight: normal;
-
-						&:hover{
-							cursor: pointer;
-							opacity: 0.8;
-						}
-
-						&:active{
-							color: @white_color;
-							background: @primary_color;
-						}
 					}
 				}
 
@@ -597,6 +580,13 @@
 			.icon{ width: 10%; }
 		}
 
+		.month-caption-items{
+			width: 94%;
+			padding: 1% 3%;
+			line-height: 1em;
+			font-size: 0.8em;
+		}
+
 		// Header report items style
 		.report-header-items{
 			width: 94%;
@@ -626,16 +616,8 @@
 // Loading dialog and animate
 .loading-box{
 	.dialog{
-		margin-top: 45%;
-
-		.icon{
-			font-size: 2em;
-			margin-bottom: 3%;
-		}
-		p{
-			font-size: 1em;
-			line-height: 1.5em;
-		}
+		margin-top: 60%;
+		font-size: 1em;
 	}
 }
 

@@ -54,7 +54,7 @@ $current_page['3'] = 'add_caliber';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title><?php echo $caliber->code;?> <?php echo $caliber->family;?></title>
+<title><?php echo $caliber->name;?> --> <?php echo $report->report_date;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -63,21 +63,19 @@ $current_page['3'] = 'add_caliber';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery.form.min.js"></script>
-<script type="text/javascript" src="js/service/report.service.js"></script>
-<script type="text/javascript" src="js/report_detail.js"></script>
 
 </head>
 <body>
 
 <form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
 <header class="header">
-	<a href="index.php" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
-	<div class="header-items page-title"><strong>454 FD</strong> <i class="fa fa-long-arrow-right" aria-hidden="true"></i> <strong>12 Descember 2012</strong></div>
+	<a href="report_detail.php?header=<?php echo $report->id;?>" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
+	<div class="header-items page-title"><strong><?php echo $caliber->name;?></strong> <i class="fa fa-long-arrow-right" aria-hidden="true"></i> <strong><?php echo $report->report_date;?></strong></div>
 
 	<?php if($_GET['action'] == 'edit'){?>
-	<button type="submit" class="header-items submit-btn"><i class="fa fa-check" aria-hidden="true"></i>Save</button>
+	<button type="submit" class="submit-btn"><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span><span id="btn-caption">Update</span></button>
 	<?php }else{?>
-	<button type="submit" class="header-items submit-btn"><i class="fa fa-check" aria-hidden="true"></i>Add to Report</button>
+	<button type="submit" class="submit-btn"><span id="btn-icon"><i class="fa fa-plus" aria-hidden="true"></i></span><span id="btn-caption">Add to Report</span></button>
 	<?php }?>
 </header>
 <div class="container">
@@ -92,28 +90,32 @@ $current_page['3'] = 'add_caliber';
 
 		<div class="operations">
 			<?php
-			if($_GET['action'] == 'edit'){
+			if($_GET['action'] == 'edit')
 				$report->listDetailReport($_GET['header'],$caliber->id,array('type' => 'operation-form-items'));
-			}else{
+			else
 				$caliber->listOperationInRoute($caliber->id,array('type' => 'operation-form-items'));
-			}
 			?>
 		</div>
 		<input type="hidden" id="header_id" name="header_id" value="<?php echo $_GET['header'];?>">
+		<input type="hidden" id="caliber_name" value="<?php echo $caliber->code.$caliber->family?>">
+		<input type="hidden" id="action" value="<?php echo $_GET['action'];?>">
+	</div>
+	<div class="note">
+		Note: This caliber (<?php echo $caliber->name;?>) has <strong><?php echo $caliber->route_name;?></strong> in Primary route and standard time <strong><?php echo number_format($caliber->std_time,2);?> Hrs/K.</strong>
 	</div>
 	<div class="control-container">
 		<?php if($_GET['action'] == 'edit'){?>
-		<div class="delete-btn" onclick="javascript:deleteCaliberReport(<?php echo $report->id;?>,<?php echo $caliber->id;?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">Delete this caliber</div>
+		You can <span class="delete-btn" onclick="javascript:deleteCaliberReport(<?php echo $report->id;?>,<?php echo $caliber->id;?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">Delete <i class="fa fa-trash" aria-hidden="true"></i></span> your caliber (<?php echo $caliber->name;?>) from daily report.
 		<?php }?>
 	</div>
 </div>
 </form>
 
 <div class="loading-box" id="loading-box">
-	<div class="dialog">
-		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="loading-message"></p>
-	</div>
+	<div class="dialog">Please wait a moment.</div>
 </div>
+
+<script type="text/javascript" src="js/service/report.service.js"></script>
+<script type="text/javascript" src="js/report_detail.js"></script>
 </body>
 </html>
