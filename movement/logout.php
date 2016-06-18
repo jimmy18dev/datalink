@@ -25,7 +25,7 @@ session_destroy();
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
 <?php include'favicon.php';?>
-<title>System Logout...</title>
+<title>Logout...</title>
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -40,7 +40,7 @@ session_destroy();
 </div>
 
 <script type="text/javascript">
-	setTimeout(function(){window.location = 'index.php';},300);
+	setTimeout(function(){window.location = '../index.php#logout';},300);
 </script>
 
 </body>

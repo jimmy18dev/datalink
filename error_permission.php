@@ -22,7 +22,7 @@ if(!$user_online){
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>You don't have permission to access!</title>
+<title>Access Denied!</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -36,8 +36,8 @@ if(!$user_online){
 <body>
 <div class="error-container">
 	<div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
-	<p>Access Denied  You don't have permission to access</p>
-	<a href="index.php">Back to Home</a>
+	<p><strong>Access denied!</strong> You don't have permission to access.</p>
+	<a href="logout.php">Logout<i class="fa fa-sign-out" aria-hidden="true"></i></a>
 </div>
 </body>
 </html>
