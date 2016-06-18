@@ -10,57 +10,44 @@
 	height: 60px;
 	float: left;
 	display: inline-block;
-	background: @white_color;
+	background: #F7F7F7;
 	z-index: 99;
-	border-bottom: 1px solid @border_color;
+	border-bottom: 1px solid #EAEAEA;
 
 	.header-items{
-		padding: 23px 0%;
+		padding: 24px 0%;
 		height: 12px;
 		float: left;
 		display: inline-block;
 		margin-right: 2%;
 		color: @light_textcolor;
 		font-size: 1em;
-		background: @white_color;
 		border: 0px;
-		border-bottom: 2px solid transparent;
+		border-bottom: 1px solid #EAEAEA;
+		background: #F7F7F7;
 
 		&:hover{
 			cursor: pointer;
 			color: @normal_textcolor;
 		}
 	}
+
 	.header-items-active{
 		color: @normal_textcolor;
-		border-bottom: 2px solid @dark_textcolor;
+		border-bottom: 1px solid @dark_textcolor;
 	}
 
 	.back-btn{
 		i{ margin-right: 10px; }
 	}
 
-	a.discard-btn{
-		color: @red_color;
-	}
-
-	.page-title{
-		color: @light_textcolor;
-	}
-
-	.create-btn{
-		float: right;
-		color: @primary_color;
-		margin-right: 0%;
-		font-weight: bold;
-
-		i{ margin-right: 5px; }
-	}
+	a.discard-btn{ color: @red_color; }
+	.page-title{ color: @light_textcolor; }
 
 	.submit-btn{
 		float: right;
 		color: @green_color;
-		background: @white_color;
+		background: #F7F7F7;
 		margin-right: 0%;
 		font-weight: bold;
 		height: 60px;
@@ -71,85 +58,18 @@
 		outline: 0;
 
 		&:hover{ cursor: pointer; }
-		i{ margin-right: 5px; }
+		i{ margin-right: 10px; }
 	}
 
-	.profile{ float: right; }
-}
+	.profile{
+		float: right;
+		margin-right: 0%;
 
-// Login page style
-.login-container{
-	width: 26%;
-	margin: 0% 37%;
-	float: left;
-	display: inline-block;
-	margin-top: 10%;
-	text-align: center;
-
-	.logo{
-		width: 100%;
-		float: left;
-		display: inline-block;
-		text-align: center;
-
-		h1{
-			font-size: 3em;
-			margin-bottom: 3%;
-			color: @light_textcolor;
-		}
-
-		p.version{
-			font-size: 0.9em;
-			color: @light_textcolor;
-		}
-	}
-
-	.input{
-		width: 100%;
-		float: left;
-		display: inline-block;
-		margin-top: 20%;
-
-		.input-text{
-			width: 94%;
-			padding: 3%;
-			float: left;
-			display: inline-block;
-			font-family: @FontStylePrimary;
-			font-size: 1em;
-			line-height: 1.5em;
-			margin-bottom: 3%;
-			border: 1px solid @border_color;
-
-			&:focus{ border: 1px solid @light_textcolor; }
-		}
-
-		.login-btn{
-			width: 30%;
-			padding: 2% 0%;
-			float: right;
-			display: inline-block;
-			font-family: @FontStylePrimary;
-			font-size: 1em;
-			line-height: 1.5em;
-			border: 0px;
-			text-align: center;
-			background: @primary_color;
-			color: @white_color;
-			font-weight: bold;
-			outline: 0;
-
-			i{ margin-left: 10px; }
-
-			&:hover{
-				cursor: pointer;
-				opacity: 0.8;
-			}
+		i{
+			margin-right: 10px;
 		}
 	}
 }
-// END login page style
-
 
 // Container all Page
 .container{
@@ -187,6 +107,7 @@
 		padding: 3% 20%;
 		float: left;
 		display: inline-block;
+		background: #F7F7F7;
 
 		.head-title{
 			width: 70%;
@@ -216,10 +137,11 @@
 				text-align: center;
 				float: right;
 				display: inline-block;
-				border: 1px solid #EEEEEE;
 				padding: 10px 20px;
-				border-radius: 3px;
+				border-radius: 5px;
 				color: @light_textcolor;
+				box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+				background: #EAEAEA;
 
 				i{
 					font-size: 2em;
@@ -232,8 +154,19 @@
 			}
 
 			.report-btn-lock{
-				border: 1px solid transparent;
-				color: @thin_textcolor;
+				color: @light_textcolor;
+				box-shadow: 0px 0px 0px transparent;
+				background: #F7F7F7;
+			}
+
+			.create-btn{
+				color: @white_color;
+				background: @primary_color;
+			}
+
+			.logout-btn{
+				background: @red_color;
+				color: @white_color;
 			}
 		}
 	}
@@ -1071,8 +1004,8 @@
 			padding: 1%;
 			float: left;
 			display: inline-block;
-			line-height: 1em;
-			font-size: 0.8em;
+			line-height: 1.5em;
+			font-size: 0.9em;
 			background: rgba(0, 0, 0, 0.03);
 			font-style: italic;
 			color: @light_textcolor;
@@ -1153,6 +1086,7 @@
 		.header-topic-fix{
 			padding: 1% 0%;
 			color: @light_textcolor;
+			font-size: 0.8em;
 
 			&:hover{ color: @light_textcolor; }
 		}
@@ -1187,20 +1121,23 @@
 // Logout page style
 .dialog-box{
 	width: 100%;
-	margin-top: 20%;
 	float: left;
 	display: inline-block;
-	text-align: center;
 
-	.icon{
-		color: @primary_color;
-		font-size: 3em;
-		margin-bottom: 2%;
-	}
-	p{
+	.dialog{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+		margin-top: 25%;
 		font-size: 1em;
 		line-height: 1.5em;
-		color: @light_textcolor;
+		color: @normal_textcolor;
+		font-style: italic;
+
+		i{
+			margin-right: 10px;
+		}
 	}
 }
 
@@ -1234,6 +1171,107 @@
 		&:hover{ opacity: 0.8; }
 	}
 }
+
+.login-bg{
+	background: #F7F7F7;
+}
+
+// Login page style
+.login-container{
+	width: 26%;
+	margin: 0% 37%;
+	float: left;
+	display: inline-block;
+	margin-top: 10%;
+	text-align: center;
+
+	.logo{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+
+		h1{
+			font-size: 2em;
+			margin-bottom: 3%;
+			color: @light_textcolor;
+		}
+
+		p.version{
+			font-size: 0.8em;
+			color: @light_textcolor;
+		}
+	}
+
+	.input{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		margin-top: 20%;
+		border: 1px solid #EEEEEE;
+		margin-bottom: 5%;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+
+		.input-text{
+			width: 94%;
+			padding: 3%;
+			float: left;
+			display: inline-block;
+			font-family: @FontStylePrimary;
+			font-size: 1em;
+			line-height: 1.5em;
+			border: 0px;
+			border-bottom: 1px solid #EEEEEE;
+
+			&:last-child{
+				border-bottom: 0px;
+			}
+		}
+	}
+
+	.submit{
+		width: 100%;
+		float: left;
+		display: inline-block;
+
+		.login-btn{
+			width: 100%;
+			padding: 3% 0%;
+			float: right;
+			display: inline-block;
+			font-family: @FontStylePrimary;
+			font-size: 1em;
+			line-height: 1.5em;
+			border: 0px;
+			text-align: center;
+			background: @primary_color;
+			color: @white_color;
+			outline: 0;
+			border-radius: 3px;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+
+			i{ margin-left: 10px; }
+
+			&:hover{
+				cursor: pointer;
+				opacity: 0.8;
+			}
+		}
+
+		.login-btn-loading{
+			background: #EEEEEE;
+			color: #AAAAAA;
+			box-shadow: 0px 0px 0px transparent;
+
+			&:hover{
+
+			}
+		}
+	}
+}
+// END login page style
 
 /* Other Device and Screen */
 @media only screen and (min-width:1024px) and (max-width:1365px){@import "style-1024-1366";}

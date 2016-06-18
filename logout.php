@@ -34,10 +34,9 @@ session_destroy();
 
 </head>
 
-<body>
+<body class="login-bg">
 <div class="dialog-box">
-	<div class="icon"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div>
-	<p id="dialog-message">System logout...</p>
+	<div class="dialog"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>System logout...</div>
 </div>
 
 <script type="text/javascript">

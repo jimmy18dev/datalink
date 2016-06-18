@@ -52,8 +52,8 @@ $current_page['1'] = 'profile';
 			<p>Last visit at <strong><?php echo $user->visit_time;?></strong></p>
 		</div>
 		<div class="head-control">
-			<a href="logout.php" class="logout-btn">
-			<div class="report-btn">
+			<a href="logout.php">
+			<div class="report-btn logout-btn">
 				<i class="fa fa-sign-out" aria-hidden="true"></i>
 				<div class="caption">Logout</div>
 			</div>

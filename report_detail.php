@@ -208,7 +208,7 @@ $current_page['1'] = 'index';
 		</div>
 
 		<div class="topic-container">
-			<div class="title">2. Output: <?php echo $report->total_caliber;?> items</div>
+			<div class="title">2. Output: <?php echo $report->total_caliber;?> Calibers</div>
 			<div class="control">
 				<?php if($user->id == $report->leader_id && $report->can_edit && $report->total_caliber > 0){?>
 				<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>ADD CALIBER CODE</a>

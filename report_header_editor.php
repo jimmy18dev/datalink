@@ -63,9 +63,9 @@ $year 	= date('Y');
 	<a href="index.php" class="header-items discard-btn">Discard</a>
 
 	<?php if(empty($report->id)){?>
-	<div class="header-items submit-btn" onclick="javascript:createHeaderReport();"><i class="fa fa-plus" aria-hidden="true"></i>CREATE</div>
+	<button class="submit-btn" onclick="javascript:createHeaderReport();"><i class="fa fa-plus" aria-hidden="true"></i>CREATE</button>
 	<?php }else{?>
-	<div class="header-items submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);"><i class="fa fa-check" aria-hidden="true"></i>Update</div>
+	<button class="submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);"><i class="fa fa-check" aria-hidden="true"></i>Update</button>
 	<?php }?>
 </header>
 <div class="container">

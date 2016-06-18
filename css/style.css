@@ -36,21 +36,21 @@ body {
   height: 60px;
   float: left;
   display: inline-block;
-  background: #ffffff;
+  background: #F7F7F7;
   z-index: 99;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #EAEAEA;
 }
 .header .header-items {
-  padding: 23px 0%;
+  padding: 24px 0%;
   height: 12px;
   float: left;
   display: inline-block;
   margin-right: 2%;
   color: rgba(0, 0, 0, 0.4);
   font-size: 1em;
-  background: #ffffff;
   border: 0px;
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid #EAEAEA;
+  background: #F7F7F7;
 }
 .header .header-items:hover {
   cursor: pointer;
@@ -58,7 +58,7 @@ body {
 }
 .header .header-items-active {
   color: rgba(0, 0, 0, 0.8);
-  border-bottom: 2px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 .header .back-btn i {
   margin-right: 10px;
@@ -69,19 +69,10 @@ body {
 .header .page-title {
   color: rgba(0, 0, 0, 0.4);
 }
-.header .create-btn {
-  float: right;
-  color: #003399;
-  margin-right: 0%;
-  font-weight: bold;
-}
-.header .create-btn i {
-  margin-right: 5px;
-}
 .header .submit-btn {
   float: right;
   color: #4caf50;
-  background: #ffffff;
+  background: #F7F7F7;
   margin-right: 0%;
   font-weight: bold;
   height: 60px;
@@ -95,75 +86,14 @@ body {
   cursor: pointer;
 }
 .header .submit-btn i {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .header .profile {
   float: right;
+  margin-right: 0%;
 }
-.login-container {
-  width: 26%;
-  margin: 0% 37%;
-  float: left;
-  display: inline-block;
-  margin-top: 10%;
-  text-align: center;
-}
-.login-container .logo {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-}
-.login-container .logo h1 {
-  font-size: 3em;
-  margin-bottom: 3%;
-  color: rgba(0, 0, 0, 0.4);
-}
-.login-container .logo p.version {
-  font-size: 0.9em;
-  color: rgba(0, 0, 0, 0.4);
-}
-.login-container .input {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  margin-top: 20%;
-}
-.login-container .input .input-text {
-  width: 94%;
-  padding: 3%;
-  float: left;
-  display: inline-block;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
-  margin-bottom: 3%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.login-container .input .input-text:focus {
-  border: 1px solid rgba(0, 0, 0, 0.4);
-}
-.login-container .input .login-btn {
-  width: 30%;
-  padding: 2% 0%;
-  float: right;
-  display: inline-block;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
-  border: 0px;
-  text-align: center;
-  background: #003399;
-  color: #ffffff;
-  font-weight: bold;
-  outline: 0;
-}
-.login-container .input .login-btn i {
-  margin-left: 10px;
-}
-.login-container .input .login-btn:hover {
-  cursor: pointer;
-  opacity: 0.8;
+.header .profile i {
+  margin-right: 10px;
 }
 .container {
   width: 100%;
@@ -196,6 +126,7 @@ body {
   padding: 3% 20%;
   float: left;
   display: inline-block;
+  background: #F7F7F7;
 }
 .container .head .head-title {
   width: 70%;
@@ -222,10 +153,11 @@ body {
   text-align: center;
   float: right;
   display: inline-block;
-  border: 1px solid #EEEEEE;
   padding: 10px 20px;
-  border-radius: 3px;
+  border-radius: 5px;
   color: rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background: #EAEAEA;
 }
 .container .head .head-control .report-btn i {
   font-size: 2em;
@@ -236,8 +168,17 @@ body {
   line-height: 1.5em;
 }
 .container .head .head-control .report-btn-lock {
-  border: 1px solid transparent;
-  color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 0px transparent;
+  background: #F7F7F7;
+}
+.container .head .head-control .create-btn {
+  color: #ffffff;
+  background: #003399;
+}
+.container .head .head-control .logout-btn {
+  background: #f44336;
+  color: #ffffff;
 }
 .container .graph-filter {
   width: 60%;
@@ -927,8 +868,8 @@ body {
   padding: 1%;
   float: left;
   display: inline-block;
-  line-height: 1em;
-  font-size: 0.8em;
+  line-height: 1.5em;
+  font-size: 0.9em;
   background: rgba(0, 0, 0, 0.03);
   font-style: italic;
   color: rgba(0, 0, 0, 0.4);
@@ -999,6 +940,7 @@ body {
 .container .list-container .header-topic-fix {
   padding: 1% 0%;
   color: rgba(0, 0, 0, 0.4);
+  font-size: 0.8em;
 }
 .container .list-container .header-topic-fix:hover {
   color: rgba(0, 0, 0, 0.4);
@@ -1027,20 +969,22 @@ body {
 }
 .dialog-box {
   width: 100%;
-  margin-top: 20%;
+  float: left;
+  display: inline-block;
+}
+.dialog-box .dialog {
+  width: 100%;
   float: left;
   display: inline-block;
   text-align: center;
-}
-.dialog-box .icon {
-  color: #003399;
-  font-size: 3em;
-  margin-bottom: 2%;
-}
-.dialog-box p {
+  margin-top: 25%;
   font-size: 1em;
   line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.8);
+  font-style: italic;
+}
+.dialog-box .dialog i {
+  margin-right: 10px;
 }
 .error-container {
   width: 100%;
@@ -1070,6 +1014,90 @@ body {
 .error-container a:hover {
   opacity: 0.8;
 }
+.login-bg {
+  background: #F7F7F7;
+}
+.login-container {
+  width: 26%;
+  margin: 0% 37%;
+  float: left;
+  display: inline-block;
+  margin-top: 10%;
+  text-align: center;
+}
+.login-container .logo {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.login-container .logo h1 {
+  font-size: 2em;
+  margin-bottom: 3%;
+  color: rgba(0, 0, 0, 0.4);
+}
+.login-container .logo p.version {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.4);
+}
+.login-container .input {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 20%;
+  border: 1px solid #EEEEEE;
+  margin-bottom: 5%;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.login-container .input .input-text {
+  width: 94%;
+  padding: 3%;
+  float: left;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  border: 0px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.login-container .input .input-text:last-child {
+  border-bottom: 0px;
+}
+.login-container .submit {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.login-container .submit .login-btn {
+  width: 100%;
+  padding: 3% 0%;
+  float: right;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  border: 0px;
+  text-align: center;
+  background: #003399;
+  color: #ffffff;
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.login-container .submit .login-btn i {
+  margin-left: 10px;
+}
+.login-container .submit .login-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.login-container .submit .login-btn-loading {
+  background: #EEEEEE;
+  color: #AAAAAA;
+  box-shadow: 0px 0px 0px transparent;
+}
 /* Other Device and Screen */
 @media only screen and (min-width: 520px) and (max-width: 759px) {
   .header {
@@ -1078,59 +1106,21 @@ body {
     height: 60px;
   }
   .header .header-items {
-    padding: 23px 0%;
+    padding: 24px 0%;
     height: 12px;
-    margin-right: 0%;
-    margin-left: 3%;
+    margin-right: 3%;
     font-size: 1em;
   }
-  .header .create-btn {
-    margin-right: 0%;
-    padding-left: 3%;
-    padding-right: 3%;
-  }
-  .header .create-btn i {
-    margin-right: 5px;
+  .header .header-items:first-child {
+    margin-left: 3%;
   }
   .header .submit-btn {
-    margin-right: 0%;
     height: 60px;
     padding: 0px 3%;
     font-size: 1em;
   }
-  .header .submit-btn i {
-    margin-right: 10px;
-  }
-  .login-container {
-    width: 50%;
-    margin: 0% 25%;
-    margin-top: 15%;
-  }
-  .login-container .logo h1 {
-    font-size: 3em;
-    margin-bottom: 2%;
-  }
-  .login-container .logo p.version {
-    font-size: 0.9em;
-  }
-  .login-container .input {
-    margin-top: 20%;
-  }
-  .login-container .input .input-text {
-    width: 92%;
-    padding: 4%;
-    font-size: 1.1em;
-    line-height: 1.5em;
-    margin-bottom: 5%;
-  }
-  .login-container .input .login-btn {
-    width: 100%;
-    padding: 3% 0%;
-    font-size: 1.1em;
-    line-height: 1.5em;
-  }
-  .login-container .input .login-btn i {
-    margin-left: 10px;
+  .header .profile {
+    margin-right: 3%;
   }
   .container {
     margin-top: 60px;
@@ -1151,7 +1141,6 @@ body {
   .container .head {
     width: 94%;
     padding: 5% 3%;
-    background: #EEEEEE;
   }
   .container .head .head-title {
     width: 70%;
@@ -1169,7 +1158,6 @@ body {
     width: 30%;
   }
   .container .head .head-control .report-btn {
-    border: 1px solid #CCCCCC;
     padding: 10px 20px;
   }
   .container .head .head-control .report-btn i {
@@ -1567,8 +1555,6 @@ body {
   .container .list-container .month-caption-items {
     width: 94%;
     padding: 1% 3%;
-    line-height: 1em;
-    font-size: 0.8em;
   }
   .container .list-container .report-header-items {
     width: 94%;
@@ -1598,21 +1584,15 @@ body {
     margin-left: 10px;
   }
   .container .list-container .header-topic-fix {
-    font-size: 0.8em;
-    padding: 2% 3%;
+    padding: 1% 3%;
+    font-size: 0.7em;
   }
   .loading-box .dialog {
     margin-top: 60%;
     font-size: 1em;
   }
-  .dialog-box {
-    margin-top: 45%;
-  }
-  .dialog-box .icon {
-    font-size: 2em;
-    margin-bottom: 3%;
-  }
-  .dialog-box p {
+  .dialog-box .dialog {
+    margin-top: 55%;
     font-size: 1em;
     line-height: 1.5em;
   }
@@ -1631,5 +1611,33 @@ body {
   .error-container a {
     padding: 10px 20px;
     font-size: 0.9em;
+  }
+  .login-container {
+    width: 50%;
+    margin: 0% 25%;
+    margin-top: 30%;
+  }
+  .login-container .logo h1 {
+    font-size: 2em;
+    margin-bottom: 3%;
+  }
+  .login-container .logo p.version {
+    font-size: 0.8em;
+  }
+  .login-container .input {
+    margin-top: 20%;
+    margin-bottom: 10%;
+    border-radius: 5px;
+  }
+  .login-container .input .input-text {
+    width: 92%;
+    padding: 4%;
+    font-size: 1.1em;
+    line-height: 1.5em;
+  }
+  .login-container .submit .login-btn {
+    padding: 4% 0%;
+    font-size: 1.1em;
+    line-height: 1.5em;
   }
 }

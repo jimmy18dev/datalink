@@ -46,6 +46,15 @@ $current_page['1'] = 'index';
 			<h1>Daily output report</h1>
 			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
 		</div>
+
+		<div class="head-control">
+			<a href="report_header_editor.php?action=create">
+			<div class="report-btn create-btn">
+				<i class="fa fa-file-text-o" aria-hidden="true"></i>
+				<div class="caption">New report</div>
+			</div>
+			</a>
+		</div>
 	</div>
 
 	<div class="list-container">

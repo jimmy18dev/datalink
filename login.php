@@ -31,29 +31,26 @@ if($user_online){
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/min/user.service.min.js"></script>
 
 </head>
-<body>
+<body class="login-bg">
 <div class="login-container">
 	<div class="logo">
 		<h1>DATALINK</h1>
 		<p class="version">Version <strong>1.01</strong></p>
 	</div>
+
+	<form action="javascript:login();">
 	<div class="input">
-		<form action="javascript:login();">
-			<input type="text" class="input-text" id="username" placeholder="Username" autofocus autocomplete="off">
-			<input type="password" class="input-text" placeholder="Enter your password..." id="password">
-			<button type="submit" class="login-btn">Login<i class="fa fa-angle-right"></i></button>
-		</form>
+		<input type="text" class="input-text" id="username" placeholder="Username" autofocus autocomplete="off">
+		<input type="password" class="input-text" placeholder="Enter your password..." id="password">
 	</div>
+	<div class="submit">
+		<button type="submit" id="login-btn" class="login-btn"><span id="btn-caption">Login</span><span id="btn-icon"><i class="fa fa-angle-right"></i></span></button>
+	</div>
+	</form>
 </div>
 
-<div class="loading-box" id="loading-box">
-	<div class="dialog">
-		<div class="icon"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div>
-		<p id="login-message"></p>
-	</div>
-</div>
+<script type="text/javascript" src="js/service/min/user.service.min.js"></script>
 </body>
 </html>

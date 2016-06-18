@@ -11,8 +11,9 @@ function login(){
         return false;
     }
 
-    $('#login-message').html('Please Wait...');
-    $('#loading-box').fadeIn(300);
+    $('#login-btn').addClass('login-btn-loading');
+    $('#btn-caption').html('Please wait...');
+    $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
 
     $.ajax({
         url         :href,
@@ -32,7 +33,9 @@ function login(){
         console.log('callback: '+data.return+','+data.message);
 
         if(data.return){
-            window.location = 'index.php';
+            setTimeout(function(){
+                window.location = 'index.php';
+            },1000);
         }else{
             alert('Login failed please check your username and password!');
             location.reload();
