@@ -2,6 +2,7 @@ function createSection(){
     var href        = 'api.section.php';
     var name        = $('#name').val();
     var description = $('#description').val();
+    var redirect    = $('#redirect').val();
 
     $('#loading-message').html('กำลังเข้าระบบ...');
     $('#loading-box').fadeIn(300);
@@ -16,6 +17,7 @@ function createSection(){
             action              :'create',
             name:name,
             description:description,
+            redirect:redirect,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -39,6 +41,7 @@ function editSection(id){
     
     var name        = $('#name').val();
     var description = $('#description').val();
+    var redirect    = $('#redirect').val();
 
     $('#loading-message').html('กำลังเข้าระบบ...');
     $('#loading-box').fadeIn(300);
@@ -54,13 +57,14 @@ function editSection(id){
             id:id,
             name:name,
             description:description,
+            redirect:redirect,
         },
         error: function (request, status, error) {
             console.log("Request Error");
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        // window.location = 'section.php';
+        window.location = 'section.php';
     }).error();
 }
 

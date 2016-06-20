@@ -284,7 +284,7 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">8. Reword</div>
+			<div class="title">8. Rework</div>
 			<div class="inputs">
 				<div class="section-items">
 					

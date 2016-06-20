@@ -19,11 +19,10 @@ class UserModel extends Database{
 	}
 
 	// Already checking before regsiter new user
-	public function already($code,$fname,$lname){
-		parent::query('SELECT id FROM RTH_User WHERE code = :code OR fname = :fname OR lname = :lname');
-		parent::bind(':code',				$code);
-		parent::bind(':fname',			$fname);
-		parent::bind(':lname',			$lname);
+	public function already($code,$username){
+		parent::query('SELECT id FROM RTH_User WHERE code = :code || username = :username');
+		parent::bind(':code',			$code);
+		parent::bind(':username',		$username);
 		parent::execute();
 		$dataset = parent::single();
 		return $dataset['id'];

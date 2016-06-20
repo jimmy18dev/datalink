@@ -3,6 +3,7 @@ class SectionController extends SectionModel{
 	public $id;
 	public $name;
 	public $description;
+    public $redirect;
 	public $create_time;
 	public $update_time;
 	public $type;
@@ -11,13 +12,14 @@ class SectionController extends SectionModel{
 	public function getSection($id){
 		$dataset = parent::getData($id);
 
-		$this->id = $dataset['id'];
-		$this->name = $dataset['name'];
-		$this->description = $dataset['description'];
-		$this->create_time = $dataset['create_time'];
-		$this->update_time = $dataset['update_time'];
-		$this->type = $dataset['type'];
-		$this->status = $dataset['status'];
+		$this->id             = $dataset['id'];
+		$this->name           = $dataset['name'];
+		$this->description    = $dataset['description'];
+        $this->redirect       = $dataset['redirect'];
+		$this->create_time    = $dataset['create_time'];
+		$this->update_time    = $dataset['update_time'];
+		$this->type           = $dataset['type'];
+		$this->status         = $dataset['status'];
 	}
 
 	public function listAllSection($option){

@@ -58,7 +58,7 @@ $current_page['1'] = 'user';
 			<div class="col2">Name</div>
 			<div class="col3">Username</div>
 			<div class="col4">Password</div>
-			<div class="col5">Line No. / Section</div>
+			<div class="col5">Section</div>
 			<div class="col6">Last visit</div>
 			<div class="col7">State</div>
 		</div>

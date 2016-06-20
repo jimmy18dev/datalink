@@ -59,7 +59,8 @@ $total_section = $section->countSection();
 		<?php if($total_section > 0){?>
 		<div class="items section-items topic-fix">
 			<div class="col1">Total section <strong><?php echo $total_section;?> items</strong> <i class="fa fa-tag" aria-hidden="true"></i></div>
-			<div class="col2">Description</div>
+			<div class="col2">Redirect to</div>
+			<div class="col3">Description</div>
 		</div>
 		<?php $section->listAllSection(array('type' => 'section-items'));?>
 		

@@ -9,7 +9,7 @@ if($_POST['calling'] != ''){
 			switch ($_POST['action']) {
 				case 'create':
 					if(true){
-						$return_id = $section->create($_POST['name'],$_POST['description']);
+						$return_id = $section->create($_POST['name'],$_POST['description'],$_POST['redirect']);
 						
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'register successful';
@@ -25,7 +25,7 @@ if($_POST['calling'] != ''){
 					break;
 				case 'edit':
 					if(true){
-						$return_id = $section->edit($_POST['id'],$_POST['name'],$_POST['description']);
+						$return_id = $section->edit($_POST['id'],$_POST['name'],$_POST['description'],$_POST['redirect']);
 						
 						// if(!empty($user_id) && $user_id != 0){
 						// 	$return_message = 'register successful';

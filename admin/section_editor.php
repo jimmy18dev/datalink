@@ -68,6 +68,7 @@ $(document).ready(function(){
 		<div class="form-input">
 			<div class="input">
 				<input class="input-text font-bigsize" type="text" id="name" value="<?php echo $section->name;?>" placeholder="Section Name" autofocus>
+				<input class="input-text font-bigsize" type="text" id="redirect" value="<?php echo $section->redirect;?>" placeholder="Redirect to ...">
 				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this section"><?php echo $section->description;?></textarea>
 			</div>
 			<div class="control">
