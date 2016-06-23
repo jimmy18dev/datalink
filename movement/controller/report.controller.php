@@ -129,13 +129,10 @@ class ReportController extends ReportModel{
 	}
 
 	// Detail report
-	public function addOperationReport($header_id,$user_id,$caliber_id,$route_id,$stdtime_id,$stdtime_hrs,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output){
+	public function addOperationReport($report_id,$stdtime,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output){
 
-		if(parent::alreadyDetail($header_id,$caliber_id,$route_id,$operation_id)){
-			$required_hrs = $stdtime_hrs * ($output/1000);
-			parent::createDetail($header_id,$user_id,$caliber_id,$route_id,$stdtime_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
-		}else{
-		}
+		$required_hrs = $stdtime * ($output/1000);
+		parent::createOperationDetail($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs,'normal','active');
 	}
 	public function updateOerationReport($user_id,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$stdtime_hrs,$output,$required_hrs){
 
@@ -156,13 +153,14 @@ class ReportController extends ReportModel{
 		$this->render($data,$option);
 	}
 
-	public function listAllCalibers($header_id,$option){
-		$data = parent::listAllCaliber($header_id);
+	// List all caliber code in daily report by header report.
+	public function listCaliberInReport($header_id,$option){
+		$data = parent::listCaliberInReportData($header_id);
 		$this->render($data,$option);
 	}
 
-	public function listallOperations($header_id,$caliber_id,$option){
-		$data = parent::listallOperation($header_id,$caliber_id);
+	public function listOperationInCaliber($report_id,$option){
+		$data = parent::listOperationInCaliberData($report_id);
 		$this->render($data,$option);
 	}
 
@@ -254,8 +252,8 @@ class ReportController extends ReportModel{
             }
         }else if($option['type'] == 'report-caliber-items'){
             foreach ($data as $var){
-            	$header_id = $option['header_id'];
-            	$can_edit = $option['can_edit'];
+            	$header_id 	= $option['header_id'];
+            	$can_edit 	= $option['can_edit'];
                 include'template/report/report.caliber.items.php';
                 
                 $total_items++;

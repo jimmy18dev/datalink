@@ -103,6 +103,16 @@ $current_page['3'] = 'add_caliber';
 	<div class="note">
 		Note: This caliber (<?php echo $caliber->name;?>) has <strong><?php echo $caliber->route_name;?></strong> in Primary route and standard time <strong><?php echo number_format($caliber->std_time,2);?> Hrs/K.</strong>
 	</div>
+
+	<div class="control-container">
+		<input type="text" name="header_id" value="<?php echo $report->id;?>">
+		<input type="text" name="caliber_id" value="<?php echo $caliber->id;?>">
+		<input type="text" name="route_id" value="<?php echo $caliber->route_id;?>">
+		<input type="text" name="std_id" value="<?php echo $caliber->std_id;?>">
+		<input type="text" name="std_time" value="<?php echo $caliber->std_time;?>">
+		<input type="text" name="report_id" value="<?php echo $_GET['report_id'];?>">
+	</div>
+
 	<div class="control-container">
 		<?php if($_GET['action'] == 'edit'){?>
 		You can <span class="delete-btn" onclick="javascript:deleteCaliberReport(<?php echo $report->id;?>,<?php echo $caliber->id;?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">Delete <i class="fa fa-trash" aria-hidden="true"></i></span> your caliber (<?php echo $caliber->name;?>) from daily report.

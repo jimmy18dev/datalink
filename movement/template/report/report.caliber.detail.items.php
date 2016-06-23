@@ -5,4 +5,5 @@
 	<div class="col4"><?php echo number_format($var['output']);?></div>
 	<div class="col5"><?php echo number_format($var['required_hrs'],2);?></div>
 	<div class="col6"><?php echo $var['remark_description'];?> <?php echo (empty($var['remark_message'])?'':$var['remark_message']);?></div>
+	<!-- <p><?php echo $var['remark_message'];?></p> -->
 </div>

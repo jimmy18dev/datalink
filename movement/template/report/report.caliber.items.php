@@ -8,7 +8,7 @@
 		<?php }?>
 	</div>
 	<div class="description">
-		<p>Route: <strong><?php echo $var['route_name'];?></strong> · Std.time <strong><?php echo $var['stdtime'];?> Hrs/K</strong> · Updated <strong><?php echo $var['update_facebook_format'];?></strong></p>
+		<p>Route: <strong><?php echo $var['route_name'];?></strong> · Std.time <strong><?php echo $var['std_time'];?> Hrs/K</strong> · Updated <strong><?php echo $var['update_facebook_format'];?></strong></p>
 	</div>
 	</div>
 	<div class="operations">
@@ -19,6 +19,6 @@
 			<div class="col4">Output</div>
 			<div class="col5">Required</div>
 		</div>
-		<?php $this->listAllOperations($header_id,$var['caliber_id'],array('type' => 'report-caliber-detail-items'));?>
+		<?php $this->listOperationInCaliber($var['report_id'],array('type' => 'report-caliber-detail-items'));?>
 	</div>
 </div>

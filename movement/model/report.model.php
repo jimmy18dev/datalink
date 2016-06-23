@@ -129,14 +129,16 @@ class ReportModel extends Database{
 		return $dataset;
 	}
 
-	public function listAllCaliber($header_id){
-		parent::query('SELECT detail.id detail_id,detail.update_time,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,caliber.description caliber_description,standard.hrs stdtime,route.name route_name 
-			FROM RTH_DailyOutputDetail AS detail 
-			LEFT JOIN RTH_CaliberCode AS caliber ON caliber.id = detail.caliber_id 
-			LEFT JOIN RTH_StandardTime AS standard ON standard.type = "primary" AND caliber.id = standard.caliber_id 
-			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
-			WHERE detail.header_id = :header_id AND detail.status = "active" 
-			GROUP BY detail.caliber_id');
+
+	// LIST CALIBER CODE IN DAILY REPORT ///////////////
+	public function listCaliberInReportData($header_id){
+		parent::query('SELECT header.id report_id,caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,route.name route_name,header.update_time,std.hrs std_time 
+			FROM RTH_DailyOutputReportHeader AS header 
+			LEFT JOIN RTH_CaliberCode AS caliber ON header.caliber_id = caliber.id 
+			LEFT JOIN RTH_StandardTime AS std ON header.stdtime_id = std.id 
+			LEFT JOIN RTH_Route AS route ON header.route_id = route.id 
+			WHERE header.header_id = :header_id 
+			ORDER BY header.create_time DESC');
 		parent::bind(':header_id', 		$header_id);
 		parent::execute();
 
@@ -147,36 +149,59 @@ class ReportModel extends Database{
 		return $dataset;
 	}
 
+	public function listOperationInCaliberData($report_id){
+		parent::query('SELECT detail.id,operation.name operation_name,detail.total_good,detail.total_reject,detail.output,detail.required_hrs,detail.update_time,remark.description remark_message 
+			FROM RTH_DailyOutputDetail AS detail 
+			LEFT JOIN RTH_Operation AS operation ON detail.operation_id = operation.id 
+			LEFT JOIN RTH_GeneralRemark AS remark ON detail.remark_id = remark.id 
+			WHERE detail.report_id = :report_id 
+			ORDER BY detail.id ASC');
+		parent::bind(':report_id', 		$report_id);
+		parent::execute();
+		$dataset = parent::resultset();		
+		return $dataset;
+	}
+	// END ///////////////////////////////////
+
+
 	public function countCaliberInHeaderReport($header_id){
-		parent::query('SELECT COUNT(*) FROM (SELECT COUNT(id) total FROM RTH_DailyOutputDetail WHERE header_id = :header_id GROUP BY caliber_id) AS total');
+		parent::query('SELECT COUNT(id) total FROM RTH_DailyOutputReportHeader WHERE header_id = :header_id AND status = "active"');
 		parent::bind(':header_id', $header_id);
 		parent::execute();
 		$dataset = parent::single();
-		return $dataset['COUNT(*)'];
+		return $dataset['total'];
 	}
 
-	public function listallOperation($header_id,$caliber_id){
-		parent::query('SELECT detail.id detail_name,detail.header_id,detail.caliber_id,detail.route_id,detail.operation_id,operation.name operation_name,detail.total_good,detail.total_reject,detail.remark_id,remark.description remark_description,detail.remark_message,detail.output,detail.required_hrs,detail.create_time,detail.update_time,detail.type,detail.status 
-			FROM RTH_DailyOutputDetail AS detail 
-			LEFT JOIN RTH_GeneralRemark AS remark ON remark.id = detail.remark_id 
-			LEFT JOIN RTH_Operation AS operation ON operation.id = detail.operation_id 
-			WHERE header_id = :header_id AND caliber_id = :caliber_id');
-		parent::bind(':header_id', 		$header_id);
-		parent::bind(':caliber_id', 	$caliber_id);
-		parent::execute();
-		return $dataset = parent::resultset();
-	}
-
-
-	// REPORT DETAIL 
-	public function createDetail($header_id,$user_id,$caliber_id,$route_id,$stdtime_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs){
-		parent::query('INSERT INTO RTH_DailyOutputDetail(header_id,user_id,caliber_id,route_id,stdtime_id,operation_id,total_good,total_reject,remark_id,remark_message,output,required_hrs,create_time,update_time) VALUE(:header_id,:user_id,:caliber_id,:route_id,:stdtime_id,:operation_id,:total_good,:total_reject,:remark_id,:remark_message,:output,:required_hrs,:create_time,:update_time)');
+	//////////////////////////////////////////////
+	//           CALIBER REPORT                 //
+	//////////////////////////////////////////////
+	// Create new caliber report to daily report
+	// Step 1 : create header report
+	// Step 2 : add operation into header report and loop for operation items in route.
+	public function createReportHeader($header_id,$user_id,$caliber_id,$route_id,$stdtime_id,$remark,$type,$status){
+		parent::query('INSERT INTO RTH_DailyOutputReportHeader(header_id,user_id,caliber_id,route_id,stdtime_id,remark,create_time,update_time,type,status) VALUE(:header_id,:user_id,:caliber_id,:route_id,:stdtime_id,:remark,:create_time,:update_time,:type,:status)');
 		
 		parent::bind(':header_id', 		$header_id);
 		parent::bind(':user_id', 		$user_id);
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::bind(':route_id', 		$route_id);
 		parent::bind(':stdtime_id', 	$stdtime_id);
+		parent::bind(':remark' 			,$remark);
+		parent::bind(':create_time',	date('Y-m-d H:i:s'));
+		parent::bind(':update_time',	date('Y-m-d H:i:s'));
+		parent::bind(':type', 			$type);
+		parent::bind(':status', 		$status);
+		parent::execute();
+		return parent::lastInsertId();
+	}
+
+
+	// REPORT DETAIL 
+	public function createOperationDetail($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs,$type,$status){
+
+		parent::query('INSERT INTO RTH_DailyOutputDetail(report_id,operation_id,total_good,total_reject,remark_id,remark_message,output,required_hrs,create_time,update_time,type,status) VALUE(:report_id,:operation_id,:total_good,:total_reject,:remark_id,:remark_message,:output,:required_hrs,:create_time,:update_time,:type,:status)');
+		
+		parent::bind(':report_id', 		$report_id);
 		parent::bind(':operation_id', 	$operation_id);
 		parent::bind(':total_good', 	$total_good);
 		parent::bind(':total_reject', 	$total_reject);
@@ -186,30 +211,17 @@ class ReportModel extends Database{
 		parent::bind(':required_hrs', 	$required_hrs);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
+		parent::bind(':type', 			$type);
+		parent::bind(':status', 		$status);
 		parent::execute();
 		return parent::lastInsertId();
 	}
 
-	public function alreadyDetail($header_id,$caliber_id,$route_id,$operation_id){
-		parent::query('SELECT id FROM RTH_DailyOutputDetail WHERE header_id = :header_id AND caliber_id = :caliber_id AND route_id = :route_id AND operation_id = :operation_id');
-		parent::bind(':header_id', 		$header_id);
-		parent::bind(':caliber_id', 	$caliber_id);
-		parent::bind(':route_id', 		$route_id);
+	public function editDetail($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs){
+		parent::query('UPDATE RTH_DailyOutputDetail SET total_good = :total_good, total_reject = :total_reject, remark_id = :remark_id, remark_message = :remark_message,output = :output,required_hrs = :required_hrs,update_time = :update_time WHERE report_id = :report_id AND operation_id = :operation_id');
+
+		parent::bind(':report_id', 		$report_id);
 		parent::bind(':operation_id', 	$operation_id);
-		parent::execute();
-		$dataset = parent::single();
-
-		if(empty($dataset['id']))
-			return true;
-		else
-			return false;
-	}
-
-	public function editDetail($user_id,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs){
-		parent::query('UPDATE RTH_DailyOutputDetail SET total_good = :total_good, total_reject = :total_reject, remark_id = :remark_id, remark_message = :remark_message,output = :output,required_hrs = :required_hrs,update_time = :update_time WHERE id = :detail_id AND user_id = :user_id');
-
-		parent::bind(':user_id', 		$user_id);
-		parent::bind(':detail_id', 		$detail_id);
 		parent::bind(':total_good', 	$total_good);
 		parent::bind(':total_reject', 	$total_reject);
 		parent::bind(':remark_id', 		$remark_id);
@@ -220,6 +232,15 @@ class ReportModel extends Database{
 		parent::execute();
 		return parent::lastInsertId();
 	}
+
+
+
+
+
+
+
+
+
 
 	public function deleteHeader($header_id,$shift){
 		// Delete all report detail by header_id

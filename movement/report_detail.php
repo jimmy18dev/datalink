@@ -222,7 +222,7 @@ $current_page['1'] = 'index';
 		</div>
 		<?php }else{?>
 		<div class="container-box">
-			<?php $report->listAllCalibers($report->id,array('type' => 'report-caliber-items','header_id' => $report->id,'can_edit' => $report->can_edit));?>
+			<?php $report->listCaliberInReport($report->id,array('type' => 'report-caliber-items','header_id' => $report->id,'can_edit' => $report->can_edit));?>
 		</div>
 		<?php }?>
 	</div>

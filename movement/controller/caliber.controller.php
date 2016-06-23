@@ -12,8 +12,8 @@ class CaliberController extends CaliberModel{
 	public $status;
 
 	// standard time
-	public $standard_id;
-	public $hrs;
+	public $std_id;
+	public $std_time;
 	public $remark;
 
 	// Route
