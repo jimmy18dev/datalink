@@ -180,7 +180,7 @@ function editHeaderReport(id){
     }).error();
 }
 
-function deleteCaliberReport(header_id,caliber_id,caliber_code){
+function deleteCaliberReport(header_id,report_id,caliber_code){
     var href        = 'api.report.php';
 
     if(!confirm('Are you sure to delete '+caliber_code+' ?')){
@@ -198,14 +198,18 @@ function deleteCaliberReport(header_id,caliber_id,caliber_code){
             calling             :'report',
             action              :'delete_report_detail',
             header_id:header_id,
-            caliber_id:caliber_id,
+            report_id:report_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        location.reload();
+
+        setTimeout(function(){
+            window.location = 'report_detail.php?header='+header_id;
+        },1000);
+
     }).error();
 }
 

@@ -257,23 +257,23 @@ class ReportModel extends Database{
 		parent::execute();
 	}
 
-	public function deleteDetail($header_id,$caliber_id){
-		// parent::query('DELETE FROM RTH_DailyOutputDetail WHERE header_id = :header_id AND caliber_id = :caliber_id');
-		parent::query('UPDATE RTH_DailyOutputDetail SET status = "deleted" WHERE header_id = :header_id AND caliber_id = :caliber_id');
-		parent::bind(':header_id', 		$header_id);
-		parent::bind(':caliber_id', 		$caliber_id);
+	public function deleteDetail($report_id,$user_id){
+		// Delete report detail
+		parent::query('DELETE FROM RTH_DailyOutputDetail WHERE report_id = :report_id');
+		parent::bind(':report_id', 		$report_id);
+		parent::execute();
+
+		// Delete head-report
+		parent::query('DELETE FROM RTH_DailyOutputReportHeader WHERE user_id = :user_id AND id = :report_id');
+		parent::bind(':report_id', 		$report_id);
+		parent::bind(':user_id', 		$user_id);
 		parent::execute();
 	}
 
 
-	public function listDetailReportData($header_id,$caliber_id){
-		parent::query('SELECT dod.id detail_id,dod.header_id,dod.caliber_id,dod.route_id,dod.operation_id,dod.total_good,dod.total_reject,dod.remark_id,dod.remark_message,dod.output,dod.required_hrs,dod.update_time,operation.id operation_id,operation.name operation_name,operation.description operation_description,stdtime.id stdtime_id,stdtime.hrs stdtime_hrs 
-			FROM RTH_DailyOutputDetail AS dod 
-			LEFT JOIN RTH_Operation AS operation ON dod.operation_id = operation.id 
-			LEFT JOIN RTH_StandardTime AS stdtime ON dod.stdtime_id = stdtime.id 
-			WHERE dod.header_id = :header_id AND dod.caliber_id = :caliber_id');
-		parent::bind(':header_id', 		$header_id);
-		parent::bind(':caliber_id', 	$caliber_id);
+	public function listDetailReportData($report_id){
+		parent::query('SELECT detail.id,detail.operation_id,operation.name operation_name,detail.total_good,detail.total_reject,detail.remark_id,detail.output,detail.required_hrs FROM RTH_DailyOutputDetail AS detail LEFT JOIN RTH_Operation AS operation ON detail.operation_id = operation.id WHERE detail.report_id = :report_id');
+		parent::bind(':report_id', 		$report_id);
 		parent::execute();
 		$dataset = parent::resultset();
 		return $dataset;

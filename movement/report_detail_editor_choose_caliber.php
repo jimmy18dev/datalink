@@ -40,7 +40,7 @@ $current_page['2'] = 'choose_caliber';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>Choose Caliber Code</title>
+<title>Select a caliber...</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -56,7 +56,7 @@ $current_page['2'] = 'choose_caliber';
 <div class="container">
 	<!-- Table -->
 	<div class="choose-form-title">
-		<div class="icon"><i class="fa fa-database" aria-hidden="true"></i></div>
+		<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
 		<div class="title">Select a caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
 	<div class="list-container">

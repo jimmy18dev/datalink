@@ -3,7 +3,7 @@
 	<div class="col2"><?php echo number_format($var['total_good']);?></div>
 	<div class="col3"><?php echo number_format($var['total_reject']);?></div>
 	<div class="col4"><?php echo number_format($var['output']);?></div>
-	<div class="col5"><?php echo number_format($var['required_hrs'],2);?></div>
+	<div class="col5" title="<?php echo number_format($var['output']);?> x <?php echo $option['std_time'];?> = <?php echo number_format($var['required_hrs'],2);?>"><?php echo number_format($var['required_hrs'],2);?></div>
 	<div class="col6"><?php echo $var['remark_description'];?> <?php echo (empty($var['remark_message'])?'':$var['remark_message']);?></div>
 	<!-- <p><?php echo $var['remark_message'];?></p> -->
 </div>

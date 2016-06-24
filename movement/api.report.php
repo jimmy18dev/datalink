@@ -42,8 +42,8 @@ if($_POST['calling'] != ''){
 
 					// Leader authorization
 					if($report->leader_id == $user->id){
-						$report->deleteReportDetail($_POST['header_id'],$_POST['caliber_id']);
-
+						$report->deleteReportDetail($_POST['report_id'],$user->id);
+						
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'Create report successful';
 						}else{

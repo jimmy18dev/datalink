@@ -134,9 +134,9 @@ class ReportController extends ReportModel{
 		$required_hrs = $stdtime * ($output/1000);
 		parent::createOperationDetail($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs,'normal','active');
 	}
-	public function updateOerationReport($user_id,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$stdtime_hrs,$output,$required_hrs){
+	public function updateOerationReport($user_id,$stdtime,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$stdtime_hrs,$output,$required_hrs){
 
-		$required_hrs = $stdtime_hrs * $output;
+		$required_hrs = $stdtime * ($output/1000);
 		parent::editDetail($user_id,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
 	}
 
@@ -144,8 +144,8 @@ class ReportController extends ReportModel{
 		parent::deleteHeader($header_id,$shift);
 	}
 
-	public function deleteReportDetail($header_id,$caliber_id){
-		parent::deleteDetail($header_id,$caliber_id);
+	public function deleteReportDetail($report_id,$user_id){
+		parent::deleteDetail($report_id,$user_id);
 	}
 
 	public function listAllHeader($line_no,$option){
@@ -197,8 +197,8 @@ class ReportController extends ReportModel{
 		return $data;
 	}
 
-	public function listDetailReport($header_id,$caliber_id,$option){
-		$data = parent::listDetailReportData($header_id,$caliber_id);
+	public function listDetailReport($report_id,$option){
+		$data = parent::listDetailReportData($report_id);
 		$this->render($data,$option);
 	}
 
