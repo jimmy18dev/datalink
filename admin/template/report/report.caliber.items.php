@@ -4,7 +4,7 @@
 		<?php echo $var['caliber_code'].' '.$var['caliber_family'];?>
 	</div>
 	<div class="description">
-		<p>Route: <strong><?php echo $var['route_name'];?></strong> Std.time <strong><?php echo $var['stdtime'];?></strong> Hrs/K, (<?php echo $var['total_operation'];?> operations)</p>
+		<p>Route: <strong><?php echo $var['route_name'];?></strong> Std.time <strong><?php echo $var['std_time'];?></strong> Hrs/K</p>
 	</div>
 	</div>
 	<div class="operations">
@@ -15,6 +15,6 @@
 			<div class="col4">Output</div>
 			<div class="col5">Required hrs</div>
 		</div>
-		<?php $this->listAllOperations($header_id,$var['caliber_id'],array('type' => 'report-caliber-detail-items'));?>
+		<?php $this->listAllOperations($var['report_id'],array('type' => 'report-caliber-detail-items'));?>
 	</div>
 </div>

@@ -156,8 +156,8 @@ class ReportController extends ReportModel{
 		$this->render($data,$option);
 	}
 
-	public function listallOperations($header_id,$caliber_id,$option){
-		$data = parent::listallOperation($header_id,$caliber_id);
+	public function listallOperations($report_id,$option){
+		$data = parent::listallOperation($report_id);
 		$this->render($data,$option);
 	}
 

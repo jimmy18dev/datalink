@@ -32,30 +32,27 @@ class ReportModel extends Database{
 	}
 
 	public function listAllCaliber($header_id){
-		/* SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,route.id route_id,route.route_name route_name,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation 
-			FROM RTH_CaliberCode AS caliber 
-			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
-			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
-			ORDER BY caliber.update_time DESC */
-		parent::query('SELECT detail.id detail_id,detail.caliber_id caliber_id,caliber.code caliber_code,caliber.family caliber_family,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation 
-			FROM RTH_DailyOutputDetail AS detail 
-			LEFT JOIN RTH_CaliberCode AS caliber ON caliber.id = detail.caliber_id 
-			WHERE detail.header_id = :header_id 
-			GROUP BY detail.caliber_id');
+		parent::query('SELECT header.id report_id,caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,route.name route_name,header.update_time,std.hrs std_time 
+			FROM RTH_DailyOutputReportHeader AS header 
+			LEFT JOIN RTH_CaliberCode AS caliber ON header.caliber_id = caliber.id 
+			LEFT JOIN RTH_StandardTime AS std ON header.stdtime_id = std.id 
+			LEFT JOIN RTH_Route AS route ON header.route_id = route.id 
+			WHERE header.header_id = :header_id 
+			ORDER BY header.create_time DESC');
 		parent::bind(':header_id', 		$header_id);
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
 
 
-	public function listallOperation($header_id,$caliber_id){
-		parent::query('SELECT detail.id detail_name,detail.header_id,detail.caliber_id,detail.route_id,detail.operation_id,operation.name operation_name,detail.total_good,detail.total_reject,detail.remark_id,remark.description remark_description,detail.remark_message,detail.output,detail.required_hrs,detail.create_time,detail.update_time,detail.type,detail.status 
+	public function listallOperation($report_id){
+		parent::query('SELECT detail.id,operation.name operation_name,detail.total_good,detail.total_reject,detail.output,detail.required_hrs,detail.update_time,remark.description remark_message 
 			FROM RTH_DailyOutputDetail AS detail 
-			LEFT JOIN RTH_GeneralRemark AS remark ON remark.id = detail.remark_id 
-			LEFT JOIN RTH_Operation AS operation ON operation.id = detail.operation_id 
-			WHERE header_id = :header_id AND caliber_id = :caliber_id');
-		parent::bind(':header_id', 		$header_id);
-		parent::bind(':caliber_id', 	$caliber_id);
+			LEFT JOIN RTH_Operation AS operation ON detail.operation_id = operation.id 
+			LEFT JOIN RTH_GeneralRemark AS remark ON detail.remark_id = remark.id 
+			WHERE detail.report_id = :report_id 
+			ORDER BY detail.id ASC');
+		parent::bind(':report_id', 		$report_id);
 		parent::execute();
 		return $dataset = parent::resultset();
 	}
