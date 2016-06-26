@@ -49,7 +49,7 @@ $current_page['1'] = 'caliber';
 		</div>
 
 		<div class="head-control">
-			<a href="caliber_editor.php" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW CALIBER</a>
+			<a href="caliber_editor.php" class="btn create-btn"><i class="fa fa-database" aria-hidden="true"></i>NEW CALIBER</a>
 		</div>
 	</div>
 	<!-- Table -->

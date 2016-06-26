@@ -1,10 +1,11 @@
-function create(){
-    var href        = 'api.remark.php';
-    var description        = $('#description').val();
-    var category_id       = $('#category_id').val();
+function createRemark(){
+    var href            = 'api.remark.php';
+    var description     = $('#description').val();
+    var category_id     = $('#category_id').val();
 
-    $('#loading-message').html('กำลังเข้าระบบ...');
-    $('#loading-box').fadeIn(300);
+    $('#btn-caption').html('Creating');
+    $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+    $('#submit-btn').addClass('btn-loading');
 
     $.ajax({
         url         :href,
@@ -12,10 +13,10 @@ function create(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'remark',
-            action              :'create',
-            category_id:category_id,
-            description:description,
+            calling     :'remark',
+            action      :'create',
+            category_id :category_id,
+            description :description,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -24,24 +25,26 @@ function create(){
         console.log('Return: '+data.message);
 
         if(data.return){
-            window.location = 'remark.php';
+            setTimeout(function(){
+                window.location = 'remark.php?';
+            },1000);
         }
         else{
-            $('#loading-box').fadeOut(300);
             alert('แก้ข้อผิดพลาด!');
+            location.reload();
         }
     }).error();
 }
 
 // Update user information
-function edit(id){
-    var href        = 'api.remark.php';
+function editRemark(id){
+    var href            = 'api.remark.php';
+    var description     = $('#description').val();
+    var category_id     = $('#category_id').val();
 
-    var description        = $('#description').val();
-    var category_id       = $('#category_id').val();
-
-    $('#loading-message').html('กำลังเข้าระบบ...');
-    $('#loading-box').fadeIn(300);
+    $('#btn-caption').html('Updating');
+    $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+    $('#submit-btn').addClass('btn-loading');
 
     $.ajax({
         url         :href,
@@ -49,18 +52,20 @@ function edit(id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'remark',
-            action              :'edit',
-            id:id,
-            category_id:category_id,
-            description:description,
+            calling     :'remark',
+            action      :'edit',
+            id          :id,
+            category_id :category_id,
+            description :description,
         },
         error: function (request, status, error) {
             console.log("Request Error");
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'remark.php?';
+        setTimeout(function(){
+            window.location = 'remark.php?';
+        },1000);
     }).error();
 }
 
@@ -70,21 +75,25 @@ function deleteRemark(remark_id){
 
     if(!agree){ return false; }
 
+    $('#loading-box').fadeIn(300);
+
     $.ajax({
         url         :href,
         cache       :false,
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'remark',
-            action              :'delete',
-            remark_id:remark_id,
+            calling     :'remark',
+            action      :'delete',
+            remark_id   :remark_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'remark.php?';
+        setTimeout(function(){
+            window.location = 'remark.php?';
+        },1000);
     }).error();
 }

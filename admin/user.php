@@ -48,7 +48,7 @@ $current_page['1'] = 'user';
 			<p><?php echo $user->countUser();?> Users is <strong>active</strong></p>
 		</div>
 		<div class="head-control">
-			<a href="user_editor.php" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE NEW USER</a>
+			<a href="user_editor.php" class="btn create-btn"><i class="fa fa-user-plus" aria-hidden="true"></i>NEW USER</a>
 		</div>
 	</div>
 

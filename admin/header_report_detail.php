@@ -66,7 +66,7 @@ $current_page['1'] = 'report';
 	<div class="list-container">
 		<p class="topic">1. Manpower:</p>
 		<div class="report-stat">
-			<div class="stat-items stat-items-highlight">
+			<div class="stat-items">
 				<div class="v">LINE <?php echo $report->line_no;?></div>
 				<div class="k"><strong>Shift <?php echo $report->shift;?></strong>, Updated <?php echo $report->update;?></div>
 			</div>

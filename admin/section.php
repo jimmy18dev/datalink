@@ -51,7 +51,7 @@ $total_section = $section->countSection();
 
 		<?php if($total_section > 0){?>
 		<div class="head-control">
-			<a href="section_editor.php" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a>
+			<a href="section_editor.php" class="btn create-btn"><i class="fa fa-tags" aria-hidden="true"></i>NEW SECTION</a>
 		</div>
 		<?php }?>
 	</div>

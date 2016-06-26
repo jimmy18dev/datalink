@@ -27,7 +27,13 @@ class RemarkModel extends Database{
 	public function listall(){
 		parent::query('SELECT * FROM RTH_GeneralRemark WHERE status = "active"');
 		parent::execute();
-		return $dataset = parent::resultset();
+		$dataset = parent::resultset();
+
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['update_facebook_format'] = parent::date_facebookformat($var['update_time']);
+		}
+
+		return $dataset;
 	}
 
 	// Delete function

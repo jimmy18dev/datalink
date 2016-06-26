@@ -46,15 +46,6 @@ if(empty($remark->id)){
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/remark.service.js"></script>
-<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('.animated').autosize({append: "\n"});
-});
-</script>
-
 </head>
 <body>
 <?php include'header.php';?>
@@ -67,16 +58,16 @@ $(document).ready(function(){
 		</div>
 		<div class="form-input">
 			<div class="input">
-				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this remark"><?php echo $remark->description;?></textarea>
+				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this remark" autofocus><?php echo $remark->description;?></textarea>
 
 				<input type="hidden" id="category_id" value="<?php echo (empty($remark->category_id)?'1':$remark->category_id);?>">
 			</div>
 			<div class="control">
 				<?php if(empty($remark->id)){?>
-				<div class="submit-btn" onclick="javascript:create();">Create Remark</div>
+				<div class="submit-btn" id="submit-btn" onclick="javascript:createRemark();"><span id="btn-caption">Create Remark</span><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span></div>
 				<?php }else{?>
-				<div class="delete-btn" onclick="javascript:deleteRemark(<?php echo $remark->id;?>);">Delete this remark</div>
-				<div class="submit-btn" onclick="javascript:edit(<?php echo $remark->id;?>);">SAVE</div>
+				<div class="delete-btn" onclick="javascript:deleteRemark(<?php echo $remark->id;?>);"><i class="fa fa-trash" aria-hidden="true"></i>Delete this remark</div>
+				<div class="submit-btn" id="submit-btn" onclick="javascript:editRemark(<?php echo $remark->id;?>);"><span id="btn-caption">Update</span><span id="btn-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></span></div>
 				<?php }?>
 			</div>
 		</div>
@@ -84,10 +75,17 @@ $(document).ready(function(){
 </div>
 
 <div class="loading-box" id="loading-box">
-	<div class="dialog">
-		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="loading-message"></p>
-	</div>
+	<div class="dialog"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>Please wait a moment.</div>
 </div>
+
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/remark.service.js"></script>
+<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.animated').autosize({append: "\n"});
+});
+</script>
+
 </body>
 </html>

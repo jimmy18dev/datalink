@@ -46,24 +46,22 @@ $total_remark = $remark->countRemark();
 	<div class="head">
 		<div class="head-title">
 			<h1>GENERAL REMARK</h1>
+			<p>Total remark <strong><?php echo $total_remark;?> items.</strong></p>
 		</div>
 
 		<?php if($total_remark > 0){?>		
 		<div class="head-control">
-			<a href="remark_editor.php?" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a>
+			<a href="remark_editor.php?" class="btn create-btn"><i class="fa fa-commenting" aria-hidden="true"></i>NEW REMARK</a>
 		</div>
 		<?php }?>
 	</div>
 
 	<!-- Table -->
 	<div class="list-container">
-		<?php if($total_remark > 0){?>
-		<div class="items remark-items topic-fix">
-			<div class="col1">Total remark <strong><?php echo $total_remark;?> items.</strong> <i class="fa fa-comment-o" aria-hidden="true"></i></div>
-		</div>
-		<?php $remark->listAllRemark(array('type' => 'remark-items'));?>
-
-		<?php }else{?>
+		<?php
+		if($total_remark > 0){
+			$remark->listAllRemark(array('type' => 'remark-items'));
+		}else{?>
 		<div class="creating-container">
 			<p>You can create new <strong>remark</strong> items by click a button.</p>
 			<br>

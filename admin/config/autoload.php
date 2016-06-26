@@ -70,5 +70,5 @@ if($user_online){
 	}
 }
 
-$version = '1.01';
+$version = '1.0';
 ?>

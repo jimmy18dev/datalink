@@ -74,9 +74,9 @@ $(document).ready(function(){
 			</div>
 			<div class="control">
 				<?php if(empty($section->id)){?>
-				<div class="submit-btn" onclick="javascript:createSection();">Create Section</div>
+				<div class="submit-btn" onclick="javascript:createSection();">Create Section<i class="fa fa-check" aria-hidden="true"></i></div>
 				<?php }else{?>
-				<div class="delete-btn" onclick="javascript:deleteSection(<?php echo $section->id;?>);">Delete this section</div>
+				<div class="delete-btn" onclick="javascript:deleteSection(<?php echo $section->id;?>);"><i class="fa fa-trash" aria-hidden="true"></i>Delete this section</div>
 				<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE</div>
 				<?php }?>
 			</div>

@@ -150,11 +150,11 @@ class Database{
         $timestamp  = strtotime($datetime);
         $diff       = time() - $timestamp;
 
-        $periods    = array('วินาที','นาที','ชั่วโมง');
-        $words      = 'ที่แล้ว';
+        $periods    = array('second','minute','hour');
+        $words      = ' ago';
   
         if($diff < 30){
-            $text   = "เมื่อสักครู่"; 
+            $text   = "Just now"; 
         }
         else if($diff < 60){
             $i      = 0;
@@ -177,10 +177,10 @@ class Database{
         else if($diff < 432000){
             // 5 Day
             $diff   = round($diff/86400);
-            $text   = $diff.' วันที่แล้ว';                
+            $text   = $diff.' days ago';                
         }
         else{
-            $thMonth = array('ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.');
+            $thMonth = array('January','February','March','April','May','June','July','August','September','October','November','December');
             
             $date   = date("j", $timestamp);
             $month  = $thMonth[date("m", $timestamp)-1];

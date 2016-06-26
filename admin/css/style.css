@@ -37,8 +37,7 @@ body {
   height: 60px;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
-  border-bottom: 1px solid #EEEEEE;
+  background: #3F51B5;
   z-index: 99;
 }
 .header .logo {
@@ -48,36 +47,40 @@ body {
   float: left;
   display: inline-block;
   text-align: center;
-  color: #003399;
+  color: #FFFFFF;
   font-size: 1.5em;
-}
-.header .signout {
-  width: 5%;
-  padding: 20px 0%;
-  height: 20px;
-  float: right;
-  display: inline-block;
-  color: #003399;
-  text-align: center;
-  background: #FFFFFF;
-  font-size: 1.5em;
-  border-left: 1px solid #F5F5F5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .header .header-items {
   padding: 23px 0%;
-  height: 14px;
+  height: 12px;
   float: left;
   display: inline-block;
   margin-right: 2%;
-  color: #AAAAAA;
+  color: #DDDDDD;
   font-size: 0.9em;
+  border-bottom: 2px solid transparent;
 }
 .header .header-items i {
   margin-right: 5px;
 }
 .header .header-items:hover {
   cursor: pointer;
-  color: #555555;
+  color: #FFFFFF;
+}
+.header .header-items-active {
+  color: #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+}
+.header .signout {
+  padding-left: 2%;
+  float: right;
+  border-left: 1px solid #F5F5F5;
+}
+.header .user-items {
+  float: right;
+  margin-right: 5%;
+  margin-left: 0%;
 }
 .header .version-items {
   padding: 25px 0%;
@@ -85,19 +88,9 @@ body {
   float: left;
   display: inline-block;
   margin-right: 2%;
-  color: rgba(0, 0, 0, 0.1);
+  color: #1A237E;
   font-size: 0.7em;
   font-style: italic;
-}
-.header .header-items-active {
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: bold;
-  border-bottom: 1px solid #000000;
-}
-.header .user-items {
-  float: right;
-  margin-right: 2%;
-  margin-left: 0%;
 }
 .dialog-box {
   width: 100%;
@@ -125,6 +118,7 @@ body {
   float: left;
   display: inline-block;
   background: rgba(255, 255, 255, 0.95);
+  z-index: 999;
   display: none;
 }
 .loading-box .dialog {
@@ -132,17 +126,10 @@ body {
   float: left;
   display: inline-block;
   text-align: center;
-  margin-top: 20%;
+  margin-top: 25%;
 }
-.loading-box .dialog .icon {
-  font-size: 3em;
-  margin-bottom: 3%;
-  color: #003399;
-}
-.loading-box .dialog p {
-  font-size: 1em;
-  line-height: 1.5em;
-  color: #999999;
+.loading-box .dialog i {
+  margin-right: 10px;
 }
 .login-container {
   width: 70%;
@@ -328,8 +315,8 @@ body {
   display: inline-block;
   border: 1px solid #DDDDDD;
   color: #CCCCCC;
-  padding: 5px 10px;
-  border-radius: 20px;
+  padding: 3px 10px;
+  border-radius: 3px;
   font-size: 0.7em;
   line-height: 1em;
   margin-top: 2%;
@@ -340,24 +327,32 @@ body {
 }
 .container .head .head-title p .control-btn:hover {
   cursor: pointer;
-  border: 1px solid #CCCCCC;
-  color: #AAAAAA;
+  opacity: 0.7;
+}
+.container .head .head-title p .logout-btn {
+  color: #F44336;
+  border: 1px solid #F44336;
+}
+.container .head .head-title p .logout-btn:active {
+  background: #F44336;
+  color: #FFFFFF;
+  border: 1px solid #F44336;
 }
 .container .head .head-control {
   width: 50%;
   float: left;
   display: inline-block;
-  margin-top: 0.5%;
+  margin-top: 1%;
 }
 .container .head .head-control .btn {
   float: right;
   display: inline-block;
-  border: 1px solid #003399;
   color: #003399;
-  padding: 10px 15px;
-  font-size: 0.8em;
-  border-radius: 20px;
+  padding: 15px;
+  font-size: 0.9em;
+  border-radius: 2px;
   margin-left: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .container .head .head-control .btn i {
   margin-right: 10px;
@@ -365,6 +360,10 @@ body {
 .container .head .head-control .btn:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+.container .head .head-control .create-btn {
+  background: #4CAF50;
+  color: #FFFFFF;
 }
 .container .head .head-control .active-btn {
   border: 1px solid #4CAF50;
@@ -522,11 +521,14 @@ body {
   font-size: 5em;
   margin-bottom: 3%;
   color: rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 .container .form-container .form-detail h1 {
   font-size: 2em;
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin-bottom: 2%;
 }
 .container .form-container .form-detail h1 a {
   color: #003399;
@@ -586,27 +588,39 @@ body {
   display: inline-block;
 }
 .container .form-container .form-input .control .submit-btn {
-  background: #003399;
+  background: #4CAF50;
   float: right;
   display: inline-block;
-  padding: 11px 20px;
+  padding: 15px;
   color: #FFFFFF;
   font-size: 0.9em;
-  border-radius: 20px;
+  border-radius: 2px;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .container .form-container .form-input .control .submit-btn:hover {
   cursor: pointer;
-  opacity: 0.9;
+  opacity: 0.8;
+}
+.container .form-container .form-input .control .submit-btn i {
+  margin-left: 10px;
+}
+.container .form-container .form-input .control .btn-loading {
+  background: #DDDDDD;
+  box-shadow: 0px 0px 0px transparent;
 }
 .container .form-container .form-input .control .delete-btn {
   float: left;
   display: inline-block;
-  padding: 10px 0px;
+  padding: 15px 0px;
   color: #CCCCCC;
   font-size: 1em;
 }
+.container .form-container .form-input .control .delete-btn i {
+  margin-right: 10px;
+}
 .container .form-container .form-input .control .delete-btn:hover {
-  color: #AAAAAA;
+  color: #F44336;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -1128,6 +1142,7 @@ body {
   margin-bottom: 3%;
   float: left;
   display: inline-block;
+  background: #DADaAD;
 }
 .container .list-container .report-stat .stat-items .v {
   width: 100%;
@@ -1147,6 +1162,7 @@ body {
 }
 .container .list-container .report-stat .stat-items .k i {
   margin-left: 5px;
+  font-size: 0.8em;
   color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .header-report-table {
@@ -1664,11 +1680,34 @@ body {
   float: left;
   display: inline-block;
 }
-.container .list-container .remark-items .col1 {
-  width: 94.5%;
-  padding-left: 0.5%;
+.container .list-container .remark-items {
+  width: 98%;
+  padding: 1%;
   float: left;
   display: inline-block;
+  border-bottom: 1px solid #F5F5F5;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.8);
+}
+.container .list-container .remark-items .title {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  line-height: 1.5em;
+}
+.container .list-container .remark-items .title a {
+  color: #3F51B5;
+}
+.container .list-container .remark-items .title a:hover {
+  text-decoration: underline;
+}
+.container .list-container .remark-items .lastupdate {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.5em;
+  line-height: 1em;
+  color: rgba(0, 0, 0, 0.2);
 }
 .container .list-container .route-items .col1 {
   width: 19.5%;
