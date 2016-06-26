@@ -34,6 +34,7 @@ $current_page['2'] = 'new_operation';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title>CREATE OPERATIONS</title>
 
 <!-- CSS -->

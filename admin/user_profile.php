@@ -32,6 +32,7 @@ $current_page['1'] = 'user';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title><?php echo $userData['fname'].' '.$userData['lname'];?></title>
 
 <!-- CSS -->

@@ -35,6 +35,7 @@ $current_page['2'] = 'caliber_code';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
+<?php include'favicon.php';?>
 <title>Operation Recipe</title>
 
 <!-- CSS -->

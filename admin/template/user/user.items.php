@@ -12,7 +12,7 @@
 	<div class="col3"><?php echo (empty($var['username'])?'-':$var['username']);?></div>
 	<div class="col4"><?php echo (empty($var['password'])?'-':$var['password']);?></div>
 	<div class="col5">
-		<?php echo (empty($var['section_name'])?'':$var['section_name']);?>
+		<?php echo (empty($var['section_name'])?'None':$var['section_name']);?>
 		<?php if(!empty($var['line_default'])){?><span class="line"> (Line <?php echo $var['line_default'];?>)</span><?php }?>
 	</div>
 	<div class="col6"><span class="visit"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $var['visit_time'];?></span></div>

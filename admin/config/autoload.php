@@ -63,6 +63,11 @@ $user_online = $user->sessionOnline();
 // Get member info
 if($user_online){
 	$user->getUser($_SESSION['user_id']);
+
+	if(empty($user->id)){
+		header("Location: logout.php");
+		die();
+	}
 }
 
 $version = '1.01';

@@ -27,6 +27,7 @@ $current_page['1'] = 'report';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title>Weekly efficiency report</title>
 
 <!-- CSS -->

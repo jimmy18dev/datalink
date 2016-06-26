@@ -29,6 +29,7 @@ $total_remark = $remark->countRemark();
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
+<?php include'favicon.php';?>
 <title>General remark</title>
 
 <!-- CSS -->

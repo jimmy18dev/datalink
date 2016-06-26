@@ -1,12 +1,14 @@
 <?php
 require_once'config/autoload.php';
 
-$useractivity->saveActivity($user->id,'Logout','','');
-unset($_COOKIE['user_id']);
+if(!empty($user->id)){
+	$useractivity->saveActivity($user->id,'Logout','','');
+}
+
 setcookie('user_id','');
+unset($_COOKIE['user_id']);
 unset($_SESSION['user_id']);
 session_destroy();
-// die();
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +28,6 @@ session_destroy();
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
 <?php include'favicon.php';?>
-
 <title>กำลังออกจากระบบ...</title>
 
 <!-- CSS -->

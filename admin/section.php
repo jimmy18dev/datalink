@@ -30,6 +30,7 @@ $total_section = $section->countSection();
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 <meta http-equiv="refresh" content="60">
 
+<?php include'favicon.php';?>
 <title>Section</title>
 
 <!-- CSS -->
