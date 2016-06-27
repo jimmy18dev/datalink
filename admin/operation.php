@@ -64,7 +64,7 @@ $current_page['1'] = 'caliber';
 		</div>
 
 		<div class="head-control">
-			<a href="operation_editor.php" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE OPEARATION</a>
+			<a href="operation_editor.php" class="btn create-btn"><i class="fa fa-bolt" aria-hidden="true"></i>CREATE OPEARATION</a>
 		</div>
 	</div>
 	<!-- Table -->

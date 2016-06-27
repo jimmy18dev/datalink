@@ -6,7 +6,6 @@
 	<a href="section.php" target="_parent" class="header-items <?php echo ($current_page['1'] == 'section'?'header-items-active':'');?>">Section</a>
 	<a href="remark.php" target="_parent" class="header-items <?php echo ($current_page['1'] == 'remark'?'header-items-active':'');?>">General Remark</a>
 
-	<div class="version-items">Version <?php echo $version;?></div>
-	
+	<div class="version-items">Ver. <?php echo $version;?></div>
 	<a href="profile.php" target="_parent" class="header-items <?php echo ($current_page['1'] == 'profile'?'header-items-active':'');?> user-items"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $user->fname.' '.$user->lname;?></a>
 </header>

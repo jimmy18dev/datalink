@@ -315,10 +315,6 @@ class ReportController extends ReportModel{
                 include'template/report/month.items.php';
                 $total_items++;
             }
-
-            if($total_items == 0){
-            	include'template/empty.items.php';
-            }
         }
         unset($data);
         $total_items = 0;

@@ -102,9 +102,6 @@ class CaliberController extends CaliberModel{
                 include'template/caliber/caliber.items.php';
                 $total_items++;
             }
-
-            if($total_items == 0){ include'template/article/article.empty.items.php'; }
-
         }else if($option['type'] == 'operation-items'){
         	$status = $option['status'];
         	$route_current = $option['route_current'];

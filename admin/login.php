@@ -30,9 +30,6 @@ if($user_online){
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/user.service.js"></script>
-
 </head>
 <body>
 <div class="login-container">
@@ -52,19 +49,13 @@ if($user_online){
 			<input type="password" class="input-text" placeholder="Enter your password..." id="password">
 		</div>
 		<div class="control">
-			<button type="submit" class="submit-btn">Sign In<i class="fa fa-arrow-right"></i></button>
+			<button type="submit" id="submit-btn" class="submit-btn"><span id="btn-caption">Sign In</span><span id="btn-icon"><i class="fa fa-arrow-right"></i></span></button>
 		</div>
 		</form>
 	</div>
 </div>
 
-<div class="loading-box" id="loading-box">
-	<div class="dialog">
-		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="loading-message"></p>
-	</div>
-</div>
-
-<div class="version-bar">Development by Puwadon Sricharoen | Ronda Thailand</div>
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/user.service.js"></script>
 </body>
 </html>

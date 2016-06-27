@@ -46,15 +46,6 @@ if(empty($caliber->id)){
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/caliber.service.js"></script>
-<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('.animated').autosize({append: "\n"});
-});
-</script>
-
 </head>
 <body>
 <?php include'header.php';?>
@@ -73,21 +64,21 @@ $(document).ready(function(){
 		</div>
 		<div class="form-input">
 			<div class="input">
-				<p class="caption">Cliber Code</p>
+				<p class="caption"><i class="fa fa-database" aria-hidden="true"></i>Cliber Code</p>
 				<input class="input-text half-size font-bigsize" type="text" id="code" value="<?php echo $caliber->code;?>" autofocus placeholder="Code">
 				<input class="input-text half-size font-bigsize" type="text" id="family" value="<?php echo $caliber->family;?>" placeholder="Family">
 
 				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this caliber code"><?php echo $caliber->description;?></textarea>
 
-				<p class="caption">Std.time (Hrs/K)</p>
+				<p class="caption"><i class="fa fa-history" aria-hidden="true"></i>Std.time (Hrs/K)</p>
 				<input class="input-text" type="text" id="hrs" value="<?php echo $caliber->hrs;?>" placeholder="0.00">
 			</div>
 			<div class="control">
 				<?php if(empty($caliber->id)){?>
-				<div class="submit-btn" onclick="javascript:create();">Create Caliber</div>
+				<div class="submit-btn" id="submit-btn" onclick="javascript:createCaliber();"><span id="btn-caption">Create Caliber</span><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span></div>
 				<?php }else{?>
-				<div class="delete-btn" onclick="javascript:deleteCaliber(<?php echo $caliber->id;?>);">Delete this caliber code</div>
-				<div class="submit-btn" onclick="javascript:edit(<?php echo $caliber->id;?>);">SAVE</div>
+				<div class="delete-btn" onclick="javascript:deleteCaliber(<?php echo $caliber->id;?>);"><i class="fa fa-trash" aria-hidden="true"></i>Delete this caliber code</div>
+				<div class="submit-btn" id="submit-btn" onclick="javascript:editCaliber(<?php echo $caliber->id;?>);"><span id="btn-caption">Update</span><span id="btn-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></span></div>
 				<?php }?>
 			</div>
 			
@@ -98,10 +89,16 @@ $(document).ready(function(){
 </div>
 
 <div class="loading-box" id="loading-box">
-	<div class="dialog">
-		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="loading-message"></p>
-	</div>
+	<div class="dialog"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>Please wait a moment.</div>
 </div>
+
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="js/service/caliber.service.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.animated').autosize({append: "\n"});
+});
+</script>
 </body>
 </html>

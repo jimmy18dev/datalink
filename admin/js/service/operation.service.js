@@ -5,6 +5,10 @@ function createOperation(){
     var description     = $('#description').val();
     var route_id        = $('#route_id').val();
 
+    $('#btn-caption').html('Creating');
+    $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+    $('#submit-btn').addClass('btn-loading');
+
     $.ajax({
         url         :href,
         cache       :false,
@@ -21,7 +25,9 @@ function createOperation(){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'operation.php?route='+route_id;
+        setTimeout(function(){
+            window.location = 'operation.php?route='+route_id;
+        },1000);
     }).error();
 }
 function editOperation(id){
@@ -29,6 +35,10 @@ function editOperation(id){
     var name            = $('#name').val();
     var description     = $('#description').val();
     var route_id        = $('#route_id').val();
+
+    $('#btn-caption').html('Creating');
+    $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+    $('#submit-btn').addClass('btn-loading');
 
     $.ajax({
         url         :href,
@@ -47,7 +57,9 @@ function editOperation(id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'operation.php?route='+route_id;
+        setTimeout(function(){
+            window.location = 'operation.php?route='+route_id;
+        },1000);
     }).error();
 }
 
@@ -57,6 +69,8 @@ function deleteOperation(operation_id){
 
     var agree       = confirm('Are you sure you want to delete this operation ?');
     if(!agree){ return false; }
+
+    $('#loading-box').fadeIn(300);
 
     $.ajax({
         url         :href,
@@ -73,7 +87,9 @@ function deleteOperation(operation_id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'operation.php?route='+route_id;
+        setTimeout(function(){
+            window.location = 'operation.php?route='+route_id;
+        },1000);
     }).error();
 }
 

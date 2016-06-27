@@ -70,7 +70,7 @@ $current_page['2'] = 'caliber_code';
 
 		<div class="head-control">
 			<?php if($caliber->total_route > 0){?>
-			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>CREATE ROUTE</a>
+			<a href="route_editor.php?caliber=<?php echo $caliber->id;?>" class="btn create-btn"><i class="fa fa-code-fork" aria-hidden="true"></i>CREATE ROUTE</a>
 			<?php }?>
 		</div>
 	</div>

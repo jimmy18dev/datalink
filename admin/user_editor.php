@@ -47,9 +47,6 @@ if(empty($userData['id'])){
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/user.service.js"></script>
-
 </head>
 <body>
 <?php include'header.php';?>
@@ -65,9 +62,9 @@ if(empty($userData['id'])){
 			<?php if(!empty($userData['id']) && $userData['id'] != $user->id){?>
 			<div class="grant-control">
 				<?php if($userData['type'] != 'Administrator'){?>
-				<div class="grant-btn" onclick="javascript:addToAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');">Add to admin</div>
+				<div class="grant-btn" onclick="javascript:addToAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');"><i class="fa fa-plus" aria-hidden="true"></i>Add to admin</div>
 				<?php }else{?>
-				<div class="grant-btn grant-remove-btn" onclick="javascript:removeAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');">Remove admin</div>
+				<div class="grant-btn grant-remove-btn" onclick="javascript:removeAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');"><i class="fa fa-times" aria-hidden="true"></i>Remove admin</div>
 				<?php }?>
 			</div>
 			<?php }?>
@@ -78,11 +75,11 @@ if(empty($userData['id'])){
 
 				<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" placeholder="Employee ID">
 
-				<p class="caption">User Login</p>
+				<p class="caption"><i class="fa fa-lock" aria-hidden="true"></i>User Login</p>
 				<input class="input-text" type="text" id="username" value="<?php echo $userData['username'];?>" placeholder="Username">
 				<input class="input-text" type="text" id="password" value="<?php echo $userData['password'];?>" placeholder="Password">
 
-				<p class="caption">Section</p>
+				<p class="caption"><i class="fa fa-file-text-o" aria-hidden="true"></i>Section</p>
 				<select class="input-text" id="section_id">
 						<option value="0">Section/Position</option>
 						<?php $section->listAllSection(array('type' => 'section-option-select-items','current'=> $userData['section_id']));?>
@@ -108,10 +105,10 @@ if(empty($userData['id'])){
 			</div>
 			<div class="control">
 				<?php if(empty($userData['id'])){?>
-				<div class="submit-btn" onclick="javascript:register();">Register new user</div>
+				<div class="submit-btn" id="submit-btn" onclick="javascript:register();"><span id="btn-caption">Create User Account</span><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span></div>
 				<?php }else{?>
-				<div class="delete-btn" onclick="javascript:deactiveUser(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');">Deactive this user account</div>
-				<div class="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);">SAVE</div>
+				<div class="delete-btn" onclick="javascript:deactiveUser(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');"><i class="fa fa-ban" aria-hidden="true"></i>Deactive this user account</div>
+				<div class="submit-btn" id="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);"><span id="btn-caption">Update info</span><span id="btn-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></span></div>
 				<?php }?>
 			</div>
 		</div>		
@@ -119,10 +116,10 @@ if(empty($userData['id'])){
 </div>
 
 <div class="loading-box" id="loading-box">
-	<div class="dialog">
-		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="loading-message"></p>
-	</div>
+	<div class="dialog"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>Please wait a moment.</div>
 </div>
+
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/user.service.js"></script>
 </body>
 </html>

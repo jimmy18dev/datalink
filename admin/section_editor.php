@@ -47,15 +47,6 @@ if(empty($section->id)){
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/section.service.js"></script>
-<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('.animated').autosize({append: "\n"});
-});
-</script>
-
 </head>
 <body>
 <?php include'header.php';?>
@@ -74,10 +65,10 @@ $(document).ready(function(){
 			</div>
 			<div class="control">
 				<?php if(empty($section->id)){?>
-				<div class="submit-btn" onclick="javascript:createSection();">Create Section<i class="fa fa-check" aria-hidden="true"></i></div>
+				<div class="submit-btn" id="submit-btn" onclick="javascript:createSection();"><span id="btn-caption">Create Section</span><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span></div>
 				<?php }else{?>
 				<div class="delete-btn" onclick="javascript:deleteSection(<?php echo $section->id;?>);"><i class="fa fa-trash" aria-hidden="true"></i>Delete this section</div>
-				<div class="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);">SAVE</div>
+				<div class="submit-btn" id="submit-btn" onclick="javascript:editSection(<?php echo $section->id;?>);"><span id="btn-caption">Update</span><span id="btn-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></span></div>
 				<?php }?>
 			</div>
 		</div>	
@@ -85,10 +76,16 @@ $(document).ready(function(){
 </div>
 
 <div class="loading-box" id="loading-box">
-	<div class="dialog">
-		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="loading-message"></p>
-	</div>
+	<div class="dialog"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>Please wait a moment.</div>
 </div>
+
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="js/service/section.service.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.animated').autosize({append: "\n"});
+});
+</script>
 </body>
 </html>

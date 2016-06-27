@@ -71,7 +71,7 @@ $total_section = $section->countSection();
 			<br>
 			<p><i class="fa fa-angle-down" aria-hidden="true"></i></p>
 			<br><br>
-			<p><a href="section_editor.php" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW SECTION</a></p>
+			<p><a href="section_editor.php" class="create-btn"><i class="fa fa-tags" aria-hidden="true"></i>NEW SECTION</a></p>
 		</div>
 		<?php }?>
 	</div>

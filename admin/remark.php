@@ -67,7 +67,7 @@ $total_remark = $remark->countRemark();
 			<br>
 			<p><i class="fa fa-angle-down" aria-hidden="true"></i></p>
 			<br><br>
-			<p><a href="remark_editor.php?" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW REMARK</a></p>
+			<p><a href="remark_editor.php?" class="create-btn"><i class="fa fa-commenting" aria-hidden="true"></i>NEW REMARK</a></p>
 		</div>
 		<?php }?>
 	</div>

@@ -6,6 +6,10 @@ function createRoute(){
     var name            = $('#name').val();
     var description     = $('#description').val();
 
+    $('#btn-caption').html('Creating');
+    $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+    $('#submit-btn').addClass('btn-loading');
+
     $.ajax({
         url         :href,
         cache       :false,
@@ -26,7 +30,9 @@ function createRoute(){
         console.log(data);
         
         if(data.return){
-            window.location = 'operation.php?route='+data.return;
+            setTimeout(function(){
+                window.location = 'operation.php?route='+data.return;
+            },1000);
         }
         else{
             window.location = 'route.php?caliber='+caliber_id;
@@ -39,6 +45,10 @@ function editRoute(){
     var code            = $('#code').val();
     var name            = $('#name').val();
     var description     = $('#description').val();
+
+    $('#btn-caption').html('Updating');
+    $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+    $('#submit-btn').addClass('btn-loading');
 
     $.ajax({
         url         :href,
@@ -58,7 +68,9 @@ function editRoute(){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'operation.php?route='+route_id;
+        setTimeout(function(){
+            window.location = 'operation.php?route='+route_id;
+        },1000);
     }).error();
 }
 
@@ -67,6 +79,8 @@ function deleteRoute(route_id){
     var caliber_id      = $('#caliber_id').val();
     var agree       = confirm('Are you sure you want to delete this route ?');
     if(!agree){ return false; }
+
+    $('#loading-box').fadeIn(300);
 
     $.ajax({
         url         :href,
@@ -83,7 +97,9 @@ function deleteRoute(route_id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'route.php?caliber='+caliber_id;
+        setTimeout(function(){
+            window.location = 'route.php?caliber='+caliber_id;
+        },1000);
     }).error();
 }
 
@@ -91,6 +107,8 @@ function setPrimary(route_id,caliber_id){
     var href            = 'api.route.php';
     var agree           = confirm('Are you sure you want set this route to primary ?');
     if(!agree){ return false; }
+
+    $('#loading-box').fadeIn(300);
 
     $.ajax({
         url         :href,
@@ -108,6 +126,8 @@ function setPrimary(route_id,caliber_id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        location.reload();
+        setTimeout(function(){
+            location.reload();
+        },1000);
     }).error();
 }

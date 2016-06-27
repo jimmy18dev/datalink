@@ -5,9 +5,7 @@ if(!empty($user->id)){
 	$useractivity->saveActivity($user->id,'Logout','','');
 }
 
-setcookie('user_id','');
-unset($_COOKIE['user_id']);
-unset($_SESSION['user_id']);
+setcookie('user_id');
 session_destroy();
 ?>
 
@@ -28,7 +26,7 @@ session_destroy();
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
 <?php include'favicon.php';?>
-<title>กำลังออกจากระบบ...</title>
+<title>System logout...</title>
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -40,11 +38,11 @@ session_destroy();
 <body>
 <div class="dialog-box">
 	<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-	<p id="dialog-message">กำลังออกจากระบบ...</p>
+	<p id="dialog-message">System logout...</p>
 </div>
 
 <script type="text/javascript">
-	setTimeout(function(){window.location = 'login.php';},300);
+	setTimeout(function(){window.location = 'login.php';},1000);
 </script>
 
 </body>
