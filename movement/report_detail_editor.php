@@ -113,7 +113,7 @@ $current_page['3'] = 'add_caliber';
 
 	<div class="control-container">
 		<?php if($_GET['action'] == 'edit' && !empty($_GET['report'])){?>
-		You can <span class="delete-btn" onclick="javascript:deleteCaliberReport(<?php echo $report->id;?>,<?php echo $_GET['report'];?>,<?php echo $caliber->id;?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">Delete <i class="fa fa-trash" aria-hidden="true"></i></span> your caliber (<?php echo $caliber->name;?>) from daily report.
+		You can <span class="delete-btn" onclick="javascript:deleteHeadReport(<?php echo $report->id;?>,<?php echo $_GET['report'];?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">Delete <i class="fa fa-trash" aria-hidden="true"></i></span> your caliber (<?php echo $caliber->name;?>) from daily report.
 		<?php }?>
 	</div>
 </div>

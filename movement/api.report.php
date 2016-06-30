@@ -37,13 +37,13 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
-				case 'delete_report_detail':
+				case 'delete_header_report':
 					$report->getHeader($_POST['header_id']);
 
 					// Leader authorization
 					if($report->leader_id == $user->id){
-						$report->deleteReportDetail($_POST['report_id'],$user->id);
-						
+						$report->deleteHeaderReport($_POST['header_id'],$_POST['shift'],$user->id);
+
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'Create report successful';
 						}else{
@@ -55,13 +55,13 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('Autorite error!');
 					}
 					break;
-				case 'delete_header_report':
+				case 'delete_report_detail':
 					$report->getHeader($_POST['header_id']);
 
 					// Leader authorization
 					if($report->leader_id == $user->id){
-						$report->deleteHeaderReport($_POST['header_id'],$_POST['shift']);
-
+						$report->deleteReportDetail($_POST['report_id'],$user->id);
+						
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'Create report successful';
 						}else{

@@ -10,7 +10,7 @@ class OperationController extends OperationModel{
 	public $status;
 
 	public function createOperation($name,$description){
-		parent::create($name,$description);
+		return parent::create($name,$description);
 	}
 	public function editOperation($id,$name,$description){
 		parent::edit($id,$name,$description);

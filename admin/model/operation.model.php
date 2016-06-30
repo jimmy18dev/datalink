@@ -1,7 +1,7 @@
 <?php
 class OperationModel extends Database{
 
-	public function create($name,$description,$sort){
+	public function create($name,$description){
 		parent::query('INSERT INTO RTH_Operation(name,description,create_time,update_time) VALUE(:name,:description,:create_time,:update_time)');
 		parent::bind(':name', 			$name);
 		parent::bind(':description', 	$description);

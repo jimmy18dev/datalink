@@ -180,7 +180,7 @@ function editHeaderReport(id){
     }).error();
 }
 
-function deleteCaliberReport(header_id,report_id,caliber_code){
+function deleteHeadReport(header_id,report_id,caliber_code){
     var href        = 'api.report.php';
 
     if(!confirm('Are you sure to delete '+caliber_code+' ?')){

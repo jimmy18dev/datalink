@@ -233,25 +233,25 @@ class ReportModel extends Database{
 		return parent::lastInsertId();
 	}
 
-
-
-
-
-
-
-
-
-
-	public function deleteHeader($header_id,$shift){
+	public function deleteHeader($header_id,$shift,$user_id){
 		// Delete all report detail by header_id
-		// parent::query('DELETE FROM RTH_DailyOutputDetail WHERE header_id = :header_id');
-		parent::query('UPDATE RTH_DailyOutputDetail SET status = "deleted" WHERE header_id = :header_id');
+		parent::query('SELECT id FROM RTH_DailyOutputReportHeader WHERE header_id = :header_id');
+		parent::bind(':header_id', $header_id);
+		parent::execute();
+		$dataset = parent::resultset();
+		foreach ($dataset as $k => $var) {
+			parent::query('DELETE FROM RTH_DailyOutputDetail WHERE report_id = :report_id');
+			parent::bind(':report_id', $dataset[$k]['id']);
+			parent::execute();
+		}
+
+		// Delete all report header
+		parent::query('DELETE FROM RTH_DailyOutputReportHeader WHERE header_id = :header_id');
 		parent::bind(':header_id', 		$header_id);
 		parent::execute();
 
-		// Delete header report by header_id and shift
-		// parent::query('DELETE FROM RTH_DailyOutputHeader WHERE id = :header_id AND shift = :shift');
-		parent::query('UPDATE RTH_DailyOutputHeader SET status = "deleted" WHERE id = :header_id AND shift = :shift');
+		// Delete daily report by header_id and shift
+		parent::query('DELETE FROM RTH_DailyOutputHeader WHERE id = :header_id AND shift = :shift');
 		parent::bind(':header_id', 		$header_id);
 		parent::bind(':shift', 			$shift);
 		parent::execute();
@@ -263,8 +263,8 @@ class ReportModel extends Database{
 		parent::bind(':report_id', 		$report_id);
 		parent::execute();
 
-		// Delete head-report
-		parent::query('DELETE FROM RTH_DailyOutputReportHeader WHERE user_id = :user_id AND id = :report_id');
+		// Delete all report header
+		parent::query('DELETE FROM RTH_DailyOutputReportHeader WHERE id = :report_id AND user_id = :user_id');
 		parent::bind(':report_id', 		$report_id);
 		parent::bind(':user_id', 		$user_id);
 		parent::execute();
