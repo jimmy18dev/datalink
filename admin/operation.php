@@ -40,12 +40,6 @@ $current_page['1'] = 'caliber';
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<?php if($route->type != "primary"){?>
-<script type="text/javascript" src="js/service/operation.service.js"></script>
-<?php }?>
-<?php if($route->type!='primary'){?><script type="text/javascript" src="js/service/route.service.js"></script><?php }?>
-
 </head>
 <body>
 <?php include'header.php';?>
@@ -88,5 +82,11 @@ $current_page['1'] = 'caliber';
 
 	<input type="hidden" id="route_id" value="<?php echo $route->id;?>">
 </div>
+
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<?php if($route->type != "primary"){?>
+<script type="text/javascript" src="js/service/min/operation.service.min.js"></script>
+<?php }?>
+<?php if($route->type!='primary'){?><script type="text/javascript" src="js/service/min/route.service.min.js"></script><?php }?>
 </body>
 </html>

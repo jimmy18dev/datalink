@@ -18,14 +18,14 @@ function createCaliber(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'caliber',
-            action              :'create',
-            code:code,
-            name:name,
-            description:description,
-            family:family,
-            hrs:hrs,
-            remark:remark,
+            calling         :'caliber',
+            action          :'create',
+            code            :code,
+            name            :name,
+            description     :description,
+            family          :family,
+            hrs             :hrs,
+            remark          :remark,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -65,15 +65,15 @@ function editCaliber(id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'caliber',
-            action              :'edit',
-            id:id,
-            code:code,
-            name:name,
-            description:description,
-            family:family,
-            hrs:hrs,
-            remark:remark,
+            calling         :'caliber',
+            action          :'edit',
+            id              :id,
+            code            :code,
+            name            :name,
+            description     :description,
+            family          :family,
+            hrs             :hrs,
+            remark          :remark,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -99,9 +99,9 @@ function deleteCaliber(caliber_id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'caliber',
-            action              :'delete_caliber',
-            caliber_id:caliber_id,
+            calling         :'caliber',
+            action          :'delete_caliber',
+            caliber_id      :caliber_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -128,9 +128,9 @@ function activeCaliber(caliber_id,caliber_name){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'caliber',
-            action              :'setActive',
-            caliber_id:caliber_id,
+            calling         :'caliber',
+            action          :'setActive',
+            caliber_id      :caliber_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -156,9 +156,9 @@ function deactiveCaliber(caliber_id,caliber_name){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'caliber',
-            action              :'setDeactive',
-            caliber_id:caliber_id,
+            calling         :'caliber',
+            action          :'setDeactive',
+            caliber_id      :caliber_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");

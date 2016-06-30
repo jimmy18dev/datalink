@@ -79,7 +79,7 @@ if(empty($remark->id)){
 </div>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/remark.service.js"></script>
+<script type="text/javascript" src="js/service/min/remark.service.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){

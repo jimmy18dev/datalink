@@ -120,6 +120,6 @@ if(empty($userData['id'])){
 </div>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/user.service.js"></script>
+<script type="text/javascript" src="js/service/min/user.service.min.js"></script>
 </body>
 </html>

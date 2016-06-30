@@ -81,7 +81,7 @@ if(empty($section->id)){
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
-<script type="text/javascript" src="js/service/section.service.js"></script>
+<script type="text/javascript" src="js/service/min/section.service.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $('.animated').autosize({append: "\n"});

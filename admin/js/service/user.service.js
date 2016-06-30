@@ -63,15 +63,15 @@ function register(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'user',
-            action              :'register',
-            code:code,
-            fname:fname,
-            lname:lname,
-            username:username,
-            password:password,
-            line_default:line_default,
-            section_id:section_id,
+            calling         :'user',
+            action          :'register',
+            code            :code,
+            fname           :fname,
+            lname           :lname,
+            username        :username,
+            password        :password,
+            line_default    :line_default,
+            section_id      :section_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -112,16 +112,16 @@ function edit(id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'user',
-            action              :'edit',
-            id:id,
-            code:code,
-            fname:fname,
-            lname:lname,
-            username:username,
-            password:password,
-            line_default:line_default,
-            section_id:section_id,
+            calling         :'user',
+            action          :'edit',
+            id              :id,
+            code            :code,
+            fname           :fname,
+            lname           :lname,
+            username        :username,
+            password        :password,
+            line_default    :line_default,
+            section_id      :section_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -148,9 +148,9 @@ function deactiveUser(user_id,username){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'user',
-            action              :'deactive',
-            user_id:user_id,
+            calling         :'user',
+            action          :'deactive',
+            user_id         :user_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -177,9 +177,9 @@ function addToAdmin(user_id,username){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'user',
-            action              :'add_to_admin',
-            user_id:user_id,
+            calling         :'user',
+            action          :'add_to_admin',
+            user_id         :user_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -206,9 +206,9 @@ function removeAdmin(user_id,username){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'user',
-            action              :'remove_admin',
-            user_id:user_id,
+            calling         :'user',
+            action          :'remove_admin',
+            user_id         :user_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");

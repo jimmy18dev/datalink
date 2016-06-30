@@ -41,9 +41,6 @@ $current_page['2'] = 'caliber_code';
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/service/caliber.service.js"></script>
-
 </head>
 <body>
 <?php include'header.php';?>
@@ -95,5 +92,8 @@ $current_page['2'] = 'caliber_code';
 		<?php }?>
 	</div>
 </div>
+
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/min/caliber.service.min.js"></script>
 </body>
 </html>

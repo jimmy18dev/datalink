@@ -69,7 +69,7 @@ class CaliberModel extends Database{
 	}
 
 	public function checkingCaliberBeforeDelate($caliber_id){
-		parent::query('SELECT id FROM RTH_DailyOutputDetail WHERE caliber_id = :caliber_id');
+		parent::query('SELECT id FROM RTH_DailyOutputReportHeader WHERE caliber_id = :caliber_id');
 		parent::bind(':caliber_id', $caliber_id);
 		parent::execute();
 		$dataset = parent::single();

@@ -15,10 +15,10 @@ function createOperation(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'operation',
-            action              :'create_operation',
-            name:name,
-            description:description,
+            calling         :'operation',
+            action          :'create_operation',
+            name            :name,
+            description     :description,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -46,11 +46,11 @@ function editOperation(id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'operation',
-            action              :'edit_operation',
-            id:id,
-            name:name,
-            description:description,
+            calling         :'operation',
+            action          :'edit_operation',
+            id              :id,
+            name            :name,
+            description     :description,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -78,9 +78,9 @@ function deleteOperation(operation_id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'operation',
-            action              :'delete_operation',
-            operation_id:operation_id,
+            calling         :'operation',
+            action          :'delete_operation',
+            operation_id    :operation_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -104,10 +104,10 @@ function createMatching(operation_id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'operation',
-            action              :'create_macthing',
-            route_id:route_id,
-            operation_id:operation_id,
+            calling         :'operation',
+            action          :'create_macthing',
+            route_id        :route_id,
+            operation_id    :operation_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");

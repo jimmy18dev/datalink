@@ -82,7 +82,7 @@ class RouteModel extends Database{
 	}
 
 	public function checkingRouteBeforeDelate($route_id){
-		parent::query('SELECT id FROM RTH_DailyOutputDetail WHERE route_id = :route_id');
+		parent::query('SELECT id FROM RTH_DailyOutputReportHeader WHERE route_id = :route_id');
 		parent::bind(':route_id', $route_id);
 		parent::execute();
 		$dataset = parent::single();

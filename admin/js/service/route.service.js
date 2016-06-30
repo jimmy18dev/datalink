@@ -16,19 +16,18 @@ function createRoute(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'route',
-            action              :'create_route',
-            caliber_id:caliber_id,
-            code:code,
-            name:name,
-            description:description,
+            calling         :'route',
+            action          :'create_route',
+            caliber_id      :caliber_id,
+            code            :code,
+            name            :name,
+            description     :description,
         },
         error: function (request, status, error) {
             console.log("Request Error");
         }
     }).done(function(data){
         console.log(data);
-        
         if(data.return){
             setTimeout(function(){
                 window.location = 'operation.php?route='+data.return;
@@ -56,12 +55,12 @@ function editRoute(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'route',
-            action              :'edit_route',
-            route_id:route_id,
-            code:code,
-            name:name,
-            description:description,
+            calling         :'route',
+            action          :'edit_route',
+            route_id        :route_id,
+            code            :code,
+            name            :name,
+            description     :description,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -77,7 +76,7 @@ function editRoute(){
 function deleteRoute(route_id){
     var href            = 'api.route.php';
     var caliber_id      = $('#caliber_id').val();
-    var agree       = confirm('Are you sure you want to delete this route ?');
+    var agree           = confirm('Are you sure you want to delete this route ?');
     if(!agree){ return false; }
 
     $('#loading-box').fadeIn(300);
@@ -88,9 +87,9 @@ function deleteRoute(route_id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'route',
-            action              :'delete_route',
-            route_id:route_id,
+            calling         :'route',
+            action          :'delete_route',
+            route_id        :route_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -116,10 +115,10 @@ function setPrimary(route_id,caliber_id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'route',
-            action              :'set_primary',
-            route_id:route_id,
-            caliber_id:caliber_id,
+            calling         :'route',
+            action          :'set_primary',
+            route_id        :route_id,
+            caliber_id      :caliber_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");

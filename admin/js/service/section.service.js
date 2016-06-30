@@ -14,11 +14,11 @@ function createSection(){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'section',
-            action              :'create',
-            name:name,
-            description:description,
-            redirect:redirect,
+            calling         :'section',
+            action          :'create',
+            name            :name,
+            description     :description,
+            redirect        :redirect,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -56,12 +56,12 @@ function editSection(id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'section',
-            action              :'edit',
-            id:id,
-            name:name,
-            description:description,
-            redirect:redirect,
+            calling         :'section',
+            action          :'edit',
+            id              :id,
+            name            :name,
+            description     :description,
+            redirect        :redirect,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -88,9 +88,9 @@ function deleteSection(section_id){
         dataType    :"json",
         type        :"POST",
         data:{
-            calling             :'section',
-            action              :'delete',
-            section_id:section_id,
+            calling         :'section',
+            action          :'delete',
+            section_id      :section_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");

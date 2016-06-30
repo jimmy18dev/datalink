@@ -90,7 +90,7 @@ $current_page['2'] = 'caliber_code';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery.autosize.min.js"></script>
-<script type="text/javascript" src="js/service/route.service.js"></script>
+<script type="text/javascript" src="js/service/min/route.service.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $('.animated').autosize({append: "\n"});

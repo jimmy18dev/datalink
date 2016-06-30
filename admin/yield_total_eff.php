@@ -42,7 +42,7 @@ $current_page['1'] = 'report';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="plugin/highcharts/highcharts.js"></script>
-<script type="text/javascript" src="plugin/highcharts//modules/exporting.js"></script>
+<script type="text/javascript" src="plugin/highcharts/modules/exporting.js"></script>
 
 </head>
 <body>
@@ -121,7 +121,7 @@ $current_page['1'] = 'report';
 </div>
 
 <?php if(!empty($_GET['month']) && !empty($_GET['line'])){?>
-<script type="text/javascript" src="js/service/report.service.js"></script>
+<script type="text/javascript" src="js/service/min/report.service.min.js"></script>
 <script type="text/javascript">
 $(function(){
     // include service/analytic.service.js

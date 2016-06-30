@@ -626,16 +626,15 @@
 			padding-top: 3%;
 			float: left;
 			display: inline-block;
-			background: @white_color;
-			border: 1px solid rgba(0,0,0,.15);
-			margin-right: 1%;
-			margin-top: 1%;
+			background: #FAFAFA;
+			margin-right: 2%;
+			margin-top: 2%;
 			text-align: center;
-			color: rgba(0, 0, 0, 0.8);
+			border-radius: 3px;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 
 			&:hover{
-				color: @primary_color;
-				border: 1px solid #DDDDDD;
+				background: @primary_color_hover;
 				cursor: pointer;
 			}
 
@@ -646,27 +645,30 @@
 				display: inline-block;
 				font-size: 3em;
 				margin-bottom: 10%;
+				color: @dark_textcolor;
 			}
 			.title{
 				width: 100%;
 				float: left;
 				display: inline-block;
 				font-size: 1em;
-				font-weight: bold;
 				height: 80px;
 				line-height: 1.2em;
+				color: @light_textcolor;
 			}
 		}
 
 		.datepicker{
-			width: 100%;
+			width: 34%;
+			padding: 3%;
+			margin: 2% 30%;
 			float: left;
 			display: inline-block;
-			margin-bottom: 3%;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+			border-radius: 3px;
 
 			.picker-items{
-				width: 30%;
-				margin: 0% 35%;
+				width: 100%;
 				float: left;
 				display: inline-block;
 
@@ -704,15 +706,9 @@
 						}
 					}
 
-					.input-select-day{
-						width: 20%;
-					}
-					.input-select-month{
-						width: 50%;
-					}
-					.input-select-year{
-						width: 30%;
-					}
+					.input-select-day{ width: 20%; }
+					.input-select-month{ width: 50%; }
+					.input-select-year{ width: 30%; }
 				}
 			}
 
@@ -723,14 +719,14 @@
 				display: inline-block;
 				text-align: center;
 				font-size: 2em;
-				color: rgba(0, 0, 0, 0.2);
+				color: @thin_textcolor;
 			}
 			.picker-control{
-				width: 30%;
-				margin: 0% 35%;
+				width: 40%;
+				margin-left: 60%;
 				float: left;
 				display: inline-block;
-				margin-top: 1.6%;
+				margin-top: 7%;
 
 				.submit-btn{
 					width: 100%;
@@ -742,9 +738,15 @@
 					border: 0px;
 					font-size: 1em;
 					font-family: @FontStylePrimary;
+					border-radius: 3px;
 
 					i{
 						margin-left: 10px;
+					}
+
+					&:hover{
+						cursor: pointer;
+						opacity: 0.8;
 					}
 				}
 			}
@@ -1042,8 +1044,11 @@
 			float: left;
 			display: inline-block;
 			margin-top: 5%;
+			padding-bottom: 1%;
 			font-size: 1.5em;
 			font-weight: bold;
+			color: @light_textcolor;
+			border-bottom: 1px solid #EEEEEE;
 		}
 
 		.header-report-date-items{
@@ -1053,40 +1058,37 @@
 			display: inline-block;
 			text-align: center;
 			border: 1px solid #EEEEEE;
-			background: @white_color;
+			background: #FEFEFE;
 			margin-top: 1%;
 			margin-right: 1%;
+			border-radius: 3px;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
 
 			.day{
 				font-size: 3em;
 				font-weight: bold;
-				color: #000000;
+				color: @normal_textcolor;
 				margin-bottom: 5%;
 			}
 
 			.month{
 				font-size: 1em;
 				line-height: 1.5em;
-				color: #555555;
+				color: @normal_textcolor;
 			}
 
 			.year{
 				font-size: 0.6em;
-				color: #CCCCCC;
+				color: @light_textcolor;
 			}
 
 			&:hover{
 				cursor: pointer;
+				border: 1px solid @primary_color;
 
-				.day{
-					color: @primary_color;
-				}
-				.month{
-					color: @primary_color;
-				}
-				.year{
-					color: @primary_color;
-				}
+				.day{ color: @primary_color; }
+				.month{ color: @primary_color; }
+				.year{ color: @primary_color; }
 			}
 		}
 
@@ -1111,7 +1113,6 @@
 				margin-bottom: 3%;
 				float: left;
 				display: inline-block;
-				background: #DADaAD;
 
 				.v{
 					width: 100%;
@@ -2180,24 +2181,6 @@
 		}
 	}
 }
-
-// .footer{
-// 	width: 70%;
-// 	padding: 3% 15%;
-// 	margin-top: 3%;
-// 	float: left;
-// 	display: inline-block;
-// 	background: #F7F7F7;
-// 	text-align: center;
-
-// 	p{
-// 		font-size: 0.9em;
-// 		line-height: 1.5em;
-// 	}
-// 	p.mini{
-// 		font-size: 0.8em;
-// 	}
-// }
 
 .dialog-box{
 	width: 100%;
