@@ -123,7 +123,7 @@ class ReportModel extends Database{
 		$dataset = parent::resultset();
 		foreach ($dataset as $k => $var) {
 			$dataset[$k]['date'] = parent::date_format($var['report_date']);
-			$dataset[$k]['update'] = parent::date_facebookformat($var['update_time']);
+			$dataset[$k]['update_facebook_format'] = parent::date_facebookformat($var['update_time']);
 			$dataset[$k]['updated'] = parent::datetime_thaiformat($var['update_time']);
 		}
 		return $dataset;

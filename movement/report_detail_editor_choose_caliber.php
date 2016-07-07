@@ -59,7 +59,7 @@ $current_page['2'] = 'choose_caliber';
 		<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
 		<div class="title">Select a caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
-	<div class="list-container">
+	<div class="list-container shadow-container">
 		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
 	</div>
 </div>

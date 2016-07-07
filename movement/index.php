@@ -56,16 +56,7 @@ $current_page['1'] = 'index';
 			</a>
 		</div>
 	</div>
-
-	<div class="list-container">
-		<div class="report-header-items header-topic-fix">
-			<div class="col1"><i class="fa fa-calendar" aria-hidden="true"></i> Date</div>
-			<div class="col2">SHIFT</div>
-			<div class="col3">Product EFF</div>
-			<div class="col4">Total EFF</div>
-			<div class="col5">Leader</div>
-		</div>
-
+	<div class="list-container shadow-container">
 		<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
 	</div>
 </div>

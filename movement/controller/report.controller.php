@@ -211,7 +211,6 @@ class ReportController extends ReportModel{
             foreach ($data as $var){
             	$update = intval(strtotime($var['update_time']));
             	$update = ($now - $update);
-
             	
             	if($update < 3600)
             		$new_items = true;
@@ -223,8 +222,8 @@ class ReportController extends ReportModel{
             		$owner = true;
             	}
             	
-            	if($month_start != date('F', strtotime($var['report_date']))){
-            		$month_start = date('F', strtotime($var['report_date']));
+            	if($month_start != date('F Y', strtotime($var['report_date']))){
+            		$month_start = date('F Y', strtotime($var['report_date']));
             		include'template/report/month.caption.items.php';
             	}
 
