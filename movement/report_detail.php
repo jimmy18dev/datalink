@@ -205,6 +205,11 @@ $current_page['1'] = 'index';
 					<div class="col-caption">Ove</div>
 				</div>
 			</div>
+
+			<div class="remark">
+				<div class="caption">Remark</div>
+				<div class="message"><?php echo $report->remark;?></div>
+			</div>
 		</div>
 
 		<div class="topic-container">

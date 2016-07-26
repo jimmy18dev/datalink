@@ -1039,6 +1039,171 @@
 		float: left;
 		display: inline-block;
 
+		// Message Style
+		.message-input{
+			width: 38%;
+			float: left;
+			display: inline-block;
+
+			.input{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				.input-text, .input-textarea{
+					width: 96%;
+					padding: 2%;
+					float: left;
+					display: inline-block;
+					font-family: @FontStylePrimary;
+					font-size: 1em;
+					line-height: 1.5em;
+					border: 1px solid #EEEEEE;
+					margin-bottom: 2%;
+					resize: none;
+					border-radius: 2px;
+				}
+
+				.input-textarea{
+					min-height: 200px;
+				}
+			}
+			.submit{
+				width: 100%;
+				float: left;
+				display: inline-block;
+
+				.save-btn{
+					padding: 1% 2%;
+					float: right;
+					display: inline-block;
+					background: @green_color;color: #FFFFFF;
+					border: 0px;
+					border-radius: 2px;
+					font-family: @FontStylePrimary;
+					font-size: 0.9em;
+
+					&:hover{
+						cursor: pointer;
+						opacity: 0.8;
+					}
+
+					i{
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+
+		.message-list{
+			width: 60%;
+			float: right;
+			display: inline-block;
+
+			.message-items{
+				width: 96%;
+				padding: 2%;
+				margin-bottom: 1%;
+				float: left;
+				display: inline-block;
+				background: #F7F7F7;
+				line-height: 1.5em;
+				border: 1px solid #EEEEEE;
+				border-radius: 2px;
+
+				.time{
+					font-size: 0.8em;
+					color: rgba(0,0,0,0.4);
+				}
+				.topic{
+					font-size: 1em;
+					font-weight: bold;
+					color: rgba(0,0,0,0.8);
+				}
+				.message{
+					font-size: 0.9em;
+					color: rgba(0,0,0,0.8);
+				}
+				.control{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					font-size: 0.7em;
+					margin-top: 2%;
+
+					.btn{
+						background: #FFFFFF;
+						margin-left: 5px;
+						padding: 0px 5px;
+						display: inline-block;
+						float: right;
+						color: rgba(0,0,0,0.4);
+						border: 1px solid #CCCCCC;
+						line-height: 1.5em;
+						border-radius: 2px;
+
+						&:hover{
+							cursor: pointer;
+							opacity: 0.8;
+						}
+					}
+
+					.delete{
+						color: @red_color;
+						border: 1px solid @red_color;
+					}
+				}
+			}
+		}
+
+		.setting-form-items{
+			width: 50%;
+			padding-top: 3%;
+			margin-right: 50%;
+			float: left;
+			display: inline-block;
+
+			.detail{
+				width: 60%;
+				float: left;
+				display: inline-block;
+				font-size: 1.2em;
+			}
+			.input{
+				width: 40%;
+				float: left;
+				display: inline-block;
+
+				.input-text{
+					width: 80%;
+					float: left;
+					display: inline-block;
+					border: 0px;
+					border-bottom: 1px solid #EEEEEE;
+					font-family: @FontStylePrimary;
+					font-size: 1.2em;
+					line-height: 1.5em;
+				}
+
+				.save-btn{
+					float: right;
+					padding: 0px 10px;
+					display: inline-block;
+					border: 0px;
+					font-family: @FontStylePrimary;
+					font-size: 0.9em;
+					line-height: 2em;
+					border-radius: 2px;
+					background: @green_color;
+					color: #FFFFFF;
+
+					&:hover{
+						opacity: 0.8;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
 		.month-caption-items{
 			width: 100%;
 			float: left;
@@ -1671,6 +1836,15 @@
 								text-decoration: underline;
 								color: rgba(0, 0, 0, 0.6); 
 							}
+						}
+
+						.final-btn{
+							color: rgba(0, 0, 0, 0.1);
+							font-size: 1em;
+						}
+
+						.final-active-btn{
+							color: #FFC107;
 						}
 					}
 					.description{

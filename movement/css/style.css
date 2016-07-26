@@ -195,20 +195,22 @@ body {
   color: #4c70b7;
 }
 .header .page-title {
-  color: #4c70b7;
+  color: #ffffff;
 }
 .header .page-title:hover {
-  color: #4c70b7;
+  color: #ffffff;
 }
 .header .submit-btn {
   float: right;
-  color: #ffffff;
-  background: #003399;
+  background: #ffffff;
+  color: #003399;
   margin-right: 0%;
   font-weight: bold;
-  height: 60px;
-  padding: 0px 10px;
+  height: 34px;
+  padding: 0px 15px;
+  margin: 13px 0px;
   display: inline-block;
+  border-radius: 3px;
   font-size: 0.9em;
   border: 0px;
   outline: 0;
@@ -495,6 +497,9 @@ body {
   font-weight: bold;
   outline: 0;
 }
+.container .operation-form-container .operation-items .-red {
+  color: #f44336;
+}
 .container .operation-form-container .operation-items .input-select {
   font-weight: normal;
   -webkit-appearance: none;
@@ -590,6 +595,18 @@ body {
   color: rgba(0, 0, 0, 0.4);
   line-height: 1em;
   text-align: center;
+}
+.container .header-report-form-container .form-section .input-remark {
+  width: 98%;
+  padding: 1%;
+  float: left;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  border: 1px solid #DDDDDD;
+  line-height: 1.5em;
+  min-height: 100px;
+  resize: none;
 }
 .container .note {
   width: 60%;
@@ -799,6 +816,24 @@ body {
 }
 .container .list-container .header-report-table .box:last-child {
   border-bottom: 1px solid #EEEEEE;
+}
+.container .list-container .header-report-table .remark {
+  width: 98%;
+  padding: 1%;
+  float: left;
+  display: inline-block;
+  margin-top: 1%;
+  background: #FFFFFF;
+}
+.container .list-container .header-report-table .remark .caption {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 1%;
+}
+.container .list-container .header-report-table .remark .message {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.8);
 }
 .container .list-container .caliber-in-report-items {
   width: 96%;

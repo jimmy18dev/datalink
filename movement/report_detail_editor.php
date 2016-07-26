@@ -69,7 +69,7 @@ $current_page['3'] = 'add_caliber';
 
 <form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
 <header class="header">
-	<a href="report_detail.php?header=<?php echo $report->id;?>" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
+	<!-- <a href="report_detail.php?header=<?php echo $report->id;?>" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a> -->
 	<div class="header-items page-title"><strong><?php echo $caliber->name;?></strong> <i class="fa fa-long-arrow-right" aria-hidden="true"></i><strong><?php echo $report->report_date;?></strong></div>
 
 	<?php if($_GET['action'] == 'edit'){?>
@@ -82,9 +82,9 @@ $current_page['3'] = 'add_caliber';
 	<div class="operation-form-container">
 		<div class="operation-items topic-fix">
 			<div class="col1">Operation</div>
+			<div class="col4">Input</div>
 			<div class="col2">Good</div>
 			<div class="col3">Reject</div>
-			<div class="col4">Output</div>
 			<div class="col5">Remark</div>
 		</div>
 

@@ -142,3 +142,27 @@ function swapMatch(operation_id){
         window.location = 'operation.php?route='+route_id;
     }).error();
 }
+
+function setFinal(type,operation_id){
+    var href            = 'api.operation.php';
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'operation',
+            action              :'set_final',
+            type                :type,
+            operation_id        :operation_id,
+
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        location.reload();
+    }).error();
+}

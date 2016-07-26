@@ -45,21 +45,23 @@
 
 	a.discard-btn{ color: @primary_color_light; }
 	.page-title{
-		color: @primary_color_light;
+		color: @white_color;
 		&:hover{
-			color: @primary_color_light;
+			color: @white_color;
 		}
 	}
 
 	.submit-btn{
 		float: right;
-		color: @white_color;
-		background: @primary_color;
+		background: @white_color;
+		color: @primary_color;
 		margin-right: 0%;
 		font-weight: bold;
-		height: 60px;
-		padding: 0px 10px;
+		height: 34px;
+		padding: 0px 15px;
+		margin: 13px 0px;
 		display: inline-block;
+		border-radius: 3px;
 		font-size: 0.9em;
 		border: 0px;
 		outline: 0;
@@ -381,6 +383,10 @@
 				outline: 0;
 			}
 
+			.-red{
+				color: @red_color;
+			}
+
 			.input-select{
 				font-weight: normal;
 				-webkit-appearance: none;
@@ -442,6 +448,8 @@
 				float: left;
 				display: inline-block;
 
+
+
 				.section-items{
 					width: 49%;
 					margin-bottom: 1.5%;
@@ -486,6 +494,20 @@
 						text-align: center;
 					}
 				}
+			}
+
+			.input-remark{
+				width: 98%;
+				padding: 1%;
+				float: left;
+				display: inline-block;
+				font-family: @FontStylePrimary;
+				font-size: 1em;
+				line-height: 1.5em;
+				border: 1px solid #DDDDDD;
+				line-height: 1.5em;
+				min-height: 100px;
+				resize: none;
 			}
 		}
 	}
@@ -744,6 +766,26 @@
 
 				&:last-child{
 					border-bottom: 1px solid #EEEEEE;
+				}
+			}
+
+			.remark{
+				width: 98%;
+				padding: 1%;
+				float: left;
+				display: inline-block;
+				margin-top: 1%;
+				background: #FFFFFF;
+
+				.caption{
+					font-size: 0.8em;
+					color: rgba(0,0,0,0.2);
+					margin-bottom: 1%;
+				}
+				.message{
+					font-size: 1em;
+					line-height: 1.5em;
+					color: rgba(0,0,0,0.8);
 				}
 			}
 		}

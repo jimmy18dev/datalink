@@ -20,6 +20,8 @@ class OperationModel extends Database{
 		return parent::lastInsertId();
 	}
 
+
+
 	
 
 
@@ -30,6 +32,16 @@ class OperationModel extends Database{
 		return $dataset = parent::single();
 	}
 
+	public function setToFinal($operation_id){
+		parent::query('UPDATE RTH_Operation SET type = "final" WHERE id = :operation_id');
+		parent::bind(':operation_id', $operation_id);
+		parent::execute();
+	}
+	public function unsetFinal($operation_id){
+		parent::query('UPDATE RTH_Operation SET type = "normal" WHERE id = :operation_id');
+		parent::bind(':operation_id', $operation_id);
+		parent::execute();
+	}
 
 
 	

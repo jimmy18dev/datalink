@@ -25,6 +25,9 @@ if(!$user_online){
 // Current page
 $current_page['1'] = 'report_create';
 
+// Get target setting
+$setting->getSetting();
+
 // Get current day mouth year
 $day 	= date('d');
 $mouth 	= date('m');
@@ -299,23 +302,33 @@ $year 	= date('Y');
 		</div>
 
 		<div class="form-section">
-			<div class="title">9. Target</div>
+			<div class="title">9. Yield</div>
 			<div class="inputs">
 				<div class="section-items">
-					
 					<div class="input"><input type="number" class="input-text" id="yield" placeholder="0.00" value="<?php echo $report->yield;?>"></div>
 					<div class="caption">Yield</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<div class="title">10. Target</div>
+			<div class="inputs">
 				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="target_yield" placeholder="0.00" value="<?php echo $report->target_yield;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="target_yield" placeholder="0.00" value="<?php echo (empty($report->product_eff)?$setting->target_yield:$report->target_yield);?>"></div>
 					<div class="caption">Target Yield</div>
 				</div>
 				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="target_eff" placeholder="0.00" value="<?php echo $report->target_eff;?>"></div>
+					<div class="input"><input type="number" class="input-text" id="target_eff" placeholder="0.00" value="<?php echo (empty($report->product_eff)?$setting->target_eff:$report->target_eff);?>"></div>
 					<div class="caption">Target EFF</div>
 				</div>
 			</div>
-		</div>		
+		</div>
+
+		<div class="form-section">
+			<div class="title">11. Remark</div>
+			<textarea id="remark" class="input-remark" placeholder="Enter remark..."><?php echo $report->remark;?></textarea>
+		</div>	
 	</div>
 
 	<div class="control-container">

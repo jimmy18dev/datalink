@@ -31,6 +31,7 @@ function createHeaderReport(){
     var yield     = $('#yield').val();
     var target_yield     = $('#target_yield').val();
     var target_eff     = $('#target_eff').val();
+    var remark     = $('#remark').val();
 
     var d = $('#r_date').val();
     var m = $('#r_month').val();
@@ -78,6 +79,7 @@ function createHeaderReport(){
             yield:yield,
             target_yield:target_yield,
             target_eff:target_eff,
+            remark:remark,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -128,6 +130,7 @@ function editHeaderReport(id){
     var yield     = $('#yield').val();
     var target_yield     = $('#target_yield').val();
     var target_eff     = $('#target_eff').val();
+    var remark     = $('#remark').val();
 
     $('#loading-box').fadeIn(300);
 
@@ -170,6 +173,7 @@ function editHeaderReport(id){
             yield:yield,
             target_yield:target_yield,
             target_eff:target_eff,
+            remark:remark,
         },
         error: function (request, status, error) {
             console.log("Request Error");

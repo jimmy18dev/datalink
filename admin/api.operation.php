@@ -72,6 +72,14 @@ if($_POST['calling'] != ''){
 						$api->errorMessage('signature error!');
 					}
 					break;
+				case 'set_final':
+					if(true){
+						$return_id = $operation->setFinal($_POST['type'],$_POST['operation_id']);
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
 				case 'swap_macth':
 					if(true){
 						$return_id = $operation->swapMatch($_POST['route_id'],$_POST['operation_id']);

@@ -32,6 +32,31 @@ $(document).ready(function(){
     });
 });
 
+function calOperation(id){
+    console.log(id);
+
+    // Getting
+    var input = $('#input-'+id).val();
+    var good = $('#good-'+id).val();
+    var reject = $('#reject-'+id).val();
+
+    if(input == '') input = 0;
+    if(good == '') good = 0;
+    if(reject == '') reject = 0;
+
+    reject = input - good;
+
+    // Setting
+    $('#input-'+id).val(input);
+    $('#good-'+id).val(good);
+    $('#reject-'+id).val(reject);
+
+    if(reject > 0)
+        $('#reject-'+id).addClass('-red');
+    else
+        $('#reject-'+id).removeClass('-red');
+}
+
 function ImageFileCheck(){
     $caption = $('#photo-input-caption');
     var max_filesize = $('#max_filesize').val();
