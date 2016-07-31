@@ -1,10 +1,6 @@
-<?php include'config/autoload.php';?>
 <?php
-// Permission
-if(!$user_online){
-	header("Location: index.php");
-	die();
-}
+include'config/autoload.php';
+include'config/authorization.php';
 
 // current page
 $current_page['1'] = 'profile';

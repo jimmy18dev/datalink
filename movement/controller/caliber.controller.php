@@ -129,6 +129,11 @@ class CaliberController extends CaliberModel{
 		$this->render($data,$option);
 	}
 
+	public function listAllCaliberByTurnTo($option){
+		$data = parent::listAllCaliberByTurnToData($option['header_id']);
+		$this->render($data,$option);
+	}
+
 	// public function listAllOperationRecipe($caliber_id,$option){
 	// 	$data = parent::listallOperation($caliber_id);
 	// 	$this->render($data,$option);
@@ -187,7 +192,20 @@ class CaliberController extends CaliberModel{
             if($total_items == 0){
             	include'template/empty.items.php';
             }
-        }else if($option['type'] == 'route-items'){
+        }else if($option['type'] == 'caliber-turn-to-choose-items'){
+        	$header_id = $option['header_id'];
+            foreach ($data as $var){
+
+            	if($var['total_operation'] > 0)
+            		include'template/caliber/caliber.turn.to.choose.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }
+        else if($option['type'] == 'route-items'){
             foreach ($data as $var){
                 include'template/caliber/route.items.php';
                 $total_items++;

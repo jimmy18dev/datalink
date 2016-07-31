@@ -1,13 +1,6 @@
-<?php include'config/autoload.php';?>
 <?php
-// Permission
-if(!$user_online){
-	header("Location: login.php");
-	die();
-}else if($user->status == 'deactive'){
-	header("Location: profile.php");
-	die();
-}
+include'config/autoload.php';
+include'config/authorization.php';
 
 // current page
 $current_page['1'] = 'caliber';

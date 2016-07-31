@@ -1,6 +1,12 @@
+<?php include'config/autoload.php';?>
 <?php
-include'config/autoload.php';
-include'config/authorization.php';
+if(!$user_online){
+	header("Location: login.php");
+	die();
+}else if($user->status == 'deactive'){
+    header("Location: profile.php");
+    die();
+}
 
 // current page
 $current_page['1'] = 'message';
@@ -20,10 +26,9 @@ $current_page['1'] = 'message';
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-<meta http-equiv="refresh" content="60">
 
 <?php include'favicon.php';?>
-<title>Message</title>
+<title>News</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -38,28 +43,13 @@ $current_page['1'] = 'message';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>Message</h1>
+			<h1>News</h1>
+			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
 		</div>
 	</div>
-
 	<div class="list-container">
-		<div class="message-input">
-			<div class="input">
-				<textarea id="message" class="input-textarea" placeholder="Enter messages..."></textarea>
-				<input type="text" id="topic" class="input-text" placeholder="Topic...">
-				<input type="hidden" id="message_id">
-			</div>
-			<div class="submit">
-				<button class="save-btn" onclick="javascript:createMessage();"><i class="fa fa-check" aria-hidden="true"></i>Send message</button>
-			</div>
-		</div>
-
-		<div class="message-list">
-			<?php $message->listMessage(array('type' => 'message-items'));?>
-		</div>
+		<?php $message->listMessage(array('type' => 'message-items'));?>
 	</div>
 </div>
-
-<script type="text/javascript" src="js/service/min/message.service.min.js"></script>
 </body>
 </html>

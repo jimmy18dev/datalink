@@ -25,18 +25,12 @@ function createHeaderReport(){
     var sort_oversea     = $('#sort_oversea').val();
     var rework_local     = $('#rework_local').val();
     var rework_oversea     = $('#rework_oversea').val();
-    var product_eff     = $('#product_eff').val();
-    var ttl_eff     = $('#ttl_eff').val();
-
-    var yield     = $('#yield').val();
     var target_yield     = $('#target_yield').val();
     var target_eff     = $('#target_eff').val();
     var remark     = $('#remark').val();
-
     var d = $('#r_date').val();
     var m = $('#r_month').val();
     var y = $('#r_year').val();
-
     var report_date = y+'-'+m+'-'+d;
 
     $('#loading-box').fadeIn(300);
@@ -74,9 +68,6 @@ function createHeaderReport(){
             sort_oversea:sort_oversea,
             rework_local:rework_local,
             rework_oversea:rework_oversea,
-            product_eff:product_eff,
-            ttl_eff:ttl_eff,
-            yield:yield,
             target_yield:target_yield,
             target_eff:target_eff,
             remark:remark,
@@ -124,13 +115,13 @@ function editHeaderReport(id){
     var sort_oversea     = $('#sort_oversea').val();
     var rework_local     = $('#rework_local').val();
     var rework_oversea     = $('#rework_oversea').val();
-    var product_eff     = $('#product_eff').val();
-    var ttl_eff     = $('#ttl_eff').val();
-
-    var yield     = $('#yield').val();
     var target_yield     = $('#target_yield').val();
     var target_eff     = $('#target_eff').val();
     var remark     = $('#remark').val();
+    var d = $('#r_date').val();
+    var m = $('#r_month').val();
+    var y = $('#r_year').val();
+    var report_date = y+'-'+m+'-'+d;
 
     $('#loading-box').fadeIn(300);
 
@@ -146,7 +137,7 @@ function editHeaderReport(id){
             line_no:line_no,
             line_type:line_type,
             shift:shift,
-            report_date:'23 DEC 2016',
+            report_date:report_date,
             no_monthly_emplys:no_monthly_emplys,
             no_daily_emplys:no_daily_emplys,
             ttl_monthly_hrs:ttl_monthly_hrs,
@@ -168,9 +159,6 @@ function editHeaderReport(id){
             sort_oversea:sort_oversea,
             rework_local:rework_local,
             rework_oversea:rework_oversea,
-            product_eff:product_eff,
-            ttl_eff:ttl_eff,
-            yield:yield,
             target_yield:target_yield,
             target_eff:target_eff,
             remark:remark,
@@ -306,5 +294,54 @@ function getGraph(shift){
                 data: data.data.total_eff,
             }]
         });
+    }).error();
+}
+
+function addTurnTo(header_id){
+    var href        = 'api.report.php';
+
+    var output = $('#output').val();
+    var caliber_id = $('#caliber_id').val();
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'report',
+            action              :'add_turn_to',
+            header_id:header_id,
+            caliber_id:caliber_id,
+            output:output,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        // window.location = 'report_detail.php?header='+header_id;
+    }).error();
+}
+
+function deleteTurnTo(id){
+    var href        = 'api.report.php';
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling             :'report',
+            action              :'delete_turn_to',
+            id:id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        $('#turn-in-'+id).fadeOut();
     }).error();
 }

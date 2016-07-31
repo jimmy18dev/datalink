@@ -59,24 +59,5 @@ $useractivity 	= new UserActivityController;
 $report 		= new ReportController;
 $message 		= new MessageController;
 
-
-// Cookie Checking
-if($user->cookieChecking()){
-	$_SESSION['user_id'] = $_COOKIE['user_id'];
-}	
-
-// Member online checking
-$user_online = $user->sessionOnline();
-
-// Get member info
-if($user_online){
-	$user->getUser($_SESSION['user_id']);
-
-	if(empty($user->id)){
-		header("Location: logout.php");
-		die();
-	}
-}
-
 $version = '1.0.1';
 ?>

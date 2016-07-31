@@ -41,6 +41,7 @@ class ReportController extends ReportModel{
 	public $update_facebook_format;
 	public $create_timestamp;
 	public $update_timestamp;
+	public $report_date_ori;
 
 	// Leader
 	public $leader_name;
@@ -91,6 +92,7 @@ class ReportController extends ReportModel{
 		$this->remark 			= $data['remark'];
 
 		// Datetime
+		$this->report_date_ori 	= $data['report_date'];
 		$this->report_full_date = date('l jS F Y', strtotime($data['report_date']));
 		$this->report_date 		= date('j F Y', strtotime($data['report_date']));
 		$this->update_time 		= $data['update_time'];
@@ -99,7 +101,7 @@ class ReportController extends ReportModel{
 		$this->update_timestamp = strtotime($data['update_time']);
 
 		// Leader can't update header report after 7 days
-		if((time()-$this->create_timestamp) < (60*60*24*1)){
+		if((time()-$this->create_timestamp) < (60*60*24*30)){
 			$this->can_edit = true;
 		}else{
 			$this->can_edit = false;
@@ -113,11 +115,58 @@ class ReportController extends ReportModel{
 		$this->total_caliber  	= parent::countCaliberInHeaderReport($this->id);
 	}
 
+	public function updateEFFandYield($header_id){
+		$this->getHeader($header_id);
+		$dataset = parent::listOpearationInHeaderData($header_id);
+		$list_operation = parent::listOpearationOnly($header_id);
+
+		$normal_time 	= $this->ttl_daily_hrs + $this->ot_10 + $this->ot_15 + $this->ot_20 + $this->ot_30;
+		$total_time 	= $normal_time + $this->downtime_mc + $this->downtime_mat + $this->downtime_fac + $this->downtime_other + $this->sort_local + $this->sort_oversea + $this->rework_local + $this->rework_oversea;
+
+		$product_eff = 0;
+		$total_eff = 0;
+		$yield = 0;
+
+		$required_hrs = 0;
+
+		$total_good = 0;
+		foreach ($dataset as $var){
+			if($var['type'] == 'final'){
+				$required_hrs += $var['hrs'] * ($var['total_good']/1000);
+			}
+
+
+			foreach ($list_operation as $key => $list){
+				if($list['operation_id'] == $var['operation_id']){
+					$list_operation[$key]['good'] 	= $list['good'] + $var['total_good'];
+					$list_operation[$key]['reject'] = $list['reject'] + $var['total_reject'];
+				}
+			}
+		}
+
+		$before_yield = 0;
+		foreach ($list_operation as $key => $list){
+			if($list['reject'] != 0 && $list['good'] != 0){
+				$list_operation[$key]['remark'] = number_format((($list['reject'] / $list['good']) * 100),3);
+			}else{
+				$list_operation[$key]['remark'] = 0;
+			}
+
+			$before_yield += $list_operation[$key]['remark'];
+		}
+
+		$yield = round(100 - $before_yield,2,PHP_ROUND_HALF_DOWN);
+		$product_eff = ($required_hrs / $normal_time) * 100;
+		$total_eff = ($required_hrs / $total_time) * 100;
+
+		$this->updateEFFHeader($header_id,$product_eff,$total_eff,$yield);
+	}
+
 	// Header report
-	public function newHeaderReport($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff,$yield,$target_yield,$target_eff,$remark){
+	public function newHeaderReport($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$target_yield,$target_eff,$remark){
 
 		if(parent::alreadyHeader($line_no,$shift,$report_date)){
-			$header_id = parent::createHeader($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff,$yield,$target_yield,$target_eff,$remark);
+			$header_id = parent::createHeader($user_id,$line_no,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$target_yield,$target_eff,$remark);
 
 			return $header_id;
 		}else{
@@ -125,21 +174,17 @@ class ReportController extends ReportModel{
 		}
 	}
 
-	public function updateHeaderReport($header_id,$user_id,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff,$yield,$target_yield,$target_eff,$remark){
+	public function updateHeaderReport($header_id,$user_id,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$target_yield,$target_eff,$remark){
 
-		parent::editHeader($header_id,$user_id,$line_type,$shift,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$product_eff,$ttl_eff,$yield,$target_yield,$target_eff,$remark);
+		parent::editHeader($header_id,$user_id,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$target_yield,$target_eff,$remark);
 	}
 
 	// Detail report
-	public function addOperationReport($report_id,$stdtime,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output){
-
-		$required_hrs = $stdtime * ($output/1000);
-		parent::createOperationDetail($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs,'normal','active');
+	public function addOperationReport($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message){
+		parent::createOperationDetail($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message);
 	}
-	public function updateOerationReport($user_id,$stdtime,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$stdtime_hrs,$output,$required_hrs){
-
-		$required_hrs = $stdtime * ($output/1000);
-		parent::editDetail($user_id,$detail_id,$total_good,$total_reject,$remark_id,$remark_message,$output,$required_hrs);
+	public function updateOerationReport($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message){
+		parent::editDetail($report_id,$operation_id,$total_good,$total_reject,$remark_id,$remark_message);
 	}
 
 	public function deleteHeaderReport($header_id,$shift){
@@ -204,6 +249,11 @@ class ReportController extends ReportModel{
 		$this->render($data,$option);
 	}
 
+	public function listAllTurnTo($header_id,$option){
+		$data = parent::listAllTurnToData($header_id);
+		$this->render($data,$option);
+	}
+
 	// render dataset to view.
     private function render($data,$option){
     	$total_items = 0;
@@ -229,7 +279,7 @@ class ReportController extends ReportModel{
             		include'template/report/month.caption.items.php';
             	}
 
-            	if(($now-strtotime($var['create_time'])) < (60*60*24*1)){
+            	if(($now-strtotime($var['create_time'])) < (60*60*24*30)){
 					$lock = false;
 				}else{
 					$lock = true;
@@ -280,6 +330,15 @@ class ReportController extends ReportModel{
         }else if($option['type'] == 'report-caliber-detail-items'){
             foreach ($data as $var){
                 include'template/report/report.caliber.detail.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }else if($option['type'] == 'turn-to-items'){
+            foreach ($data as $var){
+                include'template/report/turn.to.items.php';
                 $total_items++;
             }
 

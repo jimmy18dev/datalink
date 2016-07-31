@@ -1,42 +1,98 @@
 @import "reset";
 @import "config";
 
-// Header bar style
 .header{
 	position: fixed;
 	top: 0%;
 	left: 0%;
-	width: 60%;
-	padding: 0% 20%;
-	height: 60px;
+	width: 50%;
+	padding: 0% 25%;
+	height: 70px;
 	float: left;
 	display: inline-block;
 	background: @primary_color;
-	border-bottom: 1px solid @primary_color_dark;
 	z-index: 99;
 
-	.header-items{
-		padding: 24px 0%;
-		height: 12px;
+	> .header-items{
+		padding: 15px 0%;
+		height: 40px;
 		float: left;
 		display: inline-block;
 		margin-right: 2%;
-		color: @primary_color_light;
+		color: #FFFFFF;
+		border: 0px;
+
+		.topic{
+			font-size: 1.4em;
+			line-height: 1.2em;
+		}
+		.caption{
+			font-size: 0.7em;
+			line-height: 1.3em;
+			color: rgba(255,255,255,0.4);
+		}
+
+		i{ margin-right: 10px; }
+	}
+
+	> .btn{
+		padding: 10px 15px;
+		height: 20px;
+		margin: 15px 0px;
+		float: right;
+		display: inline-block;
+		color: #FFFFFF;
+		background: @primary_color_dark;
+		font-size: 0.9em;
+		border: 0px;
+		border-radius: 2px;
+
+		i{
+			margin-right: 10px;
+		}
+	}
+}
+
+// Header bar style
+.navigator{
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 50%;
+	padding: 0% 25%;
+	height: 40px;
+	float: left;
+	display: inline-block;
+	background: #FFFFFF;
+	z-index: 10;
+	margin-top: 70px;
+	border-bottom: 1px solid #EEEEEE;
+
+	.header-items{
+		padding: 10px 0%;
+		height: 20px;
+		float: left;
+		display: inline-block;
+		margin-right: 2%;
+		color: #AAAAAA;
 		font-size: 0.9em;
 		border: 0px;
 		border-bottom: 1px solid transparent;
 
 		&:hover{
 			cursor: pointer;
-			color: @white_color;
+			color: rgba(0,0,0,0.6);
 		}
 
-		i{ margin-right: 10px; }
+		i{
+			margin-right: 5px;
+			font-size: 0.8em;
+		}
 	}
 
 	.header-items-active{
-		color: @white_color;
-		border-bottom: 1px solid @white_color;
+		color: @primary_color;
+		border-bottom: 1px solid @primary_color;
 	}
 
 	.back-btn{
@@ -70,26 +126,137 @@
 		i{ margin-right: 10px; }
 	}
 
-	.profile{
+	.logout{
 		float: right;
 		margin-right: 0%;
 
-		i{ margin-right: 10px; }
+		i{
+			margin-left: 10px;
+			margin-right: 0px;
+		}
 	}
 }
 
 // Container all Page
 .container{
 	width: 100%;
-	margin-top: 60px;
+	margin-top: 8%;
+	margin-bottom: 10%;
 	min-height: 500px;
 	float: left;
 	display: inline-block;
 
+	// Header report items style
+	> a .header-report-items{
+		width: 50%;
+		margin: 0% 25%;
+		float: left;
+		display: inline-block;
+		font-size: 0.9em;
+		color: rgba(0,0,0,0.6);
+		margin-bottom: 2px;
+		background: #FFFFFF;
+
+		&:hover{
+			background: #FAFAFA;
+			cursor: pointer;
+		}
+
+		.shift{
+			width: 7%;
+			padding: 1.5% 0%;
+			float: left;
+			display: inline-block;
+			text-align: center;
+			color: #FFFFFF;
+
+			&.-A{ color: #FF5722; }
+			&.-B{ color: #3F51B5; }
+		}
+		.date{
+			width: 18%;
+			padding: 1.5% 2%;
+			float: left;
+			display: inline-block;
+			font-weight: bold;
+			color: rgba(0,0,0,0.8);
+
+			.new-items{
+				font-size: 0.7em;
+				font-style: italic;
+				margin-left: 5px;
+				font-weight: normal;
+				color: rgba(0,0,0,0.4);
+			}
+		}
+		
+		.eff{
+			width: 20%;
+			padding: 1.5% 10%;
+			float: left;
+			display: inline-block;
+			text-align: right;
+			color: rgba(0,0,0,0.4);
+
+			.-warning{
+				color: #ff0000;
+			}
+
+			.unit{
+				font-size: 0.7em;
+				color: rgba(0,0,0,0.4);
+				font-style: italic;
+			}
+		}
+		.owner{
+			width: 12%;
+			padding: 1.5% 2%;
+			float: left;
+			display: inline-block;
+			text-align: right;
+			color: rgba(0,0,0,0.4);
+
+			i{
+				margin-right: 5px;
+				font-size: 0.8em;
+				color: rgba(0,0,0,0.2);
+			}
+		}
+		.status{
+			width: 7%;
+			padding: 1.5% 0%;
+			float: right;
+			display: inline-block;
+			text-align: center;
+			color: rgba(0,0,0,0.4);
+		}
+
+		&.-not_owner{
+			opacity: 0.3;
+		}
+	}
+
+	> .month-caption-items{
+		width: 48%;
+		padding: 1%;
+		margin: 0% 25%;
+		margin-top: 2%;
+		float: left;
+		display: inline-block;
+		line-height: 1em;
+		font-size: 0.8em;
+		font-weight: bold;
+		color: @light_textcolor;
+
+		i{
+			margin-right: 5px;
+		}
+	}
+
 	// Head page
 	.head{
 		width: 60%;
-		padding: 3% 20%;
+		padding: 1% 20%;
 		float: left;
 		display: inline-block;
 		background: @primary_color;
@@ -100,7 +267,7 @@
 			display: inline-block;
 
 			h1{
-				font-size: 2em;
+				font-size: 1.5em;
 				color: @white_color;
 				line-height: 1.2em;
 				margin-bottom: 1%;
@@ -663,6 +830,54 @@
 			}
 		}
 
+		.message-items{
+			width: 96%;
+			padding: 2%;
+			float: left;
+			display: inline-block;
+			border-bottom: 1px solid #EEEEEE;
+			line-height: 1.5;
+			background: #FFFFFF;
+
+			.info{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				font-size: 0.7em;
+				margin-bottom: 2%;
+				color: rgba(0,0,0,0.2);
+
+				.id{
+					width: 50%;
+					float: left;
+					display: inline-block;
+				}
+				.time{
+					float: right;
+					display: inline-block;
+				}
+
+				i{
+					margin-right: 5px;
+				}
+			}
+			.topic{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				font-size: 1em;
+				font-weight: bold;
+				color: #003399;
+			}
+			.message{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				font-size: 0.9em;
+				color: rgba(0,0,0,0.8);
+			}
+		}
+
 		.report-stat{
 			width: 100%;
 			float: left;
@@ -920,6 +1135,49 @@
 			}
 		}
 
+		.turn-to-items{
+			width: 49.5%;
+			float: left;
+			display: inline-block;
+			background: #FFFFFF;
+			margin-bottom: 1%;
+			border: 1px solid #EEEEEE;
+
+			.title{
+				width: 62%;
+				float: left;
+				display: inline-block;
+				padding: 2% 4%;
+			}
+			.output{
+				width: 12%;
+				padding: 2% 4%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+			}
+			.btn{
+				width: 10%;
+				padding: 2% 0%;
+				float: right;
+				display: inline-block;
+				font-size: 1em;
+				line-height: 1.5em;
+				background: #FAFAFA;
+				text-align: center;
+				color: rgba(0,0,0,0.2);
+
+				&:hover{
+					cursor: pointer;
+					color: rgba(0,0,0,0.6);
+				}
+			}
+
+			&:nth-child(odd){
+				float: right;
+			}
+		}
+
 		.user-activity-items{
 			width: 100%;
 			padding: 1% 0%;
@@ -1006,90 +1264,6 @@
 		.unlink-items{
 			color: @thin_textcolor;
 			.std{ color: @thin_textcolor; }
-		}
-
-		.month-caption-items{
-			width: 96%;
-			padding: 1% 2%;
-			float: left;
-			display: inline-block;
-			line-height: 1em;
-			font-size: 0.7em;
-			font-style: italic;
-			color: @light_textcolor;
-			text-align: center;
-		}
-
-		// Header report items style
-		.report-header-items{
-			width: 96%;
-			padding: 2%;
-			float: left;
-			display: inline-block;
-			font-size: 1em;
-			color: @normal_textcolor;
-			border-top: 1px solid @border_color;
-			background: #FFFFFF;
-
-			&:hover{
-				cursor: pointer;
-				color: @dark_textcolor;
-			}
-
-			.col1{
-				width: 30%;
-				float: left;
-				display: inline-block;
-
-				.shift{
-					color: #FFFFFF;
-					font-size: 0.7em;
-					float: left;
-					display: inline-block;
-					padding: 2px 4px;
-					padding-bottom: 3px;
-					margin-right: 10px;
-					text-align: center;
-					border-radius: 3px;
-				}
-				.shift-A{ background: #FF5722; }
-				.shift-B{ background: #3F51B5; }
-
-				.new-items{
-					font-size: 0.7em;
-					font-style: italic;
-				}
-			}
-			.col2{
-				width: 30%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-			}
-			.col3{
-				width: 30%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-
-				i{
-					margin-right: 10px;
-				}
-			}
-			.col4{
-				width: 10%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-
-				.fa-check{ color: @primary_color; }
-				.fa-lock{ color: @red_color; }
-			}
-
-			.unit{
-				font-size: 0.8em;
-				color: @light_textcolor;
-			}
 		}
 
 		// Last items highlight

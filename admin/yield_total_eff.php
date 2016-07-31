@@ -1,12 +1,6 @@
-<?php include'config/autoload.php';?>
 <?php
-if(!$user_online){
-	header("Location: login.php");
-	die();
-}else if($user->status == 'deactive'){
-    header("Location: profile.php");
-    die();
-}
+include'config/autoload.php';
+include'config/authorization.php';
 
 if(!empty($_GET['month']) && !empty($_GET['line'])){
     $useractivity->saveActivity($user->id,'ViewYieldEfficiencyReport','View Yield & total efficiency report at line:'.$_GET['line'].', '.$_GET['month'].' '.$_GET['year'],'');

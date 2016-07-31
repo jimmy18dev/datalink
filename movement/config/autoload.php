@@ -23,6 +23,7 @@ include_once'model/database.class.php';
 // Site Setting include /////////////
 // Model ////////////////////////////
 include_once'model/setting.model.php';
+include_once'model/message.model.php';
 include_once'model/caliber.model.php';
 include_once'model/section.model.php';
 include_once'model/remark.model.php';
@@ -32,6 +33,7 @@ include_once'model/report.model.php';
 
 // Controller ///////////////////////
 include_once'controller/api.controller.php';
+include_once'controller/message.controller.php';
 include_once'controller/setting.controller.php';
 include_once'controller/caliber.controller.php';
 include_once'controller/section.controller.php';
@@ -42,6 +44,7 @@ include_once'controller/report.controller.php';
 
 // Object of Controller
 $api = new ApiController;
+$message = new MessageController;
 $setting = new SettingController;
 $caliber = new CaliberController;
 $section = new SectionController;

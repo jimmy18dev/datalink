@@ -29,9 +29,17 @@ $current_page['1'] = 'report_create';
 $setting->getSetting();
 
 // Get current day mouth year
-$day 	= date('d');
-$mouth 	= date('m');
-$year 	= date('Y');
+if(!empty($report->report_date_ori)){
+	$day 	= date('d',strtotime($report->report_date_ori));
+	$mouth 	= date('m',strtotime($report->report_date_ori));
+	$year 	= date('Y',strtotime($report->report_date_ori));
+}else{
+	$day 	= date('d');
+	$mouth 	= date('m');
+	$year 	= date('Y');
+}
+
+
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -73,11 +81,6 @@ $year 	= date('Y');
 </header>
 <div class="container">
 	<div class="header-report-form-container">
-
-		<?php if(!empty($report->id)){?>
-		<div class="form-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editing report for <strong><?php echo $report->report_full_date;?></strong></div>
-		<div class="form-title">Shift <strong><?php echo $report->line_no;?></strong> and Line type <strong><?php echo $report->line_type;?></strong></div>
-		<?php }else{?>
 		<div class="form-title">
 			Creating a report for
 			<select id="r_date" class="input-select">
@@ -142,11 +145,10 @@ $year 	= date('Y');
 			</select>
 			Line type
 			<select id="line_type" class="input-select">
-				<option value="DI">DI</option>
-				<option value="NDI">NDI</option>
+				<option value="DI" <?php echo ($report->line_type == 'DI'?'selected':'');?>>DI</option>
+				<option value="NDI" <?php echo ($report->line_type == 'NDI'?'selected':'');?>>NDI</option>
 			</select>
 		</div>
-		<?php }?>
 
 		<div class="form-section">
 			<div class="title">1. Monthly</div>
@@ -172,20 +174,6 @@ $year 	= date('Y');
 				<div class="section-items">
 					<div class="input"><input type="number" class="input-text"  id="ttl_daily_hrs" placeholder="0.00" value="<?php echo $report->ttl_daily_hrs;?>"></div>
 					<div class="caption">Normal Hrs.</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">3. Efficiency</div>
-			<div class="inputs">
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="product_eff" placeholder="0.00" value="<?php echo $report->product_eff;?>"></div>
-					<div class="caption">Product EFF</div>
-				</div>
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="ttl_eff" placeholder="0.00" value="<?php echo $report->ttl_eff;?>"></div>
-					<div class="caption">Total EFF</div>
 				</div>
 			</div>
 		</div>
@@ -297,16 +285,6 @@ $year 	= date('Y');
 				<div class="section-items">
 					<div class="input"><input type="number" class="input-text" id="rework_oversea" placeholder="0.00" value="<?php echo $report->rework_oversea;?>"></div>
 					<div class="caption">Overseas</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">9. Yield</div>
-			<div class="inputs">
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="yield" placeholder="0.00" value="<?php echo $report->yield;?>"></div>
-					<div class="caption">Yield</div>
 				</div>
 			</div>
 		</div>

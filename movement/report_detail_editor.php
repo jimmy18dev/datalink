@@ -70,7 +70,9 @@ $current_page['3'] = 'add_caliber';
 <form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
 <header class="header">
 	<!-- <a href="report_detail.php?header=<?php echo $report->id;?>" class="header-items back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a> -->
+	<a href="report_detail.php?header=<?php echo $report->id;?>">
 	<div class="header-items page-title"><strong><?php echo $caliber->name;?></strong> <i class="fa fa-long-arrow-right" aria-hidden="true"></i><strong><?php echo $report->report_date;?></strong></div>
+	</a>
 
 	<?php if($_GET['action'] == 'edit'){?>
 	<button type="submit" class="submit-btn"><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span><span id="btn-caption">Update</span></button>

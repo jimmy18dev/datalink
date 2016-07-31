@@ -39,7 +39,7 @@ if($user_online){
 		<h1>DATALINK</h1>
 		<p class="version">Version <strong>1.01</strong></p>
 	</div>
-
+	
 	<form action="javascript:login();">
 	<div class="input">
 		<input type="text" class="input-text" id="username" placeholder="Username" autofocus autocomplete="off">
@@ -50,7 +50,6 @@ if($user_online){
 	</div>
 	</form>
 </div>
-
 <script type="text/javascript" src="js/service/min/user.service.min.js"></script>
 </body>
 </html>

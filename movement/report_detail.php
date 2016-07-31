@@ -76,25 +76,12 @@ $current_page['1'] = 'index';
 
 	<div class="list-container">
 		<div class="topic-container">
-			<div class="title">1. Manpower:</div>
+			<div class="title">1. Manpower: <span class="target">Target EFF = <?php echo number_format($report->target_eff,2);?> % , Target Yield = <?php echo number_format($report->target_yield,2);?> %</span></div>
 		</div>
 		<div class="report-stat">
 			<div class="stat-items stat-items-highlight">
-				<div class="v">LINE <?php echo $report->line_no;?></div>
-				<div class="k"><strong>Shift <?php echo $report->shift;?></strong></div>
-			</div>
-			<div class="stat-items">
-				<div class="v"><?php echo $report->ttl_monthly_hrs;?></div>
-				<div class="k"><?php echo $report->no_monthly_emplys;?> Monthly Prs<i class="fa fa-user" aria-hidden="true"></i></div>
-			</div>
-			<div class="stat-items">
-				<div class="v"><?php echo $report->ttl_daily_hrs;?></div>
-				<div class="k"><?php echo $report->no_daliy_emplys;?> Monthly Prs<i class="fa fa-user" aria-hidden="true"></i></div>
-			</div>
-
-			<div class="stat-items">
-				<div class="v"><?php echo number_format($report->yield,2);?> %</div>
-				<div class="k">Yield</div>
+				<div class="v">Shift <?php echo $report->shift;?></div>
+				<div class="k">LINE <?php echo $report->line_no;?> (<?php echo $report->line_type;?>)</div>
 			</div>
 
 			<div class="stat-items">
@@ -107,13 +94,25 @@ $current_page['1'] = 'index';
 			</div>
 
 			<div class="stat-items">
-				<div class="v"><?php echo number_format($report->target_yield,2);?> %</div>
-				<div class="k">Target Yield<i class="fa fa-crosshairs" aria-hidden="true"></i></div>
+				<div class="v"><?php echo number_format($report->yield,2);?> %</div>
+				<div class="k">Yield</div>
 			</div>
 
 			<div class="stat-items">
-				<div class="v"><?php echo number_format($report->target_eff,2);?> %</div>
-				<div class="k">Target EFF<i class="fa fa-crosshairs" aria-hidden="true"></i></div>
+				<div class="v"><?php echo $report->ttl_monthly_hrs;?></div>
+				<div class="k"><strong>Monthly</strong> Normal Hour</div>
+			</div>
+			<div class="stat-items">
+				<div class="v"><?php echo $report->no_monthly_emplys;?></div>
+				<div class="k"><strong>Monthly</strong> Prs<i class="fa fa-user" aria-hidden="true"></i></div>
+			</div>
+			<div class="stat-items">
+				<div class="v"><?php echo $report->no_daily_emplys;?></div>
+				<div class="k"><strong>Daily</strong> Prs<i class="fa fa-user" aria-hidden="true"></i></div>
+			</div>
+			<div class="stat-items">
+				<div class="v"><?php echo $report->ttl_daily_hrs;?></div>
+				<div class="k"><strong>Daily</strong> Normal Hour</div>
 			</div>
 		</div>
 
@@ -206,10 +205,12 @@ $current_page['1'] = 'index';
 				</div>
 			</div>
 
+			<?php if(!empty($report->remark)){?>
 			<div class="remark">
 				<div class="caption">Remark</div>
 				<div class="message"><?php echo $report->remark;?></div>
 			</div>
+			<?php }?>
 		</div>
 
 		<div class="topic-container">
@@ -223,13 +224,25 @@ $current_page['1'] = 'index';
 
 		<?php if($user->id == $report->leader_id && $report->can_edit && $report->total_caliber == 0){?>
 		<div class="starter-container">
-			<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>ADD CALIBER CODE</a>
+			<a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Caliber</a>
 		</div>
 		<?php }else{?>
 		<div class="container-box">
 			<?php $report->listCaliberInReport($report->id,array('type' => 'report-caliber-items','header_id' => $report->id,'can_edit' => $report->can_edit));?>
 		</div>
 		<?php }?>
+
+		<div class="topic-container">
+			<div class="title">3. Turn to 24-48 Hrs.</div>
+			<div class="control">
+				<?php if($user->id == $report->leader_id && $report->can_edit && $report->total_caliber > 0){?>
+				<a href="report_detail_turn_to_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Turn To</a>
+			<?php }?>
+			</div>
+		</div>
+		<div class="container-box">
+			<?php $report->listAllTurnTo($report->id,array('type' => 'turn-to-items'));?>
+		</div>
 	</div>
 </div>
 </body>

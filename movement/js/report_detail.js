@@ -33,7 +33,6 @@ $(document).ready(function(){
 });
 
 function calOperation(id){
-    console.log(id);
 
     // Getting
     var input = $('#input-'+id).val();
