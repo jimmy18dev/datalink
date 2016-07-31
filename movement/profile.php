@@ -38,39 +38,21 @@ $current_page['1'] = 'profile';
 
 </head>
 <body>
-<?php include'header.php';?>
-<div class="container">
-	<?php if($user->status == 'deactive'){?>
-	<div class="message-control">
-		<div class="user-deactive"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>This account is <strong>Deactive</strong> by administrator</div>
+<header class="header">
+	<div class="header-items">
+		<div class="topic"><?php echo $user->fname.' '.$user->lname?></div>
+		<div class="caption">Account ID <strong><?php echo $user->code;?></strong>, Section <strong><?php echo $user->section_name;?></strong> Last visit at <strong><?php echo $user->visit_time;?></strong></div>
 	</div>
-	<?php }?>
-	<div class="head">
-		<div class="head-title">
-			<h1><?php echo $user->fname.' '.$user->lname?></h1>
-			<p>Account ID <strong><?php echo $user->code;?></strong>, Section <strong><?php echo $user->section_name;?></strong></p>
-			<p>Last visit at <strong><?php echo $user->visit_time;?></strong></p>
-		</div>
-		<div class="head-control">
-			<a href="../logout.php">
-			<div class="report-btn logout-btn">
-				<i class="fa fa-sign-out" aria-hidden="true"></i>
-				<div class="caption">Logout</div>
-			</div>
-			</a>
-		</div>
-	</div>
-	<div class="list-container">
-		<div class="items user-activity-items topic-fix">
-			<div class="col1">Date/Time</div>
-			<div class="col2">Action</div>
-			<div class="col3">IP Address <i class="fa fa-location-arrow" aria-hidden="true"></i></div>
-			<div class="col4">Description</div>
-		</div>
-		<div class="items-container">
-			<?php $useractivity->listActivity($user->id,array('type' => 'user-activity-items'));?>
-		</div>
-	</div>
+	<a class="btn" href="report_header_editor.php?action=create"><i class="fa fa-plus" aria-hidden="true"></i>New report</a>
+</header>
+<?php include'navigator.php';?>
+<?php if($user->status == 'deactive'){?>
+<div class="user-deactive"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>This account is <strong>Deactive</strong> by administrator</div>
+<?php }?>
+<div class="activity-list-container">
+	<?php $useractivity->listActivity($user->id,array('type' => 'user-activity-items'));?>
 </div>
+
+<script type="text/javascript" src="js/min/auto_hidden.min.js"></script>
 </body>
 </html>

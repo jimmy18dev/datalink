@@ -1,20 +1,21 @@
 @import "reset";
 @import "config";
 
+// header style
 .header{
 	position: fixed;
 	top: 0%;
 	left: 0%;
 	width: 50%;
 	padding: 0% 25%;
-	height: 70px;
+	height: 80px;
 	float: left;
 	display: inline-block;
 	background: @primary_color;
 	z-index: 99;
 
 	> .header-items{
-		padding: 15px 0%;
+		padding: 20px 0%;
 		height: 40px;
 		float: left;
 		display: inline-block;
@@ -33,27 +34,34 @@
 		}
 
 		i{ margin-right: 10px; }
+
+		strong{
+			font-weight: normal;
+			color: rgba(255, 255, 255, 0.9);
+		}
 	}
 
 	> .btn{
-		padding: 10px 15px;
+		padding: 5px 10px;
 		height: 20px;
-		margin: 15px 0px;
+		margin: 25px 0px;
 		float: right;
 		display: inline-block;
-		color: #FFFFFF;
-		background: @primary_color_dark;
-		font-size: 0.9em;
+		background: #FFFFFF;
+		color: @primary_color;
+		font-size: 0.8em;
 		border: 0px;
+		font-weight: bold;
 		border-radius: 2px;
 
 		i{
 			margin-right: 10px;
+			font-size: 0.8em;
 		}
 	}
 }
 
-// Header bar style
+// Navigator menu style
 .navigator{
 	position: fixed;
 	top: 0%;
@@ -65,17 +73,17 @@
 	display: inline-block;
 	background: #FFFFFF;
 	z-index: 10;
-	margin-top: 70px;
-	border-bottom: 1px solid #EEEEEE;
+	margin-top: 80px;
+	border-bottom: 1px solid #DDDDDD;
 
 	.header-items{
 		padding: 10px 0%;
 		height: 20px;
 		float: left;
 		display: inline-block;
-		margin-right: 2%;
+		margin-right: 3%;
 		color: #AAAAAA;
-		font-size: 0.9em;
+		font-size: 0.8em;
 		border: 0px;
 		border-bottom: 1px solid transparent;
 
@@ -86,7 +94,6 @@
 
 		i{
 			margin-right: 5px;
-			font-size: 0.8em;
 		}
 	}
 
@@ -95,56 +102,66 @@
 		border-bottom: 1px solid @primary_color;
 	}
 
-	.back-btn{
-		i{ margin-right: 10px; }
-	}
-
-	a.discard-btn{ color: @primary_color_light; }
-	.page-title{
-		color: @white_color;
-		&:hover{
-			color: @white_color;
-		}
-	}
-
-	.submit-btn{
-		float: right;
-		background: @white_color;
-		color: @primary_color;
-		margin-right: 0%;
-		font-weight: bold;
-		height: 34px;
-		padding: 0px 15px;
-		margin: 13px 0px;
-		display: inline-block;
-		border-radius: 3px;
-		font-size: 0.9em;
-		border: 0px;
-		outline: 0;
-
-		&:hover{ cursor: pointer; }
-		i{ margin-right: 10px; }
-	}
-
 	.logout{
 		float: right;
 		margin-right: 0%;
+		color: @red_color;
+
+		&:hover{
+			color: @red_color;
+			text-decoration: underline;
+		}
 
 		i{
-			margin-left: 10px;
+			margin-left: 5px;
 			margin-right: 0px;
 		}
 	}
 }
 
-// Container all Page
-.container{
+// Header list container style (Index)
+.header-list-container{
 	width: 100%;
-	margin-top: 8%;
-	margin-bottom: 10%;
+	margin-top: 135px;
+	margin-bottom: 3%;
 	min-height: 500px;
 	float: left;
 	display: inline-block;
+
+	> .filter{
+		width: 50%;
+		margin: 1% 25%;
+		margin-bottom: 0%;
+		float: left;
+		display: inline-block;
+		text-align: right;
+
+		a{
+			font-size: 0.8em;
+			background: #EEEEEE;
+			padding: 2px 5px;
+			border-radius: 2px;
+			color: #AAAAAA;
+			border: 1px solid #DDDDDD;
+			line-height: 1em;
+		}
+	}
+
+	> .month-caption-items{
+		width: 48%;
+		padding: 1%;
+		margin: 0% 25%;
+		float: left;
+		display: inline-block;
+		line-height: 1em;
+		font-size: 0.8em;
+		font-weight: bold;
+		color: @light_textcolor;
+
+		i{
+			margin-right: 5px;
+		}
+	}
 
 	// Header report items style
 	> a .header-report-items{
@@ -162,19 +179,8 @@
 			cursor: pointer;
 		}
 
-		.shift{
-			width: 7%;
-			padding: 1.5% 0%;
-			float: left;
-			display: inline-block;
-			text-align: center;
-			color: #FFFFFF;
-
-			&.-A{ color: #FF5722; }
-			&.-B{ color: #3F51B5; }
-		}
 		.date{
-			width: 18%;
+			width: 22%;
 			padding: 1.5% 2%;
 			float: left;
 			display: inline-block;
@@ -189,9 +195,20 @@
 				color: rgba(0,0,0,0.4);
 			}
 		}
+
+		.shift{
+			width: 5%;
+			padding: 1.5% 0%;
+			float: left;
+			display: inline-block;
+			text-align: center;
+
+			// &.-A{ color: #FF5722; }
+			// &.-B{ color: #3F51B5; }
+		}
 		
 		.eff{
-			width: 20%;
+			width: 18%;
 			padding: 1.5% 10%;
 			float: left;
 			display: inline-block;
@@ -235,140 +252,479 @@
 			opacity: 0.3;
 		}
 	}
+}
 
-	> .month-caption-items{
-		width: 48%;
-		padding: 1%;
-		margin: 0% 25%;
-		margin-top: 2%;
+// Report Detail Page style
+.report-detail-container{
+	width: 100%;
+	margin-top: 135px;
+	margin-bottom: 3%;
+	min-height: 500px;
+	float: left;
+	display: inline-block;
+
+	> .report-control{
+		width: 50%;
+		margin: 1% 25%;
 		float: left;
 		display: inline-block;
-		line-height: 1em;
-		font-size: 0.8em;
-		font-weight: bold;
-		color: @light_textcolor;
 
-		i{
-			margin-right: 5px;
+		a.report-btn{
+			float: right;
+			display: inline-block;
+			font-size: 0.7em;
+			padding: 3px 10px;
+			border-radius: 2px;
+			background: #FFFFFF;
+			color: #AAAAAA;
+			border: 1px solid #CCCCCC;
+
+			&:hover{
+				cursor: pointer;
+				opacity: 0.8;
+			}
+
+			i{
+				margin-right: 10px;
+			}
 		}
 	}
 
-	// Head page
-	.head{
-		width: 60%;
-		padding: 1% 20%;
+	// Topic style
+	> .topic-container{
+		width: 50%;
+		margin: 0% 25%;
 		float: left;
 		display: inline-block;
-		background: @primary_color;
 
-		.head-title{
-			width: 93%;
+		.title{
+			width: 100%;
+			float: left;
+			display: inline-block;
+			font-size: 1.2em;
+			padding: 8px 0px;
+			color: @normal_textcolor;
+
+			.target{
+				float: right;
+				font-size: 0.7em;
+				color: rgba(0,0,0,0.4);
+				line-height: 2em;
+
+				strong{
+					color: @green_color;
+					font-weight: normal;
+				}
+			}
+
+			a.create-btn{
+				background: @green_color;
+				color: @white_color;
+				float: right;
+				display: inline-block;
+				border-radius: 2px;
+				font-weight: bold;
+				font-size: 0.6em;
+				padding: 5px 10px;
+
+				&:hover{
+					cursor: pointer;
+					opacity: 0.8;
+				}
+
+				i{ margin-right: 10px; }
+			}
+		}
+	}	
+
+	> .report-stat{
+		width: 50%;
+		margin: 0% 25%;
+		float: left;
+		display: inline-block;
+
+		.stat-items{
+			width: 22.60%;
+			margin-right: 3%;
+			margin-bottom: 3%;
+			float: left;
+			display: inline-block;
+			border-right: 1px solid @border_color;
+
+			&:nth-child(4n){
+				border-right: 0px;
+				margin-right: 0%;
+			}
+
+			.v{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				font-size: 1.6em;
+				color: @normal_textcolor;
+				line-height: 1.1em;
+			}
+			.k{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				font-size: 0.8em;
+				color: @light_textcolor;
+
+				i{
+					font-size: 0.8em;
+					color: @thin_textcolor;
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+
+	// Header info detail in table-layout
+	// Manpower: report detail page
+	> .header-report-table{
+		width: 50%;
+		margin: 0% 25%;
+		float: left;
+		display: inline-block;
+		font-size: 1em;
+		margin-bottom: 5%;
+
+		.box{
+			width: 100%;
+			padding: 1.5% 0%;
+			float: left;
+			display: inline-block;
+			background: @white_color;
+			border-top: 1px solid #EEEEEE;
+
+			.box-topic{
+				width: 18.5%;
+				padding: 0% 2%;
+				margin-right: 3%;
+				padding-top: 0.5%;
+				float: left;
+				display: inline-block;
+				color: @normal_textcolor;
+				font-size: 0.9em;
+				line-height: 1.5em;
+				border-right: 1px solid #EEEEEE;
+
+				i{
+					margin-left: 5px;
+					color: @thin_textcolor;
+					font-size: 0.8em;
+				}
+			}
+
+			.col{
+				width: 14.85%;
+				float: left;
+				display: inline-block;
+				color: @normal_textcolor;
+
+				.col-val{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					font-size: 1.2em;
+					line-height: 1em;
+					color: @normal_textcolor;
+				}
+				.col-caption{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					font-size: 0.7em;
+					margin-left: 5px;
+					color: @light_textcolor;
+					line-height: 1em;
+				}
+			}
+
+			&:last-child{
+				border-bottom: 1px solid #EEEEEE;
+			}
+		}
+
+		.remark{
+			width: 98%;
+			padding: 1%;
+			float: left;
+			display: inline-block;
+			margin-top: 1%;
+			background: #FFFFFF;
+
+			.caption{
+				font-size: 0.8em;
+				color: rgba(0,0,0,0.2);
+				margin-bottom: 1%;
+			}
+			.message{
+				font-size: 1em;
+				line-height: 1.5em;
+				color: rgba(0,0,0,0.8);
+			}
+		}
+	}
+	// END Header info detail in table-layout
+
+	// Caliber items stype
+	// Output: Report detail
+	.caliber-in-report-items{
+		width: 48%;
+		margin: 0% 25%;
+		padding: 1%;
+		margin-bottom: 1%;
+		float: left;
+		display: inline-block;
+		background: @white_color;
+		border: 1px solid @border_color;
+
+		.info{
+			width: 100%;
 			float: left;
 			display: inline-block;
 
-			h1{
-				font-size: 1.5em;
-				color: @white_color;
-				line-height: 1.2em;
-				margin-bottom: 1%;
+			.name{
+				width: 100%;
+				float: left;
+				font-size: 1.2em;
+				font-weight: bold;
+				color: @normal_textcolor;
+
+				a{
+					float: right;
+					display: inline-block;
+					color: @light_textcolor;
+					background: @thin_textcolor;
+					padding: 5px 10px;
+					padding-top: 6px;
+					font-size: 0.6em;
+					border-radius: 2px;
+					font-weight: normal;
+
+					&:hover{
+						cursor: pointer;
+						opacity: 0.8;
+					}
+
+					&:active{
+						color: @white_color;
+						background: @primary_color;
+					}
+				}
 			}
 
-			p{
+			.description{
+				width: 100%;
+				float: left;
+				display: inline-block;
 				font-size: 0.9em;
 				line-height: 1.5em;
-				color: @primary_color_light;
-			}
-
-			strong{
-				font-weight: normal;
-				color: @white_color;
+				color: @light_textcolor;
 			}
 		}
 
-		.head-control{
-			width: 7%;
-			float: right;
+		// Opearation box
+		.operations{
+			width: 100%;
+			float: left;
 			display: inline-block;
+			margin-top: 2%;
 
-			.report-btn{
-				text-align: center;
+			// Operations items style
+			.operation-items{
 				width: 100%;
-				float: right;
+				padding: 1% 0%;
+				float: left;
 				display: inline-block;
-				text-align: center;
-				padding: 10px 20px;
-				border-radius: 3px;
-				color: @white_color;
-				box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-				background: @primary_color_light;
+				border-bottom: 1px solid @border_color;
+				font-size: 0.9em;
 
-				i{
-					font-size: 2em;
-					line-height: 1.5em;
+				&:last-child{
+					border-bottom: 0px;
 				}
-				.caption{
-					font-size: 0.7em;
+
+				.col1{
+					width: 64%;
+					float: left;
+					display: inline-block;
+				}
+				.col2{
+					width: 12%;
+					float: left;
+					display: inline-block;
+					text-align: right;
+					color: rgba(0,0,0,0.2);
+
+					&.-black{
+						color: rgba(0,0,0,0.8);
+						font-weight: bold;
+					}
+				}
+				.col3{
+					width: 12%;
+					float: left;
+					display: inline-block;
+					text-align: right;
+					color: rgba(0,0,0,0.2);
+
+					&.-green{
+						color: @green_color;
+						font-weight: bold;
+					}
+				}
+				.col4{
+					width: 11%;
+					float: left;
+					display: inline-block;
+					text-align: right;
+					margin-right: 1%;
+					color: rgba(0,0,0,0.2);
+
+					&.-red{
+						color: @red_color;
+						font-weight: bold;
+					}
+				}
+				.col5{
+					width: 100%;
+					float: left;
+					display: inline-block;
+					text-align: right;
+					font-size: 0.8em;
 					line-height: 1.5em;
+					display: none;
 				}
 			}
 
-			.report-btn-lock{
+			.topic-fix{
+				font-style: italic;
 				color: @light_textcolor;
-				box-shadow: 0px 0px 0px transparent;
-				text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-				background: @primary_color;
-				color: @primary_color_light;
-			}
+				font-size: 0.6em;
 
-			.create-btn{
-				color: @primary_color;
-				background: @white_color;
-			}
-
-			.logout-btn{
-				background: @red_color;
-				color: @white_color;
+				&:hover{
+					color: @light_textcolor;
+				}
 			}
 		}
 	}
 
-	.message-control{
+	.starter-container{
 		width: 100%;
+		padding: 3% 0%;
 		float: left;
 		display: inline-block;
 		text-align: center;
-		font-size: 1em;
-		line-height: 1.5em;
 
-		i{
-			margin-right: 10px;
-		}
+		a.create-btn{
+			background: @green_color;
+			color: @white_color;
+			border-radius: 2px;
+			font-weight: bold;
+			font-size: 0.9em;
+			padding: 7px 10px;
 
-		.user-deactive{
-			width: 100%;
-			padding: 2% 0%;
-			float: left;
-			display: inline-block;
-			color: @red_color;
-			background: #FFEBEE;
+			&:hover{
+				cursor: pointer;
+				opacity: 0.8;
+			}
+
+			i{ margin-right: 10px; }
 		}
 	}
 
+	> .turn-to-list{
+		width: 50%;
+		float: left;
+		display: inline-block;
+		margin: 0% 25%;
+
+		.turn-to-items{
+			width: 32.33%;
+			float: left;
+			display: inline-block;
+			background: #FFFFFF;
+			margin-bottom: 1%;
+			margin-right: 1%;
+			border: 1px solid #EEEEEE;
+
+			.title{
+				width: 43%;
+				float: left;
+				display: inline-block;
+				padding: 3% 4%;
+			}
+			.output{
+				width: 30%;
+				padding: 3% 4%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+				color: rgba(0,0,0,0.4);
+			}
+			.btn{
+				width: 11%;
+				padding: 3% 0%;
+				float: right;
+				display: inline-block;
+				font-size: 1em;
+				line-height: 1.5em;
+				background: #FAFAFA;
+				text-align: center;
+				color: rgba(0,0,0,0.2);
+
+				&:hover{
+					cursor: pointer;
+					color: rgba(0,0,0,0.6);
+				}
+			}
+
+			// &:nth-child(odd){
+			// 	float: right;
+			// }
+		}
+	}
+
+	// Empty items style
+	.empty-items{
+		width: 50%;
+		margin: 0% 25%;
+		padding: 3% 0%;
+		float: left;
+		display: inline-block;
+		font-size: 1em;
+		color: @light_textcolor;
+		text-align: center;
+	}
+}
+
+// Container all Page
+.container{
+	width: 50%;
+	margin: 0% 25%;
+	margin-top: 135px;
+	margin-bottom: 3%;
+	min-height: 500px;
+	float: left;
+	display: inline-block;
+
 	.graph-filter{
-		width: 60%;
-		margin: 0% 20%;
+		width: 100%;
 		float: left;
 		display: inline-block;
 		border-bottom: 1px solid @border_color;
+		background: #FFFFFF;
 
 		.filter-items{
-			padding: 2% 0%;
-			margin-right: 2%;
+			padding: 10px;
 			float: left;
 			display: inline-block;
 			margin-bottom: -1px;
 			color: rgba(0,0,0,0.4);
 			border-bottom: 1px solid transparent;
+			font-size: 0.9em;
 
 			&:hover{
 				cursor: pointer;
@@ -378,13 +734,14 @@
 
 		.filter-items-active{
 			color: @primary_color;
+			font-weight: bold;
 			border-bottom: 1px solid @primary_color;
 		}
 	}
 
 	.graph-report{
-		width: 60%;
-		margin: 3% 20%;
+		width: 100%;
+		margin: 0%;
 		float: left;
 		display: inline-block;
 		background: @white_color;
@@ -395,7 +752,8 @@
 			float: left;
 			display: inline-block;
 			font-size: 1.5em;
-			color: @normal_textcolor;
+			color: @primary_color;
+			text-align: center;
 		}
 
 		.graph{
@@ -470,6 +828,7 @@
 			}
 		}
 	}
+
 	.starter-message{
 		width: 100%;
 		padding: 10% 0%;
@@ -480,254 +839,452 @@
 		font-size: 1em;
 		color: @light_textcolor;
 	}
+}
 
+// Message page style (News message)
+.message-list-container{
+	width: 100%;
+	margin-top: 135px;
+	margin-bottom: 3%;
+	min-height: 500px;
+	float: left;
+	display: inline-block;
 
-	// Report detail editor (Add operation to caliber)
-	.operation-form-container{
-		width: 60%;
-		margin: 0% 20%;
-		margin-top: 5%;
+	> .message-items{
+		width: 48%;
+		padding: 1%;
+		margin: 0% 25%;
 		float: left;
 		display: inline-block;
-		background: @white_color;
+		line-height: 1.5;
+		background: #FFFFFF;
+		border-top: 1px solid #EEEEEE;
 
-		.operation-items{
-			width: 96%;
-			padding: 0% 2%;
+		&:first-child{
+			border-top: 0px;
+		}
+
+		.id{
+			width: 10%;
 			float: left;
 			display: inline-block;
-			line-height: 3em;
-			font-size: 1em;
-			border-bottom: 1px solid @border_color;
-			color: @normal_textcolor;
+			font-weight: bold;
+			color: rgba(0,0,0,0.2);
+			font-size: 0.9em;
+		}
+		.detail{
+			width: 90%;
+			float: left;
+			display: inline-block;
 
-			.col1{
-				width: 40%;
-				float: left;
-				display: inline-block;
-			}
-			.col2{
-				width: 8%;
-				padding: 0% 1%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-			}
-			.col3{
-				width: 8%;
-				padding: 0% 1%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-			}
-			.col4{
-				width: 8%;
-				padding: 0% 1%;
-				float: left;
-				display: inline-block;
-				text-align: center;
-			}
-			.col5{
-				width: 27%;
-				float: left;
-				display: inline-block;
-				margin-left: 3%;
-			}
-
-			.input-text{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-family: @FontStylePrimary;
-				font-size: 1em;
-				border: 0px;
-				line-height: 3em;
-				border-radius: 0px;
-				text-align: center;
-				background: @white_color;
-				color: @dark_textcolor;
+			.topic{
+				color: @primary_color;
 				font-weight: bold;
-				outline: 0;
+				font-size: 0.9em;
+				margin-bottom: 1%;
 			}
+			.message{
+				color: rgba(0,0,0,0.8);
+				font-size: 0.8em;
 
-			.-red{
-				color: @red_color;
+				.time{
+					color: rgba(0,0,0,0.4);
+
+					i{
+						margin-left: 5px;
+						font-size: 0.8em;
+					}
+				}
 			}
+		}
+	}
+}
 
-			.input-select{
-				font-weight: normal;
-				-webkit-appearance: none;
-				color: @light_textcolor;
+// User activity style
+.activity-list-container{
+	width: 100%;
+	margin-top: 135px;
+	margin-bottom: 3%;
+	min-height: 500px;
+	float: left;
+	display: inline-block;
+
+	.activity-items{
+		width: 50%;
+		margin: 0% 25%;
+		padding-top: 0.5%;
+		float: left;
+		display: inline-block;
+		font-size: 0.8em;
+		color: rgba(0,0,0,0.8);
+
+		.time{
+			width: 20%;
+			float: left;
+			display: inline-block;
+			color: rgba(0,0,0,0.4);
+		}
+
+		.description{
+			width: 80%;
+			float: left;
+			display: inline-block;
+
+			strong{
+				color: @primary_color;
 			}
 		}
 
-		.topic-fix{
-			font-size: 0.9em;
-			color: @light_textcolor;
+		&:first-child{
+			margin-top: 1%;
+		}
+	}
+}
+
+// Operation form style
+.form-bar{
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 50%;
+	padding: 0% 25%;
+	height: 50px;
+	float: left;
+	display: inline-block;
+	z-index: 99;
+	background: rgba(255, 255, 255, 0.9);
+
+	> .discard-btn{
+		float: left;
+		display: inline-block;
+		height: 22px;
+		margin: 14px 0px;
+		border-radius: 2px;
+		color: rgba(0,0,0,0.4);
+		font-size: 0.9em;
+
+		&:hover{
+			color: @red_color;
+			text-decoration: underline;
+		}
+
+		i{
+			margin-right: 10px;
 		}
 	}
 
-	// Create Header report
-	.header-report-form-container{
-		width: 60%;
-		margin: 0% 20%;
+	> a.page-title{
 		float: left;
 		display: inline-block;
+		height: 22px;
+		margin: 14px 0px;
+		border-radius: 2px;
+		color: rgba(0,0,0,0.2);
+		font-size: 0.9em;
 
-		.form-title{
-			width: 100%;
-			padding: 3% 0%;
-			float: left;display: inline-block;
-			text-align: center;
-			font-size: 1.5em;
+		&:hover{
+			color: rgba(0,0,0,0.6);
+			text-decoration: underline;
+		}
+
+		i{
+			margin-right: 10px;
+		}
+	}
+
+	> .btn{
+		background: @green_color;
+		color: #FFFFFF;
+		border: 0px;
+		float: right;
+		padding: 0px 15px;
+		height: 30px;
+		margin: 10px 0px;
+		border-radius: 2px;
+		font-weight: bold;
+		font-size: 0.8em;
+
+		&:hover{
+			cursor: pointer;
+			opacity: 0.8;
+		}
+
+		i{
+			margin-left: 10px;
+		}
+	}
+}
+
+// Header report form style.
+.form-container{
+	width: 50%;
+	margin: 0% 25%;
+	float: left;
+	display: inline-block;
+	margin-top: 80px;
+	margin-bottom: 3%;
+
+	> .form-title{
+		width: 100%;
+		padding: 3% 0%;
+		float: left;display: inline-block;
+		font-size: 1.3em;
+
+		.caption{
+			width: 48%;
+			margin-right: 3%;
+			padding: 10px 0px;
+			float: left;
+			display: inline-block;
+			text-align: right;
+		}
+		.input{
+			width: 49%;
+			float: right;
+			display: inline-block;
 
 			.input-select{
-				padding: 10px 7px;
+				padding: 10px 20px;
 				margin-left: 5px;
 				font-size: 1em;
 				font-family: @FontStylePrimary;
 				color: @primary_color;
-				border: 1px solid @border_color;
-				background: #FFFFFF;
-				border-radius: 3px;
-				font-weight: bold;
-				box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-			}
-		}
-
-		.form-section{
-			width: 100%;
-			float: left;
-			display: inline-block;
-
-			.title{
-				width: 98%;
-				padding: 1% 0%;
-				float: left;
-				display: inline-block;
-				line-height: 1.5em;
-				font-size: 1.5em;
-				color: @normal_textcolor;
-				margin-top: 2%;
-			}
-			.inputs{
-				width: 100%;
-				float: left;
-				display: inline-block;
-
-
-
-				.section-items{
-					width: 49%;
-					margin-bottom: 1.5%;
-					float: left;
-					display: inline-block;
-					border: 1px solid @border_color;
-					border-radius: 2px;
-					background: @white_color;
-					box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-
-					&:nth-child(even){
-						float: right;
-					}
-
-					.input{
-						width: 100%;
-						float: left;
-						display: inline-block;
-
-						.input-text{
-							width: 100%;
-							padding-top: 3%;
-							float: left;
-							display: inline-block;
-							font-family: @FontStylePrimary;
-							font-size: 3em;
-							line-height: 1em;
-							background: @white_color;
-							border: 0px;
-							text-align: center;
-							outline: none;
-						}
-					}
-					.caption{
-						width: 100%;
-						padding-bottom: 3%;
-						float: left;
-						display: inline-block;
-						font-size: 0.8em;
-						color: @light_textcolor;
-						line-height: 1em;
-						text-align: center;
-					}
-				}
-			}
-
-			.input-remark{
-				width: 98%;
-				padding: 1%;
-				float: left;
-				display: inline-block;
-				font-family: @FontStylePrimary;
-				font-size: 1em;
-				line-height: 1.5em;
 				border: 1px solid #DDDDDD;
-				line-height: 1.5em;
-				min-height: 100px;
-				resize: none;
+				background: #FFFFFF;
+				border-radius: 2px;
+				font-weight: bold;
+				-webkit-appearance: none;
 			}
 		}
 	}
 
+	> .form-section{
+		width: 100%;
+		float: left;
+		display: inline-block;
+
+		.title{
+			width: 98%;
+			padding: 1% 0%;
+			float: left;
+			display: inline-block;
+			line-height: 1.5em;
+			font-size: 1.2em;
+			color: @normal_textcolor;
+			margin-top: 2%;
+		}
+		.inputs{
+			width: 100%;
+			float: left;
+			display: inline-block;
+
+			.section-items{
+				width: 48%;
+				margin-bottom: 2%;
+				float: left;
+				display: inline-block;
+				border: 1px solid @border_color;
+				border-radius: 2px;
+				background: @white_color;
+
+				&:nth-child(even){
+					float: right;
+				}
+
+				.input{
+					width: 100%;
+					float: left;
+					display: inline-block;
+
+					.input-text{
+						width: 100%;
+						padding-top: 4%;
+						float: left;
+						display: inline-block;
+						font-family: @FontStylePrimary;
+						font-size: 3em;
+						line-height: 1em;
+						background: @white_color;
+						border: 0px;
+						text-align: center;
+						outline: none;
+					}
+				}
+				.caption{
+					width: 100%;
+					padding-bottom: 3%;
+					float: left;
+					display: inline-block;
+					font-size: 0.8em;
+					color: @light_textcolor;
+					line-height: 1em;
+					text-align: center;
+				}
+			}
+		}
+
+		.input-remark{
+			width: 98%;
+			padding: 1%;
+			float: left;
+			display: inline-block;
+			font-family: @FontStylePrimary;
+			font-size: 1em;
+			line-height: 1.5em;
+			border: 1px solid #DDDDDD;
+			line-height: 1.5em;
+			min-height: 100px;
+			resize: none;
+		}
+	}
+}
+
+// Report detail editor (Add operation to caliber)
+.operation-form-container{
+	width: 50%;
+	margin: 0% 25%;
+	margin-top: 70px;
+	float: left;
+	display: inline-block;
+	background: @white_color;
+
+	.operation-items{
+		width: 96%;
+		padding: 0% 2%;
+		float: left;
+		display: inline-block;
+		line-height: 3em;
+		font-size: 1em;
+		border-bottom: 1px solid @border_color;
+		color: @normal_textcolor;
+
+		.col1{
+			width: 40%;
+			float: left;
+			display: inline-block;
+		}
+		.col2{
+			width: 8%;
+			padding: 0% 1%;
+			float: left;
+			display: inline-block;
+			text-align: center;
+		}
+		.col3{
+			width: 8%;
+			padding: 0% 1%;
+			float: left;
+			display: inline-block;
+			text-align: center;
+		}
+		.col4{
+			width: 8%;
+			padding: 0% 1%;
+			float: left;
+			display: inline-block;
+			text-align: center;
+		}
+		.col5{
+			width: 27%;
+			float: left;
+			display: inline-block;
+			margin-left: 3%;
+		}
+
+		.input-text{
+			width: 100%;
+			float: left;
+			display: inline-block;
+			font-family: @FontStylePrimary;
+			font-size: 1em;
+			border: 0px;
+			line-height: 3em;
+			border-radius: 0px;
+			text-align: center;
+			background: @white_color;
+			color: @dark_textcolor;
+			font-weight: bold;
+			outline: 0;
+		}
+
+		.-red{
+			color: @red_color;
+		}
+
+		.input-select{
+			font-weight: normal;
+			-webkit-appearance: none;
+			color: @light_textcolor;
+		}
+	}
+
+	.topic-fix{
+		font-size: 0.9em;
+		color: @light_textcolor;
+	}
+
 	.note{
-		width: 60%;
-		margin: 1% 20%;
+		width: 96%;
+		margin: 2%;
 		float: left;
 		display: inline-block;
 		font-size: 0.8em;
 		line-height: 1.5em;
 		color: @light_textcolor;
-	}
 
-	// Form control style
-	.control-container{
-		width: 60%;
-		margin: 5% 20%;
-		float: left;
-		display: inline-block;
-		text-align: center;
-		color: @light_textcolor;
-
-		.delete-btn{
-			display: inline-block;
-			font-size: 0.9em;
-			padding: 5px 15px;
-			color: @white_color;
-			background: @red_color;
-			border-radius: 3px;
-			margin: 0px 5px;
-
-			i{ margin-left: 5px; }
-
-			&:hover{
-				cursor: pointer;
-				opacity: 0.8;
-			}
+		strong{
+			color: rgba(0,0,0,0.8);
 		}
 	}
+}
 
-	.choose-form-title{
-		width: 60%;
-		margin: 0% 20%;
-		margin-bottom: 3%;
+// Form control for delete report or operation
+.control-container{
+	width: 50%;
+	padding: 1% 25%;
+	margin-top: 2%;
+	float: left;
+	display: inline-block;
+	background: #FAFAFA;
+	text-align: center;
+	font-size: 0.9em;
+
+	> .delete-btn{
+		display: inline-block;
+		font-size: 1em;
+		padding: 5px 20px;
+		color: @white_color;
+		background: @red_color;
+		border-radius: 2px;
+		margin: 0px 5px;
+
+		i{ margin-left: 5px; }
+
+		&:hover{
+			cursor: pointer;
+			opacity: 0.8;
+		}
+	}
+}
+
+// Choose page before direct to form 
+.choose-list-container{
+	width: 50%;
+	margin: 0% 25%;
+	float: left;
+	display: inline-block;
+
+	> .choose-form-title{
+		width: 100%;
+		margin: 5% 0%;
 		float: left;
 		display: inline-block;
 		text-align: center;
 
 		.icon{
-			font-size: 3em;
+			font-size: 2em;
 			color: @light_textcolor;
-			margin-bottom: 2%;
+			margin-bottom: 1%;
 		}
 		.title{
 			font-size: 1.5em;
@@ -743,549 +1300,95 @@
 		}
 	}
 
-	// .choose-control{
-	// 	width: 60%;
-	// 	margin: 0% 20%;
-	// 	margin-top: 10%;
-	// 	float: left;
-	// 	display: inline-block;
-	// 	text-align: center;
-
-	// 	a.back-btn{
-	// 		background: @thin_textcolor;
-	// 		color: @light_textcolor;
-	// 		padding: 10px 20px;
-	// 		font-size: 0.9em;
-	// 		border-radius: 3px;
-
-	// 		i{ margin-right: 10px; }
-
-	// 		&:hover{
-	// 			cursor: pointer;
-	// 			opacity: 0.8;
-	// 		}
-	// 	}
-	// }
-
-	// List container style
-	.list-container{
-		width: 60%;
-		margin: 3% 20%;
+	// 	List all caliber before insert
+	> .caliber-choose-items{
+		width: 96%;
 		float: left;
 		display: inline-block;
+		border-bottom: 1px solid @border_color;
+		font-size: 1em;
+		line-height: 1em;
+		padding: 2%;
+		background: @white_color;
 
-		// Topic style
-		.topic-container{
-			width: 100%;
-			margin-bottom: 2%;
-			float: left;
-			display: inline-block;
-
-			.title{
-				width: 70%;
-				float: left;
-				display: inline-block;
-				font-size: 1.2em;
-				padding: 8px 0px;
-				color: @normal_textcolor;
-			}
-			.control{
-				width: 30%;
-				float: right;
-				display: inline-block;
-
-				a.create-btn{
-					background: @green_color;
-					color: @white_color;
-					float: right;
-					display: inline-block;
-					padding: 8px 10px;
-					font-size: 1em;
-					border-radius: 3px;
-					font-weight: bold;
-					box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-
-					i{ margin-right: 10px; }
-				}
-			}
+		&:last-child{ border-bottom: 0px; }
+		&:hover{
+			cursor: pointer;
+			background: #FAFAFA;
 		}
 
-		.starter-container{
-			width: 100%;
-			padding: 5% 0%;
+		.title{
+			width: 15%;
 			float: left;
 			display: inline-block;
-			text-align: center;
-
-			a.create-btn{
-				background: @green_color;
-				color: @white_color;
-				padding: 8px 10px;
-				font-size: 1em;
-				border-radius: 2px;
-				font-weight: bold;
-				box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-
-				i{ margin-right: 10px; }
-			}
+			font-weight: bold;
+			color: rgba(0,0,0,0.8);
 		}
-
-		.message-items{
-			width: 96%;
-			padding: 2%;
+		.std{
+			width: 65%;
 			float: left;
 			display: inline-block;
-			border-bottom: 1px solid #EEEEEE;
-			line-height: 1.5;
-			background: #FFFFFF;
-
-			.info{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-size: 0.7em;
-				margin-bottom: 2%;
-				color: rgba(0,0,0,0.2);
-
-				.id{
-					width: 50%;
-					float: left;
-					display: inline-block;
-				}
-				.time{
-					float: right;
-					display: inline-block;
-				}
-
-				i{
-					margin-right: 5px;
-				}
-			}
-			.topic{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-size: 1em;
-				font-weight: bold;
-				color: #003399;
-			}
-			.message{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-size: 0.9em;
-				color: rgba(0,0,0,0.8);
-			}
-		}
-
-		.report-stat{
-			width: 100%;
-			float: left;
-			display: inline-block;
-
-			.stat-items{
-				width: 22.66%;
-				margin-right: 3%;
-				margin-bottom: 2%;
-				float: left;
-				display: inline-block;
-				border-right: 1px solid @border_color;
-
-				&:nth-child(4n){
-					border-right: 0px;
-					margin-right: 0%;
-				}
-
-				.v{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					font-size: 2em;
-					color: @normal_textcolor;
-					margin-bottom: 3%;
-				}
-				.k{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					font-size: 1em;
-					color: @light_textcolor;
-
-					i{
-						font-size: 0.8em;
-						color: @thin_textcolor;
-						margin-left: 5px;
-					}
-				}
-			}
-		}
-
-		// Header info detail in table-layout
-		// Manpower: report detail page
-		.header-report-table{
-			width: 100%;
-			float: left;
-			display: inline-block;
+			color: @light_textcolor;
 			font-size: 0.9em;
-			margin-bottom: 5%;
-
-			.box{
-				width: 100%;
-				padding: 1% 0%;
-				float: left;
-				display: inline-block;
-				background: @white_color;
-				border-top: 1px solid #EEEEEE;
-
-				.box-topic{
-					width: 20.5%;
-					padding: 1%;
-					margin-right: 3%;
-					float: left;
-					display: inline-block;
-					color: @normal_textcolor;
-					font-size: 1em;
-					line-height: 1.5em;
-					border-right: 1px solid #EEEEEE;
-
-					i{
-						margin-left: 5px;
-						color: @thin_textcolor;
-						font-size: 0.8em;
-					}
-				}
-
-				.col{
-					width: 14.85%;
-					float: left;
-					display: inline-block;
-					color: @normal_textcolor;
-
-					.col-val{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						font-size: 1.4em;
-						line-height: 1.2em;
-						color: @normal_textcolor;
-					}
-					.col-caption{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						font-size: 0.8em;
-						margin-left: 5px;
-						color: @light_textcolor;
-					}
-				}
-
-				&:last-child{
-					border-bottom: 1px solid #EEEEEE;
-				}
-			}
-
-			.remark{
-				width: 98%;
-				padding: 1%;
-				float: left;
-				display: inline-block;
-				margin-top: 1%;
-				background: #FFFFFF;
-
-				.caption{
-					font-size: 0.8em;
-					color: rgba(0,0,0,0.2);
-					margin-bottom: 1%;
-				}
-				.message{
-					font-size: 1em;
-					line-height: 1.5em;
-					color: rgba(0,0,0,0.8);
-				}
-			}
+			color: rgba(0,0,0,0.4);
 		}
-		// END Header info detail in table-layout
-
-		// Caliber items stype
-		// Output: Report detail
-		.caliber-in-report-items{
-			width: 96%;
-			padding: 2%;
+		.icon{
+			width: 20%;
 			float: left;
 			display: inline-block;
-			margin-bottom: 2%;
-			background: @white_color;
-			border: 1px solid @border_color;
-			box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+			text-align: right;
+			color: rgba(0,0,0,0.4);
+			font-size: 0.9em;
 
-			.info{
-				width: 100%;
-				float: left;
-				display: inline-block;
-
-				.name{
-					width: 100%;
-					float: left;
-					font-size: 1.2em;
-					font-weight: bold;
-					color: @normal_textcolor;
-
-					a{
-						float: right;
-						display: inline-block;
-						color: @light_textcolor;
-						background: @thin_textcolor;
-						padding: 5px 10px;
-						padding-top: 6px;
-						font-size: 0.6em;
-						border-radius: 2px;
-						font-weight: normal;
-
-						&:hover{
-							cursor: pointer;
-							opacity: 0.8;
-						}
-
-						&:active{
-							color: @white_color;
-							background: @primary_color;
-						}
-					}
-				}
-
-				.description{
-					width: 100%;
-					float: left;
-					display: inline-block;
-					font-size: 0.9em;
-					line-height: 1.5em;
-					color: @light_textcolor;
-				}
-			}
-
-			// Opearation box
-			.operations{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				margin-top: 2%;
-
-				// Operations items style
-				.operation-items{
-					width: 100%;
-					padding: 1% 0%;
-					float: left;
-					display: inline-block;
-					border-bottom: 1px solid @border_color;
-					font-size: 0.9em;
-
-					&:last-child{
-						border-bottom: 0px;
-					}
-
-					.col1{
-						width: 49%;
-						float: left;
-						display: inline-block;
-					}
-					.col2{
-						width: 12%;
-						float: left;
-						display: inline-block;
-						text-align: right;
-					}
-					.col3{
-						width: 12%;
-						float: left;
-						display: inline-block;
-						text-align: right;
-					}
-					.col4{
-						width: 12%;
-						float: left;
-						display: inline-block;
-						text-align: right;
-					}
-					.col5{
-						width: 15%;
-						float: left;
-						display: inline-block;
-						text-align: right;
-					}
-					.col6{
-						width: 100%;
-						float: left;
-						display: inline-block;
-						text-align: right;
-						font-size: 0.8em;
-						line-height: 1.5em;
-						display: none;
-					}
-				}
-
-				.topic-fix{
-					font-style: italic;
-					color: @light_textcolor;
-					font-size: 0.6em;
-
-					&:hover{
-						color: @light_textcolor;
-					}
-				}
+			i{
+				margin-left: 10px;
 			}
 		}
 
-		.turn-to-items{
-			width: 49.5%;
+		.input{
+			width: 20%;
 			float: left;
 			display: inline-block;
-			background: #FFFFFF;
-			margin-bottom: 1%;
-			border: 1px solid #EEEEEE;
 
-			.title{
-				width: 62%;
+			.input-text{
+				width: 65%;
+				padding: 1% 5%;
 				float: left;
 				display: inline-block;
-				padding: 2% 4%;
-			}
-			.output{
-				width: 12%;
-				padding: 2% 4%;
-				float: left;
-				display: inline-block;
+				font-family: @FontStylePrimary;
+				font-size: 1em;
+				line-height: 1em;
+				border: 1px solid #EEEEEE;
 				text-align: right;
 			}
-			.btn{
-				width: 10%;
-				padding: 2% 0%;
+			.submit-btn{
+				width: 20%;
 				float: right;
 				display: inline-block;
-				font-size: 1em;
-				line-height: 1.5em;
-				background: #FAFAFA;
-				text-align: center;
-				color: rgba(0,0,0,0.2);
+				border: 0px;
+				background: @green_color;
+				color: #FFFFFF;
+				padding: 6px;
+				border-radius: 2px;
 
 				&:hover{
 					cursor: pointer;
-					color: rgba(0,0,0,0.6);
+					opacity: 0.8;
 				}
 			}
-
-			&:nth-child(odd){
-				float: right;
-			}
-		}
-
-		.user-activity-items{
-			width: 100%;
-			padding: 1% 0%;
-			float: left;
-			display: inline-block;
-			border-bottom: 1px solid @border_color;
-			color: @normal_textcolor;
-			font-size: 0.9em;
-
-			.col1{
-				width: 20%;
-				float: left;
-				display: inline-block;
-			}
-			.col2{
-				width: 20%;
-				float: left;
-				display: inline-block;
-			}
-			.col3{
-				width: 20%;
-				float: left;
-				display: inline-block;
-			}
-			.col4{
-				width: 40%;
-				float: left;
-				display: inline-block;
-			}
-		}
-
-		.topic-fix{
-			color: @light_textcolor;
-		}
-
-		// Empty items style
-		.empty-items{
-			width: 100%;
-			padding: 5% 0%;
-			float: left;
-			display: inline-block;
-			font-size: 1em;
-			color: @light_textcolor;
-			text-align: center;
-		}
-
-		// 	List all caliber before insert
-		.caliber-choose-items{
-			width: 96%;
-			float: left;
-			display: inline-block;
-			border-bottom: 1px solid @border_color;
-			font-size: 1em;
-			line-height: 1em;
-			padding: 2%;
-			color: @normal_textcolor;
-			background: @white_color;
-
-			&:last-child{ border-bottom: 0px; }
-
-			.title{
-				width: 15%;
-				float: left;
-				display: inline-block;
-				font-weight: bold;
-			}
-			.std{
-				width: 65%;
-				float: left;
-				display: inline-block;
-				color: @light_textcolor;
-				font-size: 0.9em;
-			}
-			.icon{
-				width: 20%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-				color: @primary_color;
-			}
-		}
-
-		// Caliber unlink (Aleady items to report detail)
-		.unlink-items{
-			color: @thin_textcolor;
-			.std{ color: @thin_textcolor; }
-		}
-
-		// Last items highlight
-		.last-items{
-			font-weight: bold;
-			color: @primary_color;
-		}
-
-		.not_owner{ color: @light_textcolor; }
-
-		.header-topic-fix{
-			padding: 1% 0%;
-			color: @light_textcolor;
-			font-size: 0.8em;
-
-			&:hover{ color: @light_textcolor; }
 		}
 	}
 
-	.shadow-container{
-		box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-		border-radius: 3px;
+	.caliber-choose-items{
+		&:hover{
+			background: #FFFFFF;
+		}
+		.title{
+			line-height: 1.7em;
+		}
+		.std{
+			line-height: 1.7em;
+		}
 	}
 }
 
@@ -1367,107 +1470,6 @@
 		&:hover{ opacity: 0.8; }
 	}
 }
-
-.login-bg{
-	background: #F7F7F7;
-}
-
-// Login page style
-.login-container{
-	width: 26%;
-	margin: 0% 37%;
-	float: left;
-	display: inline-block;
-	margin-top: 10%;
-	text-align: center;
-
-	.logo{
-		width: 100%;
-		float: left;
-		display: inline-block;
-		text-align: center;
-
-		h1{
-			font-size: 2em;
-			margin-bottom: 3%;
-			color: @light_textcolor;
-		}
-
-		p.version{
-			font-size: 0.8em;
-			color: @light_textcolor;
-		}
-	}
-
-	.input{
-		width: 100%;
-		float: left;
-		display: inline-block;
-		margin-top: 20%;
-		border: 1px solid #EEEEEE;
-		margin-bottom: 5%;
-		border-radius: 3px;
-		overflow: hidden;
-		box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-
-		.input-text{
-			width: 94%;
-			padding: 3%;
-			float: left;
-			display: inline-block;
-			font-family: @FontStylePrimary;
-			font-size: 1em;
-			line-height: 1.5em;
-			border: 0px;
-			border-bottom: 1px solid #EEEEEE;
-
-			&:last-child{
-				border-bottom: 0px;
-			}
-		}
-	}
-
-	.submit{
-		width: 100%;
-		float: left;
-		display: inline-block;
-
-		.login-btn{
-			width: 100%;
-			padding: 3% 0%;
-			float: right;
-			display: inline-block;
-			font-family: @FontStylePrimary;
-			font-size: 1em;
-			line-height: 1.5em;
-			border: 0px;
-			text-align: center;
-			background: @primary_color;
-			color: @white_color;
-			outline: 0;
-			border-radius: 3px;
-			box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-
-			i{ margin-left: 10px; }
-
-			&:hover{
-				cursor: pointer;
-				opacity: 0.8;
-			}
-		}
-
-		.login-btn-loading{
-			background: #EEEEEE;
-			color: #AAAAAA;
-			box-shadow: 0px 0px 0px transparent;
-
-			&:hover{
-
-			}
-		}
-	}
-}
-// END login page style
 
 /* Other Device and Screen */
 @media only screen and (min-width:1024px) and (max-width:1365px){@import "style-1024-1366";}

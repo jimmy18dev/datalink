@@ -70,19 +70,18 @@ if(!empty($report->report_date_ori)){
 
 </head>
 <body>
-<header class="header">
-	<a href="index.php" class="header-items discard-btn">Discard</a>
-
+<header class="form-bar">
+	<a href="index.php" class="discard-btn"><i class="fa fa-times" aria-hidden="true"></i>Discard</a>
 	<?php if(empty($report->id)){?>
-	<button class="submit-btn" onclick="javascript:createHeaderReport();"><i class="fa fa-plus" aria-hidden="true"></i>CREATE</button>
+	<button class="btn" onclick="javascript:createHeaderReport();">CREATE<i class="fa fa-plus" aria-hidden="true"></i></button>
 	<?php }else{?>
-	<button class="submit-btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);"><i class="fa fa-check" aria-hidden="true"></i>Update</button>
+	<button class="btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);">Update<i class="fa fa-check" aria-hidden="true"></i></button>
 	<?php }?>
 </header>
-<div class="container">
-	<div class="header-report-form-container">
-		<div class="form-title">
-			Creating a report for
+<div class="form-container">
+	<div class="form-title">
+		<div class="caption">Creating a report for: </div>
+		<div class="input">
 			<select id="r_date" class="input-select">
 				<option value="1" <?php echo ($day == '01'?'selected':'');?>>1</option>
 				<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
@@ -136,185 +135,178 @@ if(!empty($report->report_date_ori)){
 				<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
 			</select>
 		</div>
+	</div>
 
-		<div class="form-title">
-			Shift
+	<div class="form-title">
+		<div class="caption">Shift: </div>	
+		<div class="input">
 			<select id="shift" class="input-select">
 				<option value="A" <?php echo ($report->shift == 'A'?'selected':'');?>>A</option>
 				<option value="B" <?php echo ($report->shift == 'B'?'selected':'');?>>B</option>
 			</select>
-			Line type
+		</div>
+	</div>
+	<div class="form-title">
+		<div class="caption">LINE Type: </div>
+		<div class="input">
 			<select id="line_type" class="input-select">
 				<option value="DI" <?php echo ($report->line_type == 'DI'?'selected':'');?>>DI</option>
 				<option value="NDI" <?php echo ($report->line_type == 'NDI'?'selected':'');?>>NDI</option>
 			</select>
 		</div>
-
-		<div class="form-section">
-			<div class="title">1. Monthly</div>
-			<div class="inputs">
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="no_monthly_emplys" placeholder="0" value="<?php echo $report->no_monthly_emplys;?>"></div>
-					<div class="caption">Monthly Prs</div>
-				</div>
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="ttl_monthly_hrs" placeholder="0.00" value="<?php echo $report->ttl_monthly_hrs;?>"></div>
-					<div class="caption">Normal Hrs</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">2. Daily</div>
-			<div class="inputs">
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="no_daily_emplys" placeholder="0" value="<?php echo $report->no_daily_emplys;?>"></div>
-					<div class="caption">Daily Prs</div>
-				</div>
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text"  id="ttl_daily_hrs" placeholder="0.00" value="<?php echo $report->ttl_daily_hrs;?>"></div>
-					<div class="caption">Normal Hrs.</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">4. Overtime</div>
-			<div class="inputs">
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="ot_10" placeholder="0.00" value="<?php echo $report->ot_10;?>"></div>
-					<div class="caption">1.0</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="ot_15" placeholder="0.00" value="<?php echo $report->ot_15;?>"></div>
-					<div class="caption">1.5</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="ot_20" placeholder="0.00" value="<?php echo $report->ot_20;?>"></div>
-					<div class="caption">2.0</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="ot_30" placeholder="0.00" value="<?php echo $report->ot_30;?>"></div>
-					<div class="caption">3.0</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">5. Lost time</div>
-			<div class="inputs">
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="losttime_vac" placeholder="0.00" value="<?php echo $report->losttime_vac;?>"></div>
-					<div class="caption">VAC</div>
-				</div>
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="losttime_sick" placeholder="0.00" value="<?php echo $report->losttime_sick;?>"></div>
-					<div class="caption">SICK</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="losttime_abs" placeholder="0.00" value="<?php echo $report->losttime_abs;?>"></div>
-					<div class="caption">ABS</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="losttime_mat" placeholder="0.00" value="<?php echo $report->losttime_mat;?>"></div>
-					<div class="caption">MAT</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="losttime_other" placeholder="0.00" value="<?php echo $report->losttime_other;?>"></div>
-					<div class="caption">Other</div>
-				</div>
-			</div>
-		</div>
-		<div class="form-section">
-			<div class="title">6. Down time</div>
-			<div class="inputs">
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="downtime_mc" placeholder="0.00" value="<?php echo $report->downtime_mc;?>"></div>
-					<div class="caption">M/C</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="downtime_mat" placeholder="0.00" value="<?php echo $report->downtime_mat;?>"></div>
-					<div class="caption">MAT</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="downtime_fac" placeholder="0.00" value="<?php echo $report->downtime_fac;?>"></div>
-					<div class="caption">FAC</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="downtime_other" placeholder="0.00" value="<?php echo $report->downtime_other;?>"></div>
-					<div class="caption">Other</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">7. Sort</div>
-			<div class="inputs">
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="sort_local" placeholder="0.00" value="<?php echo $report->sort_local;?>"></div>
-					<div class="caption">Local</div>
-				</div>
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="sort_oversea" placeholder="0.00" value="<?php echo $report->sort_oversea;?>"></div>
-					<div class="caption">Overseas</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">8. Rework</div>
-			<div class="inputs">
-				<div class="section-items">
-					
-					<div class="input"><input type="number" class="input-text" id="rework_local" placeholder="0.00" value="<?php echo $report->rework_local;?>"></div>
-					<div class="caption">Local</div>
-				</div>
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="rework_oversea" placeholder="0.00" value="<?php echo $report->rework_oversea;?>"></div>
-					<div class="caption">Overseas</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">10. Target</div>
-			<div class="inputs">
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="target_yield" placeholder="0.00" value="<?php echo (empty($report->product_eff)?$setting->target_yield:$report->target_yield);?>"></div>
-					<div class="caption">Target Yield</div>
-				</div>
-				<div class="section-items">
-					<div class="input"><input type="number" class="input-text" id="target_eff" placeholder="0.00" value="<?php echo (empty($report->product_eff)?$setting->target_eff:$report->target_eff);?>"></div>
-					<div class="caption">Target EFF</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="form-section">
-			<div class="title">11. Remark</div>
-			<textarea id="remark" class="input-remark" placeholder="Enter remark..."><?php echo $report->remark;?></textarea>
-		</div>	
 	</div>
 
-	<div class="control-container">
-		<?php if(!empty($report->id)){?>
-		You are owner and can <span class="delete-btn" onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>','<?php echo $report->date;?>','<?php echo $report->line_no;?>');">Delete <i class="fa fa-trash" aria-hidden="true"></i></span> your report. 
-		<?php }?>
+	<div class="form-section">
+		<div class="title">1. Monthly</div>
+		<div class="inputs">
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="no_monthly_emplys" placeholder="0" value="<?php echo $report->no_monthly_emplys;?>"></div>
+				<div class="caption">Monthly Prs</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="ttl_monthly_hrs" placeholder="0.00" value="<?php echo $report->ttl_monthly_hrs;?>"></div>
+				<div class="caption">Normal Hrs</div>
+			</div>
+		</div>
 	</div>
+
+	<div class="form-section">
+		<div class="title">2. Daily</div>
+		<div class="inputs">
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="no_daily_emplys" placeholder="0" value="<?php echo $report->no_daily_emplys;?>"></div>
+				<div class="caption">Daily Prs</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text"  id="ttl_daily_hrs" placeholder="0.00" value="<?php echo $report->ttl_daily_hrs;?>"></div>
+				<div class="caption">Normal Hrs.</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-section">
+		<div class="title">4. Overtime</div>
+		<div class="inputs">
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="ot_10" placeholder="0.00" value="<?php echo $report->ot_10;?>"></div>
+				<div class="caption">1.0</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="ot_15" placeholder="0.00" value="<?php echo $report->ot_15;?>"></div>
+				<div class="caption">1.5</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="ot_20" placeholder="0.00" value="<?php echo $report->ot_20;?>"></div>
+				<div class="caption">2.0</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="ot_30" placeholder="0.00" value="<?php echo $report->ot_30;?>"></div>
+				<div class="caption">3.0</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-section">
+		<div class="title">5. Lost time</div>
+		<div class="inputs">
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="losttime_vac" placeholder="0.00" value="<?php echo $report->losttime_vac;?>"></div>
+				<div class="caption">VAC</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="losttime_sick" placeholder="0.00" value="<?php echo $report->losttime_sick;?>"></div>
+				<div class="caption">SICK</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="losttime_abs" placeholder="0.00" value="<?php echo $report->losttime_abs;?>"></div>
+				<div class="caption">ABS</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="losttime_mat" placeholder="0.00" value="<?php echo $report->losttime_mat;?>"></div>
+				<div class="caption">MAT</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="losttime_other" placeholder="0.00" value="<?php echo $report->losttime_other;?>"></div>
+				<div class="caption">Other</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-section">
+		<div class="title">6. Down time</div>
+		<div class="inputs">
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="downtime_mc" placeholder="0.00" value="<?php echo $report->downtime_mc;?>"></div>
+				<div class="caption">M/C</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="downtime_mat" placeholder="0.00" value="<?php echo $report->downtime_mat;?>"></div>
+				<div class="caption">MAT</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="downtime_fac" placeholder="0.00" value="<?php echo $report->downtime_fac;?>"></div>
+				<div class="caption">FAC</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="downtime_other" placeholder="0.00" value="<?php echo $report->downtime_other;?>"></div>
+				<div class="caption">Other</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-section">
+		<div class="title">7. Sort</div>
+		<div class="inputs">
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="sort_local" placeholder="0.00" value="<?php echo $report->sort_local;?>"></div>
+				<div class="caption">Local</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="sort_oversea" placeholder="0.00" value="<?php echo $report->sort_oversea;?>"></div>
+				<div class="caption">Overseas</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-section">
+		<div class="title">8. Rework</div>
+		<div class="inputs">
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="rework_local" placeholder="0.00" value="<?php echo $report->rework_local;?>"></div>
+				<div class="caption">Local</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="rework_oversea" placeholder="0.00" value="<?php echo $report->rework_oversea;?>"></div>
+				<div class="caption">Overseas</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-section">
+		<div class="title">10. Target</div>
+		<div class="inputs">
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="target_yield" placeholder="0.00" value="<?php echo (empty($report->product_eff)?$setting->target_yield:$report->target_yield);?>"></div>
+				<div class="caption">Target Yield</div>
+			</div>
+			<div class="section-items">
+				<div class="input"><input type="number" class="input-text" id="target_eff" placeholder="0.00" value="<?php echo (empty($report->product_eff)?$setting->target_eff:$report->target_eff);?>"></div>
+				<div class="caption">Target EFF</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-section">
+		<div class="title">11. Remark</div>
+		<textarea id="remark" class="input-remark" placeholder="Enter remark..."><?php echo $report->remark;?></textarea>
+	</div>	
 </div>
+
+<?php if(!empty($report->id)){?>
+<div class="control-container">
+	You are owner and can <span class="delete-btn" onclick="javascript:deleteHeaderReport(<?php echo $report->id;?>,'<?php echo $report->shift;?>','<?php echo $report->date;?>','<?php echo $report->line_no;?>');">Delete <i class="fa fa-trash" aria-hidden="true"></i></span> your report. 
+</div>
+<?php }?>
 
 <div class="loading-box" id="loading-box">
 	<div class="dialog">

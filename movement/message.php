@@ -39,17 +39,18 @@ $current_page['1'] = 'message';
 
 </head>
 <body>
-<?php include'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>News</h1>
-			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
-		</div>
+<header class="header">
+	<div class="header-items">
+		<div class="topic">News</div>
+		<div class="caption">Describes the procedure used to send Message Queuing test messages, for IT professionals.</div>
 	</div>
-	<div class="list-container">
-		<?php $message->listMessage(array('type' => 'message-items'));?>
-	</div>
+	<a class="btn" href="report_header_editor.php?action=create"><i class="fa fa-plus" aria-hidden="true"></i>New report</a>
+</header>
+<?php include'navigator.php';?>
+<div class="message-list-container">
+	<?php $message->listMessage(array('type' => 'message-items'));?>
 </div>
+
+<script type="text/javascript" src="js/min/auto_hidden.min.js"></script>
 </body>
 </html>

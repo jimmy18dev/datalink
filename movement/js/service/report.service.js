@@ -320,7 +320,7 @@ function addTurnTo(header_id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        // window.location = 'report_detail.php?header='+header_id;
+        window.location = 'report_detail.php?header='+header_id;
     }).error();
 }
 

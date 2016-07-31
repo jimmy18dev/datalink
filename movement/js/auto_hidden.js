@@ -1,7 +1,7 @@
 ;(function( $, window, document, undefined ){
 	'use strict';
 
-	var elSelector		= '.header',
+	var elSelector		= '.navigator',
 		$element		= $( elSelector );
 
 	if(!$element.length) return true;

@@ -33,7 +33,7 @@ if($user_online){
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 
 </head>
-<body class="login-bg">
+<body>
 <div class="login-container">
 	<div class="logo">
 		<h1>DATALINK</h1>

@@ -53,15 +53,13 @@ $current_page['2'] = 'choose_caliber';
 
 </head>
 <body>
-<div class="container">
-	<!-- Table -->
+<div class="choose-list-container">
 	<div class="choose-form-title">
 		<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
 		<div class="title">Select a caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
-	<div class="list-container shadow-container">
-		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
-	</div>
+
+	<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
 </div>
 
 <script type="text/javascript" src="js/report_detail.js"></script>

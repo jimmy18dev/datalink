@@ -55,22 +55,21 @@ $current_page['2'] = 'choose_caliber';
 
 </head>
 <body>
-<div class="container">
-	<!-- Table -->
+
+<div class="choose-list-container">
 	<div class="choose-form-title">
 		<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
 		<div class="title">Select a Turn to 24-48 Hrs.<br>Caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
-	<div class="list-container shadow-container">
-		<div class="caliber-choose-items">
-			<span class="title"><?php echo $caliber->name;?></span>
-			<span class="std">Standard time <?php echo $var['caliber_stdtime'];?> Hrs/K and has <?php echo $var['total_operation'];?> operations</span>
 
-			<div class="input">
-				<input type="text" id="output" placeholder="0">
-				<input type="text" id="caliber_id" value="<?php echo $caliber->id;?>">
-				<button class="submit-btn" onclick="javascript:addTurnTo(<?php echo $_GET['header'];?>);"><i class="fa fa-check" aria-hidden="true"></i></button>
-			</div>
+	<div class="caliber-choose-items caliber-choose-input">
+		<span class="title"><?php echo $caliber->name;?></span>
+		<span class="std">Standard time <?php echo $var['caliber_stdtime'];?> Hrs/K and has <?php echo $var['total_operation'];?> operations</span>
+
+		<div class="input">
+			<input type="text" class="input-text" id="output" placeholder="0" autofocus>
+			<input type="hidden" id="caliber_id" value="<?php echo $caliber->id;?>">
+			<button class="submit-btn" onclick="javascript:addTurnTo(<?php echo $_GET['header'];?>);"><i class="fa fa-check" aria-hidden="true"></i></button>
 		</div>
 	</div>
 </div>
