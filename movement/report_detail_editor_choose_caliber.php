@@ -49,21 +49,28 @@ $current_page['2'] = 'choose_caliber';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery.form.min.js"></script>
-<script type="text/javascript" src="js/service/report.service.js"></script>
+<script type="text/javascript" src="js/service/caliber.service.js"></script>
 
 </head>
 <body>
-<div class="container">
-	<!-- Table -->
+<div class="choose-list-container">
 	<div class="choose-form-title">
 		<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
 		<div class="title">Select a caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
-	<div class="list-container shadow-container">
-		<?php $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
+	<div class="search-container">
+		<input type="text" onkeyup="javascript:listAllCaliber();" class="input-search" id="keyword" autofocus placeholder="Enter caliber code..." autocomplete="off">
+		<input type="hidden" id="header" value="<?php echo $_GET['header'];?>">
+	</div>
+	<div id="caliber-container">
+		<?php // $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
 	</div>
 </div>
 
-<script type="text/javascript" src="js/report_detail.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	listAllCaliber();
+});
+</script>
 </body>
 </html>

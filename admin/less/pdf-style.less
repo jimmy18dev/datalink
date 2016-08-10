@@ -1,0 +1,65 @@
+.head-table{
+	width: 100%;
+	float: left;
+	display: inline-block;
+	border: 1px solid #000000;
+	text-align: center;
+
+	.left{
+		width: 10%;
+		float: left;
+		display: inline-block;
+	}
+	.center{
+		width: 80%;
+		float: left;
+		display: inline-block;
+	}
+	.right{
+		width: 10%;
+		float: left;
+		display: inline-block;
+	}
+}
+
+.power-table{
+	width: 100%;
+	float: left;
+	display: inline-block;
+	border: 1px solid #000000;
+	text-align: center;
+	font-size: 0.6em;
+
+	.row{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		border-bottom: 1px solid #000000;
+
+		&:last-child{
+			border-bottom: 0px;
+		}
+
+		.cell{
+			width: 4.9%;
+			padding: 0.5% 0%;
+			float: left;
+			display: inline-block;
+			border-right: 1px solid #000000;
+		}
+
+		.cell-2{
+			width: 9.8%;
+		}
+		.cell-4{
+			width: 19.8%;
+		}
+		.cell-5{
+			width: 24.75%;
+		}
+
+		.cell-empty{
+			min-width: 5%;
+		}
+	}
+}

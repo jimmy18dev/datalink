@@ -33,13 +33,13 @@ if($user_online){
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 
 </head>
-<body class="login-bg">
+<body>
 <div class="login-container">
 	<div class="logo">
 		<h1>DATALINK</h1>
-		<p class="version">Version <strong>1.01</strong></p>
+		<p class="version">Version <strong>1.01</strong> : Server: <strong><?php echo ($user->checkingConnection()?'Online':'Offline');?></strong></p>
 	</div>
-
+	
 	<form action="javascript:login();">
 	<div class="input">
 		<input type="text" class="input-text" id="username" placeholder="Username" autofocus autocomplete="off">
@@ -50,7 +50,6 @@ if($user_online){
 	</div>
 	</form>
 </div>
-
 <script type="text/javascript" src="js/service/min/user.service.min.js"></script>
 </body>
 </html>

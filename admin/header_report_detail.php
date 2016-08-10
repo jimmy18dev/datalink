@@ -1,12 +1,6 @@
-<?php include'config/autoload.php';?>
 <?php
-if(!$user_online){
-	header("Location: login.php");
-	die();
-}else if($user->status == 'deactive'){
-	header("Location: profile.php");
-	die();
-}
+include'config/autoload.php';
+include'config/authorization.php';
 
 if(!empty($_GET['header'])){
 	$report->getHeader($_GET['header']);
@@ -56,7 +50,7 @@ $current_page['1'] = 'report';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $report->date;?></h1>
-			<p>Leader: <strong><?php echo $report->leader_name;?></strong></p>
+			<p>Leader: <strong><?php echo $report->leader_name;?></strong> <a href="header_report_detail_to_pdf.php?header=<?php echo $report->id;?>">Export to PDF</a></p>
 		</div>
 	</div>
 

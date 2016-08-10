@@ -4,8 +4,10 @@ require_once'config/autoload.php';
 unset($_COOKIE['user_id']);
 setcookie('user_id','');
 unset($_SESSION['user_id']);
+
+$_SESSION = array();
+session_regenerate_id();
 session_destroy();
-// die();
 ?>
 
 <!DOCTYPE html>

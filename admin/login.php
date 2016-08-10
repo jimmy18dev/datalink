@@ -1,6 +1,7 @@
-<?php include'config/autoload.php';?>
 <?php
+include'config/autoload.php';
 // Permission
+$user_online = $user->sessionOnline();
 if($user_online){
 	header("Location: index.php");
 	die();

@@ -14,10 +14,9 @@
 	<div class="operations">
 		<div class="operation-items topic-fix">
 			<div class="col1">Operation</div>
-			<div class="col2">Good</div>
-			<div class="col3">Reject</div>
-			<div class="col4">Output</div>
-			<div class="col5">Required</div>
+			<div class="col2">Input</div>
+			<div class="col3">Good</div>
+			<div class="col4">Reject</div>
 		</div>
 		<?php $this->listOperationInCaliber($var['report_id'],array('type' => 'report-caliber-detail-items','std_time' => $var['std_time']));?>
 	</div>

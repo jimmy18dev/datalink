@@ -1,11 +1,11 @@
 <?php
 require_once'config/autoload.php';
-
 if(!empty($user->id)){
 	$useractivity->saveActivity($user->id,'Logout','','');
 }
-
 setcookie('user_id');
+$_SESSION = array();
+session_regenerate_id();
 session_destroy();
 ?>
 

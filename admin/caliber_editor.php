@@ -1,14 +1,6 @@
 <?php
 include'config/autoload.php';
-
-// Permission
-if(!$user_online){
-	header("Location: index.php");
-	die();
-}else if($user->status == 'deactive'){
-	header("Location: profile.php");
-	die();
-}
+include'config/authorization.php';
 
 if(!empty($_GET['caliber'])){
 	$caliber->getcaliber($_GET['caliber']);

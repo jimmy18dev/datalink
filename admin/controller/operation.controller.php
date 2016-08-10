@@ -42,6 +42,13 @@ class OperationController extends OperationModel{
         }
     }
 
+    public function setFinal($type,$operation_id){
+    	if($type == 'normal')
+    		parent::setToFinal($operation_id);
+    	else
+    		parent::unsetFinal($operation_id);
+    }
+
     public function connectOperationAndRoute($route_id,$operation_id){
 		if(parent::alreadyConnect($route_id,$operation_id)){
 			parent::connectOperationToRoute($route_id,$operation_id);

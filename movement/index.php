@@ -39,26 +39,19 @@ $current_page['1'] = 'index';
 
 </head>
 <body>
-<?php include'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title">
-			<h1>Daily output report</h1>
-			<p>Describes the procedure used to send Message Queuing test messages, for IT professionals.</p>
-		</div>
-
-		<div class="head-control">
-			<a href="report_header_editor.php?action=create">
-			<div class="report-btn create-btn">
-				<i class="fa fa-file-text-o" aria-hidden="true"></i>
-				<div class="caption">New report</div>
-			</div>
-			</a>
-		</div>
+<header class="header">
+	<div class="header-items">
+		<div class="topic">Daily output report</div>
+		<div class="caption">Describes the procedure used to send Message Queuing test messages, for IT professionals.</div>
 	</div>
-	<div class="list-container shadow-container">
-		<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
-	</div>
+	<a class="btn" href="report_header_editor.php?action=create"><i class="fa fa-plus" aria-hidden="true"></i>New report</a>
+</header>
+<?php include'navigator.php';?>
+<div class="header-list-container">
+	<div class="filter"><a href="#">View all user</a></div>
+	<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
 </div>
+
+<script type="text/javascript" src="js/min/auto_hidden.min.js"></script>
 </body>
 </html>

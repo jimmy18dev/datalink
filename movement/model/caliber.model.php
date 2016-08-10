@@ -37,7 +37,25 @@ class CaliberModel extends Database{
 		return $dataset = parent::single();
 	}
 
-	public function listAllCaliber($header_id){
+	public function listAllCaliber($header_id,$keyword){
+		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,caliber.description caliber_description,route.id route_id,route.name route_name,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation,(SELECT COUNT(report.id) FROM RTH_DailyOutputReportHeader AS report WHERE report.caliber_id = caliber.id AND report.header_id = :header_id) total_caliber 
+			FROM RTH_CaliberCode AS caliber 
+			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
+			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
+			WHERE caliber.status = "active" AND (concat_ws(" ",caliber.code,caliber.family) LIKE :keyword) 
+			ORDER BY caliber.code,caliber.family');
+		parent::bind(':header_id' 	,$header_id);
+		parent::bind(':keyword' 	,'%'.$keyword.'%');
+		parent::execute();
+		$dataset = parent::resultset();
+
+		foreach ($dataset as $k => $var) {
+			$dataset[$k]['caliber_name'] = str_replace($keyword,'<u>'.$keyword.'</u>',$var['caliber_code'].' '.$var['caliber_family']);
+		}
+		return $dataset;
+	}
+
+	public function listAllCaliberByTurnToData($header_id){
 		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,caliber.description caliber_description,route.id route_id,route.name route_name,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation,(SELECT COUNT(report.id) FROM RTH_DailyOutputReportHeader AS report WHERE report.caliber_id = caliber.id AND report.header_id = :header_id) total_caliber 
 			FROM RTH_CaliberCode AS caliber 
 			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 

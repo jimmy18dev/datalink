@@ -1,6 +1,6 @@
 <div class="operation-items <?php echo (!empty($var['match_id'])?'operation-items-add':'');?>">
 	<div class="detail">
-		<div class="title"><strong><?php echo $items;?>. <?php echo $var['name'];?></strong> <a href="operation_editor.php?operation=<?php echo $var['id'];?>&route=<?php echo $route_current;?>">[edit]</a></div>
+		<div class="title"><strong><?php echo $items;?>. <?php echo $var['name'];?></strong> <a href="operation_editor.php?operation=<?php echo $var['id'];?>&route=<?php echo $route_current;?>">[edit]</a> <span class="final-btn <?php echo ($var['type'] == 'final'?'final-active-btn':'');?>" onclick="javascript:setFinal('<?php echo $var['type'];?>',<?php echo $var['id'];?>);"><i class="fa fa-star" aria-hidden="true"></i></span></div>
 
 		<?php if(!empty($var['description'])){?>
 		<div class="description"><?php echo $var['description'];?></div>

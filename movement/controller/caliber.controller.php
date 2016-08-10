@@ -124,8 +124,33 @@ class CaliberController extends CaliberModel{
 		$this->total_operation = $dataset['total_operation'];
 	}
 
-	public function listAllCalibers($option){
-		$data = parent::listAllCaliber($option['header_id']);
+	public function listAllCalibers($option,$output = null,$keyword = ''){
+		$dataset = parent::listAllCaliber($option['header_id'],$keyword);
+
+		if($output == 'json'){
+			$json_data = array(
+	          "apiVersion"  => "1.0",
+	          "message"     => "List order in table #".$table_id,
+	          "return"      => $return,
+	          "head_id" 	=> $head_id,
+	          "keyword" 	=> $keyword,
+	          "total_pay" 	=> floatval(number_format($total_pay,2)),
+	          "total_items" => floatval(count($dataset)),
+	          "execute"     => round(microtime(true)-StTime,4)."s",
+	          "data"        => array(
+	            'items'         => $dataset,
+	          ),
+	        );
+	        
+	        // JSON Encode and Echo.
+	        echo json_encode($json_data);
+		}else{
+			$this->render($dataset,$option);
+		}
+	}
+
+	public function listAllCaliberByTurnTo($option){
+		$data = parent::listAllCaliberByTurnToData($option['header_id']);
 		$this->render($data,$option);
 	}
 
@@ -187,7 +212,20 @@ class CaliberController extends CaliberModel{
             if($total_items == 0){
             	include'template/empty.items.php';
             }
-        }else if($option['type'] == 'route-items'){
+        }else if($option['type'] == 'caliber-turn-to-choose-items'){
+        	$header_id = $option['header_id'];
+            foreach ($data as $var){
+
+            	if($var['total_operation'] > 0)
+            		include'template/caliber/caliber.turn.to.choose.items.php';
+                $total_items++;
+            }
+
+            if($total_items == 0){
+            	include'template/empty.items.php';
+            }
+        }
+        else if($option['type'] == 'route-items'){
             foreach ($data as $var){
                 include'template/caliber/route.items.php';
                 $total_items++;

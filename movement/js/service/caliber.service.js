@@ -248,3 +248,53 @@ function createMatching(operation_id){
         window.location = 'operation.php?route='+route_id;
     }).error();
 }
+
+
+function listAllCaliber(){
+    var href        = 'api.caliber.php';
+    var header      = $('#header').val();
+    var keyword     = $('#keyword').val();
+
+    console.log('listAllCaliber()',keyword);
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"GET",
+        data:{
+            calling         :'caliber',
+            action          :'list_all_caliber',
+            header          :header,
+            keyword         :keyword,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        var html = '';
+    
+        $.each(data.data.items,function(k,v){
+
+            html += '<a href="report_detail_editor.php?caliber='+v.caliber_id+'&header='+header+'&action=create" class="caliber-choose-items">';
+            html += '<span class="title">'+v.caliber_name+'</span>';
+            html += '<span class="std">Standard time '+v.caliber_stdtime+' Hrs/K and has '+v.total_operation+' operations</span>';
+
+            if(v.total_caliber > 0){
+                if(v.total_caliber > 1){
+                    html += '<span class="icon">'+v.total_caliber+' Report<i class="fa fa-check" aria-hidden="true"></i></span>';
+                }else{
+                    html += '<span class="icon">'+v.total_caliber+' Reports<i class="fa fa-check" aria-hidden="true"></i></span>';
+                }
+            }else{
+                html += '<span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>';
+            }
+            html += '</a>';
+        });
+
+        $('#caliber-container').html('');
+        $('#caliber-container').html(html);
+
+        html = '';
+    }).error();
+}
