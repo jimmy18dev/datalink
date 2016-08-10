@@ -1,0 +1,58 @@
+.head-table {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border: 1px solid #000000;
+  text-align: center;
+}
+.head-table .left {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.head-table .center {
+  width: 80%;
+  float: left;
+  display: inline-block;
+}
+.head-table .right {
+  width: 10%;
+  float: left;
+  display: inline-block;
+}
+.power-table {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border: 1px solid #000000;
+  text-align: center;
+  font-size: 0.6em;
+}
+.power-table .row {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #000000;
+}
+.power-table .row:last-child {
+  border-bottom: 0px;
+}
+.power-table .row .cell {
+  width: 4.9%;
+  padding: 0.5% 0%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #000000;
+}
+.power-table .row .cell-2 {
+  width: 9.8%;
+}
+.power-table .row .cell-4 {
+  width: 19.8%;
+}
+.power-table .row .cell-5 {
+  width: 24.75%;
+}
+.power-table .row .cell-empty {
+  min-width: 5%;
+}

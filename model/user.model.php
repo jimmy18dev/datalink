@@ -25,5 +25,16 @@ class UserModel extends Database{
 		$dataset = parent::single();
 		return $dataset['id'];
 	}
+
+	public function checkingConnection(){
+		parent::query('SELECT COUNT(id) FROM RTH_User');
+		parent::execute();
+		$dataset = parent::single();
+		if(!empty($dataset['COUNT(id)'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
 ?>
