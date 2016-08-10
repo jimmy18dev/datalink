@@ -1300,8 +1300,25 @@
 		}
 	}
 
+	.search-container{
+		width: 100%;
+		float: left;
+		display: inline-block;
+
+		.input-search{
+			width: 96%;
+			padding: 1% 2%;
+			float: left;
+			display: inline-block;
+			border: 0px;
+			margin-bottom: 1%;
+			font-family: @FontStylePrimary;
+			font-size: 1em;
+		}
+	}
+
 	// 	List all caliber before insert
-	> .caliber-choose-items{
+	.caliber-choose-items{
 		width: 96%;
 		float: left;
 		display: inline-block;
@@ -1323,6 +1340,10 @@
 			display: inline-block;
 			font-weight: bold;
 			color: rgba(0,0,0,0.8);
+
+			u{
+				color: @red_color;
+			}
 		}
 		.std{
 			width: 65%;

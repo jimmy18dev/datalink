@@ -150,9 +150,10 @@ if($_POST['calling'] != ''){
 // API Request $_GET
 else if($_GET['calling'] != ''){
 	switch ($_GET['calling']) {
-		case 'Comment':
+		case 'caliber':
 			switch ($_GET['action']) {
-				case 'List':
+				case 'list_all_caliber':
+					$caliber->listAllCalibers(array('type' => '','header_id' => $_GET['header']),'json',$_GET['keyword']);
 					break;
 				case 'LiveComment':
 					break;

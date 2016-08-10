@@ -124,9 +124,29 @@ class CaliberController extends CaliberModel{
 		$this->total_operation = $dataset['total_operation'];
 	}
 
-	public function listAllCalibers($option){
-		$data = parent::listAllCaliber($option['header_id']);
-		$this->render($data,$option);
+	public function listAllCalibers($option,$output = null,$keyword = ''){
+		$dataset = parent::listAllCaliber($option['header_id'],$keyword);
+
+		if($output == 'json'){
+			$json_data = array(
+	          "apiVersion"  => "1.0",
+	          "message"     => "List order in table #".$table_id,
+	          "return"      => $return,
+	          "head_id" 	=> $head_id,
+	          "keyword" 	=> $keyword,
+	          "total_pay" 	=> floatval(number_format($total_pay,2)),
+	          "total_items" => floatval(count($dataset)),
+	          "execute"     => round(microtime(true)-StTime,4)."s",
+	          "data"        => array(
+	            'items'         => $dataset,
+	          ),
+	        );
+	        
+	        // JSON Encode and Echo.
+	        echo json_encode($json_data);
+		}else{
+			$this->render($dataset,$option);
+		}
 	}
 
 	public function listAllCaliberByTurnTo($option){
