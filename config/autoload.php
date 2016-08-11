@@ -45,4 +45,6 @@ $user_online = $user->sessionOnline();
 if($user_online){
 	$user->getUser($_SESSION['user_id']);
 }
+
+$version = '1.0.2';
 ?>

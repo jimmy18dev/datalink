@@ -37,7 +37,7 @@ if($user_online){
 <div class="login-container">
 	<div class="logo">
 		<h1>DATALINK</h1>
-		<p class="version">Version <strong>1.01</strong> : Server: <strong><?php echo ($user->checkingConnection()?'Online':'Offline');?></strong></p>
+		<p class="version">Version <strong><?php echo $version;?></strong> : Server: <strong><?php echo ($user->checkingConnection()?'Online':'Offline');?></strong></p>
 	</div>
 	
 	<form action="javascript:login();">

@@ -59,7 +59,7 @@ $current_page['2'] = 'choose_caliber';
 		<div class="title">Select a caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
 	<div class="search-container">
-		<input type="text" onkeyup="javascript:listAllCaliber();" class="input-search" id="keyword" autofocus placeholder="Enter caliber code..." autocomplete="off">
+		<input type="text" onkeyup="javascript:listAllCaliber('daily_report');" class="input-search" id="keyword" autofocus placeholder="Enter caliber code..." autocomplete="off">
 		<input type="hidden" id="header" value="<?php echo $_GET['header'];?>">
 	</div>
 	<div id="caliber-container">
@@ -69,7 +69,7 @@ $current_page['2'] = 'choose_caliber';
 
 <script type="text/javascript">
 $(document).ready(function(){
-	listAllCaliber();
+	listAllCaliber('daily_report');
 });
 </script>
 </body>

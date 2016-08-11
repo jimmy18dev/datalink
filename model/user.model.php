@@ -27,14 +27,26 @@ class UserModel extends Database{
 	}
 
 	public function checkingConnection(){
-		parent::query('SELECT COUNT(id) FROM RTH_User');
+		parent::query('SELECT id FROM RTH_Setting WHERE keyword = "VisitTime"');
 		parent::execute();
 		$dataset = parent::single();
-		if(!empty($dataset['COUNT(id)'])){
-			return true;
+
+		if(empty($dataset['id'])){
+			parent::query('INSERT INTO RTH_Setting(keyword,value,section,description,update_time) VALUE(:keyword,:value,:section,:description,:update_time)');
+			parent::bind(':keyword', 		'VisitTime');
+			parent::bind(':value', 			'0');
+			parent::bind(':section', 		NULL);
+			parent::bind(':description', 	'Last Access Time');
+			parent::bind(':update_time',	date('Y-m-d H:i:s'));
+			parent::execute();
+			return parent::lastInsertId();
 		}else{
-			return false;
+			parent::query('UPDATE RTH_Setting SET update_time = :update_time WHERE keyword = "VisitTime"');
+			parent::bind(':update_time',	date('Y-m-d H:i:s'));
+			parent::execute();
 		}
+
+		return true;
 	}
 }
 ?>

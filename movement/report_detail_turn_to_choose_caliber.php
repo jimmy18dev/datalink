@@ -49,7 +49,7 @@ $current_page['2'] = 'choose_caliber';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery.form.min.js"></script>
-<script type="text/javascript" src="js/service/report.service.js"></script>
+<script type="text/javascript" src="js/service/caliber.service.js"></script>
 
 </head>
 <body>
@@ -59,10 +59,17 @@ $current_page['2'] = 'choose_caliber';
 		<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
 		<div class="title">Select a Turn to 24-48 Hrs.<br>Caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
-
-	<?php $caliber->listAllCaliberByTurnTo(array('type' => 'caliber-turn-to-choose-items','header_id' => $_GET['header']));?>
+	<div class="search-container">
+		<input type="text" onkeyup="javascript:listAllCaliber('turn_to');" class="input-search" id="keyword" autofocus placeholder="Enter caliber code..." autocomplete="off">
+		<input type="hidden" id="header" value="<?php echo $_GET['header'];?>">
+	</div>
+	<div id="caliber-container"></div>
+	<?php // $caliber->listAllCaliberByTurnTo(array('type' => 'caliber-turn-to-choose-items','header_id' => $_GET['header']));?>
 </div>
-
-<script type="text/javascript" src="js/report_detail.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	listAllCaliber('turn_to');
+});
+</script>
 </body>
 </html>
