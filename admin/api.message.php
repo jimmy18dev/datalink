@@ -1,5 +1,6 @@
 <?php
 require_once'config/autoload.php';
+include'config/authorization.php';
 header("Content-type: text/json");
 
 // API Request $_POST
@@ -19,7 +20,7 @@ if($_POST['calling'] != ''){
 							$state = false;
 						}
 
-						$api->successMessage($message,$state,'');
+						$api->successMessage($message.$user->id.','.$_POST['id'].','.$_POST['topic'].','.$_POST['message'],$state,'');
 					}else{
 						$api->errorMessage('signature error!');
 					}

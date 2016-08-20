@@ -2,7 +2,6 @@
 class MessageController extends MessageModel{
 
     public function saveMessage($user_id,$id,$topic,$message){
-
         if(empty($id)){
             $message_id = parent::create($user_id,$topic,$message);
         }else{

@@ -1,5 +1,6 @@
 <?php
 require_once'config/autoload.php';
+include'config/authorization.php';
 header("Content-type: text/json");
 
 // API Request $_POST

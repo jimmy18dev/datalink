@@ -1,9 +1,8 @@
 function createMessage(){
-    var href        = 'api.message.php';
-
-    var topic = $('#topic').val();
+    var href    = 'api.message.php';
+    var topic   = $('#topic').val();
     var message = $('#message').val();
-    var id = $('#message_id').val();
+    var id      = $('#message_id').val();
 
     if(message == '') return false;
 
