@@ -51,10 +51,7 @@ $current_page['2'] = 'caliber_code';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $caliber->code.' '.$caliber->family;?></h1>
-			<p>Caliber is <strong><?php echo $caliber->status;?></strong> and <strong><?php echo $caliber->total_route;?> routes</strong>, Standard time: <?php echo ($caliber->hrs == 0?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add standard time</a>':'<strong>'.$caliber->hrs.' Hrs/K.</strong>');?></p>
-			<p>Last updated: <strong><?php echo $caliber->update_time;?></strong>, <?php echo (empty($caliber->description)?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add description</a>':$caliber->description);?></p>
-			<p>
-				<a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="control-btn">Edit this Caliber<i class="fa fa-cog" aria-hidden="true"></i></a>
+			<p>Caliber is <strong><?php echo $caliber->status;?></strong> and <strong><?php echo $caliber->total_route;?> routes</strong>, Standard time: <?php echo ($caliber->hrs == 0?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add standard time</a>':'<strong>'.$caliber->hrs.' Hrs/K.</strong>');?> Last updated: <strong><?php echo $caliber->update_time;?></strong>, <?php echo (empty($caliber->description)?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add description</a>':$caliber->description);?> <a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="control-btn">Edit this Caliber<i class="fa fa-cog" aria-hidden="true"></i></a>
 				<?php if($caliber->status == 'active'){?><span onclick="javascript:deactiveCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="control-btn">Set to pending<i class="fa fa-angle-right" aria-hidden="true"></i></span><?php }?></p>
 		</div>
 
@@ -73,7 +70,9 @@ $current_page['2'] = 'caliber_code';
 			<div class="col3">Description</div>
 			<div class="col4">Updated</div>
 		</div>
-		<?php $route->listRouteInCaliber($caliber->id,array('type' => 'route-items'));?>
+		<div class="items-container">
+			<?php $route->listRouteInCaliber($caliber->id,array('type' => 'route-items'));?>
+		</div>
 		<?php }else{?>
 		<div class="creating-container">
 			<p>You can create new <strong>route</strong> items by click a button.</p>

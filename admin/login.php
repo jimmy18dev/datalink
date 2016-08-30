@@ -24,7 +24,7 @@ if($user_online){
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>DATALINK</title>
+<title>DATALINK <?php echo $meta['dev']['version'];?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -32,25 +32,31 @@ if($user_online){
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
 </head>
-<body>
+<body class="bg">
+<div class="filter"></div>
 <div class="login-container">
+	<div class="icon"><i class="fa fa-cube" aria-hidden="true"></i></div>
 	<div class="login-detail">
-		<div class="icon"><i class="fa fa-cube" aria-hidden="true"></i></div>
+		<p class="caption">Administrator only</p>
 		<h1>DATALINK</h1>
-		<p>The username and password to log into Datalink Panel can be found in your email. If you do not have the correct login credentials, please contact Administrator via phone or live chat</p>
+		<p>Version <strong class="version"><?php echo $meta['dev']['version'];?></strong></p>
 		<br>
-		<p>Version <strong><?php echo $version;?></strong></p>
+		<p>The username and password to log into Datalink Panel can be found in your email. If you do not have the correct login credentials, please contact Administrator via phone or live chat</p>
 	</div>
 	<div class="login-input">
 		<div class="input">
 		<form action="javascript:login();">
-			<p class="caption">Username</p>
-			<input type="text" class="input-text" id="username" placeholder="Username" autofocus>
-			<p class="caption">Password</p>
+			
+			<?php if($_GET['error'] == 'not_match'){?>
+			<p class="alert">Username and password do not match!</p>
+			<?php }?>
+
+			<p class="caption">Enter your username and password.</p>
+			<input type="text" class="input-text" id="username" placeholder="Username" autofocus autocomplete="off">
 			<input type="password" class="input-text" placeholder="Enter your password..." id="password">
 		</div>
 		<div class="control">
-			<button type="submit" id="submit-btn" class="submit-btn"><span id="btn-caption">Sign In</span><span id="btn-icon"><i class="fa fa-arrow-right"></i></span></button>
+			<button type="submit" id="submit-btn" class="submit-btn"><span id="btn-caption">Login</span><span id="btn-icon"><i class="fa fa-arrow-right"></i></span></button>
 		</div>
 		</form>
 	</div>

@@ -16,6 +16,7 @@ date_default_timezone_set('Asia/Bangkok');
 error_reporting(E_ALL ^ E_NOTICE);
 
 include'../config/config.php';
+include'../config/meta.data.php';
 
 // Database (PDO class) ///////////////
 include_once'model/database.class.php';
@@ -59,5 +60,8 @@ $useractivity 	= new UserActivityController;
 $report 		= new ReportController;
 $message 		= new MessageController;
 
-$version = '1.0.2';
+
+if($user->cookieChecking()){ $_SESSION['user_id'] = $_COOKIE['user_id']; } // Cookie Checking	
+$user_online = $user->sessionOnline(); // Member online checking
+if($user_online){ $user->getUser($_SESSION['user_id']); }
 ?>

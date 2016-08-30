@@ -44,7 +44,9 @@ $current_page['1'] = 'report';
 
 	<div class="list-container">
 		<?php if(empty($_GET['date'])){?>
-		<?php $report->groupHeaderReport(array('type' => 'header-date-items'));?>
+		<div class="header-report-container">
+			<?php $report->groupHeaderReport(array('type' => 'header-date-items'));?>
+		</div>
 		<?php }else{?>
 		<div class="items header-report-items topic-fix">
 			<div class="col1">Line No.</div>

@@ -8,6 +8,6 @@
 	<a href="message.php" target="_parent" class="header-items <?php echo ($current_page['1'] == 'message'?'header-items-active':'');?>">Messages</a>
 	<a href="setting.php" target="_parent" class="header-items <?php echo ($current_page['1'] == 'setting'?'header-items-active':'');?>">Setting</a>
 
-	<div class="version-items">Ver. <?php echo $version;?></div>
+	<div class="version-items">Ver. <?php echo $meta['dev']['version'];?></div>
 	<a href="profile.php" target="_parent" class="header-items <?php echo ($current_page['1'] == 'profile'?'header-items-active':'');?> user-items"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $user->fname.' '.$user->lname;?></a>
 </header>

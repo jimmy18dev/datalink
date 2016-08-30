@@ -23,7 +23,7 @@ if($user_online){
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>Login to Datalink</title>
+<title>Login to Datalink <?php echo $meta['dev']['version'];?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -37,7 +37,7 @@ if($user_online){
 <div class="login-container">
 	<div class="logo">
 		<h1>DATALINK</h1>
-		<p class="version">Version <strong><?php echo $version;?></strong> : Server: <strong><?php echo ($user->checkingConnection()?'Online':'Offline');?></strong></p>
+		<p class="version">Version <strong><?php echo $meta['dev']['version'];?></strong> : Server: <strong><?php echo ($user->checkingConnection()?'Online':'Offline');?></strong></p>
 	</div>
 	
 	<form action="javascript:login();">
@@ -46,7 +46,7 @@ if($user_online){
 		<input type="password" class="input-text" placeholder="Enter your password..." id="password">
 	</div>
 	<div class="submit">
-		<button type="submit" id="login-btn" class="login-btn"><span id="btn-caption">Login</span><span id="btn-icon"><i class="fa fa-angle-right"></i></span></button>
+		<button type="submit" id="login-btn" class="login-btn"><span id="btn-caption">Login</span><span id="btn-icon"><i class="fa fa-arrow-right"></i></span></button>
 	</div>
 	</form>
 </div>
