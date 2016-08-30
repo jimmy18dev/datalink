@@ -34,12 +34,13 @@ if($user_online){
 </head>
 <body>
 <div class="login-container">
+	<div class="icon"><i class="fa fa-cube" aria-hidden="true"></i></div>
 	<div class="login-detail">
-		<div class="icon"><i class="fa fa-cube" aria-hidden="true"></i></div>
+		<p class="caption">Administrator only</p>
 		<h1>DATALINK</h1>
 		<p>The username and password to log into Datalink Panel can be found in your email. If you do not have the correct login credentials, please contact Administrator via phone or live chat</p>
 		<br>
-		<p>Version <strong><?php echo $version;?></strong></p>
+		<p>Version <strong class="version"><?php echo $version;?></strong></p>
 	</div>
 	<div class="login-input">
 		<div class="input">

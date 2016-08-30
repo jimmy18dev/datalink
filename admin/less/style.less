@@ -2408,50 +2408,55 @@
 	margin-top: 12%;
 	color: #000000;
 
+	.icon{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+		font-size: 2em;
+		color: #DDDDDD;
+	}
+
+	p.caption{
+		font-size: 0.8em;
+		line-height: 2em;
+		color: rgba(0,0,0,0.4);
+	}
+
 	.login-detail{
 		width: 39%;
 		padding: 5%;
 		float: left;
 		display: inline-block;
-		border-right: 1px solid #EEEEEE;
 
-		.icon{
-			width: 100%;
-			float: left;
-			display: inline-block;
-			font-size: 4em;
-			margin-bottom: 5%;
-			color: rgba(0,0,0,0.8);
-		}
 		h1{
 			font-size: 2em;
-			margin-bottom: 1%;
-			color: rgba(0,0,0,0.8);
+			margin-bottom: 3%;
+			color: rgba(0,0,0,1);
 		}
 		p{
-			font-size: 1em;
+			font-size: 0.8em;
 			line-height: 1.5em;
-			color: rgba(0,0,0,0.6);
+			color: rgba(0,0,0,0.3);
+		}
+
+		.version{
+			color: rgba(0,0,0,0.8);
 		}
 	}
 	.login-input{
-		width: 40%;
+		width: 40.2%;
 		padding: 5%;
-		float: left;
+		float: right;
 		display: inline-block;
-
-		p.caption{
-			font-size: 0.9em;
-			line-height: 2em;
-			color: rgba(0,0,0,0.4);
-		}
+		border-left: 1px solid #DDDDDD;
 
 		.input-text{
 			width: 96%;
 			float: left;
 			display: inline-block;
-			font-size: 1.4em;
-			padding: 2%;
+			font-size: 1em;
+			padding: 3% 2%;
 			margin-bottom: 7%;
 			font-family: @FontStylePrimary;
 			color: rgba(0,0,0,0.8);
@@ -2463,12 +2468,14 @@
 		.submit-btn{
 			float: right;
 			display: inline-block;
-			font-size: 1em;
-			padding: 10px 20px;
+			font-size: 0.9em;
+			padding: 12px 30px;
 			background: @primary_color;
 			border: 0px;
 			color: @white_color;
 			font-family: @FontStylePrimary;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+			border-radius: 2px;
 
 			i{ margin-left: 10px; }
 

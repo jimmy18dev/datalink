@@ -59,5 +59,5 @@ $useractivity 	= new UserActivityController;
 $report 		= new ReportController;
 $message 		= new MessageController;
 
-$version = '1.0.2';
+$version = '1.0.4';
 ?>

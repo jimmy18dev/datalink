@@ -1,5 +1,6 @@
 function login(){
     var href        = 'api.user.php';
+    
     var username    = $('#username').val();
     var password    = $('#password').val();
 
@@ -14,6 +15,8 @@ function login(){
     $('#btn-caption').html('Please wait');
     $('#btn-icon').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
     $('#submit-btn').addClass('btn-loading');
+
+    console.log(username,password);
 
     $.ajax({
         url         :href,

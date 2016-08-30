@@ -2172,48 +2172,51 @@ body {
   margin-top: 12%;
   color: #000000;
 }
+.login-container .icon {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 2em;
+  color: #DDDDDD;
+}
+.login-container p.caption {
+  font-size: 0.8em;
+  line-height: 2em;
+  color: rgba(0, 0, 0, 0.4);
+}
 .login-container .login-detail {
   width: 39%;
   padding: 5%;
   float: left;
   display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.login-container .login-detail .icon {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 4em;
-  margin-bottom: 5%;
-  color: rgba(0, 0, 0, 0.8);
 }
 .login-container .login-detail h1 {
   font-size: 2em;
-  margin-bottom: 1%;
-  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 3%;
+  color: #000000;
 }
 .login-container .login-detail p {
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.3);
+}
+.login-container .login-detail .version {
+  color: rgba(0, 0, 0, 0.8);
 }
 .login-container .login-input {
-  width: 40%;
+  width: 40.2%;
   padding: 5%;
-  float: left;
+  float: right;
   display: inline-block;
-}
-.login-container .login-input p.caption {
-  font-size: 0.9em;
-  line-height: 2em;
-  color: rgba(0, 0, 0, 0.4);
+  border-left: 1px solid #DDDDDD;
 }
 .login-container .login-input .input-text {
   width: 96%;
   float: left;
   display: inline-block;
-  font-size: 1.4em;
-  padding: 2%;
+  font-size: 1em;
+  padding: 3% 2%;
   margin-bottom: 7%;
   font-family: 'Roboto', sans-serif;
   color: rgba(0, 0, 0, 0.8);
@@ -2225,12 +2228,14 @@ body {
 .login-container .login-input .submit-btn {
   float: right;
   display: inline-block;
-  font-size: 1em;
-  padding: 10px 20px;
+  font-size: 0.9em;
+  padding: 12px 30px;
   background: #003399;
   border: 0px;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
 .login-container .login-input .submit-btn i {
   margin-left: 10px;
