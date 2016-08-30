@@ -39,11 +39,14 @@ $current_page['1'] = 'setting';
 	<div class="head">
 		<div class="head-title">
 			<h1>Setting</h1>
+			<p>Change value by setting up default programs for datalink.</p>
 		</div>
 	</div>
 
 	<div class="list-container">
-		<?php echo $setting->listSetting(array('type' => 'setting-form-items'));?>
+		<div class="items-container">
+			<?php echo $setting->listSetting(array('type' => 'setting-form-items'));?>
+		</div>
 	</div>
 </div>
 

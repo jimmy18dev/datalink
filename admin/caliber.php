@@ -38,7 +38,7 @@ $current_page['1'] = 'caliber';
 	<div class="head">
 		<div class="head-title">
 			<h1>CALIBER CODE</h1>
-			<p>Total caliber code <strong><?php echo $caliber->countCaliber('all');?> items</strong> (<?php echo $caliber->countCaliber('active');?> active and <?php echo $caliber->countCaliber('pending');?> pending), a system of words, letters, figures, or other symbols substituted for other words, letters, etc., especially for the purposes of secrecy.</p>
+			<p>Total caliber code <strong><?php echo $caliber->countCaliber('all');?> items</strong> (<?php echo $caliber->countCaliber('active');?> active and <?php echo $caliber->countCaliber('pending');?> pending)</p>
 		</div>
 
 		<div class="head-control">
@@ -54,7 +54,9 @@ $current_page['1'] = 'caliber';
 			<div class="col3">Std.time (Hrs/K)</div>
 			<div class="col5">Description</div>
 		</div>
-		<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
+		<div class="items-container">
+			<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
+		</div>
 	</div>
 </div>
 </body>

@@ -21,7 +21,7 @@ if($_POST['calling'] != ''){
 					}
 					break;
 				case 'register': // Register new user
-					if(true){
+					if($user->online){
 						$user_id = $user->register($_POST['section_id'],$_POST['code'],$_POST['fname'],$_POST['lname'],$_POST['username'],$_POST['password'],$_POST['line_default']);
 						if(!empty($user_id) && $user_id != 0){
 							$api->successMessage('Successful',true,'');
@@ -29,41 +29,41 @@ if($_POST['calling'] != ''){
 							$api->successMessage('Fail',false,'');
 						}
 					}else{
-						$api->errorMessage('Signature error!');
+						$api->errorMessage('User authentication failed!');
 					}
 					break;
 
 				case 'edit':
-					if(true){
+					if($user->online){
 						$user_id = $user->editInfo($_POST['id'],$_POST['section_id'],$_POST['code'],$_POST['fname'],$_POST['lname'],$_POST['username'],$_POST['password'],$_POST['line_default']);
 
 						$api->successMessage($return_message,$register_state,'');
 					}else{
-						$api->errorMessage('signature error!');
+						$api->errorMessage('User authentication failed!');
 					}
 					break;
 				case 'deactive':
-					if(true){
+					if($user->online){
 						$user_id = $user->deactiveUser($_POST['user_id']);
 						$api->successMessage($return_message,$register_state,'');
 					}else{
-						$api->errorMessage('signature error!');
+						$api->errorMessage('User authentication failed!');
 					}
 					break;
 				case 'add_to_admin':
-					if(true){
+					if($user->online){
 						$user_id = $user->grantAdmin($_POST['user_id']);
 						$api->successMessage($return_message,$register_state,'');
 					}else{
-						$api->errorMessage('signature error!');
+						$api->errorMessage('User authentication failed!');
 					}
 					break;
 				case 'remove_admin':
-					if(true){
+					if($user->online){
 						$user_id = $user->removeAdmin($_POST['user_id']);
 						$api->successMessage($return_message,$register_state,'');
 					}else{
-						$api->errorMessage('signature error!');
+						$api->errorMessage('User authentication failed!');
 					}
 					break;
 				default:
@@ -71,11 +71,14 @@ if($_POST['calling'] != ''){
 			}
 			break;
 		default:
-			$api->errorMessage('COMMENT POST API ERROR!');
+			$api->errorMessage('API ERROR!');
 			break;
 	}
 }else{
-	$api->errorMessage('API NOT FOUND!');
+	if(!$user->online)
+		$api->errorMessage('User authentication failed!');
+	else
+		$api->errorMessage('API NOT FOUND');
 }
 
 exit();

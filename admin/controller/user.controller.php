@@ -12,6 +12,21 @@ class UserController extends UserModel{
 	public $visit_time;
 	public $type;
 	public $status;
+	public $online = false;
+
+	public function login($username,$password){
+		if(empty($username) || empty($password)){ return false; }
+
+		$user_id = parent::userLogin($username,$password);
+		
+		if(!empty($user_id)){
+			$_SESSION['user_id'] = $user_id;
+            setcookie('user_id',$user_id,COOKIE_TIME);
+            return $user_id;
+		}else{
+			return 0;
+		}
+	}
 
 	// Register new user
 	public function register($section_id,$code,$fname,$lname,$username,$password,$line_default){
@@ -34,20 +49,6 @@ class UserController extends UserModel{
 		parent::edit($id,$section_id,$code,$fname,$lname,$username,$password,$line_default);
 	}
 
-	public function login($username,$password){
-		if(empty($username) || empty($password)){ return false; }
-
-		$user_id = parent::userLogin($username,$password);
-		
-		if(!empty($user_id)){
-			$_SESSION['user_id'] = $user_id;
-            setcookie('user_id',$user_id,COOKIE_TIME);
-            return $user_id;
-		}else{
-			return 0;
-		}
-	}
-
 	public function cookieChecking(){
         if(!empty($_COOKIE['user_id']))
         	return true;
@@ -62,23 +63,25 @@ class UserController extends UserModel{
         	return false;
     }
 
-
 	public function getUser($id){
 		$dataset = parent::getData($id);
 		parent::updateVisitTime($id);
 
-		$this->id = $dataset['id'];
-		$this->code = $dataset['code'];
-		$this->fname = $dataset['fname'];
-		$this->lname = $dataset['lname'];
-		$this->name = $this->fname.' '.$this->lname;
-		$this->password = $dataset['password'];
-		$this->line_default = $dataset['line_default'];
-		$this->register_time = $dataset['register_time'];
-		$this->update_time = $dataset['update_time'];
-		$this->visit_time = $dataset['visit_time'];
-		$this->type = $dataset['type'];
-		$this->status = $dataset['status'];
+		$this->id 				= $dataset['id'];
+		$this->code 			= $dataset['code'];
+		$this->fname 			= $dataset['fname'];
+		$this->lname 			= $dataset['lname'];
+		$this->name 			= $this->fname.' '.$this->lname;
+		$this->password 		= $dataset['password'];
+		$this->line_default 	= $dataset['line_default'];
+		$this->register_time 	= $dataset['register_time'];
+		$this->update_time 		= $dataset['update_time'];
+		$this->visit_time 		= $dataset['visit_time'];
+		$this->type 			= $dataset['type'];
+		$this->status 			= $dataset['status'];
+
+		if(!empty($this->id))
+			$this->online = true;
 	}
 
 	public function listAllUser($option){

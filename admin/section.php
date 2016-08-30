@@ -40,6 +40,7 @@ $total_section = $section->countSection();
 	<div class="head">
 		<div class="head-title">
 			<h1>SECTION</h1>
+			<p>Default folder for sub-program in datalink.</p>
 		</div>
 
 		<?php if($total_section > 0){?>
@@ -56,7 +57,9 @@ $total_section = $section->countSection();
 			<div class="col2">Redirect to</div>
 			<div class="col3">Description</div>
 		</div>
-		<?php $section->listAllSection(array('type' => 'section-items'));?>
+		<div class="items-container">
+			<?php $section->listAllSection(array('type' => 'section-items'));?>
+		</div>
 		
 		<?php }else{?>
 		<div class="creating-container">

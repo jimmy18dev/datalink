@@ -38,22 +38,23 @@ $current_page['1'] = 'message';
 	<div class="head">
 		<div class="head-title">
 			<h1>Message</h1>
+			<p>Main message board between admin and user.</p>
 		</div>
 	</div>
 
 	<div class="list-container">
 		<div class="message-input">
 			<div class="input">
-				<textarea id="message" class="input-textarea" placeholder="Enter messages..."></textarea>
-				<input type="text" id="topic" class="input-text" placeholder="Topic...">
+				<input type="hidden" id="topic" class="input-text" placeholder="Topic...">
+				<input type="text" id="message" class="input-text" placeholder="Enter Messages..." autofocus autocomplete="off">
 				<input type="hidden" id="message_id">
 			</div>
 			<div class="submit">
-				<button class="save-btn" onclick="javascript:createMessage();"><i class="fa fa-check" aria-hidden="true"></i>Send message</button>
+				<button class="save-btn" onclick="javascript:createMessage();">Send</button>
 			</div>
 		</div>
 
-		<div class="message-list">
+		<div class="items-container">
 			<?php $message->listMessage(array('type' => 'message-items'));?>
 		</div>
 	</div>

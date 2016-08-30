@@ -46,14 +46,14 @@ $current_page['1'] = 'caliber';
 	<div class="head">
 		<div class="head-title">
 			<h1><strong><?php echo $route->name;?></strong> in <a href="route.php?caliber=<?php echo $route->caliber_id;?>"><strong><?php echo $route->caliber_name;?></strong></a></h1>
-			<p>This route has operations <strong><?php echo $route->total_operation;?> items</strong> and last updated at <strong><?php echo $route->update_time;?></strong></p>
-			<p><a href="route_editor.php?route=<?php echo $route->id;?>" class="control-btn">Edit this Route<i class="fa fa-cog" aria-hidden="true"></i></a></p>
+			<p>This route has operations <strong><?php echo $route->total_operation;?> items</strong> and last updated at <strong><?php echo $route->update_time;?></strong> <a href="route_editor.php?route=<?php echo $route->id;?>" class="control-btn">Edit this Route<i class="fa fa-cog" aria-hidden="true"></i></a></p>
 		</div>
 
 		<div class="head-control">
 			<a href="operation_editor.php?route=<?php echo $route->id;?>" class="btn create-btn"><i class="fa fa-bolt" aria-hidden="true"></i>CREATE OPEARATION</a>
 		</div>
 	</div>
+
 	<!-- Table -->
 	<div class="list-container">
 		<div class="operation-container">
@@ -67,6 +67,7 @@ $current_page['1'] = 'caliber';
 			</div>
 			<?php }?>
 		</div>
+		
 		<div class="operation-container">
 			<h3>Disable operation</h3>
 			<?php $operation->listAllOperations($route->id,array('type' => 'operation-items','status' => 'disable','route_current' => $_GET['route'],'route_type' => $route->type));?>

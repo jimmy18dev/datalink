@@ -40,7 +40,7 @@ function login(){
                 window.location = 'index.php?message=login_success';
             },1000);
         }else{
-            location.reload();
+            window.location = 'login.php?error=not_match';
         }
     }).error();
 }

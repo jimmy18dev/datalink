@@ -22,7 +22,7 @@ $current_page['1'] = 'report';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>Datalink Report</title>
+<title>DATALINK <?php echo $meta['dev']['version'];?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
