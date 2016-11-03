@@ -4,5 +4,5 @@
 	<a href="message.php" class="header-items <?php echo ($current_page['1'] == 'message'?'header-items-active':'');?>"><i class="fa fa-rss" aria-hidden="true"></i>News (<?php echo $message->countMessage();?>)</a>
 	<a href="profile.php" class="header-items <?php echo ($current_page['1'] == 'profile'?'header-items-active':'');?>"><i class="fa fa-user" aria-hidden="true"></i><?php echo $user->fname?></a>
 
-	<a href="../logout.php" class="header-items logout">Logout<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+	<a href="../logout.php" class="header-items logout">Logout</a>
 </nav>

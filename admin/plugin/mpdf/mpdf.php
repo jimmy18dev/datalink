@@ -31194,6 +31194,8 @@ function AutoFont($html) {
 /*-- CJK-FONTS --*/
 		if ($this->autoFontGroups & AUTOFONT_CJK) {
 			$e = preg_replace("/([".$this->pregCJKchars.$extra."]*[".$this->pregCJKchars."][".$this->pregCJKchars.$extra."]*)/ue", '$this->replaceCJK(stripslashes(\'\\1\'))', $e);
+
+			$e = preg_replace("/([".$this->pregCJKchars.$extra."]*[".$this->pregCJKchars."][".$this->pregCJKchars.$extra."]*)/ue", '$this->replaceCJK(stripslashes(\'\\1\'))', $e);
 		}
 /*-- END CJK-FONTS --*/
 

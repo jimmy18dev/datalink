@@ -37,7 +37,7 @@ $current_page['1'] = 'index';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title><?php echo $report->report_date;?> : [ <?php echo $report->line_no;?> ] [ <?php echo $report->shift;?> ]</title>
+<title><?php echo $report->report_date;?> - <?php echo $report->line_no;?><?php echo $report->shift;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -54,7 +54,7 @@ $current_page['1'] = 'index';
 		<div class="topic"><?php echo $report->report_full_date;?></div>
 		<div class="caption">Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update_facebook_format;?></strong> Leader <strong><?php echo $report->leader_name;?></strong></div>
 	</div>
-	<a class="btn" href="report_header_editor.php?action=create"><i class="fa fa-plus" aria-hidden="true"></i>New report</a>
+	<a class="btn" href="report_header_editor.php?action=create">New report</a>
 </header>
 <?php include'navigator.php';?>
 <div class="report-detail-container">

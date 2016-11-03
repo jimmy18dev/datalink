@@ -117,24 +117,22 @@ class ReportController extends ReportModel{
 
 	public function updateEFFandYield($header_id){
 		$this->getHeader($header_id);
-		$dataset = parent::listOpearationInHeaderData($header_id);
+		$dataset 		= parent::listOpearationInHeaderData($header_id);
 		$list_operation = parent::listOpearationOnly($header_id);
 
 		$normal_time 	= $this->ttl_daily_hrs + $this->ot_10 + $this->ot_15 + $this->ot_20 + $this->ot_30;
 		$total_time 	= $normal_time + $this->downtime_mc + $this->downtime_mat + $this->downtime_fac + $this->downtime_other + $this->sort_local + $this->sort_oversea + $this->rework_local + $this->rework_oversea;
 
-		$product_eff = 0;
-		$total_eff = 0;
-		$yield = 0;
+		$product_eff 	= 0;
+		$total_eff 		= 0;
+		$yield 			= 0;
+		$required_hrs 	= 0;
+		$total_good 	= 0;
 
-		$required_hrs = 0;
-
-		$total_good = 0;
 		foreach ($dataset as $var){
 			if($var['type'] == 'final'){
 				$required_hrs += $var['hrs'] * ($var['total_good']/1000);
 			}
-
 
 			foreach ($list_operation as $key => $list){
 				if($list['operation_id'] == $var['operation_id']){
@@ -155,9 +153,9 @@ class ReportController extends ReportModel{
 			$before_yield += $list_operation[$key]['remark'];
 		}
 
-		$yield = round(100 - $before_yield,2,PHP_ROUND_HALF_DOWN);
-		$product_eff = ($required_hrs / $normal_time) * 100;
-		$total_eff = ($required_hrs / $total_time) * 100;
+		$yield 			= round(100 - $before_yield,2,PHP_ROUND_HALF_DOWN);
+		$product_eff 	= ($required_hrs / $normal_time) * 100;
+		$total_eff 		= ($required_hrs / $total_time) * 100;
 
 		$this->updateEFFHeader($header_id,$product_eff,$total_eff,$yield);
 	}
@@ -177,6 +175,8 @@ class ReportController extends ReportModel{
 	public function updateHeaderReport($header_id,$user_id,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$target_yield,$target_eff,$remark){
 
 		parent::editHeader($header_id,$user_id,$line_type,$shift,$report_date,$no_monthly_emplys,$no_daily_emplys,$ttl_monthly_hrs,$ttl_daily_hrs,$ot_10,$ot_15,$ot_20,$ot_30,$losttime_vac,$losttime_sick,$losttime_abs,$losttime_mat,$losttime_other,$downtime_mc,$downtime_mat,$downtime_fac,$downtime_other,$sort_local,$sort_oversea,$rework_local,$rework_oversea,$target_yield,$target_eff,$remark);
+
+		return true;
 	}
 
 	// Detail report
@@ -189,10 +189,12 @@ class ReportController extends ReportModel{
 
 	public function deleteHeaderReport($header_id,$shift){
 		parent::deleteHeader($header_id,$shift);
+		return true;
 	}
 
 	public function deleteReportDetail($report_id,$user_id){
 		parent::deleteDetail($report_id,$user_id);
+		return true;
 	}
 
 	public function listAllHeader($line_no,$option){

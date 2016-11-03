@@ -180,6 +180,10 @@ body.bg {
   cursor: pointer;
   opacity: 0.8;
 }
+.container .head .head-control .btn-pdf-download {
+  background: #F44336;
+  display: none;
+}
 .container .head .head-control .create-btn {
   background: #4caf50;
   color: #ffffff;
@@ -1392,56 +1396,77 @@ body.bg {
   width: 100%;
   float: left;
   display: inline-block;
-  margin-top: 3%;
+  margin-top: 2%;
 }
-.container .list-container .caliber-in-report-items .operations .operations-items {
+.container .list-container .caliber-in-report-items .operations .operation-items {
   width: 100%;
-  padding: 1.5% 0%;
+  padding: 1% 0%;
   float: left;
   display: inline-block;
   border-bottom: 1px solid #EEEEEE;
   font-size: 0.9em;
 }
-.container .list-container .caliber-in-report-items .operations .operations-items:last-child {
+.container .list-container .caliber-in-report-items .operations .operation-items:last-child {
   border-bottom: 0px;
 }
-.container .list-container .caliber-in-report-items .operations .operations-items .col1 {
-  width: 48%;
+.container .list-container .caliber-in-report-items .operations .operation-items .col1 {
+  width: 64%;
   float: left;
   display: inline-block;
 }
-.container .list-container .caliber-in-report-items .operations .operations-items .col2 {
+.container .list-container .caliber-in-report-items .operations .operation-items .col2 {
   width: 12%;
   float: left;
   display: inline-block;
   text-align: right;
+  color: rgba(0, 0, 0, 0.2);
 }
-.container .list-container .caliber-in-report-items .operations .operations-items .col3 {
+.container .list-container .caliber-in-report-items .operations .operation-items .col2.-black {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+.container .list-container .caliber-in-report-items .operations .operation-items .col3 {
   width: 12%;
   float: left;
   display: inline-block;
   text-align: right;
+  color: rgba(0, 0, 0, 0.2);
 }
-.container .list-container .caliber-in-report-items .operations .operations-items .col4 {
-  width: 12%;
+.container .list-container .caliber-in-report-items .operations .operation-items .col3.-green {
+  color: #4caf50;
+  font-weight: bold;
+}
+.container .list-container .caliber-in-report-items .operations .operation-items .col4 {
+  width: 11%;
   float: left;
   display: inline-block;
   text-align: right;
+  margin-right: 1%;
+  color: rgba(0, 0, 0, 0.2);
 }
-.container .list-container .caliber-in-report-items .operations .operations-items .col5 {
-  width: 15%;
+.container .list-container .caliber-in-report-items .operations .operation-items .col4.-red {
+  color: #f44336;
+  font-weight: bold;
+}
+.container .list-container .caliber-in-report-items .operations .operation-items .col5 {
+  width: 100%;
   float: left;
   display: inline-block;
   text-align: right;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  display: none;
 }
-.container .list-container .caliber-in-report-items .operations .topic-fix {
-  font-weight: normal;
+.container .list-container .caliber-in-report-items .operations .caption {
   font-style: italic;
-  color: rgba(0, 0, 0, 0.1);
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
-.container .list-container .caliber-in-report-items .operations .topic-fix:hover {
-  color: rgba(0, 0, 0, 0.6);
+.container .list-container .caliber-in-report-items .operations .caption .col1,
+.container .list-container .caliber-in-report-items .operations .caption .col2,
+.container .list-container .caliber-in-report-items .operations .caption .col3,
+.container .list-container .caliber-in-report-items .operations .caption .col4,
+.container .list-container .caliber-in-report-items .operations .caption .col5 {
+  color: #555555;
 }
 .container .list-container .caliber-in-report-items:nth-child(even) {
   float: right;

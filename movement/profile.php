@@ -43,7 +43,7 @@ $current_page['1'] = 'profile';
 		<div class="topic"><?php echo $user->fname.' '.$user->lname?></div>
 		<div class="caption">Account ID <strong><?php echo $user->code;?></strong>, Section <strong><?php echo $user->section_name;?></strong> Last visit at <strong><?php echo $user->visit_time;?></strong></div>
 	</div>
-	<a class="btn" href="report_header_editor.php?action=create"><i class="fa fa-plus" aria-hidden="true"></i>New report</a>
+	<a class="btn" href="report_header_editor.php?action=create">New report</a>
 </header>
 <?php include'navigator.php';?>
 <?php if($user->status == 'deactive'){?>
