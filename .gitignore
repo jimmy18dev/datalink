@@ -2,7 +2,6 @@
 *.sql
 
 image/upload/*
-admin/pdf/*
 
 # Windows image file caches
 Thumbs.db
