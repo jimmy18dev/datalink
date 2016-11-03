@@ -14,13 +14,13 @@ if(empty($report->id)){
 ?>
 <table class="center">
   <tr>
-  	<td rowspan="2" class="logo">RONDA</td>
-  	<td class="title">MOVEMENT ASSEMBLY</td>
-  	<td>Form no.<br><b>FO_11_001</b></td>
+  	<td rowspan="2" class="logo" style="width:20%;">RONDA</td>
+  	<td class="title" style="width:60%;">MOVEMENT ASSEMBLY</td>
+  	<td style="width:20%;">Form no.<br><b>FO_11_001</b></td>
   </tr>
   <tr>
-  	<td class="title">Daily output report</td>
-  	<td>Revision date<br><b>09.09.02 (<?php echo $report->report_filename;?>)</b></td>
+  	<td class="title" style="width:60%;">Daily output report</td>
+  	<td style="width:20%;">Revision date<br><b><?php echo $report->report_filename;?></b></td>
   </tr>
 </table>
 
@@ -29,8 +29,8 @@ if(empty($report->id)){
 
 <table>
   <tr>
-  	<td class="black"></td>
-  	<td class="center">Normal Hrs.</td>
+  	<td class="black" style="width:12%;"></td>
+  	<td class="center" style="width:10%;">Normal Hrs.</td>
   	<td class="center" colspan="4">OT</td>
   	<td class="center" colspan="5">Lost time</td>
   	<td class="center" colspan="4">Down time</td>
@@ -38,8 +38,8 @@ if(empty($report->id)){
   	<td class="center" colspan="2">Rework</td>
   </tr>
   <tr>
-  	<td>Monthly Prs: <b><?php echo $report->no_monthly_emplys;?></b></td>
-  	<td class="center"><?php echo $report->ttl_monthly_hrs;?></td>
+  	<td style="width:12%;">Monthly Prs: <b><?php echo $report->no_monthly_emplys;?></b></td>
+  	<td class="center" style="width:10%;"><?php echo $report->ttl_monthly_hrs;?></td>
   	<td class="center caption">1.0</td>
   	<td class="center caption">1.5</td>
   	<td class="center caption">2.0</td>
@@ -59,8 +59,8 @@ if(empty($report->id)){
   	<td class="center caption">Ove</td>
   </tr>
   <tr>
-  	<td>Daily Prs. <b><?php echo $report->no_daily_emplys;?></b></td>
-  	<td class="center"><?php echo $report->ttl_daily_hrs;?></td>
+  	<td style="width:12%;">Daily Prs. <b><?php echo $report->no_daily_emplys;?></b></td>
+  	<td class="center" style="width:10%;"><?php echo $report->ttl_daily_hrs;?></td>
   	<td><?php echo number_format($report->ot_10,2);?></td>
   	<td><?php echo number_format($report->ot_15,2);?></td>
   	<td><?php echo number_format($report->ot_20,2);?></td>
@@ -91,10 +91,10 @@ if(empty($report->id)){
     </td>
   </tr>
   <tr>
-    <td class="caption">Operation</td>
-    <td class="center caption">Input</td>
-    <td class="center caption">Good</td>
-    <td class="center caption">Reject</td>
+    <td class="caption" style="width:70%;">Operation</td>
+    <td class="center caption" style="width:10%;">Input</td>
+    <td class="center caption" style="width:10%;">Good</td>
+    <td class="center caption" style="width:10%;">Reject</td>
   </tr>
 
   <?php $operations = $report->retrieveOperations($var['report_id']);?>
@@ -115,8 +115,12 @@ if(empty($report->id)){
 <table style="width:100%">
   <tr>
     <?php foreach ($turntos as $var){ ?>
-    <td>Cal. <b><?php echo $var['code'].' '.$var['family'];?></b> <?php echo number_format($var['output']);?> K.</td>
+    <td style="width:20%;">Cal. <b><?php echo $var['code'].' '.$var['family'];?></b> <?php echo number_format($var['output']);?> K.</td>
     <?php }?>
+
+    <?php
+    for($i=0;$i < 5-count($turntos);$i++){echo'<td></td>';}
+    ?>
   </tr>
 </table>
 <br>
