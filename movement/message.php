@@ -44,7 +44,7 @@ $current_page['1'] = 'message';
 		<div class="topic">News</div>
 		<div class="caption">Describes the procedure used to send Message Queuing test messages, for IT professionals.</div>
 	</div>
-	<a class="btn" href="report_header_editor.php?action=create"><i class="fa fa-plus" aria-hidden="true"></i>New report</a>
+	<a class="btn" href="report_header_editor.php?action=create">New report</a>
 </header>
 <?php include'navigator.php';?>
 <div class="message-list-container">

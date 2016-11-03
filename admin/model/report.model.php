@@ -1,11 +1,12 @@
 <?php
 class ReportModel extends Database{
 	public function getData($id){
-		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.downtime_other,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.product_eff,header.ttl_eff,header.yield,header.target_yield,header.target_eff,header.create_time,header.update_time,header.type,header.status,user.id leader_id,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.losttime_vac,header.losttime_sick,header.losttime_abs,header.losttime_mat,header.losttime_other,header.downtime_mc,header.downtime_mat,header.downtime_fac,header.downtime_other,header.sort_local,header.sort_oversea,header.rework_local,header.rework_oversea,header.product_eff,header.ttl_eff,header.yield,header.target_yield,header.target_eff,header.remark,header.create_time,header.update_time,header.type,header.status,user.id leader_id,user.code user_code,user.fname,user.lname FROM RTH_DailyOutputHeader AS header LEFT JOIN RTH_User AS user ON header.user_id = user.id WHERE header.id = :id');
 		parent::bind(':id', $id);
 		parent::execute();
 		$dataset = parent::single();
 
+		$dataset['report_filename'] = parent::date_to_filename($dataset['report_date']);
 		$dataset['report_date'] = parent::date_format($dataset['report_date']);
 		$dataset['date'] = parent::date_format($dataset['create_time']);
 		$dataset['update'] = parent::date_facebookformat($dataset['update_time']);
@@ -166,6 +167,41 @@ class ReportModel extends Database{
 			LEFT JOIN RTH_User AS user ON header.user_id = user.id 
 			WHERE header.report_date = :report_date AND header.status = "active"');
 		parent::bind(':report_date', $report_date);
+		parent::execute();
+		$dataset = parent::resultset();
+		return $dataset;
+	}
+
+
+
+
+
+	public function retrieveCalibers($header_id){
+		parent::query('SELECT header.id report_id,caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,route.name route_name,header.update_time,std.hrs std_time 
+			FROM RTH_DailyOutputReportHeader AS header 
+			LEFT JOIN RTH_CaliberCode AS caliber ON header.caliber_id = caliber.id 
+			LEFT JOIN RTH_StandardTime AS std ON header.stdtime_id = std.id 
+			LEFT JOIN RTH_Route AS route ON header.route_id = route.id 
+			WHERE header.header_id = :header_id 
+			ORDER BY header.create_time DESC');
+		parent::bind(':header_id', 		$header_id);
+		parent::execute();
+		return $dataset = parent::resultset();
+	}
+	public function retrieveOperations($report_id){
+		parent::query('SELECT detail.id,operation.name operation_name,detail.total_good,detail.total_reject,detail.output,detail.required_hrs,detail.update_time,remark.description remark_message 
+			FROM RTH_DailyOutputDetail AS detail 
+			LEFT JOIN RTH_Operation AS operation ON detail.operation_id = operation.id 
+			LEFT JOIN RTH_GeneralRemark AS remark ON detail.remark_id = remark.id 
+			WHERE detail.report_id = :report_id 
+			ORDER BY detail.id ASC');
+		parent::bind(':report_id', 		$report_id);
+		parent::execute();
+		return $dataset = parent::resultset();
+	}
+	public function retrieveTurnTo($header_id){
+		parent::query('SELECT turnto.id id,caliber.code,caliber.family,turnto.output FROM RTH_TurnTo AS turnto LEFT JOIN RTH_CaliberCode AS caliber ON turnto.caliber_id = caliber.id WHERE report_id = :header_id');
+		parent::bind(':header_id', $header_id);
 		parent::execute();
 		$dataset = parent::resultset();
 		return $dataset;

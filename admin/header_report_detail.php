@@ -50,7 +50,10 @@ $current_page['1'] = 'report';
 	<div class="head">
 		<div class="head-title">
 			<h1><?php echo $report->date;?></h1>
-			<p>Leader: <strong><?php echo $report->leader_name;?></strong> <!-- <a href="header_report_detail_to_pdf.php?header=<?php echo $report->id;?>">Export to PDF</a> --></p>
+			<p>Leader: <strong><?php echo $report->leader_name;?></strong></p>
+		</div>
+		<div class="head-control">
+			<a class="btn btn-pdf-download" id="btn-pdf-export" href="pdf/daily-<?php echo $report->report_filename.'-'.$report->line_no.''.$report->shift;?>.pdf" target="_blank">Download PDF</a>
 		</div>
 	</div>
 
@@ -194,6 +197,11 @@ $current_page['1'] = 'report';
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/service/min/report.service.min.js"></script>
+<script>
+$(document).ready(function(){
+	dailyreport_to_pdf(<?php echo $report->id;?>);
+});
+</script>
 
 </body>
 </html>

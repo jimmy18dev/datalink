@@ -29,7 +29,7 @@ if($_POST['calling'] != ''){
 						$report->updateEFFandYield($_POST['header_id']);
 
 						if(!empty($return_id) && $return_id != 0){
-							$message = 'create report successful';
+							$message = 'Report edited';
 							$state = true;
 						}else{
 							$message = 'FALI!';
@@ -45,14 +45,14 @@ if($_POST['calling'] != ''){
 
 					// Leader authorization
 					if($report->leader_id == $user->id){
-						$report->deleteHeaderReport($_POST['header_id'],$_POST['shift'],$user->id);
+						$state = $report->deleteHeaderReport($_POST['header_id'],$_POST['shift'],$user->id);
 
-						if(!empty($return_id) && $return_id != 0){
-							$message = 'Create report successful';
+						if($state){
+							$message = 'Report delated!';
 						}else{
 							$message = 'Fail!';
 						}
-						$api->successMessage($message,$return_id,'');
+						$api->successMessage($message,$state,'');
 
 					}else{
 						$api->errorMessage('Autorite error!');

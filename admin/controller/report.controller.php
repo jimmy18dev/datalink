@@ -5,6 +5,7 @@ class ReportController extends ReportModel{
 	public $line_type;
 	public $shift;
 	public $report_date;
+	public $report_filename;
 	public $no_monthly_emplys;
 	public $no_daily_emplys;
 	public $ttl_monthly_hrs;
@@ -31,6 +32,7 @@ class ReportController extends ReportModel{
 	public $yield;
 	public $target_yield;
 	public $target_eff;
+	public $remark;
 	
 	public $type;
 	public $status;
@@ -91,11 +93,12 @@ class ReportController extends ReportModel{
 
 		$this->id 				= $data['id'];
 		$this->leader_id 		= $data['leader_id'];
-		$this->leader_name 		= $data['leader_name'];
+		$this->leader_name 		= (!empty($data['leader_name'])?$data['leader_name']:'');
 		$this->line_no 			= $data['line_no'];
 		$this->line_type 		= $data['line_type'];
 		$this->shift 			= $data['shift'];
 		$this->report_date 		= $data['report_date'];
+		$this->report_filename 	= $data['report_filename'];
 		$this->no_monthly_emplys = $data['no_monthly_emplys'];
 		$this->no_daily_emplys 	= $data['no_daily_emplys'];
 		$this->ttl_monthly_hrs 	= $data['ttl_monthly_hrs'];
@@ -120,6 +123,7 @@ class ReportController extends ReportModel{
 
 		$this->product_eff 		= $data['product_eff'];
 		$this->ttl_eff 			= $data['ttl_eff'];
+		$this->remark 			= $data['remark'];
 
 		$this->yield 			= $data['yield'];
 		$this->target_yield 	= $data['target_yield'];
@@ -213,6 +217,8 @@ class ReportController extends ReportModel{
 		$data = parent::listHeaderReportData($date);
 		$this->render($data,$option);
 	}
+
+	// Export to pdf file.
 
 	// render dataset to view.
     private function render($data,$option){

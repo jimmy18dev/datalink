@@ -8,7 +8,7 @@
 		<?php if($lock){?>
 		<i class="fa fa-check" aria-hidden="true"></i>
 		<?php }else{?>
-		<i class="fa fa-arrow-right" aria-hidden="true"></i>
+		<i class="fa fa-angle-right" aria-hidden="true"></i>
 		<?php }?>
 	</div>
 </div>

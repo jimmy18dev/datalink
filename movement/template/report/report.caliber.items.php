@@ -8,7 +8,7 @@
 		<?php }?>
 	</div>
 	<div class="description">
-		<p>Route: <strong><?php echo $var['route_name'];?></strong> · Std.time <strong><?php echo $var['std_time'];?> Hrs/K</strong> · Updated <strong><?php echo $var['update_facebook_format'];?></strong></p>
+		<p>Route: <strong><?php echo $var['route_name'];?></strong> · Std.time <strong><?php echo $var['std_time'];?> Hrs/K</strong></p>
 	</div>
 	</div>
 	<div class="operations">

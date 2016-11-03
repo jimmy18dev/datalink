@@ -74,32 +74,33 @@
 	background: #FFFFFF;
 	z-index: 10;
 	margin-top: 80px;
-	border-bottom: 1px solid #DDDDDD;
 
 	.header-items{
 		padding: 10px 0%;
-		height: 20px;
+		height: 18px;
 		float: left;
 		display: inline-block;
 		margin-right: 3%;
-		color: #AAAAAA;
+		color: #000000;
 		font-size: 0.8em;
 		border: 0px;
-		border-bottom: 1px solid transparent;
+		border-bottom: 2px solid transparent;
 
 		&:hover{
 			cursor: pointer;
-			color: rgba(0,0,0,0.6);
+			color: @primary_color;
 		}
 
 		i{
 			margin-right: 5px;
+			font-size: 0.8em;
 		}
 	}
 
 	.header-items-active{
+		font-weight: bold;
 		color: @primary_color;
-		border-bottom: 1px solid @primary_color;
+		border-bottom: 2px solid @primary_color;
 	}
 
 	.logout{
@@ -148,8 +149,8 @@
 	}
 
 	> .month-caption-items{
-		width: 48%;
-		padding: 1%;
+		width: 50%;
+		padding: 1% 0%;
 		margin: 0% 25%;
 		float: left;
 		display: inline-block;
@@ -157,10 +158,6 @@
 		font-size: 0.8em;
 		font-weight: bold;
 		color: @light_textcolor;
-
-		i{
-			margin-right: 5px;
-		}
 	}
 
 	// Header report items style
@@ -185,7 +182,7 @@
 			float: left;
 			display: inline-block;
 			font-weight: bold;
-			color: rgba(0,0,0,0.8);
+			color: #000000;
 
 			.new-items{
 				font-size: 0.7em;
@@ -202,6 +199,7 @@
 			float: left;
 			display: inline-block;
 			text-align: center;
+			color: #000000;
 
 			// &.-A{ color: #FF5722; }
 			// &.-B{ color: #3F51B5; }
@@ -217,12 +215,12 @@
 
 			.-warning{
 				color: #ff0000;
+				font-weight: bold;
 			}
 
 			.unit{
-				font-size: 0.7em;
+				font-size: 0.6em;
 				color: rgba(0,0,0,0.4);
-				font-style: italic;
 			}
 		}
 		.owner{
@@ -246,6 +244,10 @@
 			display: inline-block;
 			text-align: center;
 			color: rgba(0,0,0,0.4);
+		}
+
+		.fa-check{
+			color: #4CAF50;
 		}
 
 		&.-not_owner{
@@ -361,8 +363,9 @@
 				float: left;
 				display: inline-block;
 				font-size: 1.6em;
-				color: @normal_textcolor;
+				color: #000000;
 				line-height: 1.1em;
+				font-weight: bold;
 			}
 			.k{
 				width: 100%;
@@ -375,6 +378,11 @@
 					font-size: 0.8em;
 					color: @thin_textcolor;
 					margin-left: 5px;
+				}
+
+				strong{
+					color: #555555;
+					font-weight: normal;
 				}
 			}
 		}
@@ -865,15 +873,23 @@
 		}
 
 		.id{
-			width: 10%;
+			width: 100%;
 			float: left;
 			display: inline-block;
 			font-weight: bold;
-			color: rgba(0,0,0,0.2);
-			font-size: 0.9em;
+			color: rgba(0,0,0,0.4);
+			font-size: 0.7em;
+			margin-bottom: 1%;
+
+			.topic{ color: @primary_color; }
+
+			.time{
+				float: right;
+				display: inline-block;
+			}
 		}
 		.detail{
-			width: 90%;
+			width: 100%;
 			float: left;
 			display: inline-block;
 
@@ -884,17 +900,8 @@
 				margin-bottom: 1%;
 			}
 			.message{
-				color: rgba(0,0,0,0.8);
-				font-size: 0.8em;
-
-				.time{
-					color: rgba(0,0,0,0.4);
-
-					i{
-						margin-left: 5px;
-						font-size: 0.8em;
-					}
-				}
+				color: #000000;
+				font-size: 0.9em;
 			}
 		}
 	}

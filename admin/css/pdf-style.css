@@ -1,58 +1,55 @@
-.head-table {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border: 1px solid #000000;
-  text-align: center;
+.logo{
+	font-size: 24px;
+	font-weight: bold;
 }
-.head-table .left {
-  width: 10%;
-  float: left;
-  display: inline-block;
+
+.title{
+	font-size: 18px;
+	font-weight: bold;
 }
-.head-table .center {
-  width: 80%;
-  float: left;
-  display: inline-block;
+
+table, th, td {
+    border: 1px solid #000000;
 }
-.head-table .right {
-  width: 10%;
-  float: left;
-  display: inline-block;
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 9px;
 }
-.power-table {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border: 1px solid #000000;
-  text-align: center;
-  font-size: 0.6em;
+
+td{
+	padding: 5px;
+	line-height: 1em;
 }
-.power-table .row {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #000000;
+
+p{
+	font-size: 10px;
+	color: #555555;
 }
-.power-table .row:last-child {
-  border-bottom: 0px;
+h3{
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
 }
-.power-table .row .cell {
-  width: 4.9%;
-  padding: 0.5% 0%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #000000;
+
+.center{
+	text-align: center;
 }
-.power-table .row .cell-2 {
-  width: 9.8%;
+
+.black{
+	background: #555555;
 }
-.power-table .row .cell-4 {
-  width: 19.8%;
+
+b{
+	font-weight: bold;
+	color: #000000;
 }
-.power-table .row .cell-5 {
-  width: 24.75%;
+b.big{
+	font-size: 11px;
 }
-.power-table .row .cell-empty {
-  min-width: 5%;
+
+.caption{
+	background: #AAAAAA;
+	color: #FFFFFF;
 }

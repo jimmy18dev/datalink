@@ -51,7 +51,7 @@ $current_page['1'] = 'yield';
         <div class="topic">Yield & Total Efficiency</div>
         <div class="caption">Moment assembly</div>
     </div>
-    <a class="btn" href="report_header_editor.php?action=create"><i class="fa fa-plus" aria-hidden="true"></i>New report</a>
+    <a class="btn" href="report_header_editor.php?action=create">New report</a>
 </header>
 <?php include'navigator.php';?>
 <div class="container">

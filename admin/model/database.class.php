@@ -225,5 +225,15 @@ class Database{
 
         return $text;
     }
+
+    public function date_to_filename($datetime){
+        $monthText = array('01','02','03','04','05','06','07','08','09','10','11','12');
+        $year   = date('Y',strtotime($datetime));
+        $month  = date('n',strtotime($datetime));
+        $date   = date('j',strtotime($datetime));
+
+        $month  = $monthText[$month-1];
+        return $date.'-'.$month.'-'.$year;
+    }
 }
 ?>
