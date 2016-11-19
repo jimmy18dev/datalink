@@ -416,7 +416,7 @@ body {
   display: inline-block;
   font-size: 1.2em;
   padding: 8px 0px;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
 }
 .report-detail-container > .topic-container .title .target {
   float: right;
@@ -450,24 +450,25 @@ body {
   margin: 0% 25%;
   float: left;
   display: inline-block;
+  background: #FFFFFF;
+  margin-bottom: 1%;
 }
 .report-detail-container > .report-stat .stat-items {
-  width: 22.60%;
-  margin-right: 3%;
-  margin-bottom: 3%;
+  width: 20.85%;
+  padding: 2%;
   float: left;
   display: inline-block;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
 }
 .report-detail-container > .report-stat .stat-items:nth-child(4n) {
   border-right: 0px;
-  margin-right: 0%;
 }
 .report-detail-container > .report-stat .stat-items .v {
   width: 100%;
   float: left;
   display: inline-block;
-  font-size: 1.6em;
+  font-size: 1.4em;
   color: #000000;
   line-height: 1.1em;
   font-weight: bold;
@@ -477,16 +478,22 @@ body {
   float: left;
   display: inline-block;
   font-size: 0.8em;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.6);
 }
 .report-detail-container > .report-stat .stat-items .k i {
   font-size: 0.8em;
   color: rgba(0, 0, 0, 0.1);
   margin-left: 5px;
 }
-.report-detail-container > .report-stat .stat-items .k strong {
-  color: #555555;
-  font-weight: normal;
+.report-detail-container > .cal-box {
+  width: 46%;
+  padding: 2%;
+  margin: 0% 25%;
+  margin-top: 5%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  font-size: 1em;
 }
 .report-detail-container > .header-report-table {
   width: 50%;
@@ -494,27 +501,25 @@ body {
   float: left;
   display: inline-block;
   font-size: 1em;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
+  background: #FFFFFF;
 }
 .report-detail-container > .header-report-table .box {
   width: 100%;
-  padding: 1.5% 0%;
   float: left;
   display: inline-block;
-  background: #ffffff;
-  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
 }
 .report-detail-container > .header-report-table .box .box-topic {
-  width: 18.5%;
-  padding: 0% 2%;
-  margin-right: 3%;
-  padding-top: 0.5%;
+  width: 20.85%;
+  padding: 2%;
   float: left;
   display: inline-block;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 0.9em;
-  line-height: 1.5em;
+  color: #000000;
+  font-size: 1em;
+  line-height: 1.7em;
   border-right: 1px solid #EEEEEE;
+  font-weight: bold;
 }
 .report-detail-container > .header-report-table .box .box-topic i {
   margin-left: 5px;
@@ -522,48 +527,51 @@ body {
   font-size: 0.8em;
 }
 .report-detail-container > .header-report-table .box .col {
-  width: 14.85%;
+  width: 10.8%;
+  padding: 2%;
   float: left;
   display: inline-block;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
 }
 .report-detail-container > .header-report-table .box .col .col-val {
   width: 100%;
   float: left;
   display: inline-block;
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1em;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
 }
 .report-detail-container > .header-report-table .box .col .col-caption {
   width: 100%;
   float: left;
   display: inline-block;
   font-size: 0.7em;
-  margin-left: 5px;
   color: rgba(0, 0, 0, 0.4);
   line-height: 1em;
 }
-.report-detail-container > .header-report-table .box:last-child {
-  border-bottom: 1px solid #EEEEEE;
+.report-detail-container > .header-report-table .box .col:nth-child(6) {
+  border-right: 0px;
 }
 .report-detail-container > .header-report-table .remark {
-  width: 98%;
-  padding: 1%;
+  width: 96%;
+  padding: 2%;
   float: left;
   display: inline-block;
   margin-top: 1%;
   background: #FFFFFF;
 }
 .report-detail-container > .header-report-table .remark .caption {
-  font-size: 0.8em;
-  color: rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+  color: #000000;
   margin-bottom: 1%;
+  font-weight: bold;
 }
 .report-detail-container > .header-report-table .remark .message {
   font-size: 1em;
   line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.6);
 }
 .report-detail-container .caliber-in-report-items {
   width: 48%;
@@ -585,7 +593,7 @@ body {
   float: left;
   font-size: 1.2em;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
 }
 .report-detail-container .caliber-in-report-items .info .name a {
   float: right;
@@ -631,13 +639,16 @@ body {
 .report-detail-container .caliber-in-report-items .operations .operation-items:last-child {
   border-bottom: 0px;
 }
+.report-detail-container .caliber-in-report-items .operations .operation-items .fa-star {
+  color: #FFC107;
+}
 .report-detail-container .caliber-in-report-items .operations .operation-items .col1 {
-  width: 64%;
+  width: 60%;
   float: left;
   display: inline-block;
 }
 .report-detail-container .caliber-in-report-items .operations .operation-items .col2 {
-  width: 12%;
+  width: 11%;
   float: left;
   display: inline-block;
   text-align: right;
@@ -648,7 +659,7 @@ body {
   font-weight: bold;
 }
 .report-detail-container .caliber-in-report-items .operations .operation-items .col3 {
-  width: 12%;
+  width: 11%;
   float: left;
   display: inline-block;
   text-align: right;
@@ -671,18 +682,19 @@ body {
   font-weight: bold;
 }
 .report-detail-container .caliber-in-report-items .operations .operation-items .col5 {
-  width: 100%;
+  width: 6%;
   float: left;
   display: inline-block;
   text-align: right;
-  font-size: 0.8em;
-  line-height: 1.5em;
-  display: none;
+  color: rgba(0, 0, 0, 0.2);
+}
+.report-detail-container .caliber-in-report-items .operations .operation-items .col5.-red {
+  color: #f44336;
+  font-weight: bold;
 }
 .report-detail-container .caliber-in-report-items .operations .topic-fix {
-  font-style: italic;
-  color: rgba(0, 0, 0, 0.4);
-  font-size: 0.6em;
+  color: #000000;
+  font-size: 0.7em;
 }
 .report-detail-container .caliber-in-report-items .operations .topic-fix:hover {
   color: rgba(0, 0, 0, 0.4);
@@ -831,7 +843,7 @@ body {
   margin-bottom: 10%;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-left: 1px solid rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
 }
 .container .graph-report .report-yield-table .caption-col {
   width: 12%;
@@ -1087,7 +1099,7 @@ body {
   display: inline-block;
   line-height: 1.5em;
   font-size: 1.2em;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
   margin-top: 2%;
 }
 .form-container > .form-section .inputs {
@@ -1163,7 +1175,7 @@ body {
   line-height: 3em;
   font-size: 1em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
 }
 .operation-form-container .operation-items .col1 {
   width: 40%;
@@ -1410,7 +1422,7 @@ body {
   margin-top: 20%;
   font-size: 1em;
   line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
   font-style: italic;
 }
 .dialog-box {
@@ -1426,7 +1438,7 @@ body {
   margin-top: 25%;
   font-size: 1em;
   line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
   font-style: italic;
 }
 .dialog-box .dialog i {
@@ -1448,7 +1460,7 @@ body {
   font-size: 1.2em;
   line-height: 1.5em;
   margin-bottom: 5%;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000000;
 }
 .error-container a {
   background: #003399;

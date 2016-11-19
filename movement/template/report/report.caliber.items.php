@@ -17,6 +17,7 @@
 			<div class="col2">Input</div>
 			<div class="col3">Good</div>
 			<div class="col4">Reject</div>
+			<div class="col5">Remark</div>
 		</div>
 		<?php $this->listOperationInCaliber($var['report_id'],array('type' => 'report-caliber-detail-items','std_time' => $var['std_time']));?>
 	</div>
