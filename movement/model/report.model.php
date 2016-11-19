@@ -147,7 +147,7 @@ class ReportModel extends Database{
 	}
 
 	public function listOperationInCaliberData($report_id){
-		parent::query('SELECT detail.id,operation.name operation_name,detail.total_good,detail.total_reject,detail.output,detail.required_hrs,detail.update_time,remark.description remark_message 
+		parent::query('SELECT detail.id,operation.name operation_name,detail.total_good,detail.total_reject,operation.type,detail.output,detail.required_hrs,detail.update_time,remark.description remark_message 
 			FROM RTH_DailyOutputDetail AS detail 
 			LEFT JOIN RTH_Operation AS operation ON detail.operation_id = operation.id 
 			LEFT JOIN RTH_GeneralRemark AS remark ON detail.remark_id = remark.id 
@@ -365,7 +365,7 @@ class ReportModel extends Database{
 	}
 
 	public function listOpearationInHeaderData($header_id){
-		parent::query('SELECT detail.id,detail.operation_id,detail.total_good,detail.total_reject,caliber.code,caliber.family,stdtime.hrs,operation.type 
+		parent::query('SELECT detail.id,detail.operation_id,detail.total_good,detail.total_reject,caliber.id caliber_id,caliber.code,caliber.family,stdtime.hrs,operation.type 
 			FROM RTH_DailyOutputDetail AS detail 
 			LEFT JOIN RTH_DailyOutputReportHeader AS head ON detail.report_id = head.id 
 			LEFT JOIN RTH_CaliberCode AS caliber ON head.caliber_id = caliber.id 

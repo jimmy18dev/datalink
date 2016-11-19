@@ -75,8 +75,8 @@ $current_page['1'] = 'index';
 	
 	<div class="report-stat">
 		<div class="stat-items stat-items-highlight">
-			<div class="v">Shift <?php echo $report->shift;?></div>
-			<div class="k">LINE <?php echo $report->line_no;?> (<?php echo $report->line_type;?>)</div>
+			<div class="v">LINE <?php echo $report->line_no;?> (<?php echo $report->line_type;?>)</div>
+			<div class="k">Shift <?php echo $report->shift;?></div>
 		</div>
 
 		<div class="stat-items">
@@ -94,10 +94,6 @@ $current_page['1'] = 'index';
 		</div>
 
 		<div class="stat-items">
-			<div class="v"><?php echo $report->ttl_monthly_hrs;?></div>
-			<div class="k"><strong>Monthly</strong> Normal Hour</div>
-		</div>
-		<div class="stat-items">
 			<div class="v"><?php echo $report->no_monthly_emplys;?></div>
 			<div class="k"><strong>Monthly</strong> Prs</div>
 		</div>
@@ -106,14 +102,38 @@ $current_page['1'] = 'index';
 			<div class="k"><strong>Daily</strong> Prs</div>
 		</div>
 		<div class="stat-items">
+			<div class="v"><?php echo $report->ttl_monthly_hrs;?></div>
+			<div class="k"><strong>Monthly</strong> Normal Hour</div>
+		</div>
+		<div class="stat-items">
 			<div class="v"><?php echo $report->ttl_daily_hrs;?></div>
 			<div class="k"><strong>Daily</strong> Normal Hour</div>
 		</div>
 	</div>
 
-	<div class="header-report-table">
+	<div class="header-report-table">	
 		<div class="box">
-			<div class="box-topic">Lost time<i class="fa fa-plug" aria-hidden="true"></i></div>
+			<div class="box-topic">Over time</div>
+			<div class="col">
+				<div class="col-val"><?php echo number_format($report->ot_10,2);?></div>
+				<div class="col-caption">1.0</div>
+			</div>
+			<div class="col">
+				<div class="col-val"><?php echo number_format($report->ot_15,2);?></div>
+				<div class="col-caption">1.5</div>
+			</div>
+			<div class="col">
+				<div class="col-val"><?php echo number_format($report->ot_20,2);?></div>
+				<div class="col-caption">2.0</div>
+			</div>
+			<div class="col">
+				<div class="col-val"><?php echo number_format($report->ot_30,2);?></div>
+				<div class="col-caption">3.0</div>
+			</div>
+		</div>
+
+		<div class="box">
+			<div class="box-topic">Lost time</div>
 			<div class="col">
 				<div class="col-val"><?php echo number_format($report->losttime_vac,2);?></div>
 				<div class="col-caption">Vac</div>
@@ -135,29 +155,9 @@ $current_page['1'] = 'index';
 				<div class="col-caption">Other</div>
 			</div>
 		</div>
-			
-		<div class="box">
-			<div class="box-topic">Over time<i class="fa fa-history" aria-hidden="true"></i></div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->ot_10,2);?></div>
-				<div class="col-caption">1.0</div>
-			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->ot_15,2);?></div>
-				<div class="col-caption">1.5</div>
-			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->ot_20,2);?></div>
-				<div class="col-caption">2.0</div>
-			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->ot_30,2);?></div>
-				<div class="col-caption">3.0</div>
-			</div>
-		</div>
 
 		<div class="box">
-			<div class="box-topic">Down time<i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+			<div class="box-topic">Down time</div>
 			<div class="col">
 				<div class="col-val"><?php echo number_format($report->downtime_mc,2);?></div>
 				<div class="col-caption">M/C</div>
@@ -177,7 +177,7 @@ $current_page['1'] = 'index';
 		</div>
 
 		<div class="box">
-			<div class="box-topic">Sort<i class="fa fa-sort-amount-asc" aria-hidden="true"></i></div>
+			<div class="box-topic">Sort</div>
 			<div class="col">
 				<div class="col-val"><?php echo number_format($report->sort_local,2);?></div>
 				<div class="col-caption">Loc</div>
@@ -189,7 +189,7 @@ $current_page['1'] = 'index';
 		</div>
 
 		<div class="box">
-			<div class="box-topic">Rework<i class="fa fa-recycle" aria-hidden="true"></i></div>
+			<div class="box-topic">Rework</div>
 			<div class="col">
 				<div class="col-val"><?php echo number_format($report->rework_local,2);?></div>
 				<div class="col-caption">Loc</div>
@@ -225,6 +225,8 @@ $current_page['1'] = 'index';
 	<div class="turn-to-list">
 		<?php $report->listAllTurnTo($report->id,array('type' => 'turn-to-items'));?>
 	</div>
+
+	<div class="cal-box"><?php $report->calculationEFFandYield($report->id);?></div>
 </div>
 
 <script type="text/javascript" src="js/min/auto_hidden.min.js"></script>
