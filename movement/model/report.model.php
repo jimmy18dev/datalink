@@ -110,7 +110,7 @@ class ReportModel extends Database{
 	}
 
 	public function listAllHeaderData($line_no){
-		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.product_eff,header.ttl_eff,header.target_eff,header.create_time,header.update_time,user.id leader_id,user.code user_code,user.fname,user.lname 
+		parent::query('SELECT header.id,header.line_no,header.line_type,header.shift,header.report_date,header.no_monthly_emplys,header.no_daily_emplys,header.ttl_monthly_hrs,header.ttl_daily_hrs,header.ot_10,header.ot_15,header.ot_20,header.ot_30,header.product_eff,header.ttl_eff,header.yield,header.target_eff,header.target_yield,header.create_time,header.update_time,user.id leader_id,user.code user_code,user.fname,user.lname 
 			FROM RTH_DailyOutputHeader AS header 
 			LEFT JOIN RTH_User AS user ON header.user_id = user.id 
 			WHERE header.line_no = :line_no AND header.status = "active" 

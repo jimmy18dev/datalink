@@ -130,7 +130,7 @@ class ReportController extends ReportModel{
 		$required_hrs 	= 0;
 		$total_good 	= 0;
 
-		echo'>>> Required hrs calculation';
+		echo'<div class="box"><h3>Required hrs calculation</h3>';
 		foreach ($dataset as $var){
 			if($var['type'] == 'final'){
 				$required 	= round($var['hrs'],2);
@@ -177,11 +177,12 @@ class ReportController extends ReportModel{
 
 		$before_yield = 0;
 
-		echo'>>> Yield calculation';
+		echo'<h3>Yield calculation</h3>';
 		foreach ($list_operation as $key => $list){
+			$input = $list['reject'] + $list['good'];
 			if($list['reject'] != 0 && $list['good'] != 0){
-				$list_operation[$key]['remark'] = round((($list['reject'] / $list['good']) * 100),2);
-				echo '<p>'.$list['reject'].' / '.$list['good'].' x 100 = '.round((($list['reject'] / $list['good']) * 100),2).'</p>';
+				$list_operation[$key]['remark'] = round((($list['reject'] / $input) * 100),2);
+				echo '<p>'.$list['reject'].' / '.$input.' x 100 = '.round((($list['reject'] / $input) * 100),2).'</p>';
 			}else{
 				$list_operation[$key]['remark'] = 0;
 			}
@@ -189,7 +190,7 @@ class ReportController extends ReportModel{
 			$before_yield += $list_operation[$key]['remark'];
 		}
 
-		echo'<br>';
+		echo'</div><div class="box">';
 		$yield 			= round(100 - $before_yield,2);
 
 		$product_eff 	= round(($required_hrs / $normal_time) * 100,2);
@@ -197,19 +198,21 @@ class ReportController extends ReportModel{
 
 		// $this->updateEFFHeader($header_id,$product_eff,$total_eff,$yield);
 
+		echo "<h3>Calculation</h3>";
 		echo 'Required hrs = <strong style="color:#00C685;">'.$required_hrs.'</strong><br>';
 		echo 'Normal hrs = <strong style="color:#ACAA85;">'.$normal_time.'</strong><br>';
-		echo 'Total hrs = <strong style="color:#980685;">'.$total_time.'</strong><br>';
-		echo'<br><p>(<strong style="color:#00C685;">'.$required_hrs.'</strong> / <strong style="color:#ACAA85;">'.$normal_time.'</strong>) x 100 = <strong>'.$product_eff.' %</strong> (Product EFF)</p>';
-		echo'<p>(<strong style="color:#00C685;">'.$required_hrs.'</strong> / <strong style="color:#980685;">'.$total_time.'</strong>) x 100 = <strong>'.$total_eff.' %</strong> (Total EFF)</p>';
-		echo'<p> 100 - '.$before_yield.' = <strong>'.$yield.' %</strong> (Yield)</p>';
+		echo 'Total hrs = <strong style="color:#980685;">'.$total_time.'</strong><br><br>';
+
+		echo "<h3>Result</h3>";
+		echo'<p><strong>'.$product_eff.' %</strong> (Product EFF) = (<strong style="color:#00C685;">'.$required_hrs.'</strong> / <strong style="color:#ACAA85;">'.$normal_time.'</strong>) x 100</p>';
+		echo'<p><strong>'.$total_eff.' %</strong> (Total EFF) = (<strong style="color:#00C685;">'.$required_hrs.'</strong> / <strong style="color:#980685;">'.$total_time.'</strong>) x 100</p>';
+		echo'<p><strong>'.$yield.' %</strong> (Yield) = 100 - '.$before_yield.'</p></div>';
 	}
 
 	public function updateEFFandYield($header_id){
 		$this->getHeader($header_id);
 		$dataset 		= parent::listOpearationInHeaderData($header_id);
 		$list_operation = parent::listOpearationOnly($header_id);
-		$operations = $list_operation;
 
 		$normal_time 	= $this->ttl_daily_hrs + $this->ot_10 + $this->ot_15 + $this->ot_20 + $this->ot_30;
 		$total_time 	= $normal_time + $this->downtime_mc + $this->downtime_mat + $this->downtime_fac + $this->downtime_other + $this->sort_local + $this->sort_oversea + $this->rework_local + $this->rework_oversea;
@@ -224,8 +227,6 @@ class ReportController extends ReportModel{
 			if($var['type'] == 'final'){
 				$required 	= round($var['hrs'],2);
 				$input 		= round((($var['total_good']+$list['reject'])/1000),2);
-
-				echo'<p>'.$input.' x '.$required.' = '.round($required * $input,2).'<p>';
 				$required_hrs += round($required * $input,2);
 			}
 
@@ -240,20 +241,24 @@ class ReportController extends ReportModel{
 		$before_yield = 0;
 
 		foreach ($list_operation as $key => $list){
+			$input = $list['reject'] + $list['good'];
+
 			if($list['reject'] != 0 && $list['good'] != 0){
-				$list_operation[$key]['remark'] = round((($list['reject'] / $list['good']) * 100),2);
+				$list_operation[$key]['remark'] = round((($list['reject'] / $input) * 100),2);
 			}else{
 				$list_operation[$key]['remark'] = 0;
 			}
 
 			$before_yield += $list_operation[$key]['remark'];
 		}
-		$yield 			= round(100 - $before_yield,2);
 
+		$yield 			= round(100 - $before_yield,2);
 		$product_eff 	= round(($required_hrs / $normal_time) * 100,2);
 		$total_eff 		= round(($required_hrs / $total_time) * 100,2);
 
 		$this->updateEFFHeader($header_id,$product_eff,$total_eff,$yield);
+
+		return true;
 	}
 
 	// Header report

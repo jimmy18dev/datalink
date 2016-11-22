@@ -149,7 +149,7 @@ class ReportModel extends Database{
 
 	// Group header report by date
 	public function groupHeaderReportData(){
-		parent::query('SELECT report_date,COUNT(id) total_report FROM RTH_DailyOutputHeader WHERE status = "active" GROUP BY report_date ORDER BY report_date ASC');
+		parent::query('SELECT report_date,COUNT(id) total_report FROM RTH_DailyOutputHeader WHERE status = "active" GROUP BY report_date ORDER BY report_date DESC');
 		parent::execute();
 		$dataset = parent::resultset();
 		foreach ($dataset as $k => $var) {

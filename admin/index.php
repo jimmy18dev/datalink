@@ -63,6 +63,13 @@ $current_page['1'] = 'report';
 			<div class="title">Yield & Total Efficiency</div>
 		</div>
 		</a>
+
+		<a href="pdftest.php">
+		<div class="report-items">
+			<div class="icon"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></div>
+			<div class="title">PDF Export (Test)</div>
+		</div>
+		</a>
 	</div>
 </div>
 </body>
