@@ -42,9 +42,9 @@ $current_page['1'] = 'message';
 <header class="header">
 	<div class="header-items">
 		<div class="topic">News</div>
-		<div class="caption">Describes the procedure used to send Message Queuing test messages, for IT professionals.</div>
+		<div class="caption">Latest news from administrator</div>
 	</div>
-	<a class="btn" href="report_header_editor.php?action=create">New report</a>
+	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
 </header>
 <?php include'navigator.php';?>
 <div class="message-list-container">

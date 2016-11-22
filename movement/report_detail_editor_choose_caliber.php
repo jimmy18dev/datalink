@@ -56,7 +56,7 @@ $current_page['2'] = 'choose_caliber';
 <div class="choose-list-container">
 	<div class="choose-form-title">
 		<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-		<div class="title">Select a caliber code add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
+		<div class="title">Select a caliber add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
 	</div>
 	<div class="search-container">
 		<input type="text" onkeyup="javascript:listAllCaliber('daily_report');" class="input-search" id="keyword" autofocus placeholder="Enter caliber code..." autocomplete="off">

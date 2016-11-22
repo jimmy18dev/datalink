@@ -168,7 +168,7 @@ function editHeaderReport(id){
         }
     }).done(function(data){
         console.log('Return: '+data.message);
-        window.location = 'index.php?callback=edit_success';
+        window.location = 'report_detail.php?header='+id+'&callback=edit_success';
     }).error();
 }
 

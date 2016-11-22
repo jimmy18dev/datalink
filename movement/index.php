@@ -41,14 +41,13 @@ $current_page['1'] = 'index';
 <body>
 <header class="header">
 	<div class="header-items">
-		<div class="topic">Daily output report</div>
-		<div class="caption">Describes the procedure used to send Message Queuing test messages, for IT professionals.</div>
+		<div class="topic">Daily Output Report</div>
+		<div class="caption">DATALINK Ver <?php echo $meta['dev']['version'];?></div>
 	</div>
-	<a class="btn" href="report_header_editor.php?action=create">New report</a>
+	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
 </header>
 <?php include'navigator.php';?>
 <div class="header-list-container">
-	<div class="filter"><a href="#">View all user</a></div>
 	<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
 </div>
 

@@ -37,7 +37,7 @@ $current_page['1'] = 'index';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title><?php echo $report->report_date;?> - <?php echo $report->line_no;?><?php echo $report->shift;?></title>
+<title><?php echo $report->line_no;?><?php echo $report->shift;?> - <?php echo $report->report_date;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -54,7 +54,7 @@ $current_page['1'] = 'index';
 		<div class="topic"><?php echo $report->report_full_date;?></div>
 		<div class="caption">Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update_facebook_format;?></strong> Leader <strong><?php echo $report->leader_name;?></strong></div>
 	</div>
-	<a class="btn" href="report_header_editor.php?action=create">New report</a>
+	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
 </header>
 <?php include'navigator.php';?>
 <div class="report-detail-container">
@@ -62,15 +62,18 @@ $current_page['1'] = 'index';
 	<!-- Report control (Edit or Lock) -->
 	<div class="report-control">
 		<?php if($user->id == $report->leader_id && $report->can_edit){?>
-		<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="report-btn"><i class="fa fa-file-text-o" aria-hidden="true"></i>Edit this Report</a>
+		<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="report-btn">EDIT REPORT</a>
 		<?php }else{?>
-		<div class="report-btn -lock"><i class="fa fa-lock" aria-hidden="true"></i>Lock!</div>
+		<div class="report-btn -locked"><i class="fa fa-lock" aria-hidden="true"></i>LOCKED</div>
 		<?php }?>
 	</div>
 
 	<!-- 1. Manpower -->
 	<div class="topic-container">
-		<div class="title">1. Manpower: <span class="target">Target EFF = <strong><?php echo number_format($report->target_eff,2);?>%</strong> , Target Yield = <strong><?php echo number_format($report->target_yield,2);?>%</strong></span></div>
+		<div class="title">1. Manpower: 
+			<span class="target">Target Yield = <strong><?php echo number_format($report->target_yield,2);?>%</strong></span>
+			<span class="target">Target EFF = <strong><?php echo number_format($report->target_eff,2);?>%</strong></span>
+		</div>
 	</div>
 	
 	<div class="report-stat">
@@ -79,16 +82,16 @@ $current_page['1'] = 'index';
 			<div class="k">Shift <?php echo $report->shift;?></div>
 		</div>
 
-		<div class="stat-items">
+		<div class="stat-items <?php echo ($report->product_eff < $report->target_eff?'-warning':'');?>">
 			<div class="v"><?php echo number_format($report->product_eff,2);?>%</div>
 			<div class="k">Product EFF</div>
 		</div>
-		<div class="stat-items">
+		<div class="stat-items <?php echo ($report->ttl_eff < $report->target_eff?'-warning':'');?>">
 			<div class="v"><?php echo number_format($report->ttl_eff,2);?>%</div>
 			<div class="k">Total EFF</div>
 		</div>
 
-		<div class="stat-items">
+		<div class="stat-items <?php echo ($report->yield < $report->target_yield?'-warning':'');?>">
 			<div class="v"><?php echo number_format($report->yield,2);?>%</div>
 			<div class="k">Yield</div>
 		</div>
@@ -114,88 +117,88 @@ $current_page['1'] = 'index';
 	<div class="header-report-table">	
 		<div class="box">
 			<div class="box-topic">Over time</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->ot_10,2);?></div>
+			<div class="col <?php echo ($report->ot_10 == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->ot_10);?></div>
 				<div class="col-caption">1.0</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->ot_15,2);?></div>
+			<div class="col <?php echo ($report->ot_15 == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->ot_15);?></div>
 				<div class="col-caption">1.5</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->ot_20,2);?></div>
+			<div class="col <?php echo ($report->ot_20 == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->ot_20);?></div>
 				<div class="col-caption">2.0</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->ot_30,2);?></div>
+			<div class="col <?php echo ($report->ot_30 == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->ot_30);?></div>
 				<div class="col-caption">3.0</div>
 			</div>
 		</div>
 
 		<div class="box">
 			<div class="box-topic">Lost time</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->losttime_vac,2);?></div>
+			<div class="col <?php echo ($report->losttime_vac == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->losttime_vac);?></div>
 				<div class="col-caption">Vac</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->losttime_sick,2);?></div>
+			<div class="col <?php echo ($report->losttime_sick == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->losttime_sick);?></div>
 				<div class="col-caption">Sick</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->losttime_abs,2);?></div>
+			<div class="col <?php echo ($report->losttime_abs == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->losttime_abs);?></div>
 				<div class="col-caption">Abs</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->losttime_mat,2);?></div>
+			<div class="col <?php echo ($report->losttime_mat == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->losttime_mat);?></div>
 				<div class="col-caption">Mat</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->losttime_other,2);?></div>
+			<div class="col <?php echo ($report->losttime_other == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->losttime_other);?></div>
 				<div class="col-caption">Other</div>
 			</div>
 		</div>
 
 		<div class="box">
 			<div class="box-topic">Down time</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->downtime_mc,2);?></div>
+			<div class="col <?php echo ($report->downtime_mc == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->downtime_mc);?></div>
 				<div class="col-caption">M/C</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->downtime_mat,2);?></div>
+			<div class="col <?php echo ($report->downtime_mat == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->downtime_mat);?></div>
 				<div class="col-caption">Mat</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->downtime_fac,2);?></div>
+			<div class="col <?php echo ($report->downtime_fac == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->downtime_fac);?></div>
 				<div class="col-caption">Fac</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->downtime_other,2);?></div>
+			<div class="col <?php echo ($report->downtime_other == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->downtime_other);?></div>
 				<div class="col-caption">Other</div>
 			</div>
 		</div>
 
 		<div class="box">
 			<div class="box-topic">Sort</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->sort_local,2);?></div>
+			<div class="col <?php echo ($report->sort_local == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->sort_local);?></div>
 				<div class="col-caption">Loc</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->sort_oversea,2);?></div>
+			<div class="col <?php echo ($report->sort_oversea == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->sort_oversea);?></div>
 				<div class="col-caption">Ove</div>
 			</div>
 		</div>
 
 		<div class="box">
 			<div class="box-topic">Rework</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->rework_local,2);?></div>
+			<div class="col <?php echo ($report->rework_local == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->rework_local);?></div>
 				<div class="col-caption">Loc</div>
 			</div>
-			<div class="col">
-				<div class="col-val"><?php echo number_format($report->rework_oversea,2);?></div>
+			<div class="col <?php echo ($report->rework_oversea == 0?'-empty':'');?>">
+				<div class="col-val"><?php echo number_format($report->rework_oversea);?></div>
 				<div class="col-caption">Ove</div>
 			</div>
 		</div>
@@ -210,7 +213,7 @@ $current_page['1'] = 'index';
 
 	<!-- 2. Output -->
 	<div class="topic-container">
-		<div class="title">2. Output: <?php echo $report->total_caliber;?> Calibers <?php if($user->id == $report->leader_id && $report->can_edit){?><a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>ADD CALIBER CODE</a><?php }?></div>
+		<div class="title">2. Output: <?php echo $report->total_caliber;?> Calibers <?php if($user->id == $report->leader_id && $report->can_edit){?><a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn">ADD CALIBER CODE</a><?php }?></div>
 	</div>	
 	<div class="container-box">
 		<?php $report->listCaliberInReport($report->id,array('type' => 'report-caliber-items','header_id' => $report->id,'can_edit' => $report->can_edit));?>
@@ -219,7 +222,7 @@ $current_page['1'] = 'index';
 	<!-- 3. Turn to 24-48 Hrs. -->
 	<div class="topic-container">
 		<div class="title">3. Turn to 24-48 Hrs. <?php if($user->id == $report->leader_id && $report->can_edit){?>
-			<a href="report_detail_turn_to_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Turn To</a><?php }?></div>
+			<a href="report_detail_turn_to_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn">ADD TURE TO</a><?php }?></div>
 		</div>
 	
 	<div class="turn-to-list">

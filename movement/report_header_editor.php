@@ -188,19 +188,19 @@ if(!empty($report->report_date_ori)){
 		<div class="title">4. Overtime</div>
 		<div class="inputs">
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="ot_10" placeholder="0.00" value="<?php echo ($report->ot_10>0?$report->ot_10:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="ot_10" placeholder="0" value="<?php echo ($report->ot_10>0?$report->ot_10:'');?>"></div>
 				<div class="caption">1.0</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="ot_15" placeholder="0.00" value="<?php echo ($report->ot_15>0?$report->ot_15:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="ot_15" placeholder="0" value="<?php echo ($report->ot_15>0?$report->ot_15:'');?>"></div>
 				<div class="caption">1.5</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="ot_20" placeholder="0.00" value="<?php echo ($report->ot_20>0?$report->ot_20:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="ot_20" placeholder="0" value="<?php echo ($report->ot_20>0?$report->ot_20:'');?>"></div>
 				<div class="caption">2.0</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="ot_30" placeholder="0.00" value="<?php echo ($report->ot_30>0?$report->ot_30:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="ot_30" placeholder="0" value="<?php echo ($report->ot_30>0?$report->ot_30:'');?>"></div>
 				<div class="caption">3.0</div>
 			</div>
 		</div>
@@ -210,23 +210,23 @@ if(!empty($report->report_date_ori)){
 		<div class="title">5. Lost time</div>
 		<div class="inputs">
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="losttime_vac" placeholder="0.00" value="<?php echo ($report->losttime_vac>0?$report->losttime_vac:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="losttime_vac" placeholder="0" value="<?php echo ($report->losttime_vac>0?$report->losttime_vac:'');?>"></div>
 				<div class="caption">VAC</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="losttime_sick" placeholder="0.00" value="<?php echo ($report->losttime_sick>0?$report->losttime_sick:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="losttime_sick" placeholder="0" value="<?php echo ($report->losttime_sick>0?$report->losttime_sick:'');?>"></div>
 				<div class="caption">SICK</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="losttime_abs" placeholder="0.00" value="<?php echo ($report->losttime_abs>0?$report->losttime_abs:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="losttime_abs" placeholder="0" value="<?php echo ($report->losttime_abs>0?$report->losttime_abs:'');?>"></div>
 				<div class="caption">ABS</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="losttime_mat" placeholder="0.00" value="<?php echo ($report->losttime_mat>0?$report->losttime_mat:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="losttime_mat" placeholder="0" value="<?php echo ($report->losttime_mat>0?$report->losttime_mat:'');?>"></div>
 				<div class="caption">MAT</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="losttime_other" placeholder="0.00" value="<?php echo ($report->losttime_other>0?$report->losttime_other:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="losttime_other" placeholder="0" value="<?php echo ($report->losttime_other>0?$report->losttime_other:'');?>"></div>
 				<div class="caption">Other</div>
 			</div>
 		</div>
@@ -236,19 +236,19 @@ if(!empty($report->report_date_ori)){
 		<div class="title">6. Down time</div>
 		<div class="inputs">
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="downtime_mc" placeholder="0.00" value="<?php echo ($report->downtime_mc>0?$report->downtime_mc:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="downtime_mc" placeholder="0" value="<?php echo ($report->downtime_mc>0?$report->downtime_mc:'');?>"></div>
 				<div class="caption">M/C</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="downtime_mat" placeholder="0.00" value="<?php echo ($report->downtime_mat>0?$report->downtime_mat:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="downtime_mat" placeholder="0" value="<?php echo ($report->downtime_mat>0?$report->downtime_mat:'');?>"></div>
 				<div class="caption">MAT</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="downtime_fac" placeholder="0.00" value="<?php echo ($report->downtime_fac>0?$report->downtime_fac:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="downtime_fac" placeholder="0" value="<?php echo ($report->downtime_fac>0?$report->downtime_fac:'');?>"></div>
 				<div class="caption">FAC</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="downtime_other" placeholder="0.00" value="<?php echo ($report->downtime_other>0?$report->downtime_other:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="downtime_other" placeholder="0" value="<?php echo ($report->downtime_other>0?$report->downtime_other:'');?>"></div>
 				<div class="caption">Other</div>
 			</div>
 		</div>
@@ -258,11 +258,11 @@ if(!empty($report->report_date_ori)){
 		<div class="title">7. Sort</div>
 		<div class="inputs">
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="sort_local" placeholder="0.00" value="<?php echo ($report->sort_local>0?$report->sort_local:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="sort_local" placeholder="0" value="<?php echo ($report->sort_local>0?$report->sort_local:'');?>"></div>
 				<div class="caption">Local</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="sort_oversea" placeholder="0.00" value="<?php echo ($report->sort_oversea>0?$report->sort_oversea:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="sort_oversea" placeholder="0" value="<?php echo ($report->sort_oversea>0?$report->sort_oversea:'');?>"></div>
 				<div class="caption">Overseas</div>
 			</div>
 		</div>
@@ -272,11 +272,11 @@ if(!empty($report->report_date_ori)){
 		<div class="title">8. Rework</div>
 		<div class="inputs">
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="rework_local" placeholder="0.00" value="<?php echo ($report->rework_local>0?$report->rework_local:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="rework_local" placeholder="0" value="<?php echo ($report->rework_local>0?$report->rework_local:'');?>"></div>
 				<div class="caption">Local</div>
 			</div>
 			<div class="section-items">
-				<div class="input"><input type="number" class="input-text" id="rework_oversea" placeholder="0.00" value="<?php echo ($report->rework_oversea>0?$report->rework_oversea:'');?>"></div>
+				<div class="input"><input type="number" class="input-text" id="rework_oversea" placeholder="0" value="<?php echo ($report->rework_oversea>0?$report->rework_oversea:'');?>"></div>
 				<div class="caption">Overseas</div>
 			</div>
 		</div>
@@ -311,7 +311,7 @@ if(!empty($report->report_date_ori)){
 <div class="loading-box" id="loading-box">
 	<div class="dialog">
 		<div class="icon"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-		<p id="loading-message"></p>
+		<p id="loading-message">กำลังบันทึกข้อมูล</p>
 	</div>
 </div>
 </body>
