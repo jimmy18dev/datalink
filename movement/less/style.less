@@ -1533,6 +1533,119 @@
 	}
 }
 
+// ROBOT STYLE
+.robot{
+	width: 40%;
+	margin: 0% 30%;
+	margin-top: 13%; 
+	float: left;
+	display: inline-block;
+
+	.head{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		margin-bottom: 20%;
+		text-align: center;
+
+		h1{
+			font-size: 2em;
+			color: rgba(0,0,0,0.8);
+		}
+		p{
+			font-size: 0.9em;
+			color: rgba(0,0,0,0.6);
+		}
+
+		a{
+			color: @primary_color;
+			text-decoration: underline;
+		}
+	}
+
+	.start{
+		width: 100%;
+		float: left;
+		display: inline-block;
+
+		.btn{
+			width: 20%;
+			margin: 0% 40%;
+			float: left;
+			display: inline-block;
+			border: 1px solid @primary_color;
+			color: @primary_color;
+			border-radius: 20px;
+			padding: 5px 0px;
+			text-align: center;
+
+			i{
+				margin-left: 10px;
+			}
+		}
+
+		.success{
+			width: 100%;
+			float: left;
+			display: inline-block;
+			text-align: center;
+			font-size: 2em;
+			color: @primary_color;
+
+			i{
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.progress{
+		width: 100%;
+		margin: 2% 0%;
+		float: left;
+		display: inline-block;
+		background: #EEEEEE;
+		border-radius: 20px;
+		overflow: hidden;
+
+		.bar{
+			width: 40%;
+			height: 5px;
+			border-radius: 20px;
+			float: left;
+			display: inline-block;
+			background: @primary_color;
+		}
+	}
+
+	p.caption{
+		font-size: 0.8em;
+		text-align: right;
+		color: rgba(0,0,0,0.6);
+	}
+
+	.cal-box{
+		width: 96%;
+		padding: 5% 2%;
+		border: 1px dashed #AAAAAA;
+		margin-top: 5%;
+		float: left;
+		display: inline-block;
+		font-size: 0.7em;
+		border-radius: 3px;
+
+		.box{
+			width: 48%;
+			float: left;
+			display: inline-block;
+			text-align: right;
+
+			&:last-child{
+				float: right;
+				text-align: left;
+			}
+		}
+	}
+}
 /* Other Device and Screen */
 @media only screen and (min-width:1024px) and (max-width:1365px){@import "style-1024-1366";}
 @media only screen and (min-width:760px) and (max-width:1023px){@import "style-760-1023";}
