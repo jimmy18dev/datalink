@@ -193,19 +193,24 @@ class ReportController extends ReportModel{
 		echo'</div><div class="box">';
 		$yield 			= round(100 - $before_yield,2);
 
-		$product_eff 	= round(($required_hrs / $normal_time) * 100,2);
-		$total_eff 		= round(($required_hrs / $total_time) * 100,2);
+		if($required_hrs == 0){
+			$product_eff = 0;
+			$total_eff = 0;
+		}else{
+			$product_eff 	= round(($required_hrs / $normal_time) * 100,2);
+			$total_eff 		= round(($required_hrs / $total_time) * 100,2);
+		}
 
 		// $this->updateEFFHeader($header_id,$product_eff,$total_eff,$yield);
 
 		echo "<h3>Calculation</h3>";
-		echo 'Required hrs = <strong style="color:#00C685;">'.$required_hrs.'</strong><br>';
-		echo 'Normal hrs = <strong style="color:#ACAA85;">'.$normal_time.'</strong><br>';
-		echo 'Total hrs = <strong style="color:#980685;">'.$total_time.'</strong><br><br>';
+		echo 'Required hrs = <strong style="color:#003399;">'.$required_hrs.'</strong><br>';
+		echo 'Normal hrs = <strong style="color:#4CAF50;">'.$normal_time.'</strong><br>';
+		echo 'Total hrs = <strong style="color:#F44336;">'.$total_time.'</strong><br><br>';
 
 		echo "<h3>Result</h3>";
-		echo'<p><strong>'.$product_eff.' %</strong> (Product EFF) = (<strong style="color:#00C685;">'.$required_hrs.'</strong> / <strong style="color:#ACAA85;">'.$normal_time.'</strong>) x 100</p>';
-		echo'<p><strong>'.$total_eff.' %</strong> (Total EFF) = (<strong style="color:#00C685;">'.$required_hrs.'</strong> / <strong style="color:#980685;">'.$total_time.'</strong>) x 100</p>';
+		echo'<p><strong>'.$product_eff.' %</strong> (Product EFF) = (<strong style="color:#003399;">'.$required_hrs.'</strong> / <strong style="color:#4CAF50;">'.$normal_time.'</strong>) x 100</p>';
+		echo'<p><strong>'.$total_eff.' %</strong> (Total EFF) = (<strong style="color:#003399;">'.$required_hrs.'</strong> / <strong style="color:#F44336;">'.$total_time.'</strong>) x 100</p>';
 		echo'<p><strong>'.$yield.' %</strong> (Yield) = 100 - '.$before_yield.'</p></div>';
 	}
 
@@ -253,8 +258,17 @@ class ReportController extends ReportModel{
 		}
 
 		$yield 			= round(100 - $before_yield,2);
-		$product_eff 	= round(($required_hrs / $normal_time) * 100,2);
-		$total_eff 		= round(($required_hrs / $total_time) * 100,2);
+
+		if($required_hrs == 0){
+			$product_eff = 0;
+			$total_eff = 0;
+		}else{
+			$product_eff 	= round(($required_hrs / $normal_time) * 100,2);
+			$total_eff 		= round(($required_hrs / $total_time) * 100,2);
+		}
+
+		// $product_eff 	= round(($required_hrs / $normal_time) * 100,2);
+		// $total_eff 		= round(($required_hrs / $total_time) * 100,2);
 
 		$this->updateEFFHeader($header_id,$product_eff,$total_eff,$yield);
 

@@ -385,5 +385,39 @@ class ReportModel extends Database{
 		$dataset = parent::resultset();
 		return $dataset;
 	}
+
+
+
+	// ROBOT
+	public function countNormalType(){
+		// Total items
+		parent::query('SELECT COUNT(id) total FROM RTH_DailyOutputHeader');
+		parent::execute();
+		$dataset = parent::single();
+		$data['total'] = $dataset['total'];
+
+		// Total items
+		parent::query('SELECT COUNT(id) total FROM RTH_DailyOutputHeader WHERE type = "updated"');
+		parent::execute();
+		$dataset = parent::single();
+		$data['update'] = $dataset['total'];
+
+		return $data;
+	}
+	public function randomHeadder(){
+		parent::query('SELECT id FROM RTH_DailyOutputHeader WHERE type != "updated" ORDER BY RAND() LIMIT 1');
+		parent::execute();
+		$dataset = parent::single();
+		return $dataset['id'];
+	}
+	public function updateType($header_id){
+		parent::query('UPDATE RTH_DailyOutputHeader SET type = "updated" WHERE id = :header_id');
+		parent::bind(':header_id', $header_id);
+		parent::execute();
+	}
+	public function updateNormal(){
+		parent::query('UPDATE RTH_DailyOutputHeader SET type = "normal"');
+		parent::execute();
+	}
 }
 ?>

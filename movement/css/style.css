@@ -1496,4 +1496,102 @@ body {
 .error-container a:hover {
   opacity: 0.8;
 }
+.robot {
+  width: 40%;
+  margin: 0% 30%;
+  margin-top: 13%;
+  float: left;
+  display: inline-block;
+}
+.robot .head {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 20%;
+  text-align: center;
+}
+.robot .head h1 {
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.8);
+}
+.robot .head p {
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.6);
+}
+.robot .head a {
+  color: #003399;
+  text-decoration: underline;
+}
+.robot .start {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.robot .start .btn {
+  width: 20%;
+  margin: 0% 40%;
+  float: left;
+  display: inline-block;
+  border: 1px solid #003399;
+  color: #003399;
+  border-radius: 20px;
+  padding: 5px 0px;
+  text-align: center;
+}
+.robot .start .btn i {
+  margin-left: 10px;
+}
+.robot .start .success {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 2em;
+  color: #003399;
+}
+.robot .start .success i {
+  margin-left: 10px;
+}
+.robot .progress {
+  width: 100%;
+  margin: 2% 0%;
+  float: left;
+  display: inline-block;
+  background: #EEEEEE;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.robot .progress .bar {
+  width: 40%;
+  height: 5px;
+  border-radius: 20px;
+  float: left;
+  display: inline-block;
+  background: #003399;
+}
+.robot p.caption {
+  font-size: 0.8em;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.6);
+}
+.robot .cal-box {
+  width: 96%;
+  padding: 5% 2%;
+  border: 1px dashed #AAAAAA;
+  margin-top: 5%;
+  float: left;
+  display: inline-block;
+  font-size: 0.7em;
+  border-radius: 3px;
+}
+.robot .cal-box .box {
+  width: 48%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.robot .cal-box .box:last-child {
+  float: right;
+  text-align: left;
+}
 /* Other Device and Screen */
