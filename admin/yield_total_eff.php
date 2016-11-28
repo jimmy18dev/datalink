@@ -50,7 +50,7 @@ $current_page['1'] = 'report';
     </div>
     <div class="graph-filter">
         <div class="month">
-            <span class="caption">Month:</span>
+            <span class="caption"><i class="fa fa-calendar" aria-hidden="true"></i></span>
             <?php $report->ListMonth(array('type' => 'month-items','line_current' => $_GET['line'],'year_current' => $_GET['year'],'month_current' => $_GET['month']));?>
         </div>
 

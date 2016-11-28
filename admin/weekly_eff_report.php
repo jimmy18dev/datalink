@@ -2,6 +2,72 @@
 include'config/autoload.php';
 include'config/authorization.php';
 
+/** PHPExcel */
+require_once 'plugin/php_excel/PHPExcel.php';
+/** PHPExcel_IOFactory - Reader */
+include 'plugin/php_excel/PHPExcel/IOFactory.php';
+
+$inputFileName = "excel/test.xlsx"; 
+$inputFileType = PHPExcel_IOFactory::identify($inputFileName); 
+$objReader = PHPExcel_IOFactory::createReader($inputFileType); 
+$objReader->setReadDataOnly(true); 
+$objPHPExcel = $objReader->load($inputFileName);
+
+$r = -1;
+$namedDataArray = array();
+
+for ($row = 1; $row <= $highestRow; ++$row) {
+    $dataRow = $objWorksheet->rangeToArray('A'.$row.':'.$highestColumn.$row,null, true, true, true);
+    if ((isset($dataRow[$row]['A'])) && ($dataRow[$row]['A'] > '')) {
+        ++$r;
+        $namedDataArray[$r] = $dataRow[$row];
+    }
+}
+
+$objWorksheet = $objPHPExcel->setActiveSheetIndex(0);
+$highestRow = $objWorksheet->getHighestRow();
+$highestColumn = $objWorksheet->getHighestColumn();
+
+$headingsArray = $objWorksheet->rangeToArray('A1:'.$highestColumn.'1',null, true, true, true);
+$headingsArray = $headingsArray[1];
+
+$r = -1;
+
+$namedDataArray = array();
+for ($row = 2; $row <= $highestRow; ++$row) {
+    $dataRow = $objWorksheet->rangeToArray('A'.$row.':'.$highestColumn.$row,null, true, true, true);
+    if ((isset($dataRow[$row]['A'])) && ($dataRow[$row]['A'] > '')) {
+        ++$r;
+        foreach($headingsArray as $columnKey => $columnHeading) {
+            $namedDataArray[$r][$columnHeading] = $dataRow[$row][$columnKey];
+        }
+    }
+}
+
+$reports = $report->listEfficencyReport($_POST['s_year'],$_POST['s_month'],$_POST['s_day'],$_POST['e_year'],$_POST['e_month'],$_POST['e_day']);
+$sequence = 1;
+
+$ttl_std_time 	= 0;
+$ttl_qty 		= 0;
+$ttl_earned 	= 0;
+foreach ($reports as $k => $var){
+	$caliber = strtolower(trim($var['caliber_name']));
+
+	foreach ($namedDataArray as $i => $data){
+		if(strtolower(trim($data['Caliber'])) == $caliber){
+			$reports[$k]['caliber_qty'] = round((intval($data['Total'])/1000),3);
+		}
+	}
+
+	$reports[$k]['caliber_earned'] = ($var['caliber_stdtime'] * $reports[$k]['caliber_qty']);
+	$reports[$k]['sequence'] = $sequence;
+	$sequence++;
+
+	$ttl_std_time += $reports[$k]['caliber_stdtime'];;
+	$ttl_qty += $reports[$k]['caliber_qty'];
+	$ttl_earned += $reports[$k]['caliber_earned'];
+}
+
 // current page
 $current_page['1'] = 'report';
 
@@ -27,13 +93,13 @@ if(empty($_POST['s_year']) || empty($_POST['s_month']) || empty($_POST['s_day'])
 
 if($date_validate){
 	$reportData = $report->getIdleTime($_POST['s_year'],$_POST['s_month'],$_POST['s_day'],$_POST['e_year'],$_POST['e_month'],$_POST['e_day']);
-	$toalReportData = $report->totalEfficencyReport($_POST['s_year'],$_POST['s_month'],$_POST['s_day'],$_POST['e_year'],$_POST['e_month'],$_POST['e_day']);
+	// $toalReportData = $report->totalEfficencyReport($_POST['s_year'],$_POST['s_month'],$_POST['s_day'],$_POST['e_year'],$_POST['e_month'],$_POST['e_day']);
 
 	// Setup all variables
 	if($date_validate){
-		$ttl_std_time 		= $toalReportData['total_stdtime'];
-		$ttl_qty 			= $toalReportData['caliber_qty'];
-		$ttl_earned 		= $toalReportData['earned'];
+		// $ttl_std_time 		= $toalReportData['total_stdtime'];
+		// $ttl_qty 			= $toalReportData['caliber_qty'];
+		// $ttl_earned 		= $toalReportData['earned'];
 		$normal_time 		= $reportData['normal_time'];
 		$over_time 			= $reportData['over_time'];
 		$holidays 			= 0;
@@ -240,12 +306,14 @@ if($date_validate){
 				<div class="col3">Qty. Turn-in (K)</div>
 				<div class="col4">Std. Hrs Earned (Hrs)</div>
 			</div>
-			<?php $report->listEfficencyReport($_POST['s_year'],$_POST['s_month'],$_POST['s_day'],$_POST['e_year'],$_POST['e_month'],$_POST['e_day'],array('type' => 'weekly-eff-items'));?>
+			<?php
+			foreach ($reports as $var){ include'template/report/weekly.eff.items.php'; }
+			?>
 
 			<div class="weekly-eff-items total-fix">
 				<div class="col1">Total</div>
 				<div class="col2"><?php echo number_format($ttl_std_time,2);?></div>
-				<div class="col3"><?php echo number_format(($ttl_qty/1000),3);?></div>
+				<div class="col3"><?php echo number_format(($ttl_qty),3);?></div>
 				<div class="col4"><?php echo number_format($ttl_earned,2);?></div>
 			</div>
 		</div>

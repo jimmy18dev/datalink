@@ -83,7 +83,7 @@ class ReportModel extends Database{
 	// }
 
 	public function listEfficencyReportData($start_date,$end_date){
-		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,(SELECT SUM(detail.output) FROM RTH_DailyOutputReportHeader AS report LEFT JOIN RTH_DailyOutputHeader AS header ON report.header_id = header.id LEFT JOIN RTH_DailyOutputDetail AS detail ON report.id = detail.report_id WHERE report.caliber_id = caliber.id AND header.report_date BETWEEN :start_date AND :end_date) caliber_qty 
+		parent::query('SELECT caliber.id caliber_id,CONCAT(caliber.code," ",caliber.family) caliber_name,std.hrs caliber_stdtime,(SELECT SUM(detail.output) FROM RTH_DailyOutputReportHeader AS report LEFT JOIN RTH_DailyOutputHeader AS header ON report.header_id = header.id LEFT JOIN RTH_DailyOutputDetail AS detail ON report.id = detail.report_id WHERE report.caliber_id = caliber.id AND header.report_date BETWEEN :start_date AND :end_date) caliber_qty 
 			FROM RTH_CaliberCode AS caliber 
 			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
 			WHERE caliber.status = "active" 
