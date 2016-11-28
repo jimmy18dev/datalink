@@ -70,6 +70,13 @@ $current_page['1'] = 'report';
 			<div class="title">PDF Export (Test)</div>
 		</div>
 		</a>
+
+		<a href="../movement/robot.php" target="_blank">
+		<div class="report-items">
+			<div class="icon"><i class="fa fa-bug" aria-hidden="true"></i></div>
+			<div class="title">Update EFF & Yield (Robot)</div>
+		</div>
+		</a>
 	</div>
 </div>
 </body>
