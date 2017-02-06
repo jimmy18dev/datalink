@@ -38,10 +38,7 @@ $total_section = $section->countSection();
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">
-			<h1>SECTION</h1>
-			<p>Default folder for sub-program in datalink.</p>
-		</div>
+		<div class="head-title">SECTION : Default folder for sub-program in datalink.</div>
 
 		<?php if($total_section > 0){?>
 		<div class="head-control">

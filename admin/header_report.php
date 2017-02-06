@@ -37,11 +37,11 @@ $current_page['1'] = 'report';
 <div class="container">
 	<div class="head">
 		<div class="head-title">
-			<h1>HEADER REPORT</h1>
+			<strong>HEADER REPORT</strong> : 
 			<?php if(!empty($_GET['date'])){?>
-			<p><?php echo $_GET['date'];?> | <a href="header_report.php" target="_parent">See all reports</a></p>
+			<?php echo $_GET['date'];?> - <a href="header_report.php" target="_parent">BACK</a>
 			<?php }else{?>
-			<p>Select a report.</p>
+			select a date...
 			<?php }?>
 		</div>
 	</div>

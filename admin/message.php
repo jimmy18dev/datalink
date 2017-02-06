@@ -36,10 +36,7 @@ $current_page['1'] = 'message';
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">
-			<h1>Message</h1>
-			<p>Main message board between admin and user.</p>
-		</div>
+		<div class="head-title">Main message board between admin and user.</div>
 	</div>
 
 	<div class="list-container">

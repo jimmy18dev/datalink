@@ -1,6 +1,7 @@
 */config.php
 *.sql
 *.pdf
+*.xlsx
 
 image/upload/*
 

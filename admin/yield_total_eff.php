@@ -43,10 +43,7 @@ $current_page['1'] = 'report';
 <?php include'header.php';?>
 <div class="container">
     <div class="head">
-        <div class="head-title">
-            <h1>YIELD & TOTAL EFFICIENCY</h1>
-            <p>MOVEMENT ASSEMBLY</p>
-        </div>
+        <div class="head-title"><strong>YIELD & TOTAL EFFICIENCY</strong> - MOVEMENT ASSEMBLY</div>
     </div>
     <div class="graph-filter">
         <div class="month">
