@@ -47,8 +47,7 @@ $current_page['1'] = 'user';
 
 	<div class="head">
 		<div class="head-title">
-			<h1><?php echo $userData['fname'].' '.$userData['lname'];?></h1>
-			<p>Account ID <strong><?php echo $userData['code'];?></strong> has <strong><?php echo $useractivity->countActivity($userData['id']);?> Activitys</strong> and Last visit at <strong><?php echo $userData['visit_time'];?></strong> <a href="user_editor.php?user=<?php echo $userData['id'];?>" class="control-btn">Edit user</a></p>
+			<strong><?php echo $userData['fname'].' '.$userData['lname'];?></strong> : ID = <?php echo $userData['code'];?> , last visit at <strong><?php echo $userData['visit_time'];?> - <a href="user_editor.php?user=<?php echo $userData['id'];?>" class="control-btn">EDIT</a>
 		</div>
 	</div>
 	<div class="list-container">

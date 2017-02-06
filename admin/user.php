@@ -36,12 +36,9 @@ $current_page['1'] = 'user';
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">
-			<h1>USER MANAGEMENT</h1>
-			<p><?php echo $user->countUser();?> Users is <strong>active</strong></p>
-		</div>
+		<div class="head-title">USER MANAGEMENT : <?php echo $user->countUser();?> active</div>
 		<div class="head-control">
-			<a href="user_editor.php" class="btn create-btn"><i class="fa fa-user-plus" aria-hidden="true"></i>NEW USER</a>
+			<a href="user_editor.php" class="btn create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW USER</a>
 		</div>
 	</div>
 

@@ -36,10 +36,7 @@ $current_page['1'] = 'report';
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">
-			<h1>DATALINK REPORT</h1>
-			<p><?php echo 'Today is '.date('l');?></p>
-		</div>
+		<div class="head-title">DATALINK REPORT</div>
 	</div>
 
 	<div class="report-container">
@@ -50,10 +47,10 @@ $current_page['1'] = 'report';
 		</div>
 		</a>
 
-		<a href="weekly_eff_report.php">
+		<a href="weekly_eff_date.php">
 		<div class="report-items">
 			<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-			<div class="title">Weekly Efficiency</div>
+			<div class="title">Weekly Efficiency<span class="beta">[Beta]</span></div>
 		</div>
 		</a>
 

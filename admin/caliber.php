@@ -36,13 +36,9 @@ $current_page['1'] = 'caliber';
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">
-			<h1>CALIBER CODE</h1>
-			<p>Total caliber code <strong><?php echo $caliber->countCaliber('all');?> items</strong> (<?php echo $caliber->countCaliber('active');?> active and <?php echo $caliber->countCaliber('pending');?> pending)</p>
-		</div>
-
+		<div class="head-title">CALIBER CODE : <?php echo $caliber->countCaliber('all');?> items (<?php echo $caliber->countCaliber('active');?> active and <?php echo $caliber->countCaliber('pending');?> pending)</div>
 		<div class="head-control">
-			<a href="caliber_editor.php" class="btn create-btn"><i class="fa fa-database" aria-hidden="true"></i>NEW CALIBER</a>
+			<a href="caliber_editor.php" class="btn create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW CALIBER</a>
 		</div>
 	</div>
 	<!-- Table -->

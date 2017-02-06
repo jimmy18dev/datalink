@@ -37,10 +37,7 @@ $total_remark = $remark->countRemark();
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">
-			<h1>GENERAL REMARK</h1>
-			<p>Total remark <strong><?php echo $total_remark;?> items.</strong></p>
-		</div>
+		<div class="head-title">Total remark <strong><?php echo $total_remark;?> items.</strong></div>
 
 		<?php if($total_remark > 0){?>		
 		<div class="head-control">

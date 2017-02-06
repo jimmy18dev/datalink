@@ -42,7 +42,7 @@ body.bg {
   left: 0%;
   width: 100%;
   padding: 0%;
-  height: 44px;
+  height: 50px;
   float: left;
   display: inline-block;
   background: #003399;
@@ -50,44 +50,37 @@ body.bg {
 }
 .header .logo {
   width: 5%;
-  padding: 10px 0%;
+  padding: 13px 0%;
   height: 24px;
   float: left;
   display: inline-block;
   text-align: center;
   color: #ffffff;
-  font-size: 1.3em;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  font-size: 1.5em;
 }
 .header .header-items {
-  padding: 15px 0%;
+  padding: 19px 0%;
   height: 12px;
   float: left;
   display: inline-block;
   margin-right: 1%;
   color: #4c70b7;
-  font-size: 0.8em;
-  border-bottom: 2px solid transparent;
+  font-size: 0.9em;
 }
 .header .header-items i {
-  margin-right: 5px;
+  margin-right: 3px;
 }
 .header .header-items:hover {
   cursor: pointer;
 }
 .header .header-items-active {
   color: #ffffff;
-  border-bottom: 2px solid #FFFFFF;
-}
-.header .user-items {
-  float: right;
-  margin-right: 0%;
 }
 .header .version-items {
   width: 5%;
   float: right;
-  padding: 15px 0%;
-  height: 14px;
+  padding: 20px 0%;
+  height: 10px;
   display: inline-block;
   color: #4c70b7;
   font-size: 0.8em;
@@ -96,98 +89,79 @@ body.bg {
 }
 .container {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 140px;
   min-height: 500px;
   float: left;
   display: inline-block;
 }
 .container .head {
   position: fixed;
-  top: 44px;
+  top: 50px;
   left: 0px;
   width: 90%;
-  padding: 12px 5%;
-  height: 32px;
+  padding: 0px 5%;
+  height: 50px;
   float: left;
   display: inline-block;
-  background: #EEEEEE;
+  background: rgba(255, 255, 255, 0.95);
 }
 .container .head .head-title {
-  width: 70%;
+  width: 80%;
+  padding: 15px 0px;
+  height: 20px;
   float: left;
   display: inline-block;
-}
-.container .head .head-title h1 {
   font-size: 1em;
-  line-height: 1em;
-  color: rgba(0, 0, 0, 0.8);
-  font-family: 'Roboto', sans-serif;
+  line-height: 1.4em;
+  color: #000000;
 }
-.container .head .head-title h1 a {
-  color: #003399;
-}
-.container .head .head-title h1 a:hover {
-  text-decoration: underline;
-}
-.container .head .head-title p {
-  font-size: 0.7em;
-  line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.4);
-}
-.container .head .head-title p a.add-btn {
-  font-style: italic;
-  color: #003399;
-}
-.container .head .head-title p a.add-btn:hover {
-  text-decoration: underline;
-}
-.container .head .head-title p .control-btn {
-  border: 1px solid #DDDDDD;
-  color: #CCCCCC;
-  padding: 2px 5px;
-  margin-left: 5px;
+.container .head .head-title a,
+.container .head .head-title .control-btn {
+  border: 1px solid #003399;
+  padding: 1px 5px;
   border-radius: 2px;
-  font-size: 0.7em;
-  line-height: 1em;
+  color: #003399;
+  font-size: 0.8em;
+  line-height: 1.2em;
+  margin-right: 2px;
 }
-.container .head .head-title p .control-btn i {
-  margin-left: 5px;
-}
-.container .head .head-title p .control-btn:hover {
-  cursor: pointer;
-  opacity: 0.7;
+.container .head .head-title a.pdf {
+  border: 1px solid #4caf50;
+  color: #4caf50;
 }
 .container .head .head-control {
-  width: 30%;
+  width: 20%;
+  height: 50px;
   float: left;
   display: inline-block;
 }
 .container .head .head-control .btn {
   float: right;
   display: inline-block;
-  background: #003399;
-  color: #ffffff;
-  padding: 9px 12px;
-  font-size: 0.8em;
-  border-radius: 2px;
-  margin-left: 10px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 10px;
+  margin: 8px 0px;
+  height: 16px;
+  font-size: 0.9em;
   font-weight: bold;
+  background: transparent;
+  color: #4caf50;
 }
 .container .head .head-control .btn i {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .container .head .head-control .btn:hover {
+  background: #FAFAFA;
   cursor: pointer;
-  opacity: 0.8;
+}
+.container .head .head-control .btn:active {
+  background: #EEEEEE;
 }
 .container .head .head-control .btn-pdf-download {
   background: #F44336;
   display: none;
 }
 .container .head .head-control .create-btn {
-  background: #4caf50;
-  color: #ffffff;
+  color: #4caf50;
 }
 .container .head .head-control .active-btn {
   border: 1px solid #4caf50;
@@ -613,11 +587,11 @@ body.bg {
   margin-right: 2%;
   margin-top: 2%;
   text-align: center;
-  border-radius: 3px;
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
+  color: #333333;
 }
 .container .report-container .report-items:hover {
-  background: #EEEEEE;
+  color: #000000;
+  background: #FAFAFA;
   cursor: pointer;
 }
 .container .report-container .report-items .icon {
@@ -626,7 +600,6 @@ body.bg {
   display: inline-block;
   font-size: 3em;
   margin-bottom: 15%;
-  color: #000000;
 }
 .container .report-container .report-items .title {
   width: 100%;
@@ -635,29 +608,45 @@ body.bg {
   font-size: 1em;
   height: 80px;
   line-height: 1.5em;
-  color: #000000;
 }
-.container .report-container .datepicker {
-  width: 34%;
-  padding: 3%;
-  margin: 2% 30%;
-  float: left;
-  display: inline-block;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-.container .report-container .datepicker .picker-items {
+.container .report-container .report-items .title .beta {
   width: 100%;
   float: left;
   display: inline-block;
+  font-size: 0.7em;
+  color: #FF9800;
+}
+.container .report-container .datepicker {
+  width: 50%;
+  margin: 0% 25%;
+  margin-top: 10%;
+  float: left;
+  display: inline-block;
+}
+.container .report-container .datepicker .area {
+  width: 94%;
+  padding: 5% 3%;
+  float: left;
+  display: inline-block;
+  border: 1px solid #EEEEEE;
+}
+.container .report-container .datepicker .picker-items {
+  width: 39.8%;
+  padding: 0% 5%;
+  float: left;
+  display: inline-block;
+  border-right: 1px solid #EEEEEE;
+}
+.container .report-container .datepicker .picker-items:last-child {
+  border-right: 0px;
 }
 .container .report-container .datepicker .picker-items .caption {
   width: 100%;
   float: left;
   display: inline-block;
-  font-size: 1em;
-  line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.2);
+  font-size: 2em;
+  line-height: 2em;
+  color: #000000;
 }
 .container .report-container .datepicker .picker-items .picker {
   width: 100%;
@@ -665,21 +654,19 @@ body.bg {
   display: inline-block;
 }
 .container .report-container .datepicker .picker-items .picker .input-select {
+  margin: 0%;
   float: left;
   display: inline-block;
-  font-size: 2em;
+  font-size: 1.3em;
   font-family: 'Roboto', sans-serif;
   -webkit-appearance: none;
-  line-height: 1.5em;
-  padding: 5px 0px;
+  line-height: 3em;
   border: 0px;
-  border-bottom: 1px solid #EEEEEE;
   border-radius: 0px;
-  color: rgba(0, 0, 0, 0.8);
+  color: #666666;
   outline: none;
 }
 .container .report-container .datepicker .picker-items .picker .input-select:hover {
-  border-bottom: 1px solid #AAAAAA;
   color: #000000;
   cursor: pointer;
 }
@@ -692,40 +679,33 @@ body.bg {
 .container .report-container .datepicker .picker-items .picker .input-select-year {
   width: 30%;
 }
-.container .report-container .datepicker .icon {
-  width: 100%;
-  padding: 5% 0%;
+.container .report-container .datepicker .fileupload {
   float: left;
   display: inline-block;
-  text-align: center;
-  font-size: 2em;
-  color: rgba(0, 0, 0, 0.2);
+  margin-top: 2%;
+  font-size: 1em;
+  padding: 10px 0px;
 }
-.container .report-container .datepicker .picker-control {
-  width: 40%;
-  margin-left: 60%;
-  float: left;
+.container .report-container .datepicker .submit-btn {
+  float: right;
   display: inline-block;
-  margin-top: 7%;
-}
-.container .report-container .datepicker .picker-control .submit-btn {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  background: #003399;
-  color: #ffffff;
-  padding: 10px 15px;
+  margin: 0px;
+  margin-top: 2%;
+  background: transparent;
+  color: #003399;
+  padding: 10px;
   border: 0px;
   font-size: 1em;
   font-family: 'Roboto', sans-serif;
-  border-radius: 3px;
+  border-radius: 0px;
 }
-.container .report-container .datepicker .picker-control .submit-btn i {
-  margin-left: 10px;
-}
-.container .report-container .datepicker .picker-control .submit-btn:hover {
+.container .report-container .datepicker .submit-btn:hover {
+  background: #FAFAFA;
   cursor: pointer;
-  opacity: 0.8;
+}
+.container .report-container .datepicker .submit-btn:active {
+  background: #003399;
+  color: #FFFFFF;
 }
 .container .report-container .report-box {
   width: 100%;
@@ -1002,13 +982,12 @@ body.bg {
   top: 100px;
   left: 0px;
   width: 90%;
-  padding: 0% 5%;
+  padding: 5px 5%;
+  height: 30px;
   float: left;
   display: inline-block;
   color: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid #EEEEEE;
-  background: rgba(255, 255, 255, 0.9);
-  font-style: italic;
+  background: rgba(255, 255, 255, 0.95);
 }
 .container .list-container .topic-fix:hover {
   color: rgba(0, 0, 0, 0.4);
@@ -1168,7 +1147,6 @@ body.bg {
   background: #FFFFFF;
   margin-top: 1.5%;
   margin-right: 1.5%;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 .container .list-container .header-report-container .header-report-date-items .day {
   font-size: 3em;
@@ -1191,6 +1169,9 @@ body.bg {
 }
 .container .list-container .header-report-container .header-report-date-items:hover .day {
   color: #003399;
+}
+.container .list-container .header-report-container .header-report-date-items:active {
+  background: #EEEEEE;
 }
 .container .list-container p.topic {
   width: 90%;

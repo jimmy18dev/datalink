@@ -44,9 +44,7 @@ $current_page['1'] = 'caliber';
 	<?php }?>
 	
 	<div class="head">
-		<div class="head-title">
-			<h1><strong><?php echo $route->name;?></strong> in <a href="route.php?caliber=<?php echo $route->caliber_id;?>"><strong><?php echo $route->caliber_name;?></strong></a></h1>
-			<p>This route has operations <strong><?php echo $route->total_operation;?> items</strong> and last updated at <strong><?php echo $route->update_time;?></strong> <a href="route_editor.php?route=<?php echo $route->id;?>" class="control-btn">Edit this Route<i class="fa fa-cog" aria-hidden="true"></i></a></p>
+		<div class="head-title"><strong><?php echo $route->name;?></strong> in <a href="route.php?caliber=<?php echo $route->caliber_id;?>"><strong><?php echo $route->caliber_name;?></strong></a> This route has operations <strong><?php echo $route->total_operation;?> items</strong> and last updated at <strong><?php echo $route->update_time;?></strong> <a href="route_editor.php?route=<?php echo $route->id;?>" class="control-btn">Edit this Route<i class="fa fa-cog" aria-hidden="true"></i></a>
 		</div>
 
 		<div class="head-control">

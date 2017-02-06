@@ -133,6 +133,10 @@ if(!empty($report->report_date_ori)){
 
 			<select id="r_year" class="input-select">
 				<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
+				<option value="2017" <?php echo ($year == '2017'?'selected':'');?>>2017</option>
+				<option value="2018" <?php echo ($year == '2018'?'selected':'');?>>2018</option>
+				<option value="2019" <?php echo ($year == '2019'?'selected':'');?>>2019</option>
+				<option value="2020" <?php echo ($year == '2020'?'selected':'');?>>2020</option>
 			</select>
 		</div>
 	</div>

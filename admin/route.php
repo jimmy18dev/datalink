@@ -50,9 +50,8 @@ $current_page['2'] = 'caliber_code';
 
 	<div class="head">
 		<div class="head-title">
-			<h1><?php echo $caliber->code.' '.$caliber->family;?></h1>
-			<p>Caliber is <strong><?php echo $caliber->status;?></strong> and <strong><?php echo $caliber->total_route;?> routes</strong>, Standard time: <?php echo ($caliber->hrs == 0?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add standard time</a>':'<strong>'.$caliber->hrs.' Hrs/K.</strong>');?> Last updated: <strong><?php echo $caliber->update_time;?></strong>, <?php echo (empty($caliber->description)?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add description</a>':$caliber->description);?> <a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="control-btn">Edit this Caliber<i class="fa fa-cog" aria-hidden="true"></i></a>
-				<?php if($caliber->status == 'active'){?><span onclick="javascript:deactiveCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="control-btn">Set to pending<i class="fa fa-angle-right" aria-hidden="true"></i></span><?php }?></p>
+			<?php echo $caliber->code.' '.$caliber->family;?> : <strong><?php echo $caliber->status;?></strong> / <strong><?php echo $caliber->total_route;?> routes</strong> / Standard time: <?php echo ($caliber->hrs == 0?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add standard time</a>':'<strong>'.$caliber->hrs.' Hrs/K.</strong>');?> / Updated: <strong><?php echo $caliber->update_time;?></strong>, <?php echo (empty($caliber->description)?'<a href="caliber_editor.php?caliber='.$caliber->id.'" class="add-btn">Add description</a>':$caliber->description);?> <a href="caliber_editor.php?caliber=<?php echo $caliber->id;?>" class="control-btn">Edit this Caliber <i class="fa fa-cog" aria-hidden="true"></i></a>
+				<?php if($caliber->status == 'active'){?><span onclick="javascript:deactiveCaliber(<?php echo $caliber->id;?>,'<?php echo $caliber->id;?>');" class="control-btn">Set to pending <i class="fa fa-angle-right" aria-hidden="true"></i></span><?php }?>
 		</div>
 
 		<div class="head-control">

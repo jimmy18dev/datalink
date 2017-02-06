@@ -37,10 +37,7 @@ $current_page['1'] = 'setting';
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">
-			<h1>Setting</h1>
-			<p>Change value by setting up default programs for datalink.</p>
-		</div>
+		<div class="head-title">Change value by setting up default programs for datalink.</div>
 	</div>
 
 	<div class="list-container">

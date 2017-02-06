@@ -48,10 +48,7 @@ $current_page['1'] = 'report';
 <?php include'header.php';?>
 <div class="container">
 	<div class="head">
-		<div class="head-title">
-			<h1><?php echo $report->date;?></h1>
-			<p>Leader: <strong><?php echo $report->leader_name;?></strong></p>
-		</div>
+		<div class="head-title"><?php echo $report->date;?> / Leader: <strong><?php echo $report->leader_name;?></strong></div>
 		<div class="head-control">
 			<a class="btn btn-pdf-download" id="btn-pdf-export" href="pdf/daily-<?php echo $report->report_filename.'-'.$report->line_no.''.$report->shift;?>.pdf" target="_blank">Download PDF</a>
 		</div>
