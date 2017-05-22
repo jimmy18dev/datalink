@@ -37,24 +37,21 @@ $current_page['1'] = 'user';
 <div class="container">
 	<div class="head">
 		<div class="head-title">USER MANAGEMENT : <?php echo $user->countUser();?> active</div>
-		<div class="head-control">
-			<a href="user_editor.php" class="btn create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW USER</a>
-		</div>
+		<a href="user_editor.php" class="btn btn-create-user">CREATE NEW USER<i class="fa fa-plus" aria-hidden="true"></i></a>
 	</div>
 
 	<!-- Table -->
 	<div class="list-container">
-		<div class="items user-items topic-fix">
-			<div class="col1">NO.</div>
-			<div class="col2">Name</div>
-			<div class="col3">Username</div>
-			<div class="col4">Password</div>
-			<div class="col5">Section</div>
-			<div class="col6">Last visit</div>
-			<div class="col7">State</div>
+		<div class="page">
+			<div class="user-items -topic">
+			<div class="id">NO.</div>
+			<div class="name">Name</div>
+			<div class="username">Username</div>
+			<div class="password">Password</div>
+			<div class="section">Section</div>
+			<div class="visit">Last visit</div>
 		</div>
-		<div class="items-container">
-			<?php echo $user->listAllUser(array('type' => 'user-items'));?>
+		<?php echo $user->listAllUser(array('type' => 'user-items'));?>
 		</div>
 	</div>
 </div>

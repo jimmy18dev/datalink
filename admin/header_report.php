@@ -40,33 +40,32 @@ $current_page['1'] = 'report';
 			<strong>HEADER REPORT</strong> : 
 			<?php if(!empty($_GET['date'])){?>
 			<?php echo $_GET['date'];?> - <a href="header_report.php" target="_parent">BACK</a>
-			<?php }else{?>
-			select a date...
 			<?php }?>
 		</div>
 	</div>
 
 	<div class="list-container">
 		<?php if(empty($_GET['date'])){?>
-		<div class="header-report-container">
-			<?php $report->groupHeaderReport(array('type' => 'header-date-items'));?>
+		<div class="page">
+			<div class="report-date">
+				<?php $report->groupHeaderReport(array('type' => 'header-date-items'));?>
+			</div>
 		</div>
 		<?php }else{?>
-		<div class="items header-report-items topic-fix">
-			<div class="col1">Line No.</div>
-			<div class="col2">Shift</div>
-			<div class="col3">Product EFF</div>
-			<div class="col4">Total EFF</div>
-			<div class="col5">Monthly Hrs</div>
-			<div class="col6">Daily Hrs</div>
-			<div class="col7">1.0</div>
-			<div class="col8">1.5</div>
-			<div class="col9">2.0</div>
-			<div class="col10">3.0</div>
-			<div class="col12">Updated</div>
-			<div class="col13">Leader</div>
-		</div>
-		<div class="items-container">
+		<div class="page">
+			<div class="header-report-items -topic">
+				<div class="id">LINE(Shift)</div>
+				<div class="eff">Product EFF</div>
+				<div class="eff">Total EFF</div>
+				<div class="hrs">Monthly Hrs</div>
+				<div class="hrs">Daily Hrs</div>
+				<div class="ot">1.0</div>
+				<div class="ot">1.5</div>
+				<div class="ot">2.0</div>
+				<div class="ot">3.0</div>
+				<div class="update">Updated</div>
+				<div class="leader">Leader</div>
+			</div>
 			<?php $report->listHeaderReport($_GET['date'],array('type' => 'header-items'));?>
 		</div>
 		<?php }?>

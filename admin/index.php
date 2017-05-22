@@ -47,17 +47,17 @@ $current_page['1'] = 'report';
 		</div>
 		</a>
 
-		<a href="weekly_eff_date.php">
-		<div class="report-items">
-			<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-			<div class="title">Weekly Efficiency<span class="beta">[Beta]</span></div>
-		</div>
-		</a>
-
 		<a href="yield_total_eff.php">
 		<div class="report-items">
 			<div class="icon"><i class="fa fa-line-chart" aria-hidden="true"></i></div>
 			<div class="title">Yield & Total Efficiency</div>
+		</div>
+		</a>
+
+		<a href="weekly_eff_date.php">
+		<div class="report-items">
+			<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
+			<div class="title">Weekly Efficiency<span class="beta">[Beta]</span></div>
 		</div>
 		</a>
 

@@ -35,29 +35,25 @@ if($user_online){
 <body class="bg">
 <div class="filter"></div>
 <div class="login-container">
-	<div class="icon"><i class="fa fa-cube" aria-hidden="true"></i></div>
 	<div class="login-detail">
-		<p class="caption">Administrator only</p>
-		<h1>DATALINK</h1>
-		<p>Version <strong class="version"><?php echo $meta['dev']['version'];?></strong></p>
-		<br>
-		<p>The username and password to log into Datalink Panel can be found in your email. If you do not have the correct login credentials, please contact Administrator via phone or live chat</p>
+		<div class="context">
+			<h1>DATALINK</h1>
+			<p>Version <strong class="version"><?php echo $meta['dev']['version'];?></strong></p>
+			<br>
+			<p>The username and password to log into Datalink Panel can be found in your email. If you do not have the correct login credentials, please contact Administrator via phone or live chat</p>
+		</div>
 	</div>
 	<div class="login-input">
-		<div class="input">
-		<form action="javascript:login();">
-			
+		<form class="input-form" action="javascript:login();">
 			<?php if($_GET['error'] == 'not_match'){?>
 			<p class="alert">Username and password do not match!</p>
 			<?php }?>
 
-			<p class="caption">Enter your username and password.</p>
+			<p>Enter your username and password.</p>
 			<input type="text" class="input-text" id="username" placeholder="Username" autofocus autocomplete="off">
-			<input type="password" class="input-text" placeholder="Enter your password..." id="password">
-		</div>
-		<div class="control">
-			<button type="submit" id="submit-btn" class="submit-btn"><span id="btn-caption">Login</span><span id="btn-icon"><i class="fa fa-arrow-right"></i></span></button>
-		</div>
+			<input type="password" class="input-text" placeholder="Password" id="password">
+
+			<button type="submit" id="submit-btn" class="submit-btn"><span id="btn-caption">LOGIN</span><span id="btn-icon"><i class="fa fa-angle-right"></i></span></button>
 		</form>
 	</div>
 </div>

@@ -22,7 +22,7 @@ $current_page['1'] = 'message';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>Message</title>
+<title>Messages</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -40,19 +40,21 @@ $current_page['1'] = 'message';
 	</div>
 
 	<div class="list-container">
-		<div class="message-input">
-			<div class="input">
-				<input type="hidden" id="topic" class="input-text" placeholder="Topic...">
-				<input type="text" id="message" class="input-text" placeholder="Enter Messages..." autofocus autocomplete="off">
-				<input type="hidden" id="message_id">
-			</div>
-			<div class="submit">
-				<button class="save-btn" onclick="javascript:createMessage();">Send</button>
-			</div>
-		</div>
+		<div class="page">
+			<form class="message-input" action="javascript:createMessage();" >
+				<div class="input">
+					<input type="text" id="topic" class="input-text" placeholder="Topic..." autofocus autocomplete="off">
+					<textarea class="input-area" id="message" placeholder="Enter Messages..."></textarea>
+					<input type="hidden" id="message_id">
+				</div>
+				<div class="submit">
+					<button type="submit" class="btn-submit" onclick="">Send</button>
+				</div>
+			</form>
 
-		<div class="items-container">
-			<?php $message->listMessage(array('type' => 'message-items'));?>
+			<div class="items-container">
+				<?php $message->listMessage(array('type' => 'message-items'));?>
+			</div>
 		</div>
 	</div>
 </div>

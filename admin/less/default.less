@@ -48,7 +48,7 @@ a[href], button {
 }
 
 body{
-	background: #FFFFFF;
+	background: #EEEEEE;
     font-family: @FontStylePrimary;
     color: @normal_textcolor;
     overflow-y:scroll;
@@ -62,6 +62,13 @@ body.bg{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.transitionAnimation(@s){
+    transition:all @s ease-in-out;
+    -moz-transition:all @s ease-in-out;
+    -webkit-transition:all @s ease-in-out;
+    -o-transition:all @s ease-in-out;
 }
 
 // Animation of Textarea
