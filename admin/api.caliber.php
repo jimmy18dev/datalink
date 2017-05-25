@@ -35,6 +35,7 @@ if($_POST['calling'] != ''){
 						// 	$return_message = 'register fail!';
 						// 	$register_state = false;
 						// }
+
 						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
 					}else{
 						$api->errorMessage('signature error!');
@@ -77,11 +78,46 @@ if($_POST['calling'] != ''){
 // API Request $_GET
 else if($_GET['calling'] != ''){
 	switch ($_GET['calling']) {
-		case 'Comment':
+		case 'caliber':
 			switch ($_GET['action']) {
-				case 'List':
+				case 'list_caliber':
+					$dataset = $caliber->listAllCaliber($_GET['keyword']);
+					// Export data to json format
+					$data = array(
+						"apiVersion" => "1.0",
+						"data" => array(
+							"update" => time(),
+							"execute" => round(microtime(true)-StTime,4)."s",
+							"items" => $dataset,
+						),
+					);
+					echo json_encode($data);
 					break;
-				case 'LiveComment':
+				case 'list_route':
+					$dataset = $route->listRouteInCaliberData($_GET['caliber_id']);
+					// Export data to json format
+					$data = array(
+						"apiVersion" => "1.0",
+						"data" => array(
+							"update" => time(),
+							"execute" => round(microtime(true)-StTime,4)."s",
+							"items" => $dataset,
+						),
+					);
+					echo json_encode($data);
+					break;
+				case 'list_operation':
+					$dataset = $operation->listOperationAllInRoute($_GET['route_id']);
+					// Export data to json format
+					$data = array(
+						"apiVersion" => "1.0",
+						"data" => array(
+							"update" => time(),
+							"execute" => round(microtime(true)-StTime,4)."s",
+							"items" => $dataset,
+						),
+					);
+					echo json_encode($data);
 					break;
 				default:
 					break;
