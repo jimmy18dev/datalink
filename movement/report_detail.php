@@ -50,12 +50,9 @@ $current_page['1'] = 'index';
 </head>
 <body>
 <header class="header">
-	<div class="header-items">
-		<div class="topic"><?php echo $report->report_full_date;?></div>
-	</div>
+	<a class="items -active" href="index.php"><i class="fa fa-arrow-left" aria-hidden="true"></i><?php echo $report->report_full_date;?></a>
 </header>
-<?php include'navigator.php';?>
-<div class="report-detail-container">
+<div class="page">
 	<!-- 1. Manpower -->
 	<div class="topic-container">
 		<h2>1. Manpower: </h2>

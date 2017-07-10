@@ -39,14 +39,8 @@ $current_page['1'] = 'index';
 
 </head>
 <body>
-<header class="header">
-	<div class="header-items">
-		<div class="topic">DAILY REPORTS</div>
-	</div>
-	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-</header>
-<?php include'navigator.php';?>
-<div class="header-list-container">
+<?php include'header.php';?>
+<div class="page">
 	<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
 </div>
 

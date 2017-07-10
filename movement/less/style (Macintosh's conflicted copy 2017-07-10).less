@@ -14,17 +14,15 @@
 	z-index: 99;
 	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
 
-	.items{
-		padding: 14px 1%;
-		height: 22px;
+	.header-items{
+		padding: 15px 1%;
+		height: 20px;
 		float: left;
 		display: inline-block;
-		color: #4c70b7;
+		margin-right: 2%;
+		color: #FFFFFF;
 		border: 0px;
 		font-size: 1em;
-
-		&.-active{ color: #FFFFFF; }
-		i{ margin-right: 20px; }
 	}
 
 	.btn{
@@ -32,30 +30,79 @@
 		height: 20px;
 		float: right;
 		display: inline-block;
-		background: #00287a;
 		color: #FFFFFF;
-		font-size: 1em;
+		font-size: 0.9em;
 		border: 0px;
 
 		&:hover{
 			cursor: pointer;
-			background: #001e5b;
 		}
 
 		i{ margin-left: 10px; }
 	}
 }
 
+// Navigator menu style
+.navigator{
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 50px;
+	float: left;
+	display: inline-block;
+	z-index: 10;
+	margin-top: 50px;
+	background: #333333;
+
+	.header-items{
+		padding: 15px 1%;
+		height: 20px;
+		float: left;
+		display: inline-block;
+		color: #666666;
+		font-size: 0.8em;
+		border: 0px;
+		position: relative;
+
+		&:hover{ cursor: pointer; }
+		i{ margin-right: 5px; }
+
+		.tri{
+			position: absolute;
+			top: 100%;
+			right: 45%;
+			width: 0%;
+			height: 0%;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-top: 6px solid #333333;
+			display: none;
+		}
+	}
+
+	.header-items-active{
+		color: #FFFFFF;
+
+		.tri{ display: inline-block; }
+	}
+
+	.logout{
+		float: right;
+		margin-right: 0%;
+	}
+}
+
 // Header list container style (Index)
 .header-list-container{
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 135px;
 	margin-bottom: 3%;
 	min-height: 500px;
 	float: left;
 	display: inline-block;
 
-	.filter{
+	> .filter{
 		width: 50%;
 		margin: 1% 25%;
 		margin-bottom: 0%;
@@ -73,6 +120,104 @@
 			line-height: 1em;
 		}
 	}
+
+	.month-caption-items{
+		width: 50%;
+		margin: 0% 25%;
+		margin-top: 1%;
+		float: left;
+		display: inline-block;
+		font-size: 2em;
+		color: #BBBBBB;
+	}
+
+	// Header report items style
+	.header-report-items{
+		width: 48%;
+		padding: 0.8% 1%;
+		margin: 0% 25%;
+		float: left;
+		display: inline-block;
+		font-size: 0.9em;
+		color: #333333;
+		border-bottom: 1px solid #DDDDDD;
+
+		&:hover{
+			cursor: pointer;
+		}
+
+		.date{
+			width: 20%;
+			float: left;
+			display: inline-block;
+			text-align: left;
+
+			.new-items{
+				font-size: 0.4em;
+				margin-left: 5px;
+				color: #FF9800;
+				font-weight: normal;
+			}
+		}
+
+		.shift{
+			width: 5%;
+			float: left;
+			display: inline-block;
+			text-align: center;
+
+			&.-A{
+				color: #304FFE;
+			}
+			&.-B{
+				color: #FF9800;
+			}
+		}
+		
+		.eff{
+			width: 15%;
+			float: left;
+			display: inline-block;
+			text-align: right;
+
+			.unit{
+				margin-left: 3px;
+				font-size: 0.75em;
+			}
+
+			i.fa-exclamation-circle{
+				color: #F44336;
+				margin-right: 1px;
+			}
+		}
+
+		.owner{
+			width: 25%;
+			padding-left: 10%;
+			float: left;
+			display: inline-block;
+			font-size: 0.9em;
+			line-height: 1.7em;
+
+			.time{
+				font-size: 0.75em;
+				margin-left: 10px;
+				font-style: italic;
+				color: #999999;
+			}
+		}
+
+		.status{
+			width: 10%;
+			float: right;
+			display: inline-block;
+			text-align: right;
+		}
+
+		&.-not_owner{
+			opacity: 0.3;
+		}
+	}
 }
 
 // Report Detail Page style
@@ -86,114 +231,10 @@
 	display: inline-block;
 	background: #FFFFFF;
 
-	.starter-container{
-		width: 100%;
-		padding: 3% 0%;
-		float: left;
-		display: inline-block;
-		text-align: center;
-
-		a.create-btn{
-			background: @green_color;
-			color: @white_color;
-			border-radius: 2px;
-			font-weight: bold;
-			font-size: 0.9em;
-			padding: 7px 10px;
-
-			&:hover{
-				cursor: pointer;
-				opacity: 0.8;
-			}
-
-			i{ margin-right: 10px; }
-		}
-	}
-
-	.turn-to-list{
-		width: 90%;
-		padding: 5%;
-		float: left;
-		display: inline-block;
-
-		.turn-to-items{
-			width: 47%;
-			padding: 1%;
-			margin-right: 2%;
-			margin-bottom: 2%;
-			float: left;
-			display: inline-block;
-			background: #FAFAFA;
-			border-radius: 2px;
-
-			&:nth-child(even){
-				margin-right: 0%;
-			}
-
-			.title{
-				width: 43%;
-				float: left;
-				display: inline-block;
-				padding: 3% 4%;
-			}
-			.output{
-				width: 30%;
-				padding: 3% 4%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-				color: rgba(0,0,0,0.4);
-			}
-			.btn{
-				width: 11%;
-				padding: 3% 0%;
-				float: right;
-				display: inline-block;
-				font-size: 1em;
-				line-height: 1.5em;
-				background: #FAFAFA;
-				text-align: center;
-				color: rgba(0,0,0,0.2);
-
-				&:hover{
-					cursor: pointer;
-					color: rgba(0,0,0,0.6);
-				}
-			}
-
-			// &:nth-child(odd){
-			// 	float: right;
-			// }
-		}
-	}
-
-	// Empty items style
-	.empty-items{
-		width: 50%;
-		margin: 0% 25%;
-		padding: 3% 0%;
-		float: left;
-		display: inline-block;
-		font-size: 1em;
-		color: @light_textcolor;
-		text-align: center;
-	}
-}
-
-// Message page style (News message)
-.page{
-	width: 50%;
-	margin: 0% 25%;
-	margin-top: 50px;
-	margin-bottom: 5%;
-	min-height: 500px;
-	float: left;
-	display: inline-block;
-
 	// Topic style
 	.topic-container{
-		width: 100%;
-		padding: 5% 0%;
+		width: 90%;
+		padding: 5%;
 		padding-bottom: 0%;
 		float: left;
 		display: inline-block;
@@ -205,7 +246,6 @@
 			font-size: 2em;
 			color: #333333;
 			line-height: 1em;
-			font-weight: normal;
 		}
 
 		.btn{
@@ -231,16 +271,18 @@
 		}
 
 		.info{
-			width: 94%;
-			padding: 2% 3%;
+			width: 96%;
+			padding: 2%;
 			float: left;
 			display: inline-block;
-			color: #999999;
-			font-size: 1em;
+			color: #666666;
+			font-size: 0.9em;
 			line-height: 1.5em;
 			margin-top: 3%;
+			background: #FAFAFA;
 			border-radius: 2px;
-			border: 1px dashed #DDDDDD;
+
+			strong{ color: #333333; }
 		}
 
 		.title{
@@ -282,8 +324,8 @@
 	}
 
 	.report-stat{
-		width: 100%;
-		padding: 5% 0%;
+		width: 90%;
+		padding: 5%;
 		padding-bottom: 0%;
 		float: left;
 		display: inline-block;
@@ -327,11 +369,11 @@
 	// Header info detail in table-layout
 	// Manpower: report detail page
 	.cal-box{
-		width: 100%;
-		padding: 5% 0%;
+		width: 90%;
+		padding: 5%;
 		float: left;
 		display: inline-block;
-		font-size: 1em;
+		font-size: 0.9em;
 		background: #FAFAFA;
 
 		.box{
@@ -342,8 +384,8 @@
 	}
 
 	.header-report-table{
-		width: 100%;
-		padding: 5% 0%;
+		width: 90%;
+		padding: 5%;
 		padding-bottom: 0%;
 		float: left;
 		display: inline-block;
@@ -441,8 +483,10 @@
 	// Caliber items stype
 	// Output: Report detail
 	.caliber-in-report-items{
-		width: 100%;
-		padding: 5% 0%;
+		width: 80%;
+		padding: 5%;
+		margin: 0% 5%;
+		margin-top: 3%;
 		float: left;
 		display: inline-block;
 		background: #FAFAFA;
@@ -573,25 +617,136 @@
 		}
 	}
 
+	.starter-container{
+		width: 100%;
+		padding: 3% 0%;
+		float: left;
+		display: inline-block;
+		text-align: center;
+
+		a.create-btn{
+			background: @green_color;
+			color: @white_color;
+			border-radius: 2px;
+			font-weight: bold;
+			font-size: 0.9em;
+			padding: 7px 10px;
+
+			&:hover{
+				cursor: pointer;
+				opacity: 0.8;
+			}
+
+			i{ margin-right: 10px; }
+		}
+	}
+
+	.turn-to-list{
+		width: 90%;
+		padding: 5%;
+		float: left;
+		display: inline-block;
+
+		.turn-to-items{
+			width: 47%;
+			padding: 1%;
+			margin-right: 2%;
+			margin-bottom: 2%;
+			float: left;
+			display: inline-block;
+			background: #FAFAFA;
+			border-radius: 2px;
+
+			&:nth-child(even){
+				margin-right: 0%;
+			}
+
+			.title{
+				width: 43%;
+				float: left;
+				display: inline-block;
+				padding: 3% 4%;
+			}
+			.output{
+				width: 30%;
+				padding: 3% 4%;
+				float: left;
+				display: inline-block;
+				text-align: right;
+				color: rgba(0,0,0,0.4);
+			}
+			.btn{
+				width: 11%;
+				padding: 3% 0%;
+				float: right;
+				display: inline-block;
+				font-size: 1em;
+				line-height: 1.5em;
+				background: #FAFAFA;
+				text-align: center;
+				color: rgba(0,0,0,0.2);
+
+				&:hover{
+					cursor: pointer;
+					color: rgba(0,0,0,0.6);
+				}
+			}
+
+			// &:nth-child(odd){
+			// 	float: right;
+			// }
+		}
+	}
+
+	// Empty items style
+	.empty-items{
+		width: 50%;
+		margin: 0% 25%;
+		padding: 3% 0%;
+		float: left;
+		display: inline-block;
+		font-size: 1em;
+		color: @light_textcolor;
+		text-align: center;
+	}
+}
+
+// Container all Page
+.container{
+	width: 50%;
+	margin: 0% 25%;
+	margin-top: 135px;
+	margin-bottom: 3%;
+	min-height: 500px;
+	float: left;
+	display: inline-block;
+
 	.graph-filter{
 		width: 100%;
 		float: left;
 		display: inline-block;
-		padding: 2% 0%;
+		border-bottom: 1px solid @border_color;
+		background: #FFFFFF;
 
 		.filter-items{
-			width: 20%;
-			padding: 1% 0%;
+			padding: 10px;
 			float: left;
 			display: inline-block;
-			color: #999999;
+			margin-bottom: -1px;
+			color: rgba(0,0,0,0.4);
+			border-bottom: 1px solid transparent;
+			font-size: 0.9em;
 
-			&:hover{ cursor: pointer; }
+			&:hover{
+				cursor: pointer;
+				color: @primary_color;
+			}
 		}
 
 		.filter-items-active{
 			color: @primary_color;
-			text-decoration: underline;
+			font-weight: bold;
+			border-bottom: 1px solid @primary_color;
 		}
 	}
 
@@ -603,29 +758,34 @@
 		background: @white_color;
 
 		h2{
-			width: 100%;
+			width: 96%;
+			padding: 2%;
 			float: left;
 			display: inline-block;
-			font-size: 2em;
-			color: #333333;
-			font-weight: normal;
+			font-size: 1.5em;
+			color: @primary_color;
+			text-align: center;
 		}
 
 		.graph{
-			width: 100%;
+			width: 97.5%;
+			margin-left: 2.5%;
 			float: left;
 			display: inline-block;
 			background: @white_color;
 		}
 
 		.report-yield-table{
-			width: 100%;
+			width: 99%;
 			margin: 3% 0%;
+			margin-right: 1%;
 			float: left;
 			display: inline-block;
 			line-height: 3em;
 			font-size: 0.5em;
 			margin-bottom: 10%;
+			border-top: 1px solid @border_color;
+			border-left: 1px solid @border_color;
 			color: @normal_textcolor;
 
 			.caption-col{
@@ -682,134 +842,65 @@
 
 	.starter-message{
 		width: 100%;
-		padding: 25% 0%;
+		padding: 10% 0%;
 		float: left;
-		display: inline-block;
+		display: inherit;
 		text-align: center;
 		font-style: italic;
-		font-size: 3em;
-		color: #EEEEEE;
-	}
-
-	.month-caption-items{
-		width: 100%;
-		padding: 2% 0%;
-		float: left;
-		display: inline-block;
-		font-size: 2em;
-		color: #333333;
-	}
-
-	// Header report items style
-	.header-report-items{
-		width: 100%;
-		padding: 2% 0%;
-		float: left;
-		display: inline-block;
 		font-size: 1em;
-		color: #333333;
-		border-bottom: 1px solid #EEEEEE;
-
-		&:hover{
-			cursor: pointer;
-			.status{ color: #333333; }
-		}
-
-		.date{
-			width: 20%;
-			float: left;
-			display: inline-block;
-			text-align: left;
-
-			.new-items{
-				font-size: 0.4em;
-				margin-left: 5px;
-				color: #FF9800;
-				font-weight: normal;
-			}
-		}
-
-		.shift{
-			width: 5%;
-			float: left;
-			display: inline-block;
-			text-align: center;
-
-			&.-A{
-				color: #304FFE;
-			}
-			&.-B{
-				color: #FF9800;
-			}
-		}
-		
-		.eff{
-			width: 15%;
-			float: left;
-			display: inline-block;
-			text-align: right;
-
-			.unit{
-				margin-left: 3px;
-				font-size: 0.75em;
-			}
-
-			i.fa-exclamation-circle{
-				color: #F44336;
-				margin-right: 1px;
-			}
-		}
-
-		.owner{
-			width: 30%;
-			padding-left: 10%;
-			float: left;
-			display: inline-block;
-			font-size: 0.9em;
-			line-height: 1.7em;
-
-			.time{
-				font-size: 0.75em;
-				margin-left: 10px;
-				font-style: italic;
-				color: #999999;
-			}
-		}
-
-		.status{
-			width: 5%;
-			float: right;
-			display: inline-block;
-			text-align: center;
-			color: #999999;
-		}
-
-		&.-not_owner{
-			opacity: 0.3;
-		}
+		color: @light_textcolor;
 	}
+}
 
-	.message-items{
-		width: 100%;
-		padding: 3% 0%;
+// Message page style (News message)
+.message-list-container{
+	width: 100%;
+	margin-top: 135px;
+	margin-bottom: 3%;
+	min-height: 500px;
+	float: left;
+	display: inline-block;
+
+	> .message-items{
+		width: 48%;
+		padding: 2% 1%;
+		margin: 0% 25%;
 		float: left;
 		display: inline-block;
-		border-bottom: 1px solid #EEEEEE;
+		line-height: 1.5;
+		background: #FFFFFF;
+		border-top: 1px solid #EEEEEE;
 
-		h2{
-			font-size: 2em;
-			font-weight: normal;
-			color: #333333;
+		&:first-child{
+			border-top: 0px;
 		}
-		p{
-			font-size: 1em;
-			line-height: 1.5em;
-			color: #333333;
 
-			&.info{
+		.icon{
+			width: 12%;
+			float: left;
+			display: inline-block;
+			font-size: 2em;
+			text-align: center;
+			color: @primary_color;
+		}
+		.detail{
+			width: 88%;
+			float: left;
+			display: inline-block;
+
+			.id{
+				width: 100%;
+				float: left;
+				display: inline-block;
+				color: rgba(0,0,0,0.4);
 				font-size: 0.8em;
-				color: #999999;
 				margin-bottom: 1%;
+			}
+
+			.message{
+				color: #000000;
+				font-size: 1em;
+				line-height: 1.5em;
 			}
 		}
 	}

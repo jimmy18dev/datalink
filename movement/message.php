@@ -39,14 +39,8 @@ $current_page['1'] = 'message';
 
 </head>
 <body>
-<header class="header">
-	<div class="header-items">
-		<div class="topic">NEWS</div>
-	</div>
-	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
-</header>
-<?php include'navigator.php';?>
-<div class="message-list-container">
+<?php include'header.php';?>
+<div class="page">
 	<?php $message->listMessage(array('type' => 'message-items'));?>
 </div>
 

@@ -38,14 +38,7 @@ $current_page['1'] = 'profile';
 
 </head>
 <body>
-<header class="header">
-	<div class="header-items">
-		<div class="topic"><?php echo $user->fname.' '.$user->lname?></div>
-		<div class="caption">Account ID <strong><?php echo $user->code;?></strong>, Section <strong><?php echo $user->section_name;?></strong> Last visit at <strong><?php echo $user->visit_time;?></strong></div>
-	</div>
-	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
-</header>
-<?php include'navigator.php';?>
+<?php include'header.php';?>
 <?php if($user->status == 'deactive'){?>
 <div class="user-deactive"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>This account is <strong>Deactive</strong> by administrator</div>
 <?php }?>
