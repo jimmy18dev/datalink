@@ -46,12 +46,17 @@ $current_page['1'] = 'report';
 </head>
 <body>
 <?php include'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title"><?php echo $report->date;?></div>
-		<a class="btn btn-pdf-download" id="btn-pdf-export" href="pdf/daily-<?php echo $report->report_filename.'-'.$report->line_no.''.$report->shift;?>.pdf" target="_blank">Download PDF<i class="fa fa-download" aria-hidden="true"></i></a>
-	</div>
+<div class="topbar">
+	<a class="title" href="header_report.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>Header Reports</a>
 
+	<?php if(!empty($_GET['date'])){?>
+	<div class="title"><?php echo $_GET['date'];?></div>
+	<?php }?>
+	<div class="title"><?php echo $report->date;?></div>
+	<a class="btn -download-pdf" id="btn-pdf-export" href="pdf/daily-<?php echo $report->report_filename.'-'.$report->line_no.''.$report->shift;?>.pdf" target="_blank">Download PDF<i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>
+</div>
+
+<div class="container">
 	<div class="list-container">
 		<div class="page">
 			<h2>1. Manpower: <span class="date">Updated <?php echo $report->update;?> By <strong><?php echo $report->leader_name;?></strong></span></h2>

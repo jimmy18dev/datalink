@@ -36,50 +36,140 @@ body.bg {
   -moz-transition: height 0.2s;
   transition: height 0.2s;
 }
+#loading-bar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  height: 3px;
+  background: #003399;
+  float: left;
+  display: inline-block;
+  z-index: 9999;
+  display: none;
+}
+.form-dialog {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 36%;
+  padding: 2%;
+  margin: 0% 30%;
+  margin-top: 15%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  z-index: 9999;
+  border-radius: 2px;
+  display: none;
+}
+.form-dialog .input {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.form-dialog .input .input-text,
+.form-dialog .input .input-textarea {
+  width: 100%;
+  padding: 3% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 1.6em;
+  border: 0px;
+  resize: none;
+}
+.form-dialog .input .input-textarea {
+  font-size: 1.2em;
+  border-top: 1px solid #EEEEEE;
+}
+.form-dialog .control {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 5%;
+}
+.form-dialog .control .btn {
+  padding: 2% 4%;
+  float: right;
+  display: inline-block;
+  font-size: 1em;
+  border: 0px;
+  color: #999999;
+  border-radius: 2px;
+}
+.form-dialog .control .btn:hover {
+  cursor: pointer;
+  color: #333333;
+}
+.form-dialog .control .btn-submit {
+  padding: 2% 4%;
+  float: right;
+  display: inline-block;
+  font-size: 1em;
+  border: 0px;
+  background: #003399;
+  color: #FFFFFF;
+  border-radius: 2px;
+  line-height: 1em;
+}
+.form-dialog .control .btn-submit:hover {
+  cursor: pointer;
+}
+#filter {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  float: left;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: none;
+}
 .header {
   position: fixed;
   top: 0%;
   left: 0%;
-  width: 17%;
+  width: 15%;
   padding: 0%;
   height: 100%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
   z-index: 99;
-  box-shadow: 1px 0px 15px rgba(0, 0, 0, 0.1);
 }
 .header .logo {
   width: 80%;
-  height: 50px;
-  padding: 25px 10%;
+  padding: 15px 10%;
+  height: 30px;
   float: left;
   display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
 }
 .header .logo h1 {
-  font-size: 2em;
+  font-size: 1.1em;
   color: #333333;
 }
 .header .logo h1 a {
-  color: #333333;
+  color: #003399;
 }
 .header .logo .version {
-  font-size: 0.8em;
-  color: #999999;
-  margin-left: 2%;
-  letter-spacing: 1px;
+  font-size: 0.7em;
+  color: #333333;
 }
 .header a.header-items {
   width: 80%;
-  padding: 7% 10%;
+  padding: 6% 10%;
   float: left;
   display: inline-block;
   color: #333333;
-  letter-spacing: 1px;
+  line-height: 1.5em;
+  font-size: 0.9em;
 }
 .header a.header-items:hover {
   cursor: pointer;
-  background: #EEEEEE;
+  background: #FAFAFA;
 }
 .header a.header-items-active {
   background: #003399;
@@ -103,12 +193,228 @@ body.bg {
   float: left;
   display: inline-block;
 }
+.topbar {
+  position: fixed;
+  width: 81%;
+  padding: 0% 2%;
+  height: 60px;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  margin-left: 15%;
+  border-left: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+  z-index: 999;
+}
+.topbar .title {
+  float: left;
+  display: inline-block;
+  padding: 20px 0px;
+  height: 20px;
+  color: #999999;
+  font-size: 1em;
+  margin-right: 20px;
+}
+.topbar .title i {
+  margin-right: 10px;
+  color: #DDDDDD;
+}
+.topbar .title strong {
+  color: #000000;
+  font-weight: normal;
+}
+.topbar .btn {
+  float: right;
+  display: inline-block;
+  padding: 20px;
+  height: 20px;
+  color: #003399;
+}
+.topbar .btn i {
+  margin-left: 10px;
+}
+.topbar .btn.-download-pdf {
+  color: #F44336;
+}
+.topbar .btn.-excel {
+  color: #4CAF50;
+}
+.topbar .btn:hover {
+  cursor: pointer;
+  background: #FAFAFA;
+}
+.topbar .msg {
+  float: right;
+  display: inline-block;
+  padding: 20px;
+  height: 20px;
+  color: #003399;
+}
+.topbar .msg i {
+  margin-right: 5px;
+}
+.topbar .msg.-alert {
+  color: #F44336;
+}
+.topbar .msg:hover {
+  cursor: pointer;
+  background: #FAFAFA;
+}
 .container {
-  width: 83%;
-  margin-left: 17%;
+  width: 85%;
+  margin-left: 15%;
+  margin-top: 60px;
   min-height: 500px;
   float: left;
   display: inline-block;
+}
+.container .form {
+  width: 50%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  margin: 5% 25%;
+  border-radius: 2px;
+}
+.container .form .form-items {
+  width: 90%;
+  padding: 0% 5%;
+  padding-top: 5%;
+  float: left;
+  display: inline-block;
+}
+.container .form .form-items .caption {
+  width: 30%;
+  padding: 3% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 1.1em;
+  text-align: right;
+  margin-right: 10%;
+}
+.container .form .form-items .input {
+  width: 60%;
+  float: right;
+  display: inline-block;
+}
+.container .form .form-items .input.-control {
+  border-top: 1px solid #EEEEEE;
+}
+.container .form .form-items .input .input-text {
+  width: 94%;
+  float: left;
+  display: inline-block;
+  font-size: 1.1em;
+  line-height: 1.7em;
+  padding: 3%;
+  border: 0px;
+  background: #FAFAFA;
+  margin-bottom: 3%;
+  border-radius: 2px;
+}
+.container .form .form-items .input .select {
+  width: 100%;
+  margin-bottom: 3%;
+  float: left;
+  display: inline-block;
+  position: relative;
+}
+.container .form .form-items .input .select:after {
+  content: '';
+  border-top: 8px solid #999999;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  right: 5%;
+  pointer-events: none;
+}
+.container .form .form-items .input .select select {
+  width: 100%;
+  margin: 0%;
+  padding: 3%;
+  float: left;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 1.1em;
+  border: 0px;
+  line-height: 1.7em;
+  background: #FAFAFA;
+  color: #333333;
+  border-radius: 2px;
+}
+.container .form .form-items .input .select select:hover {
+  cursor: pointer;
+  background: #EEEEEE;
+}
+.container .form .form-items .input .btn {
+  float: right;
+  display: inline-block;
+  padding: 3% 6%;
+  background: #003399;
+  color: #FFFFFF;
+  border-radius: 2px;
+  margin: 5% 0%;
+  margin-bottom: 10%;
+}
+.container .form .form-items .input .btn i {
+  margin-left: 10px;
+}
+.container .main-menu {
+  width: 96%;
+  margin: 2%;
+  float: left;
+  display: inline-block;
+}
+.container .main-menu .report-items {
+  width: 10%;
+  padding: 2%;
+  padding-top: 5%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  text-align: center;
+  color: #333333;
+  border-radius: 2px;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.container .main-menu .report-items:hover {
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+.container .main-menu .report-items .icon {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 2.7em;
+  margin-bottom: 15%;
+  color: #003399;
+}
+.container .main-menu .report-items .title {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  height: 80px;
+  line-height: 1.5em;
+  color: #666666;
+}
+.container .main-menu .report-items .title .beta {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.7em;
+  color: #FF9800;
+  letter-spacing: 2px;
 }
 .container .head {
   position: fixed;
@@ -540,898 +846,139 @@ body.bg {
   float: left;
   display: inline-block;
 }
-.container .report-container {
-  width: 90%;
-  margin: 0% 5%;
-  margin-top: 100px;
-  float: left;
-  display: inline-block;
-}
-.container .report-container .report-items {
-  width: 13%;
-  padding: 2%;
-  padding-top: 5%;
+.container .page {
+  width: 86%;
+  padding: 5%;
+  margin: 2%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
-  text-align: center;
-  color: #333333;
-  border-radius: 5px;
-  margin-right: 3%;
-  margin-top: 3%;
 }
-.container .report-container .report-items:hover {
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-.container .report-container .report-items .icon {
-  width: 100%;
+.container .page .section-items {
+  width: 98%;
+  padding: 1%;
   float: left;
   display: inline-block;
-  font-size: 2.5em;
-  margin-bottom: 15%;
-  color: #666666;
-}
-.container .report-container .report-items .title {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.9em;
-  height: 80px;
-  line-height: 1.5em;
-  color: #333333;
-  letter-spacing: 1px;
-}
-.container .report-container .report-items .title .beta {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.8em;
-  color: #FF9800;
-  letter-spacing: 1px;
-}
-.container .report-container .datepicker {
-  width: 50%;
-  margin: 0% 25%;
-  margin-top: 10%;
-  float: left;
-  display: inline-block;
-}
-.container .report-container .datepicker .area {
-  width: 94%;
-  padding: 5% 3%;
-  float: left;
-  display: inline-block;
-  border: 1px solid #EEEEEE;
-}
-.container .report-container .datepicker .picker-items {
-  width: 39.8%;
-  padding: 0% 5%;
-  float: left;
-  display: inline-block;
-  border-right: 1px solid #EEEEEE;
-}
-.container .report-container .datepicker .picker-items:last-child {
-  border-right: 0px;
-}
-.container .report-container .datepicker .picker-items .caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 2em;
-  line-height: 2em;
-  color: #000000;
-}
-.container .report-container .datepicker .picker-items .picker {
-  width: 100%;
-  float: left;
-  display: inline-block;
-}
-.container .report-container .datepicker .picker-items .picker .input-select {
-  margin: 0%;
-  float: left;
-  display: inline-block;
-  font-size: 1.3em;
-  font-family: 'Roboto', sans-serif;
-  -webkit-appearance: none;
-  line-height: 3em;
-  border: 0px;
-  border-radius: 0px;
-  color: #666666;
-  outline: none;
-}
-.container .report-container .datepicker .picker-items .picker .input-select:hover {
-  color: #000000;
-  cursor: pointer;
-}
-.container .report-container .datepicker .picker-items .picker .input-select-day {
-  width: 20%;
-}
-.container .report-container .datepicker .picker-items .picker .input-select-month {
-  width: 50%;
-}
-.container .report-container .datepicker .picker-items .picker .input-select-year {
-  width: 30%;
-}
-.container .report-container .datepicker .fileupload {
-  float: left;
-  display: inline-block;
-  margin-top: 2%;
-  font-size: 1em;
-  padding: 10px 0px;
-}
-.container .report-container .datepicker .submit-btn {
-  float: right;
-  display: inline-block;
-  margin: 0px;
-  margin-top: 2%;
-  background: transparent;
-  color: #003399;
-  padding: 10px;
-  border: 0px;
-  font-size: 1em;
-  font-family: 'Roboto', sans-serif;
-  border-radius: 0px;
-}
-.container .report-container .datepicker .submit-btn:hover {
-  background: #FAFAFA;
-  cursor: pointer;
-}
-.container .report-container .datepicker .submit-btn:active {
-  background: #003399;
-  color: #FFFFFF;
-}
-.container .report-container .report-box {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  background: #ffffff;
-  margin-bottom: 5%;
-}
-.container .report-container .report-box .weekly-eff-items {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1em;
-  line-height: 2.5em;
+  background: #FFFFFF;
   border-bottom: 1px solid #FAFAFA;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1em;
+  line-height: 1em;
+  color: #333333;
 }
-.container .report-container .report-box .weekly-eff-items:hover {
-  background: #FAFAFA;
-}
-.container .report-container .report-box .weekly-eff-items .col1 {
-  width: 29.5%;
+.container .page .section-items .col1 {
+  width: 19.5%;
   padding-left: 0.5%;
   float: left;
   display: inline-block;
 }
-.container .report-container .report-box .weekly-eff-items .col1 .count {
-  width: 10%;
-  float: left;
-  display: inline-block;
-  color: #CCCCCC;
-}
-.container .report-container .report-box .weekly-eff-items .col1 .caliber {
-  width: 90%;
-  float: left;
-  display: inline-block;
-}
-.container .report-container .report-box .weekly-eff-items .col2 {
-  width: 20%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .report-container .report-box .weekly-eff-items .col3 {
+.container .page .section-items .col2 {
   width: 25%;
   float: left;
   display: inline-block;
-  text-align: right;
 }
-.container .report-container .report-box .weekly-eff-items .col4 {
-  width: 24.5%;
-  padding-right: 0.5%;
+.container .page .section-items .col3 {
+  width: 50%;
   float: left;
   display: inline-block;
-  text-align: right;
 }
-.container .report-container .report-box .weekly-eff-items .col5 {
-  width: 20%;
+.container .page .setting-form-items {
+  width: 50%;
+  margin: 1% 25%;
   float: left;
   display: inline-block;
-  text-align: right;
-  margin-right: 50%;
 }
-.container .report-container .report-box .weekly-eff-items-pending {
-  color: rgba(0, 0, 0, 0.2);
-}
-.container .report-container .report-box .weekly-eff-items-deleted {
-  color: rgba(0, 0, 0, 0.1);
-}
-.container .report-container .report-box .topic-fix {
-  font-weight: bold;
-  border-bottom: 1px solid #EEEEEE;
-  color: rgba(0, 0, 0, 0.8);
-}
-.container .report-container .report-box .topic-fix:hover {
-  background: #ffffff;
-}
-.container .report-container .report-box .total-fix {
-  font-weight: bold;
-}
-.container .report-container .report-box .topic {
-  width: 100%;
+.container .page .setting-form-items .detail {
+  width: 50%;
   float: left;
   display: inline-block;
-  line-height: 3em;
-  font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  line-height: 2.5em;
+}
+.container .page .setting-form-items .input {
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+.container .page .setting-form-items .input .input-text {
+  width: 54%;
+  padding: 3%;
+  float: left;
+  display: inline-block;
+  border: 0px;
   font-family: 'Roboto', sans-serif;
-}
-.container .report-container .report-box .eff-items {
-  width: 21.5%;
-  padding-left: 3%;
-  margin-top: 2%;
-  float: left;
-  display: inline-block;
+  font-size: 1.1em;
   line-height: 1.5em;
-  border-left: 1px solid #EEEEEE;
+  background: #EEEEEE;
+  border-radius: 2px;
 }
-.container .report-container .report-box .eff-items .v {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 2.2em;
-}
-.container .report-container .report-box .eff-items .v .unit {
-  font-size: 0.5em;
-}
-.container .report-container .report-box .eff-items .k {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.9em;
-}
-.container .graph-filter {
-  width: 90%;
-  margin: 0% 5%;
-  float: left;
-  display: inline-block;
-  font-size: 0.9em;
-  color: #000000;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .graph-filter .line {
-  width: 45%;
+.container .page .setting-form-items .input .save-btn {
+  width: 40%;
+  padding: 3% 0%;
   float: right;
   display: inline-block;
-}
-.container .graph-filter .line .caption {
-  float: right;
-}
-.container .graph-filter .line .filter-items {
-  float: right;
-}
-.container .graph-filter .month .caption {
-  padding-left: 0px;
-}
-.container .graph-filter .caption {
-  padding: 20px 10px;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.4);
-}
-.container .graph-filter .filter-items {
-  float: left;
-  display: inline-block;
-  padding: 20px 10px;
-  color: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid transparent;
-  margin-bottom: -1px;
-}
-.container .graph-filter .filter-items:hover {
-  border-bottom: 1px solid #CCCCCC;
-  color: rgba(0, 0, 0, 0.8);
-}
-.container .graph-filter .active {
-  border-bottom: 1px solid #000000;
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: bold;
-}
-.container .starter-message {
-  width: 100%;
-  padding: 10% 0%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  font-size: 1.5em;
-  color: rgba(0, 0, 0, 0.1);
-  font-style: italic;
-}
-.container .graph-report {
-  width: 90%;
-  margin: 3% 5%;
-  float: left;
-  display: inline-block;
-}
-.container .graph-report h2 {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.5em;
-}
-.container .graph-report .graph {
-  width: 97.5%;
-  margin-left: 2.5%;
-  float: left;
-  display: inline-block;
-  background: #DADADA;
-}
-.container .graph-report .report-yield-table {
-  width: 99%;
-  margin: 3% 0%;
-  margin-right: 1%;
-  float: left;
-  display: inline-block;
-  line-height: 3em;
-  font-size: 0.6em;
-  margin-bottom: 10%;
-  border-top: 1px solid #EEEEEE;
-  border-left: 1px solid #EEEEEE;
-}
-.container .graph-report .report-yield-table .caption-col {
-  width: 8%;
-  float: left;
-  display: inline-block;
-  font-weight: bold;
-}
-.container .graph-report .report-yield-table .caption-col .row {
-  width: 90%;
-  padding-left: 10%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-}
-.container .graph-report .report-yield-table .data-items {
-  width: 2.965%;
-  float: left;
-  display: inline-block;
-}
-.container .graph-report .report-yield-table .data-items .v {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  border-left: 1px solid #EEEEEE;
-  text-align: center;
-}
-.container .graph-report .report-yield-table .data-items .date {
-  font-weight: bold;
-  background: #FAFAFA;
-}
-.container .graph-report .report-yield-table .data-items .highlight {
+  border: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  border-radius: 0px;
+  background: #FFFFFF;
   color: #003399;
-  font-weight: bold;
 }
-.container .graph-report .report-yield-table .data-items .zero {
-  color: #EEEEEE;
+.container .page .setting-form-items .input .save-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
-.container .graph-report .report-yield-table .data-items:last-child .v {
-  border-right: 1px solid #EEEEEE;
-}
-.container .list-container {
-  width: 100%;
-  margin-top: 100px;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page {
-  width: 90%;
-  margin: 0% 5%;
-  margin-bottom: 10%;
-  padding-bottom: 5%;
+.container .page .activity-items {
+  width: 98%;
+  padding: 1%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
-  border-radius: 5px;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #FAFAFA;
+  font-size: 0.9em;
+  line-height: 1em;
+  color: #333333;
+}
+.container .page .activity-items.topic-fix {
+  font-size: 0.8em;
+  color: #999999;
+}
+.container .page .activity-items .col1 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .page .activity-items .col2 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 }
-.container .list-container .page .user-items {
-  width: 96%;
-  padding: 1.5% 2%;
+.container .page .activity-items .col4 {
+  width: 49%;
+  padding-right: 1%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
-  border-bottom: 1px solid #EEEEEE;
-  font-size: 0.95em;
-  line-height: 1em;
-  color: #333333;
-}
-.container .list-container .page .user-items.-topic {
-  background: #FAFAFA;
-  font-weight: bold;
-  font-size: 0.9em;
-  color: #003399;
-  border-bottom: 0px;
-}
-.container .list-container .page .user-items.-deactive {
-  opacity: 0.5;
-}
-.container .list-container .page .user-items:hover {
-  cursor: pointer;
-  background: #EEEEEE;
-}
-.container .list-container .page .user-items .id {
-  width: 7%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .user-items .name {
-  width: 30%;
-  float: left;
-  display: inline-block;
-  font-weight: bold;
-}
-.container .list-container .page .user-items .name i.fa-circle {
-  font-size: 0.9em;
-  margin-right: 5px;
-  color: #4CAF50;
-}
-.container .list-container .page .user-items .name a {
-  color: #333333;
-}
-.container .list-container .page .user-items .name a:hover {
-  text-decoration: underline;
-}
-.container .list-container .page .user-items .name .admin {
-  font-size: 0.7em;
-  color: #999999;
-  font-weight: normal;
-}
-.container .list-container .page .user-items .username {
-  width: 14%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .user-items .password {
-  width: 14%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .user-items .section {
-  width: 20%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .user-items .visit {
-  width: 15%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.container .list-container .page h2 {
-  width: 90%;
-  padding: 5%;
-  padding-bottom: 2%;
-  float: left;
-  display: inline-block;
-  font-size: 1.4em;
-  font-weight: normal;
-  color: #666666;
-}
-.container .list-container .page h2 .date {
-  float: right;
-  display: inline-block;
-  font-size: 0.6em;
-  font-weight: normal;
-  color: #999999;
-}
-.container .list-container .page .report-stat {
-  width: 86%;
-  margin: 0% 5%;
-  padding: 2%;
-  float: left;
-  display: inline-block;
-  margin-bottom: 1%;
-  border-radius: 5px;
-  background: #FAFAFA;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-}
-.container .list-container .page .report-stat:hover {
-  cursor: default;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
-  background: #FFFFFF;
-  transform: scale(1.05);
-  z-index: 99;
-}
-.container .list-container .page .report-stat .stat-items {
-  width: 25%;
-  padding: 1% 0%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .report-stat .stat-items .v {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 2em;
-  color: #333333;
-  margin-bottom: 5%;
-}
-.container .list-container .page .report-stat .stat-items .v .unit {
-  font-weight: normal;
-  font-size: 0.5em;
-  margin-left: 5px;
-  color: #999999;
-}
-.container .list-container .page .report-stat .stat-items .k {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.9em;
-  color: #666666;
-}
-.container .list-container .page .report-stat .stat-items .k i {
-  margin-right: 5px;
-  font-size: 0.8em;
-  color: #003399;
-}
-.container .list-container .page .report-stat .stat-items .k strong {
-  color: #333333;
-}
-.container .list-container .page .header-report-table {
-  width: 90%;
-  margin: 0% 5%;
-  float: left;
-  display: inline-block;
-  position: relative;
-}
-.container .list-container .page .header-report-table .box {
-  padding: 2%;
-  float: left;
-  display: inline-block;
-  background: #FAFAFA;
-  border-radius: 5px;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-}
-.container .list-container .page .header-report-table .box:hover {
-  cursor: default;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
-  background: #FFFFFF;
-  transform: scale(1.1);
-  z-index: 99;
-}
-.container .list-container .page .header-report-table .box .box-topic {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  color: #003399;
-  margin-bottom: 2%;
-}
-.container .list-container .page .header-report-table .box .col {
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .header-report-table .box .col .col-val {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.4em;
-  line-height: 1.5em;
-  color: #333333;
-}
-.container .list-container .page .header-report-table .box .col .col-caption {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.8em;
-  margin-left: 5px;
-  color: #666666;
-  letter-spacing: 1px;
-}
-.container .list-container .page .header-report-table .box .col:last-child {
-  border-right: 0px;
-  margin-right: 0%;
-}
-.container .list-container .page .header-report-table .box1 {
-  width: 45.5%;
-  padding: 2%;
-  margin-bottom: 1%;
-}
-.container .list-container .page .header-report-table .box1 .col {
-  width: 21%;
-  margin-right: 4%;
-}
-.container .list-container .page .header-report-table .box2 {
-  width: 45.5%;
-  padding: 2%;
-  margin-bottom: 1%;
-  float: right;
-}
-.container .list-container .page .header-report-table .box2 .col {
-  width: 16%;
-  margin-right: 4%;
-}
-.container .list-container .page .header-report-table .box3 {
-  width: 45.5%;
-  padding: 2%;
-  margin-right: 1%;
-}
-.container .list-container .page .header-report-table .box3 .col {
-  width: 21%;
-  margin-right: 4%;
-}
-.container .list-container .page .header-report-table .box4 {
-  width: 20.5%;
-  padding: 2.2% 2%;
-}
-.container .list-container .page .header-report-table .box4 .box-topic {
-  margin-bottom: 3%;
-}
-.container .list-container .page .header-report-table .box4 .col {
-  width: 47%;
-  margin-right: 5%;
-}
-.container .list-container .page .header-report-table .box5 {
-  width: 20%;
-  padding: 2.2% 2%;
-  float: right;
-}
-.container .list-container .page .header-report-table .box5 .box-topic {
-  margin-bottom: 3%;
-}
-.container .list-container .page .header-report-table .box5 .col {
-  width: 47%;
-  margin-right: 5%;
-}
-.container .list-container .page .caliber-container {
-  width: 90%;
-  margin: 0% 5%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items {
-  width: 45.5%;
-  padding: 2%;
-  margin-right: 1%;
-  margin-bottom: 1%;
-  float: left;
-  display: inline-block;
-  background: #FAFAFA;
-  border-radius: 5px;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items:hover {
-  cursor: default;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
-  background: #FFFFFF;
-  transform: scale(1.1);
-  z-index: 99;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items:nth-child(even) {
-  float: right;
-  margin-right: 0%;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .info {
-  width: 100%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .info .name {
-  width: 100%;
-  float: left;
-  font-size: 1.3em;
-  color: #333333;
-  margin-bottom: 1%;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .info .name a {
-  float: right;
-  display: inline-block;
-  color: #003399;
-  border: 1px solid #003399;
-  padding: 2px 3px;
-  padding-top: 3px;
-  font-size: 0.7em;
-  border-radius: 2px;
-  font-weight: normal;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .info .name a:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .info .name a:active {
-  color: #ffffff;
-  background: #003399;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .info .description {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.8em;
-  line-height: 1.5em;
-  color: #666666;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .info .description strong {
-  color: #333333;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  margin-top: 3%;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations .operation-items {
-  width: 100%;
-  padding: 2% 0%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #EEEEEE;
-  font-size: 0.9em;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations .operation-items.-caption {
-  font-size: 0.7em;
-  color: #999999;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations .operation-items:last-child {
-  border-bottom: 0px;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations .operation-items .op {
-  width: 64%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations .operation-items .val {
-  width: 12%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-  color: #BBBBBB;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations .operation-items .val.-black {
-  color: #333333;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations .operation-items .val.-green {
-  color: #4CAF50;
-}
-.container .list-container .page .caliber-container .caliber-in-report-items .operations .operation-items .val.-red {
-  color: #F44336;
-  text-decoration: underline;
-}
-.container .list-container .page .topic-fix {
-  width: 90%;
-  padding: 5px 5%;
-  height: 30px;
-  float: left;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.4);
-}
-.container .list-container .page .header-report-items {
-  width: 96%;
-  padding: 1.5% 2%;
-  float: left;
-  display: inline-block;
-  background: #FFFFFF;
-  border-bottom: 1px solid #EEEEEE;
-  font-size: 0.95em;
-  line-height: 1em;
-  color: #333333;
-}
-.container .list-container .page .header-report-items:hover {
-  cursor: pointer;
-  background: #F5F5F5;
-}
-.container .list-container .page .header-report-items.-topic {
-  background: #FAFAFA;
-  font-weight: bold;
-  font-size: 0.8em;
-  color: #003399;
-  border-bottom: 0px;
-}
-.container .list-container .page .header-report-items .id {
-  width: 8%;
-  float: left;
-  display: inline-block;
-  font-weight: bold;
-}
-.container .list-container .page .header-report-items .eff {
-  width: 12%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-}
-.container .list-container .page .header-report-items .hrs {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.container .page .activity-items .col3 {
   width: 10%;
   float: left;
   display: inline-block;
-  text-align: center;
-}
-.container .list-container .page .header-report-items .ot {
-  width: 6%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-}
-.container .list-container .page .header-report-items .update {
-  width: 15%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  font-style: italic;
-}
-.container .list-container .page .header-report-items .leader {
-  width: 9%;
-  float: left;
-  display: inline-block;
   text-align: right;
 }
-.container .list-container .page .report-date {
-  width: 90%;
-  margin: 0% 5%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .page .report-date .month-caption-items {
-  width: 100%;
-  margin: 5% 0%;
-  float: left;
-  display: inline-block;
-  font-size: 2em;
-  color: #003399;
-  text-align: center;
-}
-.container .list-container .page .report-date .header-report-date-items {
-  width: 10%;
-  padding: 3% 1%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  background: #FFFFFF;
-  margin-bottom: 1.5%;
-  margin-right: 1.5%;
-  border-radius: 5px;
-}
-.container .list-container .page .report-date .header-report-date-items .day {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #666666;
-  margin-bottom: 5%;
-}
-.container .list-container .page .report-date .header-report-date-items .month {
-  font-size: 1em;
-  line-height: 1.5em;
-  color: #999999;
-  margin-bottom: 5%;
-}
-.container .list-container .page .report-date .header-report-date-items .year {
-  font-size: 0.8em;
-  color: #999999;
-}
-.container .list-container .page .report-date .header-report-date-items:hover {
-  cursor: pointer;
-  background: #EEEEEE;
-}
-.container .list-container .page .message-input {
+.container .page .message-input {
   width: 96%;
   padding: 2%;
   float: left;
   display: inline-block;
   border-bottom: 1px solid #EEEEEE;
 }
-.container .list-container .page .message-input .input-text {
+.container .page .message-input .input-text {
   width: 100%;
   padding: 1% 0%;
   float: left;
@@ -1443,7 +990,7 @@ body.bg {
   border-bottom: 1px solid #EEEEEE;
   margin-bottom: 1%;
 }
-.container .list-container .page .message-input .input-area {
+.container .page .message-input .input-area {
   width: 100%;
   padding: 1% 0%;
   float: left;
@@ -1454,7 +1001,7 @@ body.bg {
   resize: none;
   color: #666666;
 }
-.container .list-container .page .message-input .btn-submit {
+.container .page .message-input .btn-submit {
   float: right;
   display: inline-block;
   font-size: 1em;
@@ -1465,96 +1012,794 @@ body.bg {
   border-radius: 5px;
   font-size: 0.9em;
 }
-.container .list-container .page .message-input .btn-submit:hover {
+.container .page .message-input .btn-submit:hover {
   cursor: pointer;
   opacity: 0.8;
 }
-.container .list-container .page .message-items {
-  width: 96%;
-  padding: 2%;
+.container .page .message-items {
+  width: 100%;
+  padding: 2% 0%;
   float: left;
   display: inline-block;
   border-bottom: 1px solid #EEEEEE;
 }
-.container .list-container .page .message-items .desc {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1em;
-  color: #CCCCCC;
-  line-height: 1em;
-  text-align: right;
+.container .page .message-items:last-child {
+  border-bottom: 0px;
 }
-.container .list-container .page .message-items .desc .time {
-  font-style: italic;
-}
-.container .list-container .page .message-items .desc .btn-delete {
-  color: #CCCCCC;
-}
-.container .list-container .page .message-items .desc .btn-delete:hover {
-  color: #F44336;
-  cursor: pointer;
-}
-.container .list-container .page .message-items .title {
+.container .page .message-items .title {
   width: 100%;
   float: left;
   display: inline-block;
   font-size: 1.3em;
   font-weight: normal;
   color: #333333;
+  line-height: 1.6em;
+}
+.container .page .message-items .info {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+  color: #999999;
+  line-height: 1.5em;
   margin-bottom: 1%;
 }
-.container .list-container .page .message-items .message {
+.container .page .message-items .info .btn-delete {
+  color: #F44336;
+}
+.container .page .message-items .info .btn-delete:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.container .page .message-items .info i {
+  margin-right: 3px;
+}
+.container .page .message-items .message {
   width: 100%;
   float: left;
   display: inline-block;
   font-size: 1em;
   color: #666666;
 }
-.container .list-container .setting-form-items {
-  width: 35%;
-  padding: 0.5% 0%;
-  margin-left: 5%;
-  margin-right: 60%;
+.container .page .user-items {
+  width: 98%;
+  padding: 2% 1%;
   float: left;
   display: inline-block;
+  background: #FFFFFF;
+  border-bottom: 1px solid #FAFAFA;
+  font-size: 1em;
+  line-height: 1em;
+  color: #333333;
 }
-.container .list-container .setting-form-items .detail {
-  width: 60%;
-  float: left;
-  display: inline-block;
+.container .page .user-items.-topic {
   font-size: 0.9em;
+  border-bottom: 0px;
+  color: #999999;
 }
-.container .list-container .setting-form-items .input {
-  width: 40%;
+.container .page .user-items.-deactive {
+  opacity: 0.5;
+}
+.container .page .user-items:hover {
+  cursor: pointer;
+  background: #FAFAFA;
+}
+.container .page .user-items .id {
+  width: 8%;
   float: left;
   display: inline-block;
 }
-.container .list-container .setting-form-items .input .input-text {
-  width: 70%;
+.container .page .user-items .name {
+  width: 25%;
   float: left;
   display: inline-block;
-  border: 0px;
+}
+.container .page .user-items .name i.fa-circle {
+  font-size: 0.8em;
+  color: #4CAF50;
+}
+.container .page .user-items .name a {
+  color: #333333;
+}
+.container .page .user-items .name a:hover {
+  text-decoration: underline;
+}
+.container .page .user-items .name .admin {
+  font-size: 0.7em;
+  color: #999999;
+  font-weight: normal;
+}
+.container .page .user-items .username {
+  width: 16%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .page .user-items .password {
+  width: 16%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .page .user-items .section {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.container .page .user-items .visit {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .page .report-box {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  background: #ffffff;
+  margin-bottom: 5%;
+}
+.container .page .report-box h2 {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: normal;
+  margin-bottom: 1%;
+}
+.container .page .report-box .weekly-eff-items {
+  width: 100%;
+  padding: 1.5% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 1em;
+  border-bottom: 1px solid #FAFAFA;
+  color: #333333;
+}
+.container .page .report-box .weekly-eff-items:hover {
+  background: #FAFAFA;
+}
+.container .page .report-box .weekly-eff-items .col1 {
+  width: 29.5%;
+  padding-left: 0.5%;
+  float: left;
+  display: inline-block;
+}
+.container .page .report-box .weekly-eff-items .col1 .count {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  color: #CCCCCC;
+}
+.container .page .report-box .weekly-eff-items .col1 .caliber {
+  width: 85%;
+  float: left;
+  display: inline-block;
+}
+.container .page .report-box .weekly-eff-items .col2 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .page .report-box .weekly-eff-items .col3 {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .page .report-box .weekly-eff-items .col4 {
+  width: 24.5%;
+  padding-right: 0.5%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .page .report-box .weekly-eff-items .col5 {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  margin-right: 50%;
+}
+.container .page .report-box .weekly-eff-items-pending {
+  color: rgba(0, 0, 0, 0.2);
+}
+.container .page .report-box .weekly-eff-items-deleted {
+  color: rgba(0, 0, 0, 0.1);
+}
+.container .page .report-box .topic-fix {
   border-bottom: 1px solid #EEEEEE;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.9em;
+  color: #999999;
+  font-size: 0.8em;
+}
+.container .page .report-box .topic-fix:hover {
+  background: #ffffff;
+}
+.container .page .report-box .total-fix {
+  color: #003399;
+  font-size: 1.4em;
+}
+.container .page .report-box .eff-items {
+  width: 25%;
+  margin-top: 2%;
+  float: left;
+  display: inline-block;
   line-height: 1.5em;
 }
-.container .list-container .setting-form-items .input .save-btn {
-  float: right;
-  padding: 0px 10px;
+.container .page .report-box .eff-items .v {
+  width: 100%;
+  float: left;
   display: inline-block;
-  border: 0px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.8em;
-  line-height: 1.75em;
-  border-radius: 0px;
-  background: #4caf50;
-  color: #FFFFFF;
+  font-size: 3em;
+  margin-bottom: 1%;
+  line-height: 1em;
 }
-.container .list-container .setting-form-items .input .save-btn:hover {
-  opacity: 0.8;
+.container .page .report-box .eff-items .v .unit {
+  font-size: 0.5em;
+  line-height: 1em;
+}
+.container .page .report-box .eff-items .k {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1em;
+}
+.container .page .datepicker {
+  width: 50%;
+  margin: 7% 25%;
+  float: left;
+  display: inline-block;
+}
+.container .page .datepicker .picker-items {
+  width: 100%;
+  padding: 5% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .page .datepicker .picker-items .caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 1em;
+  color: #003399;
+  margin-bottom: 2%;
+}
+.container .page .datepicker .picker-items .picker {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .page .datepicker .picker-items .picker .input-select {
+  margin: 0%;
+  float: left;
+  display: inline-block;
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  -webkit-appearance: none;
+  line-height: 1.5em;
+  border: 0px;
+  border-radius: 0px;
+  color: #666666;
+  outline: none;
+}
+.container .page .datepicker .picker-items .picker .input-select:hover {
+  color: #000000;
   cursor: pointer;
+}
+.container .page .datepicker .picker-items .picker .input-select-day {
+  width: 20%;
+}
+.container .page .datepicker .picker-items .picker .input-select-month {
+  width: 50%;
+}
+.container .page .datepicker .picker-items .picker .input-select-year {
+  width: 30%;
+}
+.container .page .datepicker .control {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  padding: 5% 0%;
+}
+.container .page .datepicker .control .fileupload {
+  float: left;
+  display: inline-block;
+  padding: 3% 0%;
+  font-size: 1em;
+  font-weight: normal;
+}
+.container .page .datepicker .control .submit-btn {
+  float: right;
+  display: inline-block;
+  background: #003399;
+  color: #FFFFFF;
+  border: 0px;
+  font-size: 1em;
+  padding: 3% 4%;
+  border-radius: 2px;
+}
+.container .page .datepicker .control .submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.container .page .report-date {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .page .report-date .month-caption-items {
+  width: 100%;
+  margin: 5% 0%;
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+  color: #CCCCCC;
+  text-align: center;
+}
+.container .page .report-date .month-caption-items strong {
+  color: #003399;
+}
+.container .page .report-date .header-report-date-items {
+  width: 10%;
+  padding: 3% 1%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  background: #FFFFFF;
+  margin-bottom: 1.5%;
+  margin-right: 1.5%;
+  border-radius: 2px;
+}
+.container .page .report-date .header-report-date-items .day {
+  font-size: 3em;
+  font-weight: bold;
+  color: #666666;
+  margin-bottom: 5%;
+}
+.container .page .report-date .header-report-date-items .month {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #999999;
+  margin-bottom: 5%;
+}
+.container .page .report-date .header-report-date-items .year {
+  font-size: 0.8em;
+  color: #999999;
+}
+.container .page .report-date .header-report-date-items:hover {
+  cursor: pointer;
+  background: #FAFAFA;
+}
+.container .page .header-report-items {
+  width: 98%;
+  padding: 2% 1%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  border-bottom: 1px solid #FAFAFA;
+  font-size: 1em;
+  line-height: 1em;
+  color: #333333;
+}
+.container .page .header-report-items:hover {
+  cursor: pointer;
+  background: #FAFAFA;
+}
+.container .page .header-report-items.-topic {
+  font-size: 0.8em;
+  color: #999999;
+}
+.container .page .header-report-items .id {
+  width: 8%;
+  float: left;
+  display: inline-block;
+}
+.container .page .header-report-items .eff {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .page .header-report-items .hrs {
+  width: 10%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .page .header-report-items .ot {
+  width: 6%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.container .page .header-report-items .update {
+  width: 15%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-style: italic;
+}
+.container .page .header-report-items .leader {
+  width: 9%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+.container .page h2 {
+  width: 100%;
+  padding: 5% 0%;
+  padding-bottom: 2%;
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: normal;
+  color: #666666;
+}
+.container .page h2 .date {
+  float: right;
+  display: inline-block;
+  font-size: 0.5em;
+  font-weight: normal;
+  color: #999999;
+}
+.container .page .report-stat {
+  width: 96%;
+  padding: 2%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 1%;
+  border-radius: 2px;
+  background: #FAFAFA;
+  position: relative;
+}
+.container .page .report-stat .stat-items {
+  width: 25%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+}
+.container .page .report-stat .stat-items .v {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+  color: #333333;
+  margin-bottom: 5%;
+}
+.container .page .report-stat .stat-items .v .unit {
+  font-weight: normal;
+  font-size: 0.5em;
+  margin-left: 5px;
+  color: #999999;
+}
+.container .page .report-stat .stat-items .k {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.9em;
+  color: #666666;
+}
+.container .page .report-stat .stat-items .k i {
+  margin-right: 5px;
+  font-size: 0.8em;
+  color: #003399;
+}
+.container .page .report-stat .stat-items .k strong {
+  color: #333333;
+}
+.container .page .header-report-table {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .page .header-report-table .box {
+  padding: 2%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  border-radius: 2px;
+}
+.container .page .header-report-table .box .box-topic {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  color: #003399;
+  margin-bottom: 2%;
+}
+.container .page .header-report-table .box .col {
+  float: left;
+  display: inline-block;
+}
+.container .page .header-report-table .box .col .col-val {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 1.4em;
+  line-height: 1.5em;
+  color: #333333;
+}
+.container .page .header-report-table .box .col .col-caption {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-left: 5px;
+  color: #666666;
+  letter-spacing: 1px;
+}
+.container .page .header-report-table .box .col:last-child {
+  border-right: 0px;
+  margin-right: 0%;
+}
+.container .page .header-report-table .box1 {
+  width: 45.5%;
+  padding: 2%;
+  margin-bottom: 1%;
+}
+.container .page .header-report-table .box1 .col {
+  width: 21%;
+  margin-right: 4%;
+}
+.container .page .header-report-table .box2 {
+  width: 45.5%;
+  padding: 2%;
+  margin-bottom: 1%;
+  float: right;
+}
+.container .page .header-report-table .box2 .col {
+  width: 16%;
+  margin-right: 4%;
+}
+.container .page .header-report-table .box3 {
+  width: 45.5%;
+  padding: 2%;
+  margin-right: 1%;
+}
+.container .page .header-report-table .box3 .col {
+  width: 21%;
+  margin-right: 4%;
+}
+.container .page .header-report-table .box4 {
+  width: 20.5%;
+  padding: 2.2% 2%;
+}
+.container .page .header-report-table .box4 .box-topic {
+  margin-bottom: 3%;
+}
+.container .page .header-report-table .box4 .col {
+  width: 47%;
+  margin-right: 5%;
+}
+.container .page .header-report-table .box5 {
+  width: 20%;
+  padding: 2.2% 2%;
+  float: right;
+}
+.container .page .header-report-table .box5 .box-topic {
+  margin-bottom: 3%;
+}
+.container .page .header-report-table .box5 .col {
+  width: 47%;
+  margin-right: 5%;
+}
+.container .page .caliber-container {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .page .caliber-container .caliber-in-report-items {
+  width: 45.5%;
+  padding: 2%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  float: left;
+  display: inline-block;
+  background: #FAFAFA;
+  border-radius: 2px;
+}
+.container .page .caliber-container .caliber-in-report-items:nth-child(even) {
+  float: right;
+  margin-right: 0%;
+}
+.container .page .caliber-container .caliber-in-report-items .info {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .page .caliber-container .caliber-in-report-items .info .name {
+  width: 100%;
+  float: left;
+  font-size: 1.3em;
+  color: #333333;
+  margin-bottom: 1%;
+}
+.container .page .caliber-container .caliber-in-report-items .info .name a {
+  float: right;
+  display: inline-block;
+  color: #003399;
+  border: 1px solid #003399;
+  padding: 2px 3px;
+  padding-top: 3px;
+  font-size: 0.7em;
+  border-radius: 2px;
+  font-weight: normal;
+}
+.container .page .caliber-container .caliber-in-report-items .info .name a:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.container .page .caliber-container .caliber-in-report-items .info .name a:active {
+  color: #ffffff;
+  background: #003399;
+}
+.container .page .caliber-container .caliber-in-report-items .info .description {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  color: #666666;
+}
+.container .page .caliber-container .caliber-in-report-items .info .description strong {
+  color: #333333;
+}
+.container .page .caliber-container .caliber-in-report-items .operations {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 3%;
+}
+.container .page .caliber-container .caliber-in-report-items .operations .operation-items {
+  width: 100%;
+  padding: 2% 0%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 0.9em;
+}
+.container .page .caliber-container .caliber-in-report-items .operations .operation-items.-caption {
+  font-size: 0.7em;
+  color: #999999;
+}
+.container .page .caliber-container .caliber-in-report-items .operations .operation-items:last-child {
+  border-bottom: 0px;
+}
+.container .page .caliber-container .caliber-in-report-items .operations .operation-items .op {
+  width: 64%;
+  float: left;
+  display: inline-block;
+}
+.container .page .caliber-container .caliber-in-report-items .operations .operation-items .val {
+  width: 12%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  color: #BBBBBB;
+}
+.container .page .caliber-container .caliber-in-report-items .operations .operation-items .val.-black {
+  color: #333333;
+}
+.container .page .caliber-container .caliber-in-report-items .operations .operation-items .val.-green {
+  color: #4CAF50;
+}
+.container .page .caliber-container .caliber-in-report-items .operations .operation-items .val.-red {
+  color: #F44336;
+  text-decoration: underline;
+}
+.container .page .filter-report {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .page .filter-report .caption {
+  width: 10%;
+  padding: 7px 10px 0%;
+  float: left;
+  display: inline-block;
+  line-height: 1em;
+  color: #333333;
+}
+.container .page .filter-report .list {
+  width: 80%;
+  float: left;
+  display: inline-block;
+}
+.container .page .filter-report .list a.filter-items {
+  float: left;
+  display: inline-block;
+  font-size: 1em;
+  color: #999999;
+  line-height: 1em;
+  padding: 7px 10px;
+  margin-bottom: 5px;
+}
+.container .page .filter-report .list a.filter-items.-active {
+  background: #003399;
+  color: #FFFFFF;
+  border-radius: 2px;
+}
+.container .page .filter-report .list a.filter-items:hover {
+  background: #FAFAFA;
+  cursor: pointer;
+}
+.container .page .starter-message {
+  width: 100%;
+  padding: 20% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 2em;
+  color: #EEEEEE;
+  font-style: italic;
+}
+.container .page .graph-report {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .page .graph-report h2 {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+  color: #333333;
+}
+.container .page .graph-report .graph {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.container .page .graph-report .report-yield-table {
+  width: 100%;
+  margin: 3% 0%;
+  float: left;
+  display: inline-block;
+  line-height: 3.5em;
+  font-size: 0.5em;
+  border-top: 1px solid #EEEEEE;
+}
+.container .page .graph-report .report-yield-table .caption-col {
+  width: 8%;
+  float: left;
+  display: inline-block;
+}
+.container .page .graph-report .report-yield-table .caption-col .row {
+  width: 90%;
+  padding-left: 10%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+}
+.container .page .graph-report .report-yield-table .data-items {
+  width: 2.965%;
+  float: left;
+  display: inline-block;
+  color: #000000;
+}
+.container .page .graph-report .report-yield-table .data-items .v {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #EEEEEE;
+  text-align: center;
+}
+.container .page .graph-report .report-yield-table .data-items .highlight {
+  color: #003399;
+  text-decoration: underline;
+}
+.container .page .graph-report .report-yield-table .data-items .zero {
+  color: #EEEEEE;
+}
+.container .page .graph-report .report-yield-table .data-items:nth-child(even) {
+  background: #FCFCFc;
+}
+.container .list-container {
+  width: 100%;
+  float: left;
+  display: inline-block;
 }
 .container .list-container .empty-items {
   width: 98%;
@@ -1615,33 +1860,6 @@ body.bg {
 }
 .container .list-container .caliber-items-deleted {
   color: rgba(0, 0, 0, 0.2);
-}
-.container .list-container .user-activity-items .col1 {
-  width: 15%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .user-activity-items .col2 {
-  width: 15%;
-  float: left;
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.container .list-container .user-activity-items .col3 {
-  width: 10%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .user-activity-items .col4 {
-  width: 59%;
-  padding-right: 1%;
-  float: left;
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 .container .list-container .operation-container {
   width: 44%;
@@ -1748,22 +1966,6 @@ body.bg {
   margin-right: 5%;
   margin-left: 0%;
   float: right;
-}
-.container .list-container .section-items .col1 {
-  width: 19.5%;
-  padding-left: 0.5%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .section-items .col2 {
-  width: 25%;
-  float: left;
-  display: inline-block;
-}
-.container .list-container .section-items .col3 {
-  width: 50%;
-  float: left;
-  display: inline-block;
 }
 .container .list-container .remark-items {
   width: 90%;
@@ -2029,43 +2231,6 @@ body.bg {
   padding: 0% 15%;
   float: left;
   display: inline-block;
-}
-.container .main-menu {
-  width: 70%;
-  padding: 0% 15%;
-  float: left;
-  display: inline-block;
-}
-.container .main-menu .menu-items {
-  width: 31.33%;
-  padding: 4% 0%;
-  margin-top: 3%;
-  margin-right: 3%;
-  float: left;
-  text-align: center;
-  background: #ffffff;
-  border-radius: 3px;
-}
-.container .main-menu .menu-items:nth-child(3n) {
-  margin-right: 0%;
-  float: right;
-}
-.container .main-menu .menu-items .icon {
-  font-size: 3em;
-  line-height: 1.5em;
-}
-.container .main-menu .menu-items .title {
-  font-size: 1em;
-  line-height: 2em;
-}
-.container .main-menu .menu-items .tag {
-  font-size: 0.7em;
-  line-height: 1.5em;
-  background: #DDDDDD;
-  display: inline-block;
-  padding: 0px 5px;
-  border-radius: 5px;
-  font-weight: bold;
 }
 .dialog-box {
   width: 100%;

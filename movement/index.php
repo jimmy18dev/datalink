@@ -42,7 +42,7 @@ $current_page['1'] = 'index';
 <header class="header">
 	<div class="header-items">
 		<div class="topic">Daily Output Report</div>
-		<div class="caption">DATALINK Ver <?php echo $meta['dev']['version'];?></div>
+		<div class="caption">Version <?php echo $meta['dev']['version'];?></div>
 	</div>
 	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
 </header>

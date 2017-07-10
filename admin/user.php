@@ -34,25 +34,22 @@ $current_page['1'] = 'user';
 </head>
 <body>
 <?php include'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title">USER MANAGEMENT : <?php echo $user->countUser();?> active</div>
-		<a href="user_editor.php" class="btn btn-create-user">CREATE NEW USER<i class="fa fa-plus" aria-hidden="true"></i></a>
-	</div>
 
-	<!-- Table -->
-	<div class="list-container">
-		<div class="page">
-			<div class="user-items -topic">
-			<div class="id">NO.</div>
-			<div class="name">Name</div>
-			<div class="username">Username</div>
-			<div class="password">Password</div>
-			<div class="section">Section</div>
-			<div class="visit">Last visit</div>
-		</div>
-		<?php echo $user->listAllUser(array('type' => 'user-items'));?>
-		</div>
+<div class="topbar">
+		<div class="title">USER MANAGEMENT : <?php echo $user->countUser();?> active</div>
+		<a class="btn" href="user_editor.php">NEW USER<i class="fa fa-plus" aria-hidden="true"></i></a>
+	</div>
+<div class="container">
+	<div class="page">
+		<div class="user-items -topic">
+		<div class="id">NO.</div>
+		<div class="name">Name</div>
+		<div class="username">Username</div>
+		<div class="password">Password</div>
+		<div class="section">Section</div>
+		<div class="visit">Last visit</div>
+	</div>
+	<?php echo $user->listAllUser(array('type' => 'user-items'));?>
 	</div>
 </div>
 </body>

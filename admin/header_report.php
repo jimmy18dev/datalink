@@ -34,40 +34,34 @@ $current_page['1'] = 'report';
 </head>
 <body>
 <?php include'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title">
-			<strong>HEADER REPORT</strong> : 
-			<?php if(!empty($_GET['date'])){?>
-			<?php echo $_GET['date'];?> - <a href="header_report.php" target="_parent">BACK</a>
-			<?php }?>
-		</div>
-	</div>
+<div class="topbar">
+	<a class="title" href="header_report.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>Header Reports</a>
+	<?php if(!empty($_GET['date'])){?>
+	<div class="title"><?php echo $_GET['date'];?></div>
+	<?php }?>
+</div>
 
-	<div class="list-container">
+<div class="container">
+	<div class="page">
 		<?php if(empty($_GET['date'])){?>
-		<div class="page">
-			<div class="report-date">
-				<?php $report->groupHeaderReport(array('type' => 'header-date-items'));?>
-			</div>
+		<div class="report-date">
+			<?php $report->groupHeaderReport(array('type' => 'header-date-items'));?>
 		</div>
 		<?php }else{?>
-		<div class="page">
-			<div class="header-report-items -topic">
-				<div class="id">LINE(Shift)</div>
-				<div class="eff">Product EFF</div>
-				<div class="eff">Total EFF</div>
-				<div class="hrs">Monthly Hrs</div>
-				<div class="hrs">Daily Hrs</div>
-				<div class="ot">1.0</div>
-				<div class="ot">1.5</div>
-				<div class="ot">2.0</div>
-				<div class="ot">3.0</div>
-				<div class="update">Updated</div>
-				<div class="leader">Leader</div>
-			</div>
-			<?php $report->listHeaderReport($_GET['date'],array('type' => 'header-items'));?>
+		<div class="header-report-items -topic">
+			<div class="id">LINE - Shift</div>
+			<div class="eff">Product EFF</div>
+			<div class="eff">Total EFF</div>
+			<div class="hrs">Monthly Hrs</div>
+			<div class="hrs">Daily Hrs</div>
+			<div class="ot">1.0</div>
+			<div class="ot">1.5</div>
+			<div class="ot">2.0</div>
+			<div class="ot">3.0</div>
+			<div class="update">Updated</div>
+			<div class="leader">Leader</div>
 		</div>
+		<?php $report->listHeaderReport($_GET['date'],array('type' => 'header-items'));?>
 		<?php }?>
 	</div>
 </div>

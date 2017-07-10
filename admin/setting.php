@@ -35,12 +35,12 @@ $current_page['1'] = 'setting';
 </head>
 <body>
 <?php include'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title">Change value by setting up default programs for datalink.</div>
-	</div>
 
-	<div class="list-container">
+<div class="topbar">
+	<div class="title">Change value by setting up default programs for datalink.</div>
+</div>
+<div class="container">
+	<div class="page">
 		<div class="items-container">
 			<?php echo $setting->listSetting(array('type' => 'setting-form-items'));?>
 		</div>

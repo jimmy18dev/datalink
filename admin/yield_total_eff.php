@@ -41,75 +41,74 @@ $current_page['1'] = 'report';
 </head>
 <body>
 <?php include'header.php';?>
-<div class="container">
-    <div class="head">
-        <div class="head-title"><strong>YIELD & TOTAL EFFICIENCY</strong> - MOVEMENT ASSEMBLY</div>
-    </div>
-    <div class="graph-filter">
-        <div class="month">
-            <span class="caption"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-            <?php $report->ListMonth(array('type' => 'month-items','line_current' => $_GET['line'],'year_current' => $_GET['year'],'month_current' => $_GET['month']));?>
-        </div>
-
-        <div class="line">
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=14" class="filter-items <?php echo ($_GET['line'] == 14?'active':'');?>">14</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=13" class="filter-items <?php echo ($_GET['line'] == 13?'active':'');?>">13</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=12" class="filter-items <?php echo ($_GET['line'] == 12?'active':'');?>">12</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=11" class="filter-items <?php echo ($_GET['line'] == 11?'active':'');?>">11</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=10" class="filter-items <?php echo ($_GET['line'] == 10?'active':'');?>">10</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=9" class="filter-items <?php echo ($_GET['line'] == 9?'active':'');?>">9</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=8" class="filter-items <?php echo ($_GET['line'] == 8?'active':'');?>">8</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=7" class="filter-items <?php echo ($_GET['line'] == 7?'active':'');?>">7</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=6" class="filter-items <?php echo ($_GET['line'] == 6?'active':'');?>">6</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=5" class="filter-items <?php echo ($_GET['line'] == 5?'active':'');?>">5</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=4" class="filter-items <?php echo ($_GET['line'] == 4?'active':'');?>">4</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=3" class="filter-items <?php echo ($_GET['line'] == 3?'active':'');?>">3</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=2" class="filter-items <?php echo ($_GET['line'] == 2?'active':'');?>">2</a>
-            <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=1" class="filter-items <?php echo ($_GET['line'] == 1?'active':'');?>">1</a>
-            <span class="caption">Line No:</span>
-        </div>
-    </div>
-
-    <?php if(!empty($_GET['month']) && !empty($_GET['line'])){?>
-	<div class="graph-report">
-        <h2>Shift A</h2>
-        <div class="graph" id="container-A"></div>
-        <div class="report-yield-table">
-            <div class="caption-col">
-                <div class="row">Date</div>
-                <div class="row">Actual yield</div>
-                <div class="row">Taget output</div>
-                <div class="row">Actual output</div>
-                <div class="row">Product EFF</div>
-                <div class="row">Total Efficiency</div>
-            </div>
-
-            <?php echo $report->getGraph($_GET['month'],$_GET['year'],'A',$_GET['line'],array('render' => 'html'));?>
-        </div>
-
-        <h2>Shift B</h2>
-        <div class="graph" id="container-B"></div>
-        <div class="report-yield-table">
-            <div class="caption-col">
-                <div class="row">Date</div>
-                <div class="row">Actual yield</div>
-                <div class="row">Taget output</div>
-                <div class="row">Actual output</div>
-                <div class="row">Product EFF</div>
-                <div class="row">Total Efficiency</div>
-            </div>
-
-            <?php echo $report->getGraph($_GET['month'],$_GET['year'],'B',$_GET['line'],array('render' => 'html'));?>
-        </div>   
-    </div>
-    <?php }else{?>
-    <div class="starter-message">Select Month and Line No.</div>
-    <?php }?>
-
-    <input type="hidden" id="month" value="<?php echo $_GET['month'];?>">
-    <input type="hidden" id="year" value="<?php echo $_GET['year'];?>">
-    <input type="hidden" id="line" value="<?php echo $_GET['line'];?>">
+<div class="topbar">
+    <div class="title">YIELD & TOTAL EFFICIENCY - MOVEMENT ASSEMBLY</div>
 </div>
+<div class="container">
+    <div class="page">
+
+        <div class="filter-report">
+                <div class="caption">MONTH :</div>
+                <div class="list">
+                    <?php $report->ListMonth(array('type' => 'month-items','line_current' => $_GET['line'],'year_current' => $_GET['year'],'month_current' => $_GET['month']));?>
+                </div>
+            </div>
+
+            <div class="filter-report -lineno">
+                <div class="caption">LINE NO :</div>
+                <div class="list">
+                    <?php for($i=1;$i<=14;$i++){?>
+                    <a href="yield_total_eff.php?year=<?php echo $_GET['year'];?>&month=<?php echo $_GET['month'];?>&line=<?php echo $i;?>" class="filter-items <?php echo ($_GET['line'] == $i?'-active':'');?>"><?php echo $i;?></a>
+                    <?php }?> 
+                </div>               
+            </div>
+        <div class="pages">
+            
+
+            <?php if(!empty($_GET['month']) && !empty($_GET['line'])){?>
+            <div class="graph-report">
+                <h2>Shift A</h2>
+
+                <div class="graph" id="container-A"></div>
+
+                <div class="report-yield-table">
+                    <div class="caption-col">
+                        <div class="row">Date</div>
+                        <div class="row">Actual yield</div>
+                        <div class="row">Taget output</div>
+                        <div class="row">Actual output</div>
+                        <div class="row">Product EFF</div>
+                        <div class="row">Total Efficiency</div>
+                    </div>
+
+                    <?php echo $report->getGraph($_GET['month'],$_GET['year'],'A',$_GET['line'],array('render' => 'html'));?>
+                </div>
+
+                <h2>Shift B</h2>
+                <div class="graph" id="container-B"></div>
+
+                <div class="report-yield-table">
+                    <div class="caption-col">
+                        <div class="row">Date</div>
+                        <div class="row">Actual yield</div>
+                        <div class="row">Taget output</div>
+                        <div class="row">Actual output</div>
+                        <div class="row">Product EFF</div>
+                        <div class="row">Total Efficiency</div>
+                    </div>
+                    <?php echo $report->getGraph($_GET['month'],$_GET['year'],'B',$_GET['line'],array('render' => 'html'));?>
+                </div>
+            </div>
+            <?php }else{?>
+            <div class="starter-message">Select Month and Line No.</div>
+            <?php }?>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="month" value="<?php echo $_GET['month'];?>">
+<input type="hidden" id="year" value="<?php echo $_GET['year'];?>">
+<input type="hidden" id="line" value="<?php echo $_GET['line'];?>">
 
 <?php if(!empty($_GET['month']) && !empty($_GET['line'])){?>
 <script type="text/javascript" src="js/service/min/report.service.min.js"></script>

@@ -36,37 +36,20 @@ $total_section = $section->countSection();
 </head>
 <body>
 <?php include'header.php';?>
+<div class="topbar">
+	<div class="title"><strong>SECTION :</strong> Default folder for sub-program in datalink.</div>
+	<?php if($total_section > 0){?>
+	<a href="section_editor.php" class="btn">NEW SECTION<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+	<?php }?>
+</div>
 <div class="container">
-	<div class="head">
-		<div class="head-title">SECTION : Default folder for sub-program in datalink.</div>
-
-		<?php if($total_section > 0){?>
-		<div class="head-control">
-			<a href="section_editor.php" class="btn create-btn"><i class="fa fa-tags" aria-hidden="true"></i>NEW SECTION</a>
-		</div>
-		<?php }?>
-	</div>
-
-	<div class="list-container">
-		<?php if($total_section > 0){?>
-		<div class="items section-items topic-fix">
-			<div class="col1">Total section <strong><?php echo $total_section;?> items</strong> <i class="fa fa-tag" aria-hidden="true"></i></div>
+	<div class="page">
+		<div class="section-items topic-fix">
+			<div class="col1">Name</div>
 			<div class="col2">Redirect to</div>
 			<div class="col3">Description</div>
 		</div>
-		<div class="items-container">
-			<?php $section->listAllSection(array('type' => 'section-items'));?>
-		</div>
-		
-		<?php }else{?>
-		<div class="creating-container">
-			<p>You can create new <strong>section</strong> items by click a button.</p>
-			<br>
-			<p><i class="fa fa-angle-down" aria-hidden="true"></i></p>
-			<br><br>
-			<p><a href="section_editor.php" class="create-btn"><i class="fa fa-tags" aria-hidden="true"></i>NEW SECTION</a></p>
-		</div>
-		<?php }?>
+		<?php $section->listAllSection(array('type' => 'section-items'));?>
 	</div>
 </div>
 </body>

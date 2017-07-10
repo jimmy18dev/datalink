@@ -165,12 +165,8 @@ class ReportController extends ReportModel{
 		$this->render($data,$option);
 	}
 
-	public function listEfficencyReport($s_year,$s_monthly,$s_day,$e_year,$e_monthly,$e_day){
-
-		$start_date = $s_year.'-'.$s_monthly.'-'.$s_day;
-		$end_date 	= $e_year.'-'.$e_monthly.'-'.$e_day;
-
-		$data = parent::listEfficencyReportData($start_date,$end_date);
+	public function listEfficencyReport($start,$end){
+		$data = parent::listEfficencyReportData($start,$end);
 		return $data;
 		
 		// $this->render($data,$option);
