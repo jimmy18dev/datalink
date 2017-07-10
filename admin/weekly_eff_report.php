@@ -8,10 +8,10 @@ $has_file 		= false;
 $start_timestamp 	= strtotime($_GET['s']);
 $end_timestamp 		= strtotime($_GET['e']);
 
-$start 	= date('Y-m-d',strtotime($start_timestamp));
-$end 	= date('Y-m-d',strtotime($end_timestamp));
+$start 	= date('Y-m-d',$start_timestamp);
+$end 	= date('Y-m-d',$end_timestamp);
 
-$filename = $start.'-'.$end;
+$filename = str_replace('-','',$start).'-'.str_replace('-','',$end);
 
 if($start_timestamp >= $end_timestamp){
 	$date_validate = false;
@@ -188,6 +188,7 @@ if($date_validate){
 	<div class="page">
 		<?php if($date_validate){?>
 		<div class="report-box">
+			<p>Filename: <?php echo $filename;?></p>
 			<h2>1. Caliber Code</h2>
 			<div class="weekly-eff-items topic-fix">
 				<div class="col1">Caliber code</div>

@@ -55,15 +55,15 @@ $year 	= date('Y');
 				<div class="caption">START</div>
 				<div class="picker">
 					<select id="sd" name="s_day" class="input-select input-select-day">
-						<option value="1" <?php echo ($day == '01'?'selected':'');?>>1</option>
-						<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
-						<option value="3" <?php echo ($day == '03'?'selected':'');?>>3</option>
-						<option value="4" <?php echo ($day == '04'?'selected':'');?>>4</option>
-						<option value="5" <?php echo ($day == '05'?'selected':'');?>>5</option>
-						<option value="6" <?php echo ($day == '06'?'selected':'');?>>6</option>
-						<option value="7" <?php echo ($day == '07'?'selected':'');?>>7</option>
-						<option value="8" <?php echo ($day == '08'?'selected':'');?>>8</option>
-						<option value="9" <?php echo ($day == '09'?'selected':'');?>>9</option>
+						<option value="01" <?php echo ($day == '01'?'selected':'');?>>1</option>
+						<option value="02" <?php echo ($day == '02'?'selected':'');?>>2</option>
+						<option value="03" <?php echo ($day == '03'?'selected':'');?>>3</option>
+						<option value="04" <?php echo ($day == '04'?'selected':'');?>>4</option>
+						<option value="05" <?php echo ($day == '05'?'selected':'');?>>5</option>
+						<option value="06" <?php echo ($day == '06'?'selected':'');?>>6</option>
+						<option value="07" <?php echo ($day == '07'?'selected':'');?>>7</option>
+						<option value="08" <?php echo ($day == '08'?'selected':'');?>>8</option>
+						<option value="09" <?php echo ($day == '09'?'selected':'');?>>9</option>
 						<option value="10" <?php echo ($day == '10'?'selected':'');?>>10</option>
 						<option value="11" <?php echo ($day == '11'?'selected':'');?>>11</option>
 						<option value="12" <?php echo ($day == '12'?'selected':'');?>>12</option>
@@ -89,42 +89,41 @@ $year 	= date('Y');
 					</select>
 					
 					<select id="sm" name="s_month" class="input-select input-select-month">
-								<option value="1" <?php echo ($last_mouth == '01'?'selected':'');?>>January</option>
-								<option value="2" <?php echo ($last_mouth == '02'?'selected':'');?>>February</option>
-								<option value="3" <?php echo ($last_mouth == '03'?'selected':'');?>>March</option>
-								<option value="4" <?php echo ($last_mouth == '04'?'selected':'');?>>April</option>
-								<option value="5" <?php echo ($last_month == '05'?'selected':'');?>>May</option>
-								<option value="6" <?php echo ($last_month == '06'?'selected':'');?>>June</option>
-								<option value="7" <?php echo ($last_mouth == '07'?'selected':'');?>>July</option>
-								<option value="8" <?php echo ($last_mouth == '08'?'selected':'');?>>August</option>
-								<option value="9" <?php echo ($last_mouth == '09'?'selected':'');?>>September</option>
-								<option value="10" <?php echo ($last_mouth == '10'?'selected':'');?>>October</option>
-								<option value="11" <?php echo ($last_mouth == '11'?'selected':'');?>>November</option>
-								<option value="12" <?php echo ($last_mouth == '12'?'selected':'');?>>December</option>
-							</select>
+						<option value="01" <?php echo ($last_mouth == '01'?'selected':'');?>>January</option>
+						<option value="02" <?php echo ($last_mouth == '02'?'selected':'');?>>February</option>
+						<option value="03" <?php echo ($last_mouth == '03'?'selected':'');?>>March</option>
+						<option value="04" <?php echo ($last_mouth == '04'?'selected':'');?>>April</option>
+						<option value="05" <?php echo ($last_month == '05'?'selected':'');?>>May</option>
+						<option value="06" <?php echo ($last_month == '06'?'selected':'');?>>June</option>
+						<option value="07" <?php echo ($last_mouth == '07'?'selected':'');?>>July</option>
+						<option value="08" <?php echo ($last_mouth == '08'?'selected':'');?>>August</option>
+						<option value="09" <?php echo ($last_mouth == '09'?'selected':'');?>>September</option>
+						<option value="10" <?php echo ($last_mouth == '10'?'selected':'');?>>October</option>
+						<option value="11" <?php echo ($last_mouth == '11'?'selected':'');?>>November</option>
+						<option value="12" <?php echo ($last_mouth == '12'?'selected':'');?>>December</option>
+					</select>
 					<select id="sy" name="s_year" class="input-select input-select-year">
-								<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
-								<option value="2017" <?php echo ($year == '2017'?'selected':'');?>>2017</option>
-								<option value="2018" <?php echo ($year == '2018'?'selected':'');?>>2018</option>
-								<option value="2019" <?php echo ($year == '2019'?'selected':'');?>>2019</option>
-								<option value="2020" <?php echo ($year == '2020'?'selected':'');?>>2020</option>
-							</select>
-						</div>
-					</div>
-				<div class="picker-items">
+						<?php for($i=2016;$i<=$year;$i++){?>
+						<option value="<?php echo $i;?>" <?php echo ($year == $i?'selected':'');?>><?php echo $i;?></option>
+						<?php }?>
+					</select>
+				</div>
+			</div>
+			
+			<div class="picker-items">
 					<div class="caption">END</div>
 					<div class="picker">
 					<select id="ed" name="e_day" class="input-select input-select-day">
-						<option value="1" <?php echo ($day == '01'?'selected':'');?>>1</option>
-						<option value="2" <?php echo ($day == '02'?'selected':'');?>>2</option>
-						<option value="3" <?php echo ($day == '03'?'selected':'');?>>3</option>
-						<option value="4" <?php echo ($day == '04'?'selected':'');?>>4</option>
-						<option value="5" <?php echo ($day == '05'?'selected':'');?>>5</option>
-								<option value="6" <?php echo ($day == '06'?'selected':'');?>>6</option>
-								<option value="7" <?php echo ($day == '07'?'selected':'');?>>7</option>
-								<option value="8" <?php echo ($day == '08'?'selected':'');?>>8</option>
-								<option value="9" <?php echo ($day == '09'?'selected':'');?>>9</option>
-								<option value="10" <?php echo ($day == '10'?'selected':'');?>>10</option>
+						<option value="01" <?php echo ($day == '01'?'selected':'');?>>1</option>
+						<option value="02" <?php echo ($day == '02'?'selected':'');?>>2</option>
+						<option value="03" <?php echo ($day == '03'?'selected':'');?>>3</option>
+						<option value="04" <?php echo ($day == '04'?'selected':'');?>>4</option>
+						<option value="05" <?php echo ($day == '05'?'selected':'');?>>5</option>
+						<option value="06" <?php echo ($day == '06'?'selected':'');?>>6</option>
+						<option value="07" <?php echo ($day == '07'?'selected':'');?>>7</option>
+						<option value="08" <?php echo ($day == '08'?'selected':'');?>>8</option>
+						<option value="09" <?php echo ($day == '09'?'selected':'');?>>9</option>
+						<option value="10" <?php echo ($day == '10'?'selected':'');?>>10</option>
 								<option value="11" <?php echo ($day == '11'?'selected':'');?>>11</option>
 								<option value="12" <?php echo ($day == '12'?'selected':'');?>>12</option>
 								<option value="13" <?php echo ($day == '13'?'selected':'');?>>13</option>
@@ -148,25 +147,23 @@ $year 	= date('Y');
 								<option value="31" <?php echo ($day == '31'?'selected':'');?>>31</option>
 							</select>
 					<select id="em" name="e_month" class="input-select input-select-month">
-								<option value="1" <?php echo ($mouth == '01'?'selected':'');?>>January</option>
-								<option value="2" <?php echo ($mouth == '02'?'selected':'');?>>February</option>
-								<option value="3" <?php echo ($mouth == '03'?'selected':'');?>>March</option>
-								<option value="4" <?php echo ($mouth == '04'?'selected':'');?>>April</option>
-								<option value="5" <?php echo ($mouth == '05'?'selected':'');?>>May</option>
-								<option value="6" <?php echo ($mouth == '06'?'selected':'');?>>June</option>
-								<option value="7" <?php echo ($mouth == '07'?'selected':'');?>>July</option>
-								<option value="8" <?php echo ($mouth == '08'?'selected':'');?>>August</option>
-								<option value="9" <?php echo ($mouth == '09'?'selected':'');?>>September</option>
+								<option value="01" <?php echo ($mouth == '01'?'selected':'');?>>January</option>
+								<option value="02" <?php echo ($mouth == '02'?'selected':'');?>>February</option>
+								<option value="03" <?php echo ($mouth == '03'?'selected':'');?>>March</option>
+								<option value="04" <?php echo ($mouth == '04'?'selected':'');?>>April</option>
+								<option value="05" <?php echo ($mouth == '05'?'selected':'');?>>May</option>
+								<option value="06" <?php echo ($mouth == '06'?'selected':'');?>>June</option>
+								<option value="07" <?php echo ($mouth == '07'?'selected':'');?>>July</option>
+								<option value="08" <?php echo ($mouth == '08'?'selected':'');?>>August</option>
+								<option value="09" <?php echo ($mouth == '09'?'selected':'');?>>September</option>
 								<option value="10" <?php echo ($mouth == '10'?'selected':'');?>>October</option>
 								<option value="11" <?php echo ($mouth == '11'?'selected':'');?>>November</option>
 								<option value="12" <?php echo ($mouth == '12'?'selected':'');?>>December</option>
 					</select>
 					<select  id="ey" name="e_year" class="input-select input-select-year">
-						<option value="2016" <?php echo ($year == '2016'?'selected':'');?>>2016</option>
-						<option value="2017" <?php echo ($year == '2017'?'selected':'');?>>2017</option>
-						<option value="2018" <?php echo ($year == '2018'?'selected':'');?>>2018</option>
-						<option value="2019" <?php echo ($year == '2019'?'selected':'');?>>2019</option>
-						<option value="2020" <?php echo ($year == '2020'?'selected':'');?>>2020</option>
+						<?php for($i=2016;$i<=$year;$i++){?>
+						<option value="<?php echo $i;?>" <?php echo ($year == $i?'selected':'');?>><?php echo $i;?></option>
+						<?php }?>
 					</select>
 				</div>
 			</div>

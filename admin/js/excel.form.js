@@ -26,13 +26,13 @@ $(document).ready(function(){
             var em = $('#em').val();
             var ey = $('#ey').val();
 
-            if(sd < 10) sd = '0'+sd;
-            if(sm < 10) sm = '0'+sm;
-            if(ed < 10) ed = '0'+ed;
-            if(em < 10) em = '0'+em;
+            // if(sd < 10) sd = '0'+sd;
+            // if(sm < 10) sm = '0'+sm;
+            // if(ed < 10) ed = '0'+ed;
+            // if(em < 10) em = '0'+em;
 
             // console.log(xhr.responseText);
-            console.log('weekly_eff_report.php?s='+sd+'-'+sm+'-'+sy+'&e='+ed+'-'+em+'-'+ey);
+            // console.log('weekly_eff_report.php?s='+sd+'-'+sm+'-'+sy+'&e='+ed+'-'+em+'-'+ey);
             console.log(xhr.responseJSON);
 
             setTimeout(function(){
