@@ -41,16 +41,15 @@ $current_page['1'] = 'index';
 <body>
 <header class="header">
 	<div class="header-items">
-		<div class="topic">Daily Output Report</div>
-		<div class="caption">Version <?php echo $meta['dev']['version'];?></div>
+		<div class="topic">DAILY REPORTS</div>
 	</div>
-	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
+	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 </header>
 <?php include'navigator.php';?>
 <div class="header-list-container">
 	<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
 </div>
 
-<script type="text/javascript" src="js/min/auto_hidden.min.js"></script>
+<!-- <script type="text/javascript" src="js/min/auto_hidden.min.js"></script> -->
 </body>
 </html>

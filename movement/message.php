@@ -41,8 +41,7 @@ $current_page['1'] = 'message';
 <body>
 <header class="header">
 	<div class="header-items">
-		<div class="topic">News</div>
-		<div class="caption">Latest news from administrator</div>
+		<div class="topic">NEWS</div>
 	</div>
 	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
 </header>

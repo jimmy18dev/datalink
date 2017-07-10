@@ -49,7 +49,6 @@ $current_page['1'] = 'yield';
 <header class="header">
     <div class="header-items">
         <div class="topic">Yield & Total Efficiency</div>
-        <div class="caption">Moment assembly</div>
     </div>
     <a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
 </header>

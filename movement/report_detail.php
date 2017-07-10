@@ -52,9 +52,8 @@ $current_page['1'] = 'index';
 <header class="header">
 	<div class="header-items">
 		<div class="topic"><?php echo $report->report_full_date;?></div>
-		<div class="caption">Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update_facebook_format;?></strong> Leader <strong><?php echo $report->leader_name;?></strong></div>
 	</div>
-	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
+	<!-- <a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a> -->
 </header>
 <?php include'navigator.php';?>
 <div class="report-detail-container">
@@ -74,6 +73,7 @@ $current_page['1'] = 'index';
 			<span class="target">Target Yield = <strong><?php echo number_format($report->target_yield,2);?>%</strong></span>
 			<span class="target">Target EFF = <strong><?php echo number_format($report->target_eff,2);?>%</strong></span>
 		</div>
+		<p>Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update_facebook_format;?></strong> Leader <strong><?php echo $report->leader_name;?></strong></p>
 	</div>
 	
 	<div class="report-stat">

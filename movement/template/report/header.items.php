@@ -10,13 +10,9 @@
 		<?php echo ($var['yield'] < $var['target_yield']?'<i class="fa fa-exclamation-circle" aria-hidden="true"></i>':'');?>
 		<?php echo number_format($var['yield'],2);?><span class="unit">%</span>
 	</div>
-	<div class="owner" title="<?php echo $var['fname'].' '.$var['lname'];?> (<?php echo $var['user_code'];?>)">Updated by <?php echo $var['fname'];?></div>
+	<div class="owner" title="<?php echo $var['fname'].' '.$var['lname'];?> (<?php echo $var['user_code'];?>)"><?php echo $var['fname'];?><span class="time"><?php echo $var['update_time'];?></span></div>
 	<div class="status">
-		<?php if($lock){?>
-		<i class="fa fa-lock" aria-hidden="true"></i>
-		<?php }else{?>
 		<i class="fa fa-angle-right" aria-hidden="true"></i>
-		<?php }?>
 	</div>
 </div>
 </a>
