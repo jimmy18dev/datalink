@@ -285,7 +285,7 @@ function listAllCaliber(output){
                         html += '<span class="icon">'+v.total_caliber+' Reports<i class="fa fa-check" aria-hidden="true"></i></span>';
                     }
                 }else{
-                    html += '<span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>';
+                    html += '<span class="icon"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>';
                 }
                 html += '</a>';
             });

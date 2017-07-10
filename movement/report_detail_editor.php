@@ -66,24 +66,25 @@ $current_page['3'] = 'add_caliber';
 
 </head>
 <body>
-
 <form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
-<header class="form-bar">
-	<a href="report_detail.php?header=<?php echo $report->id;?>" class="page-title"><i class="fa fa-arrow-left" aria-hidden="true"></i><strong><?php echo $caliber->name;?></strong> to <strong><?php echo $report->report_date;?></strong></a>
+
+<header class="header">
+	<a href="report_detail.php?header=<?php echo $report->id;?>" class="items -active"><i class="fa fa-arrow-left" aria-hidden="true"></i>ADD <strong><?php echo $caliber->name;?></strong> TO <strong><?php echo $report->report_date;?></strong></a>
 
 	<?php if($_GET['action'] == 'edit'){?>
 	<button type="submit" class="btn"><span id="btn-caption">Update</span><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span></button>
 	<?php }else{?>
-	<button type="submit" class="btn"><span id="btn-caption">Add to Report</span><span id="btn-icon"><i class="fa fa-plus" aria-hidden="true"></i></span></button>
+	<button type="submit" class="btn"><span id="btn-caption">ADD TO REPORT</span><span id="btn-icon"><i class="fa fa-plus" aria-hidden="true"></i></span></button>
 	<?php }?>
 </header>
+
 <div class="operation-form-container">
 	<div class="operation-items topic-fix">
-		<div class="col1">Operation</div>
-		<div class="col4">Input</div>
-		<div class="col2">Good</div>
-		<div class="col3">Reject</div>
-		<div class="col5">Remark</div>
+		<div class="col1">OPERATION</div>
+		<div class="col4">INPUT</div>
+		<div class="col2">GOOD</div>
+		<div class="col3">REJECT</div>
+		<div class="col5">REMARK</div>
 	</div>
 
 	<div class="operations">

@@ -67,7 +67,7 @@ $current_page['1'] = 'index';
 	
 	<div class="report-stat">
 		<div class="stat-items stat-items-highlight">
-			<div class="v">NO. <?php echo $report->line_no;?> (<?php echo $report->line_type;?>)</div>
+			<div class="v">NO.<?php echo $report->line_no;?> (<?php echo $report->line_type;?>)</div>
 			<div class="k">Shift <?php echo $report->shift;?></div>
 		</div>
 
@@ -193,10 +193,7 @@ $current_page['1'] = 'index';
 		</div>
 
 		<?php if(!empty($report->remark)){?>
-		<div class="remark">
-			<div class="caption">Remark</div>
-			<div class="message"><?php echo $report->remark;?></div>
-		</div>
+		<div class="remark"><strong>Remark</strong> <?php echo $report->remark;?></div>
 		<?php }?>
 	</div>
 
