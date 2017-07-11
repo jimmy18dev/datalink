@@ -40,7 +40,7 @@ $current_page['2'] = 'choose_caliber';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>Select a caliber...</title>
+<title>ADD CALIBER TO <?php echo $report->report_date;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -53,17 +53,18 @@ $current_page['2'] = 'choose_caliber';
 
 </head>
 <body>
-<div class="choose-list-container">
-	<div class="choose-form-title">
-		<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-		<div class="title">Select a caliber add to <a href="report_detail.php?header=<?php echo $report->id;?>"><?php echo $report->report_date;?></a></div>
-	</div>
-	<div class="search-container">
-		<input type="text" onkeyup="javascript:listAllCaliber('daily_report');" class="input-search" id="keyword" autofocus placeholder="Enter caliber code..." autocomplete="off">
+<header class="header">
+	<a class="items -active" href="report_detail.php?header=<?php echo $report->id;?>"><i class="fa fa-arrow-left" aria-hidden="true"></i>ADD CALIBER TO <strong><?php echo $report->report_date;?></strong></a>
+</header>
+<div class="page">
+	<form action="javascript:listAllCaliber('daily_report');" class="search-caliber">
+		<input type="text" class="input-search" id="keyword" autofocus placeholder="ENTER CALIBER CODE..." autocomplete="off">
+		<p class="label">Enter to search</p>
+		<div class="icon"><i class="fa fa-search" aria-hidden="true"></i></div>
 		<input type="hidden" id="header" value="<?php echo $_GET['header'];?>">
-	</div>
-	<div id="caliber-container">
-		<?php // $caliber->listAllCalibers(array('type' => 'caliber-choose-items','header_id' => $_GET['header']));?>
+	</form>
+	<div class="caliber-search-list" id="caliber-container">
+		<div class="loading"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div>
 	</div>
 </div>
 

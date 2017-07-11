@@ -1,1 +1,1 @@
-<div class="month-caption-items"><?php echo $var['month_name'].' '.$var['year'];?></div>
+<div class="month-caption-items"><strong><?php echo $var['month_name'];?></strong> <?php echo $var['year'];?></div>

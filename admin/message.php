@@ -22,7 +22,7 @@ $current_page['1'] = 'message';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>Message</title>
+<title>Messages</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -34,29 +34,31 @@ $current_page['1'] = 'message';
 </head>
 <body>
 <?php include'header.php';?>
+<div class="topbar">
+	<div class="title">Main message board between admin and user.</div>
+	<div class="btn" id="btn-new-message">New Message<i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+</div>
 <div class="container">
-	<div class="head">
-		<div class="head-title">Main message board between admin and user.</div>
-	</div>
-
-	<div class="list-container">
-		<div class="message-input">
-			<div class="input">
-				<input type="hidden" id="topic" class="input-text" placeholder="Topic...">
-				<input type="text" id="message" class="input-text" placeholder="Enter Messages..." autofocus autocomplete="off">
-				<input type="hidden" id="message_id">
-			</div>
-			<div class="submit">
-				<button class="save-btn" onclick="javascript:createMessage();">Send</button>
-			</div>
-		</div>
-
-		<div class="items-container">
-			<?php $message->listMessage(array('type' => 'message-items'));?>
-		</div>
+	<div class="page">
+		<?php $message->listMessage(array('type' => 'message-items'));?>
 	</div>
 </div>
 
+<form class="form-dialog" id="message-dialog" action="javascript:createMessage();" >
+	<div class="input">
+		<input type="text" id="topic" class="input-text" placeholder="Topic..." autofocus autocomplete="off">
+		<textarea class="input-textarea" id="message" placeholder="Enter Messages..."></textarea>
+		<input type="hidden" id="message_id">
+	</div>
+	<div class="control">
+		<button type="submit" class="btn-submit" onclick="">Send Message</button>
+		<div class="btn" id="close-message-dialog">CLOSE</div>
+	</div>
+</form>
+
+<div id="filter"></div>
+
 <script type="text/javascript" src="js/service/min/message.service.min.js"></script>
+<script type="text/javascript" src="js/message.js"></script>
 </body>
 </html>

@@ -285,7 +285,7 @@ function listAllCaliber(output){
                         html += '<span class="icon">'+v.total_caliber+' Reports<i class="fa fa-check" aria-hidden="true"></i></span>';
                     }
                 }else{
-                    html += '<span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>';
+                    html += '<span class="icon"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>';
                 }
                 html += '</a>';
             });
@@ -295,7 +295,7 @@ function listAllCaliber(output){
                 html += '<a href="report_detail_turn_to_value.php?caliber='+v.caliber_id+'&header='+header+'&action=create" class="caliber-choose-items">';
                 html += '<span class="title">'+v.caliber_name+'</span>';
                 html += '<span class="std">Standard time '+v.caliber_stdtime+' Hrs/K and has '+v.total_operation+' operations</span>';
-                html += '<span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>';
+                html += '<span class="icon"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></span>';
                 html += '</a>';
             });
         }

@@ -29,31 +29,43 @@ $current_page['1'] = 'caliber';
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-
 </head>
 <body>
 <?php include'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title">CALIBER CODE : <?php echo $caliber->countCaliber('all');?> items (<?php echo $caliber->countCaliber('active');?> active and <?php echo $caliber->countCaliber('pending');?> pending)</div>
-		<div class="head-control">
-			<a href="caliber_editor.php" class="btn create-btn"><i class="fa fa-plus" aria-hidden="true"></i>NEW CALIBER</a>
-		</div>
+
+<div class="caliber-head-fix">
+	<div class="topic">
+		<input type="text" class="input-text" id="caliber-search" placeholder="Enter caliber code...">
+		<span class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Caliber</span>
 	</div>
-	<!-- Table -->
-	<div class="list-container">
-		<div class="items caliber-items topic-fix">
-			<div class="col1">Caliber Code</div>
-			<div class="col4">Status</div>
-			<div class="col2">Route</div>
-			<div class="col3">Std.time (Hrs/K)</div>
-			<div class="col5">Description</div>
-		</div>
-		<div class="items-container">
-			<?php $caliber->listAllCalibers(array('type' => 'caliber-items'));?>
-		</div>
+	<div class="topic">
+		<span class="caption">ROUTE</span>
+		<span class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Route</span>
+	</div>
+	<div class="topic">
+		<span class="caption">OPERATION</span>
+		<span class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Operation</span>
 	</div>
 </div>
+
+<!-- Table -->
+<div class="col-container">
+	<div class="result" id="caliber_list"></div>
+</div>
+
+<div class="col-container">
+	<div class="result" id="route_list">
+		<div class="intro">ROUTE</div>
+	</div>
+</div>
+
+<div class="col-container">
+	<div class="result" id="operation_list">
+		<div class="intro">OPERATION</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/caliber.app.js"></script>
 </body>
 </html>

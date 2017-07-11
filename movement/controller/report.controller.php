@@ -101,11 +101,13 @@ class ReportController extends ReportModel{
 		$this->update_timestamp = strtotime($data['update_time']);
 
 		// Leader can't update header report after 7 days
-		if((time()-$this->create_timestamp) < (60*60*24*30)){
-			$this->can_edit = true;
-		}else{
-			$this->can_edit = false;
-		}
+		// if((time()-$this->create_timestamp) < (60*60*24*30)){
+		// 	$this->can_edit = true;
+		// }else{
+		// 	$this->can_edit = false;
+		// }
+
+		$this->can_edit = true;
 
 		$this->leader_name 		= $data['fname'].' '.$data['lname'];
 		

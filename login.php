@@ -43,10 +43,10 @@ if($user_online){
 	<form action="javascript:login();">
 	<div class="input">
 		<input type="text" class="input-text" id="username" placeholder="Username" autofocus autocomplete="off">
-		<input type="password" class="input-text" placeholder="Enter your password..." id="password">
+		<input type="password" class="input-text" placeholder="Password" id="password">
 	</div>
 	<div class="submit">
-		<button type="submit" id="login-btn" class="login-btn"><span id="btn-caption">Login</span><span id="btn-icon"><i class="fa fa-arrow-right"></i></span></button>
+		<button type="submit" id="login-btn" class="login-btn"><span id="btn-caption">LOGIN</span><span id="btn-icon"><i class="fa fa-angle-right"></i></span></button>
 	</div>
 	</form>
 </div>

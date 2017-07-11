@@ -46,15 +46,8 @@ $current_page['1'] = 'yield';
 
 </head>
 <body>
-<header class="header">
-    <div class="header-items">
-        <div class="topic">Yield & Total Efficiency</div>
-        <div class="caption">Moment assembly</div>
-    </div>
-    <a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
-</header>
-<?php include'navigator.php';?>
-<div class="container">
+<?php include'header.php';?>
+<div class="page">
     <div class="graph-filter">
         <div class="month">
             <?php $report->ListMonth(array('type' => 'month-items','line_current' => $user->line_default,'year_current' => $_GET['year'],'month_current' => $_GET['month']));?>

@@ -34,23 +34,17 @@ $current_page['1'] = 'report';
 </head>
 <body>
 <?php include'header.php';?>
-<div class="container">
-	<div class="head">
-		<div class="head-title">DATALINK REPORT</div>
-	</div>
 
-	<div class="report-container">
+<div class="topbar">
+	<div class="title">SELECT REPORT...</div>
+</div>
+
+<div class="container">
+	<div class="main-menu">
 		<a href="header_report.php">
 		<div class="report-items">
 			<div class="icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
 			<div class="title">Header Reports</div>
-		</div>
-		</a>
-
-		<a href="weekly_eff_date.php">
-		<div class="report-items">
-			<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-			<div class="title">Weekly Efficiency<span class="beta">[Beta]</span></div>
 		</div>
 		</a>
 
@@ -61,17 +55,24 @@ $current_page['1'] = 'report';
 		</div>
 		</a>
 
-		<a href="pdftest.php">
+		<a href="weekly_eff_date.php">
+		<div class="report-items">
+			<div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
+			<div class="title">Weekly Efficiency<span class="beta">[Beta]</span></div>
+		</div>
+		</a>
+
+		<a href="pdftest.php" target="_blank">
 		<div class="report-items">
 			<div class="icon"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></div>
-			<div class="title">PDF Export (Test)</div>
+			<div class="title">PDF Export (Test)<span class="beta">[For Dev]</span></div>
 		</div>
 		</a>
 
 		<a href="../movement/robot.php" target="_blank">
 		<div class="report-items">
 			<div class="icon"><i class="fa fa-bug" aria-hidden="true"></i></div>
-			<div class="title">Update EFF & Yield (Robot)</div>
+			<div class="title">Update EFF & Yield (Robot)<span class="beta">[For Dev]</span></div>
 		</div>
 		</a>
 	</div>

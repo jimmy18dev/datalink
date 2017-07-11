@@ -37,13 +37,14 @@ class CaliberModel extends Database{
 		parent::execute();
 		return $dataset = parent::single();
 	}
-	public function listAllCaliber(){
+	public function listAllCaliber($keyword){
 		parent::query('SELECT caliber.id caliber_id,caliber.code caliber_code,caliber.family caliber_family,std.hrs caliber_stdtime,route.id route_id,route.name route_name,caliber.name caliber_name,caliber.description caliber_description,caliber.create_time caliber_create_time,caliber.update_time caliber_update,caliber.type caliber_type,caliber.status caliber_status,(SELECT COUNT(rmo.id) FROM RTH_Route AS route LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.route_id = route.id WHERE route.type = "primary" AND route.caliber_id = caliber.id) total_operation 
 			FROM RTH_CaliberCode AS caliber 
 			LEFT JOIN RTH_StandardTime AS std ON std.caliber_id = caliber.id AND std.type = "primary" 
 			LEFT JOIN RTH_Route AS route ON route.caliber_id = caliber.id AND route.type = "primary" 
-			WHERE caliber.status != "deleted" 
+			WHERE caliber.status != "deleted"  AND (concat_ws(" ",caliber.code,caliber.family) LIKE :keyword) 
 			ORDER BY caliber.update_time DESC');
+		parent::bind(':keyword','%'.$keyword.'%');
 		parent::execute();
 		return $dataset = parent::resultset();
 	}

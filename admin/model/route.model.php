@@ -50,14 +50,15 @@ class RouteModel extends Database{
 
 	// LIST ALL ROUTE BY CALIBER ID
 	public function listRouteInCaliberData($caliber_id){
-		parent::query('SELECT route.id,route.caliber_id,route.code,route.name,route.name,route.create_time,route.update_time,route.type,route.status,(SELECT COUNT(id) FROM RTH_RouteMatchOperation AS rmo WHERE rmo.route_id = route.id) total_operation FROM RTH_Route AS route WHERE caliber_id = :caliber_id');
+		parent::query('SELECT route.id route_id,route.caliber_id route_caliber_id,route.code route_code,route.name route_name,route.create_time route_create_time,route.update_time route_update_time,route.type route_type,route.status route_status,(SELECT COUNT(id) FROM RTH_RouteMatchOperation AS rmo WHERE rmo.route_id = route.id) route_total_operation FROM RTH_Route AS route WHERE caliber_id = :caliber_id');
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::execute();
 		$dataset = parent::resultset();
-		foreach ($dataset as $k => $var) {
-			$dataset[$k]['create_time'] = parent::datetime_thaiformat($var['create_time']);
-			$dataset[$k]['update_time'] = parent::date_format($var['update_time']);
-		}
+		
+		// foreach ($dataset as $k => $var) {
+		// 	$dataset[$k]['create_time'] = parent::datetime_thaiformat($var['create_time']);
+		// 	$dataset[$k]['update_time'] = parent::date_format($var['update_time']);
+		// }
 
 		return $dataset;
 	}

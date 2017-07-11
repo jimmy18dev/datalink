@@ -41,41 +41,49 @@ if(empty($userData['id'])){
 </head>
 <body>
 <?php include'header.php';?>
+<div class="topbar">
+	<div class="title">Create new user account.</div>
+</div>
 <div class="container">
-	<div class="form-container">
-		<div class="form-detail">
-			<div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-			<h1><?php echo (empty($userData['id'])?'Create new User':'User Editing...');?></h1>
-			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
-		</div>
-		<div class="form-input">
-
-			<?php if(!empty($userData['id']) && $userData['id'] != $user->id){?>
-			<div class="grant-control">
-				<?php if($userData['type'] != 'Administrator'){?>
-				<div class="grant-btn" onclick="javascript:addToAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');"><i class="fa fa-plus" aria-hidden="true"></i>Add to admin</div>
-				<?php }else{?>
-				<div class="grant-btn grant-remove-btn" onclick="javascript:removeAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');"><i class="fa fa-times" aria-hidden="true"></i>Remove admin</div>
-				<?php }?>
-			</div>
+	<div class="form">
+		<?php if(!empty($userData['id']) && $userData['id'] != $user->id){?>
+		<div class="grant-control">
+			<?php if($userData['type'] != 'Administrator'){?>
+			<div class="grant-btn" onclick="javascript:addToAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');"><i class="fa fa-plus" aria-hidden="true"></i>Add to admin</div>
+			<?php }else{?>
+			<div class="grant-btn grant-remove-btn" onclick="javascript:removeAdmin(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');"><i class="fa fa-times" aria-hidden="true"></i>Remove admin</div>
 			<?php }?>
-			
+		</div>
+		<?php }?>
+		
+		<div class="form-items">
+			<div class="caption">INFOMATION</div>
 			<div class="input">
-				<input class="input-text half-size font-bigsize" type="text" id="fname" value="<?php echo $userData['fname'];?>" placeholder="First Name">
-				<input class="input-text half-size font-bigsize" type="text" id="lname" value="<?php echo $userData['lname'];?>" placeholder="Last Name">
+				<input class="input-text" type="text" id="fname" value="<?php echo $userData['fname'];?>" placeholder="First Name">
+				<input class="input-text" type="text" id="lname" value="<?php echo $userData['lname'];?>" placeholder="Last Name">
 
 				<input class="input-text" type="text" id="code" value="<?php echo $userData['code'];?>" placeholder="Employee ID">
+			</div>
+		</div>
 
-				<p class="caption"><i class="fa fa-lock" aria-hidden="true"></i>User Login</p>
+		<div class="form-items">
+			<div class="caption">LOGIN</div>
+			<div class="input">
 				<input class="input-text" type="text" id="username" value="<?php echo $userData['username'];?>" placeholder="Username">
 				<input class="input-text" type="text" id="password" value="<?php echo $userData['password'];?>" placeholder="Password">
+			</div>
+		</div>
 
-				<p class="caption"><i class="fa fa-file-text-o" aria-hidden="true"></i>Section</p>
-				<select class="input-text" id="section_id">
+		<div class="form-items">
+			<div class="caption">SECTION</div>
+			<div class="input">
+				<div class="select">
+					<select id="section_id">
 						<option value="0">Section/Position</option>
 						<?php $section->listAllSection(array('type' => 'section-option-select-items','current'=> $userData['section_id']));?>
 					</select>
-
+				</div>
+				<div class="select">
 					<select class="input-text" id="line_default">
 						<option value="0">Line No.</option>
 						<option value="1" <?php echo ($userData['line_default'] == 1?'selected':'');?>>1</option>
@@ -93,16 +101,21 @@ if(empty($userData['id'])){
 						<option value="13" <?php echo ($userData['line_default'] == 13?'selected':'');?>>13</option>
 						<option value="14" <?php echo ($userData['line_default'] == 14?'selected':'');?>>14</option>
 					</select>
+				</div>
 			</div>
-			<div class="control">
+		</div>
+
+		<div class="form-items">
+			<div class="caption"></div>
+			<div class="input -control">
 				<?php if(empty($userData['id'])){?>
-				<div class="submit-btn" id="submit-btn" onclick="javascript:register();"><span id="btn-caption">Create User Account</span><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span></div>
+				<div class="btn" id="submit-btn" onclick="javascript:register();"><span id="btn-caption">CREATE</span><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span></div>
 				<?php }else{?>
 				<div class="delete-btn" onclick="javascript:deactiveUser(<?php echo $userData['id'];?>,'<?php echo $userData['fname'];?>');"><i class="fa fa-ban" aria-hidden="true"></i>Deactive this user account</div>
-				<div class="submit-btn" id="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);"><span id="btn-caption">Update info</span><span id="btn-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></span></div>
+				<div class="btn" id="submit-btn" onclick="javascript:edit(<?php echo $userData['id'];?>);"><span id="btn-caption">SAVE</span><span id="btn-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></span></div>
 				<?php }?>
 			</div>
-		</div>		
+		</div>
 	</div>
 </div>
 

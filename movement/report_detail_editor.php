@@ -66,24 +66,25 @@ $current_page['3'] = 'add_caliber';
 
 </head>
 <body>
+<form id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
 
-<form class="form" id="ReportDetail" action="report.detail.process.php" method="post" enctype="multipart/form-data">
-<header class="form-bar">
-	<a href="report_detail.php?header=<?php echo $report->id;?>" class="page-title"><i class="fa fa-arrow-left" aria-hidden="true"></i><strong><?php echo $caliber->name;?></strong> to <strong><?php echo $report->report_date;?></strong></a>
+<header class="header">
+	<a href="report_detail.php?header=<?php echo $report->id;?>" class="items -active"><i class="fa fa-arrow-left" aria-hidden="true"></i>ADD <strong><?php echo $caliber->name;?></strong> TO <strong><?php echo $report->report_date;?></strong></a>
 
 	<?php if($_GET['action'] == 'edit'){?>
 	<button type="submit" class="btn"><span id="btn-caption">Update</span><span id="btn-icon"><i class="fa fa-check" aria-hidden="true"></i></span></button>
 	<?php }else{?>
-	<button type="submit" class="btn"><span id="btn-caption">Add to Report</span><span id="btn-icon"><i class="fa fa-plus" aria-hidden="true"></i></span></button>
+	<button type="submit" class="btn"><span id="btn-caption">ADD TO REPORT</span><span id="btn-icon"><i class="fa fa-plus" aria-hidden="true"></i></span></button>
 	<?php }?>
 </header>
-<div class="operation-form-container">
+
+<div class="page">
 	<div class="operation-items topic-fix">
-		<div class="col1">Operation</div>
-		<div class="col4">Input</div>
-		<div class="col2">Good</div>
-		<div class="col3">Reject</div>
-		<div class="col5">Remark</div>
+		<div class="title">OPERATION</div>
+		<div class="val">INPUT</div>
+		<div class="val">GOOD</div>
+		<div class="val">REJECT</div>
+		<div class="remark">REMARK</div>
 	</div>
 
 	<div class="operations">
@@ -106,14 +107,8 @@ $current_page['3'] = 'add_caliber';
 	<input type="hidden" name="std_time" value="<?php echo $caliber->std_time;?>">
 	<input type="hidden" name="report_id" value="<?php echo $_GET['report'];?>">
 
-	<div class="note">Note: This caliber (<?php echo $caliber->name;?>) has <strong><?php echo $caliber->route_name;?></strong> in Primary route and standard time <strong><?php echo number_format($caliber->std_time,2);?> Hrs/K.</strong></div>
+	<div class="note">Note: This caliber (<?php echo $caliber->name;?>) has <strong><?php echo $caliber->route_name;?></strong> in Primary route and standard time <strong><?php echo number_format($caliber->std_time,2);?> Hrs/K.</strong> <?php if($_GET['action'] == 'edit' && !empty($_GET['report'])){?><div class="btn btn-delete" onclick="javascript:deleteHeadReport(<?php echo $report->id;?>,<?php echo $_GET['report'];?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">DELETE<i class="fa fa-trash" aria-hidden="true"></i></div><?php }?></div>
 </div>
-
-<?php if($_GET['action'] == 'edit' && !empty($_GET['report'])){?>
-<div class="control-container">
-	You can <span class="delete-btn" onclick="javascript:deleteHeadReport(<?php echo $report->id;?>,<?php echo $_GET['report'];?>,'<?php echo $caliber->code;?> <?php echo $caliber->family;?>');">Delete <i class="fa fa-trash" aria-hidden="true"></i></span> your caliber (<?php echo $caliber->name;?>) from daily report.
-</div>
-<?php }?>
 </form>
 
 <div class="loading-box" id="loading-box">

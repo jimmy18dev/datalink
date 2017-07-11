@@ -50,35 +50,24 @@ $current_page['1'] = 'index';
 </head>
 <body>
 <header class="header">
-	<div class="header-items">
-		<div class="topic"><?php echo $report->report_full_date;?></div>
-		<div class="caption">Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update_facebook_format;?></strong> Leader <strong><?php echo $report->leader_name;?></strong></div>
-	</div>
-	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
+	<a class="items -active" href="index.php"><i class="fa fa-arrow-left" aria-hidden="true"></i><?php echo $report->report_full_date;?></a>
 </header>
-<?php include'navigator.php';?>
-<div class="report-detail-container">
-
-	<!-- Report control (Edit or Lock) -->
-	<div class="report-control">
-		<?php if($user->id == $report->leader_id && $report->can_edit){?>
-		<a href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit" class="report-btn">EDIT REPORT</a>
-		<?php }else{?>
-		<div class="report-btn -locked"><i class="fa fa-lock" aria-hidden="true"></i>LOCKED</div>
-		<?php }?>
-	</div>
-
+<div class="page">
 	<!-- 1. Manpower -->
 	<div class="topic-container">
-		<div class="title">1. Manpower: 
-			<span class="target">Target Yield = <strong><?php echo number_format($report->target_yield,2);?>%</strong></span>
-			<span class="target">Target EFF = <strong><?php echo number_format($report->target_eff,2);?>%</strong></span>
+		<h2>1. Manpower: </h2>
+		<?php if($user->id == $report->leader_id && $report->can_edit){?>
+			<a class="btn" href="report_header_editor.php?header=<?php echo $report->id;?>&action=edit">EDIT REPORT</a>
+		<?php }?>
+		<div class="info">
+			<p>Line No.<strong><?php echo $report->line_no;?></strong> · Shift <strong><?php echo $report->shift;?></strong> · Updated <strong><?php echo $report->update_facebook_format;?></strong> Leader <strong><?php echo $report->leader_name;?></strong></p>
+			<p>Target Yield = <strong><?php echo number_format($report->target_yield,2);?>%</strong> Target EFF = <strong><?php echo number_format($report->target_eff,2);?>%</strong></p>
 		</div>
 	</div>
 	
 	<div class="report-stat">
 		<div class="stat-items stat-items-highlight">
-			<div class="v">LINE <?php echo $report->line_no;?> (<?php echo $report->line_type;?>)</div>
+			<div class="v">NO.<?php echo $report->line_no;?> (<?php echo $report->line_type;?>)</div>
 			<div class="k">Shift <?php echo $report->shift;?></div>
 		</div>
 
@@ -204,16 +193,16 @@ $current_page['1'] = 'index';
 		</div>
 
 		<?php if(!empty($report->remark)){?>
-		<div class="remark">
-			<div class="caption">Remark</div>
-			<div class="message"><?php echo $report->remark;?></div>
-		</div>
+		<div class="remark-msg"><strong>Remark</strong> <?php echo $report->remark;?></div>
 		<?php }?>
 	</div>
 
 	<!-- 2. Output -->
 	<div class="topic-container">
-		<div class="title">2. Output: <?php echo $report->total_caliber;?> Calibers <?php if($user->id == $report->leader_id && $report->can_edit){?><a href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn">ADD CALIBER CODE</a><?php }?></div>
+		<h2>2. Output: <?php echo $report->total_caliber;?> Calibers</h2>
+		<?php if($user->id == $report->leader_id && $report->can_edit){?>
+		<a class="btn" href="report_detail_editor_choose_caliber.php?header=<?php echo $report->id;?>">ADD CALIBER CODE</a>
+		<?php }?>
 	</div>	
 	<div class="container-box">
 		<?php $report->listCaliberInReport($report->id,array('type' => 'report-caliber-items','header_id' => $report->id,'can_edit' => $report->can_edit));?>
@@ -221,8 +210,10 @@ $current_page['1'] = 'index';
 
 	<!-- 3. Turn to 24-48 Hrs. -->
 	<div class="topic-container">
-		<div class="title">3. Turn to 24-48 Hrs. <?php if($user->id == $report->leader_id && $report->can_edit){?>
-			<a href="report_detail_turn_to_choose_caliber.php?header=<?php echo $report->id;?>" class="create-btn">ADD TURE TO</a><?php }?></div>
+		<h2>3. Turn to 24-48 Hrs.</h2>
+		<?php if($user->id == $report->leader_id && $report->can_edit){?>
+		<a class="btn" href="report_detail_turn_to_choose_caliber.php?header=<?php echo $report->id;?>">ADD TURE TO</a>
+		<?php }?>
 		</div>
 	
 	<div class="turn-to-list">

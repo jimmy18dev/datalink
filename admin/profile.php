@@ -35,24 +35,16 @@ $current_page['1'] = 'profile';
 </head>
 <body>
 <?php include'header.php';?>
+<div class="topbar">
+	<div class="title">ID: <strong><?php echo $user->code;?></strong>, Last visit at <strong><?php echo $user->visit_time;?></strong></div>
+</div>
 <div class="container">
-	<?php if($user->status == 'deactive'){?>
-	<div class="message-control">
-		<div class="user-deactive"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>This account is <strong>Deactive</strong> by administrator</div>
-	</div>
-	<?php }?>
-	<div class="head">
-		<div class="head-title">ID: <strong><?php echo $user->code;?></strong>, Last visit at <strong><?php echo $user->visit_time;?></strong></div>
-		<div class="head-control">
-			<a href="logout.php" class="btn logout-btn">Logout<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-		</div>
-	</div>
-	<div class="list-container">
-		<div class="items user-activity-items topic-fix">
+	<div class="page">
+		<div class="activity-items topic-fix">
 			<div class="col1">Date/Time</div>
 			<div class="col2">Action</div>
-			<div class="col3">IP Address <i class="fa fa-location-arrow" aria-hidden="true"></i></div>
 			<div class="col4">Description</div>
+			<div class="col3">IP Address</div>
 		</div>
 		<div class="items-container">
 			<?php $useractivity->listActivity($user->id,array('type' => 'user-activity-items'));?>

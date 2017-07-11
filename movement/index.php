@@ -39,18 +39,11 @@ $current_page['1'] = 'index';
 
 </head>
 <body>
-<header class="header">
-	<div class="header-items">
-		<div class="topic">Daily Output Report</div>
-		<div class="caption">DATALINK Ver <?php echo $meta['dev']['version'];?></div>
-	</div>
-	<a class="btn" href="report_header_editor.php?action=create">NEW REPORT</a>
-</header>
-<?php include'navigator.php';?>
-<div class="header-list-container">
+<?php include'header.php';?>
+<div class="page">
 	<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
 </div>
 
-<script type="text/javascript" src="js/min/auto_hidden.min.js"></script>
+<!-- <script type="text/javascript" src="js/min/auto_hidden.min.js"></script> -->
 </body>
 </html>
