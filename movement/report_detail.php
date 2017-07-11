@@ -193,7 +193,7 @@ $current_page['1'] = 'index';
 		</div>
 
 		<?php if(!empty($report->remark)){?>
-		<div class="remark"><strong>Remark</strong> <?php echo $report->remark;?></div>
+		<div class="remark-msg"><strong>Remark</strong> <?php echo $report->remark;?></div>
 		<?php }?>
 	</div>
 
