@@ -87,8 +87,8 @@
 
 // Login page style
 .login-container{
-	width: 20%;
-	margin: 0% 40%;
+	width: 22%;
+	margin: 0% 39%;
 	float: left;
 	display: inline-block;
 	margin-top: 10%;
@@ -101,17 +101,17 @@
 		text-align: center;
 
 		h1{
-			font-size: 3em;
-			margin-bottom: 3%;
+			font-size: 3.5em;
+			margin-bottom: 2%;
 			color: #111111;
 		}
 
 		p.version{
-			font-size: 0.9em;
+			font-size: 0.8em;
 			color: #999999;
 		}
 
-		strong{ color: #333333; }
+		strong{ color: @primary_color; }
 	}
 
 	.input{
@@ -122,19 +122,19 @@
 		margin-bottom: 10%;
 
 		.input-text{
-			width: 90%;
-			padding: 5%;
+			width: 88%;
+			padding: 6%;
 			float: left;
 			display: inline-block;
 			font-family: @FontStylePrimary;
-			font-size: 1em;
-			line-height: 1.5em;
+			font-size: 1.1em;
+			line-height: 1.3em;
 			border: 0px;
 			color: #000000;
 			margin-bottom: 5%;
-			border-radius: 5px;
+			border-radius: 3px;
 
-			&:focus{ box-shadow: 1px 1px 15px rgba(0,0,0,0.2); }
+			&:focus{ box-shadow: 1px 1px 20px rgba(0,0,0,0.2); }
 		}
 	}
 
@@ -145,20 +145,19 @@
 
 		.login-btn{
 			width: 100%;
-			padding: 4% 0%;
+			padding: 5% 0%;
 			float: right;
 			display: inline-block;
 			font-family: @FontStylePrimary;
-			font-size: 0.9em;
-			line-height: 1.5em;
+			font-size: 1.1em;
+			line-height: 1em;
 			border: 0px;
 			text-align: center;
 			background: @primary_color;
 			color: @white_color;
 			outline: 0;
-			border-radius: 5px;
+			border-radius: 3px;
 			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
-			letter-spacing: 1px;
 
 			i{ margin-left: 10px; }
 
@@ -169,8 +168,8 @@
 		}
 
 		.login-btn-loading{
-			background: #DDDDDD;
-			color: #AAAAAA;
+			background: transparent;;
+			color: @primary_color;
 			box-shadow: none;
 		}
 	}

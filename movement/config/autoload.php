@@ -44,15 +44,15 @@ include_once'controller/user.activity.controller.php';
 include_once'controller/report.controller.php';
 
 // Object of Controller
-$api = new ApiController;
-$message = new MessageController;
-$setting = new SettingController;
-$caliber = new CaliberController;
-$section = new SectionController;
-$remark = new RemarkController;
-$user = new UserController;
-$useractivity 	= new UserActivityController;
-$report = new ReportController;
+$api 		= new ApiController;
+$message 	= new MessageController;
+$setting 	= new SettingController;
+$caliber 	= new CaliberController;
+$section 	= new SectionController;
+$remark 	= new RemarkController;
+$user 		= new UserController;
+$useractivity = new UserActivityController;
+$report 	= new ReportController;
 
 // Cookie Checking
 if($user->cookieChecking()){ $_SESSION['user_id'] = $_COOKIE['user_id']; }	

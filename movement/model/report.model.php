@@ -302,7 +302,7 @@ class ReportModel extends Database{
 
 	// List month of header report
 	public function ListMonthData(){
-		parent::query('SELECT report_date FROM RTH_DailyOutputHeader WHERE status = "active" GROUP BY MONTH(report_date), YEAR(report_date) ORDER BY report_date ASC');
+		parent::query('SELECT report_date FROM RTH_DailyOutputHeader WHERE status = "active" GROUP BY MONTH(report_date), YEAR(report_date) ORDER BY report_date DESC');
 		parent::execute();
 		$dataset = parent::resultset();
 		foreach ($dataset as $k => $var) {
