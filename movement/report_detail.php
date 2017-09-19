@@ -205,7 +205,13 @@ $current_page['1'] = 'index';
 		<?php }?>
 	</div>	
 	<div class="container-box">
-		<?php $report->listCaliberInReport($report->id,array('type' => 'report-caliber-items','header_id' => $report->id,'can_edit' => $report->can_edit));?>
+		<?php
+		$report->listCaliberInReport($report->id,array(
+			'type' 		=> 'report-caliber-items',
+			'header_id' => $report->id,
+			'can_edit' 	=> $report->can_edit
+		));
+		?>
 	</div>
 
 	<!-- 3. Turn to 24-48 Hrs. -->

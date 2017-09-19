@@ -71,11 +71,11 @@ if(!empty($report->report_date_ori)){
 </head>
 <body>
 <header class="header">
-	<a href="index.php" class="items btn-discard"><i class="fa fa-trash" aria-hidden="true"></i>DISCARD</a>
+	<a href="index.php" class="items btn-discard">DISCARD</a>
 	<?php if(empty($report->id)){?>
-	<button class="btn" onclick="javascript:createHeaderReport();">CREATE<i class="fa fa-plus" aria-hidden="true"></i></button>
+	<button class="btn" onclick="javascript:createHeaderReport();">CREATE</button>
 	<?php }else{?>
-	<button class="btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);">SAVE<i class="fa fa-check" aria-hidden="true"></i></button>
+	<button class="btn" onclick="javascript:editHeaderReport(<?php echo $report->id;?>);">SAVE</button>
 	<?php }?>
 </header>
 <div class="form">

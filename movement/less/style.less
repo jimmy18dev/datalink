@@ -23,12 +23,33 @@
 		border: 0px;
 		font-size: 1em;
 
-		&.-active{ color: #FFFFFF; }
-		i{ margin-right: 20px; }
+		&.-active{
+			color: #FFFFFF;
+			font-weight: bold;
+		}
+		&.btn-discard{
+			padding: 14px 2%;
+		}
+
+		i{ margin-right: 7px; }
+
+		&.btn-logout{
+			padding: 3px 1%;
+			margin: 10px;
+			height: 22px;
+			border: 1px solid #4c70b7;
+			font-size: 0.9em;
+			border-radius: 3px;
+
+			&:hover{
+				background: #4c70b7;
+				color: @primary_color;
+			}
+		}
 	}
 
 	.btn{
-		padding: 14px 1%;
+		padding: 14px 2%;
 		height: 22px;
 		float: right;
 		display: inline-block;
@@ -46,7 +67,7 @@
 	}
 
 	button.btn{
-		padding: 0px 1%;
+		padding: 0px 2.5%;
 		height: 50px;
 		float: right;
 		display: inline-block;
@@ -95,8 +116,8 @@
 
 // Report Detail Page style
 .report-detail-container{
-	width: 50%;
-	margin: 0% 25%;
+	width: 60%;
+	margin: 0% 20%;
 	margin-top: 100px;
 	margin-bottom: 5%;
 	min-height: 500px;
@@ -143,8 +164,8 @@
 
 // Message page style (News message)
 .page{
-	width: 50%;
-	margin: 0% 25%;
+	width: 70%;
+	margin: 0% 15%;
 	margin-top: 50px;
 	margin-bottom: 5%;
 	min-height: 500px;
@@ -362,16 +383,18 @@
 		.btn{
 			float: right;
 			display: inline-block;
-			background: #e5eaf4;
-			color: #4c70b7;
-			padding: 1.5% 2%;
+			color: #FFFFFF;
+			background: #4c70b7;
+			padding: 1%;
 			font-size: 0.8em;
-			border-radius: 2px;
+			border-radius: 3px;
 			line-height: 1em;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
 
 			&:hover{
 				cursor: pointer;
-				opacity: 0.7;
+				opacity: 0.9;
+				box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
 			}
 
 			&:active{
@@ -427,7 +450,7 @@
 				width: 100%;
 				float: left;
 				display: inline-block;
-				font-size: 1.6em;
+				font-size: 1.8em;
 				line-height: 1.1em;
 			}
 			.k{
@@ -488,7 +511,7 @@
 					width: 100%;
 					float: left;
 					display: inline-block;
-					font-size: 1.6em;
+					font-size: 1.8em;
 					line-height: 1.1em;
 				}
 				.col-caption{
@@ -512,19 +535,21 @@
 		margin-top: 3%;
 		float: left;
 		display: inline-block;
-		border: 1px solid #EEEEEE;
-		border-radius: 2px;
+		border-radius: 3px;
+		box-shadow: 1px 1px 20px rgba(0,0,0,0.1);
 
 		.info{
 			width: 100%;
 			float: left;
 			display: inline-block;
+			margin: 0%;
+			padding: 0%;
 
 			.name{
 				width: 100%;
 				float: left;
-				font-size: 1.4em;
-				color: #000000;
+				font-size: 1.8em;
+				color: @primary_color;
 			}
 
 			.description{
@@ -536,11 +561,16 @@
 				color: #333333;
 
 				a{
-					text-decoration: underline;
+					background: #4c70b7;
+					color: #FFFFFF;
 					margin-left: 5px;
-					color: @primary_color;
+					padding: 1px 10px;
+					border-radius: 3px;
+					font-size: 0.8em;
+					line-height: 1em;
+					letter-spacing: 1px;
 
-					i{ margin-left: 3px; }
+					i{ margin-left: 5px; }
 				}
 			}
 		}
@@ -550,26 +580,25 @@
 			width: 100%;
 			float: left;
 			display: inline-block;
-			margin-top: 2%;
+			margin-top: 3%;
 
 			// Operations items style
 			.operation-items{
-				width: 98%;
-				padding: 1.5% 1%;
+				width: 100%;
+				padding: 1.2% 0%;
 				float: left;
 				display: inline-block;
 				border-bottom: 1px solid #FAFAFA;
 				font-size: 1em;
 				color: #999999;
 
-				&:hover{
-					background: #FAFAFA;
-					cursor: default;
+				&:hover{ cursor: default; }
+				&.-topic{
+					font-size: 0.75em;
+					font-style: italic;
+					color: #BBBBBB;
 				}
-
-				&:last-child{
-					border-bottom: 0px;
-				}
+				&:last-child{ border-bottom: 0px; }
 
 				.fa-star{ color: #FFC107; }
 
@@ -694,19 +723,26 @@
 		float: left;
 		display: inline-block;
 		padding: 2% 0%;
+		border-bottom: 1px dashed #EEEEEE;
+		margin-bottom: 2%;
 
 		.filter-items{
-			width: 20%;
-			padding: 1% 0%;
+			line-height: 1em;
+			margin-right: 2%;
+			padding: 1.5% 0%;
 			float: left;
 			display: inline-block;
-			color: #999999;
+			color: #666666;
 
-			&:hover{ cursor: pointer; }
+			&:hover{
+				cursor: pointer;
+				text-decoration: underline;
+			}
 		}
 
 		.filter-items-active{
 			color: @primary_color;
+			font-weight: bold;
 			text-decoration: underline;
 		}
 	}
@@ -722,7 +758,7 @@
 			width: 100%;
 			float: left;
 			display: inline-block;
-			font-size: 2em;
+			font-size: 3em;
 			color: #333333;
 			font-weight: normal;
 		}
@@ -812,26 +848,21 @@
 		padding: 2% 0%;
 		float: left;
 		display: inline-block;
-		font-size: 2em;
+		font-size: 2.4em;
 		color: #333333;
 	}
 
 	// Header report items style
 	.header-report-items{
-		width: 96%;
-		padding: 2%;
+		width: 100%;
+		padding: 1% 0%;
 		float: left;
 		display: inline-block;
 		font-size: 1em;
 		color: #333333;
-		background: #FAFAFA;
-		margin-bottom: 1%;
-		border-radius: 2px;
+		border-bottom: 1px solid #EEEEEE;
 
-		&:hover{
-			cursor: pointer;
-			background: #EEEEEE;
-		}
+		&:hover{ cursor: pointer; }
 
 		.date{
 			width: 20%;
@@ -980,8 +1011,8 @@
 	position: fixed;
 	top: 0%;
 	left: 0%;
-	width: 50%;
-	padding: 0% 25%;
+	width: 70%;
+	padding: 0% 15%;
 	height: 50px;
 	float: left;
 	display: inline-block;
@@ -1051,8 +1082,8 @@
 
 // Header report form style.
 .form{
-	width: 40%;
-	margin: 0% 30%;
+	width: 70%;
+	margin: 0% 15%;
 	float: left;
 	display: inline-block;
 	margin-top: 50px;

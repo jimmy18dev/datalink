@@ -102,8 +102,8 @@ body {
   margin-left: 10px;
 }
 .login-container {
-  width: 20%;
-  margin: 0% 40%;
+  width: 22%;
+  margin: 0% 39%;
   float: left;
   display: inline-block;
   margin-top: 10%;
@@ -116,16 +116,16 @@ body {
   text-align: center;
 }
 .login-container .logo h1 {
-  font-size: 3em;
-  margin-bottom: 3%;
+  font-size: 3.5em;
+  margin-bottom: 2%;
   color: #111111;
 }
 .login-container .logo p.version {
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #999999;
 }
 .login-container .logo strong {
-  color: #333333;
+  color: #003399;
 }
 .login-container .input {
   width: 100%;
@@ -135,20 +135,20 @@ body {
   margin-bottom: 10%;
 }
 .login-container .input .input-text {
-  width: 90%;
-  padding: 5%;
+  width: 88%;
+  padding: 6%;
   float: left;
   display: inline-block;
   font-family: sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 1.1em;
+  line-height: 1.3em;
   border: 0px;
   color: #000000;
   margin-bottom: 5%;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .login-container .input .input-text:focus {
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
 }
 .login-container .submit {
   width: 100%;
@@ -157,20 +157,19 @@ body {
 }
 .login-container .submit .login-btn {
   width: 100%;
-  padding: 4% 0%;
+  padding: 5% 0%;
   float: right;
   display: inline-block;
   font-family: sans-serif;
-  font-size: 0.9em;
-  line-height: 1.5em;
+  font-size: 1.1em;
+  line-height: 1em;
   border: 0px;
   text-align: center;
   background: #003399;
   color: #ffffff;
   outline: 0;
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-  letter-spacing: 1px;
 }
 .login-container .submit .login-btn i {
   margin-left: 10px;
@@ -180,8 +179,8 @@ body {
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
 }
 .login-container .submit .login-btn-loading {
-  background: #DDDDDD;
-  color: #AAAAAA;
+  background: transparent;
+  color: #003399;
   box-shadow: none;
 }
 /* Other Device and Screen */

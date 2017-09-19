@@ -46,7 +46,7 @@ if($user_online){
 		<input type="password" class="input-text" placeholder="Password" id="password">
 	</div>
 	<div class="submit">
-		<button type="submit" id="login-btn" class="login-btn"><span id="btn-caption">LOGIN</span><span id="btn-icon"><i class="fa fa-angle-right"></i></span></button>
+		<button type="submit" id="login-btn" class="login-btn"><span id="btn-caption">LOGIN</span><span id="btn-icon"><i class="fa fa-long-arrow-right"></i></span></button>
 	</div>
 	</form>
 </div>
