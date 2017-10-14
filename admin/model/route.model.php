@@ -2,10 +2,9 @@
 class RouteModel extends Database{
 
 	// ROUTE CREATE FUNCTIONS
-	public function create($caliber_id,$code,$name,$description){
-		parent::query('INSERT INTO RTH_Route(caliber_id,code,name,description,create_time,update_time,type) VALUE(:caliber_id,:code,:name,:description,:create_time,:update_time,:type)');
+	public function create($caliber_id,$name,$description){
+		parent::query('INSERT INTO RTH_Route(caliber_id,name,description,create_time,update_time,type) VALUE(:caliber_id,:name,:description,:create_time,:update_time,:type)');
 		parent::bind(':caliber_id', 	$caliber_id);
-		parent::bind(':code', 			$code);
 		parent::bind(':name', 			$name);
 		parent::bind(':description', 	$description);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));

@@ -2402,7 +2402,6 @@ body.bg {
   float: left;
   display: inline-block;
   z-index: 99;
-  background: rgba(238, 238, 238, 0.8);
 }
 .caliber-head-fix .topic {
   width: 30.33%;
@@ -2430,15 +2429,15 @@ body.bg {
 .caliber-head-fix .topic .btn {
   float: right;
   display: inline-block;
-}
-.caliber-head-fix .topic .btn i {
-  margin-right: 5px;
-  color: #003399;
+  background: #003399;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  border-radius: 3px;
+  font-weight: bold;
 }
 .caliber-head-fix .topic .btn:hover {
-  color: #333333;
   cursor: pointer;
-  text-decoration: underline;
 }
 .col-container {
   position: fixed;

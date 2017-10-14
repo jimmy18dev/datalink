@@ -36,15 +36,15 @@ $current_page['1'] = 'caliber';
 <div class="caliber-head-fix">
 	<div class="topic">
 		<input type="text" class="input-text" id="caliber-search" placeholder="Enter caliber code...">
-		<span class="btn" id="btnCreateCaliber"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Caliber</span>
+		<span class="btn" id="btnCreateCaliber">Add Caliber</span>
 	</div>
 	<div class="topic">
 		<span class="caption">ROUTE</span>
-		<span class="btn" id="btnCreateRoute"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Route</span>
+		<span class="btn" id="btnCreateRoute">Add Route</span>
 	</div>
 	<div class="topic">
 		<span class="caption">OPERATION</span>
-		<span class="btn" id="btnCreateOperation"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Operation</span>
+		<span class="btn" id="btnCreateOperation">Add Operation</span>
 	</div>
 </div>
 
@@ -85,7 +85,7 @@ $current_page['1'] = 'caliber';
 </div>
 <div class="dialog-filter" id="filterCaliber"></div>
 
-<div class="dialog">
+<div class="dialog" id="dialogRoute">
 	<div class="control">
 		<div class="title">Create new Route</div>
 		<div class="btn" id="btnCloseRoute"><i class="fa fa-times" aria-hidden="true"></i></div>
@@ -96,7 +96,7 @@ $current_page['1'] = 'caliber';
 		<label for="route_description">Description</label>
 		<input type="text" class="inputtext" id="route_description">
 
-		<button class="btn-submit">Create</button>
+		<button class="btn-submit" id="btnSubmitRoute">Create</button>
 	</div>
 </div>
 <div class="dialog-filter" id="filterRoute"></div>

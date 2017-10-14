@@ -2679,7 +2679,6 @@
 	float: left;
 	display: inline-block;
 	z-index: 99;
-	background: rgba(238,238,238,0.8);
 
 	.topic{
 		width: 30.33%;
@@ -2708,16 +2707,15 @@
 		.btn{
 			float: right;
 			display: inline-block;
-
-			i{
-				margin-right: 5px;
-				color: @primary_color;
-			}
+			background: @primary_color;
+			color: #FFFFFF;
+			padding: 5px 10px;
+			font-size: 0.8em;
+			border-radius: 3px;
+			font-weight: bold;
 
 			&:hover{
-				color: #333333;
 				cursor: pointer;
-				text-decoration: underline;
 			}
 		}
 	}

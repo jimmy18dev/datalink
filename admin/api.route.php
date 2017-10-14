@@ -9,7 +9,10 @@ if($_POST['calling'] != ''){
 			switch ($_POST['action']) {
 				case 'create_route':
 					if(true){
-						$return_id = $route->createRoute($_POST['caliber_id'],$_POST['code'],$_POST['name'],$_POST['description']);
+						$caliber_id 	= $_POST['caliber_id'];
+						$name 			= $_POST['name'];
+						$description 	= $_POST['description'];
+						$return_id = $route->createRoute($caliber_id,$name,$description);
 						
 						if(!empty($return_id) && $return_id != 0){
 							$return_message = 'register successful';

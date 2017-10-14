@@ -1,4 +1,6 @@
-var api_link = 'api.caliber.php';
+var api_caliber     = 'api.caliber.php';
+var api_route       = 'api.route.php';
+var api_operation   = 'api.caliber.php';
 
 $(document).ready(function(){
 
@@ -12,7 +14,6 @@ $(document).ready(function(){
     $btnCloseCaliber    = $('#btnCloseCaliber');
     $btnSubmitCaliber   = $('#btnSubmitCaliber');
 
-    $btnCreateRoute     = $('#btnCreateRoute');
     $btnCreateOperation = $('#btnCreateOperation');
 
     $btnCreateCaliber.click(function(){
@@ -44,7 +45,7 @@ $(document).ready(function(){
         console.log(code,family,description,stdtime);
 
         $.ajax({
-            url         :api_link,
+            url         :api_caliber,
             cache       :false,
             dataType    :"json",
             type        :"POST",
@@ -63,6 +64,55 @@ $(document).ready(function(){
             console.log(data);
             closeCaliber();
             caliberList('');
+        });
+    });
+
+    $btnCreateRoute     = $('#btnCreateRoute');
+    $dialogRoute        = $('#dialogRoute');
+    $btnCloseRoute      = $('#btnCloseRoute');
+    $btnSubmitRoute     = $('#btnSubmitRoute');
+    $filterRoute        = $('#filterRoute');
+
+    $btnCreateRoute.click(function(){
+        $dialogRoute.fadeIn(300);
+        $filterRoute.fadeIn(100);
+    });
+
+    $btnCloseRoute.click(function(){
+        closeRoute();
+    });
+
+    function closeRoute(){
+        $dialogRoute.fadeOut(300);
+        $filterRoute.fadeOut(100);
+
+        $('#route_name').val('');
+        $('#route_description').val('');
+    }
+
+    $btnSubmitRoute.click(function(){
+        var name            = $('#route_name').val();
+        var description     = $('#route_description').val();
+
+        $.ajax({
+            url         :api_route,
+            cache       :false,
+            dataType    :"json",
+            type        :"POST",
+            data:{
+                calling         :'route',
+                action          :'create_route',
+                caliber_id      :caliber_id,
+                name            :name,
+                description     :description,
+            },
+            error: function (request, status, error) {
+                console.log("Request Error");
+            }
+        }).done(function(data){
+            console.log(data);
+            closeRoute();
+            routeList(caliber_id);
         });
     });
 
