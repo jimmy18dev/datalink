@@ -2488,146 +2488,56 @@ body.bg {
   text-align: center;
   font-weight: bold;
 }
-.col-container .result .operation-items {
-  width: 94%;
-  padding: 5% 3%;
+.col-container .result .box-items {
+  width: 100%;
   float: left;
   display: inline-block;
   background: #FFFFFF;
-  margin-bottom: 1%;
-  border-radius: 2px;
-  font-size: 0.9em;
-  color: #333333;
+  margin-bottom: 2%;
+  border-radius: 3px;
+  font-size: 1em;
+  color: #000000;
   position: relative;
 }
-.col-container .result .operation-items.-disable {
-  opacity: 0.5;
-}
-.col-container .result .operation-items:hover {
+.col-container .result .box-items:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
-.col-container .result .operation-items .detail {
-  width: 90%;
-  float: left;
-  display: inline-block;
-  font-weight: bold;
-  color: #333333;
+.col-container .result .box-items.-active {
+  background: #FAFAFA;
 }
-.col-container .result .operation-items .icon {
-  width: 10%;
-  float: right;
-  display: inline-block;
-  text-align: center;
-  color: #666666;
-}
-.col-container .result .operation-items .icon i.fa-circle {
-  color: #CCCCCC;
-}
-.col-container .result .operation-items .icon i.fa-check-circle {
-  color: #4CAF50;
-}
-.col-container .result .route-items {
-  width: 94%;
+.col-container .result .box-items .detail {
+  width: 64%;
   padding: 3%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
-  margin-bottom: 1%;
-  border-radius: 2px;
-  font-size: 0.9em;
-  color: #333333;
-  position: relative;
+  line-height: 1.1em;
 }
-.col-container .result .route-items:hover {
-  cursor: pointer;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-}
-.col-container .result .route-items.-active {
-  background: #003399;
-}
-.col-container .result .route-items.-active .detail .name {
-  color: #FFFFFF;
-}
-.col-container .result .route-items.-active .detail .info {
-  color: #EEEEEE;
-}
-.col-container .result .route-items.-active .icon {
-  color: #FFFFFF;
-}
-.col-container .result .route-items .detail {
-  width: 90%;
-  float: left;
-  display: inline-block;
-}
-.col-container .result .route-items .detail .name {
+.col-container .result .box-items .detail .name {
   font-weight: bold;
+  color: #000000;
+}
+.col-container .result .box-items .detail .info {
+  color: #666666;
+  font-size: 0.7em;
+}
+.col-container .result .box-items .detail .info strong {
   color: #333333;
 }
-.col-container .result .route-items .detail .info {
-  margin-top: 2%;
-  color: #666666;
-  font-style: italic;
-  font-size: 0.8em;
-}
-.col-container .result .route-items .icon {
-  width: 10%;
+.col-container .result .box-items .btn {
+  width: 15%;
+  padding: 6% 0%;
   float: right;
   display: inline-block;
   text-align: center;
-  margin-top: 3%;
-  color: #666666;
-}
-.col-container .result .caliber-items {
-  width: 94%;
-  padding: 3%;
-  float: left;
-  display: inline-block;
-  background: #FFFFFF;
-  margin-bottom: 1%;
-  border-radius: 2px;
-  font-size: 0.9em;
-  color: #333333;
-  position: relative;
-}
-.col-container .result .caliber-items:hover {
-  cursor: pointer;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-}
-.col-container .result .caliber-items.-active {
-  background: #003399;
-}
-.col-container .result .caliber-items.-active .detail .name {
-  color: #FFFFFF;
-}
-.col-container .result .caliber-items.-active .detail .info {
-  color: #EEEEEE;
-}
-.col-container .result .caliber-items.-active .icon {
-  color: #FFFFFF;
-}
-.col-container .result .caliber-items .detail {
-  width: 90%;
-  float: left;
-  display: inline-block;
-}
-.col-container .result .caliber-items .detail .name {
-  font-weight: bold;
-  color: #333333;
-}
-.col-container .result .caliber-items .detail .info {
-  margin-top: 2%;
-  color: #666666;
-  font-style: italic;
+  color: #BBBBBB;
   font-size: 0.8em;
 }
-.col-container .result .caliber-items .icon {
-  width: 10%;
-  float: right;
-  display: inline-block;
-  text-align: center;
-  margin-top: 3%;
-  color: #666666;
+.col-container .result .box-items .btn.enable {
+  color: #003399;
+}
+.col-container .result .box-items .btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 .dialog {
   position: absolute;

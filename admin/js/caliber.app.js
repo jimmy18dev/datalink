@@ -1,6 +1,6 @@
 var api_caliber     = 'api.caliber.php';
 var api_route       = 'api.route.php';
-var api_operation   = 'api.caliber.php';
+var api_operation   = 'api.operation.php';
 
 $(document).ready(function(){
 
@@ -13,8 +13,6 @@ $(document).ready(function(){
     $btnCreateCaliber   = $('#btnCreateCaliber');
     $btnCloseCaliber    = $('#btnCloseCaliber');
     $btnSubmitCaliber   = $('#btnSubmitCaliber');
-
-    $btnCreateOperation = $('#btnCreateOperation');
 
     $btnCreateCaliber.click(function(){
         $dialogCaliber.fadeIn(300);
@@ -116,6 +114,58 @@ $(document).ready(function(){
         });
     });
 
+    $btnCreateOperation     = $('#btnCreateOperation');
+    $dialogOperation        = $('#dialogOperation');
+    $btnCloseOperation      = $('#btnCloseOperation');
+    $btnSubmitOperation     = $('#btnSubmitOperation');
+    $filterOperation        = $('#filterOperation');
+
+    $btnCreateOperation.click(function(){
+        $dialogOperation.fadeIn(300);
+        $filterOperation.fadeIn(100);
+    });
+
+    $btnCloseOperation.click(function(){
+        closeOperation();
+    });
+
+    function closeOperation(){
+        $dialogOperation.fadeOut(300);
+        $filterOperation.fadeOut(100);
+
+        $('#operation_name').val('');
+        $('#operation_description').val('');
+    }
+
+    $btnSubmitOperation.click(function(){
+        var name            = $('#operation_name').val();
+        var description     = $('#operation_description').val();
+
+        $.ajax({
+            url         :api_operation,
+            cache       :false,
+            dataType    :"json",
+            type        :"POST",
+            data:{
+                calling         :'operation',
+                action          :'create_operation',
+                name            :name,
+                description     :description,
+            },
+            error: function (request, status, error) {
+                console.log("Request Error");
+            }
+        }).done(function(data){
+            console.log(data);
+            closeOperation();
+            operationList(route_id);
+        });
+    });
+
+
+
+
+
 	// Open hidden container
 	$('#btn-special-list').click(function(){
 		$('#special-list').addClass('-show');
@@ -177,12 +227,15 @@ function caliberList(keyword){
 
         $.each(data.data.items,function(k,v){
 
-            nHtml +='<div class="caliber-items -status-'+v.caliber_status+'" data-id="'+v.caliber_id+'">';
+            nHtml +='<div class="box-items caliber-items" data-id="'+v.caliber_id+'">';
             nHtml +='<div class="detail">';
             nHtml +='<div class="name">'+v.caliber_code+''+v.caliber_family+'</div>';
-            nHtml +='<div class="info">Stdtime: '+v.caliber_stdtime+' Hrs/K - Route: '+v.route_name+'</div>';
+            nHtml +='<div class="info"><strong>Stdtime</strong> '+v.caliber_stdtime+' Hrs/K · <strong>Route</strong> '+v.route_name+'</div>';
             nHtml +='</div>';
-            nHtml +='<div class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></div>';
+            nHtml +='<div class="btn">Edit</div>';
+            if(v.caliber_status != 'active'){
+                nHtml +='<div class="btn enable">Enable</div>';
+            }
             nHtml +='</div>';
         });
 
@@ -215,12 +268,13 @@ function routeList(caliber_id){
 
         $.each(data.data.items,function(k,v){
 
-        	nHtml +='<div class="route-items" data-id="'+v.route_id+'">';
+        	nHtml +='<div class="box-items route-items" data-id="'+v.route_id+'">';
 			nHtml +='<div class="detail">';
 			nHtml +='<div class="name">'+v.route_name+'</div>';
-			nHtml +='<div class="info">'+v.route_total_operation+' Operations</div>';
+			nHtml +='<div class="info"><strong>Operation</strong> '+v.route_total_operation+'</div>';
 			nHtml +='</div>';
-			nHtml +='<div class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></div>';
+			nHtml +='<div class="btn enable">Edit</div>';
+            nHtml +='<div class="btn">Enable</div>';
 			nHtml +='</div>';
         });
 
@@ -253,14 +307,16 @@ function operationList(route_id){
 
         $.each(data.data.items,function(k,v){
 			if(v.operation_match_id == null){
-				nHtml +='<div class="operation-items -disable">';
-				nHtml +='<div class="detail">... '+v.operation_name+'</div>';
-				nHtml +='<div class="icon"><i class="fa fa-circle" aria-hidden="true"></i></div>';
+				nHtml +='<div class="box-items operation-items -disable">';
+				nHtml +='<div class="detail"><div class="name">'+v.operation_name+'</div><div class="info">Operation ID '+v.operation_id+'</div></div>';
+                nHtml +='<div class="btn">Edit</div>';
+				nHtml +='<div class="btn enable">Add</div>';
 				nHtml +='</div>';
 			}else{
-				nHtml +='<div class="operation-items">';
-				nHtml +='<div class="detail">'+v.operation_sort+'. '+v.operation_name+' '+v.operation_match_id+'</div>';
-				nHtml +='<div class="icon"><i class="fa fa-check-circle" aria-hidden="true"></i></div>';
+				nHtml +='<div class="box-items operation-items">';
+				nHtml +='<div class="detail"><div class="name">'+v.operation_sort+'. '+v.operation_name+' '+v.operation_match_id+'</div><div class="info">Operation ID '+v.operation_id+'</div></div>';
+                nHtml +='<div class="btn">Edit</div>';
+				nHtml +='<div class="btn">Remove</div>';
 				nHtml +='</div>';	
 			}
         });

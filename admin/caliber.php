@@ -101,6 +101,22 @@ $current_page['1'] = 'caliber';
 </div>
 <div class="dialog-filter" id="filterRoute"></div>
 
+<div class="dialog" id="dialogOperation">
+	<div class="control">
+		<div class="title">Create new operation</div>
+		<div class="btn" id="btnCloseOperation"><i class="fa fa-times" aria-hidden="true"></i></div>
+	</div>
+	<div class="input">
+		<label for="operation_name">Operation Name</label>
+		<input type="text" class="inputtext" id="operation_name">
+		<label for="operation_description">Description</label>
+		<input type="text" class="inputtext" id="operation_description">
+
+		<button class="btn-submit" id="btnSubmitOperation">Create</button>
+	</div>
+</div>
+<div class="dialog-filter" id="filterOperation"></div>
+
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/caliber.app.js"></script>
 </body>
