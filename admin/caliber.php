@@ -36,15 +36,15 @@ $current_page['1'] = 'caliber';
 <div class="caliber-head-fix">
 	<div class="topic">
 		<input type="text" class="input-text" id="caliber-search" placeholder="Enter caliber code...">
-		<span class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Caliber</span>
+		<span class="btn" id="btnCreateCaliber"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Caliber</span>
 	</div>
 	<div class="topic">
 		<span class="caption">ROUTE</span>
-		<span class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Route</span>
+		<span class="btn" id="btnCreateRoute"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Route</span>
 	</div>
 	<div class="topic">
 		<span class="caption">OPERATION</span>
-		<span class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Operation</span>
+		<span class="btn" id="btnCreateOperation"><i class="fa fa-plus-circle" aria-hidden="true"></i>Add Operation</span>
 	</div>
 </div>
 
@@ -64,6 +64,42 @@ $current_page['1'] = 'caliber';
 		<div class="intro">OPERATION</div>
 	</div>
 </div>
+
+<div class="dialog" id="dialogCaliber">
+	<div class="control">
+		<div class="title">Create new Cliber Code</div>
+		<div class="btn" id="btnCloseCaliber"><i class="fa fa-times" aria-hidden="true"></i></div>
+	</div>
+	<div class="input">
+		<label for="caliber_code">Caliber Code</label>
+		<input type="text" class="inputtext" id="caliber_code">
+		<label for="caliber_family">Family</label>
+		<input type="text" class="inputtext" id="caliber_family">
+		<label for="caliber_description">Description</label>
+		<input type="text" class="inputtext" id="caliber_description">
+		<label for="caliber_stdtime">Std.time (Hrs/K)</label>
+		<input type="text" class="inputtext" id="caliber_stdtime">
+
+		<button class="btn-submit" id="btnSubmitCaliber">Create</button>
+	</div>
+</div>
+<div class="dialog-filter" id="filterCaliber"></div>
+
+<div class="dialog">
+	<div class="control">
+		<div class="title">Create new Route</div>
+		<div class="btn" id="btnCloseRoute"><i class="fa fa-times" aria-hidden="true"></i></div>
+	</div>
+	<div class="input">
+		<label for="route_name">Route Name</label>
+		<input type="text" class="inputtext" id="route_name">
+		<label for="route_description">Description</label>
+		<input type="text" class="inputtext" id="route_description">
+
+		<button class="btn-submit">Create</button>
+	</div>
+</div>
+<div class="dialog-filter" id="filterRoute"></div>
 
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/caliber.app.js"></script>

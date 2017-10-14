@@ -10,6 +10,7 @@ if(!$user_online){
 
 // current page
 $current_page['1'] = 'index';
+$allmonth = $report->ListMonthData();
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -41,7 +42,17 @@ $current_page['1'] = 'index';
 <body>
 <?php include'header.php';?>
 <div class="page">
-	<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
+	<div class="list">
+		<?php $report->listAllHeader($user->line_default,array('type' => 'report-header-items','user_id' => $user->id));?>
+	</div>
+</div>
+
+<div class="navigation">
+	<div class="group">
+		<?php foreach ($allmonth as $var) {?>
+		<a href="#<?php echo $var['month_name'].$var['year']?>" class="items"><?php echo $var['month_name'].' '.$var['year']?></a>
+		<?php }?>
+	</div>
 </div>
 
 <!-- <script type="text/javascript" src="js/min/auto_hidden.min.js"></script> -->

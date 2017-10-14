@@ -1,4 +1,71 @@
+var api_link = 'api.caliber.php';
+
 $(document).ready(function(){
+
+    var caliber_id;
+    var route_id;
+    var operation_id;
+
+    $dialogCaliber      = $('#dialogCaliber');
+    $filterCaliber      = $('#filterCaliber');
+    $btnCreateCaliber   = $('#btnCreateCaliber');
+    $btnCloseCaliber    = $('#btnCloseCaliber');
+    $btnSubmitCaliber   = $('#btnSubmitCaliber');
+
+    $btnCreateRoute     = $('#btnCreateRoute');
+    $btnCreateOperation = $('#btnCreateOperation');
+
+    $btnCreateCaliber.click(function(){
+        $dialogCaliber.fadeIn(300);
+        $filterCaliber.fadeIn(100);
+    });
+
+    $btnCloseCaliber.click(function(){
+        closeCaliber();
+    });
+
+    function closeCaliber(){
+        $dialogCaliber.fadeOut(300);
+        $filterCaliber.fadeOut(100);
+
+        $('#caliber_code').val('');
+        $('#caliber_family').val('');
+        $('#caliber_description').val('');
+        $('#caliber_stdtime').val('');
+    }
+
+    $btnSubmitCaliber.click(function(){
+
+        var code            = $('#caliber_code').val();
+        var family          = $('#caliber_family').val();
+        var description     = $('#caliber_description').val();
+        var stdtime         = $('#caliber_stdtime').val();
+
+        console.log(code,family,description,stdtime);
+
+        $.ajax({
+            url         :api_link,
+            cache       :false,
+            dataType    :"json",
+            type        :"POST",
+            data:{
+                calling         :'caliber',
+                action          :'create',
+                code            :code,
+                description     :description,
+                family          :family,
+                stdtime         :stdtime,
+            },
+            error: function (request, status, error) {
+                console.log(request.responseText);
+            }
+        }).done(function(data){
+            console.log(data);
+            closeCaliber();
+            caliberList('');
+        });
+    });
+
 	// Open hidden container
 	$('#btn-special-list').click(function(){
 		$('#special-list').addClass('-show');
@@ -13,21 +80,24 @@ $(document).ready(function(){
 
 	// Selection Queue items
 	$(".col-container").on('click','.caliber-items',function(e){
-		var caliber_id = $(this).attr('data-id');
+		caliber_id = $(this).attr('data-id');
         $('.caliber-items').removeClass('-active');
         $(this).addClass('-active');
 
 		console.clear();
+        console.log('caliber',caliber_id);
 		$('#operation_list').html('<div class="intro">OPERATION</div>');
 		routeList(caliber_id);
 	});
 
 	$(".col-container").on('click','.route-items',function(e){
-		var route_id = $(this).attr('data-id');
+		route_id = $(this).attr('data-id');
         $('.route-items').removeClass('-active');
         $(this).addClass('-active');
 
 		console.clear();
+        console.log('caliber',caliber_id);
+        console.log('route',route_id);
 		operationList(route_id);
 	});
 });

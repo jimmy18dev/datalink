@@ -379,6 +379,7 @@ class ReportController extends ReportModel{
         if($option['type'] == 'report-header-items'){
         	$now = time();
         	$month_start = '';
+
             foreach ($data as $var){
             	$update = intval(strtotime($var['update_time']));
             	$update = ($now - $update);
@@ -395,6 +396,7 @@ class ReportController extends ReportModel{
             	
             	if($month_start != date('F Y', strtotime($var['report_date']))){
             		$month_start = date('F Y', strtotime($var['report_date']));
+            		$month_tag = str_replace(' ','',$month_start);
             		include'template/report/month.caption.items.php';
             	}
 

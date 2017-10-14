@@ -9,7 +9,12 @@ if($_POST['calling'] != ''){
 			switch ($_POST['action']) {
 				case 'create':
 					if(true){
-						$return_id = $caliber->createCaliber($_POST['code'],$_POST['name'],$_POST['description'],$_POST['family'],$_POST['hrs'],$_POST['remark']);
+						$code 			= $_POST['code'];
+						$description 	= $_POST['description'];
+						$family 		= $_POST['family'];
+						$stdtime 		= $_POST['stdtime'];
+
+						$return_id = $caliber->createCaliber($code,$description,$family,$stdtime);
 						
 						if(!empty($return_id) && $return_id != 0){
 							$message = 'register successful';

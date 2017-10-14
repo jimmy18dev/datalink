@@ -51,7 +51,6 @@ $current_page['2'] = 'caliber_code';
 				<?php echo $route->name;?> editing...
 				<?php }?>
 			</h1>
-			<p>เพราะชีวิตไม่ได้มีแค่รูปถ่ายและเราชอบไอเดียนี้ ขอร่วมเล่นเกมนี้ด้วยคน เราขอท้าทายเฟซบุ๊คด้วยการทดสอบเล็กๆเพื่อดูว่าใครบ้างที่จะอ่านโพสต์ข้อความที่ไม่มีรูปภาพ</p>
 		</div>
 		<div class="form-input">
 			<div class="input">
@@ -60,9 +59,9 @@ $current_page['2'] = 'caliber_code';
 
 				<textarea class="input-text input-textarea animated" id="description" placeholder="Add a description for this route"><?php echo $route->description;?></textarea>
 
-				<input type="hidden" id="route_id" value="<?php echo $route->id;?>">
+				<input type="text" id="route_id" value="<?php echo $route->id;?>">
 				<!-- You can't update caliner code! -->
-				<input type="hidden" id="caliber_id" value="<?php echo (empty($route->caliber_id)?$_GET['caliber']:$route->caliber_id);?>">
+				<input type="text" id="caliber_id" value="<?php echo (empty($route->caliber_id)?$_GET['caliber']:$route->caliber_id);?>">
 			</div>
 			<div class="control">
 				<?php if(empty($route->id)){?>

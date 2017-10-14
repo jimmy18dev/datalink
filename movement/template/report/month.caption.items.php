@@ -1,1 +1,1 @@
-<div class="month-caption-items"><?php echo $month_start;?></div>
+<div class="month-caption-items" id="<?php echo $month_tag;?>"><?php echo $month_start;?></div>

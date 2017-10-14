@@ -2,10 +2,9 @@
 class CaliberModel extends Database{
 
 	// Caliber Code
-	public function create($code,$name,$description,$family){
-		parent::query('INSERT INTO RTH_CaliberCode(code,name,description,family,create_time,update_time,status) VALUE(:code,:name,:description,:family,:create_time,:update_time,:status)');
+	public function create($code,$description,$family){
+		parent::query('INSERT INTO RTH_CaliberCode(code,description,family,create_time,update_time,status) VALUE(:code,:description,:family,:create_time,:update_time,:status)');
 		parent::bind(':code', 			$code);
-		parent::bind(':name', 			$name);
 		parent::bind(':description', 	$description);
 		parent::bind(':family', 		$family);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));
@@ -85,11 +84,10 @@ class CaliberModel extends Database{
 	/////////////////////////////////////////////////////////
 	// Standard Time ////////////////////////////////////////
 	/////////////////////////////////////////////////////////
-	public function createStandardTime($caliber_id,$hrs,$remark){
-		parent::query('INSERT INTO RTH_StandardTime(caliber_id,hrs,remark,create_time,update_time,type) VALUE(:caliber_id,:hrs,:remark,:create_time,:update_time,:type)');
+	public function createStandardTime($caliber_id,$hrs){
+		parent::query('INSERT INTO RTH_StandardTime(caliber_id,hrs,create_time,update_time,type) VALUE(:caliber_id,:hrs,:create_time,:update_time,:type)');
 		parent::bind(':caliber_id', 	$caliber_id);
 		parent::bind(':hrs', 			$hrs);
-		parent::bind(':remark', 		$remark);
 		parent::bind(':create_time',	date('Y-m-d H:i:s'));
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::bind(':type', 			'primary');

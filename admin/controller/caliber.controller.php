@@ -34,11 +34,11 @@ class CaliberController extends CaliberModel{
         }
     }
 
-	public function createCaliber($code,$name,$description,$family,$hrs,$remark){
-		$caliber_id = parent::create($code,$name,$description,$family);
+	public function createCaliber($code,$description,$family,$stdtime){
+		$caliber_id = parent::create($code,$description,$family);
 
 		// Create standrad time
-		parent::createStandardTime($caliber_id,$hrs,$remark);
+		parent::createStandardTime($caliber_id,$stdtime);
 		return $caliber_id;
 	}
 
