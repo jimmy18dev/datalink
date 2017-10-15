@@ -15,11 +15,10 @@ class CaliberModel extends Database{
 	}
 	public function already($code){}
 
-	public function edit($id,$code,$name,$description,$family){
-		parent::query('UPDATE RTH_CaliberCode SET code = :code,name = :name,description = :description,family = :family,update_time = :update_time WHERE id = :id');
+	public function edit($id,$code,$family,$description){
+		parent::query('UPDATE RTH_CaliberCode SET code = :code,description = :description,family = :family,update_time = :update_time WHERE id = :id');
 		parent::bind(':id', 			$id);
 		parent::bind(':code', 			$code);
-		parent::bind(':name', 			$name);
 		parent::bind(':description', 	$description);
 		parent::bind(':family', 		$family);
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));

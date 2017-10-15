@@ -42,9 +42,10 @@ class CaliberController extends CaliberModel{
 		return $caliber_id;
 	}
 
-	public function editCaliber($id,$code,$name,$description,$family,$hrs,$remark){
-		parent::edit($id,$code,$name,$description,$family);
+	public function editCaliber($id,$code,$family,$description,$hrs){
+		parent::edit($id,$code,$family,$description);
 
+		// Clear all standrad time
 		parent::setStdTimeToSecondary($id);
 		// Create standrad time
 		parent::createStandardTime($id,$hrs,$remark);
@@ -75,6 +76,8 @@ class CaliberController extends CaliberModel{
 
 		$this->total_route 		= parent::countRouteinCaliber($this->id);
 		$this->has_primary_route = parent::hasPrimaryRoute($this->id);
+
+		return $dataset;
 	}
 
 	public function listAllCalibers($option){

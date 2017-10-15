@@ -62,7 +62,7 @@ $current_page['1'] = 'caliber';
 
 <div class="dialog" id="dialogCaliber">
 	<div class="control">
-		<div class="title">Create new Cliber Code</div>
+		<div class="title">Caliber Code</div>
 		<div class="btn" id="btnCloseCaliber"><i class="fa fa-times" aria-hidden="true"></i></div>
 	</div>
 	<div class="input">
@@ -74,6 +74,7 @@ $current_page['1'] = 'caliber';
 		<input type="text" class="inputtext" id="caliber_description">
 		<label for="caliber_stdtime">Std.time (Hrs/K)</label>
 		<input type="text" class="inputtext" id="caliber_stdtime">
+		<input type="hidden" class="inputtext" id="caliber_id">
 
 		<button class="btn-submit" id="btnSubmitCaliber">Create</button>
 	</div>
@@ -82,7 +83,7 @@ $current_page['1'] = 'caliber';
 
 <div class="dialog" id="dialogRoute">
 	<div class="control">
-		<div class="title">Create new Route</div>
+		<div class="title">Route</div>
 		<div class="btn" id="btnCloseRoute"><i class="fa fa-times" aria-hidden="true"></i></div>
 	</div>
 	<div class="input">
@@ -98,7 +99,7 @@ $current_page['1'] = 'caliber';
 
 <div class="dialog" id="dialogOperation">
 	<div class="control">
-		<div class="title">Create new operation</div>
+		<div class="title">Operation</div>
 		<div class="btn" id="btnCloseOperation"><i class="fa fa-times" aria-hidden="true"></i></div>
 	</div>
 	<div class="input">

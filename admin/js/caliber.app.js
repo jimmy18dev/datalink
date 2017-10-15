@@ -19,6 +19,7 @@ $(document).ready(function(){
     $btnCreateCaliber.click(function(){
         $dialogCaliber.fadeIn(300);
         $filterCaliber.fadeIn(100);
+        $btnSubmitCaliber.html('Create');
     });
 
     $btnCloseCaliber.click(function(){
@@ -37,12 +38,11 @@ $(document).ready(function(){
 
     $btnSubmitCaliber.click(function(){
 
+        var id              = $('#caliber_id').val();
         var code            = $('#caliber_code').val();
         var family          = $('#caliber_family').val();
         var description     = $('#caliber_description').val();
         var stdtime         = $('#caliber_stdtime').val();
-
-        console.log(code,family,description,stdtime);
 
         $.ajax({
             url         :api_caliber,
@@ -51,7 +51,8 @@ $(document).ready(function(){
             type        :"POST",
             data:{
                 calling         :'caliber',
-                action          :'create',
+                action          :'submit',
+                id              :id,
                 code            :code,
                 description     :description,
                 family          :family,
@@ -226,6 +227,39 @@ $(document).ready(function(){
         }).error();
     });
 
+    $(".col-container").on('click','.btn-caliber-edit',function(e){
+        caliber_id      = $(this).parent().attr('data-id');
+
+        console.log(caliber_id);
+
+        $.ajax({
+            url         :api_caliber,
+            cache       :false,
+            dataType    :"json",
+            type        :"GET",
+            data:{
+                calling         :'caliber',
+                action          :'get',
+                caliber_id      :caliber_id,
+            },
+            error: function (request, status, error) {
+                console.log(request);
+            }
+        }).done(function(data){
+            console.log(data);
+
+            $btnSubmitCaliber.html('Save');
+            $dialogCaliber.fadeIn(300);
+            $filterCaliber.fadeIn(100);
+
+            $('#caliber_code').val(data.data.dataset.code);
+            $('#caliber_family').val(data.data.dataset.family);
+            $('#caliber_description').val(data.data.dataset.description);
+            $('#caliber_stdtime').val(data.data.dataset.standard_hrs);
+            $('#caliber_id').val(data.data.dataset.id);
+        });
+    });
+
     $(".col-container").on('click','.btn-caliber-enable',function(e){
         caliber_id      = $(this).parent().attr('data-id');
         caliber_name    = $(this).parent().children('.detail').children('.name').html();
@@ -332,10 +366,10 @@ function caliberList(keyword){
 
             nHtml +='<div class="box-items caliber-items" data-id="'+v.caliber_id+'">';
             nHtml +='<div class="detail">';
-            nHtml +='<div class="name">'+v.caliber_code+''+v.caliber_family+'</div>';
+            nHtml +='<div class="name">'+v.caliber_code+' '+v.caliber_family+'</div>';
             nHtml +='<div class="info"><strong>Stdtime</strong> '+v.caliber_stdtime+' Hrs/K · <strong>Route</strong> '+v.route_name+'</div>';
             nHtml +='</div>';
-            nHtml +='<div class="btn">Edit</div>';
+            nHtml +='<div class="btn btn-caliber-edit">Edit</div>';
             if(v.caliber_status != 'active'){
                 nHtml +='<div class="btn enable btn-caliber-enable">Enable</div>';
             }
