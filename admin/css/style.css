@@ -2398,28 +2398,32 @@ body.bg {
   top: 0px;
   left: 0px;
   width: 81%;
-  margin-left: 19%;
+  margin-left: 15%;
+  padding-left: 4%;
+  height: 60px;
   float: left;
   display: inline-block;
   z-index: 99;
+  background: #FFFFFF;
 }
 .caliber-head-fix .topic {
   width: 30.33%;
   margin-right: 3%;
-  padding: 3% 0%;
+  margin-top: 1%;
   float: left;
   display: inline-block;
   color: #666666;
 }
 .caliber-head-fix .topic .input-text {
+  padding: 10px;
   float: left;
   display: inline-block;
-  font-size: 1em;
+  font-size: 0.8em;
   border: 0px;
-  border-bottom: 1px solid #CCCCCC;
   line-height: 1em;
   background: #EEEEEE;
   color: #333333;
+  border-radius: 3px;
 }
 .caliber-head-fix .topic .caption {
   float: left;
@@ -2431,7 +2435,8 @@ body.bg {
   display: inline-block;
   background: #003399;
   color: #FFFFFF;
-  padding: 5px 10px;
+  padding: 10px;
+  margin: 2px 0px;
   font-size: 0.8em;
   border-radius: 3px;
   font-weight: bold;
@@ -2443,27 +2448,60 @@ body.bg {
   position: fixed;
   top: 0%;
   left: 0%;
-  width: 25%;
-  height: 98%;
-  margin-bottom: 2%;
+  width: 26.5%;
+  margin-left: 1%;
+  height: 100%;
   float: left;
   display: inline-block;
   overflow-y: scroll;
 }
+.col-container:nth-child(2) {
+  left: 15%;
+}
 .col-container:nth-child(3) {
-  left: 19%;
+  left: 43.33%;
 }
 .col-container:nth-child(4) {
-  left: 46%;
+  left: 71.66%;
 }
-.col-container:nth-child(5) {
-  left: 73%;
+.col-container .head {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  padding: 5% 0%;
+}
+.col-container .head .btn {
+  float: right;
+  display: inline-block;
+  background: #003399;
+  color: #FFFFFF;
+  padding: 7px 10px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.col-container .head .btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
+}
+.col-container .head .inputtext {
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+  border: 0px;
+  padding: 5px;
+  margin: 0px;
+  line-height: 1.3em;
+}
+.col-container .head .caption {
+  float: left;
+  display: inline-block;
+  padding: 6px 0px;
 }
 .col-container .result {
   width: 100%;
   float: left;
   display: inline-block;
-  margin-top: 25%;
 }
 .col-container .result .loading {
   width: 100%;

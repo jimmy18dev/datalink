@@ -115,58 +115,58 @@ function deleteCaliber(caliber_id){
     }).error();
 }
 
-function activeCaliber(caliber_id,caliber_name){
-    var href            = 'api.caliber.php';
-    var agree           = confirm('Are you sure you want set this '+caliber_name+' to active ?');
-    if(!agree){ return false; }
+// function activeCaliber(caliber_id,caliber_name){
+//     var href            = 'api.caliber.php';
+//     var agree           = confirm('Are you sure you want set this '+caliber_name+' to active ?');
+//     if(!agree){ return false; }
 
-    $('#loading-box').fadeIn(300);
+//     $('#loading-box').fadeIn(300);
 
-    $.ajax({
-        url         :href,
-        cache       :false,
-        dataType    :"json",
-        type        :"POST",
-        data:{
-            calling         :'caliber',
-            action          :'setActive',
-            caliber_id      :caliber_id,
-        },
-        error: function (request, status, error) {
-            console.log("Request Error");
-        }
-    }).done(function(data){
-        console.log('Return: '+data.message);
-        setTimeout(function(){
-            location.reload();
-        },1000);
-    }).error();
-}
+//     $.ajax({
+//         url         :href,
+//         cache       :false,
+//         dataType    :"json",
+//         type        :"POST",
+//         data:{
+//             calling         :'caliber',
+//             action          :'setActive',
+//             caliber_id      :caliber_id,
+//         },
+//         error: function (request, status, error) {
+//             console.log("Request Error");
+//         }
+//     }).done(function(data){
+//         console.log('Return: '+data.message);
+//         setTimeout(function(){
+//             location.reload();
+//         },1000);
+//     }).error();
+// }
 
-function deactiveCaliber(caliber_id,caliber_name){
-    var href            = 'api.caliber.php';
-    var agree           = confirm('Are you sure you want set this '+caliber_name+' to deactive ?');
-    if(!agree){ return false; }
+// function deactiveCaliber(caliber_id,caliber_name){
+//     var href            = 'api.caliber.php';
+//     var agree           = confirm('Are you sure you want set this '+caliber_name+' to deactive ?');
+//     if(!agree){ return false; }
 
-    $('#loading-box').fadeIn(300);
+//     $('#loading-box').fadeIn(300);
 
-    $.ajax({
-        url         :href,
-        cache       :false,
-        dataType    :"json",
-        type        :"POST",
-        data:{
-            calling         :'caliber',
-            action          :'setDeactive',
-            caliber_id      :caliber_id,
-        },
-        error: function (request, status, error) {
-            console.log("Request Error");
-        }
-    }).done(function(data){
-        console.log('Return: '+data.message);
-        setTimeout(function(){
-            location.reload();
-        },1000);
-    }).error();
-}
+//     $.ajax({
+//         url         :href,
+//         cache       :false,
+//         dataType    :"json",
+//         type        :"POST",
+//         data:{
+//             calling         :'caliber',
+//             action          :'setDeactive',
+//             caliber_id      :caliber_id,
+//         },
+//         error: function (request, status, error) {
+//             console.log("Request Error");
+//         }
+//     }).done(function(data){
+//         console.log('Return: '+data.message);
+//         setTimeout(function(){
+//             location.reload();
+//         },1000);
+//     }).error();
+// }

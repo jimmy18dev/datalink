@@ -2675,30 +2675,33 @@
 	top: 0px;
 	left: 0px;
 	width: 81%;
-	margin-left: 19%;
+	margin-left: 15%;
+	padding-left: 4%;
+	height: 60px;
 	float: left;
 	display: inline-block;
 	z-index: 99;
+	background: #FFFFFF;
 
 	.topic{
 		width: 30.33%;
 		margin-right: 3%;
-		padding: 3% 0%;
+		margin-top: 1%;
 		float: left;
 		display: inline-block;
 		color: #666666;
 
 		.input-text{
+			padding: 10px;
 			float: left;
 			display: inline-block;
-			font-size: 1em;
+			font-size: 0.8em;
 			border: 0px;
-			border-bottom: 1px solid #CCCCCC;
 			line-height: 1em;
 			background: #EEEEEE;
 			color: #333333;
+			border-radius: 3px;
 		}
-
 		.caption{
 			float: left;
 			display: inline-block;
@@ -2709,7 +2712,8 @@
 			display: inline-block;
 			background: @primary_color;
 			color: #FFFFFF;
-			padding: 5px 10px;
+			padding: 10px;
+			margin: 2px 0px;
 			font-size: 0.8em;
 			border-radius: 3px;
 			font-weight: bold;
@@ -2725,22 +2729,60 @@
 	position: fixed;
 	top: 0%;
 	left: 0%;
-	width: 25%;
-	height: 98%;
-	margin-bottom: 2%;
+	width: 26.5%;
+	margin-left: 1%;
+	height: 100%;
 	float: left;
 	display: inline-block;
 	overflow-y: scroll;
 
-	&:nth-child(3){ left: 19%; }
-	&:nth-child(4){ left: 46%; }
-	&:nth-child(5){ left: 73%; }
+	&:nth-child(2){ left: 15%; }
+	&:nth-child(3){ left: 15%+28.33%; }
+	&:nth-child(4){ left: 15%+28.33%+28.33%; }
+
+	.head{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		padding: 5% 0%;
+
+		.btn{
+			float: right;
+			display: inline-block;
+			background: @primary_color;
+			color: #FFFFFF;
+			padding: 7px 10px;
+			border-radius: 3px;
+			font-size: 0.8em;
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+
+			&:hover{
+				cursor: pointer;
+				box-shadow: 1px 1px 15px rgba(0,0,0,0.3);
+			}
+		}
+
+		.inputtext{
+			float: left;
+			display: inline-block;
+			font-size: 0.8em;
+			border: 0px;
+			padding: 5px;
+			margin: 0px;
+			line-height: 1.3em;
+		}
+
+		.caption{
+			float: left;
+			display: inline-block;
+			padding: 6px 0px;
+		}
+	}
 
 	.result{
 		width: 100%;
 		float: left;
 		display: inline-block;
-		margin-top: 25%;
 
 		.loading{
 			width: 100%;

@@ -5,6 +5,7 @@ var api_operation   = 'api.operation.php';
 $(document).ready(function(){
 
     var caliber_id;
+    var caliber_name;
     var route_id;
     var operation_id;
 
@@ -178,6 +179,32 @@ $(document).ready(function(){
 
     caliberList('');
 
+    $(".col-container").on('click','.btn-caliber-enable',function(e){
+        caliber_id      = $(this).parent().attr('data-id');
+        caliber_name    = $(this).parent().children('.detail').children('.name').html();
+
+        var href            = 'api.caliber.php';
+        var agree           = confirm('Are you sure you want set this '+caliber_name+' to Active ?');
+        if(!agree){ return false; }
+
+        $.ajax({
+            url         :api_caliber,
+            cache       :false,
+            dataType    :"json",
+            type        :"POST",
+            data:{
+                calling         :'caliber',
+                action          :'setActive',
+                caliber_id      :caliber_id,
+            },
+            error: function (request, status, error) {
+                console.log("Request Error");
+            }
+        }).done(function(data){
+            console.log(data);
+            caliberList('');
+        });
+    });
 	// Selection Queue items
 	$(".col-container").on('click','.caliber-items',function(e){
 		caliber_id = $(this).attr('data-id');
@@ -216,7 +243,7 @@ function caliberList(keyword){
         data:{
             calling     :'caliber',
             action      :'list_caliber',
-            keyword  :keyword,
+            keyword     :keyword,
         },
         error: function (request, status, error) {
             console.log("Request Error");
@@ -234,7 +261,7 @@ function caliberList(keyword){
             nHtml +='</div>';
             nHtml +='<div class="btn">Edit</div>';
             if(v.caliber_status != 'active'){
-                nHtml +='<div class="btn enable">Enable</div>';
+                nHtml +='<div class="btn enable btn-caliber-enable">Enable</div>';
             }
             nHtml +='</div>';
         });
@@ -273,8 +300,8 @@ function routeList(caliber_id){
 			nHtml +='<div class="name">'+v.route_name+'</div>';
 			nHtml +='<div class="info"><strong>Operation</strong> '+v.route_total_operation+'</div>';
 			nHtml +='</div>';
-			nHtml +='<div class="btn enable">Edit</div>';
-            nHtml +='<div class="btn">Enable</div>';
+			nHtml +='<div class="btn">Edit</div>';
+            nHtml +='<div class="btn enable btn-route-enable">Primary</div>';
 			nHtml +='</div>';
         });
 
@@ -324,5 +351,33 @@ function operationList(route_id){
         $('#operation_list').html(nHtml);
         nHtml = '';
 
+    }).error();
+}
+
+function deactiveCaliber(caliber_id,caliber_name){
+    var href            = 'api.caliber.php';
+    var agree           = confirm('Are you sure you want set this '+caliber_name+' to deactive ?');
+    if(!agree){ return false; }
+
+    $('#loading-box').fadeIn(300);
+
+    $.ajax({
+        url         :href,
+        cache       :false,
+        dataType    :"json",
+        type        :"POST",
+        data:{
+            calling         :'caliber',
+            action          :'setDeactive',
+            caliber_id      :caliber_id,
+        },
+        error: function (request, status, error) {
+            console.log("Request Error");
+        }
+    }).done(function(data){
+        console.log('Return: '+data.message);
+        setTimeout(function(){
+            location.reload();
+        },1000);
     }).error();
 }

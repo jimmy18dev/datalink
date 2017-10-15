@@ -33,33 +33,28 @@ $current_page['1'] = 'caliber';
 <body>
 <?php include'header.php';?>
 
-<div class="caliber-head-fix">
-	<div class="topic">
-		<input type="text" class="input-text" id="caliber-search" placeholder="Enter caliber code...">
-		<span class="btn" id="btnCreateCaliber">Add Caliber</span>
-	</div>
-	<div class="topic">
-		<span class="caption">ROUTE</span>
-		<span class="btn" id="btnCreateRoute">Add Route</span>
-	</div>
-	<div class="topic">
-		<span class="caption">OPERATION</span>
-		<span class="btn" id="btnCreateOperation">Add Operation</span>
-	</div>
-</div>
-
 <!-- Table -->
 <div class="col-container">
+	<div class="head">
+		<input type="text" class="inputtext" id="caliber-search" placeholder="Search Caliber">
+		<span class="btn" id="btnCreateCaliber">Add Caliber</span>
+	</div>
 	<div class="result" id="caliber_list"></div>
 </div>
 
 <div class="col-container">
+	<div class="head">
+		<span class="btn" id="btnCreateRoute">Add Route</span>
+	</div>
 	<div class="result" id="route_list">
 		<div class="intro">ROUTE</div>
 	</div>
 </div>
 
 <div class="col-container">
+	<div class="head">
+		<span class="btn" id="btnCreateOperation">Add Operation</span>
+	</div>
 	<div class="result" id="operation_list">
 		<div class="intro">OPERATION</div>
 	</div>
