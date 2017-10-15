@@ -94,29 +94,29 @@ function deleteOperation(operation_id){
 }
 
 // Connect Operation to Route
-function createMatching(operation_id){
-    var href        = 'api.operation.php';
-    var route_id    = $('#route_id').val();
+// function createMatching(operation_id){
+//     var href        = 'api.operation.php';
+//     var route_id    = $('#route_id').val();
 
-    $.ajax({
-        url         :href,
-        cache       :false,
-        dataType    :"json",
-        type        :"POST",
-        data:{
-            calling         :'operation',
-            action          :'create_macthing',
-            route_id        :route_id,
-            operation_id    :operation_id,
-        },
-        error: function (request, status, error) {
-            console.log("Request Error");
-        }
-    }).done(function(data){
-        console.log('Return: '+data.message);
-        window.location = 'operation.php?route='+route_id;
-    }).error();
-}
+//     $.ajax({
+//         url         :href,
+//         cache       :false,
+//         dataType    :"json",
+//         type        :"POST",
+//         data:{
+//             calling         :'operation',
+//             action          :'create_macthing',
+//             route_id        :route_id,
+//             operation_id    :operation_id,
+//         },
+//         error: function (request, status, error) {
+//             console.log("Request Error");
+//         }
+//     }).done(function(data){
+//         console.log('Return: '+data.message);
+//         window.location = 'operation.php?route='+route_id;
+//     }).error();
+// }
 
 function swapMatch(operation_id){
     var href            = 'api.operation.php';

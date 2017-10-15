@@ -8,6 +8,7 @@ $(document).ready(function(){
     var caliber_name;
     var route_id;
     var operation_id;
+    var operation_name;
 
     $dialogCaliber      = $('#dialogCaliber');
     $filterCaliber      = $('#filterCaliber');
@@ -178,6 +179,52 @@ $(document).ready(function(){
     });
 
     caliberList('');
+
+    $(".col-container").on('click','.btn-operation-matching',function(e){
+        operation_id = $(this).parent().attr('data-id');
+
+        $.ajax({
+            url         :api_operation,
+            cache       :false,
+            dataType    :"json",
+            type        :"POST",
+            data:{
+                calling         :'operation',
+                action          :'create_macthing',
+                route_id        :route_id,
+                operation_id    :operation_id,
+            },
+            error: function (request, status, error) {
+                console.log("Request Error");
+            }
+        }).done(function(data){
+            console.log(data);
+            operationList(route_id);
+        }).error();
+    });
+
+    $(".col-container").on('click','.btn-operation-unmatch',function(e){
+        operation_id = $(this).parent().attr('data-id');
+
+        $.ajax({
+            url         :api_operation,
+            cache       :false,
+            dataType    :"json",
+            type        :"POST",
+            data:{
+                calling         :'operation',
+                action          :'remove_macthing',
+                route_id        :route_id,
+                operation_id    :operation_id,
+            },
+            error: function (request, status, error) {
+                console.log("Request Error");
+            }
+        }).done(function(data){
+            console.log(data);
+            operationList(route_id);
+        }).error();
+    });
 
     $(".col-container").on('click','.btn-caliber-enable',function(e){
         caliber_id      = $(this).parent().attr('data-id');
@@ -365,16 +412,16 @@ function operationList(route_id){
 
         $.each(data.data.items,function(k,v){
 			if(v.operation_match_id == null){
-				nHtml +='<div class="box-items operation-items -disable">';
+				nHtml +='<div class="box-items operation-items -disable" data-id="'+v.operation_id+'">';
 				nHtml +='<div class="detail"><div class="name">'+v.operation_name+'</div><div class="info">Operation ID '+v.operation_id+'</div></div>';
                 nHtml +='<div class="btn">Edit</div>';
-				nHtml +='<div class="btn enable">Add</div>';
+				nHtml +='<div class="btn enable btn-operation-matching">Add</div>';
 				nHtml +='</div>';
 			}else{
-				nHtml +='<div class="box-items operation-items">';
+				nHtml +='<div class="box-items operation-items" data-id="'+v.operation_id+'">';
 				nHtml +='<div class="detail"><div class="name">'+v.operation_sort+'. '+v.operation_name+' '+v.operation_match_id+'</div><div class="info">Operation ID '+v.operation_id+'</div></div>';
                 nHtml +='<div class="btn">Edit</div>';
-				nHtml +='<div class="btn">Remove</div>';
+				nHtml +='<div class="btn btn-operation-unmatch">Remove</div>';
 				nHtml +='</div>';	
 			}
         });

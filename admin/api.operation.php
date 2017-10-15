@@ -56,17 +56,14 @@ if($_POST['calling'] != ''){
 				case 'create_macthing':
 					if(true){
 						$return_id = $operation->connectOperationAndRoute($_POST['route_id'],$_POST['operation_id']);
-						
-						// if(!empty($user_id) && $user_id != 0){
-						// 	$return_message = 'register successful';
-						// 	$register_state = true;
-
-						// 	// Autologin after register successful
-						// 	// $login_state = $people->login($_POST['email'],$_POST['password'],'');
-						// }else{
-						// 	$return_message = 'register fail!';
-						// 	$register_state = false;
-						// }
+						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
+					}else{
+						$api->errorMessage('signature error!');
+					}
+					break;
+				case 'remove_macthing':
+					if(true){
+						$return_id = $operation->removeOperationOnRoute($_POST['route_id'],$_POST['operation_id']);
 						$api->successMessage('Return:'.$return_message.':'.$_POST['id'],$register_state,'');
 					}else{
 						$api->errorMessage('signature error!');

@@ -39,14 +39,12 @@ class OperationModel extends Database{
 		parent::execute();
 	}
 
-
-	
 	// List all operation and checking operation in route id.
 	public function listOperationAllInRoute($route_id){
 		parent::query('SELECT operation.id operation_id,operation.name operation_name,operation.description operation_description,operation.create_time operation_create_time,operation.update_time operation_update_time,operation.type operation_type,operation.status operation_status,rmo.id operation_match_id,rmo.sort operation_sort 
 			FROM RTH_Operation AS operation 
 			LEFT JOIN RTH_RouteMatchOperation AS rmo ON rmo.operation_id = operation.id AND rmo.route_id = :route_id 
-			ORDER BY rmo.id DESC');
+			ORDER BY rmo.sort ASC');
 		parent::bind(':route_id', 	$route_id);
 		parent::execute();
 		$dataset = parent::resultset();
