@@ -26,6 +26,8 @@ class OperationController extends OperationModel{
 		$this->update_time 	= $dataset['update_time'];
 		$this->type 		= $dataset['type'];
 		$this->status 		= $dataset['status'];
+
+        return $dataset;
 	}
 
 

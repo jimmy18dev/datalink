@@ -29,10 +29,9 @@ class RouteModel extends Database{
 	}
 
 	// ROUTE EDITING
-	public function edit($route_id,$code,$name,$description){
-		parent::query('UPDATE RTH_Route SET code = :code,name = :name,description = :description,update_time = :update_time WHERE id = :route_id');
+	public function edit($route_id,$name,$description){
+		parent::query('UPDATE RTH_Route SET name = :name,description = :description,update_time = :update_time WHERE id = :route_id');
 		parent::bind(':route_id', 		$route_id);
-		parent::bind(':code', 			$code);
 		parent::bind(':name', 			$name);
 		parent::bind(':description', 	$description);
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));

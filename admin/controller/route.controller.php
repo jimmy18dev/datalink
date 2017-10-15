@@ -26,6 +26,8 @@ class RouteController extends RouteModel{
 		$this->type 			= $dataset['type'];
 		$this->status 			= $dataset['status'];
 		$this->total_operation 	= $dataset['total_operation'];
+
+		return $dataset;
 	}
 
 
@@ -33,8 +35,8 @@ class RouteController extends RouteModel{
 		$route_id = parent::create($caliber_id,$name,$description);
 		return $route_id;
 	}
-	public function editRoute($route_id,$code,$name,$description){
-		parent::edit($route_id,$code,$name,$description);
+	public function editRoute($route_id,$name,$description){
+		parent::edit($route_id,$name,$description);
 	}
 
 	public function listRouteInCaliber($caliber_id,$option){

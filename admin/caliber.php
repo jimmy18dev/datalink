@@ -91,6 +91,7 @@ $current_page['1'] = 'caliber';
 		<input type="text" class="inputtext" id="route_name">
 		<label for="route_description">Description</label>
 		<input type="text" class="inputtext" id="route_description">
+		<input type="text" class="inputtext" id="route_id">
 
 		<button class="btn-submit" id="btnSubmitRoute">Create</button>
 	</div>
@@ -107,6 +108,7 @@ $current_page['1'] = 'caliber';
 		<input type="text" class="inputtext" id="operation_name">
 		<label for="operation_description">Description</label>
 		<input type="text" class="inputtext" id="operation_description">
+		<input type="hidden" class="inputtext" id="operation_id">
 
 		<button class="btn-submit" id="btnSubmitOperation">Create</button>
 	</div>

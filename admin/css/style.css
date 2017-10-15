@@ -2530,7 +2530,7 @@ body.bg {
   width: 100%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
+  background: #FAFAFA;
   margin-bottom: 2%;
   border-radius: 3px;
   font-size: 1em;
@@ -2541,7 +2541,8 @@ body.bg {
   cursor: pointer;
 }
 .col-container .result .box-items.-active {
-  background: #FAFAFA;
+  box-shadow: none;
+  background: #FFFFFF;
 }
 .col-container .result .box-items .detail {
   width: 64%;

@@ -75,6 +75,7 @@ $(document).ready(function(){
     $filterRoute        = $('#filterRoute');
 
     $btnCreateRoute.click(function(){
+        $btnSubmitRoute.html('Create');
         $dialogRoute.fadeIn(300);
         $filterRoute.fadeIn(100);
     });
@@ -92,6 +93,7 @@ $(document).ready(function(){
     }
 
     $btnSubmitRoute.click(function(){
+        var id              = $('#route_id').val();
         var name            = $('#route_name').val();
         var description     = $('#route_description').val();
 
@@ -102,10 +104,11 @@ $(document).ready(function(){
             type        :"POST",
             data:{
                 calling         :'route',
-                action          :'create_route',
-                caliber_id      :caliber_id,
+                action          :'submit',
+                id              :id,
                 name            :name,
                 description     :description,
+                caliber_id      :caliber_id,
             },
             error: function (request, status, error) {
                 console.log("Request Error");
@@ -124,6 +127,7 @@ $(document).ready(function(){
     $filterOperation        = $('#filterOperation');
 
     $btnCreateOperation.click(function(){
+        $btnSubmitOperation.html('Create');
         $dialogOperation.fadeIn(300);
         $filterOperation.fadeIn(100);
     });
@@ -141,6 +145,7 @@ $(document).ready(function(){
     }
 
     $btnSubmitOperation.click(function(){
+        var id              = $('#operation_id').val();
         var name            = $('#operation_name').val();
         var description     = $('#operation_description').val();
 
@@ -151,12 +156,13 @@ $(document).ready(function(){
             type        :"POST",
             data:{
                 calling         :'operation',
-                action          :'create_operation',
+                action          :'submit',
+                id              :id,
                 name            :name,
                 description     :description,
             },
             error: function (request, status, error) {
-                console.log("Request Error");
+                console.log(request);
             }
         }).done(function(data){
             console.log(data);
@@ -201,7 +207,7 @@ $(document).ready(function(){
         }).done(function(data){
             console.log(data);
             operationList(route_id);
-        }).error();
+        });
     });
 
     $(".col-container").on('click','.btn-operation-unmatch',function(e){
@@ -313,6 +319,64 @@ $(document).ready(function(){
             routeList(caliber_id);
         }).error();
     });
+    $(".col-container").on('click','.btn-route-edit',function(e){
+        route_id        = $(this).parent().attr('data-id');
+
+        $.ajax({
+            url         :api_route,
+            cache       :false,
+            dataType    :"json",
+            type        :"GET",
+            data:{
+                calling         :'route',
+                action          :'get',
+                route_id        :route_id,
+            },
+            error: function (request, status, error) {
+                console.log("Request Error");
+            }
+        }).done(function(data){
+            console.log(data);
+
+            $btnSubmitRoute.html('Save');
+            $dialogRoute.fadeIn(300);
+            $filterRoute.fadeIn(100);
+
+            $('#route_id').val(data.data.dataset.id);
+            $('#route_name').val(data.data.dataset.name);
+            $('#route_description').val(data.data.dataset.description);
+        }).error();
+    });
+
+    $(".col-container").on('click','.btn-operation-edit',function(e){
+        operation_id = $(this).parent().attr('data-id');
+
+        $.ajax({
+            url         :api_operation,
+            cache       :false,
+            dataType    :"json",
+            type        :"GET",
+            data:{
+                calling         :'operation',
+                action          :'get',
+                operation_id    :operation_id,
+            },
+            error: function (request, status, error) {
+                console.log(request);
+            }
+        }).done(function(data){
+            console.log(data);
+            $btnSubmitOperation.html('Save');
+            $dialogOperation.fadeIn(300);
+            $filterOperation.fadeIn(100);
+
+            $('#operation_id').val(data.data.dataset.id);
+            $('#operation_name').val(data.data.dataset.name);
+            $('#operation_description').val(data.data.dataset.description);
+        }).error();
+    });
+
+
 	// Selection Queue items
 	$(".col-container").on('click','.caliber-items',function(e){
 		caliber_id    = $(this).attr('data-id');
@@ -410,7 +474,7 @@ function routeList(caliber_id){
 			nHtml +='<div class="name">'+v.route_name+'</div>';
 			nHtml +='<div class="info"><strong>Operation</strong> '+v.route_total_operation+'</div>';
 			nHtml +='</div>';
-			nHtml +='<div class="btn">Edit</div>';
+			nHtml +='<div class="btn btn-route-edit">Edit</div>';
             if(v.route_type != 'primary'){
                 nHtml +='<div class="btn enable btn-route-enable">Primary</div>';
             }
@@ -448,13 +512,13 @@ function operationList(route_id){
 			if(v.operation_match_id == null){
 				nHtml +='<div class="box-items operation-items -disable" data-id="'+v.operation_id+'">';
 				nHtml +='<div class="detail"><div class="name">'+v.operation_name+'</div><div class="info">Operation ID '+v.operation_id+'</div></div>';
-                nHtml +='<div class="btn">Edit</div>';
+                nHtml +='<div class="btn btn-operation-edit">Edit</div>';
 				nHtml +='<div class="btn enable btn-operation-matching">Add</div>';
 				nHtml +='</div>';
 			}else{
 				nHtml +='<div class="box-items operation-items" data-id="'+v.operation_id+'">';
 				nHtml +='<div class="detail"><div class="name">'+v.operation_sort+'. '+v.operation_name+' '+v.operation_match_id+'</div><div class="info">Operation ID '+v.operation_id+'</div></div>';
-                nHtml +='<div class="btn">Edit</div>';
+                nHtml +='<div class="btn btn-operation-edit">Edit</div>';
 				nHtml +='<div class="btn btn-operation-unmatch">Remove</div>';
 				nHtml +='</div>';	
 			}
