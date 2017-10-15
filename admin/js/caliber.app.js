@@ -205,9 +205,38 @@ $(document).ready(function(){
             caliberList('');
         });
     });
+
+    $(".col-container").on('click','.btn-route-enable',function(e){
+        route_id        = $(this).parent().attr('data-id');
+        route_name      = $(this).parent().children('.detail').children('.name').html();
+
+        var agree       = confirm('Are you sure you want set '+route_name+' to primary route in '+caliber_name+' ?');
+        if(!agree){ return false; }
+
+        $.ajax({
+            url         :api_route,
+            cache       :false,
+            dataType    :"json",
+            type        :"POST",
+            data:{
+                calling         :'route',
+                action          :'set_primary',
+                route_id        :route_id,
+                caliber_id      :caliber_id,
+            },
+            error: function (request, status, error) {
+                console.log("Request Error");
+            }
+        }).done(function(data){
+            console.log(data);
+            routeList(caliber_id);
+        }).error();
+    });
 	// Selection Queue items
 	$(".col-container").on('click','.caliber-items',function(e){
-		caliber_id = $(this).attr('data-id');
+		caliber_id    = $(this).attr('data-id');
+        caliber_name  = $(this).children('.detail').children('.name').html();
+
         $('.caliber-items').removeClass('-active');
         $(this).addClass('-active');
 
@@ -301,7 +330,9 @@ function routeList(caliber_id){
 			nHtml +='<div class="info"><strong>Operation</strong> '+v.route_total_operation+'</div>';
 			nHtml +='</div>';
 			nHtml +='<div class="btn">Edit</div>';
-            nHtml +='<div class="btn enable btn-route-enable">Primary</div>';
+            if(v.route_type != 'primary'){
+                nHtml +='<div class="btn enable btn-route-enable">Primary</div>';
+            }
 			nHtml +='</div>';
         });
 
@@ -351,33 +382,5 @@ function operationList(route_id){
         $('#operation_list').html(nHtml);
         nHtml = '';
 
-    }).error();
-}
-
-function deactiveCaliber(caliber_id,caliber_name){
-    var href            = 'api.caliber.php';
-    var agree           = confirm('Are you sure you want set this '+caliber_name+' to deactive ?');
-    if(!agree){ return false; }
-
-    $('#loading-box').fadeIn(300);
-
-    $.ajax({
-        url         :href,
-        cache       :false,
-        dataType    :"json",
-        type        :"POST",
-        data:{
-            calling         :'caliber',
-            action          :'setDeactive',
-            caliber_id      :caliber_id,
-        },
-        error: function (request, status, error) {
-            console.log("Request Error");
-        }
-    }).done(function(data){
-        console.log('Return: '+data.message);
-        setTimeout(function(){
-            location.reload();
-        },1000);
     }).error();
 }

@@ -102,31 +102,31 @@ function deleteRoute(route_id){
     }).error();
 }
 
-function setPrimary(route_id,caliber_id){
-    var href            = 'api.route.php';
-    var agree           = confirm('Are you sure you want set this route to primary ?');
-    if(!agree){ return false; }
+// function setPrimary(route_id,caliber_id){
+//     var href            = 'api.route.php';
+//     var agree           = confirm('Are you sure you want set this route to primary ?');
+//     if(!agree){ return false; }
 
-    $('#loading-box').fadeIn(300);
+//     $('#loading-box').fadeIn(300);
 
-    $.ajax({
-        url         :href,
-        cache       :false,
-        dataType    :"json",
-        type        :"POST",
-        data:{
-            calling         :'route',
-            action          :'set_primary',
-            route_id        :route_id,
-            caliber_id      :caliber_id,
-        },
-        error: function (request, status, error) {
-            console.log("Request Error");
-        }
-    }).done(function(data){
-        console.log('Return: '+data.message);
-        setTimeout(function(){
-            location.reload();
-        },1000);
-    }).error();
-}
+//     $.ajax({
+//         url         :href,
+//         cache       :false,
+//         dataType    :"json",
+//         type        :"POST",
+//         data:{
+//             calling         :'route',
+//             action          :'set_primary',
+//             route_id        :route_id,
+//             caliber_id      :caliber_id,
+//         },
+//         error: function (request, status, error) {
+//             console.log("Request Error");
+//         }
+//     }).done(function(data){
+//         console.log('Return: '+data.message);
+//         setTimeout(function(){
+//             location.reload();
+//         },1000);
+//     }).error();
+// }
